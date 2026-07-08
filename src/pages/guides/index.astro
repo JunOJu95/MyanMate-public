@@ -5,6 +5,7 @@ import T from '../../components/T.astro';
 import GuideCard from '../../components/GuideCard.astro';
 import { getGuides } from '../../lib/content';
 import { t } from '../../i18n/ui';
+import { TIKTOK_URL } from '../../config/launch';
 
 const guides = await getGuides();
 const filters = ['all', 'visa', 'jobs', 'housing', 'korean', 'daily'];
@@ -28,9 +29,23 @@ const filters = ['all', 'visa', 'jobs', 'housing', 'korean', 'daily'];
       <div class="guide-list">
         {guides.map((g) => <GuideCard guide={g} variant="row" />)}
       </div>
-      <p id="guides-empty" class="t-body center" style="display:none;padding:24px 0;" data-i18n="guides.empty">{t('guides.empty', 'en')}</p>
+      <div id="guides-empty" class="empty-state" style="display:none;">
+        <p class="card-title" data-i18n="guides.empty.title">{t('guides.empty.title', 'en')}</p>
+        <p class="t-body" data-i18n="guides.empty.body">{t('guides.empty.body', 'en')}</p>
+        <div class="empty-actions">
+          <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="guides-empty:contact">{t('btn.getHelp', 'en')}</a>
+          <a class="btn ghost" href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" data-i18n="home.tiktok.cta" data-event="guides-empty:tiktok">{t('home.tiktok.cta', 'en')}</a>
+        </div>
+      </div>
       {guides.length === 0 && (
-        <p class="t-body center" style="padding:24px 0;" data-i18n="guides.empty">{t('guides.empty', 'en')}</p>
+        <div class="empty-state">
+          <p class="card-title" data-i18n="guides.empty.title">{t('guides.empty.title', 'en')}</p>
+          <p class="t-body" data-i18n="guides.empty.body">{t('guides.empty.body', 'en')}</p>
+          <div class="empty-actions">
+            <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="guides-empty:contact">{t('btn.getHelp', 'en')}</a>
+            <a class="btn ghost" href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" data-i18n="home.tiktok.cta" data-event="guides-empty:tiktok">{t('home.tiktok.cta', 'en')}</a>
+          </div>
+        </div>
       )}
     </section>
   </div>

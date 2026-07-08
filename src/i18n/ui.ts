@@ -101,6 +101,8 @@ export const ui = {
   'guides.filter.korean':  { en: 'Korean',     ko: '한국어',    my: 'ကိုရီးယားဘာသာ' },
   'guides.filter.daily':   { en: 'Daily life', ko: '생활 일반', my: 'နေ့စဉ်ဘဝ' },
   'guides.empty': { en: 'Nothing here yet — new guides coming soon.', ko: '아직 글이 없어요. 곧 새 정보가 올라옵니다.', my: 'ဒီမှာ ဘာမှ မရှိသေးပါ — လမ်းညွှန်အသစ်များ မကြာမီ ရောက်လာပါမည်။' },
+  'guides.empty.title': { en: 'This topic is still being prepared.', ko: '이 주제는 아직 준비 중입니다.', my: 'ဤခေါင်းစဉ်ကို ပြင်ဆင်နေဆဲ ဖြစ်ပါသည်။' },
+  'guides.empty.body': { en: 'Tell us what you need, or check our TikTok for everyday Korea tips while we add more guides.', ko: '필요한 내용을 알려주세요. 더 많은 정보를 준비하는 동안 TikTok에서도 한국 생활 팁을 확인할 수 있어요.', my: 'သင်လိုအပ်သောအရာကို ပြောပြပါ။ လမ်းညွှန်များ ထပ်ထည့်နေစဉ် TikTok တွင် ကိုရီးယားနေ့စဉ်ဘဝအကြံပြုချက်များကို ကြည့်နိုင်ပါသည်။' },
 
   /* 3b. Blog */
   'blog.title':    { en: 'Blog', ko: '블로그', my: 'ဘလော့ဂ်' },
@@ -143,7 +145,7 @@ export const ui = {
 
   /* 6. Request / consult */
   'request.title': { en: 'Request guidance', ko: '안내 요청', my: 'လမ်းညွှန်မှု တောင်းဆိုရန်' },
-  'request.lead':  { en: "Fill out the form, or message us on Facebook — we reply within a day.", ko: '아래 양식을 남기거나, 페이스북 메시지로 문의해 주세요. 하루 안에 답변합니다.', my: 'အောက်ဖောင်ကို ဖြည့်ပါ၊ သို့မဟုတ် Facebook မက်ဆေ့ပို့ပါ — တစ်ရက်အတွင်း ပြန်ကြားပါမည်။' },
+  'request.lead':  { en: "Fill out the form, or message us on Facebook — we'll reply as soon as we can.", ko: '아래 양식을 남기거나, 페이스북 메시지로 문의해 주세요. 가능한 빨리 답변드릴게요.', my: 'အောက်ဖောင်ကို ဖြည့်ပါ၊ သို့မဟုတ် Facebook မက်ဆေ့ပို့ပါ — တတ်နိုင်သမျှ မြန်မြန် ပြန်ကြားပါမည်။' },
   'request.field.name':       { en: 'Name', ko: '이름', my: 'အမည်' },
   'request.field.name.ph':    { en: 'Your name', ko: '이름 입력', my: 'သင့်အမည်' },
   'request.field.contact':    { en: 'Contact', ko: '연락처', my: 'ဆက်သွယ်ရန်' },
@@ -158,16 +160,18 @@ export const ui = {
   'request.sending': { en: 'Sending…', ko: '보내는 중…', my: 'ပို့နေသည်…' },
   'request.or':      { en: 'or', ko: '또는', my: 'သို့မဟုတ်' },
   'request.dm':      { en: 'Message us on Facebook Messenger', ko: 'Facebook Messenger로 문의하기', my: 'Facebook Messenger ဖြင့် မက်ဆေ့ပို့ရန်' },
-  'request.success': { en: "Got it! We'll reply within a day.", ko: '접수됐어요! 하루 안에 답변드릴게요.', my: 'ရရှိပါပြီ! တစ်ရက်အတွင်း ပြန်ကြားပေးပါမည်။' },
+  'request.success': { en: "Got it! We'll reply as soon as we can.", ko: '접수됐어요! 가능한 빨리 답변드릴게요.', my: 'ရရှိပါပြီ! တတ်နိုင်သမျှ မြန်မြန် ပြန်ကြားပေးပါမည်။' },
   'request.error':   { en: 'Something went wrong — please message us directly.', ko: '문제가 생겼어요 — 메시지로 직접 문의해 주세요.', my: 'တစ်ခုခု မှားယွင်းသွားသည် — တိုက်ရိုက် မက်ဆေ့ပို့ပါ။' },
 
   /* 7. Reviews */
   'reviews.title':    { en: 'What people say', ko: '먼저 경험한 분들', my: 'လူများ ဘာပြောကြသလဲ' },
-  'reviews.subtitle': { en: 'Real stories from Myanmar people who settled in Korea with us.', ko: '우리와 함께 한국에 정착한 미얀마 사람들의 진짜 이야기.', my: 'ကျွန်ုပ်တို့နှင့်အတူ ကိုရီးယားတွင် အခြေချခဲ့သော မြန်မာလူမျိုးများ၏ တကယ့်ဇာတ်လမ်းများ။' },
+  'reviews.subtitle': { en: 'We will share real stories after the first guidance cases are complete.', ko: '실제 안내 사례가 쌓이면 이곳에 투명하게 공유하겠습니다.', my: 'ပထမဆုံး လမ်းညွှန်မှုကိစ္စများ ပြီးဆုံးပြီးနောက် တကယ့်ဇာတ်လမ်းများကို ဤနေရာတွင် မျှဝေပါမည်။' },
   'reviews.before':   { en: 'Before', ko: '비포', my: 'အရင်က' },
   'reviews.after':    { en: 'After', ko: '애프터', my: 'အခု' },
   'reviews.cta':      { en: 'Need guidance for your next step? Ask us →', ko: '다음 단계가 막막하다면, 안내 요청하기 →', my: 'နောက်တစ်ဆင့်အတွက် လမ်းညွှန်မှု လိုပါသလား? မေးမြန်းရန် →' },
   'reviews.empty':    { en: 'Reviews coming soon.', ko: '곧 후기가 올라옵니다.', my: 'သုံးသပ်ချက်များ မကြာမီ ရောက်လာပါမည်။' },
+  'reviews.empty.title': { en: 'Real reviews will come after launch.', ko: '실제 후기는 서비스 시작 후 공개할게요.', my: 'တကယ့်သုံးသပ်ချက်များကို ဝန်ဆောင်မှုစတင်ပြီးနောက် ဖော်ပြပါမည်။' },
+  'reviews.empty.body': { en: 'For now, use the guides, TikTok, or the request form to see how we can help.', ko: '지금은 정보 글, TikTok, 안내 요청 폼을 통해 어떤 도움을 받을 수 있는지 확인해 주세요.', my: 'ယခုအချိန်တွင် လမ်းညွှန်များ၊ TikTok သို့မဟုတ် တောင်းဆိုမှုပုံစံမှတစ်ဆင့် ကျွန်ုပ်တို့က မည်သို့ကူညီနိုင်သည်ကို ကြည့်ရှုပါ။' },
 
   /* 8. About */
   'about.title': { en: 'About MyanMate', ko: 'MyanMate 소개', my: 'MyanMate အကြောင်း' },

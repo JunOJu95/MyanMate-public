@@ -6,13 +6,14 @@ import ReviewCard from '../../components/ReviewCard.astro';
 import { services, type Service } from '../../data/services';
 import { getReviews } from '../../lib/content';
 import { t } from '../../i18n/ui';
+import { SHOW_REVIEWS } from '../../config/launch';
 
 export async function getStaticPaths() {
   return services.map((s) => ({ params: { id: s.id }, props: { service: s } }));
 }
 
 const { service } = Astro.props as { service: Service };
-const reviews = (await getReviews()).filter((r) => r.service === service.id);
+const reviews = SHOW_REVIEWS ? (await getReviews()).filter((r) => r.service === service.id) : [];
 ---
 <Base title={t(service.nameKey, 'en')} active="services" description={t(service.descKey, 'en')}>
   <div class="wrap">
@@ -46,7 +47,7 @@ const reviews = (await getReviews()).filter((r) => r.service === service.id);
           </div>
         </section>
 
-        {reviews.length > 0 && (
+        {SHOW_REVIEWS && reviews.length > 0 && (
           <section class="sec">
             <p class="sec-title"><span class="sec-ico"><Icon name="star" /></span><T k="svcDetail.section.reviews" /></p>
             <ReviewCard review={reviews[0]} />

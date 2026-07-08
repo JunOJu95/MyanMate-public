@@ -1,6 +1,7 @@
 ---
 import LangToggle from './LangToggle.astro';
 import { t, defaultLang } from '../i18n/ui';
+import { SHOW_BLOG_IN_NAV, SHOW_REVIEWS } from '../config/launch';
 
 interface Props {
   active?: string;
@@ -10,9 +11,9 @@ const { active } = Astro.props;
 const links = [
   { key: 'nav.home', href: '/', id: 'home' },
   { key: 'nav.guides', href: '/guides', id: 'guides' },
-  { key: 'nav.blog', href: '/blog', id: 'blog' },
+  ...(SHOW_BLOG_IN_NAV ? [{ key: 'nav.blog', href: '/blog', id: 'blog' }] : []),
   { key: 'nav.services', href: '/services', id: 'services' },
-  { key: 'nav.reviews', href: '/reviews', id: 'reviews' },
+  ...(SHOW_REVIEWS ? [{ key: 'nav.reviews', href: '/reviews', id: 'reviews' }] : []),
   { key: 'nav.about', href: '/about', id: 'about' },
 ];
 ---

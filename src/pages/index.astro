@@ -10,6 +10,7 @@ import TikTokTrust from '../components/TikTokTrust.astro';
 import { services } from '../data/services';
 import { getReviews } from '../lib/content';
 import { t } from '../i18n/ui';
+import { SHOW_REVIEWS } from '../config/launch';
 
 const topics = [
   { key: 'home.topics.visa', icon: 'visa', href: '/guides?category=visa' },
@@ -18,7 +19,7 @@ const topics = [
   { key: 'home.topics.korean', icon: 'korean', href: '/guides?category=korean' },
   { key: 'home.topics.daily', icon: 'daily', href: '/guides?category=daily' },
 ];
-const reviews = (await getReviews()).slice(0, 2);
+const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
 ---
 <Base title="" active="home" description={t('home.hero.sub', 'en')}>
   <div class="wrap">
@@ -56,8 +57,7 @@ const reviews = (await getReviews()).slice(0, 2);
       </div>
     </section>
 
-    <!-- reviews -->
-    {reviews.length > 0 && (
+    {SHOW_REVIEWS && reviews.length > 0 && (
       <section class="sec">
         <p class="sec-title"><span class="sec-ico"><Icon name="star" /></span><T k="home.reviews.title" /></p>
         <div class="grid-reviews">

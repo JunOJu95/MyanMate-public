@@ -4,8 +4,9 @@ import T from '../components/T.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import { getReviews } from '../lib/content';
 import { t } from '../i18n/ui';
+import { SHOW_REVIEWS } from '../config/launch';
 
-const reviews = await getReviews();
+const reviews = SHOW_REVIEWS ? await getReviews() : [];
 ---
 <Base title={t('reviews.title', 'en')} active="reviews" description={t('reviews.subtitle', 'en')}>
   <div class="wrap">
@@ -20,7 +21,10 @@ const reviews = await getReviews();
           {reviews.map((r) => <ReviewCard review={r} />)}
         </div>
       ) : (
-        <p class="t-body center" style="padding:24px 0;" data-i18n="reviews.empty">{t('reviews.empty', 'en')}</p>
+        <div class="empty-state">
+          <p class="card-title" data-i18n="reviews.empty.title">{t('reviews.empty.title', 'en')}</p>
+          <p class="t-body" data-i18n="reviews.empty.body">{t('reviews.empty.body', 'en')}</p>
+        </div>
       )}
     </section>
 
