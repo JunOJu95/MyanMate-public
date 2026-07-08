@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import T from '../../components/T.astro';
+import ReviewCard from '../../components/ReviewCard.astro';
+import { services, type Service } from '../../data/services';
+import { getReviews } from '../../lib/content';
+import { t } from '../../i18n/ui';
+
+export async function getStaticPaths() {
+  return services.map((s) => ({ params: { id: s.id }, props: { service: s } }));
+}
+
+const { service } = Astro.props as { service: Service };
+const reviews = (await getReviews()).filter((r) => r.service === service.id);
+---
+<Base title={t(service.nameKey, 'en')} active="services" description={t(service.descKey, 'en')}>
+  <div class="wrap">
+    <div class="detail-2col" style="padding-top:18px;">
+      <article>
+        <h1 class="lead-title" data-i18n={service.nameKey}>{t(service.nameKey, 'en')}</h1>
+
+        <section class="sec">
+          <p class="sec-title"><span class="sec-ico"><Icon name="check" /></span><T k="svcDetail.section.whatWeDo" /></p>
+          <T k={service.descKey} tag="p" class="t-body" />
+        </section>
+
+        <!-- What we DON'T do — compliance (§7-1). Always visible. -->
+        <section class="sec sec-tint">
+          <p class="sec-title"><T k="svcDetail.section.whatWeDont" /></p>
+          <p class="note-pin">
+            <b data-i18n="svcDetail.section.whatWeDont">{t('svcDetail.section.whatWeDont', 'en')}</b> —
+            <span data-i18n="svcDetail.dont.body">{t('svcDetail.dont.body', 'en')}</span>
+          </p>
+        </section>
+
+        <section class="sec">
+          <p class="sec-title"><span class="sec-ico"><Icon name="list" /></span><T k="svcDetail.section.how" /></p>
+          <div class="stack gap-9">
+            {service.howKeys.map((k, i) => (
+              <div style="display:flex;gap:9px;align-items:flex-start;">
+                <span class="num-badge">{i + 1}</span>
+                <T k={k} tag="p" class="t-body" />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {reviews.length > 0 && (
+          <section class="sec">
+            <p class="sec-title"><span class="sec-ico"><Icon name="star" /></span><T k="svcDetail.section.reviews" /></p>
+            <ReviewCard review={reviews[0]} />
+          </section>
+        )}
+
+        <section class="sec">
+          <p class="sec-title"><span class="sec-ico"><Icon name="chat" /></span><T k="svcDetail.section.faq" /></p>
+          {service.faqKeys.map((f) => (
+            <details class="accordion">
+              <summary><span data-i18n={f.q}>{t(f.q, 'en')}</span><span class="pm">+</span></summary>
+              <div class="acc-body" data-i18n={f.a}>{t(f.a, 'en')}</div>
+            </details>
+          ))}
+        </section>
+      </article>
+
+      <aside>
+        <div class="card sticky-card" style="background:var(--brand-soft);">
+          <p class="card-title" data-i18n={service.nameKey}>{t(service.nameKey, 'en')}</p>
+          <div style="margin-top:10px;">
+            <p class="t-cap"><T k="svcDetail.label.price" /></p>
+            <span class="price-badge" data-i18n={service.priceKey}>{t(service.priceKey, 'en')}</span>
+          </div>
+          <div style="margin-top:10px;">
+            <p class="t-cap"><T k="svcDetail.label.duration" /></p>
+            <span class="price-badge" data-i18n={service.durationKey}>{t(service.durationKey, 'en')}</span>
+          </div>
+          <a class="btn pri full" style="margin-top:14px;" href={`/contact?service=${service.id}`} data-i18n="svcDetail.cta" data-event={`service-cta:${service.id}`}>{t('svcDetail.cta', 'en')}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

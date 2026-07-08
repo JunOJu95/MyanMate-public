@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getPosts } from '../../lib/content';
+import { t } from '../../i18n/ui';
+
+const posts = await getPosts();
+---
+<Base title={t('blog.title', 'en')} active="blog">
+  <div class="wrap">
+    <section class="sec">
+      <h1 class="lead-title"><T k="blog.title" /></h1>
+    </section>
+
+    <section class="sec" style="padding-top:6px;">
+      {posts.length === 0 ? (
+        <p class="t-body center" style="padding:24px 0;" data-i18n="blog.empty">{t('blog.empty', 'en')}</p>
+      ) : (
+        <div class="post-list">
+          {posts.map((p) => <PostCard post={p} />)}
+        </div>
+      )}
+    </section>
+  </div>
+</Base>

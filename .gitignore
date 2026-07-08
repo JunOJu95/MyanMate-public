@@ -1,0 +1,37 @@
+# build output
+dist/
+.output/
+
+# dependencies
+node_modules/
+
+# astro
+.astro/
+
+# generated content images (keep source content/ tracked)
+# (nothing here yet)
+
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+
+# os / editor
+.DS_Store
+.vscode/
+.idea/
+
+# deploy
+.vercel/
+.netlify/
+
+# local tooling / agent state (machine-local, not part of the project)
+.claude/
+.omc/
+.bkit/
+.playwright-cli/
+output/

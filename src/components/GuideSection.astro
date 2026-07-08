@@ -1,0 +1,36 @@
+---
+/** One guide section: a single heading (data-i18n, switches via JS) + the three
+ * language bodies (data-lang, switches via CSS). Multiline fields render as
+ * paragraphs / bullet list / numbered list. */
+import T from './T.astro';
+import { languages } from '../i18n/ui';
+import type { Guide, GuideText } from '../lib/content';
+
+interface Props {
+  guide: Guide;
+  field: keyof GuideText;
+  labelKey: string;
+  mode: 'paras' | 'ul' | 'ol';
+  num?: number;
+}
+const { guide, field, labelKey, mode, num } = Astro.props;
+
+const toLines = (s: string) => s.split('\n').map((x) => x.trim()).filter(Boolean);
+const toParas = (s: string) => s.split(/\n{2,}/).map((x) => x.trim()).filter(Boolean);
+---
+<section class="sec">
+  <h2 class="sec-title">
+    {num != null && <span class="num-badge">{num}</span>}
+    <T k={labelKey} />
+  </h2>
+  {languages.map((l) => {
+    const val = guide[l][field] || guide.en[field];
+    return (
+      <div data-lang={l} class="prose">
+        {mode === 'paras' && toParas(val).map((p) => <p>{p}</p>)}
+        {mode === 'ul' && <ul>{toLines(val).map((li) => <li>{li}</li>)}</ul>}
+        {mode === 'ol' && <ol>{toLines(val).map((li) => <li>{li}</li>)}</ol>}
+      </div>
+    );
+  })}
+</section>

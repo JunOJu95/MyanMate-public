@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
+import SeoHead from '../components/SeoHead.astro';
+import TopBar from '../components/TopBar.astro';
+import Footer from '../components/Footer.astro';
+import { defaultLang } from '../i18n/ui';
+
+interface Props {
+  title: string;
+  description?: string;
+  active?: string;
+  canonicalPath?: string;
+  image?: string;
+}
+const { title, description, active, canonicalPath, image } = Astro.props;
+---
+<!doctype html>
+<html lang={defaultLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Per-language fonts (Myanmar/Korean must not break — see global.css body.lang-*) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&family=Noto+Sans+Myanmar:wght@400;500;600;700&family=Padauk:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <SeoHead title={title} description={description} canonicalPath={canonicalPath} image={image} />
+    <Analytics />
+    <slot name="head" />
+  </head>
+  <body class={`lang-${defaultLang}`}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <TopBar active={active} />
+    <main id="main" class="site-main">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import '../scripts/lang.ts';
+      import '../scripts/analytics.ts';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import T from '../../components/T.astro';
+import GuideSection from '../../components/GuideSection.astro';
+import GuideCard from '../../components/GuideCard.astro';
+import Disclaimer from '../../components/Disclaimer.astro';
+import { getGuides, type Guide, type GuideText } from '../../lib/content';
+import { categoryToService } from '../../data/services';
+import { t, languages } from '../../i18n/ui';
+
+export async function getStaticPaths() {
+  const guides = await getGuides();
+  return guides.map((g) => ({ params: { slug: g.slug }, props: { guide: g, all: guides } }));
+}
+
+const { guide, all } = Astro.props as { guide: Guide; all: Guide[] };
+const serviceId = categoryToService[guide.category] ?? 'visa';
+const related = [...all.filter((g) => g.slug !== guide.slug)]
+  .sort((a, b) => Number(b.category === guide.category) - Number(a.category === guide.category))
+  .slice(0, 3);
+const catKey = `guides.filter.${guide.category}`;
+// Sections are rendered in this order; empty fields (e.g. E-9 has no subtypes/notes
+// imported) are filtered out so the number badges stay gapless per guide.
+const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul' | 'ol' }[] = [
+  { field: 'eligibility', labelKey: 'content.section.eligibility', mode: 'ul' },
+  { field: 'subtypes',    labelKey: 'content.section.subtypes',    mode: 'ul' },
+  { field: 'documents',   labelKey: 'content.section.documents',   mode: 'ul' },
+  { field: 'steps',       labelKey: 'content.section.steps',       mode: 'ol' },
+  { field: 'watchout',    labelKey: 'content.section.watchout',    mode: 'ul' },
+  { field: 'notes',       labelKey: 'content.section.notes',       mode: 'ul' },
+].filter((s) => languages.some((l) => (guide[l][s.field] || '').trim()));
+---
+<Base title={guide.en.title} active="guides" description={guide.en.summary}>
+  <div class="wrap">
+    <div class="detail-2col" style="padding-top:18px;">
+      <article>
+        <span class="pill-tag" data-i18n={catKey}>{t(catKey, 'en')}</span>
+        <h1 class="lead-title" style="margin-top:10px;">
+          {languages.map((l) => <span data-lang={l}>{guide[l].title || guide.en.title}</span>)}
+        </h1>
+        {guide.lastReviewed && (
+          <p class="meta-line">
+            <span class="meta-chip">
+              <Icon name="check" size={14} /> <T k="content.lastReviewed" /> · <time datetime={guide.lastReviewed}>{guide.lastReviewed}</time>
+            </span>
+          </p>
+        )}
+        <div style="margin-top:10px;">
+          {languages.map((l) => <p data-lang={l} class="t-sub">{guide[l].summary || guide.en.summary}</p>)}
+        </div>
+        {SECTIONS.map((s, i) => (
+          <GuideSection guide={guide} field={s.field} labelKey={s.labelKey} mode={s.mode} num={i + 1} />
+        ))}
+
+        <Disclaimer k="content.disclaimer" class="mt-12" />
+
+        {related.length > 0 && (
+          <section class="sec">
+            <p class="sec-title"><span class="sec-ico"><Icon name="list" /></span><T k="content.related.title" /></p>
+            <div class="grid-2">
+              {related.map((r) => <GuideCard guide={r} variant="tile" />)}
+            </div>
+          </section>
+        )}
+      </article>
+
+      <aside>
+        <div class="card sticky-card" style="background:var(--brand-soft);">
+          <p class="card-title" data-i18n="content.cta.title">{t('content.cta.title', 'en')}</p>
+          <T k="content.cta.note" tag="p" class="t-body" />
+          <a class="btn pri full" style="margin-top:11px;" href={`/services/${serviceId}`} data-i18n="content.cta.button" data-event={`guide-cta:${serviceId}`}>{t('content.cta.button', 'en')}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

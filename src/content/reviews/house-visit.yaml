@@ -1,0 +1,15 @@
+name: Found a safe home
+service: house
+rating: 5
+en:
+  before: Couldn't read the contracts and worried about choosing a bad neighbourhood.
+  after: Visited places with someone who knew what to check — signed somewhere I feel safe.
+  quote: Having a Korean speaker beside me at viewings changed everything. They pointed out things I'd never have noticed.
+ko:
+  before: 계약서를 읽을 수 없었고, 안 좋은 동네를 고를까 봐 걱정됐어요.
+  after: 무엇을 봐야 하는지 아는 사람과 함께 집을 보고, 안심되는 곳에 계약했어요.
+  quote: 집 보러 갈 때 한국어 하는 사람이 곁에 있다는 게 전부를 바꿨어요. 제가 몰랐을 것들을 짚어줬어요.
+my:
+  before: စာချုပ်တွေ မဖတ်တတ်ဘဲ မကောင်းတဲ့ ရပ်ကွက်ရွေးမိမှာ စိုးရိမ်ခဲ့တယ်။
+  after: ဘာစစ်ရမယ်ဆိုတာ သိတဲ့သူနဲ့ အတူကြည့်ပြီး စိတ်ချရတဲ့နေရာမှာ စာချုပ်ချုပ်ခဲ့တယ်။
+  quote: အိမ်ကြည့်တဲ့အခါ ကိုရီးယားစကားပြောတတ်သူ ဘေးမှာရှိတာ အရာအားလုံးကို ပြောင်းလဲစေတယ်။ ကိုယ်သတိမထားမိမယ့်အရာတွေ ထောက်ပြပေးတယ်။

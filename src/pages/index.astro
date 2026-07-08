@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Avatar from '../components/Avatar.astro';
+import T from '../components/T.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ReviewCard from '../components/ReviewCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import TikTokTrust from '../components/TikTokTrust.astro';
+import { services } from '../data/services';
+import { getReviews } from '../lib/content';
+import { t } from '../i18n/ui';
+
+const topics = [
+  { key: 'home.topics.visa', icon: 'visa', href: '/guides?category=visa' },
+  { key: 'home.topics.jobs', icon: 'jobs', href: '/guides?category=jobs' },
+  { key: 'home.topics.housing', icon: 'housing', href: '/guides?category=housing' },
+  { key: 'home.topics.korean', icon: 'korean', href: '/guides?category=korean' },
+  { key: 'home.topics.daily', icon: 'daily', href: '/guides?category=daily' },
+];
+const reviews = (await getReviews()).slice(0, 2);
+---
+<Base title="" active="home" description={t('home.hero.sub', 'en')}>
+  <div class="wrap">
+    <!-- hero -->
+    <section class="sec hero">
+      <T k="home.hero.headline" tag="h1" class="h-hero" />
+      <T k="home.hero.sub" tag="p" class="t-sub" />
+      <div class="btn-row" style="margin-top:14px;width:100%;">
+        <a class="btn" href="/guides" data-i18n="btn.browseGuides">{t('btn.browseGuides', 'en')}</a>
+        <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="cta:hero-get-help">{t('btn.getHelp', 'en')}</a>
+      </div>
+    </section>
+
+    <!-- topics -->
+    <section class="sec">
+      <p class="sec-title"><span class="sec-ico"><Icon name="topics" /></span><T k="home.topics.title" /></p>
+      <div class="grid-cats">
+        {topics.map((tp) => (
+          <a class="card cat-card hov" href={tp.href}>
+            <span class="ico"><Icon name={tp.icon} /></span>
+            <span class="cat-name"><T k={tp.key} /></span>
+          </a>
+        ))}
+        <a class="card cat-card all hov" href="/guides">
+          <span class="cat-name"><T k="home.topics.all" /></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- services -->
+    <section class="sec">
+      <p class="sec-title"><span class="sec-ico"><Icon name="help" /></span><T k="home.services.title" /></p>
+      <div class="grid-services">
+        {services.map((s) => <ServiceCard service={s} variant="compact" />)}
+      </div>
+    </section>
+
+    <!-- reviews -->
+    {reviews.length > 0 && (
+      <section class="sec">
+        <p class="sec-title"><span class="sec-ico"><Icon name="star" /></span><T k="home.reviews.title" /></p>
+        <div class="grid-reviews">
+          {reviews.map((r) => <ReviewCard review={r} showQuote={false} />)}
+        </div>
+        <div style="margin-top:12px;"><a class="btn ghost" href="/reviews"><T k="btn.more" /></a></div>
+      </section>
+    )}
+
+    <!-- cta band -->
+    <section class="sec">
+      <CtaBand titleKey="home.cta.band" buttonKey="btn.getHelp" href="/contact" event="cta:home-band" />
+    </section>
+
+    <!-- about teaser -->
+    <section class="sec">
+      <p class="sec-title"><span class="sec-ico"><Icon name="users" /></span><T k="home.about.title" /></p>
+      <a href="/about" style="display:flex;gap:12px;align-items:center;">
+        <Avatar size={58} />
+        <T k="home.about.blurb" tag="p" class="t-body" />
+      </a>
+    </section>
+
+    <!-- social proof -->
+    <section class="sec">
+      <TikTokTrust />
+    </section>
+  </div>
+</Base>

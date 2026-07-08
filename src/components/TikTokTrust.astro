@@ -1,0 +1,35 @@
+---
+import Icon from './Icon.astro';
+import T from './T.astro';
+import { t, defaultLang } from '../i18n/ui';
+
+const TIKTOK_URL = 'https://www.tiktok.com/@roadieai?_r=1&_t=ZS-97r32b7IWYC';
+
+const topics = [
+  'home.tiktok.topic.visa',
+  'home.tiktok.topic.jobs',
+  'home.tiktok.topic.housing',
+  'home.tiktok.topic.korean',
+];
+---
+<div class="tiktok-trust" aria-labelledby="tiktok-trust-title">
+  <div class="tiktok-mark" aria-hidden="true">
+    <span class="tiktok-note">♪</span>
+  </div>
+  <div class="tiktok-copy">
+    <p class="tiktok-eyebrow"><T k="home.tiktok.eyebrow" /></p>
+    <h2 id="tiktok-trust-title" class="tiktok-title"><T k="home.tiktok.title" /></h2>
+    <p class="t-body"><T k="home.tiktok.body" /></p>
+    <div class="tiktok-topics" aria-label={t('home.tiktok.topicsLabel', defaultLang)}>
+      {topics.map((key) => <span class="pill-tag" data-i18n={key}>{t(key, defaultLang)}</span>)}
+    </div>
+    <p class="disclaimer"><T k="home.tiktok.note" /></p>
+    <div class="tiktok-actions">
+      <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="cta:tiktok-trust-contact">{t('btn.getHelp', defaultLang)}</a>
+      <a class="btn ghost" href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" data-i18n="home.tiktok.cta" data-event="social:tiktok">
+        {t('home.tiktok.cta', defaultLang)}
+        <Icon name="external" size={15} />
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+---
+/** Reusable disclaimer line. Defaults to the footer disclaimer; pass k="content.disclaimer"
+ * on guide pages. Keeps the compliance copy single-sourced in ui.ts. */
+import { t, defaultLang } from '../i18n/ui';
+
+interface Props {
+  k?: string;
+  class?: string;
+}
+const { k = 'footer.disclaimer', class: className } = Astro.props;
+---
+<p class:list={['disclaimer', className]} data-i18n={k}>{t(k, defaultLang)}</p>

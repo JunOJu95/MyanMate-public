@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+import ReviewCard from '../components/ReviewCard.astro';
+import { getReviews } from '../lib/content';
+import { t } from '../i18n/ui';
+
+const reviews = await getReviews();
+---
+<Base title={t('reviews.title', 'en')} active="reviews" description={t('reviews.subtitle', 'en')}>
+  <div class="wrap">
+    <section class="sec">
+      <h1 class="lead-title"><T k="reviews.title" /></h1>
+      <T k="reviews.subtitle" tag="p" class="t-body mt-8" />
+    </section>
+
+    <section class="sec" style="padding-top:6px;">
+      {reviews.length > 0 ? (
+        <div class="grid-reviews">
+          {reviews.map((r) => <ReviewCard review={r} />)}
+        </div>
+      ) : (
+        <p class="t-body center" style="padding:24px 0;" data-i18n="reviews.empty">{t('reviews.empty', 'en')}</p>
+      )}
+    </section>
+
+    <section class="sec">
+      <div class="cta-band">
+        <a class="btn pri full" href="/contact" data-i18n="reviews.cta" data-event="cta:reviews">{t('reviews.cta', 'en')}</a>
+      </div>
+    </section>
+  </div>
+</Base>

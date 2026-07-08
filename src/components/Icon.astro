@@ -1,0 +1,33 @@
+---
+/**
+ * Build-time inline SVG icon (zero client JS). Pulls the path from src/lib/icons.ts.
+ * Usage: <Icon name="visa" /> · <Icon name="check" size={18} class="sec-ico" title="Done" />
+ */
+import { icons } from '../lib/icons';
+
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+  title?: string;
+}
+
+const { name, size = 24, class: className, title } = Astro.props;
+const inner = icons[name] ?? '';
+if (!inner && import.meta.env.DEV) console.warn(`[Icon] unknown icon: ${name}`);
+const body = (title ? `<title>${title}</title>` : '') + inner;
+---
+<svg
+  viewBox="0 0 24 24"
+  width={size}
+  height={size}
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.8"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={className}
+  role={title ? 'img' : undefined}
+  aria-hidden={title ? undefined : 'true'}
+  set:html={body}
+></svg>

@@ -1,0 +1,40 @@
+---
+import { t, defaultLang, languages } from '../i18n/ui';
+import { reviewTagKey, type Review } from '../lib/content';
+import Avatar from './Avatar.astro';
+
+interface Props {
+  review: Review;
+  showQuote?: boolean;
+}
+const { review, showQuote = true } = Astro.props;
+const tagKey = reviewTagKey[review.service] ?? 'ui.tag.visaResearch';
+const stars = Math.max(1, Math.min(5, review.rating || 5));
+const hasQuote = languages.some((l) => review[l].quote);
+---
+<div class="card">
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
+    <Avatar size={36} name={review.slug} />
+    <span class="grow"></span>
+    <span class="stars" aria-label={`${stars} / 5`}>{Array.from({ length: stars }).map(() => <i></i>)}</span>
+  </div>
+
+  {showQuote && hasQuote && (
+    <p class="t-body" style="font-style:italic;margin-bottom:9px;">
+      {languages.map((l) => <span data-lang={l}>{review[l].quote || review.en.quote}</span>)}
+    </p>
+  )}
+
+  <div class="ba">
+    <div class="col">
+      <p class="ba-lbl" data-i18n="reviews.before">{t('reviews.before', defaultLang)}</p>
+      {languages.map((l) => <p class="ba-txt" data-lang={l}>{review[l].before || review.en.before}</p>)}
+    </div>
+    <div class="col">
+      <p class="ba-lbl" data-i18n="reviews.after">{t('reviews.after', defaultLang)}</p>
+      {languages.map((l) => <p class="ba-txt" data-lang={l}>{review[l].after || review.en.after}</p>)}
+    </div>
+  </div>
+
+  <span class="pill-tag" style="margin-top:9px;display:inline-block;" data-i18n={tagKey}>{t(tagKey, defaultLang)}</span>
+</div>

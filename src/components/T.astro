@@ -1,0 +1,18 @@
+---
+/**
+ * i18n text helper. Renders the EN (default) string server-side AND tags the
+ * element with data-i18n so the client runtime can swap language instantly.
+ * Usage: <T k="nav.home" /> · <T k="home.hero.headline" tag="h1" class="h-hero" />
+ */
+import { t, defaultLang } from '../i18n/ui';
+
+interface Props {
+  k: string;
+  tag?: string;
+  class?: string;
+}
+
+const { k, tag = 'span', class: className } = Astro.props;
+const Tag = tag as any;
+---
+<Tag data-i18n={k} class={className}>{t(k, defaultLang)}</Tag>

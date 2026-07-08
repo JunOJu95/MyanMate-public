@@ -1,0 +1,10 @@
+---
+/** EN / MM / KO toggle. Spans are activated by the client runtime (src/scripts/lang.ts),
+ * which also handles Enter/Space for keyboard users. */
+import { langSwitch, defaultLang } from '../i18n/ui';
+---
+<div class="lang" role="group" aria-label="Language / 언어 / ဘာသာစကား">
+  {langSwitch.map(({ code, label }) => (
+    <span data-l={code} class={code === defaultLang ? 'on' : ''} role="button" tabindex="0">{label}</span>
+  ))}
+</div>

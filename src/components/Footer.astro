@@ -1,0 +1,24 @@
+---
+import { t, defaultLang } from '../i18n/ui';
+
+// footer.disclaimer is shown on EVERY page (business principle §7-1). Do not remove.
+const links = [
+  { key: 'nav.home', href: '/' },
+  { key: 'nav.guides', href: '/guides' },
+  { key: 'nav.services', href: '/services' },
+  { key: 'nav.reviews', href: '/reviews' },
+  { key: 'nav.about', href: '/about' },
+  { key: 'nav.privacy', href: '/privacy' },
+];
+---
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-tag" data-i18n="footer.tagline">{t('footer.tagline', defaultLang)}</p>
+    <nav class="foot-nav" aria-label="Footer">
+      {links.map((l) => (
+        <a href={l.href} data-i18n={l.key}>{t(l.key, defaultLang)}</a>
+      ))}
+    </nav>
+    <p class="disclaimer" data-i18n="footer.disclaimer">{t('footer.disclaimer', defaultLang)}</p>
+  </div>
+</footer>

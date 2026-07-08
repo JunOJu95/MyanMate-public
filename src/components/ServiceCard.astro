@@ -1,0 +1,36 @@
+---
+import Icon from './Icon.astro';
+import { t, defaultLang } from '../i18n/ui';
+import type { Service } from '../data/services';
+
+interface Props {
+  service: Service;
+  variant?: 'compact' | 'tile';
+}
+const { service, variant = 'compact' } = Astro.props;
+const href = `/services/${service.id}`;
+---
+{variant === 'compact' ? (
+  <a class="card svc-card hov" href={href} data-event={`service:${service.id}`}>
+    <span class="svc-ico"><Icon name={service.iconKey} /></span>
+    <span class="svc-body">
+      <span class="svc-head">
+        <span class="card-title" data-i18n={service.nameKey}>{t(service.nameKey, defaultLang)}</span>
+        <span class="price" data-i18n={service.priceKey}>{t(service.priceKey, defaultLang)}</span>
+      </span>
+      <span class="t-body clamp2" data-i18n={service.descKey}>{t(service.descKey, defaultLang)}</span>
+    </span>
+  </a>
+) : (
+  <div class="card">
+    <div class="svc-head">
+      <span style="display:flex;gap:8px;align-items:center;min-width:0;">
+        <span class="svc-ico" style="width:30px;height:30px;padding:6px;"><Icon name={service.iconKey} /></span>
+        <span class="card-title" data-i18n={service.nameKey}>{t(service.nameKey, defaultLang)}</span>
+      </span>
+      <span class="price" data-i18n={service.priceKey}>{t(service.priceKey, defaultLang)}</span>
+    </div>
+    <p class="t-body clamp2" style="margin-top:6px;" data-i18n={service.descKey}>{t(service.descKey, defaultLang)}</p>
+    <a class="btn sm" style="margin-top:10px;" href={href} data-i18n="btn.viewDetails" data-event={`service:${service.id}`}>{t('btn.viewDetails', defaultLang)}</a>
+  </div>
+)}

@@ -1,0 +1,17 @@
+---
+import { t, defaultLang } from '../i18n/ui';
+
+interface Props {
+  titleKey: string;
+  buttonKey: string;
+  href?: string;
+  noteKey?: string;
+  event?: string;
+}
+const { titleKey, buttonKey, href = '/contact', noteKey, event } = Astro.props;
+---
+<div class="cta-band">
+  <p class="ct" data-i18n={titleKey}>{t(titleKey, defaultLang)}</p>
+  <a class="btn pri full" href={href} data-i18n={buttonKey} data-event={event}>{t(buttonKey, defaultLang)}</a>
+  {noteKey && <p class="t-cap" data-i18n={noteKey}>{t(noteKey, defaultLang)}</p>}
+</div>

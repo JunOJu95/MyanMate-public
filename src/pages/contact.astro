@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import T from '../components/T.astro';
+import { services } from '../data/services';
+import { t } from '../i18n/ui';
+
+// Primary path: email submissions through Web3Forms. Messenger stays as a fallback
+// for people who prefer DM. Set PUBLIC_WEB3FORMS_KEY in the hosting environment.
+const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '';
+const DM_URL = 'https://m.me/61580519695929';
+---
+<Base title={t('request.title', 'en')} description={t('request.lead', 'en')}>
+  <div class="wrap narrow">
+    <section class="sec center">
+      <h1 class="lead-title"><T k="request.title" /></h1>
+      <T k="request.lead" tag="p" class="t-body mt-8" />
+    </section>
+
+    <section class="sec">
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+        <input type="hidden" name="subject" value="MyanMate — new request" />
+        <input type="hidden" name="from_page" value="contact" />
+        <input type="hidden" name="redirect" value="https://www.myanmate.com/contact?sent=1" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off" />
+        <div class="field">
+          <label class="flbl" for="f-name"><T k="request.field.name" /></label>
+          <input class="input" id="f-name" name="name" type="text" required autocomplete="name"
+            placeholder={t('request.field.name.ph', 'en')} data-i18n-ph="request.field.name.ph" />
+        </div>
+        <div class="field">
+          <label class="flbl" for="f-contact"><T k="request.field.contact" /></label>
+          <input class="input" id="f-contact" name="contact" type="text" required
+            placeholder={t('request.field.contact.ph', 'en')} data-i18n-ph="request.field.contact.ph" />
+          <input id="f-email" name="email" type="hidden" />
+        </div>
+        <div class="field">
+          <label class="flbl" for="f-service"><T k="request.field.service" /></label>
+          <select class="input" id="f-service" name="service">
+            <option value="" data-i18n="request.field.service.ph">{t('request.field.service.ph', 'en')}</option>
+            {services.map((s) => <option value={s.id} data-i18n={s.nameKey}>{t(s.nameKey, 'en')}</option>)}
+          </select>
+        </div>
+        <div class="field">
+          <label class="flbl" for="f-memo"><T k="request.field.memo" /></label>
+          <textarea class="input" id="f-memo" name="memo"
+            placeholder={t('request.field.memo.ph', 'en')} data-i18n-ph="request.field.memo.ph"></textarea>
+          <!-- Privacy: warn against sensitive data (passport/ID numbers) -->
+          <p class="field-note" data-i18n="request.field.memo.note">{t('request.field.memo.note', 'en')}</p>
+        </div>
+        <label class="consent" for="f-consent">
+          <input type="checkbox" id="f-consent" name="consent" required />
+          <span data-i18n="request.consent">{t('request.consent', 'en')}</span>
+        </label>
+        <button class="btn pri full" type="submit" id="f-submit" data-i18n="request.submit" data-event="contact:submit">{t('request.submit', 'en')}</button>
+        <div class="success-note" id="f-success" role="status" style="display:none;">
+          <span class="ico"><Icon name="check" /></span>
+          <span data-i18n="request.success">{t('request.success', 'en')}</span>
+        </div>
+      </form>
+
+      <div class="or-split"><T k="request.or" /></div>
+      <a class="btn ghost full" id="dm-link" href={DM_URL} target="_blank" rel="noopener" data-i18n="request.dm" data-event="contact:dm">{t('request.dm', 'en')}</a>
+    </section>
+  </div>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const success = document.getElementById('f-success');
+    const serviceSel = document.getElementById('f-service') as HTMLSelectElement | null;
+    const contactInput = document.getElementById('f-contact') as HTMLInputElement | null;
+    const emailInput = document.getElementById('f-email') as HTMLInputElement | null;
+
+    // preselect the service from ?service=<id>
+    const params = new URLSearchParams(location.search);
+    const svc = params.get('service');
+    if (svc && serviceSel) serviceSel.value = svc;
+
+    if (params.get('sent') === '1') {
+      form?.querySelectorAll('.field, .consent, #f-submit').forEach((el) => ((el as HTMLElement).style.display = 'none'));
+      if (success) success.style.display = 'flex';
+    }
+
+    form?.addEventListener('submit', () => {
+      const contact = contactInput?.value.trim() || '';
+      if (emailInput) emailInput.value = contact.includes('@') ? contact : '';
+    });
+  </script>
+</Base>

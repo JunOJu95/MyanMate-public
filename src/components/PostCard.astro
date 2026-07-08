@@ -1,0 +1,27 @@
+---
+/** Blog list card. Posts are single-language (the post's own `lang`), so no
+ * [data-lang] toggling — the card gets lang={post.lang} for correct fonts. */
+import type { Post } from '../lib/content';
+
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+const href = `/blog/${post.slug}`;
+const date = post.publishedDate ?? '';
+---
+<a
+  class:list={['post-card', { 'has-cover': !!post.cover }]}
+  href={href}
+  lang={post.lang}
+  data-event={`blog:${post.slug}`}
+>
+  {post.cover && (
+    <span class="post-cover" aria-hidden="true"><img src={post.cover} alt="" loading="lazy" /></span>
+  )}
+  <span class="post-body">
+    <span class="post-headline">{post.headline}</span>
+    {post.excerpt && <span class="post-excerpt clamp2">{post.excerpt}</span>}
+    <span class="post-meta">{date}{post.author ? ` · ${post.author}` : ''}</span>
+  </span>
+</a>

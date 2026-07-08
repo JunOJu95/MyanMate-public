@@ -1,0 +1,44 @@
+---
+import LangToggle from './LangToggle.astro';
+import { t, defaultLang } from '../i18n/ui';
+
+interface Props {
+  active?: string;
+}
+const { active } = Astro.props;
+
+const links = [
+  { key: 'nav.home', href: '/', id: 'home' },
+  { key: 'nav.guides', href: '/guides', id: 'guides' },
+  { key: 'nav.blog', href: '/blog', id: 'blog' },
+  { key: 'nav.services', href: '/services', id: 'services' },
+  { key: 'nav.reviews', href: '/reviews', id: 'reviews' },
+  { key: 'nav.about', href: '/about', id: 'about' },
+];
+---
+<header class="bar">
+  <div class="bar-inner">
+    <a class="logo" href="/">MyanMate</a>
+    <div class="grow"></div>
+    <nav class="nav-links" aria-label="Primary">
+      {links.map((l) => (
+        <a class:list={['nl', { active: active === l.id }]} href={l.href} data-i18n={l.key}>{t(l.key, defaultLang)}</a>
+      ))}
+    </nav>
+    <LangToggle />
+    <button
+      class="ham"
+      type="button"
+      data-nav-toggle
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      aria-label="Menu"
+      data-i18n-aria="ui.menu"
+    >☰</button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Primary (mobile)">
+    {links.map((l) => (
+      <a class:list={['nl', { active: active === l.id }]} href={l.href} data-i18n={l.key}>{t(l.key, defaultLang)}</a>
+    ))}
+  </nav>
+</header>

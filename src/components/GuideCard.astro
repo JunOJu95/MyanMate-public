@@ -1,0 +1,43 @@
+---
+import { t, defaultLang, languages } from '../i18n/ui';
+import Icon from './Icon.astro';
+import { categoryIcon } from '../lib/icons';
+import { visaCode, type Guide } from '../lib/content';
+
+interface Props {
+  guide: Guide;
+  variant?: 'row' | 'tile';
+}
+const { guide, variant = 'row' } = Astro.props;
+const href = `/guides/${guide.slug}`;
+const catKey = `guides.filter.${guide.category}`;
+const code = visaCode(guide.slug);
+const title = (l: (typeof languages)[number]) => guide[l].title || guide.en.title;
+const summary = (l: (typeof languages)[number]) => guide[l].summary || guide.en.summary;
+// all-language search haystack (so search works regardless of active language)
+const search = languages
+  .map((l) => `${guide[l].title} ${guide[l].summary}`)
+  .join(' ')
+  .toLowerCase();
+---
+{variant === 'row' ? (
+  <a class="listrow guide-item" href={href} data-category={guide.category} data-search={search} data-event={`guide:${guide.slug}`}>
+    <span class="thumb photo" aria-hidden="true">{code ? <span class="vbadge">{code}</span> : <Icon name={categoryIcon[guide.category] ?? 'visa'} size={24} class="glyph-ico" />}</span>
+    <span class="body">
+      <span class="row-title">
+        {languages.map((l) => <span data-lang={l}>{title(l)}</span>)}
+      </span>
+      <span class="row-sub clamp2">
+        {languages.map((l) => <span data-lang={l}>{summary(l)}</span>)}
+      </span>
+      <span class="pill-tag" data-i18n={catKey}>{t(catKey, defaultLang)}</span>
+    </span>
+  </a>
+) : (
+  <a class="card hov" href={href} data-event={`guide:${guide.slug}`}>
+    <span class="photo" style="height:64px;" aria-hidden="true">{code ? <span class="vbadge">{code}</span> : <Icon name={categoryIcon[guide.category] ?? 'visa'} size={26} class="glyph-ico" />}</span>
+    <span class="card-title clamp2" style="display:block;margin-top:8px;font-size:13px;">
+      {languages.map((l) => <span data-lang={l}>{title(l)}</span>)}
+    </span>
+  </a>
+)}

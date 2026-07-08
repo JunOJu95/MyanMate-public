@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import { services } from '../../data/services';
+import { t } from '../../i18n/ui';
+---
+<Base title={t('home.services.title', 'en')} active="services">
+  <div class="wrap">
+    <section class="sec">
+      <h1 class="lead-title" style="margin-bottom:8px;"><T k="home.services.title" /></h1>
+      <!-- compliance up front: what we do / don't -->
+      <T k="svcDetail.dont.body" tag="p" class="t-body" />
+    </section>
+    <section class="sec" style="padding-top:6px;">
+      <div class="grid-services">
+        {services.map((s) => <ServiceCard service={s} variant="tile" />)}
+      </div>
+    </section>
+  </div>
+</Base>

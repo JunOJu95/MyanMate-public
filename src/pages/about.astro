@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Avatar from '../components/Avatar.astro';
+import T from '../components/T.astro';
+import { t } from '../i18n/ui';
+
+const values = ['about.values.honest', 'about.values.clear', 'about.values.beside'];
+---
+<Base title={t('about.title', 'en')} active="about" description={t('about.lead', 'en')}>
+  <div class="wrap">
+    <section class="sec hero">
+      <T k="about.title" tag="h1" class="lead-title" />
+      <T k="about.lead" tag="p" class="t-sub" />
+    </section>
+
+    <section class="sec">
+      <div class="stack gap-12">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <Avatar size={56} />
+          <div>
+            <span class="pill-tag" data-i18n="about.partner.kr.label">{t('about.partner.kr.label', 'en')}</span>
+            <T k="about.partner.kr.body" tag="p" class="t-body mt-8" />
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <Avatar size={56} />
+          <div>
+            <span class="pill-tag" data-i18n="about.partner.mm.label">{t('about.partner.mm.label', 'en')}</span>
+            <T k="about.partner.mm.body" tag="p" class="t-body mt-8" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="sec-title"><span class="sec-ico"><Icon name="check" /></span><T k="about.values.title" /></p>
+      <div class="stack gap-9">
+        {values.map((v) => (
+          <div style="display:flex;gap:9px;align-items:flex-start;">
+            <span class="num-badge">✓</span>
+            <T k={v} tag="p" class="t-body" />
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="cta-band">
+        <a class="btn pri full" href="/contact" data-i18n="btn.getHelp" data-event="cta:about">{t('btn.getHelp', 'en')}</a>
+      </div>
+    </section>
+  </div>
+</Base>
