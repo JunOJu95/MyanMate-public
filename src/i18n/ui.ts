@@ -41,6 +41,8 @@ export const ui = {
   'nav.logoTag':    { en: 'Settle in Korea', ko: '한국 정착 안내', my: 'ကိုရီးယား အခြေချ လမ်းညွှန်' },
 
   'btn.getHelp':      { en: 'Request guidance', ko: '안내 요청하기', my: 'လမ်းညွှန်မှု တောင်းဆိုရန်' },
+  'mobileCta.note':   { en: 'Start without sensitive details', ko: '민감정보 없이 시작하세요', my: 'အရေးကြီးအချက်အလက် မပါဘဲ စတင်ပါ' },
+  'mobileCta.action': { en: 'Ask now', ko: '지금 문의', my: 'ယခု မေးမြန်းရန်' },
   'btn.browseGuides': { en: 'Browse visa guides', ko: '비자 정보 보기', my: 'ဗီဇာ လမ်းညွှန်များ ကြည့်ရန်' },
   'btn.viewDetails':  { en: 'View details',  ko: '상세 보기',    my: 'အသေးစိတ်ကြည့်ရန်' },
   'btn.more':         { en: 'See more',      ko: '더 보기',      my: 'ပိုမိုကြည့်ရှုရန်' },

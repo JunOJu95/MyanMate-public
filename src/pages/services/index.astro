@@ -5,15 +5,22 @@ import ServiceCard from '../../components/ServiceCard.astro';
 import { services } from '../../data/services';
 import { t } from '../../i18n/ui';
 ---
-<Base title={t('home.services.title', 'en')} active="services">
+<Base
+  title={t('home.services.title', 'en')}
+  active="services"
+  mobileCtaHref="/contact"
+  mobileCtaSentinel=".services-hero"
+  mobileCtaBlockers=".foot"
+  mobileCtaEvent="cta:services-mobile"
+>
   <div class="wrap">
-    <section class="sec page-hero services-hero">
+    <section class="sec page-hero services-hero" data-reveal="page-hero">
       <h1 class="lead-title"><T k="home.services.title" /></h1>
       <!-- compliance up front: what we do / don't -->
       <T k="svcDetail.dont.body" tag="p" class="t-body" />
     </section>
-    <section class="sec page-content">
-      <div class="grid-services">
+    <section class="sec page-content" data-reveal="section">
+      <div class="grid-services" data-reveal="stagger" data-stagger>
         {services.map((s) => <ServiceCard service={s} variant="tile" />)}
       </div>
     </section>

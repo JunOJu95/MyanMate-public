@@ -17,13 +17,13 @@ const trustItems = [
 ---
 <Base title={t('request.title', 'en')} description={t('request.lead', 'en')}>
   <div class="wrap contact-page">
-    <div class="contact-intro">
+    <div class="contact-intro" data-reveal="page-hero">
     <section class="sec page-hero">
       <h1 class="lead-title"><T k="request.title" /></h1>
       <T k="request.lead" tag="p" class="t-body mt-8" />
     </section>
 
-    <section class="contact-assurance" aria-label={t('request.title', 'en')} data-i18n-aria="request.title">
+    <section class="contact-assurance" aria-label={t('request.title', 'en')} data-i18n-aria="request.title" data-stagger>
       {trustItems.map((item) => (
         <div class="assurance-item">
           <span class="assurance-ico"><Icon name={item.icon} size={18} /></span>
@@ -36,7 +36,7 @@ const trustItems = [
     </section>
     </div>
 
-    <section class="sec contact-form-panel">
+    <section class="sec contact-form-panel" data-reveal="form">
       <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
         <input type="hidden" name="subject" value="MyanMate — new request" />
