@@ -122,7 +122,6 @@ export function pickReview(r: Review, lang: Lang): ReviewText {
 /** Maps a review's service to its i18n tag key (ui.tag.*). */
 export const reviewTagKey: Record<string, string> = {
   visa: 'ui.tag.visaResearch',
-  house: 'ui.tag.houseVisit',
   resume: 'ui.tag.resumeJob',
 };
 

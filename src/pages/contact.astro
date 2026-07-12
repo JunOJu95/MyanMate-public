@@ -9,15 +9,34 @@ import { t } from '../i18n/ui';
 // for people who prefer DM. Set PUBLIC_WEB3FORMS_KEY in the hosting environment.
 const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '';
 const DM_URL = 'https://m.me/61580519695929';
+const trustItems = [
+  { icon: 'check', title: 'request.trust.noSensitive.title', body: 'request.trust.noSensitive.body' },
+  { icon: 'list', title: 'request.trust.self.title', body: 'request.trust.self.body' },
+  { icon: 'chat', title: 'request.trust.dm.title', body: 'request.trust.dm.body' },
+];
 ---
 <Base title={t('request.title', 'en')} description={t('request.lead', 'en')}>
-  <div class="wrap narrow">
-    <section class="sec center">
+  <div class="wrap contact-page">
+    <div class="contact-intro">
+    <section class="sec page-hero">
       <h1 class="lead-title"><T k="request.title" /></h1>
       <T k="request.lead" tag="p" class="t-body mt-8" />
     </section>
 
-    <section class="sec">
+    <section class="contact-assurance" aria-label={t('request.title', 'en')} data-i18n-aria="request.title">
+      {trustItems.map((item) => (
+        <div class="assurance-item">
+          <span class="assurance-ico"><Icon name={item.icon} size={18} /></span>
+          <span>
+            <b data-i18n={item.title}>{t(item.title, 'en')}</b>
+            <span data-i18n={item.body}>{t(item.body, 'en')}</span>
+          </span>
+        </div>
+      ))}
+    </section>
+    </div>
+
+    <section class="sec contact-form-panel">
       <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
         <input type="hidden" name="subject" value="MyanMate — new request" />

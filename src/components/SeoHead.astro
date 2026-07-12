@@ -14,7 +14,7 @@ interface Props {
 const DEFAULT_DESC =
   'MyanMate helps Myanmar people settle in Korea — clear guides on visas, housing, jobs and daily life, plus honest, in-person help. Information and guidance only.';
 
-const { title, description = DEFAULT_DESC, canonicalPath, image = '/og-default.png' } = Astro.props;
+const { title, description = DEFAULT_DESC, canonicalPath, image = '/og-default.jpg' } = Astro.props;
 
 const site = Astro.site;
 const path = canonicalPath ?? Astro.url.pathname;

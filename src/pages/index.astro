@@ -1,64 +1,107 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
-import Avatar from '../components/Avatar.astro';
 import T from '../components/T.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import GuideCard from '../components/GuideCard.astro';
 import ReviewCard from '../components/ReviewCard.astro';
-import CtaBand from '../components/CtaBand.astro';
 import TikTokTrust from '../components/TikTokTrust.astro';
 import { services } from '../data/services';
-import { getReviews } from '../lib/content';
+import { getGuides, getReviews } from '../lib/content';
 import { t } from '../i18n/ui';
 import { SHOW_REVIEWS } from '../config/launch';
 
-const topics = [
-  { key: 'home.topics.visa', icon: 'visa', href: '/guides?category=visa' },
-  { key: 'home.topics.jobs', icon: 'jobs', href: '/guides?category=jobs' },
-  { key: 'home.topics.housing', icon: 'housing', href: '/guides?category=housing' },
-  { key: 'home.topics.korean', icon: 'korean', href: '/guides?category=korean' },
-  { key: 'home.topics.daily', icon: 'daily', href: '/guides?category=daily' },
+const quickActions = [
+  { key: 'home.quick.visa', icon: 'visaSvc', href: '/guides?category=visa' },
+  { key: 'home.quick.resume', icon: 'resumeSvc', href: '/services/resume' },
 ];
+const processSteps = [
+  { title: 'home.process.step1.title', body: 'home.process.step1.body' },
+  { title: 'home.process.step2.title', body: 'home.process.step2.body' },
+  { title: 'home.process.step3.title', body: 'home.process.step3.body' },
+];
+const guides = (await getGuides()).slice(0, 3);
 const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
 ---
 <Base title="" active="home" description={t('home.hero.sub', 'en')}>
-  <div class="wrap">
+  <div class="wrap home-wrap">
     <!-- hero -->
-    <section class="sec hero">
-      <T k="home.hero.headline" tag="h1" class="h-hero" />
-      <T k="home.hero.sub" tag="p" class="t-sub" />
-      <div class="btn-row" style="margin-top:14px;width:100%;">
-        <a class="btn" href="/guides" data-i18n="btn.browseGuides">{t('btn.browseGuides', 'en')}</a>
-        <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="cta:hero-get-help">{t('btn.getHelp', 'en')}</a>
+    <section class="sec home-hero reveal-in">
+      <img class="hero-media" src="/images/brand/guidance-desk.jpg" alt="" loading="eager" decoding="async" aria-hidden="true" />
+      <div class="hero-copy">
+        <T k="home.hero.kicker" tag="p" class="eyebrow" />
+        <T k="home.hero.headline" tag="h1" class="h-hero" />
+        <T k="home.hero.sub" tag="p" class="t-sub" />
+        <div class="hero-actions">
+          <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="cta:hero-get-help">{t('btn.getHelp', 'en')}</a>
+          <a class="btn" href="/guides" data-i18n="btn.browseGuides">{t('btn.browseGuides', 'en')}</a>
+        </div>
+      </div>
+      <div class="scene-panel" aria-hidden="true">
+        <span class="desk-label">MYANMATE / SEOUL</span>
+        <span data-i18n="home.hero.visual.title">{t('home.hero.visual.title', 'en')}</span>
+      </div>
+      <div class="quick-panel" aria-label={t('home.quick.title', 'en')} data-i18n-aria="home.quick.title">
+        <T k="home.quick.title" tag="p" class="quick-title" />
+        <div class="quick-actions">
+          {quickActions.map((item) => (
+            <a class="quick-chip" href={item.href} data-event={`quick:${item.key}`}>
+              <span class="quick-ico"><Icon name={item.icon} size={18} /></span>
+              <span data-i18n={item.key}>{t(item.key, 'en')}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
 
-    <!-- topics -->
-    <section class="sec">
-      <p class="sec-title"><span class="sec-ico"><Icon name="topics" /></span><T k="home.topics.title" /></p>
-      <div class="grid-cats">
-        {topics.map((tp) => (
-          <a class="card cat-card hov" href={tp.href}>
-            <span class="ico"><Icon name={tp.icon} /></span>
-            <span class="cat-name"><T k={tp.key} /></span>
-          </a>
-        ))}
-        <a class="card cat-card all hov" href="/guides">
-          <span class="cat-name"><T k="home.topics.all" /></span>
-        </a>
-      </div>
+    <section class="trust-strip reveal-in" aria-label={t('home.trust.label', 'en')} data-i18n-aria="home.trust.label">
+      <div class="trust-point"><Icon name="check" size={18} /><T k="home.trust.info" /></div>
+      <div class="trust-point"><Icon name="check" size={18} /><T k="home.trust.self" /></div>
+      <div class="trust-point"><Icon name="check" size={18} /><T k="home.trust.private" /></div>
     </section>
 
     <!-- services -->
-    <section class="sec">
-      <p class="sec-title"><span class="sec-ico"><Icon name="help" /></span><T k="home.services.title" /></p>
+    <section class="sec home-section service-band reveal-in">
+      <div class="section-head">
+        <p class="sec-title"><span class="sec-ico"><Icon name="help" /></span><T k="home.services.title" /></p>
+        <T k="home.services.lead" tag="p" class="t-body sec-copy" />
+      </div>
       <div class="grid-services">
         {services.map((s) => <ServiceCard service={s} variant="compact" />)}
       </div>
     </section>
 
+    <!-- process -->
+    <section class="sec home-section process-band reveal-in">
+      <p class="sec-title"><span class="sec-ico"><Icon name="list" /></span><T k="home.process.title" /></p>
+      <div class="process-strip">
+        {processSteps.map((step, i) => (
+          <div class="process-step">
+            <span class="num-badge">{i + 1}</span>
+            <div>
+              <p class="card-title" data-i18n={step.title}>{t(step.title, 'en')}</p>
+              <p class="t-body" data-i18n={step.body}>{t(step.body, 'en')}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {guides.length > 0 && (
+      <section class="sec home-section guides-band reveal-in">
+        <div class="section-head">
+          <p class="sec-title"><span class="sec-ico"><Icon name="visa" /></span><T k="home.guides.title" /></p>
+          <T k="home.guides.lead" tag="p" class="t-body sec-copy" />
+        </div>
+        <div class="guide-list compact-list">
+          {guides.map((g) => <GuideCard guide={g} variant="row" />)}
+        </div>
+        <div class="mt-12"><a class="btn ghost" href="/guides" data-i18n="btn.more">{t('btn.more', 'en')}</a></div>
+      </section>
+    )}
+
     {SHOW_REVIEWS && reviews.length > 0 && (
-      <section class="sec">
+      <section class="sec reveal-in">
         <p class="sec-title"><span class="sec-ico"><Icon name="star" /></span><T k="home.reviews.title" /></p>
         <div class="grid-reviews">
           {reviews.map((r) => <ReviewCard review={r} showQuote={false} />)}
@@ -68,21 +111,45 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
     )}
 
     <!-- cta band -->
-    <section class="sec">
-      <CtaBand titleKey="home.cta.band" buttonKey="btn.getHelp" href="/contact" event="cta:home-band" />
+    <section class="sec home-section flow-band reveal-in">
+      <div class="cta-flow">
+        <div>
+          <p class="sec-title"><span class="sec-ico"><Icon name="chat" /></span><T k="home.cta.flow.title" /></p>
+          <T k="home.cta.flow.body" tag="p" class="t-body" />
+        </div>
+        <div class="cta-flow-steps">
+          <span><Icon name="check" size={15} /><T k="home.cta.flow.step1" /></span>
+          <span><Icon name="check" size={15} /><T k="home.cta.flow.step2" /></span>
+          <span><Icon name="check" size={15} /><T k="home.cta.flow.step3" /></span>
+        </div>
+        <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="cta:home-flow">{t('btn.getHelp', 'en')}</a>
+      </div>
     </section>
 
     <!-- about teaser -->
-    <section class="sec">
-      <p class="sec-title"><span class="sec-ico"><Icon name="users" /></span><T k="home.about.title" /></p>
-      <a href="/about" style="display:flex;gap:12px;align-items:center;">
-        <Avatar size={58} />
-        <T k="home.about.blurb" tag="p" class="t-body" />
-      </a>
+    <section class="sec home-section about-band reveal-in">
+      <div class="about-band-heading">
+        <p class="sec-title"><span class="sec-ico"><Icon name="users" /></span><T k="home.about.title" /></p>
+        <T k="home.about.eyebrow" tag="p" class="about-eyebrow" />
+      </div>
+      <div class="about-summary">
+        <T k="home.about.blurb" tag="p" class="about-summary-copy" />
+        <div class="home-role-list">
+          <div class="home-role">
+            <span class="home-role-icon"><Icon name="list" size={19} /></span>
+            <T k="home.about.role.kr" tag="p" class="t-body" />
+          </div>
+          <div class="home-role">
+            <span class="home-role-icon"><Icon name="users" size={19} /></span>
+            <T k="home.about.role.mm" tag="p" class="t-body" />
+          </div>
+        </div>
+        <a class="btn" href="/about" data-i18n="home.about.cta" data-event="about:story">{t('home.about.cta', 'en')}</a>
+      </div>
     </section>
 
     <!-- social proof -->
-    <section class="sec">
+    <section class="sec home-section community-band reveal-in">
       <TikTokTrust />
     </section>
   </div>

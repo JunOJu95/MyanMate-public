@@ -93,7 +93,6 @@ export default config({
           label: 'Service',
           options: [
             { label: 'Visa research', value: 'visa' },
-            { label: 'House visit', value: 'house' },
             { label: 'Resume & jobs', value: 'resume' },
           ],
           defaultValue: 'visa',

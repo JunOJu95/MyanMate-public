@@ -8,24 +8,24 @@ import { t } from '../../i18n/ui';
 import { TIKTOK_URL } from '../../config/launch';
 
 const guides = await getGuides();
-const filters = ['all', 'visa', 'jobs', 'housing', 'korean', 'daily'];
+const filters = ['all', ...Array.from(new Set(guides.map((g) => g.category)))];
 ---
 <Base title={t('guides.title', 'en')} active="guides" description={t('home.hero.sub', 'en')}>
   <div class="wrap">
-    <section class="sec">
-      <h1 class="lead-title" style="margin-bottom:14px;"><T k="guides.title" /></h1>
+    <section class="sec page-hero guide-hero">
+      <h1 class="lead-title"><T k="guides.title" /></h1>
       <label class="search" for="guide-search">
         <span class="mag"><Icon name="search" size={16} /></span>
         <input id="guide-search" type="search" autocomplete="off" placeholder={t('guides.search.placeholder', 'en')} data-i18n-ph="guides.search.placeholder" aria-label={t('guides.search.placeholder', 'en')} data-i18n-aria="guides.search.placeholder" />
       </label>
-      <div class="chips guide-filter" style="margin-top:14px;" role="tablist">
+      <div class="chips guide-filter" role="tablist">
         {filters.map((f) => (
           <button type="button" class:list={['chip', { on: f === 'all' }]} data-cat={f} data-i18n={`guides.filter.${f}`}>{t(`guides.filter.${f}`, 'en')}</button>
         ))}
       </div>
     </section>
 
-    <section class="sec" style="padding-top:6px;">
+    <section class="sec page-content">
       <div class="guide-list">
         {guides.map((g) => <GuideCard guide={g} variant="row" />)}
       </div>
@@ -34,7 +34,7 @@ const filters = ['all', 'visa', 'jobs', 'housing', 'korean', 'daily'];
         <p class="t-body" data-i18n="guides.empty.body">{t('guides.empty.body', 'en')}</p>
         <div class="empty-actions">
           <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="guides-empty:contact">{t('btn.getHelp', 'en')}</a>
-          <a class="btn ghost" href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" data-i18n="home.tiktok.cta" data-event="guides-empty:tiktok">{t('home.tiktok.cta', 'en')}</a>
+          {TIKTOK_URL && <a class="btn ghost" href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" data-i18n="home.tiktok.cta" data-event="guides-empty:tiktok">{t('home.tiktok.cta', 'en')}</a>}
         </div>
       </div>
       {guides.length === 0 && (
@@ -43,7 +43,7 @@ const filters = ['all', 'visa', 'jobs', 'housing', 'korean', 'daily'];
           <p class="t-body" data-i18n="guides.empty.body">{t('guides.empty.body', 'en')}</p>
           <div class="empty-actions">
             <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="guides-empty:contact">{t('btn.getHelp', 'en')}</a>
-            <a class="btn ghost" href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" data-i18n="home.tiktok.cta" data-event="guides-empty:tiktok">{t('home.tiktok.cta', 'en')}</a>
+            {TIKTOK_URL && <a class="btn ghost" href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" data-i18n="home.tiktok.cta" data-event="guides-empty:tiktok">{t('home.tiktok.cta', 'en')}</a>}
           </div>
         </div>
       )}
