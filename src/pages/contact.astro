@@ -14,6 +14,7 @@ const trustItems = [
   { icon: 'list', title: 'request.trust.self.title', body: 'request.trust.self.body' },
   { icon: 'chat', title: 'request.trust.dm.title', body: 'request.trust.dm.body' },
 ];
+const housingService = services.find((service) => service.id === 'housing');
 ---
 <Base title={t('request.title', 'en')} description={t('request.lead', 'en')}>
   <div class="wrap contact-page">
@@ -61,6 +62,27 @@ const trustItems = [
             {services.map((s) => <option value={s.id} data-i18n={s.nameKey}>{t(s.nameKey, 'en')}</option>)}
           </select>
         </div>
+        {housingService?.confirmationKeys && (
+          <fieldset id="housing-scope-confirmation" class="housing-scope-confirmation" hidden aria-hidden="true">
+            <legend data-i18n="svc.housing.confirm.title">{t('svc.housing.confirm.title', 'en')}</legend>
+            <p class="t-body" data-i18n="svc.housing.confirm.lead">{t('svc.housing.confirm.lead', 'en')}</p>
+            <div class="housing-confirmation-list">
+              {housingService.confirmationKeys.map((key, index) => (
+                <label class="housing-confirmation-check" for={`housing-confirm-${index + 1}`}>
+                  <input
+                    id={`housing-confirm-${index + 1}`}
+                    type="checkbox"
+                    name={`housing_scope_${index + 1}`}
+                    value="confirmed"
+                    data-housing-confirm
+                    disabled
+                  />
+                  <span data-i18n={key}>{t(key, 'en')}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        )}
         <div class="field">
           <label class="flbl" for="f-memo"><T k="request.field.memo" /></label>
           <textarea class="input" id="f-memo" name="memo"
@@ -90,13 +112,31 @@ const trustItems = [
     const serviceSel = document.getElementById('f-service') as HTMLSelectElement | null;
     const contactInput = document.getElementById('f-contact') as HTMLInputElement | null;
     const emailInput = document.getElementById('f-email') as HTMLInputElement | null;
+    const housingScope = document.getElementById('housing-scope-confirmation') as HTMLFieldSetElement | null;
+    const housingChecks = Array.from(document.querySelectorAll<HTMLInputElement>('[data-housing-confirm]'));
 
     // preselect the service from ?service=<id>
     const params = new URLSearchParams(location.search);
     const svc = params.get('service');
     if (svc && serviceSel) serviceSel.value = svc;
 
-    if (params.get('sent') === '1') {
+    const sent = params.get('sent') === '1';
+    const updateHousingScope = () => {
+      const active = !sent && serviceSel?.value === 'housing';
+      if (housingScope) {
+        housingScope.hidden = !active;
+        housingScope.setAttribute('aria-hidden', String(!active));
+      }
+      housingChecks.forEach((checkbox) => {
+        checkbox.disabled = !active;
+        checkbox.required = active;
+        if (!active) checkbox.checked = false;
+      });
+    };
+    serviceSel?.addEventListener('change', updateHousingScope);
+    updateHousingScope();
+
+    if (sent) {
       form?.querySelectorAll('.field, .consent, #f-submit').forEach((el) => ((el as HTMLElement).style.display = 'none'));
       if (success) success.style.display = 'flex';
     }

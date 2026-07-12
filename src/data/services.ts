@@ -5,7 +5,7 @@
    otherwise duplicate ui.ts). Guides + reviews ARE in the CMS.
    ========================================================================= */
 
-export type ServiceId = 'visa' | 'resume';
+export type ServiceId = 'visa' | 'resume' | 'housing';
 
 export interface Service {
   id: ServiceId;
@@ -15,6 +15,9 @@ export interface Service {
   priceKey: string;
   durationKey: string;
   reviewTagKey: string;
+  deliverableKeys?: string[];
+  pricingKeys?: string[];
+  confirmationKeys?: string[];
   /** how-it-works step keys (generic, compliance-safe) */
   howKeys: string[];
   /** FAQ Q/A key pairs */
@@ -50,6 +53,54 @@ export const services: Service[] = [
       { q: 'svcDetail.faq.q2', a: 'svcDetail.faq.a2' },
     ],
   },
+  {
+    id: 'housing',
+    iconKey: 'housing',
+    nameKey: 'svc.housing.name',
+    descKey: 'svc.housing.desc',
+    priceKey: 'svc.housing.price',
+    durationKey: 'svc.housing.duration',
+    reviewTagKey: 'ui.tag.housingCompanion',
+    deliverableKeys: [
+      'svc.housing.deliverable.notes',
+      'svc.housing.deliverable.condition',
+      'svc.housing.deliverable.access',
+      'svc.housing.deliverable.costs',
+      'svc.housing.deliverable.compare',
+      'svc.housing.deliverable.opinion',
+    ],
+    pricingKeys: [
+      'svc.housing.pricing.base',
+      'svc.housing.pricing.included',
+      'svc.housing.pricing.regardless',
+      'svc.housing.pricing.extraHome',
+      'svc.housing.pricing.overtime',
+      'svc.housing.pricing.travel',
+    ],
+    confirmationKeys: [
+      'svc.housing.confirm.selfBooked',
+      'svc.housing.confirm.noListings',
+      'svc.housing.confirm.noNegotiation',
+      'svc.housing.confirm.noContractReview',
+      'svc.housing.confirm.visibleOnly',
+      'svc.housing.confirm.feeRegardless',
+      'svc.housing.confirm.noReferralFee',
+    ],
+    howKeys: [
+      'svc.housing.how.step1',
+      'svc.housing.how.step2',
+      'svc.housing.how.step3',
+      'svc.housing.how.step4',
+      'svc.housing.how.step5',
+      'svc.housing.how.step6',
+    ],
+    faqKeys: [
+      { q: 'svc.housing.faq.q1', a: 'svc.housing.faq.a1' },
+      { q: 'svc.housing.faq.q2', a: 'svc.housing.faq.a2' },
+      { q: 'svc.housing.faq.q3', a: 'svc.housing.faq.a3' },
+      { q: 'svc.housing.faq.q4', a: 'svc.housing.faq.a4' },
+    ],
+  },
 ];
 
 export const serviceById = (id: string): Service | undefined => services.find((s) => s.id === id);
@@ -58,4 +109,5 @@ export const serviceById = (id: string): Service | undefined => services.find((s
 export const categoryToService: Partial<Record<string, ServiceId>> = {
   visa: 'visa',
   jobs: 'resume',
+  housing: 'housing',
 };
