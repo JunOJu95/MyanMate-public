@@ -12,9 +12,25 @@ const topics = [
 ];
 ---
 <div class="community-note" aria-labelledby="community-note-title">
-  <div class="community-mark" aria-hidden="true">
-    <Icon name="daily" size={24} />
-  </div>
+  <a
+    class="community-thumbnail"
+    href={TIKTOK_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={t('home.tiktok.cta', defaultLang)}
+    data-i18n-aria="home.tiktok.cta"
+    data-event="social:tiktok-thumbnail"
+  >
+    <img
+      src="/images/social/roadie-tiktok.png"
+      width="364"
+      height="390"
+      loading="lazy"
+      decoding="async"
+      alt=""
+      aria-hidden="true"
+    />
+  </a>
   <div class="community-copy">
     <p class="tiktok-eyebrow"><T k="home.tiktok.eyebrow" /></p>
     <h2 id="community-note-title" class="tiktok-title"><T k="home.community.title" /></h2>
