@@ -15,11 +15,19 @@ export async function getStaticPaths() {
 const { service } = Astro.props as { service: Service };
 const reviews = SHOW_REVIEWS ? (await getReviews()).filter((r) => r.service === service.id) : [];
 ---
-<Base title={t(service.nameKey, 'en')} active="services" description={t(service.descKey, 'en')}>
+<Base
+  title={t(service.nameKey, 'en')}
+  active="services"
+  description={t(service.descKey, 'en')}
+  mobileCtaHref={`/contact?service=${service.id}`}
+  mobileCtaSentinel=".detail-hero"
+  mobileCtaBlockers=".detail-cta-card, .foot"
+  mobileCtaEvent={`service-mobile:${service.id}`}
+>
   <div class="wrap">
     <div class="detail-2col detail-page">
       <article>
-        <header class="detail-hero service-detail-hero">
+        <header class="detail-hero service-detail-hero" data-reveal="page-hero">
           <span class="svc-ico"><Icon name={service.iconKey} /></span>
           <h1 class="lead-title" data-i18n={service.nameKey}>{t(service.nameKey, 'en')}</h1>
           <div class="service-detail-meta">
@@ -28,13 +36,13 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).filter((r) => r.service === 
           </div>
         </header>
 
-        <section class="sec">
+        <section class="sec" data-reveal="section">
           <p class="sec-title"><span class="sec-ico"><Icon name="check" /></span><T k="svcDetail.section.whatWeDo" /></p>
           <T k={service.descKey} tag="p" class="t-body" />
         </section>
 
         <!-- What we DON'T do — compliance (§7-1). Always visible. -->
-        <section class="sec sec-tint">
+        <section class="sec sec-tint" data-reveal="section">
           <p class="sec-title"><T k="svcDetail.section.whatWeDont" /></p>
           <p class="note-pin">
             <b data-i18n="svcDetail.section.whatWeDont">{t('svcDetail.section.whatWeDont', 'en')}</b> —
@@ -42,11 +50,11 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).filter((r) => r.service === 
           </p>
         </section>
 
-        <section class="sec">
+        <section class="sec" data-reveal="section">
           <p class="sec-title"><span class="sec-ico"><Icon name="list" /></span><T k="svcDetail.section.how" /></p>
-          <div class="stack gap-9">
+          <div class="stack gap-9 detail-process-list" data-stagger>
             {service.howKeys.map((k, i) => (
-              <div style="display:flex;gap:9px;align-items:flex-start;">
+              <div class="detail-process-step">
                 <span class="num-badge">{i + 1}</span>
                 <T k={k} tag="p" class="t-body" />
               </div>
@@ -55,13 +63,13 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).filter((r) => r.service === 
         </section>
 
         {SHOW_REVIEWS && reviews.length > 0 && (
-          <section class="sec">
+          <section class="sec" data-reveal="section">
             <p class="sec-title"><span class="sec-ico"><Icon name="star" /></span><T k="svcDetail.section.reviews" /></p>
             <ReviewCard review={reviews[0]} />
           </section>
         )}
 
-        <section class="sec">
+        <section class="sec" data-reveal="section">
           <p class="sec-title"><span class="sec-ico"><Icon name="chat" /></span><T k="svcDetail.section.faq" /></p>
           {service.faqKeys.map((f) => (
             <details class="accordion">
@@ -73,7 +81,7 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).filter((r) => r.service === 
       </article>
 
       <aside>
-        <div class="card sticky-card detail-cta-card">
+        <div class="card sticky-card detail-cta-card" data-reveal="cta">
           <p class="card-title" data-i18n={service.nameKey}>{t(service.nameKey, 'en')}</p>
           <div class="mini-checks">
             <span><Icon name="check" size={14} /><T k="home.trust.info" /></span>

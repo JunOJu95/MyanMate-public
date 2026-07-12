@@ -4,6 +4,7 @@ import Analytics from '@vercel/analytics/astro';
 import SeoHead from '../components/SeoHead.astro';
 import TopBar from '../components/TopBar.astro';
 import Footer from '../components/Footer.astro';
+import MobileConversionCta from '../components/MobileConversionCta.astro';
 import { defaultLang } from '../i18n/ui';
 
 interface Props {
@@ -12,8 +13,22 @@ interface Props {
   active?: string;
   canonicalPath?: string;
   image?: string;
+  mobileCtaHref?: string;
+  mobileCtaSentinel?: string;
+  mobileCtaBlockers?: string;
+  mobileCtaEvent?: string;
 }
-const { title, description, active, canonicalPath, image } = Astro.props;
+const {
+  title,
+  description,
+  active,
+  canonicalPath,
+  image,
+  mobileCtaHref,
+  mobileCtaSentinel,
+  mobileCtaBlockers,
+  mobileCtaEvent,
+} = Astro.props;
 ---
 <!doctype html>
 <html lang={defaultLang}>
@@ -38,10 +53,19 @@ const { title, description, active, canonicalPath, image } = Astro.props;
     <main id="main" class="site-main">
       <slot />
     </main>
+    {mobileCtaHref && mobileCtaSentinel && (
+      <MobileConversionCta
+        href={mobileCtaHref}
+        sentinel={mobileCtaSentinel}
+        blockers={mobileCtaBlockers}
+        event={mobileCtaEvent}
+      />
+    )}
     <Footer />
     <script>
       import '../scripts/lang.ts';
       import '../scripts/analytics.ts';
+      import '../scripts/motion.ts';
     </script>
   </body>
 </html>

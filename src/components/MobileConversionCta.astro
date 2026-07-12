@@ -1,0 +1,38 @@
+---
+import Icon from './Icon.astro';
+import { t, defaultLang } from '../i18n/ui';
+
+interface Props {
+  href: string;
+  sentinel: string;
+  blockers?: string;
+  event?: string;
+}
+
+const {
+  href,
+  sentinel,
+  blockers = '.foot',
+  event = 'cta:mobile-sticky',
+} = Astro.props;
+---
+<aside
+  class="mobile-conversion-cta"
+  data-sticky-cta
+  data-cta-sentinel={sentinel}
+  data-cta-blockers={blockers}
+  aria-label={t('btn.getHelp', defaultLang)}
+  aria-hidden="true"
+  inert
+>
+  <span class="mobile-conversion-copy">
+    <span class="mobile-conversion-icon" aria-hidden="true"><Icon name="chat" size={18} /></span>
+    <span>
+      <strong data-i18n="btn.getHelp">{t('btn.getHelp', defaultLang)}</strong>
+      <small data-i18n="mobileCta.note">{t('mobileCta.note', defaultLang)}</small>
+    </span>
+  </span>
+  <a class="btn pri" href={href} data-i18n="mobileCta.action" data-event={event}>
+    {t('mobileCta.action', defaultLang)}
+  </a>
+</aside>

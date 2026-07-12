@@ -23,8 +23,14 @@ const href = `/services/${service.id}`;
       </span>
       <span class="t-body clamp2" data-i18n={service.descKey}>{t(service.descKey, defaultLang)}</span>
       <span class="svc-footer">
-        <span data-i18n={service.durationKey}>{t(service.durationKey, defaultLang)}</span>
-        <a class="btn sm" href={href} data-i18n="btn.viewDetails" data-event={`service:${service.id}`}>{t('btn.viewDetails', defaultLang)}</a>
+        <span class="svc-duration" data-i18n={service.durationKey}>{t(service.durationKey, defaultLang)}</span>
+        <span class="svc-actions">
+          <a class="btn ghost sm" href={href} data-i18n="btn.viewDetails" data-event={`service:${service.id}`}>{t('btn.viewDetails', defaultLang)}</a>
+          <a class="btn pri sm" href={`/contact?service=${service.id}`} data-event={`service-direct:${service.id}`}>
+            <Icon name="chat" size={14} />
+            <span data-i18n="btn.getHelp">{t('btn.getHelp', defaultLang)}</span>
+          </a>
+        </span>
       </span>
     </span>
   </article>
@@ -41,6 +47,12 @@ const href = `/services/${service.id}`;
       <span class="price" data-i18n={service.priceKey}>{t(service.priceKey, defaultLang)}</span>
     </div>
     <p class="t-body clamp2" style="margin-top:6px;" data-i18n={service.descKey}>{t(service.descKey, defaultLang)}</p>
-    <a class="btn sm" style="margin-top:10px;" href={href} data-i18n="btn.viewDetails" data-event={`service:${service.id}`}>{t('btn.viewDetails', defaultLang)}</a>
+    <div class="svc-tile-actions">
+      <a class="btn ghost sm" href={href} data-i18n="btn.viewDetails" data-event={`service:${service.id}`}>{t('btn.viewDetails', defaultLang)}</a>
+      <a class="btn pri sm" href={`/contact?service=${service.id}`} data-event={`service-direct:${service.id}`}>
+        <Icon name="chat" size={14} />
+        <span data-i18n="btn.getHelp">{t('btn.getHelp', defaultLang)}</span>
+      </a>
+    </div>
   </div>
 )}

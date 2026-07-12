@@ -23,12 +23,20 @@ const processSteps = [
 const guides = (await getGuides()).slice(0, 3);
 const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
 ---
-<Base title="" active="home" description={t('home.hero.sub', 'en')}>
+<Base
+  title=""
+  active="home"
+  description={t('home.hero.sub', 'en')}
+  mobileCtaHref="/contact"
+  mobileCtaSentinel=".home-hero"
+  mobileCtaBlockers=".flow-band, .foot"
+  mobileCtaEvent="cta:home-mobile"
+>
   <div class="wrap home-wrap">
     <!-- hero -->
-    <section class="sec home-hero reveal-in">
+    <section class="sec home-hero" data-reveal="hero">
       <img class="hero-media" src="/images/brand/guidance-desk.jpg" alt="" loading="eager" decoding="async" aria-hidden="true" />
-      <div class="hero-copy">
+      <div class="hero-copy" data-hero-sequence>
         <T k="home.hero.kicker" tag="p" class="eyebrow" />
         <T k="home.hero.headline" tag="h1" class="h-hero" />
         <T k="home.hero.sub" tag="p" class="t-sub" />
@@ -41,7 +49,7 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
         <span class="desk-label">MYANMATE / SEOUL</span>
         <span data-i18n="home.hero.visual.title">{t('home.hero.visual.title', 'en')}</span>
       </div>
-      <div class="quick-panel" aria-label={t('home.quick.title', 'en')} data-i18n-aria="home.quick.title">
+      <div class="quick-panel" aria-label={t('home.quick.title', 'en')} data-i18n-aria="home.quick.title" data-hero-desk>
         <T k="home.quick.title" tag="p" class="quick-title" />
         <div class="quick-actions">
           {quickActions.map((item) => (
@@ -54,27 +62,27 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
       </div>
     </section>
 
-    <section class="trust-strip reveal-in" aria-label={t('home.trust.label', 'en')} data-i18n-aria="home.trust.label">
+    <section class="trust-strip" aria-label={t('home.trust.label', 'en')} data-i18n-aria="home.trust.label" data-reveal="stagger" data-stagger>
       <div class="trust-point"><Icon name="check" size={18} /><T k="home.trust.info" /></div>
       <div class="trust-point"><Icon name="check" size={18} /><T k="home.trust.self" /></div>
       <div class="trust-point"><Icon name="check" size={18} /><T k="home.trust.private" /></div>
     </section>
 
     <!-- services -->
-    <section class="sec home-section service-band reveal-in">
+    <section class="sec home-section service-band" data-reveal="section">
       <div class="section-head">
         <p class="sec-title"><span class="sec-ico"><Icon name="help" /></span><T k="home.services.title" /></p>
         <T k="home.services.lead" tag="p" class="t-body sec-copy" />
       </div>
-      <div class="grid-services">
+      <div class="grid-services" data-reveal="stagger" data-stagger>
         {services.map((s) => <ServiceCard service={s} variant="compact" />)}
       </div>
     </section>
 
     <!-- process -->
-    <section class="sec home-section process-band reveal-in">
+    <section class="sec home-section process-band" data-reveal="section">
       <p class="sec-title"><span class="sec-ico"><Icon name="list" /></span><T k="home.process.title" /></p>
-      <div class="process-strip">
+      <div class="process-strip" data-reveal="process" data-stagger>
         {processSteps.map((step, i) => (
           <div class="process-step">
             <span class="num-badge">{i + 1}</span>
@@ -88,12 +96,12 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
     </section>
 
     {guides.length > 0 && (
-      <section class="sec home-section guides-band reveal-in">
+      <section class="sec home-section guides-band" data-reveal="section">
         <div class="section-head">
           <p class="sec-title"><span class="sec-ico"><Icon name="visa" /></span><T k="home.guides.title" /></p>
           <T k="home.guides.lead" tag="p" class="t-body sec-copy" />
         </div>
-        <div class="guide-list compact-list">
+        <div class="guide-list compact-list" data-reveal="stagger" data-stagger>
           {guides.map((g) => <GuideCard guide={g} variant="row" />)}
         </div>
         <div class="mt-12"><a class="btn ghost" href="/guides" data-i18n="btn.more">{t('btn.more', 'en')}</a></div>
@@ -101,7 +109,7 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
     )}
 
     {SHOW_REVIEWS && reviews.length > 0 && (
-      <section class="sec reveal-in">
+      <section class="sec" data-reveal="section">
         <p class="sec-title"><span class="sec-ico"><Icon name="star" /></span><T k="home.reviews.title" /></p>
         <div class="grid-reviews">
           {reviews.map((r) => <ReviewCard review={r} showQuote={false} />)}
@@ -111,13 +119,13 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
     )}
 
     <!-- cta band -->
-    <section class="sec home-section flow-band reveal-in">
+    <section class="sec home-section flow-band" data-reveal="cta">
       <div class="cta-flow">
         <div>
           <p class="sec-title"><span class="sec-ico"><Icon name="chat" /></span><T k="home.cta.flow.title" /></p>
           <T k="home.cta.flow.body" tag="p" class="t-body" />
         </div>
-        <div class="cta-flow-steps">
+        <div class="cta-flow-steps" data-stagger>
           <span><Icon name="check" size={15} /><T k="home.cta.flow.step1" /></span>
           <span><Icon name="check" size={15} /><T k="home.cta.flow.step2" /></span>
           <span><Icon name="check" size={15} /><T k="home.cta.flow.step3" /></span>
@@ -127,14 +135,14 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
     </section>
 
     <!-- about teaser -->
-    <section class="sec home-section about-band reveal-in">
+    <section class="sec home-section about-band" data-reveal="section">
       <div class="about-band-heading">
         <p class="sec-title"><span class="sec-ico"><Icon name="users" /></span><T k="home.about.title" /></p>
         <T k="home.about.eyebrow" tag="p" class="about-eyebrow" />
       </div>
       <div class="about-summary">
         <T k="home.about.blurb" tag="p" class="about-summary-copy" />
-        <div class="home-role-list">
+        <div class="home-role-list" data-stagger>
           <div class="home-role">
             <span class="home-role-icon"><Icon name="list" size={19} /></span>
             <T k="home.about.role.kr" tag="p" class="t-body" />
@@ -149,7 +157,7 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
     </section>
 
     <!-- social proof -->
-    <section class="sec home-section community-band reveal-in">
+    <section class="sec home-section community-band" data-reveal="section">
       <TikTokTrust />
     </section>
   </div>
