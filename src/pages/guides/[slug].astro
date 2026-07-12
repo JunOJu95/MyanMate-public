@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 const { guide, all } = Astro.props as { guide: Guide; all: Guide[] };
-const serviceId = categoryToService[guide.category] ?? 'visa';
+const serviceId = categoryToService[guide.category];
 const related = [...all.filter((g) => g.slug !== guide.slug)]
   .sort((a, b) => Number(b.category === guide.category) - Number(a.category === guide.category))
   .slice(0, 3);
@@ -33,10 +33,11 @@ const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul'
 ---
 <Base title={guide.en.title} active="guides" description={guide.en.summary}>
   <div class="wrap">
-    <div class="detail-2col" style="padding-top:18px;">
+    <div class:list={['detail-2col detail-page', { single: !serviceId }]}>
       <article>
+        <header class="detail-hero">
         <span class="pill-tag" data-i18n={catKey}>{t(catKey, 'en')}</span>
-        <h1 class="lead-title" style="margin-top:10px;">
+        <h1 class="lead-title">
           {languages.map((l) => <span data-lang={l}>{guide[l].title || guide.en.title}</span>)}
         </h1>
         {guide.lastReviewed && (
@@ -49,6 +50,7 @@ const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul'
         <div style="margin-top:10px;">
           {languages.map((l) => <p data-lang={l} class="t-sub">{guide[l].summary || guide.en.summary}</p>)}
         </div>
+        </header>
         {SECTIONS.map((s, i) => (
           <GuideSection guide={guide} field={s.field} labelKey={s.labelKey} mode={s.mode} num={i + 1} />
         ))}
@@ -65,13 +67,13 @@ const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul'
         )}
       </article>
 
-      <aside>
-        <div class="card sticky-card" style="background:var(--brand-soft);">
+      {serviceId && <aside>
+        <div class="card sticky-card guide-cta-card">
           <p class="card-title" data-i18n="content.cta.title">{t('content.cta.title', 'en')}</p>
           <T k="content.cta.note" tag="p" class="t-body" />
           <a class="btn pri full" style="margin-top:11px;" href={`/services/${serviceId}`} data-i18n="content.cta.button" data-event={`guide-cta:${serviceId}`}>{t('content.cta.button', 'en')}</a>
         </div>
-      </aside>
+      </aside>}
     </div>
   </div>
 </Base>

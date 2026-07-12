@@ -17,9 +17,16 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).filter((r) => r.service === 
 ---
 <Base title={t(service.nameKey, 'en')} active="services" description={t(service.descKey, 'en')}>
   <div class="wrap">
-    <div class="detail-2col" style="padding-top:18px;">
+    <div class="detail-2col detail-page">
       <article>
-        <h1 class="lead-title" data-i18n={service.nameKey}>{t(service.nameKey, 'en')}</h1>
+        <header class="detail-hero service-detail-hero">
+          <span class="svc-ico"><Icon name={service.iconKey} /></span>
+          <h1 class="lead-title" data-i18n={service.nameKey}>{t(service.nameKey, 'en')}</h1>
+          <div class="service-detail-meta">
+            <span class="price-badge" data-i18n={service.priceKey}>{t(service.priceKey, 'en')}</span>
+            <span class="price-badge" data-i18n={service.durationKey}>{t(service.durationKey, 'en')}</span>
+          </div>
+        </header>
 
         <section class="sec">
           <p class="sec-title"><span class="sec-ico"><Icon name="check" /></span><T k="svcDetail.section.whatWeDo" /></p>
@@ -66,8 +73,12 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).filter((r) => r.service === 
       </article>
 
       <aside>
-        <div class="card sticky-card" style="background:var(--brand-soft);">
+        <div class="card sticky-card detail-cta-card">
           <p class="card-title" data-i18n={service.nameKey}>{t(service.nameKey, 'en')}</p>
+          <div class="mini-checks">
+            <span><Icon name="check" size={14} /><T k="home.trust.info" /></span>
+            <span><Icon name="check" size={14} /><T k="home.trust.self" /></span>
+          </div>
           <div style="margin-top:10px;">
             <p class="t-cap"><T k="svcDetail.label.price" /></p>
             <span class="price-badge" data-i18n={service.priceKey}>{t(service.priceKey, 'en')}</span>

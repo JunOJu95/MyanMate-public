@@ -1,11 +1,11 @@
 /* =========================================================================
-   MyanMate · services (3-tier lineup, code-driven)
+   MyanMate · active services (code-driven)
    Copy lives in ui.ts (svc.* keys, preserved from the delivered design) so we
    keep a single i18n source — services are NOT in the CMS (their copy would
    otherwise duplicate ui.ts). Guides + reviews ARE in the CMS.
    ========================================================================= */
 
-export type ServiceId = 'house' | 'visa' | 'resume';
+export type ServiceId = 'visa' | 'resume';
 
 export interface Service {
   id: ServiceId;
@@ -22,20 +22,6 @@ export interface Service {
 }
 
 export const services: Service[] = [
-  {
-    id: 'house',
-    iconKey: 'houseSvc',
-    nameKey: 'svc.house.name',
-    descKey: 'svc.house.desc',
-    priceKey: 'svc.house.price',
-    durationKey: 'svc.house.duration',
-    reviewTagKey: 'ui.tag.houseVisit',
-    howKeys: ['svcDetail.how.step1', 'svcDetail.how.step2', 'svcDetail.how.step3'],
-    faqKeys: [
-      { q: 'svcDetail.faq.q1', a: 'svcDetail.faq.a1' },
-      { q: 'svcDetail.faq.q2', a: 'svcDetail.faq.a2' },
-    ],
-  },
   {
     id: 'visa',
     iconKey: 'visaSvc',
@@ -69,10 +55,7 @@ export const services: Service[] = [
 export const serviceById = (id: string): Service | undefined => services.find((s) => s.id === id);
 
 /** Which service a guide category should upsell (content detail CTA → service detail). */
-export const categoryToService: Record<string, ServiceId> = {
+export const categoryToService: Partial<Record<string, ServiceId>> = {
   visa: 'visa',
   jobs: 'resume',
-  housing: 'house',
-  korean: 'visa',
-  daily: 'visa',
 };

@@ -11,24 +11,26 @@ const topics = [
   'home.tiktok.topic.korean',
 ];
 ---
-<div class="tiktok-trust" aria-labelledby="tiktok-trust-title">
-  <div class="tiktok-mark" aria-hidden="true">
-    <span class="tiktok-note">♪</span>
+<div class="community-note" aria-labelledby="community-note-title">
+  <div class="community-mark" aria-hidden="true">
+    <Icon name="daily" size={24} />
   </div>
-  <div class="tiktok-copy">
+  <div class="community-copy">
     <p class="tiktok-eyebrow"><T k="home.tiktok.eyebrow" /></p>
-    <h2 id="tiktok-trust-title" class="tiktok-title"><T k="home.tiktok.title" /></h2>
-    <p class="t-body"><T k="home.tiktok.body" /></p>
+    <h2 id="community-note-title" class="tiktok-title"><T k="home.community.title" /></h2>
+    <p class="t-body"><T k="home.community.body" /></p>
     <div class="tiktok-topics" aria-label={t('home.tiktok.topicsLabel', defaultLang)}>
       {topics.map((key) => <span class="pill-tag" data-i18n={key}>{t(key, defaultLang)}</span>)}
     </div>
     <p class="disclaimer"><T k="home.tiktok.note" /></p>
     <div class="tiktok-actions">
-      <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="cta:tiktok-trust-contact">{t('btn.getHelp', defaultLang)}</a>
-      <a class="btn ghost" href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" data-i18n="home.tiktok.cta" data-event="social:tiktok">
-        {t('home.tiktok.cta', defaultLang)}
-        <Icon name="external" size={15} />
-      </a>
+      {TIKTOK_URL && (
+        <a class="btn pri" href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" data-i18n="home.tiktok.cta" data-event="social:tiktok">
+          {t('home.tiktok.cta', defaultLang)}
+          <Icon name="external" size={15} />
+        </a>
+      )}
+      <a class="btn ghost" href="/contact" data-i18n="btn.getHelp" data-event="cta:tiktok-trust-contact">{t('btn.getHelp', defaultLang)}</a>
     </div>
   </div>
 </div>

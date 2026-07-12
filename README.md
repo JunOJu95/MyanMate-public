@@ -43,5 +43,5 @@ npm run preview  # 빌드 미리보기
 3. **Messenger**: 문의 페이지의 Facebook Messenger 링크가 보조 문의 경로입니다. 모바일 실기기에서 앱/브라우저 이동을 같이 확인하세요.
 4. **Keystatic 운영 어드민**: 프로덕션에서는 GitHub storage를 사용합니다. `/keystatic/branch/main`에서 GitHub 로그인, 저장, GitHub 커밋 생성, Vercel 재배포 반영까지 확인해야 합니다.
 5. **Analytics**: Vercel Web Analytics가 연결되어 있습니다. 현재는 페이지뷰 중심으로 보고, 세부 CTA 이벤트 분석은 출시 후 필요성이 확인되면 별도 도구를 검토합니다.
-6. **사진/콘텐츠**: OG 이미지는 `public/og-default.png`를 사용합니다. 미얀마어 본문과 법적 경계 문구는 출시 전 네이티브/전문가 검수를 우선합니다.
+6. **사진/콘텐츠**: OG 이미지는 `public/og-default.jpg`를 사용합니다. 미얀마어 본문과 법적 경계 문구는 출시 전 네이티브/전문가 검수를 우선합니다.
 7. **SEO 확장**: 추후 언어별 URL(/ko·/my)로 가면 `SeoHead.astro`에 hreflang 추가(구조 준비됨).

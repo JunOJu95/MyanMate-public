@@ -7,12 +7,12 @@ import { t } from '../../i18n/ui';
 ---
 <Base title={t('home.services.title', 'en')} active="services">
   <div class="wrap">
-    <section class="sec">
-      <h1 class="lead-title" style="margin-bottom:8px;"><T k="home.services.title" /></h1>
+    <section class="sec page-hero services-hero">
+      <h1 class="lead-title"><T k="home.services.title" /></h1>
       <!-- compliance up front: what we do / don't -->
       <T k="svcDetail.dont.body" tag="p" class="t-body" />
     </section>
-    <section class="sec" style="padding-top:6px;">
+    <section class="sec page-content">
       <div class="grid-services">
         {services.map((s) => <ServiceCard service={s} variant="tile" />)}
       </div>

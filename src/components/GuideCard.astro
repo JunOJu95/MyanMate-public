@@ -27,15 +27,25 @@ const search = languages
       <span class="row-title">
         {languages.map((l) => <span data-lang={l}>{title(l)}</span>)}
       </span>
+      <span class="guide-meta">
+        <span class="pill-tag" data-i18n={catKey}>{t(catKey, defaultLang)}</span>
+        {guide.lastReviewed && (
+          <span class="reviewed-mini">
+            <Icon name="check" size={12} />
+            <span data-i18n="content.lastReviewed">{t('content.lastReviewed', defaultLang)}</span>
+            <time datetime={guide.lastReviewed}>{guide.lastReviewed}</time>
+          </span>
+        )}
+      </span>
       <span class="row-sub clamp2">
         {languages.map((l) => <span data-lang={l}>{summary(l)}</span>)}
       </span>
-      <span class="pill-tag" data-i18n={catKey}>{t(catKey, defaultLang)}</span>
     </span>
   </a>
 ) : (
-  <a class="card hov" href={href} data-event={`guide:${guide.slug}`}>
+  <a class="card hov guide-tile" href={href} data-event={`guide:${guide.slug}`}>
     <span class="photo" style="height:64px;" aria-hidden="true">{code ? <span class="vbadge">{code}</span> : <Icon name={categoryIcon[guide.category] ?? 'visa'} size={26} class="glyph-ico" />}</span>
+    <span class="pill-tag" data-i18n={catKey}>{t(catKey, defaultLang)}</span>
     <span class="card-title clamp2" style="display:block;margin-top:8px;font-size:13px;">
       {languages.map((l) => <span data-lang={l}>{title(l)}</span>)}
     </span>
