@@ -41,6 +41,37 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).filter((r) => r.service === 
           <T k={service.descKey} tag="p" class="t-body" />
         </section>
 
+        {service.deliverableKeys && service.deliverableKeys.length > 0 && (
+          <section class="sec housing-deliverables" data-reveal="section">
+            <p class="sec-title"><span class="sec-ico"><Icon name="list" /></span><T k="svc.housing.deliverables.title" /></p>
+            <div class="housing-deliverable-list" data-stagger>
+              {service.deliverableKeys.map((key) => (
+                <div class="housing-deliverable-item">
+                  <span aria-hidden="true"><Icon name="check" size={17} /></span>
+                  <T k={key} tag="p" class="t-body" />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {service.pricingKeys && service.pricingKeys.length > 0 && (
+          <section class="sec housing-pricing" data-reveal="section">
+            <div class="housing-pricing-heading">
+              <p class="sec-title"><span class="sec-ico"><Icon name="doc" /></span><T k="svc.housing.pricing.title" /></p>
+              <T k="svc.housing.pricing.lead" tag="p" class="t-body" />
+            </div>
+            <div class="housing-price-list" data-stagger>
+              {service.pricingKeys.map((key, index) => (
+                <div class:list={['housing-price-item', { featured: index === 0 }]}>
+                  <span class="num-badge" aria-hidden="true">{index + 1}</span>
+                  <T k={key} tag="p" class="t-body" />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         <!-- What we DON'T do — compliance (§7-1). Always visible. -->
         <section class="sec sec-tint" data-reveal="section">
           <p class="sec-title"><T k="svcDetail.section.whatWeDont" /></p>
@@ -49,6 +80,21 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).filter((r) => r.service === 
             <span data-i18n="svcDetail.dont.body">{t('svcDetail.dont.body', 'en')}</span>
           </p>
         </section>
+
+        {service.confirmationKeys && service.confirmationKeys.length > 0 && (
+          <section class="sec housing-boundary" data-reveal="section">
+            <p class="sec-title"><span class="sec-ico"><Icon name="check" /></span><T k="svc.housing.confirm.title" /></p>
+            <T k="svc.housing.confirm.lead" tag="p" class="t-body" />
+            <div class="housing-boundary-list" data-stagger>
+              {service.confirmationKeys.map((key) => (
+                <div class="housing-boundary-item">
+                  <span class="num-badge" aria-hidden="true">✓</span>
+                  <T k={key} tag="p" class="t-body" />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section class="sec" data-reveal="section">
           <p class="sec-title"><span class="sec-ico"><Icon name="list" /></span><T k="svcDetail.section.how" /></p>

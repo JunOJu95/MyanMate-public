@@ -1014,3 +1014,105 @@ textarea.input{min-height:110px;}
   .motion-ready .home-hero [data-hero-desk]{transform:translateX(-50%)!important;}
   .process-step::after{transform:scaleX(1);transition:none;}
 }
+
+/* Housing companion: concrete deliverables and explicit service boundaries. */
+.housing-deliverable-list{
+  display:grid;
+  grid-template-columns:1fr;
+  border-top:2px solid var(--ink);
+}
+.housing-deliverable-item{
+  display:grid;
+  grid-template-columns:24px minmax(0,1fr);
+  gap:10px;
+  align-items:start;
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+}
+.housing-deliverable-item > span{color:var(--brand-strong);padding-top:2px;}
+.housing-deliverable-item .t-body,.housing-boundary-item .t-body{margin:0;}
+.housing-pricing{display:grid;gap:18px;}
+.housing-pricing-heading > .t-body{max-width:620px;margin:0;color:var(--ink-soft);}
+.housing-price-list{display:grid;grid-template-columns:1fr;border-top:2px solid var(--ink);}
+.housing-price-item{
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr);
+  gap:10px;
+  align-items:center;
+  min-height:60px;
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
+}
+.housing-price-item .num-badge{width:23px;height:23px;font-size:10px;background:var(--surface-accent);color:var(--brand-strong);}
+.housing-price-item .t-body{margin:0;font-weight:700;color:var(--ink);}
+.housing-price-item.featured .num-badge{background:var(--brand-strong);color:#fff;}
+.housing-price-item.featured .t-body{font-size:16px;color:var(--brand-strong);}
+.housing-boundary{
+  padding:24px!important;
+  border-left:3px solid var(--brand);
+  background:var(--brand-tint);
+}
+.housing-boundary > .t-body{margin:0 0 16px;color:var(--ink-soft);}
+.housing-boundary-list{display:grid;gap:0;border-top:1px solid var(--line-strong);}
+.housing-boundary-item{
+  display:grid;
+  grid-template-columns:26px minmax(0,1fr);
+  gap:10px;
+  align-items:start;
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
+}
+.housing-boundary-item .num-badge{width:22px;height:22px;font-size:11px;}
+
+.housing-scope-confirmation{
+  min-width:0;
+  margin:4px 0 18px;
+  padding:16px;
+  border:1px solid var(--line-strong);
+  border-left:3px solid var(--brand);
+  border-radius:6px;
+  background:var(--brand-tint);
+}
+.housing-scope-confirmation[hidden]{display:none;}
+.housing-scope-confirmation legend{
+  padding:0 6px;
+  font-size:14px;
+  font-weight:800;
+  color:var(--ink);
+}
+.housing-scope-confirmation > .t-body{margin:0 0 12px;color:var(--ink-soft);}
+.housing-confirmation-list{display:grid;gap:0;border-top:1px solid var(--line-strong);}
+.housing-confirmation-check{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:11px 0;
+  border-bottom:1px solid var(--line);
+  color:var(--ink-soft);
+  font-size:12px;
+  line-height:1.6;
+  cursor:pointer;
+}
+.housing-confirmation-check input{
+  width:18px;
+  height:18px;
+  flex:none;
+  margin:1px 0 0;
+  accent-color:var(--brand);
+}
+.housing-confirmation-check:has(input:checked){color:var(--ink);}
+
+@media(min-width:760px){
+  .housing-deliverable-list{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .housing-deliverable-item:nth-child(odd){padding-right:20px;border-right:1px solid var(--line);}
+  .housing-deliverable-item:nth-child(even){padding-left:20px;}
+  .housing-pricing{grid-template-columns:minmax(210px,.58fr) minmax(0,1fr);gap:48px;align-items:start;}
+}
+
+@media(min-width:960px){
+  .grid-services{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .service-band .grid-services{max-width:var(--wrap);}
+  .svc-footer{flex-direction:column;align-items:flex-start;}
+  .svc-actions{width:100%;min-width:0;}
+  .svc-actions .btn,.svc-tile-actions .btn{white-space:normal;}
+}
