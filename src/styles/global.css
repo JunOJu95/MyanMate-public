@@ -210,14 +210,6 @@ img{max-width:100%;display:block;}
 .eyebrow{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-strong);background:rgba(255,255,255,.62);border:1px solid var(--line);border-radius:999px;padding:6px 10px;margin:0;}
 .hero-actions{display:grid;grid-template-columns:1fr;gap:8px;width:100%;margin-top:2px;}
 .hero-actions .btn{width:100%;}
-.quick-panel{width:100%;border:1px solid rgba(205,191,168,.9);background:rgba(255,255,255,.86);border-radius:14px;padding:10px;box-shadow:var(--shadow-md);}
-.quick-title{font-size:12px;font-weight:700;color:var(--ink-soft);margin:0 0 8px;}
-.quick-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;}
-.quick-chip{display:flex;flex-direction:column;align-items:flex-start;gap:7px;min-height:76px;border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:9px 8px;font-size:11.5px;font-weight:700;color:var(--ink);line-height:1.25;transition:transform .14s, border-color .14s, box-shadow .14s, background .14s;}
-.quick-chip > span:last-child{overflow-wrap:anywhere;}
-.quick-chip:hover{transform:translateY(-1px);border-color:var(--line-strong);box-shadow:var(--shadow-sm);background:var(--brand-tint);}
-.quick-ico{width:28px;height:28px;border-radius:9px;background:var(--brand-soft);color:var(--brand-strong);display:inline-flex;align-items:center;justify-content:center;flex:none;}
-
 .hero-scene{position:relative;margin:0;border:1px solid rgba(205,191,168,.9);border-radius:18px;background:var(--paper);box-shadow:var(--shadow-md);overflow:hidden;height:clamp(204px,54vw,224px);}
 .hero-scene img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.96) contrast(1.02);}
 .hero-scene::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(44,42,37,.2));pointer-events:none;}
@@ -246,9 +238,6 @@ img{max-width:100%;display:block;}
   .home-hero{grid-template-columns:minmax(0,1fr) minmax(360px,.9fr);gap:36px;padding-top:36px;padding-bottom:26px;}
   .hero-actions{display:flex;width:auto;min-width:360px;}
   .hero-actions .btn{width:auto;min-width:170px;}
-  .quick-actions{grid-template-columns:repeat(3,1fr);}
-  .quick-chip{flex-direction:row;align-items:center;min-height:0;gap:8px;padding:10px 11px;font-size:12.5px;}
-  .quick-ico{width:30px;height:30px;}
   .hero-scene{height:390px;}
   .scene-panel{left:18px;right:18px;bottom:18px;padding:12px 14px;}
   .trust-strip{grid-template-columns:repeat(3,1fr);gap:10px;padding:12px 14px;}
@@ -456,7 +445,7 @@ select.input{appearance:none;-webkit-appearance:none;background-image:linear-gra
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   .reveal-in{animation:none;}
-  .btn,.card,.quick-chip,.listrow{transition:none;}
+  .btn,.card,.listrow{transition:none;}
 }
 
 /* utility */
@@ -531,8 +520,8 @@ body{
 /* home hero: real-life scene, text overlay, compact action desk */
 .home-wrap{max-width:none;padding:0;overflow:clip;}
 .home-hero{
-  position:relative;isolation:isolate;display:flex;align-items:flex-start;min-height:660px;
-  padding:66px 20px 188px;margin:0;border:0;overflow:hidden;background:var(--ink-panel);
+  position:relative;isolation:isolate;display:flex;align-items:flex-start;min-height:620px;
+  padding:66px 20px 72px;margin:0;border:0;overflow:hidden;background:var(--ink-panel);
 }
 .hero-media{position:absolute;inset:0;z-index:-3;width:100%;height:100%;object-fit:cover;object-position:56% center;filter:saturate(.82) contrast(1.04);}
 .home-hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(67,48,39,.94) 0%,rgba(67,48,39,.78) 48%,rgba(67,48,39,.18) 100%);}
@@ -545,16 +534,6 @@ body{
 .hero-actions .btn{width:auto;min-width:148px;}
 .home-hero .hero-actions .btn:not(.pri){background:rgba(255,255,255,.94);border-color:#fff;color:var(--ink);}
 .scene-panel{display:none;}
-.quick-panel{
-  position:absolute;left:50%;bottom:0;transform:translateX(-50%);z-index:2;width:calc(100% - 40px);max-width:1080px;
-  display:grid;gap:12px;background:var(--paper);border:0;border-top:3px solid var(--brand);border-radius:0;padding:15px 14px 16px;box-shadow:var(--shadow-lg);
-}
-.quick-title{margin:0;font-size:11px;font-weight:800;color:var(--brand-strong);font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;}
-.quick-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid var(--line);}
-.quick-chip{min-height:80px;justify-content:space-between;border:0;border-radius:0;background:transparent;padding:11px 9px;font-size:11.5px;}
-.quick-chip + .quick-chip{border-left:1px solid var(--line);}
-.quick-chip:hover{transform:none;background:var(--brand-tint);box-shadow:none;border-color:transparent;}
-.quick-ico{width:30px;height:30px;border-radius:6px;}
 .trust-strip{
   grid-template-columns:1fr;margin:0;padding:18px 20px;border:0;border-radius:0;box-shadow:none;
   background:var(--surface-accent);color:var(--ink);
@@ -715,14 +694,11 @@ textarea.input{min-height:110px;}
   .nav-cta{display:inline-flex;}
   .h-hero{font-size:66px;line-height:1.02;}
   .lead-title{font-size:44px;}
-  .home-hero{min-height:620px;padding:92px max(28px,calc((100vw - var(--wrap))/2 + 28px)) 170px;}
+  .home-hero{min-height:620px;padding:92px max(28px,calc((100vw - var(--wrap))/2 + 28px)) 80px;}
   .hero-copy{max-width:680px;}
   .scene-panel{display:flex;position:absolute;right:max(28px,calc((100vw - var(--wrap))/2 + 28px));top:78px;left:auto;bottom:auto;width:178px;align-items:flex-start;flex-direction:column;gap:5px;padding:13px;border:1px solid rgba(255,255,255,.26);border-radius:0;background:rgba(35,31,27,.58);box-shadow:none;backdrop-filter:blur(10px);}
   .scene-panel > span:last-child{font-size:11.5px;text-align:left;color:#fff;}
   .desk-label{font-size:9px;color:var(--accent);margin:0;}
-  .quick-panel{width:calc(100% - 56px);grid-template-columns:190px 1fr;align-items:center;padding:18px 20px;}
-  .quick-actions{min-height:72px;}
-  .quick-chip{min-height:72px;flex-direction:row;align-items:center;justify-content:flex-start;padding:14px 16px;font-size:12.5px;}
   .trust-strip{grid-template-columns:repeat(3,1fr);padding:18px max(28px,calc((100vw - var(--wrap))/2 + 28px));}
   .trust-point{justify-content:center;}
   .home-section{padding:94px max(28px,calc((100vw - var(--wrap))/2 + 28px));}
@@ -763,14 +739,11 @@ textarea.input{min-height:110px;}
 }
 
 @media(max-width:430px){
-  .home-hero{min-height:690px;padding-top:52px;}
+  .home-hero{min-height:620px;padding:52px 20px 64px;}
   .home-hero .h-hero{font-size:39px;}
   .home-hero .t-sub{font-size:13px;line-height:1.65;}
   .hero-actions{width:100%;display:grid;grid-template-columns:1fr 1fr;}
   .hero-actions .btn{min-width:0;padding-inline:8px;font-size:11.5px;}
-  .quick-panel{width:calc(100% - 24px);}
-  .quick-chip{font-size:10.5px;}
-  .quick-ico{width:27px;height:27px;}
   .home-section{padding-block:58px;}
   .page-hero{padding-top:46px;}
   .service-detail-hero{grid-template-columns:1fr;}
@@ -848,10 +821,6 @@ textarea.input{min-height:110px;}
 .motion-ready .home-hero.is-visible [data-hero-sequence] > :nth-child(2){animation-delay:210ms;}
 .motion-ready .home-hero.is-visible [data-hero-sequence] > :nth-child(3){animation-delay:300ms;}
 .motion-ready .home-hero.is-visible [data-hero-sequence] > :nth-child(4){animation-delay:390ms;}
-.motion-ready .home-hero [data-hero-desk]{opacity:0;transform:translate(-50%,24px);}
-.motion-ready .home-hero.is-visible [data-hero-desk]{
-  animation:mmDeskRise 700ms 500ms var(--motion-emphasis) both;
-}
 .motion-ready .home-hero .scene-panel{opacity:0;transform:translate3d(14px,0,0);}
 .motion-ready .home-hero.is-visible .scene-panel{
   opacity:1;
@@ -866,10 +835,6 @@ textarea.input{min-height:110px;}
 @keyframes mmHeroCopy{
   from{opacity:0;transform:translate3d(0,24px,0);}
   to{opacity:1;transform:translate3d(0,0,0);}
-}
-@keyframes mmDeskRise{
-  from{opacity:0;transform:translate(-50%,24px);}
-  to{opacity:1;transform:translate(-50%,0);}
 }
 
 /* Process progression and card reactions. */
@@ -1006,12 +971,10 @@ textarea.input{min-height:110px;}
   .motion-ready [data-reveal] > *,
   .motion-ready [data-reveal] [data-stagger] > *,
   .motion-ready .home-hero [data-hero-sequence] > *,
-  .motion-ready .home-hero [data-hero-desk],
   .motion-ready .home-hero .scene-panel{
     opacity:1!important;
     transform:none!important;
   }
-  .motion-ready .home-hero [data-hero-desk]{transform:translateX(-50%)!important;}
   .process-step::after{transform:scaleX(1);transition:none;}
 }
 
@@ -1115,4 +1078,138 @@ textarea.input{min-height:110px;}
   .svc-footer{flex-direction:column;align-items:flex-start;}
   .svc-actions{width:100%;min-width:0;}
   .svc-actions .btn,.svc-tile-actions .btn{white-space:normal;}
+}
+
+/* =========================================================================
+   Visa-first information funnel
+   Equal-weight guides first, then an honest bridge to paid organization.
+   ========================================================================= */
+.visa-guides-band{background:var(--surface-muted);}
+.visa-guide-grid{display:grid;grid-template-columns:1fr;grid-auto-rows:1fr;gap:12px;}
+.visa-guide-card{
+  position:relative;
+  display:flex;
+  height:100%;
+  min-width:0;
+  min-height:318px;
+  flex-direction:column;
+  padding:22px;
+  overflow:hidden;
+  color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-top:3px solid var(--brand);
+  border-radius:8px;
+  box-shadow:var(--shadow-sm);
+  transition:transform 320ms var(--motion-ease),box-shadow 260ms ease,border-color 220ms ease;
+}
+.visa-guide-card::after{
+  content:"";
+  position:absolute;
+  right:-38px;
+  top:-48px;
+  width:118px;
+  height:118px;
+  border:1px solid var(--brand-soft);
+  border-radius:50%;
+  opacity:.75;
+  transition:transform 420ms var(--motion-ease);
+}
+.visa-guide-card:hover{transform:translateY(-5px);border-color:var(--line-strong);box-shadow:var(--shadow-md);}
+.visa-guide-card:hover::after{transform:translate3d(-7px,7px,0) scale(1.05);}
+.visa-card-head{position:relative;z-index:1;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:28px;}
+.visa-card-head .reviewed-mini{max-width:72%;justify-content:flex-end;text-align:right;}
+.visa-code{flex:none;white-space:nowrap;font-family:var(--mono);font-size:24px;font-weight:600;line-height:1;color:var(--brand-strong);}
+.visa-card-title{display:block;max-width:90%;font-size:17px;font-weight:800;line-height:1.42;color:var(--ink);}
+.visa-card-summary{display:block;margin-top:10px;font-size:12.5px;line-height:1.68;color:var(--ink-soft);}
+.visa-card-topics{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px;}
+.visa-card-topics > span{display:inline-flex;align-items:center;gap:5px;padding:6px 8px;border:1px solid var(--line);border-radius:5px;background:var(--surface);font-size:10.5px;font-weight:700;color:var(--ink-soft);}
+.visa-card-topics svg{flex:none;color:var(--brand-strong);}
+.visa-card-action{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-size:12px;font-weight:800;color:var(--brand-strong);}
+.visa-card-action::after{content:"\2192";font-family:var(--mono);font-size:17px;transition:transform 220ms ease;}
+.visa-guide-card:hover .visa-card-action::after{transform:translateX(4px);}
+.section-action{margin-top:22px;}
+
+.prepare-band{background:var(--surface);}
+.prepare-grid{display:grid;grid-template-columns:1fr;border-top:2px solid var(--ink);}
+.prepare-item{display:grid;grid-template-columns:36px 34px minmax(0,1fr);gap:10px;align-items:center;min-height:78px;padding:13px 0;border-bottom:1px solid var(--line);}
+.prepare-number{font-family:var(--mono);font-size:10px;color:var(--ink-faint);}
+.prepare-icon{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:6px;background:var(--brand-soft);color:var(--brand-strong);}
+.prepare-item .card-title{font-size:13px;line-height:1.5;}
+
+.visa-service-band{background:var(--surface-accent);}
+.visa-service-panel{display:grid;grid-template-columns:1fr;gap:30px;padding:28px 0;border-top:3px solid var(--brand-strong);border-bottom:1px solid rgba(96,73,58,.28);}
+.visa-service-copy{display:flex;flex-direction:column;align-items:flex-start;gap:12px;}
+.visa-service-eyebrow{margin:0;font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;color:var(--brand-strong);}
+.visa-service-title{max-width:640px;margin:0;font-size:27px;line-height:1.24;font-weight:800;color:var(--ink);text-wrap:balance;}
+.visa-service-copy .t-body{max-width:650px;color:var(--ink-soft);}
+.visa-service-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:3px;}
+.visa-service-meta span{padding:6px 10px;border:1px solid rgba(154,72,36,.28);border-radius:5px;background:rgba(255,255,255,.42);font-size:11.5px;font-weight:800;color:var(--brand-strong);}
+.visa-service-outcomes{padding-top:22px;border-top:1px solid rgba(96,73,58,.25);}
+.visa-service-outcomes > .card-title{margin-bottom:10px;font-size:14px;}
+.visa-outcome-list{display:grid;gap:0;}
+.visa-outcome-list > span{display:flex;align-items:flex-start;gap:8px;padding:10px 0;border-bottom:1px solid rgba(96,73,58,.18);font-size:12.5px;font-weight:700;line-height:1.5;color:var(--ink-soft);}
+.visa-outcome-list svg{flex:none;margin-top:1px;color:var(--brand-strong);}
+.visa-service-actions{display:flex;flex-direction:column;align-items:stretch;gap:7px;}
+.visa-service-actions .btn{width:100%;}
+
+.other-services-band{background:var(--surface-muted);}
+.grid-services.secondary-services{grid-template-columns:1fr;max-width:860px;}
+
+.visa-hub-page{padding-bottom:72px;}
+.visa-hub-hero{max-width:820px;padding-bottom:42px;}
+.visa-hub-eyebrow{margin:0 0 16px;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--brand-strong);}
+.visa-hub-hero .t-sub{max-width:720px;margin-top:16px;font-size:15px;}
+.visa-hub-content{padding-top:36px;border-top:2px solid var(--ink)!important;}
+.visa-hub-heading{display:grid;gap:5px;margin-bottom:24px;}
+.visa-hub-heading .sec-title{margin:0;}
+.visa-hub-grid{margin-top:4px;}
+
+.guide-inline-cta{display:grid;gap:18px;margin:12px 0 28px;padding:22px;border:1px solid var(--line-strong);border-left:3px solid var(--brand);background:var(--brand-tint);}
+.guide-inline-cta .card-title{margin-bottom:8px;font-size:18px;}
+.guide-inline-actions{display:flex;flex-direction:column;gap:6px;align-items:stretch;}
+.guide-inline-actions .btn{width:100%;}
+.guide-cta-eyebrow{display:flex;gap:6px;align-items:center;margin:0 0 10px;font-family:var(--mono);font-size:9.5px;font-weight:700;text-transform:uppercase;color:var(--brand-strong);}
+.guide-cta-eyebrow > span:first-child{padding:4px 6px;background:var(--brand-soft);border-radius:4px;}
+.guide-cta-card .t-body{margin-top:10px;}
+.guide-cta-meta{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 10px;}
+.guide-cta-meta span{padding:5px 8px;border-radius:4px;background:var(--brand-soft);font-size:10.5px;font-weight:800;color:var(--brand-strong);}
+.guide-scope-link{display:block;margin-top:12px;text-align:center;font-size:11.5px;font-weight:700;color:var(--brand-strong);text-decoration:underline;text-underline-offset:3px;}
+
+.visa-request-field[hidden]{display:none;}
+.visa-field-note{margin:6px 0 0;font-size:10.5px;line-height:1.5;color:var(--ink-faint);}
+
+.motion-ready .visa-guide-card{will-change:transform;}
+
+@media(min-width:560px){
+  .visa-guide-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .grid-services.secondary-services{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+
+@media(min-width:760px){
+  .visa-guide-card{min-height:350px;padding:26px;}
+  .visa-card-title{font-size:19px;}
+  .prepare-grid{grid-template-columns:repeat(5,minmax(0,1fr));}
+  .prepare-item{display:flex;min-height:190px;flex-direction:column;align-items:flex-start;padding:20px 16px;border-right:1px solid var(--line);}
+  .prepare-item:last-child{border-right:0;}
+  .prepare-number{margin-bottom:18px;}
+  .prepare-icon{margin-bottom:4px;}
+  .visa-service-panel{grid-template-columns:minmax(0,1.1fr) minmax(300px,.85fr);column-gap:64px;align-items:start;padding:42px 0;}
+  .visa-service-outcomes{padding:0;border-top:0;}
+  .visa-service-actions{grid-column:1 / -1;flex-direction:row;align-items:center;padding-top:22px;border-top:1px solid rgba(96,73,58,.25);}
+  .visa-service-actions .btn{width:auto;min-width:190px;}
+  .visa-hub-hero{padding-top:80px;}
+  .guide-inline-cta{grid-template-columns:minmax(0,1fr) auto;align-items:center;padding:26px;}
+  .guide-inline-actions{min-width:220px;}
+}
+
+@media(min-width:960px){
+  .grid-services.secondary-services{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+
+@media(max-width:390px){
+  .visa-guide-card{min-height:334px;padding:19px;}
+  .visa-card-head{margin-bottom:22px;}
+  .visa-card-title{font-size:16px;}
+  .visa-service-title{font-size:24px;}
 }

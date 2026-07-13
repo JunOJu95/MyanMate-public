@@ -6,12 +6,14 @@ import { visaCode, type Guide } from '../lib/content';
 
 interface Props {
   guide: Guide;
-  variant?: 'row' | 'tile';
+  variant?: 'row' | 'tile' | 'featured';
+  eventSource?: 'home' | 'guides' | 'related';
 }
-const { guide, variant = 'row' } = Astro.props;
+const { guide, variant = 'row', eventSource = 'guides' } = Astro.props;
 const href = `/guides/${guide.slug}`;
 const catKey = `guides.filter.${guide.category}`;
 const code = visaCode(guide.slug);
+const visaId = code?.toLowerCase().replace('-', '') ?? '';
 const title = (l: (typeof languages)[number]) => guide[l].title || guide.en.title;
 const summary = (l: (typeof languages)[number]) => guide[l].summary || guide.en.summary;
 // all-language search haystack (so search works regardless of active language)
@@ -20,7 +22,39 @@ const search = languages
   .join(' ')
   .toLowerCase();
 ---
-{variant === 'row' ? (
+{variant === 'featured' ? (
+  <a
+    class="visa-guide-card"
+    href={href}
+    data-category={guide.category}
+    data-event="visa_card_click"
+    data-visa={visaId}
+    data-source={eventSource}
+  >
+    <span class="visa-card-head">
+      <span class="visa-code" aria-hidden="true">{code}</span>
+      {guide.lastReviewed && (
+        <span class="reviewed-mini">
+          <Icon name="check" size={12} />
+          <span data-i18n="content.lastReviewed">{t('content.lastReviewed', defaultLang)}</span>
+          <time datetime={guide.lastReviewed}>{guide.lastReviewed}</time>
+        </span>
+      )}
+    </span>
+    <span class="visa-card-title">
+      {languages.map((l) => <span data-lang={l}>{title(l)}</span>)}
+    </span>
+    <span class="visa-card-summary clamp3">
+      {languages.map((l) => <span data-lang={l}>{summary(l)}</span>)}
+    </span>
+    <span class="visa-card-topics" aria-label={t('home.guideFeatures.label', defaultLang)} data-i18n-aria="home.guideFeatures.label">
+      <span><Icon name="users" size={14} /><span data-i18n="home.guideFeatures.eligibility">{t('home.guideFeatures.eligibility', defaultLang)}</span></span>
+      <span><Icon name="doc" size={14} /><span data-i18n="home.guideFeatures.documents">{t('home.guideFeatures.documents', defaultLang)}</span></span>
+      <span><Icon name="list" size={14} /><span data-i18n="home.guideFeatures.steps">{t('home.guideFeatures.steps', defaultLang)}</span></span>
+    </span>
+    <span class="visa-card-action" data-i18n="btn.readVisa">{t('btn.readVisa', defaultLang)}</span>
+  </a>
+) : variant === 'row' ? (
   <a class="listrow guide-item" href={href} data-category={guide.category} data-search={search} data-event={`guide:${guide.slug}`}>
     <span class="thumb photo" aria-hidden="true">{code ? <span class="vbadge">{code}</span> : <Icon name={categoryIcon[guide.category] ?? 'visa'} size={24} class="glyph-ico" />}</span>
     <span class="body">
