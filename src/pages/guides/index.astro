@@ -1,85 +1,37 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Icon from '../../components/Icon.astro';
 import T from '../../components/T.astro';
 import GuideCard from '../../components/GuideCard.astro';
 import { getGuides } from '../../lib/content';
 import { t } from '../../i18n/ui';
-import { TIKTOK_URL } from '../../config/launch';
 
-const guides = await getGuides();
-const filters = ['all', ...Array.from(new Set(guides.map((g) => g.category)))];
+const guides = (await getGuides()).filter((guide) => guide.category === 'visa');
 ---
 <Base title={t('guides.title', 'en')} active="guides" description={t('home.hero.sub', 'en')}>
-  <div class="wrap">
-    <section class="sec page-hero guide-hero">
+  <div class="wrap visa-hub-page">
+    <section class="sec page-hero visa-hub-hero" data-reveal="page-hero">
+      <T k="guides.eyebrow" tag="p" class="visa-hub-eyebrow" />
       <h1 class="lead-title"><T k="guides.title" /></h1>
-      <label class="search" for="guide-search">
-        <span class="mag"><Icon name="search" size={16} /></span>
-        <input id="guide-search" type="search" autocomplete="off" placeholder={t('guides.search.placeholder', 'en')} data-i18n-ph="guides.search.placeholder" aria-label={t('guides.search.placeholder', 'en')} data-i18n-aria="guides.search.placeholder" />
-      </label>
-      <div class="chips guide-filter" role="tablist">
-        {filters.map((f) => (
-          <button type="button" class:list={['chip', { on: f === 'all' }]} data-cat={f} data-i18n={`guides.filter.${f}`}>{t(`guides.filter.${f}`, 'en')}</button>
-        ))}
-      </div>
+      <T k="guides.intro" tag="p" class="t-sub" />
     </section>
 
-    <section class="sec page-content">
-      <div class="guide-list">
-        {guides.map((g) => <GuideCard guide={g} variant="row" />)}
+    <section class="sec visa-hub-content" data-reveal="section">
+      <div class="visa-hub-heading">
+        <T k="guides.choose" tag="h2" class="sec-title" />
+        <T k="guides.chooseNote" tag="p" class="t-body" />
       </div>
-      <div id="guides-empty" class="empty-state" style="display:none;">
-        <p class="card-title" data-i18n="guides.empty.title">{t('guides.empty.title', 'en')}</p>
-        <p class="t-body" data-i18n="guides.empty.body">{t('guides.empty.body', 'en')}</p>
-        <div class="empty-actions">
-          <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="guides-empty:contact">{t('btn.getHelp', 'en')}</a>
-          {TIKTOK_URL && <a class="btn ghost" href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" data-i18n="home.tiktok.cta" data-event="guides-empty:tiktok">{t('home.tiktok.cta', 'en')}</a>}
-        </div>
+      <div class="visa-guide-grid visa-hub-grid" data-reveal="stagger" data-stagger>
+        {guides.map((guide) => <GuideCard guide={guide} variant="featured" eventSource="guides" />)}
       </div>
       {guides.length === 0 && (
         <div class="empty-state">
           <p class="card-title" data-i18n="guides.empty.title">{t('guides.empty.title', 'en')}</p>
           <p class="t-body" data-i18n="guides.empty.body">{t('guides.empty.body', 'en')}</p>
           <div class="empty-actions">
-            <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="guides-empty:contact">{t('btn.getHelp', 'en')}</a>
-            {TIKTOK_URL && <a class="btn ghost" href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" data-i18n="home.tiktok.cta" data-event="guides-empty:tiktok">{t('home.tiktok.cta', 'en')}</a>}
+            <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="guides_empty_contact">{t('btn.getHelp', 'en')}</a>
           </div>
         </div>
       )}
     </section>
   </div>
-
-  <script>
-    const params = new URLSearchParams(location.search);
-    const initial = params.get('category') || 'all';
-    const chips = Array.from(document.querySelectorAll<HTMLElement>('.guide-filter .chip'));
-    const items = Array.from(document.querySelectorAll<HTMLElement>('.guide-item'));
-    const searchInput = document.getElementById('guide-search') as HTMLInputElement | null;
-    const empty = document.getElementById('guides-empty');
-    let activeCat = 'all';
-
-    function apply() {
-      const q = (searchInput?.value || '').trim().toLowerCase();
-      let visible = 0;
-      items.forEach((it) => {
-        const cat = it.getAttribute('data-category');
-        const hay = it.getAttribute('data-search') || '';
-        const okCat = activeCat === 'all' || cat === activeCat;
-        const okQ = !q || hay.includes(q);
-        const show = okCat && okQ;
-        it.style.display = show ? '' : 'none';
-        if (show) visible++;
-      });
-      if (empty && items.length) empty.style.display = visible ? 'none' : '';
-    }
-    function setCat(cat: string) {
-      activeCat = cat;
-      chips.forEach((c) => c.classList.toggle('on', c.getAttribute('data-cat') === cat));
-      apply();
-    }
-    chips.forEach((c) => c.addEventListener('click', () => setCat(c.getAttribute('data-cat') || 'all')));
-    searchInput?.addEventListener('input', apply);
-    setCat(chips.some((c) => c.getAttribute('data-cat') === initial) ? initial : 'all');
-  </script>
 </Base>

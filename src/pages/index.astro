@@ -4,33 +4,42 @@ import Icon from '../components/Icon.astro';
 import T from '../components/T.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import GuideCard from '../components/GuideCard.astro';
-import ReviewCard from '../components/ReviewCard.astro';
 import TikTokTrust from '../components/TikTokTrust.astro';
 import { services } from '../data/services';
-import { getGuides, getReviews } from '../lib/content';
+import { getGuides } from '../lib/content';
 import { t } from '../i18n/ui';
-import { SHOW_REVIEWS } from '../config/launch';
 
-const quickActions = [
-  { key: 'home.quick.visa', icon: 'visaSvc', href: '/guides?category=visa' },
-  { key: 'home.quick.resume', icon: 'resumeSvc', href: '/services/resume' },
-];
+const guides = (await getGuides()).filter((guide) => guide.category === 'visa');
 const processSteps = [
   { title: 'home.process.step1.title', body: 'home.process.step1.body' },
   { title: 'home.process.step2.title', body: 'home.process.step2.body' },
   { title: 'home.process.step3.title', body: 'home.process.step3.body' },
 ];
-const guides = (await getGuides()).slice(0, 3);
-const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
+const preparationItems = [
+  { icon: 'users', key: 'home.prepare.eligibility' },
+  { icon: 'doc', key: 'home.prepare.documents' },
+  { icon: 'check', key: 'home.prepare.validity' },
+  { icon: 'list', key: 'home.prepare.order' },
+  { icon: 'visa', key: 'home.prepare.official' },
+];
+const visaOutcomeKeys = [
+  'home.visaService.outcome.requirements',
+  'home.visaService.outcome.checklist',
+  'home.visaService.outcome.sources',
+  'home.visaService.outcome.order',
+  'home.visaService.outcome.questions',
+];
+const visaService = services.find((service) => service.id === 'visa')!;
+const otherServices = services.filter((service) => service.id !== 'visa');
 ---
 <Base
   title=""
   active="home"
   description={t('home.hero.sub', 'en')}
-  mobileCtaHref="/contact"
-  mobileCtaSentinel=".home-hero"
-  mobileCtaBlockers=".flow-band, .foot"
-  mobileCtaEvent="cta:home-mobile"
+  mobileCtaHref="/contact?service=visa&source=home"
+  mobileCtaSentinel=".prepare-band"
+  mobileCtaBlockers=".visa-service-band, .foot"
+  mobileCtaEvent="home_mobile_cta"
 >
   <div class="wrap home-wrap">
     <!-- hero -->
@@ -41,24 +50,13 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
         <T k="home.hero.headline" tag="h1" class="h-hero" />
         <T k="home.hero.sub" tag="p" class="t-sub" />
         <div class="hero-actions">
-          <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="cta:hero-get-help">{t('btn.getHelp', 'en')}</a>
-          <a class="btn" href="/guides" data-i18n="btn.browseGuides">{t('btn.browseGuides', 'en')}</a>
+          <a class="btn pri" href="/contact?service=visa&source=home" data-i18n="btn.organizeVisa" data-event="home_hero_service" data-service="visa" data-source="home">{t('btn.organizeVisa', 'en')}</a>
+          <a class="btn" href="/guides" data-i18n="btn.browseGuides" data-event="home_hero_guides" data-source="home">{t('btn.browseGuides', 'en')}</a>
         </div>
       </div>
       <div class="scene-panel" aria-hidden="true">
         <span class="desk-label">MYANMATE / SEOUL</span>
         <span data-i18n="home.hero.visual.title">{t('home.hero.visual.title', 'en')}</span>
-      </div>
-      <div class="quick-panel" aria-label={t('home.quick.title', 'en')} data-i18n-aria="home.quick.title" data-hero-desk>
-        <T k="home.quick.title" tag="p" class="quick-title" />
-        <div class="quick-actions">
-          {quickActions.map((item) => (
-            <a class="quick-chip" href={item.href} data-event={`quick:${item.key}`}>
-              <span class="quick-ico"><Icon name={item.icon} size={18} /></span>
-              <span data-i18n={item.key}>{t(item.key, 'en')}</span>
-            </a>
-          ))}
-        </div>
       </div>
     </section>
 
@@ -68,14 +66,61 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
       <div class="trust-point"><Icon name="check" size={18} /><T k="home.trust.private" /></div>
     </section>
 
-    <!-- services -->
-    <section class="sec home-section service-band" data-reveal="section">
+    <!-- visa information first -->
+    {guides.length > 0 && (
+      <section class="sec home-section guides-band visa-guides-band" data-reveal="section">
+        <div class="section-head">
+          <p class="sec-title"><span class="sec-ico"><Icon name="visa" /></span><T k="home.guides.title" /></p>
+          <T k="home.guides.lead" tag="p" class="t-body sec-copy" />
+        </div>
+        <div class="visa-guide-grid" data-reveal="stagger" data-stagger>
+          {guides.map((guide) => <GuideCard guide={guide} variant="featured" eventSource="home" />)}
+        </div>
+        <div class="section-action"><a class="btn ghost" href="/guides" data-i18n="home.guides.all">{t('home.guides.all', 'en')}</a></div>
+      </section>
+    )}
+
+    <!-- honest preparation scope -->
+    <section class="sec home-section prepare-band" data-reveal="section">
       <div class="section-head">
-        <p class="sec-title"><span class="sec-ico"><Icon name="help" /></span><T k="home.services.title" /></p>
-        <T k="home.services.lead" tag="p" class="t-body sec-copy" />
+        <p class="sec-title"><span class="sec-ico"><Icon name="list" /></span><T k="home.prepare.title" /></p>
+        <T k="home.prepare.lead" tag="p" class="t-body sec-copy" />
       </div>
-      <div class="grid-services" data-reveal="stagger" data-stagger>
-        {services.map((s) => <ServiceCard service={s} variant="compact" />)}
+      <div class="prepare-grid" data-reveal="stagger" data-stagger>
+        {preparationItems.map((item, index) => (
+          <div class="prepare-item">
+            <span class="prepare-number">0{index + 1}</span>
+            <span class="prepare-icon"><Icon name={item.icon} size={18} /></span>
+            <T k={item.key} tag="p" class="card-title" />
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- flagship visa service -->
+    <section class="sec home-section visa-service-band" data-reveal="cta">
+      <div class="visa-service-panel">
+        <div class="visa-service-copy">
+          <T k="home.visaService.eyebrow" tag="p" class="visa-service-eyebrow" />
+          <T k="home.visaService.title" tag="h2" class="visa-service-title" />
+          <T k="home.visaService.body" tag="p" class="t-body" />
+          <div class="visa-service-meta">
+            <span data-i18n={visaService.priceKey}>{t(visaService.priceKey, 'en')}</span>
+            <span data-i18n={visaService.durationKey}>{t(visaService.durationKey, 'en')}</span>
+          </div>
+        </div>
+        <div class="visa-service-outcomes">
+          <T k="home.visaService.outcomesTitle" tag="p" class="card-title" />
+          <div class="visa-outcome-list" data-stagger>
+            {visaOutcomeKeys.map((key) => (
+              <span><Icon name="check" size={16} /><T k={key} /></span>
+            ))}
+          </div>
+        </div>
+        <div class="visa-service-actions">
+          <a class="btn pri" href="/contact?service=visa&source=home" data-i18n="btn.organizeVisa" data-event="home_visa_service_cta" data-service="visa" data-source="home">{t('btn.organizeVisa', 'en')}</a>
+          <a class="btn ghost" href="/services/visa" data-i18n="btn.serviceScope">{t('btn.serviceScope', 'en')}</a>
+        </div>
       </div>
     </section>
 
@@ -95,44 +140,18 @@ const reviews = SHOW_REVIEWS ? (await getReviews()).slice(0, 2) : [];
       </div>
     </section>
 
-    {guides.length > 0 && (
-      <section class="sec home-section guides-band" data-reveal="section">
+    <!-- secondary guidance -->
+    {otherServices.length > 0 && (
+      <section class="sec home-section other-services-band" data-reveal="section">
         <div class="section-head">
-          <p class="sec-title"><span class="sec-ico"><Icon name="visa" /></span><T k="home.guides.title" /></p>
-          <T k="home.guides.lead" tag="p" class="t-body sec-copy" />
+          <p class="sec-title"><span class="sec-ico"><Icon name="help" /></span><T k="home.otherServices.title" /></p>
+          <T k="home.otherServices.lead" tag="p" class="t-body sec-copy" />
         </div>
-        <div class="guide-list compact-list" data-reveal="stagger" data-stagger>
-          {guides.map((g) => <GuideCard guide={g} variant="row" />)}
+        <div class="grid-services secondary-services" data-reveal="stagger" data-stagger>
+          {otherServices.map((service) => <ServiceCard service={service} variant="compact" />)}
         </div>
-        <div class="mt-12"><a class="btn ghost" href="/guides" data-i18n="btn.more">{t('btn.more', 'en')}</a></div>
       </section>
     )}
-
-    {SHOW_REVIEWS && reviews.length > 0 && (
-      <section class="sec" data-reveal="section">
-        <p class="sec-title"><span class="sec-ico"><Icon name="star" /></span><T k="home.reviews.title" /></p>
-        <div class="grid-reviews">
-          {reviews.map((r) => <ReviewCard review={r} showQuote={false} />)}
-        </div>
-        <div style="margin-top:12px;"><a class="btn ghost" href="/reviews"><T k="btn.more" /></a></div>
-      </section>
-    )}
-
-    <!-- cta band -->
-    <section class="sec home-section flow-band" data-reveal="cta">
-      <div class="cta-flow">
-        <div>
-          <p class="sec-title"><span class="sec-ico"><Icon name="chat" /></span><T k="home.cta.flow.title" /></p>
-          <T k="home.cta.flow.body" tag="p" class="t-body" />
-        </div>
-        <div class="cta-flow-steps" data-stagger>
-          <span><Icon name="check" size={15} /><T k="home.cta.flow.step1" /></span>
-          <span><Icon name="check" size={15} /><T k="home.cta.flow.step2" /></span>
-          <span><Icon name="check" size={15} /><T k="home.cta.flow.step3" /></span>
-        </div>
-        <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="cta:home-flow">{t('btn.getHelp', 'en')}</a>
-      </div>
-    </section>
 
     <!-- about teaser -->
     <section class="sec home-section about-band" data-reveal="section">

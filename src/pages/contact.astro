@@ -4,6 +4,7 @@ import Icon from '../components/Icon.astro';
 import T from '../components/T.astro';
 import { services } from '../data/services';
 import { t } from '../i18n/ui';
+import { getGuides, visaCode } from '../lib/content';
 
 // Primary path: email submissions through Web3Forms. Messenger stays as a fallback
 // for people who prefer DM. Set PUBLIC_WEB3FORMS_KEY in the hosting environment.
@@ -15,6 +16,10 @@ const trustItems = [
   { icon: 'chat', title: 'request.trust.dm.title', body: 'request.trust.dm.body' },
 ];
 const housingService = services.find((service) => service.id === 'housing');
+const visaOptions = (await getGuides()).flatMap((guide) => {
+  const code = guide.category === 'visa' ? visaCode(guide.slug) : null;
+  return code ? [{ value: code.toLowerCase().replace('-', ''), label: code }] : [];
+});
 ---
 <Base title={t('request.title', 'en')} description={t('request.lead', 'en')}>
   <div class="wrap contact-page">
@@ -42,6 +47,7 @@ const housingService = services.find((service) => service.id === 'housing');
         <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
         <input type="hidden" name="subject" value="MyanMate — new request" />
         <input type="hidden" name="from_page" value="contact" />
+        <input type="hidden" id="f-source" name="source" value="direct" />
         <input type="hidden" name="redirect" value="https://www.myanmate.com/contact?sent=1" />
         <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off" />
         <div class="field">
@@ -61,6 +67,14 @@ const housingService = services.find((service) => service.id === 'housing');
             <option value="" data-i18n="request.field.service.ph">{t('request.field.service.ph', 'en')}</option>
             {services.map((s) => <option value={s.id} data-i18n={s.nameKey}>{t(s.nameKey, 'en')}</option>)}
           </select>
+        </div>
+        <div class="field visa-request-field" id="visa-request-field" hidden aria-hidden="true">
+          <label class="flbl" for="f-visa"><T k="request.field.visa" /></label>
+          <select class="input" id="f-visa" name="visa" disabled>
+            <option value="" data-i18n="request.field.visa.ph">{t('request.field.visa.ph', 'en')}</option>
+            {visaOptions.map((visa) => <option value={visa.value}>{visa.label}</option>)}
+          </select>
+          <p class="visa-field-note" data-i18n="request.field.visa.note">{t('request.field.visa.note', 'en')}</p>
         </div>
         {housingService?.confirmationKeys && (
           <fieldset id="housing-scope-confirmation" class="housing-scope-confirmation" hidden aria-hidden="true">
@@ -94,7 +108,7 @@ const housingService = services.find((service) => service.id === 'housing');
           <input type="checkbox" id="f-consent" name="consent" required />
           <span data-i18n="request.consent">{t('request.consent', 'en')}</span>
         </label>
-        <button class="btn pri full" type="submit" id="f-submit" data-i18n="request.submit" data-event="contact:submit">{t('request.submit', 'en')}</button>
+        <button class="btn pri full" type="submit" id="f-submit" data-i18n="request.submit">{t('request.submit', 'en')}</button>
         <div class="success-note" id="f-success" role="status" style="display:none;">
           <span class="ico"><Icon name="check" /></span>
           <span data-i18n="request.success">{t('request.success', 'en')}</span>
@@ -110,17 +124,42 @@ const housingService = services.find((service) => service.id === 'housing');
     const form = document.getElementById('contact-form') as HTMLFormElement | null;
     const success = document.getElementById('f-success');
     const serviceSel = document.getElementById('f-service') as HTMLSelectElement | null;
+    const visaField = document.getElementById('visa-request-field');
+    const visaSel = document.getElementById('f-visa') as HTMLSelectElement | null;
+    const sourceInput = document.getElementById('f-source') as HTMLInputElement | null;
     const contactInput = document.getElementById('f-contact') as HTMLInputElement | null;
     const emailInput = document.getElementById('f-email') as HTMLInputElement | null;
     const housingScope = document.getElementById('housing-scope-confirmation') as HTMLFieldSetElement | null;
     const housingChecks = Array.from(document.querySelectorAll<HTMLInputElement>('[data-housing-confirm]'));
 
-    // preselect the service from ?service=<id>
+    // Preserve guide context without collecting sensitive personal details.
     const params = new URLSearchParams(location.search);
     const svc = params.get('service');
     if (svc && serviceSel) serviceSel.value = svc;
+    const visa = params.get('visa');
+    const validVisas = visaSel
+      ? Array.from(visaSel.options, (option) => option.value).filter(Boolean)
+      : [];
+    if (visa && validVisas.includes(visa) && visaSel) {
+      visaSel.value = visa;
+      if (serviceSel && !serviceSel.value) serviceSel.value = 'visa';
+    }
+    const source = params.get('source') || 'direct';
+    if (sourceInput) sourceInput.value = source;
 
     const sent = params.get('sent') === '1';
+    const updateVisaField = () => {
+      const active = !sent && serviceSel?.value === 'visa';
+      if (visaField) {
+        visaField.hidden = !active;
+        visaField.setAttribute('aria-hidden', String(!active));
+      }
+      if (visaSel) {
+        visaSel.disabled = !active;
+        visaSel.required = active;
+        if (!active) visaSel.value = '';
+      }
+    };
     const updateHousingScope = () => {
       const active = !sent && serviceSel?.value === 'housing';
       if (housingScope) {
@@ -133,7 +172,11 @@ const housingService = services.find((service) => service.id === 'housing');
         if (!active) checkbox.checked = false;
       });
     };
-    serviceSel?.addEventListener('change', updateHousingScope);
+    serviceSel?.addEventListener('change', () => {
+      updateVisaField();
+      updateHousingScope();
+    });
+    updateVisaField();
     updateHousingScope();
 
     if (sent) {
@@ -141,9 +184,23 @@ const housingService = services.find((service) => service.id === 'housing');
       if (success) success.style.display = 'flex';
     }
 
+    const trackingProps = () => ({
+      service: serviceSel?.value || 'none',
+      visa: visaSel?.value || 'none',
+      source,
+      path: location.pathname,
+    });
+    let contactStarted = false;
+    form?.addEventListener('focusin', () => {
+      if (contactStarted || sent) return;
+      contactStarted = true;
+      (window as any).mmTrack?.('contact_start', trackingProps());
+    });
+
     form?.addEventListener('submit', () => {
       const contact = contactInput?.value.trim() || '';
       if (emailInput) emailInput.value = contact.includes('@') ? contact : '';
+      (window as any).mmTrack?.('contact_submit', trackingProps());
     });
   </script>
 </Base>

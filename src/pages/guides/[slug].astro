@@ -5,7 +5,7 @@ import T from '../../components/T.astro';
 import GuideSection from '../../components/GuideSection.astro';
 import GuideCard from '../../components/GuideCard.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
-import { getGuides, type Guide, type GuideText } from '../../lib/content';
+import { getGuides, visaCode, type Guide, type GuideText } from '../../lib/content';
 import { categoryToService } from '../../data/services';
 import { t, languages } from '../../i18n/ui';
 
@@ -20,6 +20,9 @@ const related = [...all.filter((g) => g.slug !== guide.slug)]
   .sort((a, b) => Number(b.category === guide.category) - Number(a.category === guide.category))
   .slice(0, 3);
 const catKey = `guides.filter.${guide.category}`;
+const code = visaCode(guide.slug);
+const visaId = code?.toLowerCase().replace('-', '') ?? '';
+const contactHref = `/contact?service=visa&visa=${visaId}&source=guide`;
 // Sections are rendered in this order; empty fields (e.g. E-9 has no subtypes/notes
 // imported) are filtered out so the number badges stay gapless per guide.
 const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul' | 'ol' }[] = [
@@ -52,7 +55,22 @@ const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul'
         </div>
         </header>
         {SECTIONS.map((s, i) => (
-          <GuideSection guide={guide} field={s.field} labelKey={s.labelKey} mode={s.mode} num={i + 1} />
+          <>
+            <GuideSection guide={guide} field={s.field} labelKey={s.labelKey} mode={s.mode} num={i + 1} />
+            {s.field === 'documents' && serviceId === 'visa' && (
+              <section class="guide-inline-cta" data-reveal="cta">
+                <div>
+                  <p class="guide-cta-eyebrow"><span>{code}</span> <T k="content.cta.visa.eyebrow" /></p>
+                  <T k="content.cta.visa.inlineTitle" tag="h2" class="card-title" />
+                  <T k="content.cta.visa.body" tag="p" class="t-body" />
+                </div>
+                <div class="guide-inline-actions">
+                  <a class="btn pri" href={contactHref} data-i18n="content.cta.visa.button" data-event="guide_cta_click" data-service="visa" data-visa={visaId} data-source="guide">{t('content.cta.visa.button', 'en')}</a>
+                  <a class="btn ghost" href="/services/visa" data-i18n="btn.serviceScope">{t('btn.serviceScope', 'en')}</a>
+                </div>
+              </section>
+            )}
+          </>
         ))}
 
         <Disclaimer k="content.disclaimer" class="mt-12" />
@@ -69,9 +87,15 @@ const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul'
 
       {serviceId && <aside>
         <div class="card sticky-card guide-cta-card">
-          <p class="card-title" data-i18n="content.cta.title">{t('content.cta.title', 'en')}</p>
-          <T k="content.cta.note" tag="p" class="t-body" />
-          <a class="btn pri full" style="margin-top:11px;" href={`/services/${serviceId}`} data-i18n="content.cta.button" data-event={`guide-cta:${serviceId}`}>{t('content.cta.button', 'en')}</a>
+          <p class="guide-cta-eyebrow"><span>{code}</span> <T k="content.cta.visa.eyebrow" /></p>
+          <T k="content.cta.visa.title" tag="p" class="card-title" />
+          <T k="content.cta.visa.body" tag="p" class="t-body" />
+          <div class="guide-cta-meta">
+            <span><T k="svc.visa.price" /></span>
+            <span><T k="svc.visa.duration" /></span>
+          </div>
+          <a class="btn pri full" href={contactHref} data-i18n="content.cta.visa.button" data-event="guide_cta_click" data-service="visa" data-visa={visaId} data-source="guide">{t('content.cta.visa.button', 'en')}</a>
+          <a class="guide-scope-link" href="/services/visa" data-i18n="btn.serviceScope">{t('btn.serviceScope', 'en')}</a>
         </div>
       </aside>}
     </div>
