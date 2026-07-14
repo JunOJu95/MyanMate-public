@@ -4,12 +4,20 @@ rating: 5
 en:
   before: My resume didn't look Korean at all and I wasn't getting any replies.
   after: A clean Korean-style resume — and my first part-time job within two weeks.
-  quote: Small fixes I didn't know about made a big difference. The advice was honest and practical.
+  quote: >-
+    Small fixes I didn't know about made a big difference. The advice was honest
+    and practical.
 ko:
   before: 이력서가 전혀 한국식이 아니어서 연락이 한 통도 안 왔어요.
   after: 깔끔한 한국식 이력서로 바꾸고, 2주 만에 첫 알바를 구했어요.
   quote: 제가 몰랐던 작은 부분들을 고쳐줬는데 큰 차이가 났어요. 조언이 솔직하고 실용적이었어요.
 my:
-  before: ကျွန်တော့်ကိုယ်ရေးရာဇဝင်က ကိုရီးယားပုံစံ လုံးဝမဟုတ်ဘဲ ပြန်ကြားချက် တစ်ခုမှ မရခဲ့ဘူး။
-  after: သပ်ရပ်တဲ့ ကိုရီးယားပုံစံ ကိုယ်ရေးရာဇဝင်နဲ့ ၂ ပတ်အတွင်း ပထမဆုံး အချိန်ပိုင်းအလုပ် ရခဲ့တယ်။
-  quote: ကိုယ်မသိတဲ့ အသေးအဖွဲ ပြင်ဆင်မှုတွေက ကြီးမားတဲ့ ကွာခြားမှုဖြစ်စေတယ်။ အကြံဉာဏ်က ရိုးသားပြီး လက်တွေ့ကျတယ်။
+  before: >-
+    ကျွန်တော့်ကိုယ်ရေးရာဇဝင်က ကိုရီးယားပုံစံ လုံးဝမဟုတ်ဘဲ  တစ်ခုမှ
+    စာမပြန်ခဲ့ဘူး။
+  after: >-
+    သပ်ရပ်တဲ့ ကိုရီးယားပုံစံ ကိုယ်ရေးရာဇဝင်နဲ့ ၂ ပတ်အတွင်း ပထမဆုံး
+    အချိန်ပိုင်းအလုပ် ရခဲ့တယ်။
+  quote: >-
+    ကိုယ်မသိတဲ့ အသေးအဖွဲ ပြင်ဆင်မှုတွေက ကြီးမားတဲ့ ကွာခြားမှုဖြစ်စေတယ်။
+    အကြံဉာဏ်က ရိုးသားပြီး လက်တွေ့ကျတယ်။
