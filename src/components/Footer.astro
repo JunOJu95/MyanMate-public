@@ -14,17 +14,12 @@ const links = [
 ---
 <footer class="foot">
   <div class="wrap">
-    <div class="foot-main">
-      <div class="foot-brand">
-        <a class="foot-logo" href="/">MyanMate</a>
-        <p class="foot-tag" data-i18n="footer.tagline">{t('footer.tagline', defaultLang)}</p>
-      </div>
-      <nav class="foot-nav" aria-label="Footer">
-        {links.map((l) => (
-          <a href={l.href} data-i18n={l.key}>{t(l.key, defaultLang)}</a>
-        ))}
-      </nav>
-    </div>
+    <p class="foot-tag" data-i18n="footer.tagline">{t('footer.tagline', defaultLang)}</p>
+    <nav class="foot-nav" aria-label="Footer">
+      {links.map((l) => (
+        <a href={l.href} data-i18n={l.key}>{t(l.key, defaultLang)}</a>
+      ))}
+    </nav>
     <p class="disclaimer" data-i18n="footer.disclaimer">{t('footer.disclaimer', defaultLang)}</p>
   </div>
 </footer>
