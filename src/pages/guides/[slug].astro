@@ -17,8 +17,23 @@ export async function getStaticPaths() {
 
 const { guide, all } = Astro.props as { guide: Guide; all: Guide[] };
 const isVisa = guide.category === 'visa';
+const relatedPriority: Record<string, string[]> = {
+  'd10-jobseeking': ['e7-employment'],
+  'e9-employment': ['e7-employment'],
+  'e7-employment': ['d10-jobseeking', 'e9-employment'],
+};
+const priority = relatedPriority[guide.slug] ?? [];
 const related = [...all.filter((g) => g.slug !== guide.slug)]
-  .sort((a, b) => Number(b.category === guide.category) - Number(a.category === guide.category))
+  .sort((a, b) => {
+    const aPriority = priority.indexOf(a.slug);
+    const bPriority = priority.indexOf(b.slug);
+    if (aPriority !== -1 || bPriority !== -1) {
+      if (aPriority === -1) return 1;
+      if (bPriority === -1) return -1;
+      return aPriority - bPriority;
+    }
+    return Number(b.category === guide.category) - Number(a.category === guide.category);
+  })
   .slice(0, 3);
 const catKey = `guides.filter.${guide.category}`;
 const code = visaCode(guide.slug);
