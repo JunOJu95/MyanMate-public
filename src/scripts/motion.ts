@@ -22,13 +22,14 @@ function initReveals(): void {
     return;
   }
 
+  // CMS grids can be several viewports tall; reveal when their leading edge enters.
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('is-visible');
       observer.unobserve(entry.target);
     });
-  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.01 });
 
   document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => observer.observe(el));
 }
