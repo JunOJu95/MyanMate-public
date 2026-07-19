@@ -2,38 +2,43 @@
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
 import T from '../../components/T.astro';
+import LocalizedText from '../../components/LocalizedText.astro';
 import SocialDmPanel from '../../components/SocialDmPanel.astro';
 import MobileSocialDm from '../../components/MobileSocialDm.astro';
 import { services, type Service } from '../../data/services';
-import { t } from '../../i18n/ui';
+import { getServiceContents, type ServiceContent } from '../../lib/content';
 
 export async function getStaticPaths() {
-  return services.map((s) => ({ params: { id: s.id }, props: { service: s } }));
+  const content = await getServiceContents();
+  return services.map((service) => ({
+    params: { id: service.id },
+    props: { service, content: content[service.id] },
+  }));
 }
 
-const { service } = Astro.props as { service: Service };
+const { service, content } = Astro.props as { service: Service; content: ServiceContent };
 ---
 <Base
-  title={t(service.nameKey, 'en')}
+  title={content.title.en}
   active="services"
-  description={t(service.descKey, 'en')}
+  description={content.description.en}
 >
   <div class="wrap">
     <div class="detail-2col detail-page service-info-page">
       <article>
         <header class="detail-hero service-detail-hero" data-reveal="page-hero">
           <span class="svc-ico"><Icon name={service.iconKey} /></span>
-          <h1 class="lead-title" data-i18n={service.nameKey}>{t(service.nameKey, 'en')}</h1>
-          <T k={service.descKey} tag="p" class="t-sub" />
+          <LocalizedText value={content.title} tag="h1" class="lead-title" />
+          <LocalizedText value={content.description} tag="p" class="t-sub" />
         </header>
 
-        {service.contentSections.map((section, index) => (
-          <section class:list={['sec', 'service-info-section', { 'service-source-section': index === service.contentSections.length - 1 }]} data-reveal="section">
+        {content.sections.map((section) => (
+          <section class:list={['sec', 'service-info-section', { 'service-source-section': section.items.some((item) => item.href) }]} data-reveal="section">
             <div class="service-info-heading">
-              <span class="sec-ico"><Icon name={section.iconKey} /></span>
+              <span class="sec-ico"><Icon name={section.icon} /></span>
               <div>
-                <T k={section.titleKey} tag="h2" class="sec-title" />
-                {section.introKey && <T k={section.introKey} tag="p" class="t-body" />}
+                <LocalizedText value={section.title} tag="h2" class="sec-title" />
+                {Object.values(section.intro).some(Boolean) && <LocalizedText value={section.intro} tag="p" class="t-body" />}
               </div>
             </div>
             <div class="service-point-grid" data-stagger>
@@ -46,19 +51,19 @@ const { service } = Astro.props as { service: Service };
                   data-event={`official-source:${service.id}`}
                   data-source={item.href}
                 >
-                  <span class="service-point-icon" aria-hidden="true"><Icon name={item.iconKey} size={18} /></span>
+                  <span class="service-point-icon" aria-hidden="true"><Icon name={item.icon} size={18} /></span>
                   <span class="service-point-copy">
-                    <T k={item.titleKey} tag="strong" />
-                    <T k={item.bodyKey} tag="span" />
+                    <LocalizedText value={item.title} tag="strong" />
+                    <LocalizedText value={item.body} />
                   </span>
                   <Icon name="external" size={15} class="service-point-external" />
                 </a>
               ) : (
                 <div class="service-point">
-                  <span class="service-point-icon" aria-hidden="true"><Icon name={item.iconKey} size={18} /></span>
+                  <span class="service-point-icon" aria-hidden="true"><Icon name={item.icon} size={18} /></span>
                   <span class="service-point-copy">
-                    <T k={item.titleKey} tag="strong" />
-                    <T k={item.bodyKey} tag="span" />
+                    <LocalizedText value={item.title} tag="strong" />
+                    <LocalizedText value={item.body} />
                   </span>
                 </div>
               ))}

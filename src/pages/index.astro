@@ -1,14 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import LocalizedText from '../components/LocalizedText.astro';
 import T from '../components/T.astro';
 import TikTokTrust from '../components/TikTokTrust.astro';
 import { t } from '../i18n/ui';
+import { getServiceContents, type LocalizedText as LocalizedTextValue } from '../lib/content';
 
-const entryCards = [
-  { title: 'svc.resume.name', href: '/services/resume', icon: 'resumeSvc', event: 'home_entry_resume' },
-  { title: 'home.entry.visa', href: '/guides', icon: 'visa', event: 'home_entry_visa' },
-  { title: 'svc.housing.name', href: '/services/housing', icon: 'housing', event: 'home_entry_housing' },
+const serviceContent = await getServiceContents();
+const entryCards: Array<{
+  titleKey?: string;
+  title?: LocalizedTextValue;
+  href: string;
+  icon: string;
+  event: string;
+}> = [
+  { title: serviceContent.resume.title, href: '/services/resume', icon: 'resumeSvc', event: 'home_entry_resume' },
+  { titleKey: 'home.entry.visa', href: '/guides', icon: 'visa', event: 'home_entry_visa' },
+  { title: serviceContent.housing.title, href: '/services/housing', icon: 'housing', event: 'home_entry_housing' },
 ];
 const processSteps = [
   { title: 'home.process.step1.title', body: 'home.process.step1.body' },
@@ -46,7 +55,9 @@ const processSteps = [
         {entryCards.map((entry) => (
           <a class="home-entry-card" href={entry.href} data-event={entry.event}>
             <span class="home-entry-icon" aria-hidden="true"><Icon name={entry.icon} size={24} /></span>
-            <T k={entry.title} tag="span" class="home-entry-title" />
+            {entry.title
+              ? <LocalizedText value={entry.title} tag="span" class="home-entry-title" />
+              : <T k={entry.titleKey!} tag="span" class="home-entry-title" />}
             <span class="home-entry-arrow" aria-hidden="true">&rarr;</span>
           </a>
         ))}

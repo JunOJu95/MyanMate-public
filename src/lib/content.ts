@@ -5,6 +5,7 @@
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '../../keystatic.config';
 import type { Lang } from '../i18n/ui';
+import type { ServiceId } from '../data/services';
 import Markdoc from '@markdoc/markdoc';
 
 export const reader = createReader(process.cwd(), keystaticConfig);
@@ -80,6 +81,76 @@ export function pickGuide(g: Guide, lang: Lang): GuideText {
 export function visaCode(slug: string): string | null {
   const m = slug.match(/^([a-z])(\d+)/i);
   return m ? `${m[1].toUpperCase()}-${m[2]}` : null;
+}
+
+/* ---------------- service information ---------------- */
+export interface LocalizedText {
+  en: string;
+  ko: string;
+  my: string;
+}
+
+export interface ServiceContentItem {
+  icon: string;
+  title: LocalizedText;
+  body: LocalizedText;
+  href: string;
+}
+
+export interface ServiceContentSection {
+  icon: string;
+  title: LocalizedText;
+  intro: LocalizedText;
+  items: ServiceContentItem[];
+}
+
+export interface ServiceContent {
+  title: LocalizedText;
+  description: LocalizedText;
+  sections: ServiceContentSection[];
+}
+
+function localizedText(value: any): LocalizedText {
+  return {
+    en: str(value?.en),
+    ko: str(value?.ko),
+    my: str(value?.my),
+  };
+}
+
+function toServiceContent(entry: any): ServiceContent {
+  const sections = Array.isArray(entry?.sections) ? entry.sections : [];
+  return {
+    title: localizedText(entry?.title),
+    description: localizedText(entry?.description),
+    sections: sections.map((section: any) => ({
+      icon: str(section?.icon, 'list'),
+      title: localizedText(section?.title),
+      intro: localizedText(section?.intro),
+      items: (Array.isArray(section?.items) ? section.items : []).map((item: any) => ({
+        icon: str(item?.icon, 'check'),
+        title: localizedText(item?.title),
+        body: localizedText(item?.body),
+        href: str(item?.href),
+      })),
+    })),
+  };
+}
+
+export async function getServiceContent(id: ServiceId): Promise<ServiceContent | null> {
+  const entry = id === 'resume'
+    ? await reader.singletons.resumeService.read()
+    : await reader.singletons.housingService.read();
+  return entry ? toServiceContent(entry) : null;
+}
+
+export async function getServiceContents(): Promise<Record<ServiceId, ServiceContent>> {
+  const [resume, housing] = await Promise.all([
+    getServiceContent('resume'),
+    getServiceContent('housing'),
+  ]);
+  if (!resume || !housing) throw new Error('Service content is missing from src/content/services.');
+  return { resume, housing };
 }
 
 /* ---------------- reviews ---------------- */

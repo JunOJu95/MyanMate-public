@@ -1,0 +1,17 @@
+---
+import { languages, type Lang } from '../i18n/ui';
+import type { LocalizedText } from '../lib/content';
+
+interface Props {
+  value: LocalizedText;
+  tag?: string;
+  class?: string;
+}
+
+const { value, tag = 'span', class: className } = Astro.props;
+const Tag = tag as any;
+const fallback = value.en;
+---
+<Tag class={className}>
+  {languages.map((lang: Lang) => <span data-lang={lang}>{value[lang] || fallback}</span>)}
+</Tag>

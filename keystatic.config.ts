@@ -1,4 +1,4 @@
-import { config, fields, collection } from '@keystatic/core';
+import { config, fields, collection, singleton } from '@keystatic/core';
 
 /* =========================================================================
    MyanMate · Keystatic CMS (Git-based, no DB)
@@ -9,9 +9,8 @@ import { config, fields, collection } from '@keystatic/core';
    - Dev: { kind: 'local' } — writes to local files; you commit & push.
    - Deploy: { kind: 'github' } — editors sign in with GitHub and save commits.
 
-   Services are intentionally NOT here — their copy lives in src/i18n/ui.ts
-   (single i18n source). Guides + reviews are genuinely new, frequently-edited
-   content, so they belong in the CMS.
+   Long-form guide and service content lives here so a non-developer can edit it.
+   Shared UI labels and fixed legal disclaimers remain in src/i18n/ui.ts.
    ========================================================================= */
 
 const CATEGORY_OPTIONS = [
@@ -21,6 +20,64 @@ const CATEGORY_OPTIONS = [
   { label: 'Korean', value: 'korean' },
   { label: 'Daily life', value: 'daily' },
 ];
+
+const ICON_OPTIONS = [
+  { label: 'Document', value: 'doc' },
+  { label: 'Home', value: 'housing' },
+  { label: 'People', value: 'users' },
+  { label: 'Jobs', value: 'jobs' },
+  { label: 'List', value: 'list' },
+  { label: 'Star', value: 'star' },
+  { label: 'Check', value: 'check' },
+  { label: 'Search', value: 'search' },
+  { label: 'Daily life', value: 'daily' },
+  { label: 'Topics', value: 'topics' },
+  { label: 'Help / caution', value: 'help' },
+  { label: 'External link', value: 'external' },
+  { label: 'Visa', value: 'visa' },
+  { label: 'Korean language', value: 'korean' },
+] as const;
+
+const localizedText = (label: string, multiline = false) =>
+  fields.object(
+    {
+      en: fields.text({ label: 'English', multiline, validation: { isRequired: true } }),
+      ko: fields.text({ label: '한국어', multiline }),
+      my: fields.text({ label: 'မြန်မာ — machine draft', multiline }),
+    },
+    { label }
+  );
+
+const serviceSchema = () => ({
+  title: localizedText('Page title / 페이지 제목'),
+  description: localizedText('Page introduction / 페이지 소개', true),
+  sections: fields.array(
+    fields.object({
+      icon: fields.select({ label: 'Section icon', options: ICON_OPTIONS, defaultValue: 'list' }),
+      title: localizedText('Section title / 섹션 제목'),
+      intro: localizedText('Section introduction / 섹션 소개', true),
+      items: fields.array(
+        fields.object({
+          icon: fields.select({ label: 'Point icon', options: ICON_OPTIONS, defaultValue: 'check' }),
+          title: localizedText('Point title / 포인트 제목'),
+          body: localizedText('Point description / 포인트 설명', true),
+          href: fields.url({
+            label: 'Official link (optional)',
+            description: 'Leave empty for a normal information point. Use only trusted official sources.',
+          }),
+        }),
+        {
+          label: 'Information points / 정보 포인트',
+          validation: { length: { min: 1, max: 8 } },
+        }
+      ),
+    }),
+    {
+      label: 'Information sections / 정보 섹션',
+      validation: { length: { min: 1, max: 8 } },
+    }
+  ),
+});
 
 const guideLang = (label: string) =>
   fields.object(
@@ -135,6 +192,22 @@ export default config({
           options: { image: { directory: 'public/images/blog', publicPath: '/images/blog/' } },
         }),
       },
+    }),
+  },
+  singletons: {
+    resumeService: singleton({
+      label: 'Resume & jobs · 이력서·구직 정보',
+      path: 'src/content/services/resume',
+      format: { data: 'yaml' },
+      previewUrl: '/services/resume',
+      schema: serviceSchema(),
+    }),
+    housingService: singleton({
+      label: 'Housing · 집 보기·생활환경 정보',
+      path: 'src/content/services/housing',
+      format: { data: 'yaml' },
+      previewUrl: '/services/housing',
+      schema: serviceSchema(),
     }),
   },
 });

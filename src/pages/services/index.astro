@@ -4,7 +4,10 @@ import T from '../../components/T.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import SocialDmPanel from '../../components/SocialDmPanel.astro';
 import { services } from '../../data/services';
+import { getServiceContents } from '../../lib/content';
 import { t } from '../../i18n/ui';
+
+const serviceContent = await getServiceContents();
 ---
 <Base
   title={t('home.services.title', 'en')}
@@ -18,7 +21,7 @@ import { t } from '../../i18n/ui';
     </section>
     <section class="sec page-content" data-reveal="section">
       <div class="grid-services" data-reveal="stagger" data-stagger>
-        {services.map((s) => <ServiceCard service={s} variant="tile" />)}
+        {services.map((service) => <ServiceCard service={service} content={serviceContent[service.id]} variant="tile" />)}
       </div>
     </section>
     <section class="sec visa-hub-dm" data-reveal="cta">

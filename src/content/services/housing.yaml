@@ -1,0 +1,300 @@
+title:
+  en: Home-viewing companion & living-area check
+  ko: 집 보기 동행 체크 및 생활환경 안내
+  my: အိမ်ကြည့်ရာတွင် အတူလိုက်ပါ၍ နေထိုင်မှုပတ်ဝန်းကျင် စစ်ဆေးလမ်းညွှန်မှု
+description:
+  en: Practical points for looking at the inside of a home, shared spaces, and the surrounding living
+    environment, plus official sources to check yourself.
+  ko: 집 안과 공용공간, 주변 생활환경을 직접 살펴볼 때 도움이 되는 포인트와 공식 확인처를 정리했습니다.
+  my: အိမ်အတွင်းပိုင်း၊ အများသုံးနေရာများနှင့် ပတ်ဝန်းကျင်နေထိုင်မှုအခြေအနေကို
+    ကိုယ်တိုင်ကြည့်ရှုရာတွင် အသုံးဝင်သောအချက်များနှင့် တရားဝင်စစ်ဆေးရာနေရာများကို စုစည်းထားပါသည်။
+sections:
+  - icon: housing
+    title:
+      en: Points to notice inside the home
+      ko: 집 안에서 볼 포인트
+      my: အိမ်အတွင်း ကြည့်ရမည့်အချက်များ
+    intro:
+      en: Look slowly and compare what you can see, hear, and smell. Ask before operating fixtures or
+        taking photos.
+      ko: 눈에 보이는 상태뿐 아니라 들리는 소리와 냄새도 천천히 살펴보세요. 설비를 작동하거나 사진을 찍기 전에는 허락을 구합니다.
+      my: မြင်ရ၊ ကြားရ၊ အနံ့ရသောအခြေအနေများကို ဖြည်းဖြည်းကြည့်ပါ။ ပစ္စည်းအသုံးပြုခြင်း သို့မဟုတ်
+        ဓာတ်ပုံရိုက်ခြင်းမပြုမီ ခွင့်တောင်းပါ။
+    items:
+      - icon: daily
+        title:
+          en: Light and ventilation
+          ko: 채광과 환기
+          my: အလင်းရောင်နှင့် လေဝင်လေထွက်
+        body:
+          en: Notice the direction and size of windows, blocked views, and whether fresh air moves through the
+            main living and sleeping spaces.
+          ko: 창문의 방향과 크기, 앞을 가리는 건물, 주로 생활하고 자는 공간에 공기가 통하는지 살펴봅니다.
+          my: ပြတင်းပေါက်ဦးတည်ချက်နှင့် အရွယ်အစား၊ မြင်ကွင်းပိတ်ဆို့မှုနှင့် နေထိုင်အိပ်စက်ရာနေရာတွင်
+            လေဝင်လေထွက်ရှိမရှိ ကြည့်ပါ။
+      - icon: search
+        title:
+          en: Moisture, mold, and odor
+          ko: 습기·곰팡이·냄새
+          my: စိုထိုင်းမှု၊ မှိုနှင့် အနံ့
+        body:
+          en: Look around window frames, exterior walls, ceilings, cabinets, and bathrooms for stains, peeling
+            surfaces, condensation, or persistent odor.
+          ko: 창틀, 외벽 쪽 벽, 천장, 수납장과 욕실 주변에 얼룩·들뜸·결로·지속되는 냄새가 있는지 봅니다.
+          my: ပြတင်းပေါက်ဘောင်၊ အပြင်ဘက်နံရံ၊ မျက်နှာကျက်၊ ဗီရိုနှင့် ရေချိုးခန်းတွင် အစွန်းအထင်း၊ ကွာကျမှု၊
+            ရေငွေ့နှင့် အနံ့ရှိမရှိ ကြည့်ပါ။
+      - icon: help
+        title:
+          en: Noise and privacy
+          ko: 소음과 사생활
+          my: ဆူညံသံနှင့် ကိုယ်ရေးလွတ်လပ်မှု
+        body:
+          en: Pause near windows and shared walls. Consider road, hallway, shop, elevator, and
+            neighboring-building noise and sight lines.
+          ko: 창가와 옆집에 붙은 벽 근처에서 잠시 들어보세요. 도로·복도·상가·엘리베이터 소음과 맞은편 건물의 시선을 함께 봅니다.
+          my: ပြတင်းပေါက်နှင့် အတူကပ်နံရံအနီးတွင် အသံနားထောင်ပါ။ လမ်း၊ စင်္ကြံ၊ ဆိုင်၊ ဓာတ်လှေကားနှင့်
+            အိမ်နီးချင်းအဆောက်အအုံမှ မြင်ကွင်းကို စဉ်းစားပါ။
+      - icon: check
+        title:
+          en: Water pressure and drainage
+          ko: 수압과 배수
+          my: ရေဖိအားနှင့် ရေစီးဆင်းမှု
+        body:
+          en: With permission, run taps and check hot water response, water pressure, drainage speed, leaks,
+            and bathroom ventilation.
+          ko: 허락을 받은 뒤 수도를 틀어 온수 반응, 수압, 배수 속도, 누수 흔적과 욕실 환기를 살펴봅니다.
+          my: ခွင့်ပြုချက်ရပြီးနောက် ရေဖွင့်၍ ရေပူတုံ့ပြန်မှု၊ ရေဖိအား၊ ရေစီးနှုန်း၊ ယိုစိမ့်မှုနှင့်
+            ရေချိုးခန်းလေဝင်လေထွက်ကို ကြည့်ပါ။
+      - icon: housing
+        title:
+          en: Windows, doors, and heating
+          ko: 창문·문·난방
+          my: ပြတင်းပေါက်၊ တံခါးနှင့် အပူပေးစနစ်
+        body:
+          en: See whether windows and doors close properly, seals are damaged, drafts are noticeable, and the
+            heating controls are easy to identify.
+          ko: 창문과 문이 잘 닫히는지, 틈이나 손상은 없는지, 외풍이 느껴지는지, 난방 조절 장치를 찾기 쉬운지 봅니다.
+          my: ပြတင်းပေါက်နှင့် တံခါးများ ကောင်းစွာပိတ်ခြင်း၊ ပျက်စီးမှု၊ လေအေးဝင်မှုနှင့် အပူထိန်းကိရိယာကို
+            ရှာရလွယ်ကူခြင်းရှိမရှိ ကြည့်ပါ။
+      - icon: list
+        title:
+          en: Storage and outlets
+          ko: 수납과 콘센트
+          my: သိုလှောင်မှုနှင့် လျှပ်စစ်ပေါက်
+        body:
+          en: Picture where everyday belongings and appliances would go, and note the number and placement of
+            accessible outlets.
+          ko: 생활용품과 가전이 들어갈 자리를 생각해 보고, 사용할 수 있는 수납공간과 콘센트의 수·위치를 봅니다.
+          my: နေ့စဉ်ပစ္စည်းနှင့် စက်ကိရိယာထားမည့်နေရာကို စဉ်းစားပြီး သိုလှောင်ရာနှင့် လျှပ်စစ်ပေါက် အရေအတွက်၊
+            နေရာကို ကြည့်ပါ။
+  - icon: topics
+    title:
+      en: Look beyond the front door
+      ko: 건물과 공용공간
+      my: အဆောက်အအုံနှင့် အများသုံးနေရာများ
+    intro:
+      en: Shared spaces affect daily convenience and how safe the route feels after dark.
+      ko: 공용공간의 상태와 동선은 매일의 편의와 늦은 시간 귀가할 때의 느낌에 영향을 줍니다.
+      my: အများသုံးနေရာအခြေအနေနှင့် လမ်းကြောင်းသည် နေ့စဉ်အဆင်ပြေမှုနှင့် ညအချိန်ပြန်လာရာတွင် ခံစားရမှုကို
+        သက်ရောက်စေပါသည်။
+    items:
+      - icon: check
+        title:
+          en: Entrance and access
+          ko: 출입구와 보안
+          my: ဝင်ပေါက်နှင့် ဝင်ထွက်မှု
+        body:
+          en: Notice the entry system, visibility from the street, door condition, and whether unfamiliar
+            visitors can enter shared areas easily.
+          ko: 공동현관 방식, 골목이나 도로에서 보이는 정도, 문 상태와 외부인이 공용공간에 쉽게 들어올 수 있는지 봅니다.
+          my: အဝင်စနစ်၊ လမ်းမှ မြင်နိုင်မှု၊ တံခါးအခြေအနေနှင့် မသိသူများ အများသုံးနေရာသို့
+            လွယ်ကူစွာဝင်နိုင်ခြင်းရှိမရှိ ကြည့်ပါ။
+      - icon: daily
+        title:
+          en: Hallways and stairs
+          ko: 복도와 계단
+          my: စင်္ကြံနှင့် လှေကား
+        body:
+          en: Check lighting, cleanliness, handrails, slippery areas, obstructions, and the route to emergency
+            exits.
+          ko: 조명, 청결, 난간, 미끄러운 곳, 통행을 막는 물건과 비상구까지의 동선을 봅니다.
+          my: မီးအလင်း၊ သန့်ရှင်းမှု၊ လက်ရန်း၊ ချော်နိုင်သည့်နေရာ၊ ပိတ်ဆို့ပစ္စည်းနှင့်
+            အရေးပေါ်ထွက်ပေါက်လမ်းကို ကြည့်ပါ။
+      - icon: list
+        title:
+          en: Waste and recycling
+          ko: 쓰레기와 분리배출
+          my: အမှိုက်နှင့် ခွဲခြားစွန့်ပစ်မှု
+        body:
+          en: Find where and when general waste, food waste, and recycling are placed, and whether the route
+            is practical.
+          ko: 일반쓰레기, 음식물, 재활용품을 어디에 언제 내놓는지와 이동하기 불편하지 않은지 확인합니다.
+          my: အထွေထွေအမှိုက်၊ အစားအစာအမှိုက်နှင့် ပြန်လည်အသုံးပြုပစ္စည်းကို ဘယ်နေရာ၊ ဘယ်အချိန် ထားရမည်နှင့်
+            လမ်းကြောင်းအဆင်ပြေမှုကို စစ်ဆေးပါ။
+      - icon: housing
+        title:
+          en: Elevator, parking, bikes, and deliveries
+          ko: 엘리베이터·주차·자전거·택배
+          my: ဓာတ်လှေကား၊ ကားရပ်၊ စက်ဘီးနှင့် ပို့ဆောင်မှု
+        body:
+          en: Confirm which shared facilities actually exist and whether their size, access, and operating
+            conditions fit your routine.
+          ko: 필요한 공용시설이 실제로 있는지, 크기와 접근 방식, 이용 조건이 생활 방식에 맞는지 봅니다.
+          my: လိုအပ်သော အများသုံးပစ္စည်းရှိမရှိနှင့် အရွယ်အစား၊ ဝင်ထွက်ပုံ၊ အသုံးပြုမှုအခြေအနေသည် သင့်ဘဝနှင့်
+            ကိုက်ညီမှုရှိမရှိ ကြည့်ပါ။
+  - icon: daily
+    title:
+      en: Test the living environment
+      ko: 주변 생활환경
+      my: ပတ်ဝန်းကျင်နေထိုင်မှုအခြေအနေ
+    intro:
+      en: A map distance can feel different in real life. Think about the route and time of day you will
+        actually use.
+      ko: 지도상의 거리와 실제 체감은 다를 수 있습니다. 자주 이동할 시간대와 실제 동선을 기준으로 살펴보세요.
+      my: မြေပုံအကွာအဝေးနှင့် အမှန်တကယ်ခံစားရမှု ကွာနိုင်ပါသည်။ သင်အသုံးများမည့်အချိန်နှင့်
+        လမ်းကြောင်းဖြင့် စဉ်းစားပါ။
+    items:
+      - icon: jobs
+        title:
+          en: Real commute time
+          ko: 실제 출퇴근 시간
+          my: အမှန်တကယ် အလုပ်သွားလာချိန်
+        body:
+          en: Check door-to-door travel at your usual time, including walking, transfers, waiting, and the
+            route from the last stop.
+          ko: 평소 이동할 시간에 걷기, 환승, 대기와 마지막 정류장에서 집까지의 길을 포함한 시간을 봅니다.
+          my: သင်သွားလာမည့်အချိန်တွင် လမ်းလျှောက်၊ ပြောင်းစီး၊ စောင့်ဆိုင်းမှုနှင့် နောက်ဆုံးမှတ်တိုင်မှ
+            အိမ်အထိ ခရီးကို ထည့်တွက်ပါ။
+      - icon: daily
+        title:
+          en: Late-night transport
+          ko: 늦은 시간 교통편
+          my: ညနောက်ကျ သယ်ယူပို့ဆောင်ရေး
+        body:
+          en: Look at the last train or bus, night routes, taxi access, and how the walk home feels after
+            dark.
+          ko: 막차 시간, 심야 노선, 택시 접근성과 어두워진 뒤 집까지 걷는 길을 확인합니다.
+          my: နောက်ဆုံးရထား သို့မဟုတ် ဘတ်စ်ကား၊ ညလမ်းကြောင်း၊ တက္ကစီရရှိမှုနှင့် ညတွင် အိမ်ပြန်လမ်းကို
+            ကြည့်ပါ။
+      - icon: help
+        title:
+          en: Daily essentials
+          ko: 마트·병원·약국
+          my: နေ့စဉ်လိုအပ်သောနေရာများ
+        body:
+          en: Check the nearest grocery store, pharmacy, clinic or hospital, bank or ATM, laundromat, and
+            other places you expect to use.
+          ko: 가까운 마트, 약국, 병원, 은행이나 ATM, 세탁소처럼 자주 이용할 장소의 위치와 운영시간을 봅니다.
+          my: အနီးဆုံး ကုန်စုံဆိုင်၊ ဆေးဆိုင်၊ ဆေးရုံ၊ ဘဏ် သို့မဟုတ် ATM၊ အဝတ်လျှော်ဆိုင်နှင့်
+            အသုံးများမည့်နေရာကို ကြည့်ပါ။
+      - icon: search
+        title:
+          en: Walking route and noise
+          ko: 경사·야간 보행·시간대별 소음
+          my: လမ်းလျှောက်လမ်းနှင့် အချိန်အလိုက်ဆူညံသံ
+        body:
+          en: Notice steep slopes, lighting, crossings, isolated stretches, construction, nightlife, traffic,
+            and noise at the times you will be home.
+          ko: 가파른 길, 조명, 횡단보도, 인적이 드문 구간, 공사장·상가·차량 소음이 생활 시간대에 어떤지 봅니다.
+          my: မတ်စောက်သောလမ်း၊ မီးအလင်း၊ လမ်းကူး၊ လူရှင်းနေရာ၊ ဆောက်လုပ်ရေး၊ ဆိုင်နှင့် ယာဉ်ဆူညံသံကို
+            သင်အိမ်တွင်ရှိမည့်အချိန်ဖြင့် ကြည့်ပါ။
+  - icon: list
+    title:
+      en: Compare homes with the same points
+      ko: 여러 집을 비교하는 기준
+      my: အိမ်များကို အချက်တူဖြင့် နှိုင်းယှဉ်ခြင်း
+    intro:
+      en: Use the same headings for every home and separate facts from your first impression. Your
+        priorities decide which trade-offs matter.
+      ko: 집마다 같은 항목으로 메모하고 사실과 첫인상을 나눠 적어보세요. 어떤 단점이 중요한지는 본인의 우선순위에 따라 달라집니다.
+      my: အိမ်တိုင်းကို ခေါင်းစဉ်တူဖြင့် မှတ်တမ်းတင်ပြီး အချက်အလက်နှင့် ပထမခံစားချက်ကို ခွဲရေးပါ။
+        ဘယ်အချက်အရေးကြီးသည်ကို သင့်ဦးစားပေးမှုက ဆုံးဖြတ်ပါသည်။
+    items:
+      - icon: housing
+        title:
+          en: Location and travel
+          ko: 위치와 이동
+          my: တည်နေရာနှင့် သွားလာမှု
+        body:
+          en: Record door-to-door time, transfers, late-night options, hills, and the walk from transit.
+          ko: 목적지까지 걸리는 시간, 환승, 늦은 교통편, 경사와 대중교통에서 집까지의 길을 적습니다.
+          my: သွားလိုသည့်နေရာအထိအချိန်၊ ပြောင်းစီးမှု၊ ညသယ်ယူပို့ဆောင်ရေး၊ တောင်စောင်းနှင့်
+            မှတ်တိုင်မှအိမ်လမ်းကို မှတ်ပါ။
+      - icon: daily
+        title:
+          en: Daily convenience
+          ko: 생활 편의
+          my: နေ့စဉ်အဆင်ပြေမှု
+        body:
+          en: Compare nearby essentials, waste disposal, deliveries, parking, storage, and everyday routes.
+          ko: 주변 편의시설, 쓰레기 배출, 택배, 주차, 수납과 평소 이동 동선을 비교합니다.
+          my: အနီးအနားလိုအပ်သောနေရာ၊ အမှိုက်စွန့်ပစ်မှု၊ ပို့ဆောင်မှု၊ ကားရပ်၊ သိုလှောင်မှုနှင့်
+            နေ့စဉ်လမ်းကြောင်းကို နှိုင်းယှဉ်ပါ။
+      - icon: search
+        title:
+          en: Visible condition
+          ko: 눈에 보이는 상태
+          my: မြင်နိုင်သောအခြေအနေ
+        body:
+          en: Note light, moisture, odor, noise, water, windows, doors, cleanliness, and any questions that
+            still need an expert answer.
+          ko: 채광, 습기, 냄새, 소음, 물, 창문과 문, 청결 상태와 전문가에게 확인할 질문을 따로 적습니다.
+          my: အလင်း၊ စိုထိုင်းမှု၊ အနံ့၊ ဆူညံသံ၊ ရေ၊ ပြတင်းပေါက်၊ တံခါး၊ သန့်ရှင်းမှုနှင့် ကျွမ်းကျင်သူကို
+            မေးရမည့်အရာကို မှတ်ပါ။
+      - icon: star
+        title:
+          en: Your priorities
+          ko: 나의 우선순위
+          my: သင့်ဦးစားပေးမှု
+        body:
+          en: Choose the three conditions you cannot compromise on and compare each home against them before
+            deciding.
+          ko: 포기하기 어려운 조건 세 가지를 먼저 정하고, 최종 결정 전에 각 집이 얼마나 맞는지 비교합니다.
+          my: မလျှော့နိုင်သောအခြေအနေ သုံးခုကို အရင်ရွေးပြီး မဆုံးဖြတ်မီ အိမ်တိုင်းနှင့် နှိုင်းယှဉ်ပါ။
+  - icon: external
+    title:
+      en: Official sources before a contract
+      ko: 계약 전 공식 확인처
+      my: စာချုပ်မချုပ်မီ တရားဝင်စစ်ဆေးရာနေရာ
+    intro:
+      en: Visible condition is only one part of choosing a home. Confirm prices, rights, guarantees, and
+        contract safety through official services and qualified professionals.
+      ko: 눈에 보이는 상태만으로 집의 계약 안전을 판단할 수 없습니다. 시세, 권리관계, 보증과 계약 조건은 공식 서비스와 자격 전문가를 통해 확인하세요.
+      my: မြင်နိုင်သောအခြေအနေတစ်ခုတည်းဖြင့် စာချုပ်လုံခြုံမှုကို မဆုံးဖြတ်နိုင်ပါ။ စျေးနှုန်း၊ အခွင့်အရေး၊
+        အာမခံနှင့် စာချုပ်အခြေအနေကို တရားဝင်ဝန်ဆောင်မှုနှင့် ကျွမ်းကျင်သူထံ စစ်ဆေးပါ။
+    items:
+      - icon: external
+        title:
+          en: HUG Safe Jeonse
+          ko: HUG 안심전세
+          my: HUG Safe Jeonse
+        body:
+          en: Check available housing-price, jeonse-ratio, landlord, guarantee, and pre-contract information
+            directly in HUG’s official service.
+          ko: 주택 시세, 전세가율, 임대인·보증 관련 정보와 계약 전 확인 기능을 HUG 공식 서비스에서 직접 확인하세요.
+          my: အိမ်စျေးနှုန်း၊ jeonse အချိုး၊ အိမ်ရှင်၊ အာမခံနှင့် စာချုပ်မချုပ်မီအချက်အလက်ကို HUG
+            တရားဝင်ဝန်ဆောင်မှုတွင် စစ်ဆေးပါ။
+        href: https://www.khug.or.kr/jeonse/web/s01/s010102.jsp
+      - icon: external
+        title:
+          en: Official real transaction prices
+          ko: 국토교통부 실거래가 공개시스템
+          my: မြေယာနှင့် ပို့ဆောင်ရေးဝန်ကြီးဌာန အမှန်တကယ်အရောင်းအဝယ်စျေး
+        body:
+          en: Search reported sale and rental transactions by housing type and area on the Ministry of Land’s
+            official system.
+          ko: 주택 유형과 지역별로 신고된 매매·전월세 실거래 정보를 국토교통부 공식 시스템에서 확인하세요.
+          my: အိမ်အမျိုးအစားနှင့် ဒေသအလိုက် အစီရင်ခံထားသော အရောင်းနှင့် အငှားအရောင်းအဝယ်ကို ဝန်ကြီးဌာန
+            တရားဝင်စနစ်တွင် ကြည့်ပါ။
+        href: https://rt.molit.go.kr/
+      - icon: help
+        title:
+          en: Get a qualified confirmation
+          ko: 계약 판단은 자격 전문가와
+          my: စာချုပ်ဆုံးဖြတ်ချက်ကို ကျွမ်းကျင်သူနှင့်
+        body:
+          en: MyanMate does not determine legal rights or certify a property as safe. Confirm contracts and
+            legal questions with a licensed realtor or another qualified professional.
+          ko: MyanMate는 권리관계를 판단하거나 주택의 법적 안전성을 보증하지 않습니다. 계약과 법적 질문은 공인중개사 또는 자격 전문가에게 확인하세요.
+          my: MyanMate သည် ဥပဒေအခွင့်အရေးကို မဆုံးဖြတ်သလို အိမ်၏ ဥပဒေလုံခြုံမှုကိုလည်း အာမမခံပါ။ စာချုပ်နှင့်
+            ဥပဒေမေးခွန်းကို လိုင်စင်ရအိမ်ခြံမြေအကျိုးဆောင် သို့မဟုတ် ကျွမ်းကျင်သူထံ စစ်ဆေးပါ။
