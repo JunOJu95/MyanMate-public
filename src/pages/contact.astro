@@ -2,205 +2,51 @@
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import T from '../components/T.astro';
-import { services } from '../data/services';
+import SocialDmPanel from '../components/SocialDmPanel.astro';
 import { t } from '../i18n/ui';
-import { getGuides, visaCode } from '../lib/content';
 
-// Primary path: email submissions through Web3Forms. Messenger stays as a fallback
-// for people who prefer DM. Set PUBLIC_WEB3FORMS_KEY in the hosting environment.
-const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY || '';
-const DM_URL = 'https://m.me/61580519695929';
 const trustItems = [
   { icon: 'check', title: 'request.trust.noSensitive.title', body: 'request.trust.noSensitive.body' },
   { icon: 'list', title: 'request.trust.self.title', body: 'request.trust.self.body' },
   { icon: 'chat', title: 'request.trust.dm.title', body: 'request.trust.dm.body' },
 ];
-const housingService = services.find((service) => service.id === 'housing');
-const visaOptions = (await getGuides()).flatMap((guide) => {
-  const code = guide.category === 'visa' ? visaCode(guide.slug) : null;
-  return code ? [{ value: code.toLowerCase().replace('-', ''), label: code }] : [];
-});
 ---
 <Base title={t('request.title', 'en')} description={t('request.lead', 'en')}>
-  <div class="wrap contact-page">
+  <div class="wrap contact-page dm-contact-page">
     <div class="contact-intro" data-reveal="page-hero">
-    <section class="sec page-hero">
-      <h1 class="lead-title"><T k="request.title" /></h1>
-      <T k="request.lead" tag="p" class="t-body mt-8" />
-    </section>
+      <section class="sec page-hero">
+        <h1 class="lead-title"><T k="request.title" /></h1>
+        <T k="request.lead" tag="p" class="t-body mt-8" />
+      </section>
 
-    <section class="contact-assurance" aria-label={t('request.title', 'en')} data-i18n-aria="request.title" data-stagger>
-      {trustItems.map((item) => (
-        <div class="assurance-item">
-          <span class="assurance-ico"><Icon name={item.icon} size={18} /></span>
-          <span>
-            <b data-i18n={item.title}>{t(item.title, 'en')}</b>
-            <span data-i18n={item.body}>{t(item.body, 'en')}</span>
-          </span>
-        </div>
-      ))}
-    </section>
+      <section class="contact-assurance" aria-label={t('request.title', 'en')} data-i18n-aria="request.title" data-stagger>
+        {trustItems.map((item) => (
+          <div class="assurance-item">
+            <span class="assurance-ico"><Icon name={item.icon} size={18} /></span>
+            <span>
+              <b data-i18n={item.title}>{t(item.title, 'en')}</b>
+              <span data-i18n={item.body}>{t(item.body, 'en')}</span>
+            </span>
+          </div>
+        ))}
+      </section>
     </div>
 
-    <section class="sec contact-form-panel" data-reveal="form">
-      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
-        <input type="hidden" name="subject" value="MyanMate — new request" />
-        <input type="hidden" name="from_page" value="contact" />
-        <input type="hidden" id="f-source" name="source" value="direct" />
-        <input type="hidden" name="redirect" value="https://www.myanmate.com/contact?sent=1" />
-        <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off" />
-        <div class="field">
-          <label class="flbl" for="f-name"><T k="request.field.name" /></label>
-          <input class="input" id="f-name" name="name" type="text" required autocomplete="name"
-            placeholder={t('request.field.name.ph', 'en')} data-i18n-ph="request.field.name.ph" />
-        </div>
-        <div class="field">
-          <label class="flbl" for="f-contact"><T k="request.field.contact" /></label>
-          <input class="input" id="f-contact" name="contact" type="text" required
-            placeholder={t('request.field.contact.ph', 'en')} data-i18n-ph="request.field.contact.ph" />
-          <input id="f-email" name="email" type="hidden" />
-        </div>
-        <div class="field">
-          <label class="flbl" for="f-service"><T k="request.field.service" /></label>
-          <select class="input" id="f-service" name="service">
-            <option value="" data-i18n="request.field.service.ph">{t('request.field.service.ph', 'en')}</option>
-            {services.map((s) => <option value={s.id} data-i18n={s.nameKey}>{t(s.nameKey, 'en')}</option>)}
-          </select>
-        </div>
-        <div class="field visa-request-field" id="visa-request-field" hidden aria-hidden="true">
-          <label class="flbl" for="f-visa"><T k="request.field.visa" /></label>
-          <select class="input" id="f-visa" name="visa" disabled>
-            <option value="" data-i18n="request.field.visa.ph">{t('request.field.visa.ph', 'en')}</option>
-            {visaOptions.map((visa) => <option value={visa.value}>{visa.label}</option>)}
-          </select>
-          <p class="visa-field-note" data-i18n="request.field.visa.note">{t('request.field.visa.note', 'en')}</p>
-        </div>
-        {housingService?.confirmationKeys && (
-          <fieldset id="housing-scope-confirmation" class="housing-scope-confirmation" hidden aria-hidden="true">
-            <legend data-i18n="svc.housing.confirm.title">{t('svc.housing.confirm.title', 'en')}</legend>
-            <p class="t-body" data-i18n="svc.housing.confirm.lead">{t('svc.housing.confirm.lead', 'en')}</p>
-            <div class="housing-confirmation-list">
-              {housingService.confirmationKeys.map((key, index) => (
-                <label class="housing-confirmation-check" for={`housing-confirm-${index + 1}`}>
-                  <input
-                    id={`housing-confirm-${index + 1}`}
-                    type="checkbox"
-                    name={`housing_scope_${index + 1}`}
-                    value="confirmed"
-                    data-housing-confirm
-                    disabled
-                  />
-                  <span data-i18n={key}>{t(key, 'en')}</span>
-                </label>
-              ))}
-            </div>
-          </fieldset>
-        )}
-        <div class="field">
-          <label class="flbl" for="f-memo"><T k="request.field.memo" /></label>
-          <textarea class="input" id="f-memo" name="memo"
-            placeholder={t('request.field.memo.ph', 'en')} data-i18n-ph="request.field.memo.ph"></textarea>
-          <!-- Privacy: warn against sensitive data (passport/ID numbers) -->
-          <p class="field-note" data-i18n="request.field.memo.note">{t('request.field.memo.note', 'en')}</p>
-        </div>
-        <label class="consent" for="f-consent">
-          <input type="checkbox" id="f-consent" name="consent" required />
-          <span data-i18n="request.consent">{t('request.consent', 'en')}</span>
-        </label>
-        <button class="btn pri full" type="submit" id="f-submit" data-i18n="request.submit">{t('request.submit', 'en')}</button>
-        <div class="success-note" id="f-success" role="status" style="display:none;">
-          <span class="ico"><Icon name="check" /></span>
-          <span data-i18n="request.success">{t('request.success', 'en')}</span>
-        </div>
-      </form>
-
-      <div class="or-split"><T k="request.or" /></div>
-      <a class="btn ghost full" id="dm-link" href={DM_URL} target="_blank" rel="noopener" data-i18n="request.dm" data-event="contact:dm">{t('request.dm', 'en')}</a>
+    <section class="sec contact-dm-panel" data-reveal="cta">
+      <SocialDmPanel context="general" source="contact" id="dm" />
     </section>
   </div>
 
   <script>
-    const form = document.getElementById('contact-form') as HTMLFormElement | null;
-    const success = document.getElementById('f-success');
-    const serviceSel = document.getElementById('f-service') as HTMLSelectElement | null;
-    const visaField = document.getElementById('visa-request-field');
-    const visaSel = document.getElementById('f-visa') as HTMLSelectElement | null;
-    const sourceInput = document.getElementById('f-source') as HTMLInputElement | null;
-    const contactInput = document.getElementById('f-contact') as HTMLInputElement | null;
-    const emailInput = document.getElementById('f-email') as HTMLInputElement | null;
-    const housingScope = document.getElementById('housing-scope-confirmation') as HTMLFieldSetElement | null;
-    const housingChecks = Array.from(document.querySelectorAll<HTMLInputElement>('[data-housing-confirm]'));
-
-    // Preserve guide context without collecting sensitive personal details.
     const params = new URLSearchParams(location.search);
-    const svc = params.get('service');
-    if (svc && serviceSel) serviceSel.value = svc;
+    const service = params.get('service');
     const visa = params.get('visa');
-    const validVisas = visaSel
-      ? Array.from(visaSel.options, (option) => option.value).filter(Boolean)
-      : [];
-    if (visa && validVisas.includes(visa) && visaSel) {
-      visaSel.value = visa;
-      if (serviceSel && !serviceSel.value) serviceSel.value = 'visa';
-    }
-    const source = params.get('source') || 'direct';
-    if (sourceInput) sourceInput.value = source;
+    const allowedServices = new Set(['visa', 'resume', 'housing']);
+    const allowedVisas = new Set(['d2', 'd4', 'd10', 'e9']);
 
-    const sent = params.get('sent') === '1';
-    const updateVisaField = () => {
-      const active = !sent && serviceSel?.value === 'visa';
-      if (visaField) {
-        visaField.hidden = !active;
-        visaField.setAttribute('aria-hidden', String(!active));
-      }
-      if (visaSel) {
-        visaSel.disabled = !active;
-        visaSel.required = active;
-        if (!active) visaSel.value = '';
-      }
-    };
-    const updateHousingScope = () => {
-      const active = !sent && serviceSel?.value === 'housing';
-      if (housingScope) {
-        housingScope.hidden = !active;
-        housingScope.setAttribute('aria-hidden', String(!active));
-      }
-      housingChecks.forEach((checkbox) => {
-        checkbox.disabled = !active;
-        checkbox.required = active;
-        if (!active) checkbox.checked = false;
-      });
-    };
-    serviceSel?.addEventListener('change', () => {
-      updateVisaField();
-      updateHousingScope();
-    });
-    updateVisaField();
-    updateHousingScope();
-
-    if (sent) {
-      form?.querySelectorAll('.field, .consent, #f-submit').forEach((el) => ((el as HTMLElement).style.display = 'none'));
-      if (success) success.style.display = 'flex';
-    }
-
-    const trackingProps = () => ({
-      service: serviceSel?.value || 'none',
-      visa: visaSel?.value || 'none',
-      source,
-      path: location.pathname,
-    });
-    let contactStarted = false;
-    form?.addEventListener('focusin', () => {
-      if (contactStarted || sent) return;
-      contactStarted = true;
-      (window as any).mmTrack?.('contact_start', trackingProps());
-    });
-
-    form?.addEventListener('submit', () => {
-      const contact = contactInput?.value.trim() || '';
-      if (emailInput) emailInput.value = contact.includes('@') ? contact : '';
-      (window as any).mmTrack?.('contact_submit', trackingProps());
+    document.querySelectorAll<HTMLElement>('.contact-dm-panel [data-channel]').forEach((link) => {
+      if (service && allowedServices.has(service)) link.dataset.service = service;
+      if (visa && allowedVisas.has(visa)) link.dataset.visa = visa;
     });
   </script>
 </Base>

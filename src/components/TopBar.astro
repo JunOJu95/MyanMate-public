@@ -33,7 +33,6 @@ const links = [
       ))}
     </nav>
     <LangToggle />
-    <a class="nav-cta" href="/contact" data-i18n="btn.getHelp">{t('btn.getHelp', defaultLang)}</a>
     <button
       class="ham"
       type="button"
@@ -50,6 +49,5 @@ const links = [
     {links.map((l) => (
       <a class:list={['nl', { active: active === l.id }]} href={l.href} data-i18n={l.key}>{t(l.key, defaultLang)}</a>
     ))}
-    <a class="mobile-cta" href="/contact" data-i18n="btn.getHelp">{t('btn.getHelp', defaultLang)}</a>
   </nav>
 </header>

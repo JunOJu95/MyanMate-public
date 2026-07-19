@@ -5,8 +5,9 @@ import T from '../../components/T.astro';
 import GuideSection from '../../components/GuideSection.astro';
 import GuideCard from '../../components/GuideCard.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
+import SocialDmPanel from '../../components/SocialDmPanel.astro';
+import MobileSocialDm from '../../components/MobileSocialDm.astro';
 import { getGuides, visaCode, type Guide, type GuideText } from '../../lib/content';
-import { categoryToService } from '../../data/services';
 import { t, languages } from '../../i18n/ui';
 
 export async function getStaticPaths() {
@@ -15,14 +16,13 @@ export async function getStaticPaths() {
 }
 
 const { guide, all } = Astro.props as { guide: Guide; all: Guide[] };
-const serviceId = categoryToService[guide.category];
+const isVisa = guide.category === 'visa';
 const related = [...all.filter((g) => g.slug !== guide.slug)]
   .sort((a, b) => Number(b.category === guide.category) - Number(a.category === guide.category))
   .slice(0, 3);
 const catKey = `guides.filter.${guide.category}`;
 const code = visaCode(guide.slug);
 const visaId = code?.toLowerCase().replace('-', '') ?? '';
-const contactHref = `/contact?service=visa&visa=${visaId}&source=guide`;
 // Sections are rendered in this order; empty fields (e.g. E-9 has no subtypes/notes
 // imported) are filtered out so the number badges stay gapless per guide.
 const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul' | 'ol' }[] = [
@@ -36,7 +36,7 @@ const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul'
 ---
 <Base title={guide.en.title} active="guides" description={guide.en.summary}>
   <div class="wrap">
-    <div class:list={['detail-2col detail-page', { single: !serviceId }]}>
+    <div class:list={['detail-2col detail-page', { single: !isVisa }]}>
       <article>
         <header class="detail-hero">
         <span class="pill-tag" data-i18n={catKey}>{t(catKey, 'en')}</span>
@@ -55,22 +55,7 @@ const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul'
         </div>
         </header>
         {SECTIONS.map((s, i) => (
-          <>
-            <GuideSection guide={guide} field={s.field} labelKey={s.labelKey} mode={s.mode} num={i + 1} />
-            {s.field === 'documents' && serviceId === 'visa' && (
-              <section class="guide-inline-cta" data-reveal="cta">
-                <div>
-                  <p class="guide-cta-eyebrow"><span>{code}</span> <T k="content.cta.visa.eyebrow" /></p>
-                  <T k="content.cta.visa.inlineTitle" tag="h2" class="card-title" />
-                  <T k="content.cta.visa.body" tag="p" class="t-body" />
-                </div>
-                <div class="guide-inline-actions">
-                  <a class="btn pri" href={contactHref} data-i18n="content.cta.visa.button" data-event="guide_cta_click" data-service="visa" data-visa={visaId} data-source="guide">{t('content.cta.visa.button', 'en')}</a>
-                  <a class="btn ghost" href="/services/visa" data-i18n="btn.serviceScope">{t('btn.serviceScope', 'en')}</a>
-                </div>
-              </section>
-            )}
-          </>
+          <GuideSection guide={guide} field={s.field} labelKey={s.labelKey} mode={s.mode} num={i + 1} />
         ))}
 
         <Disclaimer k="content.disclaimer" class="mt-12" />
@@ -85,19 +70,12 @@ const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul'
         )}
       </article>
 
-      {serviceId && <aside>
-        <div class="card sticky-card guide-cta-card">
-          <p class="guide-cta-eyebrow"><span>{code}</span> <T k="content.cta.visa.eyebrow" /></p>
-          <T k="content.cta.visa.title" tag="p" class="card-title" />
-          <T k="content.cta.visa.body" tag="p" class="t-body" />
-          <div class="guide-cta-meta">
-            <span><T k="svc.visa.price" /></span>
-            <span><T k="svc.visa.duration" /></span>
-          </div>
-          <a class="btn pri full" href={contactHref} data-i18n="content.cta.visa.button" data-event="guide_cta_click" data-service="visa" data-visa={visaId} data-source="guide">{t('content.cta.visa.button', 'en')}</a>
-          <a class="guide-scope-link" href="/services/visa" data-i18n="btn.serviceScope">{t('btn.serviceScope', 'en')}</a>
+      {isVisa && <aside class="guide-dm-aside">
+        <div class="sticky-card">
+          <SocialDmPanel service="visa" context="visa" visa={visaId} source="guide-sidebar" id="dm" />
         </div>
       </aside>}
     </div>
   </div>
+  {isVisa && <MobileSocialDm service="visa" context="visa" visa={visaId} />}
 </Base>
