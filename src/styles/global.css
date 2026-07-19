@@ -630,6 +630,7 @@ body{
 .page-content .listrow{min-height:116px;}
 .page-content .grid-services{align-items:stretch;}
 .page-content .svc-tile{display:flex;flex-direction:column;min-height:290px;padding:22px;border-top:3px solid var(--brand);}
+.page-content .svc-tile>.t-body{margin-top:6px;}
 .page-content .svc-tile .btn{margin-top:auto!important;}
 
 /* detail pages */

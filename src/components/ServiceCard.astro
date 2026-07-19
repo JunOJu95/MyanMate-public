@@ -1,13 +1,16 @@
 ---
 import Icon from './Icon.astro';
+import LocalizedText from './LocalizedText.astro';
 import { t, defaultLang } from '../i18n/ui';
 import type { Service } from '../data/services';
+import type { ServiceContent } from '../lib/content';
 
 interface Props {
   service: Service;
+  content: ServiceContent;
   variant?: 'compact' | 'tile';
 }
-const { service, variant = 'compact' } = Astro.props;
+const { service, content, variant = 'compact' } = Astro.props;
 const href = `/services/${service.id}`;
 ---
 {variant === 'compact' ? (
@@ -18,9 +21,9 @@ const href = `/services/${service.id}`;
         <span class="pill-tag" data-i18n="ui.status.available">{t('ui.status.available', defaultLang)}</span>
       </span>
       <span class="svc-head">
-        <span class="card-title" data-i18n={service.nameKey}>{t(service.nameKey, defaultLang)}</span>
+        <LocalizedText value={content.title} tag="span" class="card-title" />
       </span>
-      <span class="t-body clamp2" data-i18n={service.descKey}>{t(service.descKey, defaultLang)}</span>
+      <LocalizedText value={content.description} tag="span" class="t-body clamp2" />
       <span class="svc-footer">
         <span class="svc-actions">
           <a class="btn ghost sm" href={href} data-i18n="btn.viewDetails" data-event={`service:${service.id}`}>{t('btn.viewDetails', defaultLang)}</a>
@@ -37,13 +40,13 @@ const href = `/services/${service.id}`;
     <div class="svc-head">
       <span style="display:flex;gap:8px;align-items:center;min-width:0;">
         <span class="svc-ico" style="width:30px;height:30px;padding:6px;"><Icon name={service.iconKey} /></span>
-        <span class="card-title" data-i18n={service.nameKey}>{t(service.nameKey, defaultLang)}</span>
+        <LocalizedText value={content.title} tag="span" class="card-title" />
       </span>
     </div>
     <div class="svc-meta mt-8">
       <span class="pill-tag" data-i18n="ui.status.available">{t('ui.status.available', defaultLang)}</span>
     </div>
-    <p class="t-body clamp2" style="margin-top:6px;" data-i18n={service.descKey}>{t(service.descKey, defaultLang)}</p>
+    <LocalizedText value={content.description} tag="p" class="t-body clamp2" />
     <div class="svc-tile-actions">
       <a class="btn ghost sm" href={href} data-i18n="btn.viewDetails" data-event={`service:${service.id}`}>{t('btn.viewDetails', defaultLang)}</a>
       <a class="btn pri sm" href={`${href}#dm`} data-event={`service-direct:${service.id}`}>
