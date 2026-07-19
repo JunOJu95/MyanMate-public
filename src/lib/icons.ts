@@ -22,6 +22,9 @@ export const icons: Record<string, string> = {
   check: '<circle cx="12" cy="12" r="8.4"/><path d="m8.4 12.2 2.5 2.5 4.7-4.9"/>',
   search: '<circle cx="10.5" cy="10.5" r="6.3"/><path d="m20 20-5-5"/>',
   external: '<path d="M14 4.5h5.5V10"/><path d="m13.5 10.5 5.7-5.7"/><path d="M10.5 6.5H6.2a1.7 1.7 0 0 0-1.7 1.7v9.6a1.7 1.7 0 0 0 1.7 1.7h9.6a1.7 1.7 0 0 0 1.7-1.7v-4.3"/>',
+  send: '<path d="m21 3-7.2 18-3.5-7.3L3 10.2Z"/><path d="m10.3 13.7 4.2-4.2"/>',
+  music: '<path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/>',
+  close: '<path d="m6 6 12 12M18 6 6 18"/>',
 };
 
 export type IconName = keyof typeof icons;

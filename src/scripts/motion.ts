@@ -65,10 +65,68 @@ function initStickyCtas(): void {
   });
 }
 
+function initSmoothDmSidebars(): void {
+  const sidebars = Array.from(document.querySelectorAll<HTMLElement>('.guide-dm-aside'));
+  if (sidebars.length === 0) return;
+
+  const desktop = window.matchMedia('(min-width: 960px)');
+  const maxLag = 16;
+  let previousScrollY = window.scrollY;
+  let currentOffset = 0;
+  let targetOffset = 0;
+  let frame = 0;
+
+  const reset = () => {
+    if (frame) cancelAnimationFrame(frame);
+    frame = 0;
+    previousScrollY = window.scrollY;
+    currentOffset = 0;
+    targetOffset = 0;
+    sidebars.forEach((sidebar) => {
+      sidebar.style.removeProperty('--dm-follow-y');
+      sidebar.classList.remove('is-following');
+    });
+  };
+
+  const render = () => {
+    currentOffset += (targetOffset - currentOffset) * 0.2;
+    targetOffset *= 0.78;
+
+    const settled = Math.abs(currentOffset) < 0.08 && Math.abs(targetOffset) < 0.08;
+    sidebars.forEach((sidebar) => {
+      sidebar.style.setProperty('--dm-follow-y', `${settled ? 0 : currentOffset.toFixed(2)}px`);
+      sidebar.classList.toggle('is-following', !settled);
+    });
+
+    if (settled) {
+      frame = 0;
+      return;
+    }
+    frame = requestAnimationFrame(render);
+  };
+
+  const onScroll = () => {
+    const scrollY = window.scrollY;
+    const delta = scrollY - previousScrollY;
+    previousScrollY = scrollY;
+
+    if (!desktop.matches || reducedMotion.matches || delta === 0) return;
+
+    targetOffset = Math.max(-maxLag, Math.min(maxLag, targetOffset + delta * 0.16));
+    if (!frame) frame = requestAnimationFrame(render);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', reset, { passive: true });
+  desktop.addEventListener('change', reset);
+  reducedMotion.addEventListener('change', reset);
+}
+
 function initMotion(): void {
   try {
     initReveals();
     initStickyCtas();
+    initSmoothDmSidebars();
   } catch {
     root.classList.remove('motion-ready');
     revealEverything();

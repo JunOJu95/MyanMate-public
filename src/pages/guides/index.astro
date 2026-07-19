@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import T from '../../components/T.astro';
 import GuideCard from '../../components/GuideCard.astro';
+import SocialDmPanel from '../../components/SocialDmPanel.astro';
 import { getGuides } from '../../lib/content';
 import { t } from '../../i18n/ui';
 
@@ -28,10 +29,15 @@ const guides = (await getGuides()).filter((guide) => guide.category === 'visa');
           <p class="card-title" data-i18n="guides.empty.title">{t('guides.empty.title', 'en')}</p>
           <p class="t-body" data-i18n="guides.empty.body">{t('guides.empty.body', 'en')}</p>
           <div class="empty-actions">
-            <a class="btn pri" href="/contact" data-i18n="btn.getHelp" data-event="guides_empty_contact">{t('btn.getHelp', 'en')}</a>
+            <a class="btn pri" href="/contact#dm" data-i18n="dm.cta" data-event="guides_empty_contact">{t('dm.cta', 'en')}</a>
           </div>
         </div>
       )}
     </section>
+    {guides.length > 0 && (
+      <section class="sec visa-hub-dm" data-reveal="cta">
+        <SocialDmPanel service="visa" context="visa" source="guides-hub" id="dm" compact />
+      </section>
+    )}
   </div>
 </Base>

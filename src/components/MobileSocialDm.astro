@@ -1,0 +1,71 @@
+---
+import Icon from './Icon.astro';
+import SocialDmPanel from './SocialDmPanel.astro';
+import T from './T.astro';
+import { t, defaultLang } from '../i18n/ui';
+
+interface Props {
+  visa?: string;
+  service?: string;
+  context?: 'visa' | 'service' | 'general';
+  sentinel?: string;
+  blockers?: string;
+}
+
+const {
+  visa,
+  service = 'general',
+  context = service === 'visa' ? 'visa' : 'general',
+  sentinel = '.detail-hero',
+  blockers = '.foot',
+} = Astro.props;
+const dialogId = `social-dm-${service}-${visa || 'general'}`;
+---
+<aside
+  class="mobile-conversion-cta mobile-dm-trigger"
+  data-sticky-cta
+  data-cta-sentinel={sentinel}
+  data-cta-blockers={blockers}
+  aria-label={t('dm.mobile.open', defaultLang)}
+  aria-hidden="true"
+  inert
+>
+  <span class="mobile-conversion-copy">
+    <span class="mobile-conversion-icon" aria-hidden="true"><Icon name="chat" size={18} /></span>
+    <span>
+      <T k="dm.mobile.title" tag="strong" />
+      <T k="dm.mobile.note" tag="small" />
+    </span>
+  </span>
+  <button class="btn pri" type="button" data-dm-open={dialogId}>
+    <T k="dm.mobile.open" />
+  </button>
+</aside>
+
+<dialog class="dm-dialog" id={dialogId} aria-label={t('dm.mobile.title', defaultLang)} data-i18n-aria="dm.mobile.title">
+  <div class="dm-sheet">
+    <div class="dm-sheet-head">
+      <T k="dm.mobile.title" tag="p" class="card-title" />
+      <button class="dm-sheet-close" type="button" data-dm-close aria-label={t('dm.mobile.close', defaultLang)} data-i18n-aria="dm.mobile.close">
+        <Icon name="close" size={20} />
+      </button>
+    </div>
+    <SocialDmPanel service={service} visa={visa} context={context} source="mobile-dm" compact />
+  </div>
+</dialog>
+
+<script define:vars={{ dialogId }}>
+  const dialog = document.getElementById(dialogId);
+  const openButton = document.querySelector(`[data-dm-open="${dialogId}"]`);
+  const closeButton = dialog?.querySelector('[data-dm-close]');
+
+  openButton?.addEventListener('click', () => {
+    if (dialog instanceof HTMLDialogElement) dialog.showModal();
+  });
+  closeButton?.addEventListener('click', () => {
+    if (dialog instanceof HTMLDialogElement) dialog.close();
+  });
+  dialog?.addEventListener('click', (event) => {
+    if (event.target === dialog && dialog instanceof HTMLDialogElement) dialog.close();
+  });
+</script>

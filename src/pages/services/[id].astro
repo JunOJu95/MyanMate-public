@@ -2,148 +2,87 @@
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
 import T from '../../components/T.astro';
-import ReviewCard from '../../components/ReviewCard.astro';
+import SocialDmPanel from '../../components/SocialDmPanel.astro';
+import MobileSocialDm from '../../components/MobileSocialDm.astro';
 import { services, type Service } from '../../data/services';
-import { getReviews } from '../../lib/content';
 import { t } from '../../i18n/ui';
-import { SHOW_REVIEWS } from '../../config/launch';
 
 export async function getStaticPaths() {
   return services.map((s) => ({ params: { id: s.id }, props: { service: s } }));
 }
 
 const { service } = Astro.props as { service: Service };
-const reviews = SHOW_REVIEWS ? (await getReviews()).filter((r) => r.service === service.id) : [];
 ---
 <Base
   title={t(service.nameKey, 'en')}
   active="services"
   description={t(service.descKey, 'en')}
-  mobileCtaHref={`/contact?service=${service.id}`}
-  mobileCtaSentinel=".detail-hero"
-  mobileCtaBlockers=".detail-cta-card, .foot"
-  mobileCtaEvent={`service-mobile:${service.id}`}
 >
   <div class="wrap">
-    <div class="detail-2col detail-page">
+    <div class="detail-2col detail-page service-info-page">
       <article>
         <header class="detail-hero service-detail-hero" data-reveal="page-hero">
           <span class="svc-ico"><Icon name={service.iconKey} /></span>
           <h1 class="lead-title" data-i18n={service.nameKey}>{t(service.nameKey, 'en')}</h1>
-          <div class="service-detail-meta">
-            <span class="price-badge" data-i18n={service.priceKey}>{t(service.priceKey, 'en')}</span>
-            <span class="price-badge" data-i18n={service.durationKey}>{t(service.durationKey, 'en')}</span>
-          </div>
+          <T k={service.descKey} tag="p" class="t-sub" />
         </header>
 
-        <section class="sec" data-reveal="section">
-          <p class="sec-title"><span class="sec-ico"><Icon name="check" /></span><T k="svcDetail.section.whatWeDo" /></p>
-          <T k={service.descKey} tag="p" class="t-body" />
-        </section>
-
-        {service.deliverableKeys && service.deliverableKeys.length > 0 && (
-          <section class="sec housing-deliverables" data-reveal="section">
-            <p class="sec-title"><span class="sec-ico"><Icon name="list" /></span><T k="svc.housing.deliverables.title" /></p>
-            <div class="housing-deliverable-list" data-stagger>
-              {service.deliverableKeys.map((key) => (
-                <div class="housing-deliverable-item">
-                  <span aria-hidden="true"><Icon name="check" size={17} /></span>
-                  <T k={key} tag="p" class="t-body" />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {service.pricingKeys && service.pricingKeys.length > 0 && (
-          <section class="sec housing-pricing" data-reveal="section">
-            <div class="housing-pricing-heading">
-              <p class="sec-title"><span class="sec-ico"><Icon name="doc" /></span><T k="svc.housing.pricing.title" /></p>
-              <T k="svc.housing.pricing.lead" tag="p" class="t-body" />
-            </div>
-            <div class="housing-price-list" data-stagger>
-              {service.pricingKeys.map((key, index) => (
-                <div class:list={['housing-price-item', { featured: index === 0 }]}>
-                  <span class="num-badge" aria-hidden="true">{index + 1}</span>
-                  <T k={key} tag="p" class="t-body" />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        <!-- What we DON'T do — compliance (§7-1). Always visible. -->
-        <section class="sec sec-tint" data-reveal="section">
-          <p class="sec-title"><T k="svcDetail.section.whatWeDont" /></p>
-          <p class="note-pin">
-            <b data-i18n="svcDetail.section.whatWeDont">{t('svcDetail.section.whatWeDont', 'en')}</b> —
-            <span data-i18n="svcDetail.dont.body">{t('svcDetail.dont.body', 'en')}</span>
-          </p>
-        </section>
-
-        {service.confirmationKeys && service.confirmationKeys.length > 0 && (
-          <section class="sec housing-boundary" data-reveal="section">
-            <p class="sec-title"><span class="sec-ico"><Icon name="check" /></span><T k="svc.housing.confirm.title" /></p>
-            <T k="svc.housing.confirm.lead" tag="p" class="t-body" />
-            <div class="housing-boundary-list" data-stagger>
-              {service.confirmationKeys.map((key) => (
-                <div class="housing-boundary-item">
-                  <span class="num-badge" aria-hidden="true">✓</span>
-                  <T k={key} tag="p" class="t-body" />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        <section class="sec" data-reveal="section">
-          <p class="sec-title"><span class="sec-ico"><Icon name="list" /></span><T k="svcDetail.section.how" /></p>
-          <div class="stack gap-9 detail-process-list" data-stagger>
-            {service.howKeys.map((k, i) => (
-              <div class="detail-process-step">
-                <span class="num-badge">{i + 1}</span>
-                <T k={k} tag="p" class="t-body" />
+        {service.contentSections.map((section, index) => (
+          <section class:list={['sec', 'service-info-section', { 'service-source-section': index === service.contentSections.length - 1 }]} data-reveal="section">
+            <div class="service-info-heading">
+              <span class="sec-ico"><Icon name={section.iconKey} /></span>
+              <div>
+                <T k={section.titleKey} tag="h2" class="sec-title" />
+                {section.introKey && <T k={section.introKey} tag="p" class="t-body" />}
               </div>
-            ))}
-          </div>
-        </section>
-
-        {SHOW_REVIEWS && reviews.length > 0 && (
-          <section class="sec" data-reveal="section">
-            <p class="sec-title"><span class="sec-ico"><Icon name="star" /></span><T k="svcDetail.section.reviews" /></p>
-            <ReviewCard review={reviews[0]} />
+            </div>
+            <div class="service-point-grid" data-stagger>
+              {section.items.map((item) => item.href ? (
+                <a
+                  class="service-point service-point-link"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-event={`official-source:${service.id}`}
+                  data-source={item.href}
+                >
+                  <span class="service-point-icon" aria-hidden="true"><Icon name={item.iconKey} size={18} /></span>
+                  <span class="service-point-copy">
+                    <T k={item.titleKey} tag="strong" />
+                    <T k={item.bodyKey} tag="span" />
+                  </span>
+                  <Icon name="external" size={15} class="service-point-external" />
+                </a>
+              ) : (
+                <div class="service-point">
+                  <span class="service-point-icon" aria-hidden="true"><Icon name={item.iconKey} size={18} /></span>
+                  <span class="service-point-copy">
+                    <T k={item.titleKey} tag="strong" />
+                    <T k={item.bodyKey} tag="span" />
+                  </span>
+                </div>
+              ))}
+            </div>
           </section>
-        )}
+        ))}
 
-        <section class="sec" data-reveal="section">
-          <p class="sec-title"><span class="sec-ico"><Icon name="chat" /></span><T k="svcDetail.section.faq" /></p>
-          {service.faqKeys.map((f) => (
-            <details class="accordion">
-              <summary><span data-i18n={f.q}>{t(f.q, 'en')}</span><span class="pm">+</span></summary>
-              <div class="acc-body" data-i18n={f.a}>{t(f.a, 'en')}</div>
-            </details>
-          ))}
-        </section>
+        <!-- Compliance boundary (§7-1). Keep the fixed copy visible once. -->
+        <aside class="service-boundary-note" data-reveal="section" aria-labelledby="service-boundary-title">
+          <p id="service-boundary-title" class="service-boundary-title">
+            <T k="svcDetail.scope.title" />
+          </p>
+          <p class="service-boundary-copy">
+            <T k="svcDetail.dont.body" />
+          </p>
+        </aside>
       </article>
 
-      <aside>
-        <div class="card sticky-card detail-cta-card" data-reveal="cta">
-          <p class="card-title" data-i18n={service.nameKey}>{t(service.nameKey, 'en')}</p>
-          <div class="mini-checks">
-            <span><Icon name="check" size={14} /><T k="home.trust.info" /></span>
-            <span><Icon name="check" size={14} /><T k="home.trust.self" /></span>
-          </div>
-          <div style="margin-top:10px;">
-            <p class="t-cap"><T k="svcDetail.label.price" /></p>
-            <span class="price-badge" data-i18n={service.priceKey}>{t(service.priceKey, 'en')}</span>
-          </div>
-          <div style="margin-top:10px;">
-            <p class="t-cap"><T k="svcDetail.label.duration" /></p>
-            <span class="price-badge" data-i18n={service.durationKey}>{t(service.durationKey, 'en')}</span>
-          </div>
-          <a class="btn pri full" style="margin-top:14px;" href={`/contact?service=${service.id}`} data-i18n="svcDetail.cta" data-event={`service-cta:${service.id}`}>{t('svcDetail.cta', 'en')}</a>
+      <aside class="guide-dm-aside">
+        <div class="sticky-card">
+          <SocialDmPanel service={service.id} context="service" source="service-sidebar" id="dm" />
         </div>
       </aside>
     </div>
   </div>
+  <MobileSocialDm service={service.id} context="service" />
 </Base>

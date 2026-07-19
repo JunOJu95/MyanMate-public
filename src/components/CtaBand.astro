@@ -8,7 +8,7 @@ interface Props {
   noteKey?: string;
   event?: string;
 }
-const { titleKey, buttonKey, href = '/contact', noteKey, event } = Astro.props;
+const { titleKey, buttonKey, href = '/contact#dm', noteKey, event } = Astro.props;
 ---
 <div class="cta-band">
   <p class="ct" data-i18n={titleKey}>{t(titleKey, defaultLang)}</p>

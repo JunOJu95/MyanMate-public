@@ -1,0 +1,54 @@
+---
+import Icon from './Icon.astro';
+import T from './T.astro';
+import { MESSENGER_URL, TELEGRAM_DM_URL, TIKTOK_URL } from '../config/launch';
+
+interface Props {
+  visa?: string;
+  service?: string;
+  source?: string;
+  compact?: boolean;
+  context?: 'visa' | 'service' | 'general';
+  id?: string;
+}
+
+const {
+  visa,
+  service = 'general',
+  source = 'dm-panel',
+  compact = false,
+  context = service === 'visa' ? 'visa' : 'general',
+  id,
+} = Astro.props;
+const bodyKey = `dm.body.${context}`;
+const channels = [
+  { key: 'dm.telegram', href: TELEGRAM_DM_URL, icon: 'send', channel: 'telegram', primary: true },
+  { key: 'dm.tiktok', href: TIKTOK_URL, icon: 'music', channel: 'tiktok', primary: false },
+  { key: 'dm.messenger', href: MESSENGER_URL, icon: 'chat', channel: 'messenger', primary: false },
+];
+---
+<section id={id} class:list={['social-dm-panel', { compact }]} data-dm-panel>
+  <T k="dm.eyebrow" tag="p" class="dm-eyebrow" />
+  <T k="dm.title" tag="h2" class="dm-title" />
+  <T k={bodyKey} tag="p" class="dm-body" />
+  <div class="dm-channel-list">
+    {channels.map((channel) => (
+      <a
+        class:list={['dm-channel', { primary: channel.primary }]}
+        href={channel.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-event={`dm:${channel.channel}`}
+        data-channel={channel.channel}
+        data-service={service}
+        data-visa={visa}
+        data-source={source}
+      >
+        <span class="dm-channel-icon" aria-hidden="true"><Icon name={channel.icon} size={18} /></span>
+        <T k={channel.key} tag="span" />
+        <Icon name="external" size={14} class="dm-channel-external" />
+      </a>
+    ))}
+  </div>
+  <T k="dm.note" tag="p" class="dm-note" />
+</section>

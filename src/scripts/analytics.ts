@@ -34,6 +34,7 @@ document.addEventListener('click', (e) => {
     path: location.pathname,
     service: el.getAttribute('data-service') || undefined,
     visa: el.getAttribute('data-visa') || undefined,
+    channel: el.getAttribute('data-channel') || undefined,
     source: el.getAttribute('data-source') || undefined,
   });
 });
