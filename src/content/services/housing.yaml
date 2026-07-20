@@ -4,10 +4,10 @@ title:
   my: အိမ်ကြည့်ရာတွင် အတူလိုက်ပါ၍ နေထိုင်မှုပတ်ဝန်းကျင် စစ်ဆေးလမ်းညွှန်မှု
 description:
   en: Practical points for looking at the inside of a home, shared spaces, and the surrounding living
-    environment, plus official sources to check yourself.
-  ko: 집 안과 공용공간, 주변 생활환경을 직접 살펴볼 때 도움이 되는 포인트와 공식 확인처를 정리했습니다.
+    environment.
+  ko: 집 안과 공용공간, 주변 생활환경을 직접 살펴볼 때 도움이 되는 포인트를 정리했습니다.
   my: အိမ်အတွင်းပိုင်း၊ အများသုံးနေရာများနှင့် ပတ်ဝန်းကျင်နေထိုင်မှုအခြေအနေကို
-    ကိုယ်တိုင်ကြည့်ရှုရာတွင် အသုံးဝင်သောအချက်များနှင့် တရားဝင်စစ်ဆေးရာနေရာများကို စုစည်းထားပါသည်။
+    ကိုယ်တိုင်ကြည့်ရှုရာတွင် အသုံးဝင်သောအချက်များကို စုစည်းထားပါသည်။
 sections:
   - icon: housing
     title:
@@ -251,50 +251,3 @@ sections:
             deciding.
           ko: 포기하기 어려운 조건 세 가지를 먼저 정하고, 최종 결정 전에 각 집이 얼마나 맞는지 비교합니다.
           my: မလျှော့နိုင်သောအခြေအနေ သုံးခုကို အရင်ရွေးပြီး မဆုံးဖြတ်မီ အိမ်တိုင်းနှင့် နှိုင်းယှဉ်ပါ။
-  - icon: external
-    title:
-      en: Official sources before a contract
-      ko: 계약 전 공식 확인처
-      my: စာချုပ်မချုပ်မီ တရားဝင်စစ်ဆေးရာနေရာ
-    intro:
-      en: Visible condition is only one part of choosing a home. Confirm prices, rights, guarantees, and
-        contract safety through official services and qualified professionals.
-      ko: 눈에 보이는 상태만으로 집의 계약 안전을 판단할 수 없습니다. 시세, 권리관계, 보증과 계약 조건은 공식 서비스와 자격 전문가를 통해 확인하세요.
-      my: မြင်နိုင်သောအခြေအနေတစ်ခုတည်းဖြင့် စာချုပ်လုံခြုံမှုကို မဆုံးဖြတ်နိုင်ပါ။ စျေးနှုန်း၊ အခွင့်အရေး၊
-        အာမခံနှင့် စာချုပ်အခြေအနေကို တရားဝင်ဝန်ဆောင်မှုနှင့် ကျွမ်းကျင်သူထံ စစ်ဆေးပါ။
-    items:
-      - icon: external
-        title:
-          en: HUG Safe Jeonse
-          ko: HUG 안심전세
-          my: HUG Safe Jeonse
-        body:
-          en: Check available housing-price, jeonse-ratio, landlord, guarantee, and pre-contract information
-            directly in HUG’s official service.
-          ko: 주택 시세, 전세가율, 임대인·보증 관련 정보와 계약 전 확인 기능을 HUG 공식 서비스에서 직접 확인하세요.
-          my: အိမ်စျေးနှုန်း၊ jeonse အချိုး၊ အိမ်ရှင်၊ အာမခံနှင့် စာချုပ်မချုပ်မီအချက်အလက်ကို HUG
-            တရားဝင်ဝန်ဆောင်မှုတွင် စစ်ဆေးပါ။
-        href: https://www.khug.or.kr/jeonse/web/s01/s010102.jsp
-      - icon: external
-        title:
-          en: Official real transaction prices
-          ko: 국토교통부 실거래가 공개시스템
-          my: မြေယာနှင့် ပို့ဆောင်ရေးဝန်ကြီးဌာန အမှန်တကယ်အရောင်းအဝယ်စျေး
-        body:
-          en: Search reported sale and rental transactions by housing type and area on the Ministry of Land’s
-            official system.
-          ko: 주택 유형과 지역별로 신고된 매매·전월세 실거래 정보를 국토교통부 공식 시스템에서 확인하세요.
-          my: အိမ်အမျိုးအစားနှင့် ဒေသအလိုက် အစီရင်ခံထားသော အရောင်းနှင့် အငှားအရောင်းအဝယ်ကို ဝန်ကြီးဌာန
-            တရားဝင်စနစ်တွင် ကြည့်ပါ။
-        href: https://rt.molit.go.kr/
-      - icon: help
-        title:
-          en: Get a qualified confirmation
-          ko: 계약 판단은 자격 전문가와
-          my: စာချုပ်ဆုံးဖြတ်ချက်ကို ကျွမ်းကျင်သူနှင့်
-        body:
-          en: MyanMate does not determine legal rights or certify a property as safe. Confirm contracts and
-            legal questions with a licensed realtor or another qualified professional.
-          ko: MyanMate는 권리관계를 판단하거나 주택의 법적 안전성을 보증하지 않습니다. 계약과 법적 질문은 공인중개사 또는 자격 전문가에게 확인하세요.
-          my: MyanMate သည် ဥပဒေအခွင့်အရေးကို မဆုံးဖြတ်သလို အိမ်၏ ဥပဒေလုံခြုံမှုကိုလည်း အာမမခံပါ။ စာချုပ်နှင့်
-            ဥပဒေမေးခွန်းကို လိုင်စင်ရအိမ်ခြံမြေအကျိုးဆောင် သို့မဟုတ် ကျွမ်းကျင်သူထံ စစ်ဆေးပါ။
