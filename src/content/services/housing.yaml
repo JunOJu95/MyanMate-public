@@ -1,7 +1,7 @@
 title:
   en: Home-viewing companion & living-area check
   ko: 집 보기 동행 체크 및 생활환경 안내
-  my: အိမ်ကြည့်ရာတွင် အတူလိုက်ပါ၍ နေထိုင်မှုပတ်ဝန်းကျင် စစ်ဆေးလမ်းညွှန်မှု
+  my: အိမ်ကြည့်ရှုခြင်းနှင့် နေထိုင်ရာနေရာ စစ်ဆေးခြင်း လမ်းညွှန်
 description:
   en: Practical points for looking at the inside of a home, shared spaces, and the surrounding living
     environment.
@@ -13,13 +13,13 @@ sections:
     title:
       en: Points to notice inside the home
       ko: 집 안에서 볼 포인트
-      my: အိမ်အတွင်း ကြည့်ရမည့်အချက်များ
+      my: အိမ်တွင်းပိုင်းတွင် သတိပြုရမည့် အချက်များ
     intro:
       en: Look slowly and compare what you can see, hear, and smell. Ask before operating fixtures or
         taking photos.
       ko: 눈에 보이는 상태뿐 아니라 들리는 소리와 냄새도 천천히 살펴보세요. 설비를 작동하거나 사진을 찍기 전에는 허락을 구합니다.
-      my: မြင်ရ၊ ကြားရ၊ အနံ့ရသောအခြေအနေများကို ဖြည်းဖြည်းကြည့်ပါ။ ပစ္စည်းအသုံးပြုခြင်း သို့မဟုတ်
-        ဓာတ်ပုံရိုက်ခြင်းမပြုမီ ခွင့်တောင်းပါ။
+      my: မြင်ရတာ၊ ကြားရတာနဲ့ အနံ့ရတာတွေကို ဖြည်းဖြည်းချင်း လေ့လာပြီး နှိုင်းယှဉ်ပါ။
+        ပစ္စည်းကိရိယာတွေကို မကိုင်ခင် သို့မဟုတ် ဓာတ်ပုံမရိုက်ခင်မှာ အရင်ခွင့်တောင်းပါ။
     items:
       - icon: daily
         title:
@@ -47,7 +47,7 @@ sections:
         title:
           en: Noise and privacy
           ko: 소음과 사생활
-          my: ဆူညံသံနှင့် ကိုယ်ရေးလွတ်လပ်မှု
+          my: ဆူညံသံနှင့် ကိုယ်ရေးလုံခြုံမှု
         body:
           en: Pause near windows and shared walls. Consider road, hallway, shop, elevator, and
             neighboring-building noise and sight lines.
@@ -95,8 +95,8 @@ sections:
     intro:
       en: Shared spaces affect daily convenience and how safe the route feels after dark.
       ko: 공용공간의 상태와 동선은 매일의 편의와 늦은 시간 귀가할 때의 느낌에 영향을 줍니다.
-      my: အများသုံးနေရာအခြေအနေနှင့် လမ်းကြောင်းသည် နေ့စဉ်အဆင်ပြေမှုနှင့် ညအချိန်ပြန်လာရာတွင် ခံစားရမှုကို
-        သက်ရောက်စေပါသည်။
+      my: အများသုံးနေရာများသည် နေ့စဉ်ဘဝ အဆင်ပြေမှုကို သက်ရောက်မှုရှိပြီး ညဘက်ရောက်သည့်အခါ
+        သွားလာရမည့်လမ်းကြောင်းကို ဘေးကင်းစိတ်ချရမှု ရှိမရှိ ခံစားရစေပါသည်။
     items:
       - icon: check
         title:
@@ -169,7 +169,7 @@ sections:
         title:
           en: Late-night transport
           ko: 늦은 시간 교통편
-          my: ညနောက်ကျ သယ်ယူပို့ဆောင်ရေး
+          my: ညဘက် သွားလာရေး
         body:
           en: Look at the last train or bus, night routes, taxi access, and how the walk home feels after
             dark.

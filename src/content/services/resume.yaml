@@ -1,13 +1,13 @@
 title:
   en: Resume & job-search guidance
   ko: 이력서·구직 정보 안내
-  my: ကိုယ်ရေးရာဇဝင်နှင့် အလုပ်ရှာဖွေရေး လမ်းညွှန်မှု
+  my: ကိုယ်ရေးရာဇဝင်နှင့် အလုပ်အကိုင် လမ်းညွှန်မှု
 description:
   en: A practical overview of Korean-style resumes, describing experience clearly, and checking public
     job information yourself.
   ko: 한국식 이력서 구성과 경력 표현 방법, 공개 구직 정보를 직접 확인하는 방법을 한눈에 정리했습니다.
-  my: ကိုရီးယားပုံစံ ကိုယ်ရေးရာဇဝင် ဖွဲ့စည်းပုံ၊ အတွေ့အကြုံကို ရှင်းလင်းစွာ ရေးသားနည်းနှင့်
-    အများပြည်သူသုံး အလုပ်အချက်အလက်ကို ကိုယ်တိုင်စစ်ဆေးနည်းကို စုစည်းထားပါသည်။
+  my: ကိုရီးယားစတိုင် ကိုယ်ရေးရာဇဝင် (Resume) ရေးနည်း၊ ကိုယ့်အတွေ့အကြုံကို ရှင်းလင်းစွာ
+    ဖော်ပြနည်းနှင့် အများသုံး အလုပ်အကိုင် အချက်အလက်များကို ကိုယ်တိုင်စစ်ဆေးနည်းများ။
 sections:
   - icon: doc
     title:
@@ -18,8 +18,8 @@ sections:
       en: Put the information a reader needs in a clear order. Leave out sensitive identifiers that are
         not needed for an application.
       ko: 채용 담당자가 필요한 정보를 읽기 쉬운 순서로 배치하고, 지원에 불필요한 민감한 식별정보는 넣지 않습니다.
-      my: ဖတ်ရှုသူလိုအပ်သော အချက်အလက်ကို ရှင်းလင်းသောအစီအစဉ်ဖြင့် ထည့်ပြီး မလိုအပ်သော
-        ကိုယ်ရေးအမှတ်အသားအချက်အလက်များကို မထည့်ပါနှင့်။
+      my: ဖတ်ရှုမည့်သူ လိုအပ်သည့် အချက်အလက်များကို စနစ်တကျ စီစဉ်ပါ။ လျှောက်လွှာအတွက်
+        မလိုသော လျှို့ဝှက်အချက်အလက်များကို ချန်လှပ်ထားပါ။
     items:
       - icon: users
         title:
@@ -30,8 +30,8 @@ sections:
           en: Use your name and a reachable phone number or email. Do not add passport, resident ID, bank, or
             account passwords.
           ko: 이름과 연락 가능한 전화번호 또는 이메일만 적습니다. 여권번호·외국인등록번호·금융정보·비밀번호는 넣지 않습니다.
-          my: အမည်နှင့် ဆက်သွယ်နိုင်သော ဖုန်းနံပါတ် သို့မဟုတ် အီးမေးလ်ကိုသာ ထည့်ပါ။ ပတ်စပို့၊
-            နိုင်ငံခြားသားမှတ်ပုံတင်၊ ဘဏ်အချက်အလက် သို့မဟုတ် စကားဝှက် မထည့်ပါနှင့်။
+          my: နာမည်နှင့် ဆက်သွယ်ရမည့် ဖုန်းနံပါတ် သို့မဟုတ် အီးမေးလ်ကို သုံးပါ။ နိုင်ငံကူးလက်မှတ်၊
+            နေထိုင်ခွင့် ID၊ ဘဏ်အကောင့် သို့မဟုတ် စကားဝှက်များကို လုံးဝမထည့်ပါနှင့်။
       - icon: jobs
         title:
           en: State the role you want
@@ -41,19 +41,19 @@ sections:
           en: Name the type of work you are applying for so your experience and skills are easier to
             understand in context.
           ko: 어떤 업무에 지원하는지 먼저 적으면 경력과 기술이 그 직무와 어떻게 연결되는지 이해하기 쉽습니다.
-          my: လျှောက်ထားလိုသောအလုပ်အမျိုးအစားကို အရင်ရေးပါက အတွေ့အကြုံနှင့် ကျွမ်းကျင်မှုတို့၏ ဆက်စပ်မှုကို
-            နားလည်ရလွယ်ကူပါသည်။
+          my: သင်လျှောက်ထားလိုသော အလုပ်အမျိုးအစားကို ဖော်ပြခြင်းဖြင့် သင့်အတွေ့အကြုံနှင့် စွမ်းရည်များကို
+            ပိုမိုနားလည်လွယ်စေပါသည်။
       - icon: list
         title:
           en: Education and experience
           ko: 학력과 경력·경험
-          my: ပညာရေးနှင့် အလုပ်အတွေ့အကြုံ
+          my: ပညာအရည်အချင်းနှင့် အတွေ့အကြုံ
         body:
           en: Show the organization, period, role, and main work consistently, usually with the most recent
             experience first.
           ko: 기관명, 기간, 역할, 주요 업무를 같은 형식으로 적고 보통 최근 경험부터 보여줍니다.
-          my: အဖွဲ့အစည်းအမည်၊ ကာလ၊ တာဝန်နှင့် အဓိကလုပ်ငန်းကို ပုံစံတူရေးပြီး ပုံမှန်အားဖြင့်
-            နောက်ဆုံးအတွေ့အကြုံမှ စတင်ပါ။
+          my: လုပ်ကိုင်ခဲ့သည့် အဖွဲ့အစည်း၊ ကာလ၊ ရာထူးနှင့် အဓိကလုပ်ဆောင်ချက်များကို မကြာသေးမီက
+            အတွေ့အကြုံမှစ၍ စဉ်ဆက်မပြတ် ဖော်ပြပါ။
       - icon: star
         title:
           en: Language, skills, and certificates
@@ -62,7 +62,8 @@ sections:
         body:
           en: Include only items relevant to the role and describe your actual level without exaggeration.
           ko: 지원 직무와 관련 있는 내용만 고르고 실제로 사용할 수 있는 수준을 과장 없이 적습니다.
-          my: အလုပ်တာဝန်နှင့် သက်ဆိုင်သောအရာကိုသာ ရွေးပြီး အမှန်တကယ်အသုံးချနိုင်သောအဆင့်ကို မချဲ့ကားဘဲ ရေးပါ။
+          my: လျှောက်မည့်အလုပ်နှင့် သက်ဆိုင်သည့် အချက်အလက်များကိုသာ ထည့်သွင်းပြီး မိမိ၏ လက်ရှိအဆင့်ကို
+            ချဲ့ကားပြောဆိုခြင်းမရှိဘဲ ဖော်ပြပါ။
   - icon: star
     title:
       en: Make experience specific
@@ -91,7 +92,8 @@ sections:
         body:
           en: Use a clear verb to explain what you handled, improved, solved, or supported.
           ko: 처리한 일, 개선한 점, 해결하거나 도운 내용을 분명한 동사로 적습니다.
-          my: သင်ကိုင်တွယ်၊ တိုးတက်၊ ဖြေရှင်း သို့မဟုတ် ကူညီခဲ့သည့်အရာကို ရှင်းလင်းသော ကြိယာဖြင့် ရေးပါ။
+          my: ဘယ်လို ကိုင်တွယ်ဖြေရှင်းခဲ့လဲ၊ ဘာတွေ တိုးတက်အောင် လုပ်ခဲ့လဲဆိုတာကို ရှင်းလင်းတဲ့
+            စကားလုံးတွေနဲ့ ဖော်ပြပါ။
       - icon: star
         title:
           en: Result
@@ -100,8 +102,8 @@ sections:
         body:
           en: Add a truthful number, change, or result when one exists. Never invent or inflate a result.
           ko: 확인 가능한 수치나 변화, 결과가 있다면 함께 적되 없는 내용을 만들거나 부풀리지 않습니다.
-          my: အတည်ပြုနိုင်သော နံပါတ်၊ ပြောင်းလဲမှု သို့မဟုတ် ရလဒ်ရှိပါက ထည့်ပြီး မရှိသောအရာကို မဖန်တီး၊
-            မချဲ့ကားပါနှင့်။
+          my: အမှန်တကယ် ဖြစ်ပျက်ခဲ့တဲ့ ဂဏန်းအချက်အလက် ဒါမှမဟုတ် ရလဒ်ကို ထည့်ပါ။ မရှိတာတွေကို
+            လိမ်ညာပြီး မထည့်ပါနဲ့။
       - icon: external
         title:
           en: Work24 writing guide
@@ -111,8 +113,8 @@ sections:
           en: Read the Korean government employment portal guide for organizing experience and writing
             concisely.
           ko: 경험 정리와 간결한 표현에 관한 정부 고용 포털의 공식 가이드를 직접 확인하세요.
-          my: အတွေ့အကြုံစီစဉ်ခြင်းနှင့် တိုတောင်းရှင်းလင်းစွာရေးသားခြင်းအတွက် အစိုးရအလုပ်အကိုင် portal
-            လမ်းညွှန်ကို ကြည့်ပါ။
+          my: အတွေ့အကြုံတွေကို စနစ်တကျနဲ့ လိုရင်းတိုရှင်း ရေးတတ်ဖို့ ကိုရီးယားအစိုးရရဲ့ အလုပ်အကိုင်
+            Portal လမ်းညွှန်ကို ဖတ်ကြည့်ပါ။
         href: https://www.work24.go.kr/wk/r/d/1111/resumeSelfIntroGuide2.do
   - icon: search
     title:
@@ -130,11 +132,12 @@ sections:
         title:
           en: Work and location
           ko: 업무 내용과 근무지
-          my: အလုပ်တာဝန်နှင့် အလုပ်နေရာ
+          my: လုပ်ငန်းခွင်နှင့် တည်နေရာ
         body:
           en: Check the actual duties, workplace address, travel time, and whether the location can change.
           ko: 실제 담당 업무, 근무지 주소, 이동 시간과 근무 장소가 바뀔 수 있는지 확인합니다.
-          my: အမှန်တကယ်တာဝန်၊ အလုပ်နေရာလိပ်စာ၊ သွားလာချိန်နှင့် နေရာပြောင်းနိုင်ခြင်းရှိမရှိ စစ်ဆေးပါ။
+          my: တကယ်လုပ်ရမယ့် တာဝန်တွေ၊ အလုပ်လုပ်မယ့် လိပ်စာ၊ သွားလာရမယ့် အချိန်နဲ့
+            နေရာပြောင်းလဲနိုင်ခြေ ရှိမရှိကို စစ်ဆေးပါ။
       - icon: daily
         title:
           en: Days, hours, and breaks
@@ -144,13 +147,13 @@ sections:
           en: Read the working days, start and finish times, break time, and any weekend or shift
             expectations.
           ko: 근무 요일, 시작·종료 시간, 휴게시간과 주말 또는 교대근무 여부를 확인합니다.
-          my: အလုပ်ရက်၊ စတင်နှင့်ပြီးဆုံးချိန်၊ နားချိန်နှင့် စနေတနင်္ဂနွေ သို့မဟုတ် အလှည့်ကျအလုပ်ရှိမရှိ
-            ဖတ်ပါ။
+          my: အလုပ်လုပ်မယ့်ရက်တွေ၊ စတင်ချိန်နဲ့ ပြီးဆုံးချိန်၊ အနားယူချိန်အပြင် ပိတ်ရက် သို့မဟုတ်
+            အလှည့်ကျ (Shift) အလုပ်ချိန် ရှိမရှိကို ဖတ်ရှုပါ။
       - icon: doc
         title:
           en: Pay and contract terms
           ko: 임금과 계약 조건
-          my: လစာနှင့် စာချုပ်အခြေအနေ
+          my: လစာနှင့် စာချုပ်စည်းကမ်းများ
         body:
           en: Check whether pay is hourly, daily, or monthly, how it is calculated, the pay date, contract
             period, and probation terms.
@@ -161,24 +164,24 @@ sections:
         title:
           en: Language and qualifications
           ko: 언어와 지원 요건
-          my: ဘာသာစကားနှင့် လျှောက်ထားမှုလိုအပ်ချက်
+          my: ဘာသာစကားနှင့် အရည်အချင်းများ
         body:
           en: Separate required conditions from preferred ones and confirm that your current status permits
             the work before starting.
           ko: 필수 조건과 우대 조건을 구분하고, 일을 시작하기 전에 현재 체류자격으로 가능한 활동인지 직접 확인합니다.
-          my: မဖြစ်မနေလိုအပ်ချက်နှင့် ဦးစားပေးအချက်ကို ခွဲပြီး အလုပ်မစမီ လက်ရှိနေထိုင်ခွင့်ဖြင့်
-            လုပ်ကိုင်နိုင်ခြင်းရှိမရှိ ကိုယ်တိုင်စစ်ဆေးပါ။
+          my: အဓိက လိုအပ်တဲ့အချက်တွေနဲ့ ဦးစားပေး သတ်မှတ်ချက်တွေကို ခွဲခြားပြီး၊ အလုပ်မစတင်ခင်
+            မိမိရဲ့ လက်ရှိအခြေအနေက အဲ့ဒီအလုပ်ကို လုပ်ခွင့်ရှိမရှိ အတည်ပြုပါ။
   - icon: external
     title:
       en: Where to check public job information
       ko: 공개 구직 정보를 확인하는 곳
-      my: အများပြည်သူသုံး အလုပ်အချက်အလက် စစ်ဆေးရာနေရာ
+      my: အများပြည်သူဆိုင်ရာ အလုပ်အကိုင် အချက်အလက်များကို ဘယ်မှာစစ်ဆေးရမလဲ
     intro:
       en: Use official sources to search and confirm information yourself. MyanMate does not match
         employers with job seekers.
       ko: 공식 확인처에서 직접 정보를 찾고 확인하세요. MyanMate는 사업장과 구직자를 연결하지 않습니다.
-      my: တရားဝင်ရင်းမြစ်များတွင် အချက်အလက်ကို ကိုယ်တိုင်ရှာဖွေစစ်ဆေးပါ။ MyanMate သည် အလုပ်ရှင်နှင့်
-        အလုပ်ရှာသူကို ချိတ်ဆက်မပေးပါ။
+      my: တရားဝင် အရင်းအမြစ်များကို အသုံးပြု၍ အချက်အလက်များကို ကိုယ်တိုင်ရှာဖွေပြီး အတည်ပြုပါ။
+        MyanMate သည် အလုပ်ရှင်နှင့် အလုပ်ရှာဖွေသူများကို ချိတ်ဆက်ပေးခြင်း မရှိပါ။
     items:
       - icon: search
         title:
@@ -213,8 +216,8 @@ sections:
       en: Work permission and employment conditions can differ by person and job. Confirm the current
         rules with the responsible authority.
       ko: 취업 가능 범위와 근로조건은 개인과 일자리마다 다를 수 있으므로 담당 기관의 최신 정보를 직접 확인합니다.
-      my: အလုပ်လုပ်ခွင့်နှင့် အလုပ်အခြေအနေများသည် လူနှင့်အလုပ်အလိုက် ကွာနိုင်သောကြောင့် သက်ဆိုင်ရာဌာန၏
-        လက်ရှိအချက်အလက်ကို ကိုယ်တိုင်စစ်ဆေးပါ။
+      my: အလုပ်လုပ်ပိုင်ခွင့်နှင့် အလုပ်အကိုင် အခြေအနေများသည် လူတစ်ဦးချင်းစီနှင့် အလုပ်အပေါ်မူတည်၍
+        ကွာခြားနိုင်ပါသည်။ လက်ရှိစည်းမျဉ်းများကို တာဝန်ရှိ အဖွဲ့အစည်းထံတွင် အတည်ပြုပါ။
     items:
       - icon: visa
         title:
