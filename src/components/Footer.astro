@@ -1,6 +1,15 @@
 ---
 import { t, defaultLang } from '../i18n/ui';
-import { SHOW_REVIEWS } from '../config/launch';
+import Icon from './Icon.astro';
+import {
+  FACEBOOK_URL,
+  INSTAGRAM_URL,
+  SHOW_REVIEWS,
+  TELEGRAM_DM_URL,
+  THREADS_URL,
+  TIKTOK_URL,
+  YOUTUBE_URL,
+} from '../config/launch';
 
 // footer.disclaimer is shown on EVERY page (business principle §7-1). Do not remove.
 const links = [
@@ -11,15 +20,45 @@ const links = [
   { key: 'nav.about', href: '/about' },
   { key: 'nav.privacy', href: '/privacy' },
 ];
+
+const socialLinks = [
+  { label: 'Facebook', href: FACEBOOK_URL, icon: 'facebook' },
+  { label: 'Instagram', href: INSTAGRAM_URL, icon: 'instagram' },
+  { label: 'YouTube', href: YOUTUBE_URL, icon: 'youtube' },
+  { label: 'TikTok', href: TIKTOK_URL, icon: 'tiktok' },
+  { label: 'Threads', href: THREADS_URL, icon: 'threads' },
+  { label: 'Telegram', href: TELEGRAM_DM_URL, icon: 'send' },
+];
+
+const year = new Date().getFullYear();
 ---
 <footer class="foot">
   <div class="wrap">
-    <p class="foot-tag" data-i18n="footer.tagline">{t('footer.tagline', defaultLang)}</p>
-    <nav class="foot-nav" aria-label="Footer">
-      {links.map((l) => (
-        <a href={l.href} data-i18n={l.key}>{t(l.key, defaultLang)}</a>
-      ))}
-    </nav>
-    <p class="disclaimer" data-i18n="footer.disclaimer">{t('footer.disclaimer', defaultLang)}</p>
+    <div class="foot-layout">
+      <div class="foot-copy">
+        <p class="foot-tag" data-i18n="footer.tagline">{t('footer.tagline', defaultLang)}</p>
+        <nav class="foot-nav" aria-label="Footer">
+          {links.map((l) => (
+            <a href={l.href} data-i18n={l.key}>{t(l.key, defaultLang)}</a>
+          ))}
+        </nav>
+        <p class="disclaimer" data-i18n="footer.disclaimer">{t('footer.disclaimer', defaultLang)}</p>
+        <p class="foot-copyline">&copy; {year} MyanMate. All rights reserved.</p>
+      </div>
+      <nav class="foot-social" aria-label="Social links">
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+            title={link.label}
+            data-event={`social:footer:${link.label.toLowerCase()}`}
+          >
+            <Icon name={link.icon} size={20} />
+          </a>
+        ))}
+      </nav>
+    </div>
   </div>
 </footer>
