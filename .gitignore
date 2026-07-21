@@ -34,4 +34,5 @@ npm-debug.log*
 .omc/
 .bkit/
 .playwright-cli/
+.npm-cache/
 output/

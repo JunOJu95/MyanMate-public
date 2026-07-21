@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import Icon from '../components/Icon.astro';
 import T from '../components/T.astro';
 import { t } from '../i18n/ui';
 ---
@@ -11,63 +10,30 @@ import { t } from '../i18n/ui';
       <T k="about.lead" tag="p" class="t-sub" />
     </section>
 
-    <section class="sec about-story">
-      <div class="about-story-heading" data-reveal="section">
-        <span class="story-mark"><Icon name="chat" size={24} /></span>
-        <T k="about.story.title" tag="h2" class="sec-title" />
-        <T k="about.story.intro" tag="p" class="t-body" />
-      </div>
-      <div class="about-story-copy">
-        <article class="story-chapter" data-reveal="section">
-          <T k="about.story.chapter1.label" tag="p" class="story-kicker" />
-          <T k="about.story.chapter1.title" tag="h3" class="story-title" />
-          <T k="about.story.chapter1.body" tag="p" class="story-paragraph" />
-        </article>
+    <section class="sec about-editorial">
+      <div class="about-editorial-copy" data-reveal="section">
+        <T k="about.story.intro" tag="p" class="about-editorial-lead" />
+        <T k="about.story.chapter1.body" tag="p" class="about-editorial-p" />
+        <T k="about.story.chapter2.body" tag="p" class="about-editorial-p" />
+        <T k="about.story.chapter3.body" tag="p" class="about-editorial-p" />
 
-        <article class="story-chapter" data-reveal="section">
-          <T k="about.story.chapter2.label" tag="p" class="story-kicker" />
-          <T k="about.story.chapter2.title" tag="h3" class="story-title" />
-          <T k="about.story.chapter2.body" tag="p" class="story-paragraph" />
-        </article>
-
-        <blockquote class="story-quote" data-reveal="cta">
+        <blockquote class="about-editorial-quote" data-reveal="cta">
           <T k="about.story.quote" tag="p" />
         </blockquote>
-
-        <article class="story-chapter" data-reveal="section">
-          <T k="about.story.chapter3.label" tag="p" class="story-kicker" />
-          <T k="about.story.chapter3.title" tag="h3" class="story-title" />
-          <T k="about.story.chapter3.body" tag="p" class="story-paragraph" />
-        </article>
-
-        <article class="story-chapter" data-reveal="section">
-          <T k="about.story.chapter4.label" tag="p" class="story-kicker" />
-          <T k="about.story.chapter4.title" tag="h3" class="story-title" />
-          <T k="about.story.chapter4.body" tag="p" class="story-paragraph" />
-        </article>
-
-        <article class="story-chapter story-chapter-final" data-reveal="section">
-          <T k="about.story.chapter5.label" tag="p" class="story-kicker" />
-          <T k="about.story.chapter5.title" tag="h3" class="story-title" />
-          <T k="about.story.chapter5.body" tag="p" class="story-paragraph" />
-        </article>
-
-        <div class="story-signoff" data-reveal="section">
-          <span class="story-wordmark" aria-hidden="true">M</span>
-          <div>
-            <T k="about.name.label" tag="p" class="story-kicker" />
-            <T k="about.name.title" tag="h3" class="story-name" />
-            <T k="about.name.body" tag="p" class="story-paragraph" />
-            <T k="about.name.slogan" tag="p" class="story-slogan" />
-          </div>
-        </div>
       </div>
+    </section>
+
+    <section class="about-proof-strip" aria-label={t('about.proof.label', 'en')} data-reveal="section">
+      <T k="about.proof.item1" tag="p" />
+      <T k="about.proof.item2" tag="p" />
+      <T k="about.proof.item3" tag="p" />
     </section>
 
     <section class="sec about-story-cta" data-reveal="cta">
       <div class="cta-band">
         <T k="about.cta.note" tag="p" class="t-body" />
         <a class="btn pri full" href="/guides" data-i18n="btn.browseGuides" data-event="about:guides">{t('btn.browseGuides', 'en')}</a>
+        <a class="btn ghost full" href="/contact" data-i18n="btn.getHelp" data-event="about:contact">{t('btn.getHelp', 'en')}</a>
       </div>
     </section>
   </div>
