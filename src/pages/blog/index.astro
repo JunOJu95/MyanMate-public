@@ -2,25 +2,61 @@
 import Base from '../../layouts/Base.astro';
 import T from '../../components/T.astro';
 import PostCard from '../../components/PostCard.astro';
-import { getPosts } from '../../lib/content';
-import { t } from '../../i18n/ui';
+import { getPosts, POST_CATEGORIES } from '../../lib/content';
+import { defaultLang, t } from '../../i18n/ui';
 
 const posts = await getPosts();
+const categories = ['all', ...POST_CATEGORIES] as const;
 ---
-<Base title={t('blog.title', 'en')} active="blog">
-  <div class="wrap">
-    <section class="sec">
-      <h1 class="lead-title"><T k="blog.title" /></h1>
-    </section>
+<Base title={t('blog.title', defaultLang)} active="blog" canonicalPath="/blog">
+  <div class="wrap blog-page" data-blog-index>
+    <header class="blog-index-head">
+      <T k="blog.title" tag="h1" class="lead-title" />
+    </header>
 
-    <section class="sec" style="padding-top:6px;">
+    <div class="blog-filter-shell">
+      <div
+        class="blog-filter"
+        role="group"
+        aria-label={t('blog.filterLabel', defaultLang)}
+        data-i18n-aria="blog.filterLabel"
+      >
+        {categories.map((category, index) => {
+          const key = 'guides.filter.' + category;
+          return (
+            <button
+              class:list={['blog-filter-button', { on: index === 0 }]}
+              type="button"
+              data-blog-filter={category}
+              aria-pressed={index === 0 ? 'true' : 'false'}
+              data-i18n={key}
+            >
+              {t(key, defaultLang)}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+
+    <section class="blog-feed" aria-label={t('blog.title', defaultLang)} data-i18n-aria="blog.title">
       {posts.length === 0 ? (
-        <p class="t-body center" style="padding:24px 0;" data-i18n="blog.empty">{t('blog.empty', 'en')}</p>
+        <p class="blog-empty" data-i18n="blog.empty">{t('blog.empty', defaultLang)}</p>
       ) : (
-        <div class="post-list">
-          {posts.map((p) => <PostCard post={p} />)}
-        </div>
+        <>
+          <div class="blog-feed-list">
+            {posts.map((post, index) => (
+              <PostCard post={post} variant={index === 0 ? 'featured' : 'row'} />
+            ))}
+          </div>
+          <p class="blog-empty" data-blog-empty-category hidden aria-live="polite" data-i18n="blog.emptyCategory">
+            {t('blog.emptyCategory', defaultLang)}
+          </p>
+        </>
       )}
     </section>
   </div>
+
+  <script>
+    import '../../scripts/blog-filter.ts';
+  </script>
 </Base>

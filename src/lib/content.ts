@@ -279,50 +279,110 @@ export const reviewTagKey: Record<string, string> = {
 };
 
 /* ---------------- blog posts ---------------- */
+export const POST_CATEGORIES = ['visa', 'jobs', 'housing', 'korean', 'daily'] as const;
+export type PostCategory = (typeof POST_CATEGORIES)[number];
+
 export interface Post {
   slug: string;
   lang: Lang;
+  category: PostCategory;
   headline: string;
   excerpt: string;
   author: string;
   publishedDate: string | null;
+  lastReviewed: string | null;
   cover: string | null;
+  coverAlt: string;
+  publishingBoundaryConfirmed: boolean;
   draft: boolean;
 }
 
 function toPost(slug: string, e: any): Post {
+  const category = POST_CATEGORIES.includes(e?.category) ? e.category : 'daily';
   return {
     slug,
     lang: (['en', 'ko', 'my'].includes(e?.lang) ? e.lang : 'my') as Lang,
+    category,
     headline: str(e?.headline),
     excerpt: str(e?.excerpt),
     author: str(e?.author, 'MyanMate'),
     publishedDate: e?.publishedDate ?? null,
+    lastReviewed: e?.lastReviewed ?? null,
     cover: typeof e?.cover === 'string' ? e.cover : null,
-    draft: e?.draft === true,
+    coverAlt: str(e?.coverAlt),
+    publishingBoundaryConfirmed: e?.publishingBoundaryConfirmed === true,
+    // Missing/invalid draft metadata fails closed so an incomplete entry is
+    // never published by accident.
+    draft: e?.draft !== false,
   };
 }
 
-// Drafts are visible in local dev, hidden in the production (Vercel) build.
-const SHOW_DRAFTS = !process.env.VERCEL;
+// Drafts are previewable only in Astro dev. Every static build, including a
+// local production build, excludes them and their routes.
+const SHOW_DRAFTS = import.meta.env.DEV;
+
+function comparePosts(a: Post, b: Post): number {
+  return (
+    (b.publishedDate ?? '').localeCompare(a.publishedDate ?? '') ||
+    a.slug.localeCompare(b.slug)
+  );
+}
 
 export async function getPosts(): Promise<Post[]> {
   const list = await reader.collections.posts.all();
-  return list
-    .map((e: any) => toPost(e.slug, e.entry))
+  const posts = list.map((e: any) => toPost(e.slug, e.entry));
+  const uncheckedPost = posts.find((post) => !post.draft && !post.publishingBoundaryConfirmed);
+  if (uncheckedPost) {
+    throw new Error(
+      `Published blog post "${uncheckedPost.slug}" is missing the publishing-boundary confirmation.`
+    );
+  }
+  return posts
     .filter((p) => SHOW_DRAFTS || !p.draft)
-    .sort((a, b) => (b.publishedDate ?? '').localeCompare(a.publishedDate ?? ''));
+    .sort(comparePosts);
+}
+
+export async function getLatestPosts(limit = 3): Promise<Post[]> {
+  const posts = await getPosts();
+  return posts.slice(0, Math.max(0, limit));
+}
+
+function unwrapMarkdocArticle(html: string): string {
+  const match = html.trim().match(/^<article>([\s\S]*)<\/article>$/);
+  return match ? match[1].trim() : html.trim();
 }
 
 export async function getPost(slug: string): Promise<{ meta: Post; bodyHtml: string } | null> {
   const entry = await reader.collections.posts.read(slug);
   if (!entry) return null;
+  const meta = toPost(slug, entry);
+  if (!SHOW_DRAFTS && meta.draft) return null;
+  if (!meta.draft && !meta.publishingBoundaryConfirmed) {
+    throw new Error(`Published blog post "${slug}" is missing the publishing-boundary confirmation.`);
+  }
+
   let bodyHtml = '';
   try {
     const { node } = await (entry as any).body();
-    bodyHtml = Markdoc.renderers.html(Markdoc.transform(node));
+    const validationErrors = Markdoc.validate(node).filter(({ error }) =>
+      error.level === 'error' || error.level === 'critical'
+    );
+    if (validationErrors.length > 0) {
+      const details = validationErrors
+        .map(({ error, lines }) => `${error.message}${lines.length ? ` (line ${lines.join(', ')})` : ''}`)
+        .join('; ');
+      throw new Error(details);
+    }
+    bodyHtml = unwrapMarkdocArticle(Markdoc.renderers.html(Markdoc.transform(node)));
   } catch (err) {
-    console.warn('[getPost] body render failed for', slug, err);
+    if (!meta.draft) {
+      throw new Error(`Published blog post "${slug}" could not be rendered.`, { cause: err });
+    }
+    console.warn('[getPost] draft body render failed for', slug, err);
   }
-  return { meta: toPost(slug, entry), bodyHtml };
+
+  if (!meta.draft && !bodyHtml) {
+    throw new Error(`Published blog post "${slug}" has an empty body.`);
+  }
+  return { meta, bodyHtml };
 }

@@ -1,27 +1,67 @@
 ---
-/** Blog list card. Posts are single-language (the post's own `lang`), so no
- * [data-lang] toggling — the card gets lang={post.lang} for correct fonts. */
+import Icon from './Icon.astro';
 import type { Post } from '../lib/content';
+import { defaultLang, t } from '../i18n/ui';
 
 interface Props {
   post: Post;
+  variant?: 'featured' | 'row' | 'home';
+  headingLevel?: 2 | 3;
 }
-const { post } = Astro.props;
-const href = `/blog/${post.slug}`;
+
+const { post, variant = 'row', headingLevel = 2 } = Astro.props;
+const HeadingTag = `h${headingLevel}`;
+const href = '/blog/' + post.slug;
+const categoryKey = 'guides.filter.' + post.category;
 const date = post.publishedDate ?? '';
+const reviewed = post.lastReviewed ?? '';
+const isFeedCard = variant !== 'home';
 ---
 <a
-  class:list={['post-card', { 'has-cover': !!post.cover }]}
+  class:list={[
+    'blog-card',
+    'blog-card--' + variant,
+    { 'is-featured': variant === 'featured' },
+  ]}
   href={href}
-  lang={post.lang}
-  data-event={`blog:${post.slug}`}
+  data-blog-item={isFeedCard ? '' : undefined}
+  data-category={post.category}
+  data-event={'blog:' + post.slug}
 >
-  {post.cover && (
-    <span class="post-cover" aria-hidden="true"><img src={post.cover} alt="" loading="lazy" /></span>
-  )}
-  <span class="post-body">
-    <span class="post-headline">{post.headline}</span>
-    {post.excerpt && <span class="post-excerpt clamp2">{post.excerpt}</span>}
-    <span class="post-meta">{date}{post.author ? ` · ${post.author}` : ''}</span>
+  <span class="blog-card-media" aria-hidden="true">
+    {post.cover ? (
+      <img src={post.cover} alt="" loading={variant === 'featured' ? 'eager' : 'lazy'} decoding="async" />
+    ) : (
+      <span class="blog-card-placeholder">
+        <Icon name={post.category} size={38} />
+      </span>
+    )}
   </span>
+
+  <div class="blog-card-body">
+    <span class="blog-card-labels">
+      <span class="blog-card-category" data-i18n={categoryKey}>{t(categoryKey, defaultLang)}</span>
+      {post.draft && (
+        <span class="blog-draft-badge" data-i18n="blog.draft">{t('blog.draft', defaultLang)}</span>
+      )}
+    </span>
+    <HeadingTag class="blog-card-headline blog-authored" lang={post.lang}>{post.headline}</HeadingTag>
+    {post.excerpt && (
+      <span class="blog-card-excerpt blog-authored" lang={post.lang}>{post.excerpt}</span>
+    )}
+    <span class="blog-card-meta">
+      {date && <time datetime={date}>{date}</time>}
+      {date && post.author && <span aria-hidden="true">·</span>}
+      {post.author && <span lang={post.lang}>{post.author}</span>}
+      {reviewed && (
+        <span class="blog-card-reviewed">
+          <span aria-hidden="true">·</span>
+          <span data-i18n="content.lastReviewed">{t('content.lastReviewed', defaultLang)}</span>
+          <span aria-hidden="true">:</span>
+          <time datetime={reviewed}>{reviewed}</time>
+        </span>
+      )}
+    </span>
+    <span class="visually-hidden" data-i18n="blog.readMore">{t('blog.readMore', defaultLang)}</span>
+  </div>
 </a>

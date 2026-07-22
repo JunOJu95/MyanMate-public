@@ -8,6 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "blog:assets:all": "node scripts/materialize-blog-assets.mjs --all",
+    "blog:assets:published": "node scripts/materialize-blog-assets.mjs --published",
     "astro": "astro"
   },
   "dependencies": {
