@@ -10,6 +10,7 @@ interface Props {
   context?: 'visa' | 'service' | 'general';
   sentinel?: string;
   blockers?: string;
+  scope?: boolean;
 }
 
 const {
@@ -18,39 +19,43 @@ const {
   context = service === 'visa' ? 'visa' : 'general',
   sentinel = '.detail-hero',
   blockers = '.foot',
+  scope = false,
 } = Astro.props;
 const dialogId = `social-dm-${service}-${visa || 'general'}`;
+const mobileTitleKey = scope ? 'dm.scopeCta' : 'dm.mobile.title';
+const mobileActionKey = scope ? 'dm.scopeCta' : 'dm.mobile.open';
 ---
 <aside
   class="mobile-conversion-cta mobile-dm-trigger"
   data-sticky-cta
   data-cta-sentinel={sentinel}
   data-cta-blockers={blockers}
-  aria-label={t('dm.mobile.open', defaultLang)}
+  aria-label={t(mobileActionKey, defaultLang)}
+  data-i18n-aria={mobileActionKey}
   aria-hidden="true"
   inert
 >
   <span class="mobile-conversion-copy">
     <span class="mobile-conversion-icon" aria-hidden="true"><Icon name="chat" size={18} /></span>
     <span>
-      <T k="dm.mobile.title" tag="strong" />
+      <T k={mobileTitleKey} tag="strong" />
       <T k="dm.mobile.note" tag="small" />
     </span>
   </span>
   <button class="btn pri" type="button" data-dm-open={dialogId}>
-    <T k="dm.mobile.open" />
+    <T k={mobileActionKey} />
   </button>
 </aside>
 
-<dialog class="dm-dialog" id={dialogId} aria-label={t('dm.mobile.title', defaultLang)} data-i18n-aria="dm.mobile.title">
+<dialog class="dm-dialog" id={dialogId} aria-label={t(mobileTitleKey, defaultLang)} data-i18n-aria={mobileTitleKey}>
   <div class="dm-sheet">
     <div class="dm-sheet-head">
-      <T k="dm.mobile.title" tag="p" class="card-title" />
+      <T k={mobileTitleKey} tag="p" class="card-title" />
       <button class="dm-sheet-close" type="button" data-dm-close aria-label={t('dm.mobile.close', defaultLang)} data-i18n-aria="dm.mobile.close">
         <Icon name="close" size={20} />
       </button>
     </div>
-    <SocialDmPanel service={service} visa={visa} context={context} source="mobile-dm" compact />
+    <SocialDmPanel service={service} visa={visa} context={context} source="mobile-dm" scope={scope} compact />
   </div>
 </dialog>
 
@@ -59,9 +64,23 @@ const dialogId = `social-dm-${service}-${visa || 'general'}`;
   const openButton = document.querySelector(`[data-dm-open="${dialogId}"]`);
   const closeButton = dialog?.querySelector('[data-dm-close]');
 
-  openButton?.addEventListener('click', () => {
-    if (dialog instanceof HTMLDialogElement) dialog.showModal();
+  const openDialog = () => {
+    if (dialog instanceof HTMLDialogElement && !dialog.open) dialog.showModal();
+  };
+
+  openButton?.addEventListener('click', openDialog);
+
+  document.querySelectorAll('a[href="#dm"]').forEach((anchor) => {
+    anchor.addEventListener('click', (event) => {
+      const desktopTarget = document.getElementById('dm');
+      const desktopTargetIsVisible = desktopTarget != null && desktopTarget.getClientRects().length > 0;
+      if (desktopTargetIsVisible) return;
+
+      event.preventDefault();
+      openDialog();
+    });
   });
+
   closeButton?.addEventListener('click', () => {
     if (dialog instanceof HTMLDialogElement) dialog.close();
   });

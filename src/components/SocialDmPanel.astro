@@ -10,6 +10,7 @@ interface Props {
   compact?: boolean;
   context?: 'visa' | 'service' | 'general';
   id?: string;
+  scope?: boolean;
 }
 
 const {
@@ -19,8 +20,10 @@ const {
   compact = false,
   context = service === 'visa' ? 'visa' : 'general',
   id,
+  scope = false,
 } = Astro.props;
-const bodyKey = `dm.body.${context}`;
+const bodyKey = scope ? 'dm.body.scope' : `dm.body.${context}`;
+const titleKey = scope ? 'dm.scopeCta' : 'dm.title';
 const channels = [
   { key: 'dm.telegram', href: TELEGRAM_DM_URL, icon: 'send', channel: 'telegram', primary: true },
   { key: 'dm.tiktok', href: TIKTOK_URL, icon: 'music', channel: 'tiktok', primary: false },
@@ -29,7 +32,7 @@ const channels = [
 ---
 <section id={id} class:list={['social-dm-panel', { compact }]} data-dm-panel>
   <T k="dm.eyebrow" tag="p" class="dm-eyebrow" />
-  <T k="dm.title" tag="h2" class="dm-title" />
+  <T k={titleKey} tag="h2" class="dm-title" />
   <T k={bodyKey} tag="p" class="dm-body" />
   <div class="dm-channel-list">
     {channels.map((channel) => (

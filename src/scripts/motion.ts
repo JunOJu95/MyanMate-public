@@ -70,8 +70,8 @@ function initSmoothDmSidebars(): void {
   const sidebars = Array.from(document.querySelectorAll<HTMLElement>('.guide-dm-aside'));
   if (sidebars.length === 0) return;
 
-  const desktop = window.matchMedia('(min-width: 960px)');
-  const maxLag = 16;
+  const desktop = window.matchMedia('(min-width: 760px)');
+  const maxLag = 36;
   let previousScrollY = window.scrollY;
   let currentOffset = 0;
   let targetOffset = 0;
@@ -90,11 +90,12 @@ function initSmoothDmSidebars(): void {
   };
 
   const render = () => {
-    currentOffset += (targetOffset - currentOffset) * 0.2;
-    targetOffset *= 0.78;
+    currentOffset += (targetOffset - currentOffset) * 0.16;
+    targetOffset *= 0.88;
 
     const settled = Math.abs(currentOffset) < 0.08 && Math.abs(targetOffset) < 0.08;
     sidebars.forEach((sidebar) => {
+      if (getComputedStyle(sidebar).position !== 'sticky') return;
       sidebar.style.setProperty('--dm-follow-y', `${settled ? 0 : currentOffset.toFixed(2)}px`);
       sidebar.classList.toggle('is-following', !settled);
     });
@@ -111,9 +112,10 @@ function initSmoothDmSidebars(): void {
     const delta = scrollY - previousScrollY;
     previousScrollY = scrollY;
 
-    if (!desktop.matches || reducedMotion.matches || delta === 0) return;
+    const hasStickySidebar = sidebars.some((sidebar) => getComputedStyle(sidebar).position === 'sticky');
+    if (!desktop.matches || !hasStickySidebar || reducedMotion.matches || delta === 0) return;
 
-    targetOffset = Math.max(-maxLag, Math.min(maxLag, targetOffset + delta * 0.16));
+    targetOffset = Math.max(-maxLag, Math.min(maxLag, targetOffset + delta * 0.22));
     if (!frame) frame = requestAnimationFrame(render);
   };
 

@@ -3,56 +3,31 @@ import Icon from './Icon.astro';
 import LocalizedText from './LocalizedText.astro';
 import { t, defaultLang } from '../i18n/ui';
 import type { Service } from '../data/services';
-import type { ServiceContent } from '../lib/content';
+import type { ServiceOffer } from '../lib/content';
 
 interface Props {
   service: Service;
-  content: ServiceContent;
-  variant?: 'compact' | 'tile';
+  offer: ServiceOffer;
 }
-const { service, content, variant = 'compact' } = Astro.props;
+const { service, offer } = Astro.props;
 const href = `/services/${service.id}`;
 ---
-{variant === 'compact' ? (
-  <article class="card svc-card hov">
-    <span class="svc-ico"><Icon name={service.iconKey} /></span>
-    <span class="svc-body">
-      <span class="svc-meta">
-        <span class="pill-tag" data-i18n="ui.status.available">{t('ui.status.available', defaultLang)}</span>
-      </span>
-      <span class="svc-head">
-        <LocalizedText value={content.title} tag="span" class="card-title" />
-      </span>
-      <LocalizedText value={content.description} tag="span" class="t-body clamp2" />
-      <span class="svc-footer">
-        <span class="svc-actions">
-          <a class="btn ghost sm" href={href} data-i18n="btn.viewDetails" data-event={`service:${service.id}`}>{t('btn.viewDetails', defaultLang)}</a>
-          <a class="btn pri sm" href={`${href}#dm`} data-event={`service-direct:${service.id}`}>
-            <Icon name="chat" size={14} />
-            <span data-i18n="dm.cta">{t('dm.cta', defaultLang)}</span>
-          </a>
-        </span>
-      </span>
+<a
+  class="card svc-tile svc-card-link"
+  href={href}
+  data-event={`service:${service.id}`}
+  data-service={service.id}
+  data-source="services-hub"
+>
+  <span class="svc-card-top">
+    <span class="svc-card-title-wrap">
+      <span class="svc-ico"><Icon name={service.iconKey} /></span>
+      <LocalizedText value={offer.title} tag="span" class="card-title" />
     </span>
-  </article>
-) : (
-  <div class="card svc-tile">
-    <div class="svc-head">
-      <span style="display:flex;gap:8px;align-items:center;min-width:0;">
-        <span class="svc-ico" style="width:30px;height:30px;padding:6px;"><Icon name={service.iconKey} /></span>
-        <LocalizedText value={content.title} tag="span" class="card-title" />
-      </span>
-    </div>
-    <div class="svc-meta mt-8">
-      <span class="pill-tag" data-i18n="ui.status.available">{t('ui.status.available', defaultLang)}</span>
-    </div>
-    <LocalizedText value={content.description} tag="p" class="t-body clamp2" />
-    <div class="svc-tile-actions">
-      <a class="btn ghost sm" href={href} data-i18n="btn.viewDetails" data-event={`service:${service.id}`}>{t('btn.viewDetails', defaultLang)}</a>
-      <a class="btn pri sm" href={`${href}#dm`} data-event={`service-direct:${service.id}`}>
-        <Icon name="chat" size={14} />
-        <span data-i18n="dm.cta">{t('dm.cta', defaultLang)}</span>
-      </a>
-    </div>
-  </div>
-)}
+    <span class="svc-card-arrow" aria-hidden="true">→</span>
+  </span>
+  <span class="svc-meta">
+    <span class="pill-tag" data-i18n="ui.status.available">{t('ui.status.available', defaultLang)}</span>
+  </span>
+  <LocalizedText value={offer.summary} tag="span" class="t-body clamp2 svc-card-summary" />
+</a>

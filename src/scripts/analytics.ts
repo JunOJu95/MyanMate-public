@@ -29,12 +29,16 @@ function track(event: string, props: Props = {}): void {
 document.addEventListener('click', (e) => {
   const el = (e.target as HTMLElement).closest('[data-event]');
   if (!el) return;
-  track(el.getAttribute('data-event') || 'click', {
+  const event = el.getAttribute('data-event') || 'click';
+  const service = el.getAttribute('data-service') || undefined;
+  const source = el.getAttribute('data-source') || undefined;
+
+  track(event, {
     lang: (window as any).__lang || 'en',
     path: location.pathname,
-    service: el.getAttribute('data-service') || undefined,
+    service,
     visa: el.getAttribute('data-visa') || undefined,
     channel: el.getAttribute('data-channel') || undefined,
-    source: el.getAttribute('data-source') || undefined,
+    source,
   });
 });

@@ -1,0 +1,14 @@
+---
+import ServiceInformationPage from '../../components/ServiceInformationPage.astro';
+import { serviceById } from '../../data/services';
+import { getServiceContent } from '../../lib/content';
+
+const service = serviceById('housing');
+const content = await getServiceContent('housing');
+
+if (!service || !content) {
+  throw new Error('Housing information content is missing.');
+}
+---
+
+<ServiceInformationPage service={service} content={content} />
