@@ -205,7 +205,9 @@ export default config({
       slugField: 'title',
       path: 'src/content/posts/*',
       format: { data: 'yaml', contentField: 'body' },
-      columns: ['title', 'publishedDate'],
+      entryLayout: 'content',
+      previewUrl: '/blog',
+      columns: ['title', 'lang', 'category', 'publishedDate', 'lastReviewed', 'draft'],
       schema: {
         title: fields.slug({
           name: { label: 'Internal title (English)', description: 'Used for the URL and the admin list (not shown to readers).' },
@@ -220,15 +222,71 @@ export default config({
           ],
           defaultValue: 'my',
         }),
-        headline: fields.text({ label: 'Headline', description: 'The title readers see, in the post language.' }),
-        excerpt: fields.text({ label: 'Excerpt', description: 'Short summary shown on the list card.', multiline: true }),
-        author: fields.text({ label: 'Author', defaultValue: 'MyanMate' }),
+        category: fields.select({
+          label: 'Category',
+          description: 'Readers can filter the blog by this category.',
+          options: CATEGORY_OPTIONS,
+          defaultValue: 'daily',
+        }),
+        headline: fields.text({
+          label: 'Headline',
+          description: 'The title readers see, in the post language.',
+          validation: { isRequired: true },
+        }),
+        excerpt: fields.text({
+          label: 'Excerpt',
+          description: 'A short summary shown on the blog list and home page.',
+          multiline: true,
+          validation: { isRequired: true },
+        }),
+        author: fields.text({
+          label: 'Author',
+          defaultValue: 'MyanMate',
+          validation: { isRequired: true },
+        }),
         publishedDate: fields.date({ label: 'Published date', validation: { isRequired: true } }),
-        cover: fields.image({ label: 'Cover image', directory: 'public/images/blog', publicPath: '/images/blog/' }),
-        draft: fields.checkbox({ label: 'Draft (hide from the published site)', defaultValue: false }),
+        lastReviewed: fields.date({
+          label: 'Last reviewed (최종 검토일)',
+          description: 'Update this after checking the information against current official sources.',
+          validation: { isRequired: true },
+        }),
+        cover: fields.image({
+          label: 'Cover image (optional)',
+          description: 'Stored privately with the post. Draft images are not copied to the public site.',
+          directory: 'src/content/blog-media',
+          publicPath: '/images/blog/',
+        }),
+        coverAlt: fields.text({
+          label: 'Cover image alt text',
+          description: 'Describe informative images for screen-reader users. Leave empty only when the cover is decorative.',
+        }),
+        publishingBoundaryConfirmed: fields.checkbox({
+          label: 'Publishing boundary confirmed',
+          description: 'Before publishing, confirm this post only provides information or guidance. It must not promise document writing or submission, property introductions, negotiation, or contract involvement.',
+          defaultValue: false,
+        }),
+        draft: fields.checkbox({
+          label: 'Draft (keep private)',
+          description: 'New posts start private. Confirm the publishing boundary above, then turn this off only when the post is ready.',
+          defaultValue: true,
+        }),
         body: fields.markdoc({
           label: 'Body',
-          options: { image: { directory: 'public/images/blog', publicPath: '/images/blog/' } },
+          description: 'Use Heading 2–4 inside the post; the page headline is already Heading 1.',
+          options: {
+            heading: [2, 3, 4],
+            image: {
+              directory: 'src/content/blog-media',
+              publicPath: '/images/blog/',
+              schema: {
+                alt: fields.text({
+                  label: 'Alt text',
+                  description: 'Describe the image for readers who cannot see it.',
+                  validation: { isRequired: true },
+                }),
+              },
+            },
+          },
         }),
       },
     }),

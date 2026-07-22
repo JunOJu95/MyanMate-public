@@ -1,5 +1,5 @@
 export const SHOW_REVIEWS = false;
-export const SHOW_BLOG_IN_NAV = false;
+export const SHOW_BLOG_IN_NAV = true;
 export const FACEBOOK_URL = 'https://www.facebook.com/share/1DRs9wTKtT/?mibextid=wwXIfr';
 export const INSTAGRAM_URL = 'https://www.instagram.com/roadieai?igsh=MTgwaXVqYnJrMGRnNQ%3D%3D&utm_source=qr';
 export const YOUTUBE_URL = 'https://www.youtube.com/@roadiekorea';

@@ -168,9 +168,15 @@ export const ui = {
   'dm.mobile.close': { en: 'Close', ko: '닫기', my: 'ပိတ်ရန်' },
 
   /* 3b. Blog */
-  'blog.title':    { en: 'Blog', ko: '블로그', my: 'ဘလော့ဂ်' },
-  'blog.empty':    { en: 'No posts yet — check back soon.', ko: '아직 글이 없어요. 곧 새 글이 올라옵니다.', my: 'ပို့စ် မရှိသေးပါ — မကြာမီ ပြန်လာကြည့်ပါ။' },
-  'blog.readMore': { en: 'Read more', ko: '더 읽기', my: 'ဆက်ဖတ်ရန်' },
+  'blog.title':         { en: 'Blog', ko: '블로그', my: 'ဘလော့ဂ်' },
+  'blog.latest':        { en: 'Latest from the blog', ko: '블로그 최신 글', my: 'ဘလော့ဂ်မှ နောက်ဆုံးစာများ' },
+  'blog.viewAll':       { en: 'View all posts', ko: '전체 글 보기', my: 'စာအားလုံး ကြည့်ရန်' },
+  'blog.back':          { en: 'Back to Blog', ko: '블로그로 돌아가기', my: 'ဘလော့ဂ်သို့ ပြန်သွားရန်' },
+  'blog.filterLabel':   { en: 'Filter posts by category', ko: '카테고리별 글 필터', my: 'အမျိုးအစားအလိုက် စာများ စစ်ထုတ်ရန်' },
+  'blog.empty':         { en: 'No posts yet — check back soon.', ko: '아직 글이 없어요. 곧 새 글이 올라옵니다.', my: 'ပို့စ် မရှိသေးပါ — မကြာမီ ပြန်လာကြည့်ပါ။' },
+  'blog.emptyCategory': { en: 'No posts in this category yet.', ko: '이 카테고리에는 아직 글이 없어요.', my: 'ဤအမျိုးအစားတွင် စာမရှိသေးပါ။' },
+  'blog.readMore':      { en: 'Read more', ko: '더 읽기', my: 'ဆက်ဖတ်ရန်' },
+  'blog.draft':         { en: 'Draft preview', ko: '초안 미리보기', my: 'မူကြမ်း အစမ်းကြည့်ရှုမှု' },
 
   /* 4. Content detail */
   'content.section.eligibility': { en: "Who it's for", ko: '누가 해당되나요', my: 'ဘယ်သူနှင့် သက်ဆိုင်သလဲ' },

@@ -30,6 +30,7 @@ export const icons: Record<string, string> = {
   send: '<path d="m21 3-7.2 18-3.5-7.3L3 10.2Z"/><path d="m10.3 13.7 4.2-4.2"/>',
   music: '<path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/>',
   close: '<path d="m6 6 12 12M18 6 6 18"/>',
+  shield: '<path d="M12 3.2 19 6v5.1c0 4.5-2.7 7.7-7 9.7-4.3-2-7-5.2-7-9.7V6Z"/><path d="m8.8 12 2.1 2.1 4.3-4.5"/>',
 };
 
 export type IconName = keyof typeof icons;

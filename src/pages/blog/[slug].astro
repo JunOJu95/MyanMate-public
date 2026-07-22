@@ -1,29 +1,77 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
+import Icon from '../../components/Icon.astro';
+import T from '../../components/T.astro';
 import { getPosts, getPost } from '../../lib/content';
+import { defaultLang, t } from '../../i18n/ui';
 
 export async function getStaticPaths() {
   const posts = await getPosts();
-  return posts.map((p) => ({ params: { slug: p.slug } }));
+  return posts.map((post) => ({ params: { slug: post.slug } }));
 }
 
 const { slug } = Astro.params;
 const data = await getPost(slug!);
 if (!data) return Astro.redirect('/blog');
+
 const { meta, bodyHtml } = data;
 const date = meta.publishedDate ?? '';
+const reviewed = meta.lastReviewed ?? '';
+const categoryKey = 'guides.filter.' + meta.category;
 ---
-<Base title={meta.headline} active="blog" description={meta.excerpt} image={meta.cover ?? undefined}>
-  <div class="wrap narrow">
-    <article class="post" lang={meta.lang}>
+<Base
+  title={meta.headline}
+  active="blog"
+  description={meta.excerpt}
+  canonicalPath={'/blog/' + meta.slug}
+  image={meta.cover ?? undefined}
+>
+  <div class="wrap blog-detail-wrap">
+    <article class="blog-article">
+      <a class="blog-back" href="/blog">
+        <span aria-hidden="true">←</span>
+        <T k="blog.back" />
+      </a>
+
+      <header class="blog-article-head">
+        <div class="blog-article-labels">
+          <span class="blog-card-category" data-i18n={categoryKey}>{t(categoryKey, defaultLang)}</span>
+          {meta.draft && <T k="blog.draft" tag="span" class="blog-draft-badge" />}
+        </div>
+        <h1 class="blog-article-title blog-authored" lang={meta.lang}>{meta.headline}</h1>
+        <p class="blog-article-meta">
+          {date && <time datetime={date}>{date}</time>}
+          {date && meta.author && <span aria-hidden="true">·</span>}
+          {meta.author && <span lang={meta.lang}>{meta.author}</span>}
+        </p>
+        {reviewed && (
+          <p class="blog-article-reviewed">
+            <T k="content.lastReviewed" />
+            <span aria-hidden="true">:</span>
+            <time datetime={reviewed}>{reviewed}</time>
+          </p>
+        )}
+      </header>
+
       {meta.cover && (
-        <div class="post-hero"><img src={meta.cover} alt="" /></div>
+        <figure class="blog-article-cover" lang={meta.lang}>
+          <img
+            src={meta.cover}
+            alt={meta.coverAlt}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </figure>
       )}
-      <h1 class="lead-title" style="margin-top:14px;">{meta.headline}</h1>
-      <p class="meta-line"><span class="post-meta">{date}{meta.author ? ` · ${meta.author}` : ''}</span></p>
-      <div class="prose post-prose" set:html={bodyHtml}></div>
-      <Disclaimer k="content.disclaimer" class="mt-12" />
+
+      <div class="post-prose blog-authored" lang={meta.lang} set:html={bodyHtml}></div>
+
+      <div class="blog-disclaimer">
+        <span class="blog-disclaimer-icon" aria-hidden="true"><Icon name="shield" size={30} /></span>
+        <Disclaimer k="content.disclaimer" />
+      </div>
     </article>
   </div>
 </Base>

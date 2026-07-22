@@ -8,8 +8,9 @@ node_modules/
 # astro
 .astro/
 
-# generated content images (keep source content/ tracked)
-# (nothing here yet)
+# generated public blog images (private sources are tracked in src/content/blog-media)
+/public/images/blog/*
+!/public/images/blog/.gitkeep
 
 # env / secrets
 .env
