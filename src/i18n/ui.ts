@@ -47,7 +47,6 @@ export const ui = {
   'mobileCta.note':   { en: 'Choose a channel without sending sensitive details', ko: '민감정보 없이 편한 채널을 선택하세요', my: 'အရေးကြီးအချက်အလက် မပို့ဘဲ channel ရွေးပါ' },
   'mobileCta.action': { en: 'Choose DM', ko: 'DM 선택', my: 'DM ရွေးရန်' },
   'btn.browseGuides': { en: 'Visa information', ko: '비자 정보 보기', my: 'ဗီဇာအချက်အလက်' },
-  'btn.viewDetails':  { en: 'View details',  ko: '상세 보기',    my: 'အသေးစိတ်ကြည့်ရန်' },
   'btn.more':         { en: 'See more',      ko: '더 보기',      my: 'ပိုမိုကြည့်ရှုရန်' },
 
   'footer.disclaimer': {
@@ -156,7 +155,9 @@ export const ui = {
   'dm.body.visa': { en: 'Send the visa type and your question through the channel that is easiest for you.', ko: '비자 종류와 궁금한 점을 편한 채널로 보내주세요.', my: 'ဗီဇာအမျိုးအစားနှင့် မေးလိုသည့်အချက်ကို အဆင်ပြေသော channel မှ ပို့ပါ။' },
   'dm.body.service': { en: 'Send the service you are checking and a short note about your situation through your preferred channel.', ko: '확인 중인 서비스와 현재 상황을 편한 채널로 간단히 보내주세요.', my: 'စစ်ဆေးနေသော ဝန်ဆောင်မှုနှင့် လက်ရှိအခြေအနေကို အဆင်ပြေသော channel မှ အကျဉ်းချုပ် ပို့ပါ။' },
   'dm.body.general': { en: 'Choose the channel that is easiest for you and send us a short message.', ko: '편한 채널을 선택해 궁금한 내용을 짧게 메시지로 보내주세요.', my: 'အဆင်ပြေသော channel ကို ရွေးပြီး မေးလိုသည့်အကြောင်းကို အကျဉ်းချုပ် မက်ဆေ့ပို့ပါ။' },
+  'dm.body.scope': { en: 'Choose a convenient channel and send a message. In the first DM, we only confirm the available scope, timing, and cost.', ko: '편한 채널을 선택해 메시지를 보내주세요. 첫 DM에서는 가능한 범위·일정·비용만 확인합니다.', my: 'အဆင်ပြေသော channel ကို ရွေးပြီး မက်ဆေ့ပို့ပါ။ ပထမဆုံး DM တွင် ဆောင်ရွက်နိုင်သည့်အတိုင်းအတာ၊ အချိန်နှင့် ကုန်ကျစရိတ်ကိုသာ အတည်ပြုပါသည်။' },
   'dm.cta': { en: '1:1 DM inquiry', ko: '1:1 DM 문의', my: '1:1 DM မေးမြန်းရန်' },
+  'dm.scopeCta': { en: 'Check scope and cost by DM', ko: 'DM으로 범위·비용 확인', my: 'DM မှတစ်ဆင့် အတိုင်းအတာနှင့် ကုန်ကျစရိတ် စစ်ဆေးရန်' },
   'dm.telegram': { en: 'Message on Telegram', ko: 'Telegram으로 문의', my: 'Telegram မှ မေးမြန်းရန်' },
   'dm.tiktok': { en: 'Message through TikTok', ko: 'TikTok에서 메시지', my: 'TikTok မှ မက်ဆေ့ပို့ရန်' },
   'dm.messenger': { en: 'Message on Messenger', ko: 'Messenger로 문의', my: 'Messenger မှ မေးမြန်းရန်' },
@@ -193,8 +194,17 @@ export const ui = {
 
   /* 5. Service detail */
   'svcDetail.scope.title': { en: 'MyanMate guidance scope', ko: 'MyanMate 안내 범위', my: 'MyanMate လမ်းညွှန်မှုအတိုင်းအတာ' },
+  'svcDetail.section.recommendedFor': { en: 'Who this is for', ko: '이런 분께 추천해요', my: 'ဤဝန်ဆောင်မှုက ဘယ်သူ့အတွက်လဲ' },
+  'svcDetail.section.included': { en: 'What we help with', ko: '어떤 일을 해드리나요', my: 'ဘယ်လို ကူညီပေးသလဲ' },
+  'svcDetail.section.process': { en: 'How it works', ko: '어떻게 진행하나요', my: 'ဘယ်လို ဆောင်ရွက်သလဲ' },
+  'svcDetail.section.deliverables': { en: 'What you receive', ko: '무엇을 받게 되나요', my: 'ဘာတွေ ရရှိမလဲ' },
+  'svcDetail.section.preparation': { en: 'What to prepare', ko: '무엇을 준비하면 되나요', my: 'ဘာတွေ ပြင်ဆင်ရမလဲ' },
   'svcDetail.section.whatWeDont':  { en: "What we don't do", ko: '무엇은 하지 않나요', my: 'ကျွန်ုပ်တို့ ဘာ မလုပ်သလဲ' },
-  'svcDetail.dont.body': { en: "We don't write, file, or submit documents, and we don't arrange property contracts or job placements. We research, guide, and accompany; you make the decisions and complete the required steps.", ko: '서류 작성·신청·제출을 하지 않고, 부동산 계약이나 일자리 연결을 알선하지 않습니다. 저희는 조사·안내·동행 자문을 제공하며, 결정과 필수 절차 진행은 본인이 합니다.', my: 'ကျွန်ုပ်တို့သည် စာရွက်စာတမ်းတင်ခြင်း၊ စာချုပ်ချုပ်ဆိုခြင်းနှင့် အလုပ်ရှာပေးခြင်းများ မလုပ်ဆောင်ပါ။ ကျွန်ုပ်တို့သည်အချက်အလက်များ ရှာဖွေခြင်းနှင့် လမ်းညွှန်ပေးခြင်းတို့ကိုသာ ဆောင်ရွက်ပြီး၊ အရေးကြီးသည့် ဆုံးဖြတ်ချက်များကိုမူ သင်ကိုယ်တိုင် ချမှတ်ရပါမည်။' },
+  'svcDetail.dont.body': { en: "We don't write, submit, or file documents for you, and we don't broker contracts. We research, guide, and come along — you stay in control.", ko: '저희는 고객의 서류를 작성·신청·제출하지 않고 계약을 연결하거나 처리하지 않습니다. 저희는 조사·안내·동행하며, 결정과 필수 절차는 고객이 직접 진행합니다.', my: 'ကျွန်ုပ်တို့သည် သင့်အတွက် စာရွက်စာတမ်းများကို ရေးသားခြင်း၊ လျှောက်ထားခြင်း သို့မဟုတ် တင်သွင်းခြင်း မပြုလုပ်သလို စာချုပ်ကိစ္စများကိုလည်း ချိတ်ဆက်ဆောင်ရွက်ပေးခြင်း မရှိပါ။ ကျွန်ုပ်တို့က အချက်အလက်ရှာဖွေခြင်း၊ လမ်းညွှန်ခြင်းနှင့် အတူလိုက်ပါခြင်းကိုသာ လုပ်ဆောင်ပြီး ဆုံးဖြတ်ချက်နှင့် လိုအပ်သောအဆင့်များကို သင်ကိုယ်တိုင် ဆောင်ရွက်ပါသည်။' },
+  'svcDetail.boundary.visa': { en: 'You write and submit every visa document yourself and confirm final requirements with Immigration (HiKorea).', ko: '비자 서류 작성과 신청·제출은 모두 본인이 직접 진행하고, 최종 요건은 출입국·하이코리아에서 확인합니다.', my: 'ဗီဇာစာရွက်စာတမ်းများကို သင်ကိုယ်တိုင် ရေးသား၍ လျှောက်ထားတင်သွင်းပြီး နောက်ဆုံးလိုအပ်ချက်များကို လူဝင်မှုကြီးကြပ်ရေး (HiKorea) တွင် အတည်ပြုပါ။' },
+  'svcDetail.boundary.resume': { en: 'We review your existing resume and give feedback. We do not rewrite it or connect you with jobs.', ko: '기존 이력서를 검토하고 피드백만 제공합니다. 이력서를 직접 수정하거나 일자리를 연결하지 않습니다.', my: 'လက်ရှိ ကိုယ်ရေးရာဇဝင်ကို စစ်ဆေးပြီး အကြံပြုချက်သာ ပေးပါသည်။ ကိုယ်ရေးရာဇဝင်ကို တိုက်ရိုက်ပြင်ဆင်ခြင်း သို့မဟုတ် အလုပ်အကိုင်ချိတ်ဆက်ပေးခြင်း မပြုလုပ်ပါ။' },
+  'svcDetail.boundary.housing': { en: 'We only accompany you to homes you found. We do not introduce properties, negotiate terms, or take part in contracts.', ko: '고객이 직접 찾은 집에만 동행합니다. 매물을 소개하거나 조건을 협상하거나 계약에 관여하지 않습니다.', my: 'သင်ကိုယ်တိုင် ရှာဖွေထားသောအိမ်များသို့သာ အတူလိုက်ပါသည်။ အိမ်များကို မိတ်ဆက်ခြင်း၊ အခြေအနေများကို ညှိနှိုင်းခြင်း သို့မဟုတ် စာချုပ်တွင် ပါဝင်ခြင်း မပြုလုပ်ပါ။' },
+  'svcDetail.scope.freeNote': { en: 'The first DM is free and only confirms the available scope, timing, and cost. We begin after you agree.', ko: '첫 DM에서는 가능한 범위·일정·비용만 무료로 확인합니다. 합의한 뒤 안내를 시작합니다.', my: 'ပထမဆုံး DM တွင် ဆောင်ရွက်နိုင်သည့်အတိုင်းအတာ၊ အချိန်နှင့် ကုန်ကျစရိတ်ကို အခမဲ့အတည်ပြုပါသည်။ သဘောတူပြီးနောက် လမ်းညွှန်မှုကို စတင်ပါသည်။' },
 
   /* 6. 1:1 DM */
   'request.title': { en: '1:1 DM inquiry', ko: '1:1 DM 문의', my: '1:1 DM မေးမြန်းရန်' },

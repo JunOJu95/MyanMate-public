@@ -6,7 +6,8 @@ import SocialDmPanel from '../../components/SocialDmPanel.astro';
 import { getGuides } from '../../lib/content';
 import { t } from '../../i18n/ui';
 
-const guides = (await getGuides()).filter((guide) => guide.category === 'visa');
+const allGuides = await getGuides();
+const guides = allGuides.filter((guide) => guide.category === 'visa');
 ---
 <Base title={t('guides.title', 'en')} active="guides" description={t('home.hero.sub', 'en')}>
   <div class="wrap visa-hub-page">
@@ -36,7 +37,13 @@ const guides = (await getGuides()).filter((guide) => guide.category === 'visa');
     </section>
     {guides.length > 0 && (
       <section class="sec visa-hub-dm" data-reveal="cta">
-        <SocialDmPanel service="visa" context="visa" source="guides-hub" id="dm" compact />
+        <SocialDmPanel
+          service="visa"
+          context="visa"
+          source="guides-hub"
+          id="dm"
+          compact
+        />
       </section>
     )}
   </div>

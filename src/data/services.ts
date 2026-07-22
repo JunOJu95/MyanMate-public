@@ -1,9 +1,15 @@
 /* =========================================================================
    MyanMate · active service routes and fixed presentation metadata
-   Editable page content lives in Keystatic singletons under src/content/services.
+   Editable information lives under src/content/services. Editable 1:1 guidance
+   offers live under src/content/service-offers.
    ========================================================================= */
 
-export type ServiceId = 'resume' | 'housing';
+export const serviceIds = ['visa', 'resume', 'housing'] as const;
+export type ServiceId = (typeof serviceIds)[number];
+
+/** Only resume and housing have standalone long-form information singletons. */
+export const serviceInfoIds = ['resume', 'housing'] as const;
+export type ServiceInfoId = (typeof serviceInfoIds)[number];
 
 export interface Service {
   id: ServiceId;
@@ -12,6 +18,11 @@ export interface Service {
 }
 
 export const services: Service[] = [
+  {
+    id: 'visa',
+    iconKey: 'visa',
+    reviewTagKey: 'ui.tag.visaResearch',
+  },
   {
     id: 'resume',
     iconKey: 'resumeSvc',
@@ -28,6 +39,7 @@ export const serviceById = (id: string): Service | undefined => services.find((s
 
 /** Which service a guide category should suggest after the free information. */
 export const categoryToService: Partial<Record<string, ServiceId>> = {
+  visa: 'visa',
   jobs: 'resume',
   housing: 'housing',
 };

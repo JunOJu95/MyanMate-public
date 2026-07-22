@@ -87,7 +87,13 @@ const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul'
 
       {isVisa && <aside class="guide-dm-aside">
         <div class="sticky-card">
-          <SocialDmPanel service="visa" context="visa" visa={visaId} source="guide-sidebar" id="dm" />
+          <SocialDmPanel
+            service="visa"
+            context="visa"
+            visa={visaId}
+            source="guide-sidebar"
+            id="dm"
+          />
         </div>
       </aside>}
     </div>

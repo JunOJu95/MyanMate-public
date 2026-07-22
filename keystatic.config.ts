@@ -79,6 +79,45 @@ const serviceSchema = () => ({
   ),
 });
 
+const localizedTextList = (label: string, itemLabel: string, multiline = true) =>
+  fields.array(localizedText(itemLabel, multiline), {
+    label,
+    validation: { length: { min: 1, max: 8 } },
+  });
+
+const localizedDetailList = (label: string, itemLabel: string) =>
+  fields.array(
+    fields.object(
+      {
+        title: localizedText('Item title / 항목 제목'),
+        body: localizedText('Item description / 항목 설명', true),
+      },
+      { label: itemLabel }
+    ),
+    {
+      label,
+      validation: { length: { min: 1, max: 8 } },
+    }
+  );
+
+/**
+ * Editable commercial-service copy only. Fixed UI section labels and legal
+ * disclaimers deliberately stay in src/i18n/ui.ts so editors cannot weaken
+ * the service boundary by accident.
+ */
+const serviceOfferSchema = () => ({
+  title: localizedText('Service title / 서비스 제목'),
+  summary: localizedText('Service summary / 서비스 요약', true),
+  recommendedFor: localizedTextList(
+    'Recommended for / 추천 대상',
+    'Recommended-for item / 추천 대상 항목'
+  ),
+  included: localizedDetailList('What we help with / 해드리는 일', 'Included item / 지원 항목'),
+  process: localizedDetailList('Process / 진행 순서', 'Process step / 진행 단계'),
+  deliverables: localizedTextList('What you receive / 받는 결과', 'Deliverable / 결과물'),
+  preparation: localizedTextList('What to prepare / 준비사항', 'Preparation item / 준비 항목'),
+});
+
 const guideLang = (label: string) =>
   fields.object(
     {
@@ -196,18 +235,39 @@ export default config({
   },
   singletons: {
     resumeService: singleton({
-      label: 'Resume & jobs · 이력서·구직 정보',
+      label: 'Information · 이력서·구직 정보',
       path: 'src/content/services/resume',
       format: { data: 'yaml' },
-      previewUrl: '/services/resume',
+      previewUrl: '/guides/resume',
       schema: serviceSchema(),
     }),
     housingService: singleton({
-      label: 'Housing · 집 보기·생활환경 정보',
+      label: 'Information · 집 보기·생활환경 정보',
       path: 'src/content/services/housing',
       format: { data: 'yaml' },
-      previewUrl: '/services/housing',
+      previewUrl: '/guides/housing',
       schema: serviceSchema(),
+    }),
+    visaServiceOffer: singleton({
+      label: '1:1 Guidance · 비자 안내',
+      path: 'src/content/service-offers/visa',
+      format: { data: 'yaml' },
+      previewUrl: '/services/visa',
+      schema: serviceOfferSchema(),
+    }),
+    resumeServiceOffer: singleton({
+      label: '1:1 Guidance · 이력서 피드백',
+      path: 'src/content/service-offers/resume',
+      format: { data: 'yaml' },
+      previewUrl: '/services/resume',
+      schema: serviceOfferSchema(),
+    }),
+    housingServiceOffer: singleton({
+      label: '1:1 Guidance · 집 보기 동행',
+      path: 'src/content/service-offers/housing',
+      format: { data: 'yaml' },
+      previewUrl: '/services/housing',
+      schema: serviceOfferSchema(),
     }),
   },
 });

@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from './Icon.astro';
+import LocalizedText from './LocalizedText.astro';
+import MobileSocialDm from './MobileSocialDm.astro';
+import SocialDmPanel from './SocialDmPanel.astro';
+import type { Service } from '../data/services';
+import type { ServiceContent } from '../lib/content';
+
+interface Props {
+  service: Service;
+  content: ServiceContent;
+}
+
+const { service, content } = Astro.props;
+const source = `${service.id}-information`;
+---
+
+<Base title={content.title.en} active="guides" description={content.description.en}>
+  <div class="wrap">
+    <div class="detail-2col detail-page service-info-page">
+      <article>
+        <header class="detail-hero service-detail-hero" data-reveal="page-hero">
+          <span class="svc-ico"><Icon name={service.iconKey} /></span>
+          <LocalizedText value={content.title} tag="h1" class="lead-title" />
+          <LocalizedText value={content.description} tag="p" class="t-sub" />
+        </header>
+
+        {content.sections.map((section) => (
+          <section class:list={['sec', 'service-info-section', { 'service-source-section': section.items.some((item) => item.href) }]} data-reveal="section">
+            <div class="service-info-heading">
+              <span class="sec-ico"><Icon name={section.icon} /></span>
+              <div>
+                <LocalizedText value={section.title} tag="h2" class="sec-title" />
+                {Object.values(section.intro).some(Boolean) && <LocalizedText value={section.intro} tag="p" class="t-body" />}
+              </div>
+            </div>
+            <div class="service-point-grid" data-stagger>
+              {section.items.map((item) => item.href ? (
+                <a
+                  class="service-point service-point-link"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-event={`official-source:${service.id}`}
+                  data-service={service.id}
+                  data-source={item.href}
+                >
+                  <span class="service-point-icon" aria-hidden="true"><Icon name={item.icon} size={18} /></span>
+                  <span class="service-point-copy">
+                    <LocalizedText value={item.title} tag="strong" />
+                    <LocalizedText value={item.body} />
+                  </span>
+                  <Icon name="external" size={15} class="service-point-external" />
+                </a>
+              ) : (
+                <div class="service-point">
+                  <span class="service-point-icon" aria-hidden="true"><Icon name={item.icon} size={18} /></span>
+                  <span class="service-point-copy">
+                    <LocalizedText value={item.title} tag="strong" />
+                    <LocalizedText value={item.body} />
+                  </span>
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
+      </article>
+
+      <aside class="guide-dm-aside">
+        <div class="sticky-card">
+          <SocialDmPanel
+            service={service.id}
+            context="service"
+            source={`${source}-sidebar`}
+            id="dm"
+          />
+        </div>
+      </aside>
+    </div>
+  </div>
+  <MobileSocialDm service={service.id} context="service" />
+</Base>

@@ -5,13 +5,17 @@
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '../../keystatic.config';
 import type { Lang } from '../i18n/ui';
-import type { ServiceId } from '../data/services';
+import type { ServiceId, ServiceInfoId } from '../data/services';
 import Markdoc from '@markdoc/markdoc';
 
 export const reader = createReader(process.cwd(), keystaticConfig);
 
 function str(v: unknown, fb = ''): string {
   return typeof v === 'string' ? v : fb;
+}
+
+function assertNever(value: never): never {
+  throw new Error(`Unhandled service id: ${String(value)}`);
 }
 
 /* ---------------- guides ---------------- */
@@ -137,20 +141,98 @@ function toServiceContent(entry: any): ServiceContent {
   };
 }
 
-export async function getServiceContent(id: ServiceId): Promise<ServiceContent | null> {
-  const entry = id === 'resume'
-    ? await reader.singletons.resumeService.read()
-    : await reader.singletons.housingService.read();
+export async function getServiceContent(id: ServiceInfoId): Promise<ServiceContent | null> {
+  let entry;
+  switch (id) {
+    case 'resume':
+      entry = await reader.singletons.resumeService.read();
+      break;
+    case 'housing':
+      entry = await reader.singletons.housingService.read();
+      break;
+    default:
+      return assertNever(id);
+  }
   return entry ? toServiceContent(entry) : null;
 }
 
-export async function getServiceContents(): Promise<Record<ServiceId, ServiceContent>> {
+export async function getServiceContents(): Promise<Record<ServiceInfoId, ServiceContent>> {
   const [resume, housing] = await Promise.all([
     getServiceContent('resume'),
     getServiceContent('housing'),
   ]);
   if (!resume || !housing) throw new Error('Service content is missing from src/content/services.');
   return { resume, housing };
+}
+
+/* ---------------- 1:1 service offers ---------------- */
+export interface ServiceOfferDetail {
+  title: LocalizedText;
+  body: LocalizedText;
+}
+
+export interface ServiceOffer {
+  title: LocalizedText;
+  summary: LocalizedText;
+  recommendedFor: LocalizedText[];
+  included: ServiceOfferDetail[];
+  process: ServiceOfferDetail[];
+  deliverables: LocalizedText[];
+  preparation: LocalizedText[];
+}
+
+function localizedTextList(value: unknown): LocalizedText[] {
+  return Array.isArray(value) ? value.map(localizedText) : [];
+}
+
+function serviceOfferDetails(value: unknown): ServiceOfferDetail[] {
+  if (!Array.isArray(value)) return [];
+  return value.map((item: any) => ({
+    title: localizedText(item?.title),
+    body: localizedText(item?.body),
+  }));
+}
+
+function toServiceOffer(entry: any): ServiceOffer {
+  return {
+    title: localizedText(entry?.title),
+    summary: localizedText(entry?.summary),
+    recommendedFor: localizedTextList(entry?.recommendedFor),
+    included: serviceOfferDetails(entry?.included),
+    process: serviceOfferDetails(entry?.process),
+    deliverables: localizedTextList(entry?.deliverables),
+    preparation: localizedTextList(entry?.preparation),
+  };
+}
+
+export async function getServiceOffer(id: ServiceId): Promise<ServiceOffer | null> {
+  let entry;
+  switch (id) {
+    case 'visa':
+      entry = await reader.singletons.visaServiceOffer.read();
+      break;
+    case 'resume':
+      entry = await reader.singletons.resumeServiceOffer.read();
+      break;
+    case 'housing':
+      entry = await reader.singletons.housingServiceOffer.read();
+      break;
+    default:
+      return assertNever(id);
+  }
+  return entry ? toServiceOffer(entry) : null;
+}
+
+export async function getServiceOffers(): Promise<Record<ServiceId, ServiceOffer>> {
+  const [visa, resume, housing] = await Promise.all([
+    getServiceOffer('visa'),
+    getServiceOffer('resume'),
+    getServiceOffer('housing'),
+  ]);
+  if (!visa || !resume || !housing) {
+    throw new Error('Service offer content is missing from src/content/service-offers.');
+  }
+  return { visa, resume, housing };
 }
 
 /* ---------------- reviews ---------------- */
