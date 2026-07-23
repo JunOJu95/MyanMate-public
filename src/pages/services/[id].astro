@@ -77,6 +77,36 @@ const { service, offer } = Astro.props as { service: Service; offer: ServiceOffe
 
         <section class="sec service-info-section service-offer-section" data-reveal="section">
           <div class="service-info-heading">
+            <span class="sec-ico"><Icon name="doc" /></span>
+            <T k="svcDetail.section.deliverables" tag="h2" class="sec-title" />
+          </div>
+          <div class="service-point-grid" role="list" data-stagger>
+            {offer.deliverables.map((item) => (
+              <div class="service-point" role="listitem">
+                <span class="service-point-icon" aria-hidden="true"><Icon name="doc" size={18} /></span>
+                <span class="service-point-copy"><LocalizedText value={item} /></span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="sec service-info-section service-offer-section" data-reveal="section">
+          <div class="service-info-heading">
+            <span class="sec-ico"><Icon name="list" /></span>
+            <T k="svcDetail.section.preparation" tag="h2" class="sec-title" />
+          </div>
+          <div class="service-point-grid" role="list" data-stagger>
+            {offer.preparation.map((item) => (
+              <div class="service-point" role="listitem">
+                <span class="service-point-icon" aria-hidden="true"><Icon name="check" size={18} /></span>
+                <span class="service-point-copy"><LocalizedText value={item} /></span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="sec service-info-section service-offer-section" data-reveal="section">
+          <div class="service-info-heading">
             <span class="sec-ico"><Icon name="list" /></span>
             <T k="svcDetail.section.process" tag="h2" class="sec-title" />
           </div>
@@ -93,38 +123,6 @@ const { service, offer } = Astro.props as { service: Service; offer: ServiceOffe
           </div>
         </section>
 
-        <section class="sec service-info-section service-offer-section" data-reveal="section">
-          <div class="service-info-heading">
-            <span class="sec-ico"><Icon name="doc" /></span>
-            <T k="svcDetail.section.deliverables" tag="h2" class="sec-title" />
-          </div>
-          <div class="service-point-grid" role="list" data-stagger>
-            {offer.deliverables.map((item) => (
-              <div class="service-point" role="listitem">
-                <span class="service-point-icon" aria-hidden="true"><Icon name="doc" size={18} /></span>
-                <span class="service-point-copy"><LocalizedText value={item} /></span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {service.id !== 'visa' && (
-          <section class="sec service-info-section service-offer-section" data-reveal="section">
-            <div class="service-info-heading">
-              <span class="sec-ico"><Icon name="list" /></span>
-              <T k="svcDetail.section.preparation" tag="h2" class="sec-title" />
-            </div>
-            <div class="service-point-grid" role="list" data-stagger>
-              {offer.preparation.map((item) => (
-                <div class="service-point" role="listitem">
-                  <span class="service-point-icon" aria-hidden="true"><Icon name="check" size={18} /></span>
-                  <span class="service-point-copy"><LocalizedText value={item} /></span>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
         <!-- Compliance boundary (§7-1). Keep both fixed boundary messages visible. -->
         <aside class="service-boundary-note" data-reveal="section" aria-labelledby="service-boundary-title">
           <h2 id="service-boundary-title" class="service-boundary-title">
@@ -133,6 +131,19 @@ const { service, offer } = Astro.props as { service: Service; offer: ServiceOffe
           <p class="service-boundary-copy"><T k={`svcDetail.boundary.${service.id}`} /></p>
           <p class="service-boundary-copy"><T k="svcDetail.dont.body" /></p>
         </aside>
+
+        <div class="service-final-cta" data-reveal="cta">
+          <a
+            class="btn pri"
+            href="#dm"
+            data-event={`service-final-inquiry:${service.id}`}
+            data-service={service.id}
+            data-source="service-final"
+          >
+            <Icon name="chat" size={16} />
+            <T k="dm.scopeCta" />
+          </a>
+        </div>
       </article>
 
       <aside class="guide-dm-aside">

@@ -2,7 +2,6 @@
 import Base from '../../layouts/Base.astro';
 import InformationCategoryCard from '../../components/InformationCategoryCard.astro';
 import T from '../../components/T.astro';
-import { services } from '../../data/services';
 import { getServiceContents, type LocalizedText as LocalizedTextValue } from '../../lib/content';
 import { t } from '../../i18n/ui';
 
@@ -12,25 +11,29 @@ const fromKey = (key: string): LocalizedTextValue => ({
   ko: t(key, 'ko'),
   my: t(key, 'my'),
 });
-const categories = services.map((service) => {
-  if (service.id === 'visa') {
-    return {
-      id: service.id,
-      icon: service.iconKey,
-      href: '/guides/visa',
-      title: fromKey('guides.title'),
-      summary: fromKey('infoHub.visa.summary'),
-    };
-  }
-  const content = serviceContent[service.id];
-  return {
-    id: service.id,
-    icon: service.iconKey,
-    href: `/guides/${service.id}`,
-    title: content.title,
-    summary: content.description,
-  };
-});
+const categories = [
+  {
+    id: 'visa',
+    icon: 'visa',
+    href: '/guides/visa',
+    title: fromKey('guides.title'),
+    summary: fromKey('infoHub.visa.summary'),
+  },
+  {
+    id: 'resume',
+    icon: 'resumeSvc',
+    href: '/guides/resume',
+    title: serviceContent.resume.title,
+    summary: serviceContent.resume.description,
+  },
+  {
+    id: 'housing',
+    icon: 'housing',
+    href: '/guides/housing',
+    title: serviceContent.housing.title,
+    summary: serviceContent.housing.description,
+  },
+];
 ---
 
 <Base title={t('infoHub.title', 'en')} active="guides" description={t('infoHub.intro', 'en')}>
