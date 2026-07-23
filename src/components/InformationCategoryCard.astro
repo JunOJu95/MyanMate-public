@@ -1,0 +1,36 @@
+---
+import Icon from './Icon.astro';
+import LocalizedText from './LocalizedText.astro';
+import { defaultLang, t } from '../i18n/ui';
+import type { LocalizedText as LocalizedTextValue } from '../lib/content';
+
+interface Props {
+  id: 'visa' | 'resume' | 'housing';
+  title: LocalizedTextValue;
+  summary: LocalizedTextValue;
+  href: string;
+  icon: string;
+}
+
+const { id, title, summary, href, icon } = Astro.props;
+---
+
+<a
+  class="card svc-tile svc-card-link info-category-card"
+  href={href}
+  data-event={`information:${id}`}
+  data-service={id}
+  data-source="guides-hub"
+>
+  <span class="svc-card-top">
+    <span class="svc-card-title-wrap">
+      <span class="svc-ico"><Icon name={icon} /></span>
+      <LocalizedText value={title} tag="span" class="card-title" />
+    </span>
+    <span class="svc-card-arrow" aria-hidden="true">→</span>
+  </span>
+  <span class="svc-meta">
+    <span class="pill-tag" data-i18n="infoHub.card.badge">{t('infoHub.card.badge', defaultLang)}</span>
+  </span>
+  <LocalizedText value={summary} tag="span" class="t-body clamp2 svc-card-summary" />
+</a>

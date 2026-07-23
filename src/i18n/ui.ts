@@ -46,7 +46,7 @@ export const ui = {
   'btn.serviceScope': { en: 'View service scope', ko: '서비스 범위 보기', my: 'ဝန်ဆောင်မှုအတိုင်းအတာ ကြည့်ရန်' },
   'mobileCta.note':   { en: 'Choose a channel without sending sensitive details', ko: '민감정보 없이 편한 채널을 선택하세요', my: 'အရေးကြီးအချက်အလက် မပို့ဘဲ channel ရွေးပါ' },
   'mobileCta.action': { en: 'Choose DM', ko: 'DM 선택', my: 'DM ရွေးရန်' },
-  'btn.browseGuides': { en: 'Visa information', ko: '비자 정보 보기', my: 'ဗီဇာအချက်အလက်' },
+  'btn.browseGuides': { en: 'Browse information', ko: '정보 보기', my: 'အချက်အလက်များ ကြည့်ရန်' },
   'btn.more':         { en: 'See more',      ko: '더 보기',      my: 'ပိုမိုကြည့်ရှုရန်' },
 
   'footer.disclaimer': {
@@ -133,6 +133,13 @@ export const ui = {
   'home.community.body': { en: 'We share short, practical notes on visas, work, housing, and everyday Korean. Visit our TikTok for the latest posts.', ko: '비자, 일자리, 주거, 생활 한국어에 관한 짧고 실용적인 정보를 나눕니다. 최신 게시물은 TikTok에서 확인하세요.', my: 'ဗီဇာ၊ အလုပ်အကိုင်၊ နေအိမ်နဲ့ နေ့စဉ်သုံး ကိုရီးယားစကားလုံးများအတွက် အသုံးဝင်တဲ့ အချက်အလက်တိုလေးတွေကို TikTok မှာ မျှဝေပေးနေပါတယ်။ အသစ်တင်ထားတာတွေကို ကြည့်ဖို့ ကျွန်ုပ်တို့ TikTok ကို လာရောက်လည်ပတ်ပေးပါဦး။' },
 
   /* 3. Guides */
+  'infoHub.eyebrow': { en: 'Korea settlement information', ko: '한국 정착 정보', my: 'ကိုရီးယား အခြေချနေထိုင်မှု အချက်အလက်' },
+  'infoHub.title': { en: 'Information', ko: '정보', my: 'အချက်အလက်များ' },
+  'infoHub.intro': { en: 'Start with the category you need: visas, resumes and job searching, or home viewing and the surrounding living environment. Each category opens the information we have organized for you to check yourself.', ko: '비자, 이력서·구직, 집 보기·생활환경 중 필요한 카테고리부터 확인하세요. 각 카테고리에서 직접 살펴볼 수 있도록 정리한 정보를 확인할 수 있습니다.', my: 'ဗီဇာ၊ ကိုယ်ရေးရာဇဝင်နှင့် အလုပ်ရှာဖွေမှု၊ သို့မဟုတ် အိမ်ကြည့်ရှုခြင်းနှင့် ပတ်ဝန်းကျင်နေထိုင်မှုအခြေအနေတို့ထဲမှ လိုအပ်သော အမျိုးအစားကို ရွေးချယ်ပါ။ အမျိုးအစားတစ်ခုစီတွင် ကိုယ်တိုင်စစ်ဆေးနိုင်ရန် စုစည်းထားသော အချက်အလက်များကို ကြည့်ရှုနိုင်ပါသည်။' },
+  'infoHub.choose': { en: 'Choose an information category', ko: '정보 카테고리를 선택하세요', my: 'အချက်အလက် အမျိုးအစားကို ရွေးချယ်ပါ' },
+  'infoHub.chooseNote': { en: 'Choose a category to open its practical information. New and updated notes will continue to appear inside each category.', ko: '카테고리를 선택하면 실용적인 정보를 확인할 수 있습니다. 새로 준비하거나 업데이트한 내용도 각 카테고리에 계속 추가됩니다.', my: 'လက်တွေ့အသုံးဝင်သော အချက်အလက်များကို ကြည့်ရှုရန် အမျိုးအစားတစ်ခုကို ရွေးချယ်ပါ။ အသစ်ပြင်ဆင်ထားသော သို့မဟုတ် ပြန်လည်မွမ်းမံထားသော အချက်အလက်များကို အမျိုးအစားတစ်ခုစီတွင် ဆက်လက်ထည့်သွင်းသွားပါမည်။' },
+  'infoHub.card.badge': { en: 'Information', ko: '정보 보기', my: 'အချက်အလက်' },
+  'infoHub.visa.summary': { en: 'Check eligibility, required documents, application steps, and cautions for each available visa.', ko: '현재 제공되는 비자별 자격, 필요 서류, 신청 절차와 주의사항을 확인하세요.', my: 'လက်ရှိပေးထားသော ဗီဇာတစ်မျိုးစီအတွက် အရည်အချင်း၊ လိုအပ်သောစာရွက်စာတမ်း၊ လျှောက်ထားမှုအဆင့်များနှင့် သတိပြုရန်အချက်များကို စစ်ဆေးပါ။' },
   'guides.title': { en: 'Visa information', ko: '비자 정보', my: 'ဗီဇာနှင့် ပတ်သက်သည့် အချက်အလက်များ' },
   'guides.eyebrow': { en: 'Korea visa information', ko: '한국 비자 정보', my: 'ကိုရီးယား ဗီဇာအချက်အလက်' },
   'guides.intro': { en: 'Choose an available visa and read the eligibility, documents, application steps, and cautions. Each visa is presented as a separate guide, and new topics will be added as they are prepared.', ko: '현재 제공되는 비자 정보에서 확인하려는 항목을 선택해 자격, 필요 서류, 신청 절차와 주의사항을 읽어보세요. 준비되는 비자 정보는 계속 추가됩니다.', my: 'ဗီဇာအမျိုးအစားအလိုက် လိုအပ်ချက်များ၊ စာရွက်စာတမ်းများနှင့် လျှောက်ထားပုံ အဆင့်ဆင့်ကို သီးခြားလမ်းညွှန်ချက်များဖြင့် ဖော်ပြထားပါသည်။ အကြောင်းအရာအသစ်များကိုလည်း ဆက်လက်ဖြည့်စွက်ပေးသွားပါမည်။' },
