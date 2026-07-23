@@ -4,7 +4,7 @@
    offers live under src/content/service-offers.
    ========================================================================= */
 
-export const serviceIds = ['visa', 'resume', 'housing'] as const;
+export const serviceIds = ['part-time-job', 'career', 'portfolio', 'study', 'housing'] as const;
 export type ServiceId = (typeof serviceIds)[number];
 
 /** Only resume and housing have standalone long-form information singletons. */
@@ -19,14 +19,24 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: 'visa',
-    iconKey: 'visa',
-    reviewTagKey: 'ui.tag.visaResearch',
+    id: 'part-time-job',
+    iconKey: 'jobs',
+    reviewTagKey: 'ui.tag.partTimeJob',
   },
   {
-    id: 'resume',
+    id: 'career',
     iconKey: 'resumeSvc',
-    reviewTagKey: 'ui.tag.resumeJob',
+    reviewTagKey: 'ui.tag.careerSupport',
+  },
+  {
+    id: 'portfolio',
+    iconKey: 'doc',
+    reviewTagKey: 'ui.tag.portfolioSupport',
+  },
+  {
+    id: 'study',
+    iconKey: 'korean',
+    reviewTagKey: 'ui.tag.studySupport',
   },
   {
     id: 'housing',
@@ -35,11 +45,21 @@ export const services: Service[] = [
   },
 ];
 
-export const serviceById = (id: string): Service | undefined => services.find((service) => service.id === id);
+const legacyServiceAliases: Record<string, Service> = {
+  resume: {
+    id: 'career',
+    iconKey: 'resumeSvc',
+    reviewTagKey: 'ui.tag.careerSupport',
+  },
+};
+
+export const serviceById = (id: string): Service | undefined => (
+  services.find((service) => service.id === id) ?? legacyServiceAliases[id]
+);
 
 /** Which service a guide category should suggest after the free information. */
 export const categoryToService: Partial<Record<string, ServiceId>> = {
-  visa: 'visa',
-  jobs: 'resume',
+  visa: 'study',
+  jobs: 'part-time-job',
   housing: 'housing',
 };

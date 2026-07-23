@@ -306,18 +306,32 @@ export default config({
       previewUrl: '/guides/housing',
       schema: serviceSchema(),
     }),
-    visaServiceOffer: singleton({
-      label: '1:1 Guidance · 비자 안내',
-      path: 'src/content/service-offers/visa',
+    partTimeJobServiceOffer: singleton({
+      label: 'Service · Part-time job support',
+      path: 'src/content/service-offers/part-time-job',
       format: { data: 'yaml' },
-      previewUrl: '/services/visa',
+      previewUrl: '/services/part-time-job',
       schema: serviceOfferSchema(),
     }),
-    resumeServiceOffer: singleton({
-      label: '1:1 Guidance · 이력서 피드백',
-      path: 'src/content/service-offers/resume',
+    careerServiceOffer: singleton({
+      label: 'Service · Professional career support',
+      path: 'src/content/service-offers/career',
       format: { data: 'yaml' },
-      previewUrl: '/services/resume',
+      previewUrl: '/services/career',
+      schema: serviceOfferSchema(),
+    }),
+    portfolioServiceOffer: singleton({
+      label: 'Service · Portfolio support',
+      path: 'src/content/service-offers/portfolio',
+      format: { data: 'yaml' },
+      previewUrl: '/services/portfolio',
+      schema: serviceOfferSchema(),
+    }),
+    studyServiceOffer: singleton({
+      label: 'Service · Study in Korea support',
+      path: 'src/content/service-offers/study',
+      format: { data: 'yaml' },
+      previewUrl: '/services/study',
       schema: serviceOfferSchema(),
     }),
     housingServiceOffer: singleton({

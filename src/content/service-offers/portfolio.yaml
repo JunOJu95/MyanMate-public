@@ -1,0 +1,112 @@
+title:
+  en: Portfolio Planning & Creation
+  ko: 포트폴리오 기획 및 제작
+  my: Portfolio စီစဉ်ခြင်းနှင့် ဖန်တီးခြင်း
+summary:
+  en: Turn your projects, experience, and skills into a clean portfolio for job, internship, school, or freelance opportunities.
+  ko: 프로젝트, 경험과 기술을 취업, 인턴, 학교 또는 프리랜서 기회에 보여줄 수 있는 포트폴리오로 정리합니다.
+  my: Projects၊ experience နှင့် skills များကို job၊ internship၊ school သို့မဟုတ် freelance အတွက် ကြည့်ကောင်းသော portfolio အဖြစ် စုစည်းပေးပါသည်။
+recommendedFor:
+  - en: You have work or school projects but do not know how to organize them.
+    ko: 프로젝트는 있지만 어떻게 정리해야 할지 모르는 분
+    my: Projects ရှိသော်လည်း ဘယ်လိုစုစည်းရမလဲ မသိသူ
+  - en: You need a portfolio for a job, internship, university, or freelance profile.
+    ko: 취업, 인턴, 대학 또는 프리랜서 프로필용 포트폴리오가 필요한 분
+    my: Job၊ internship၊ university သို့မဟုတ် freelance profile အတွက် portfolio လိုသူ
+  - en: You want your portfolio adjusted for one target role or application.
+    ko: 특정 직무나 지원처에 맞게 포트폴리오를 조정하고 싶은 분
+    my: Target role သို့မဟုတ် application တစ်ခုအတွက် portfolio ကို ကိုက်ညီအောင်ပြင်ချင်သူ
+included:
+  - title:
+      en: Portfolio planning
+      ko: 포트폴리오 기획
+      my: Portfolio planning
+    body:
+      en: We choose what to show first and how to arrange your projects in a strong order.
+      ko: 무엇을 먼저 보여줄지, 프로젝트를 어떤 순서로 배치할지 정합니다.
+      my: ဘာကိုအရင်ပြမလဲ၊ projects များကို ဘယ်လိုအစီအစဉ်ဖြင့် တင်ပြမလဲ စီစဉ်ပါသည်။
+  - title:
+      en: Portfolio creation
+      ko: 포트폴리오 제작
+      my: Portfolio ဖန်တီးခြင်း
+    body:
+      en: We help create a simple portfolio structure with project summaries, roles, tools, and results.
+      ko: 프로젝트 요약, 역할, 사용 도구와 결과가 보이는 간단한 포트폴리오 구성을 만듭니다.
+      my: Project summary၊ role၊ tools နှင့် result များပါသော ရိုးရှင်းသော portfolio structure ကို ဖန်တီးကူညီပါသည်။
+  - title:
+      en: Portfolio review
+      ko: 포트폴리오 검토
+      my: Portfolio review
+    body:
+      en: We review readability, missing details, visual order, and weak project explanations.
+      ko: 읽기 쉬운지, 빠진 내용, 시각적 순서와 약한 프로젝트 설명을 확인합니다.
+      my: ဖတ်ရလွယ်မှု၊ လိုနေသောအချက်များ၊ visual order နှင့် အားနည်းသော project explanation များကို စစ်ဆေးပါသည်။
+  - title:
+      en: Job-specific customization
+      ko: 직무별 맞춤 수정
+      my: Job-specific customization
+    body:
+      en: We adjust the portfolio focus for a public job post, school, or opportunity.
+      ko: 공개 채용공고, 학교 또는 기회에 맞게 포트폴리오 초점을 조정합니다.
+      my: Public job post၊ school သို့မဟုတ် opportunity နှင့်ကိုက်ညီအောင် portfolio focus ကို ပြင်ဆင်ပါသည်။
+  - title:
+      en: Advanced option - portfolio website
+      ko: 고급 옵션 - 포트폴리오 웹사이트
+      my: Advanced option - Portfolio website
+    body:
+      en: If needed, we can discuss a simple portfolio website as a separate advanced option.
+      ko: 필요하면 간단한 포트폴리오 웹사이트를 별도 고급 옵션으로 상담할 수 있습니다.
+      my: လိုအပ်ပါက ရိုးရှင်းသော portfolio website ကို သီးခြား advanced option အဖြစ် ဆွေးနွေးနိုင်ပါသည်။
+deliverables:
+  - en: Portfolio structure and project order
+    ko: 포트폴리오 구조와 프로젝트 순서
+    my: Portfolio structure နှင့် project order
+  - en: Project summary wording or review notes
+    ko: 프로젝트 설명 문장 또는 검토 메모
+    my: Project summary wording သို့မဟုတ် review notes
+  - en: Optional website plan if you choose the advanced option
+    ko: 고급 옵션 선택 시 웹사이트 기획안
+    my: Advanced option ရွေးပါက website plan
+preparation:
+  - en: Project list, screenshots, links, files, or notes you already have
+    ko: 가지고 있는 프로젝트 목록, 스크린샷, 링크, 파일 또는 메모
+    my: ရှိပြီးသား project list၊ screenshots၊ links၊ files သို့မဟုတ် notes
+  - en: Target job, school, internship, or client type
+    ko: 목표 직무, 학교, 인턴 또는 고객 유형
+    my: Target job၊ school၊ internship သို့မဟုတ် client type
+  - en: What you personally did in each project
+    ko: 각 프로젝트에서 본인이 직접 한 일
+    my: Project တစ်ခုချင်းစီတွင် ကိုယ်တိုင်လုပ်ခဲ့သောအရာ
+process:
+  - title:
+      en: Send your project materials
+      ko: 프로젝트 자료 공유
+      my: Project materials ပို့ပါ
+    body:
+      en: Share what you already have, even if it is messy.
+      ko: 정리되지 않았어도 가지고 있는 자료를 공유합니다.
+      my: မစီစဉ်ရသေးသော်လည်း ရှိထားသော material များကို ပို့ပါ။
+  - title:
+      en: Choose portfolio goal
+      ko: 포트폴리오 목표 선택
+      my: Portfolio goal ရွေးချယ်ခြင်း
+    body:
+      en: We confirm whether it is for a job, school, internship, freelance, or website.
+      ko: 취업, 학교, 인턴, 프리랜서 또는 웹사이트용인지 확인합니다.
+      my: Job၊ school၊ internship၊ freelance သို့မဟုတ် website အတွက်လား အတည်ပြုပါသည်။
+  - title:
+      en: Organize and create
+      ko: 정리 및 제작
+      my: စုစည်းပြီး ဖန်တီးခြင်း
+    body:
+      en: We prepare the agreed portfolio structure, wording, review, or website plan.
+      ko: 합의한 포트폴리오 구조, 문장, 검토 또는 웹사이트 기획을 준비합니다.
+      my: သဘောတူထားသော portfolio structure၊ wording၊ review သို့မဟုတ် website plan ကို ပြင်ဆင်ပါသည်။
+  - title:
+      en: Review and improve
+      ko: 검토 및 개선
+      my: စစ်ဆေးပြီး ပိုကောင်းအောင်ပြင်ခြင်း
+    body:
+      en: You review the result and we adjust within the agreed scope.
+      ko: 결과를 확인하고 합의한 범위 안에서 조정합니다.
+      my: Result ကို သင်စစ်ဆေးပြီး သဘောတူထားသောအတိုင်း ပြင်ဆင်ပါသည်။

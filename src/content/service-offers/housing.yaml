@@ -1,125 +1,112 @@
 title:
-  en: Home-viewing companion 1:1 guidance
-  ko: 집 보기 동행 1:1 안내
-  my: အိမ်ကြည့်အတူလိုက် 1:1 လမ်းညွှန်
+  en: Home-Viewing Companion & Area Check
+  ko: 집 보기 동행 및 주변 확인
+  my: အိမ်ကြည့်အတူလိုက်ခြင်းနှင့် ပတ်ဝန်းကျင်စစ်ဆေးခြင်း
 summary:
-  en: We accompany you to homes you found yourself and help with interpretation, an on-site checklist,
-    living-area checks, and comparison opinions. You confirm property and contract matters with a licensed
-    realtor and make every decision yourself.
-  ko: 고객이 직접 찾은 집에 동행해 통역, 현장 체크리스트, 생활환경 확인과 비교 의견을 제공합니다. 매물과 계약 관련 사항은
-    공인중개사에게 확인하고 모든 결정은 본인이 직접 합니다.
-  my: သင်ကိုယ်တိုင် ရှာဖွေထားသောအိမ်များကို ကြည့်ရာတွင် အတူလိုက်ကာ ဘာသာပြန်ကူညီခြင်း၊ နေရာတွင်
-    စစ်ဆေးရမည့်စာရင်း၊ ပတ်ဝန်းကျင်နေထိုင်မှုအခြေအနေ စစ်ဆေးခြင်းနှင့် နှိုင်းယှဉ်အမြင်ပေးခြင်းတို့ကို
-    လုပ်ဆောင်ပါသည်။ အိမ်နှင့် စာချုပ်ဆိုင်ရာအချက်များကို လိုင်စင်ရ အိမ်ခြံမြေကျွမ်းကျင်သူထံတွင်
-    အတည်ပြုပြီး ဆုံးဖြတ်ချက်အားလုံးကို သင်ကိုယ်တိုင် ချမှတ်ရပါမည်။
+  en: We accompany you to homes you already found, help you observe the room and area, and summarize what to compare before you decide.
+  ko: 고객이 직접 찾은 집을 보러 갈 때 동행해 방과 주변을 함께 확인하고 결정 전 비교할 점을 정리합니다.
+  my: သင်ကိုယ်တိုင်ရှာထားသောအိမ်များကို သွားကြည့်ရာတွင် အတူလိုက်ကာ အခန်းအခြေအနေ၊ building နှင့် ပတ်ဝန်းကျင်ကို စစ်ဆေးပြီး ဆုံးဖြတ်မီ နှိုင်းယှဉ်ရမည့်အချက်များကို စုစည်းပေးပါသည်။
 recommendedFor:
-  - en: You already found homes to view and arranged the appointments yourself.
-    ko: 볼 집을 직접 찾고 방문 약속까지 정한 분
-    my: ကြည့်လိုသည့်အိမ်ကို ကိုယ်တိုင်ရှာဖွေပြီး သွားကြည့်ရန်ချိန်းဆိုထားသူ
-  - en: You want language support while asking questions and listening to explanations at the viewing.
-    ko: 집을 보며 질문하고 설명을 들을 때 언어 지원이 필요한 분
-    my: အိမ်ကြည့်ရာတွင် မေးခွန်းမေးခြင်းနှင့် ရှင်းလင်းချက်နားထောင်ခြင်းအတွက် ဘာသာစကားအကူအညီလိုသူ
-  - en: You want to compare the home, shared spaces, and living environment using the same checklist.
-    ko: 집 안, 공용공간과 생활환경을 같은 체크리스트로 비교하고 싶은 분
-    my: အိမ်အတွင်း၊ အများသုံးနေရာနှင့် နေထိုင်မှုပတ်ဝန်းကျင်ကို တူညီသောစစ်ဆေးစာရင်းဖြင့်
-      နှိုင်းယှဉ်လိုသူ
+  - en: You found a room but feel unsure about checking it alone.
+    ko: 방을 찾았지만 혼자 확인하기 불안한 분
+    my: အခန်းရှာထားပြီးသားဖြစ်သော်လည်း တစ်ယောက်တည်းသွားကြည့်ရန် မသေချာသူ
+  - en: You need help asking simple questions during the viewing.
+    ko: 집 보기 중 간단한 질문을 하는 데 도움이 필요한 분
+    my: အိမ်ကြည့်ရာတွင် မေးခွန်းများမေးရန် အကူအညီလိုသူ
+  - en: You want to compare room condition, transport, and neighborhood before deciding.
+    ko: 결정 전에 방 상태, 교통과 주변 환경을 비교하고 싶은 분
+    my: မဆုံးဖြတ်မီ အခန်းအခြေအနေ၊ transportation နှင့် neighborhood ကို နှိုင်းယှဉ်ချင်သူ
 included:
   - title:
-      en: Prepare a viewing checklist
-      ko: 집 보기 체크리스트 준비
-      my: အိမ်ကြည့်စစ်ဆေးစာရင်း ပြင်ဆင်ခြင်း
+      en: Room-condition checklist
+      ko: 방 상태 체크리스트
+      my: Room-condition checklist
     body:
-      en: We organize the points to observe based on your priorities and the homes whose visits you already
-        arranged.
-      ko: 본인의 우선순위와 직접 방문 약속을 정한 집을 기준으로 현장에서 살펴볼 항목을 정리합니다.
-      my: သင့်ဦးစားပေးအချက်များနှင့် သင်ကိုယ်တိုင် သွားကြည့်ရန်ချိန်းဆိုထားသော အိမ်များကို အခြေခံ၍
-        နေရာတွင် စစ်ဆေးရမည့်အချက်များကို စုစည်းပါသည်။
+      en: We help check visible points like light, smell, noise, water, heating, storage, and basic damage.
+      ko: 채광, 냄새, 소음, 물, 난방, 수납과 눈에 보이는 손상 등을 확인합니다.
+      my: အလင်းရောင်၊ အနံ့၊ ဆူညံသံ၊ ရေ၊ heating၊ storage နှင့် မြင်နိုင်သောပျက်စီးမှုများကို စစ်ဆေးကူညီပါသည်။
   - title:
-      en: Accompany and interpret
-      ko: 현장 동행·통역
-      my: နေရာသို့ အတူလိုက်ပြီး ဘာသာပြန်ကူညီခြင်း
+      en: Building and shared-area observation
+      ko: 건물 및 공용공간 확인
+      my: Building နှင့် shared-area observation
     body:
-      en: We come to the arranged viewing, help you ask your questions, and interpret explanations so you
-        can understand them.
-      ko: 약속된 집 보기에 함께 가서 본인이 질문할 수 있도록 돕고 설명을 이해할 수 있게 통역합니다.
-      my: ချိန်းဆိုထားသော အိမ်ကြည့်ရာသို့ အတူလိုက်ပြီး သင်ကိုယ်တိုင် မေးခွန်းမေးနိုင်ရန် ကူညီကာ
-        ရှင်းလင်းချက်များကို နားလည်စေရန် ဘာသာပြန်ပေးပါသည်။
+      en: We observe entrances, stairs, elevator, hallway, security, trash area, and shared spaces.
+      ko: 출입구, 계단, 엘리베이터, 복도, 보안, 쓰레기장과 공용공간을 살펴봅니다.
+      my: ဝင်ပေါက်၊ လှေကား၊ elevator၊ hallway၊ security၊ အမှိုက်နေရာနှင့် shared spaces များကို စစ်ဆေးပါသည်။
   - title:
-      en: Check the home and living environment
-      ko: 집·생활환경 체크
-      my: အိမ်နှင့် နေထိုင်မှုပတ်ဝန်းကျင် စစ်ဆေးခြင်း
+      en: Transportation and neighborhood check
+      ko: 교통 및 주변 확인
+      my: Transportation နှင့် neighborhood check
     body:
-      en: With permission, we observe the home, shared spaces, transport, nearby conveniences, and other
-        practical points on the checklist.
-      ko: 허락을 받은 범위에서 집 안, 공용공간, 교통, 주변 편의와 체크리스트의 생활 포인트를 함께 살펴봅니다.
-      my: ခွင့်ပြုချက်ရသည့်အတိုင်းအတာအတွင်း အိမ်အတွင်း၊ အများသုံးနေရာ၊ သယ်ယူပို့ဆောင်ရေး၊ အနီးအနား
-        အဆင်ပြေမှုနှင့် စစ်ဆေးစာရင်းရှိ နေထိုင်ရေးအချက်များကို အတူကြည့်ရှုပါသည်။
+      en: We check nearby transport, convenience stores, daily-life spots, and walking feel around the area.
+      ko: 주변 교통, 편의점, 생활시설과 걸어 다닐 때의 느낌을 확인합니다.
+      my: အနီးအနား transportation၊ convenience store၊ daily-life spots နှင့် လမ်းလျှောက်သွားလာရလွယ်မှုကို စစ်ဆေးပါသည်။
   - title:
-      en: Share comparison opinions
-      ko: 비교 의견 정리
-      my: နှိုင်းယှဉ်အမြင် စုစည်းခြင်း
+      en: Questions for the licensed realtor
+      ko: 공인중개사에게 물어볼 질문
+      my: Licensed realtor ကို မေးရန်မေးခွန်းများ
     body:
-      en: We compare what was observed against your priorities and send a short summary after the viewing.
-      ko: 현장에서 본 내용을 본인의 우선순위와 비교해 의견을 정리하고 방문 후 짧은 요약을 보냅니다.
-      my: နေရာတွင် တွေ့ရှိသည့်အချက်များကို သင့်ဦးစားပေးအချက်များနှင့် နှိုင်းယှဉ်ကာ အမြင်ကို စုစည်းပြီး
-        အိမ်ကြည့်ပြီးနောက် အနှစ်ချုပ်တိုတစ်ခု ပို့ပေးပါသည်။
+      en: We help prepare questions about fees, maintenance cost, contract period, options, and repair responsibility.
+      ko: 중개수수료, 관리비, 계약기간, 옵션과 수리 책임에 대해 물어볼 질문을 준비합니다.
+      my: Brokerage fee၊ maintenance cost၊ contract period၊ options နှင့် repair responsibility အကြောင်း မေးရန်မေးခွန်းများကို ပြင်ဆင်ကူညီပါသည်။
+  - title:
+      en: Observation summary
+      ko: 관찰 요약
+      my: Observation summary
+    body:
+      en: After the viewing, we send a short summary of what looked good, what to confirm, and what to compare.
+      ko: 집을 본 뒤 좋았던 점, 확인할 점과 비교할 점을 짧게 정리합니다.
+      my: အိမ်ကြည့်ပြီးနောက် ကောင်းသောအချက်၊ အတည်ပြုရန်အချက်နှင့် နှိုင်းယှဉ်ရန်အချက်များကို အနှစ်ချုပ်ပို့ပါသည်။
+deliverables:
+  - en: Room and area checklist notes
+    ko: 방과 주변 체크리스트 메모
+    my: အခန်းနှင့်ပတ်ဝန်းကျင် checklist notes
+  - en: Questions to ask the licensed realtor
+    ko: 공인중개사에게 물어볼 질문
+    my: Licensed realtor ကို မေးရန်မေးခွန်းများ
+  - en: Short observation summary after viewing
+    ko: 집 보기 후 짧은 관찰 요약
+    my: အိမ်ကြည့်ပြီးနောက် observation summary တို
+preparation:
+  - en: Viewing time, address, and number of rooms you arranged yourself
+    ko: 본인이 직접 정한 방문 시간, 주소와 볼 방의 수
+    my: သင်ကိုယ်တိုင်ချိန်းထားသော အချိန်၊ လိပ်စာနှင့် ကြည့်မည့်အခန်းအရေအတွက်
+  - en: Your budget, preferred area, and must-have conditions
+    ko: 예산, 희망 지역과 꼭 필요한 조건
+    my: Budget၊ preferred area နှင့် မဖြစ်မနေလိုအပ်သောအချက်များ
+  - en: Any listing links or photos you already have
+    ko: 가지고 있는 매물 링크나 사진
+    my: ရှိထားသော listing links သို့မဟုတ် photos
 process:
   - title:
-      en: Confirm scope and cost by DM
-      ko: DM으로 범위·비용 확인
-      my: DM ဖြင့် အတိုင်းအတာနှင့် ကုန်ကျစရိတ် စစ်ဆေးခြင်း
+      en: Send the viewing plan
+      ko: 집 보기 일정 공유
+      my: အိမ်ကြည့်အစီအစဉ် ပို့ပါ
     body:
-      en: Send the short first message. We confirm availability, possible scope, timing, and cost before you
-        decide.
-      ko: 짧은 첫 메시지를 보내면 결정 전에 가능 여부, 범위, 일정과 비용을 확인합니다.
-      my: ပထမဆုံး မက်ဆေ့ချ်တိုကို ပို့ပါ။ သင်မဆုံးဖြတ်မီ ကူညီနိုင်မှု၊ အတိုင်းအတာ၊ အချိန်နှင့်
-        ကုန်ကျစရိတ်ကို အတူစစ်ဆေးပါမည်။
+      en: Send the date, area, room count, and what worries you most.
+      ko: 날짜, 지역, 볼 방의 수와 가장 걱정되는 점을 보내주세요.
+      my: ရက်၊ နေရာ၊ ကြည့်မည့်အခန်းအရေအတွက်နှင့် အစိုးရိမ်ဆုံးအချက်ကို ပို့ပါ။
   - title:
-      en: Share the arranged viewing and priorities
-      ko: 방문 약속·우선순위 공유
-      my: အိမ်ကြည့်ချိန်းဆိုမှုနှင့် ဦးစားပေးအချက်များ မျှဝေခြင်း
+      en: Confirm companion scope
+      ko: 동행 범위 확인
+      my: အတူလိုက်မည့်အတိုင်းအတာ အတည်ပြုခြင်း
     body:
-      en: Share the viewing appointment, addresses, number of homes, and what matters most to your daily life.
-      ko: 직접 정한 방문 일정, 주소, 집의 수와 생활에서 중요하게 보는 조건을 공유합니다.
-      my: သင်ကိုယ်တိုင် ချိန်းဆိုထားသော အချိန်၊ လိပ်စာ၊ အိမ်အရေအတွက်နှင့် နေ့စဉ်ဘဝအတွက်
-        အရေးကြီးဆုံးအချက်များကို မျှဝေပါ။
+      en: We confirm time, route, cost, and what can be checked during the visit.
+      ko: 시간, 이동, 비용과 방문 중 확인 가능한 범위를 정합니다.
+      my: အချိန်၊ လမ်းကြောင်း၊ စျေးနှုန်းနှင့် သွားကြည့်ချိန်တွင် စစ်ဆေးနိုင်သောအရာများကို အတည်ပြုပါသည်။
   - title:
-      en: Agree on the checklist
-      ko: 체크리스트 확인
-      my: စစ်ဆေးစာရင်း အတည်ပြုခြင်း
+      en: Visit and check together
+      ko: 함께 방문 및 확인
+      my: အတူသွားကြည့်ပြီး စစ်ဆေးခြင်း
     body:
-      en: We organize the viewing points and confirm what can be observed within the agreed visit.
-      ko: 집 보기 포인트를 정리하고 합의한 방문 안에서 함께 살펴볼 범위를 확인합니다.
-      my: အိမ်ကြည့်ရာတွင် စစ်ဆေးမည့်အချက်များကို စုစည်းပြီး သဘောတူထားသော သွားရောက်မှုအတွင်း
-        အတူကြည့်ရှုနိုင်သည့် အတိုင်းအတာကို အတည်ပြုပါသည်။
+      en: We use the checklist and help with simple questions during the viewing.
+      ko: 체크리스트를 사용하고 집 보기 중 간단한 질문을 돕습니다.
+      my: Checklist ကို အသုံးပြုပြီး အိမ်ကြည့်ချိန်တွင် မေးခွန်းမေးရန် ကူညီပါသည်။
   - title:
-      en: Visit together and receive a short summary
-      ko: 현장 동행·짧은 요약 확인
-      my: အတူသွားကြည့်ပြီး အနှစ်ချုပ်တို လက်ခံခြင်း
+      en: Receive summary
+      ko: 요약 받기
+      my: Summary လက်ခံခြင်း
     body:
-      en: We use the checklist at the viewing and send a short comparison summary afterward for your own
-        decision.
-      ko: 현장에서 체크리스트를 함께 확인하고, 본인이 판단할 수 있도록 방문 후 짧은 비교 요약을 보냅니다.
-      my: အိမ်ကြည့်ရာတွင် စစ်ဆေးစာရင်းကို အတူအသုံးပြုပြီး သင်ကိုယ်တိုင် ဆုံးဖြတ်နိုင်ရန် နောက်ပိုင်းတွင်
-        နှိုင်းယှဉ်အနှစ်ချုပ်တိုကို ပို့ပေးပါသည်။
-deliverables:
-  - en: An on-site checklist organized around your priorities
-    ko: 본인의 우선순위를 반영한 현장 체크리스트
-    my: သင့်ဦးစားပေးအချက်များကို ထည့်သွင်းထားသော နေရာတွင်အသုံးပြုမည့် စစ်ဆေးစာရင်း
-  - en: Interpretation support and comparison opinions during the arranged viewing
-    ko: 약속된 집 보기 중 통역 지원과 비교 의견
-    my: ချိန်းဆိုထားသော အိမ်ကြည့်ချိန်အတွင်း ဘာသာပြန်အကူအညီနှင့် နှိုင်းယှဉ်အမြင်
-  - en: A short DM summary of observations after the viewing
-    ko: 방문 후 현장에서 본 내용을 정리한 짧은 DM 요약
-    my: အိမ်ကြည့်ပြီးနောက် နေရာတွင်တွေ့ရှိသည့်အချက်များကို စုစည်းထားသော DM အနှစ်ချုပ်တို
-preparation:
-  - en: Viewing appointments and addresses you arranged yourself, including how many homes you will visit
-    ko: 본인이 직접 정한 방문 일정과 주소, 방문할 집의 수
-    my: သင်ကိုယ်တိုင် ချိန်းဆိုထားသော အိမ်ကြည့်အချိန်၊ လိပ်စာနှင့် သွားကြည့်မည့်အိမ်အရေအတွက်
-  - en: Your daily-life priorities, must-have conditions, and main concerns
-    ko: 생활 우선순위, 꼭 필요한 조건과 가장 걱정되는 점
-    my: နေ့စဉ်ဘဝ ဦးစားပေးအချက်များ၊ မဖြစ်မနေလိုအပ်သောအခြေအနေများနှင့် အဓိကစိုးရိမ်ချက်များ
-  - en: Permission before taking photos or operating fixtures, plus questions for the licensed realtor
-    ko: 사진 촬영·설비 작동 전 허락과 공인중개사에게 직접 물어볼 질문
-    my: ဓာတ်ပုံရိုက်ခြင်း သို့မဟုတ် ပစ္စည်းကိရိယာအသုံးပြုခြင်းမတိုင်မီ ခွင့်ပြုချက်နှင့် လိုင်စင်ရ
-      အိမ်ခြံမြေကျွမ်းကျင်သူကို ကိုယ်တိုင်မေးရန် မေးခွန်းများ
+      en: You receive a short observation summary to compare before deciding.
+      ko: 결정 전에 비교할 수 있도록 짧은 관찰 요약을 받습니다.
+      my: မဆုံးဖြတ်မီ နှိုင်းယှဉ်နိုင်ရန် observation summary တိုကို လက်ခံရရှိပါသည်။

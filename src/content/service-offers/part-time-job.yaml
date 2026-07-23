@@ -1,0 +1,112 @@
+title:
+  en: Part-Time Job Application Support
+  ko: 알바 지원 준비
+  my: Part-Time အလုပ်လျှောက်ရန် အကူအညီ
+summary:
+  en: For Burmese students and newcomers who want a cleaner part-time job resume, stronger application profile, and simple interview practice before applying.
+  ko: 알바 지원 전에 이력서, 지원 프로필, 공고 이해와 기본 면접 준비를 정리하고 싶은 미얀마 학생과 초보자를 위한 서비스입니다.
+  my: Part-time အလုပ်လျှောက်မည့် မြန်မာကျောင်းသားများနှင့် ကိုရီးယားရောက်ခါစသူများအတွက် resume၊ application profile၊ job post နားလည်မှုနှင့် basic interview ကို လွယ်ကူစွာ ပြင်ဆင်ပေးပါသည်။
+recommendedFor:
+  - en: You want to apply for part-time jobs but do not know how to present yourself.
+    ko: 알바 지원을 하고 싶지만 본인을 어떻게 보여줘야 할지 모르는 분
+    my: Part-time အလုပ်လျှောက်ချင်သော်လည်း ကိုယ့်ကိုယ်ကို ဘယ်လိုဖော်ပြရမလဲ မသိသူ
+  - en: You already have a resume but want it checked before sending it.
+    ko: 이력서가 있지만 보내기 전에 확인받고 싶은 분
+    my: Resume ရှိပြီးသားဖြစ်သော်လည်း မပို့ခင် စစ်ဆေးချင်သူ
+  - en: You found a job post but do not fully understand the Korean wording.
+    ko: 채용공고를 봤지만 한국어 표현을 완전히 이해하기 어려운 분
+    my: Job post တွေ့ထားသော်လည်း ကိုရီးယားစာပါ အဓိပ္ပာယ်ကို မရှင်းလင်းသူ
+included:
+  - title:
+      en: Create or improve your part-time resume
+      ko: 알바 이력서 작성 또는 개선
+      my: Part-time resume ဖန်တီးခြင်း သို့မဟုတ် ပြင်ဆင်ခြင်း
+    body:
+      en: We help organize your education, experience, skills, availability, and simple Korean wording.
+      ko: 학력, 경험, 가능 시간, 장점과 쉬운 한국어 표현을 정리합니다.
+      my: ပညာရေး၊ experience၊ skills၊ အလုပ်လုပ်နိုင်သည့်အချိန်နှင့် ရိုးရှင်းသော ကိုရီးယားအသုံးအနှုန်းများကို စုစည်းကူညီပါသည်။
+  - title:
+      en: Review your existing resume
+      ko: 기존 이력서 검토
+      my: လက်ရှိ resume စစ်ဆေးခြင်း
+    body:
+      en: We check whether the resume is easy to read and what should be fixed before applying.
+      ko: 읽기 쉬운지, 지원 전에 무엇을 고치면 좋은지 확인합니다.
+      my: Resume ဖတ်ရလွယ်ကူမှုနှင့် မလျှောက်မီ ပြင်သင့်သောအချက်များကို စစ်ဆေးပါသည်။
+  - title:
+      en: Improve your application profile
+      ko: 지원 프로필 개선
+      my: Application profile ပိုကောင်းအောင်ပြင်ခြင်း
+    body:
+      en: We help make your short self-introduction and profile look more complete and trustworthy.
+      ko: 짧은 자기소개와 프로필이 더 완성도 있게 보이도록 정리합니다.
+      my: Short introduction နှင့် profile ကို ပိုပြည့်စုံပြီး ယုံကြည်စရာကောင်းအောင် ပြင်ဆင်ကူညီပါသည်။
+  - title:
+      en: Explain the job post
+      ko: 채용공고 설명
+      my: Job post ရှင်းပြခြင်း
+    body:
+      en: We explain working hours, pay wording, duties, and points you should ask before applying.
+      ko: 근무시간, 급여 표현, 업무 내용과 지원 전 물어볼 점을 설명합니다.
+      my: အလုပ်ချိန်၊ လစာအသုံးအနှုန်း၊ တာဝန်များနှင့် မလျှောက်မီ မေးသင့်သောအချက်များကို ရှင်းပြပါသည်။
+  - title:
+      en: Basic interview preparation
+      ko: 기본 면접 준비
+      my: Basic interview ပြင်ဆင်ခြင်း
+    body:
+      en: We practice simple answers for common part-time job interview questions.
+      ko: 알바 면접에서 자주 나오는 질문에 대한 쉬운 답변을 연습합니다.
+      my: Part-time interview တွင် မကြာခဏမေးသော မေးခွန်းများအတွက် ရိုးရှင်းသောအဖြေများကို လေ့ကျင့်ပါသည်။
+deliverables:
+  - en: A cleaner part-time resume or resume improvement notes
+    ko: 정리된 알바 이력서 또는 개선 메모
+    my: ပိုရှင်းလင်းသော part-time resume သို့မဟုတ် ပြင်ဆင်ချက်မှတ်စု
+  - en: Job-post explanation and questions to ask before applying
+    ko: 채용공고 설명과 지원 전 물어볼 질문
+    my: Job post ရှင်းပြချက်နှင့် မလျှောက်မီ မေးရန်မေးခွန်းများ
+  - en: Simple interview answer practice notes
+    ko: 쉬운 면접 답변 연습 메모
+    my: Interview ဖြေဆိုရန် လေ့ကျင့်မှတ်စုတို
+preparation:
+  - en: Your current resume, if you have one
+    ko: 기존 이력서가 있다면 그 파일
+    my: ရှိပြီးသား resume ရှိပါက ထိုဖိုင်
+  - en: The job post or workplace type you want to apply for
+    ko: 지원하고 싶은 채용공고 또는 일하고 싶은 업종
+    my: လျှောက်ချင်သော job post သို့မဟုတ် အလုပ်အမျိုးအစား
+  - en: Your available days, Korean level, experience, and preferred location
+    ko: 가능 요일, 한국어 수준, 경험과 희망 지역
+    my: အလုပ်လုပ်နိုင်သည့်နေ့များ၊ ကိုရီးယားစာအဆင့်၊ experience နှင့် လိုချင်သောနေရာ
+process:
+  - title:
+      en: Send a short DM
+      ko: 짧게 DM 보내기
+      my: DM တိုတစ်စောင် ပို့ပါ
+    body:
+      en: Tell us what kind of part-time job you want and what you need help with.
+      ko: 원하는 알바 종류와 필요한 도움을 알려주세요.
+      my: ဘယ်လို part-time အလုပ်လိုချင်သလဲ၊ ဘာအကူအညီလိုသလဲ ပြောပါ။
+  - title:
+      en: Confirm scope and price
+      ko: 범위와 비용 확인
+      my: အတိုင်းအတာနှင့် စျေးနှုန်း စစ်ဆေးခြင်း
+    body:
+      en: We confirm what can be done, timing, and cost before starting.
+      ko: 시작 전에 가능한 범위, 일정과 비용을 확인합니다.
+      my: စတင်မလုပ်မီ လုပ်နိုင်သည့်အတိုင်းအတာ၊ အချိန်နှင့် စျေးနှုန်းကို အတည်ပြုပါသည်။
+  - title:
+      en: Prepare the application material
+      ko: 지원 자료 준비
+      my: Application material ပြင်ဆင်ခြင်း
+    body:
+      en: We work on the resume, profile, job-post explanation, or interview practice agreed by DM.
+      ko: DM에서 합의한 이력서, 프로필, 공고 설명 또는 면접 연습을 진행합니다.
+      my: DM တွင် သဘောတူထားသော resume၊ profile၊ job post ရှင်းပြချက် သို့မဟုတ် interview practice ကို ပြင်ဆင်ပါသည်။
+  - title:
+      en: You apply yourself
+      ko: 직접 지원하기
+      my: ကိုယ်တိုင်လျှောက်ပါ
+    body:
+      en: You choose where to apply and send the application yourself.
+      ko: 어디에 지원할지 결정하고 지원은 본인이 직접 합니다.
+      my: ဘယ်နေရာကိုလျှောက်မလဲ သင်ကိုယ်တိုင်ဆုံးဖြတ်ပြီး ကိုယ်တိုင်လျှောက်ပါသည်။
