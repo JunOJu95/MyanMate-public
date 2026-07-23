@@ -1,0 +1,51 @@
+---
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import GuideCard from '../../components/GuideCard.astro';
+import SocialDmPanel from '../../components/SocialDmPanel.astro';
+import { getGuides } from '../../lib/content';
+import { t } from '../../i18n/ui';
+
+const allGuides = await getGuides();
+const guides = allGuides.filter((guide) => guide.category === 'visa');
+---
+
+<Base title={t('guides.title', 'en')} active="guides" description={t('guides.intro', 'en')}>
+  <div class="wrap visa-hub-page">
+    <section class="sec page-hero visa-hub-hero" data-reveal="page-hero">
+      <T k="guides.eyebrow" tag="p" class="visa-hub-eyebrow" />
+      <h1 class="lead-title"><T k="guides.title" /></h1>
+      <T k="guides.intro" tag="p" class="t-sub" />
+    </section>
+
+    <section class="sec visa-hub-content" data-reveal="section">
+      <div class="visa-hub-heading">
+        <T k="guides.choose" tag="h2" class="sec-title" />
+        <T k="guides.chooseNote" tag="p" class="t-body" />
+      </div>
+      <div class="visa-guide-grid visa-hub-grid" data-reveal="stagger" data-stagger>
+        {guides.map((guide) => <GuideCard guide={guide} variant="featured" eventSource="guides" />)}
+      </div>
+      {guides.length === 0 && (
+        <div class="empty-state">
+          <p class="card-title" data-i18n="guides.empty.title">{t('guides.empty.title', 'en')}</p>
+          <p class="t-body" data-i18n="guides.empty.body">{t('guides.empty.body', 'en')}</p>
+          <div class="empty-actions">
+            <a class="btn pri" href="/contact#dm" data-i18n="dm.cta" data-event="guides_empty_contact">{t('dm.cta', 'en')}</a>
+          </div>
+        </div>
+      )}
+    </section>
+    {guides.length > 0 && (
+      <section class="sec visa-hub-dm" data-reveal="cta">
+        <SocialDmPanel
+          service="visa"
+          context="visa"
+          source="guides-visa"
+          id="dm"
+          compact
+        />
+      </section>
+    )}
+  </div>
+</Base>
