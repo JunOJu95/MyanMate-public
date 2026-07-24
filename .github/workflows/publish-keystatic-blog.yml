@@ -1,0 +1,104 @@
+name: Publish Keystatic blog
+
+on:
+  push:
+    branches:
+      - 'keystatic/**'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: keystatic-blog-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the Keystatic branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Allow blog content files only
+        shell: bash
+        run: |
+          git fetch origin main
+          mapfile -t changed_files < <(git diff --name-only origin/main...HEAD)
+
+          if (( ${#changed_files[@]} == 0 )); then
+            echo "No changes found against main."
+            exit 1
+          fi
+
+          invalid_files=()
+          for file in "${changed_files[@]}"; do
+            case "$file" in
+              src/content/posts/*|src/content/blog-media/*) ;;
+              *) invalid_files+=("$file") ;;
+            esac
+          done
+
+          if (( ${#invalid_files[@]} > 0 )); then
+            echo "Automatic publishing only accepts blog content files:"
+            printf '  %s\n' "${invalid_files[@]}"
+            exit 1
+          fi
+
+      - name: Reject empty inline image descriptions
+        shell: bash
+        run: |
+          if grep -R -n -E '!\[\]\(' src/content/posts --include='*.mdoc'; then
+            echo "Add alternative text to every inline blog image."
+            exit 1
+          fi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the site
+        run: npm run build
+
+  publish:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open or reuse the pull request
+        id: pull-request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          pr_url="$(gh pr list \
+            --repo "$GITHUB_REPOSITORY" \
+            --head "$GITHUB_REF_NAME" \
+            --base main \
+            --state open \
+            --json url \
+            --jq '.[0].url')"
+
+          if [[ -z "$pr_url" ]]; then
+            article_name="${GITHUB_REF_NAME#keystatic/}"
+            pr_url="$(gh pr create \
+              --repo "$GITHUB_REPOSITORY" \
+              --base main \
+              --head "$GITHUB_REF_NAME" \
+              --title "Publish Keystatic blog: $article_name" \
+              --body "Created automatically after the Keystatic blog save passed the content-only, accessibility, and build checks.")"
+          fi
+
+          echo "url=$pr_url" >> "$GITHUB_OUTPUT"
+
+      - name: Squash merge and publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ steps.pull-request.outputs.url }}
+        run: gh pr merge "$PR_URL" --squash --delete-branch

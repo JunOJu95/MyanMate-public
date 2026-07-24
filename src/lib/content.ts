@@ -307,7 +307,6 @@ export interface Post {
   lastReviewed: string | null;
   cover: string | null;
   coverAlt: string;
-  publishingBoundaryConfirmed: boolean;
   draft: boolean;
 }
 
@@ -324,7 +323,6 @@ function toPost(slug: string, e: any): Post {
     lastReviewed: e?.lastReviewed ?? null,
     cover: typeof e?.cover === 'string' ? e.cover : null,
     coverAlt: str(e?.coverAlt),
-    publishingBoundaryConfirmed: e?.publishingBoundaryConfirmed === true,
     // Missing/invalid draft metadata fails closed so an incomplete entry is
     // never published by accident.
     draft: e?.draft !== false,
@@ -345,12 +343,6 @@ function comparePosts(a: Post, b: Post): number {
 export async function getPosts(): Promise<Post[]> {
   const list = await reader.collections.posts.all();
   const posts = list.map((e: any) => toPost(e.slug, e.entry));
-  const uncheckedPost = posts.find((post) => !post.draft && !post.publishingBoundaryConfirmed);
-  if (uncheckedPost) {
-    throw new Error(
-      `Published blog post "${uncheckedPost.slug}" is missing the publishing-boundary confirmation.`
-    );
-  }
   return posts
     .filter((p) => SHOW_DRAFTS || !p.draft)
     .sort(comparePosts);
@@ -371,9 +363,6 @@ export async function getPost(slug: string): Promise<{ meta: Post; bodyHtml: str
   if (!entry) return null;
   const meta = toPost(slug, entry);
   if (!SHOW_DRAFTS && meta.draft) return null;
-  if (!meta.draft && !meta.publishingBoundaryConfirmed) {
-    throw new Error(`Published blog post "${slug}" is missing the publishing-boundary confirmation.`);
-  }
 
   let bodyHtml = '';
   try {
