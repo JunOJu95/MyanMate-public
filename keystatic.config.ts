@@ -146,10 +146,15 @@ const reviewLang = (label: string) =>
 const isDev = process.env.NODE_ENV === 'development';
 
 export default config({
-  // Local dev edits local files; production (Vercel) uses GitHub storage so the
-  // co-founder can edit live at www.myanmate.com/keystatic (saves → commit to
-  // GitHub → Vercel auto-rebuilds). Needs a GitHub App + env vars (.env.example).
-  storage: isDev ? { kind: 'local' } : { kind: 'github', repo: 'JunOJu95/MyanMate-public' },
+  // Local dev edits local files. Production saves co-founder edits to a
+  // keystatic/* branch, where GitHub Actions validates and publishes them.
+  storage: isDev
+    ? { kind: 'local' }
+    : {
+        kind: 'github',
+        repo: 'JunOJu95/MyanMate-public',
+        branchPrefix: 'keystatic/',
+      },
   ui: {
     brand: { name: 'MyanMate' },
   },
@@ -260,15 +265,10 @@ export default config({
           label: 'Cover image alt text',
           description: 'Describe informative images for screen-reader users. Leave empty only when the cover is decorative.',
         }),
-        publishingBoundaryConfirmed: fields.checkbox({
-          label: 'Publishing boundary confirmed',
-          description: 'Before publishing, confirm this post only provides information or guidance. It must not promise document writing or submission, property introductions, negotiation, or contract involvement.',
-          defaultValue: false,
-        }),
         draft: fields.checkbox({
           label: 'Draft (keep private)',
-          description: 'New posts start private. Confirm the publishing boundary above, then turn this off only when the post is ready.',
-          defaultValue: true,
+          description: 'Leave this off to publish after saving. Turn it on only when the post must stay private.',
+          defaultValue: false,
         }),
         body: fields.markdoc({
           label: 'Body',
