@@ -1,6 +1,6 @@
 /* =========================================================================
    MyanMate · client language runtime
-   - Instant EN/MM/KO toggle (no reload), persisted to localStorage.
+   - Instant EN/MM/KO toggle (no reload), persisted after the first visit.
    - Extends the delivered app.js behavior: swaps textContent for [data-i18n]
      AND placeholder/aria-label/value for [data-i18n-ph|aria|value]
      (the original only handled textContent — forms need the rest).
@@ -10,7 +10,8 @@
    ========================================================================= */
 import { ui, defaultLang, isLang, htmlLang, type Lang } from '../i18n/ui';
 
-const STORAGE_KEY = 'mm-lang';
+const STORAGE_KEY = 'mm-lang-v2';
+const LEGACY_STORAGE_KEY = 'mm-lang';
 const dict = ui as Record<string, Record<string, string>>;
 
 export function applyLang(input: string): void {
@@ -87,7 +88,10 @@ document.addEventListener('keydown', (e) => {
 
 function init(): void {
   let saved: string | null = null;
-  try { saved = localStorage.getItem(STORAGE_KEY); } catch { /* ignore */ }
+  try {
+    localStorage.removeItem(LEGACY_STORAGE_KEY);
+    saved = localStorage.getItem(STORAGE_KEY);
+  } catch { /* private mode */ }
   applyLang(saved && isLang(saved) ? saved : defaultLang);
 }
 
