@@ -1,31 +1,68 @@
 ---
 import Base from '../layouts/Base.astro';
+import HomeServicePreview from '../components/HomeServicePreview.astro';
 import Icon from '../components/Icon.astro';
 import LocalizedText from '../components/LocalizedText.astro';
 import PostCard from '../components/PostCard.astro';
+import SocialDmPanel from '../components/SocialDmPanel.astro';
 import T from '../components/T.astro';
 import TikTokTrust from '../components/TikTokTrust.astro';
+import { services } from '../data/services';
 import { t } from '../i18n/ui';
 import {
   getLatestPosts,
   getServiceContents,
+  getServiceOffers,
   type LocalizedText as LocalizedTextValue,
 } from '../lib/content';
 
-const [serviceContent, latestPosts] = await Promise.all([
+const [serviceContent, serviceOffers, latestPosts] = await Promise.all([
   getServiceContents(),
-  getLatestPosts(3),
+  getServiceOffers(),
+  getLatestPosts(4),
 ]);
-const entryCards: Array<{
+const informationLinks: Array<{
+  id: string;
   titleKey?: string;
   title?: LocalizedTextValue;
+  summaryKey?: string;
+  summary?: LocalizedTextValue;
   href: string;
   icon: string;
   event: string;
 }> = [
-  { title: serviceContent.resume.title, href: '/guides/resume', icon: 'resumeSvc', event: 'home_entry_resume' },
-  { titleKey: 'home.entry.visa', href: '/guides/visa', icon: 'visa', event: 'home_entry_visa' },
-  { title: serviceContent.housing.title, href: '/guides/housing', icon: 'housing', event: 'home_entry_housing' },
+  {
+    id: 'visa',
+    titleKey: 'home.entry.visa',
+    summaryKey: 'infoHub.visa.summary',
+    href: '/guides/visa',
+    icon: 'visa',
+    event: 'home_information_visa',
+  },
+  {
+    id: 'resume',
+    title: serviceContent.resume.title,
+    summary: serviceContent.resume.description,
+    href: '/guides/resume',
+    icon: 'resumeSvc',
+    event: 'home_information_resume',
+  },
+  {
+    id: 'housing',
+    title: serviceContent.housing.title,
+    summary: serviceContent.housing.description,
+    href: '/guides/housing',
+    icon: 'housing',
+    event: 'home_information_housing',
+  },
+  {
+    id: 'all',
+    titleKey: 'home.information.all.title',
+    summaryKey: 'home.information.all.summary',
+    href: '/blog',
+    icon: 'topics',
+    event: 'home_information_all',
+  },
 ];
 const processSteps = [
   { title: 'home.process.step1.title', body: 'home.process.step1.body' },
@@ -57,85 +94,147 @@ const processSteps = [
       <T k="home.trust.slogan" tag="p" class="trust-slogan" />
     </section>
 
-    <!-- primary information and guidance entry points -->
-    <section class="sec home-entry-band" aria-label={t('home.entry.label', 'en')} data-i18n-aria="home.entry.label">
-      <div class="home-entry-grid" data-reveal="stagger" data-stagger>
-        {entryCards.map((entry) => (
-          <a class="home-entry-card" href={entry.href} data-event={entry.event}>
-            <span class="home-entry-icon" aria-hidden="true"><Icon name={entry.icon} size={24} /></span>
-            {entry.title
-              ? <LocalizedText value={entry.title} tag="span" class="home-entry-title" />
-              : <T k={entry.titleKey!} tag="span" class="home-entry-title" />}
-            <span class="home-entry-arrow" aria-hidden="true">&rarr;</span>
+    <!-- newest long-form information -->
+    <section
+      class="sec home-section home-latest-band"
+      aria-label={t('home.latest.title', 'en')}
+      data-i18n-aria="home.latest.title"
+      data-reveal="section"
+    >
+      <div class="home-editorial-head">
+        <div>
+          <T k="home.latest.eyebrow" tag="p" class="home-section-eyebrow" />
+          <T k="home.latest.title" tag="h2" class="home-display-title" />
+        </div>
+        <T k="home.latest.lead" tag="p" class="home-section-lead" />
+      </div>
+      {latestPosts.length > 0 ? (
+        <div class:list={['home-latest-layout', { 'is-single': latestPosts.length === 1 }]}>
+          <div class="home-latest-feature">
+            <PostCard post={latestPosts[0]} variant="featured" headingLevel={3} />
+          </div>
+          {latestPosts.length > 1 && (
+            <div class="home-latest-list" data-stagger>
+              {latestPosts.slice(1).map((post) => <PostCard post={post} variant="row" headingLevel={3} />)}
+            </div>
+          )}
+        </div>
+      ) : (
+        <p class="home-latest-empty"><T k="blog.empty" /></p>
+      )}
+      <a class="home-text-link" href="/blog" data-event="home_blog_all">
+        <T k="blog.viewAll" />
+        <span aria-hidden="true">→</span>
+      </a>
+    </section>
+
+    <!-- structured information index -->
+    <section
+      class="sec home-section home-information-band"
+      aria-label={t('home.information.title', 'en')}
+      data-i18n-aria="home.information.title"
+      data-reveal="section"
+    >
+      <div class="home-editorial-head">
+        <div>
+          <T k="home.information.eyebrow" tag="p" class="home-section-eyebrow" />
+          <T k="home.information.title" tag="h2" class="home-display-title" />
+        </div>
+        <T k="home.information.lead" tag="p" class="home-section-lead" />
+      </div>
+      <div class="home-information-index" data-stagger>
+        {informationLinks.map((entry, index) => (
+          <a
+            class="home-information-row"
+            href={entry.href}
+            data-event={entry.event}
+            data-information={entry.id}
+            data-source="home-information"
+          >
+            <span class="home-information-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <span class="home-information-icon" aria-hidden="true"><Icon name={entry.icon} size={21} /></span>
+            <span class="home-information-copy">
+              {entry.title
+                ? <LocalizedText value={entry.title} tag="h3" class="home-information-title" />
+                : <T k={entry.titleKey!} tag="h3" class="home-information-title" />}
+              {entry.summary
+                ? <LocalizedText value={entry.summary} tag="span" class="home-information-summary" />
+                : <T k={entry.summaryKey!} tag="span" class="home-information-summary" />}
+            </span>
+            <span class="home-information-arrow" aria-hidden="true">→</span>
           </a>
         ))}
       </div>
     </section>
 
-    {latestPosts.length > 0 && (
-      <section
-        class="sec home-section home-blog-band"
-        aria-label={t('blog.latest', 'en')}
-        data-i18n-aria="blog.latest"
-        data-reveal="section"
-      >
-        <div class="home-blog-head">
-          <h2 class="sec-title">
-            <span class="sec-ico"><Icon name="doc" /></span>
-            <T k="blog.latest" />
-          </h2>
-          <a class="home-blog-all" href="/blog" data-event="home_blog_all">
-            <T k="blog.viewAll" />
+    <!-- active guidance services -->
+    <section
+      class="sec home-section home-services-band"
+      aria-label={t('home.services.preview.title', 'en')}
+      data-i18n-aria="home.services.preview.title"
+      data-reveal="section"
+    >
+      <div class="home-services-layout">
+        <div class="home-services-intro">
+          <T k="home.services.preview.eyebrow" tag="p" class="home-section-eyebrow" />
+          <T k="home.services.preview.title" tag="h2" class="home-display-title" />
+          <T k="home.services.preview.lead" tag="p" class="home-section-lead" />
+          <a class="home-text-link" href="/services" data-event="home_services_all">
+            <T k="home.services.preview.viewAll" />
             <span aria-hidden="true">→</span>
           </a>
         </div>
-        <div class="home-blog-grid" data-stagger>
-          {latestPosts.map((post) => <PostCard post={post} variant="home" headingLevel={3} />)}
+        <div class="home-service-list" data-stagger>
+          {services.map((service, index) => (
+            <HomeServicePreview service={service} offer={serviceOffers[service.id]} index={index} />
+          ))}
         </div>
-      </section>
-    )}
-
-    <!-- process -->
-    <section class="sec home-section process-band" data-reveal="section">
-      <p class="sec-title"><span class="sec-ico"><Icon name="list" /></span><T k="home.process.title" /></p>
-      <div class="process-strip" data-reveal="process" data-stagger>
-        {processSteps.map((step, i) => (
-          <div class="process-step">
-            <span class="num-badge">{i + 1}</span>
-            <div>
-              <p class="card-title" data-i18n={step.title}>{t(step.title, 'en')}</p>
-              <p class="t-body" data-i18n={step.body}>{t(step.body, 'en')}</p>
-            </div>
-          </div>
-        ))}
       </div>
     </section>
 
-    <!-- about teaser -->
-    <section class="sec home-section about-band" data-reveal="section">
-      <div class="about-band-heading">
-        <p class="sec-title"><span class="sec-ico"><Icon name="users" /></span><T k="home.about.title" /></p>
-        <T k="home.about.eyebrow" tag="p" class="about-eyebrow" />
-      </div>
-      <div class="about-summary">
-        <T k="home.about.blurb" tag="p" class="about-summary-copy" />
-        <div class="home-role-list" data-stagger>
-          <div class="home-role">
-            <span class="home-role-icon"><Icon name="list" size={19} /></span>
-            <T k="home.about.role.kr" tag="p" class="t-body" />
-          </div>
-          <div class="home-role">
-            <span class="home-role-icon"><Icon name="users" size={19} /></span>
-            <T k="home.about.role.mm" tag="p" class="t-body" />
+    <!-- information-to-DM journey -->
+    <section class="sec home-section home-journey-band" data-reveal="section">
+      <div class="home-journey-layout">
+        <div class="home-journey-copy">
+          <T k="home.journey.eyebrow" tag="p" class="home-section-eyebrow" />
+          <T k="home.process.title" tag="h2" class="home-display-title" />
+          <T k="home.journey.lead" tag="p" class="home-section-lead" />
+          <div class="home-process-list" data-reveal="process" data-stagger>
+            {processSteps.map((step, index) => (
+              <div class="home-process-step">
+                <span class="home-process-number" aria-hidden="true">{index + 1}</span>
+                <div>
+                  <p class="card-title" data-i18n={step.title}>{t(step.title, 'en')}</p>
+                  <p class="t-body" data-i18n={step.body}>{t(step.body, 'en')}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-        <a class="btn" href="/about" data-i18n="home.about.cta" data-event="about:story">{t('home.about.cta', 'en')}</a>
+        <div class="home-journey-dm" data-reveal="cta">
+          <SocialDmPanel context="general" service="general" source="home-journey" id="dm" />
+        </div>
       </div>
     </section>
 
-    <!-- social proof -->
+    <!-- short-form information -->
     <section class="sec home-section community-band" data-reveal="section">
       <TikTokTrust />
+    </section>
+
+    <!-- compact story teaser -->
+    <section class="sec home-section home-about-compact" data-reveal="section">
+      <div>
+        <T k="home.about.eyebrow" tag="p" class="home-section-eyebrow" />
+        <T k="home.about.title" tag="h2" class="home-display-title" />
+      </div>
+      <div class="home-about-copy">
+        <T k="home.about.blurb" tag="p" class="home-section-lead" />
+        <a class="home-text-link" href="/about" data-event="about:story">
+          <T k="home.about.cta" />
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </section>
   </div>
 </Base>

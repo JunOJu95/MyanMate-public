@@ -1,0 +1,41 @@
+---
+import Icon from './Icon.astro';
+import LocalizedText from './LocalizedText.astro';
+import T from './T.astro';
+import type { Service } from '../data/services';
+import type { ServiceOffer } from '../lib/content';
+
+interface Props {
+  service: Service;
+  offer: ServiceOffer;
+  index: number;
+}
+
+const { service, offer, index } = Astro.props;
+const recommendedFor = offer.recommendedFor[0];
+---
+
+<a
+  class="home-service-preview"
+  href={`/services/${service.id}`}
+  data-event={`service:${service.id}`}
+  data-service={service.id}
+  data-source="home-services"
+>
+  <span class="home-service-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+  <span class="home-service-icon" aria-hidden="true"><Icon name={service.iconKey} size={22} /></span>
+  <span class="home-service-copy">
+    <LocalizedText value={offer.title} tag="h3" class="home-service-title" />
+    <LocalizedText value={offer.summary} tag="span" class="home-service-summary" />
+    {recommendedFor && (
+      <span class="home-service-fit">
+        <T k="home.services.preview.recommended" tag="span" class="home-service-fit-label" />
+        <LocalizedText value={recommendedFor} tag="span" />
+      </span>
+    )}
+  </span>
+  <span class="home-service-action">
+    <T k="home.services.preview.detail" />
+    <span class="home-service-arrow" aria-hidden="true">→</span>
+  </span>
+</a>
