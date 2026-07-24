@@ -1,11 +1,11 @@
 title:
-  en: Study in Korea Preparation
-  ko: 한국 유학 준비
-  my: ကိုရီးယားတွင် ကျောင်းတက်ရန် ပြင်ဆင်မှု
+  en: Study in Korea Information & Preparation Guidance
+  ko: 한국 유학 정보·준비 안내
+  my: ကိုရီးယားပညာသင် အချက်အလက်နှင့် ပြင်ဆင်မှု လမ်းညွှန်
 summary:
-  en: One clear service for Burmese students preparing D-4-1 language study, D-2 university study, study plans, and admission interviews.
-  ko: D-4-1 어학연수, D-2 대학 진학, 학업계획서와 입학 면접을 준비하는 미얀마 학생을 위한 통합 서비스입니다.
-  my: D-4-1 ဘာသာစကားကျောင်း၊ D-2 တက္ကသိုလ်၊ study plan နှင့် admission interview ပြင်ဆင်မည့် မြန်မာကျောင်းသားများအတွက် တစ်နေရာတည်းသော အကူအညီဖြစ်ပါသည်။
+  en: We organize public information for D-4-1 language study and D-2 university admission, and guide self-written study plans and interview practice.
+  ko: D-4-1 어학연수와 D-2 대학 진학에 필요한 공개 정보를 정리하고, 학업계획서 자기작성 검토와 입학 면접 연습을 안내합니다.
+  my: D-4-1 ဘာသာစကားသင်တန်းနှင့် D-2 တက္ကသိုလ်ဝင်ခွင့်အတွက် အများပြည်သူရရှိနိုင်သော အချက်အလက်များကို စုစည်းပြီး ကိုယ်တိုင်ရေးသားထားသော study plan စစ်ဆေးခြင်းနှင့် interview လေ့ကျင့်မှုကို လမ်းညွှန်ပါသည်။
 recommendedFor:
   - en: You want to study in Korea but do not know what to prepare first.
     ko: 한국 유학을 준비하고 싶지만 무엇부터 해야 할지 모르는 분
@@ -13,57 +13,57 @@ recommendedFor:
   - en: You are preparing D-4-1 language study or D-2 university admission.
     ko: D-4-1 어학연수 또는 D-2 대학 입학을 준비하는 분
     my: D-4-1 language study သို့မဟုတ် D-2 university admission ပြင်ဆင်နေသူ
-  - en: You need help writing, editing, or practicing for school documents and interviews.
-    ko: 학업계획서 작성·수정 또는 면접 연습이 필요한 분
-    my: Study plan ရေးရန်၊ ပြင်ရန် သို့မဟုတ် interview လေ့ကျင့်ရန် လိုသူ
+  - en: You want feedback on a study plan you wrote yourself or want to practice an admission interview.
+    ko: 직접 작성한 학업계획서를 검토받거나 입학 면접을 연습하고 싶은 분
+    my: ကိုယ်တိုင်ရေးသားထားသော study plan ကို စစ်ဆေးအကြံပြုချက်ရယူလိုသူ သို့မဟုတ် admission interview လေ့ကျင့်လိုသူ
 included:
   - title:
       en: D-4-1 Study Preparation
       ko: D-4-1 어학연수 준비
       my: D-4-1 Study Preparation
     body:
-      en: We help organize the basic preparation list for Korean language study applications.
-      ko: 한국어 어학연수 지원을 위한 기본 준비 목록을 정리합니다.
-      my: Korean language study လျှောက်ရန် အခြေခံပြင်ဆင်ရမည့်စာရင်းကို စုစည်းကူညီပါသည်။
+      en: We organize public information on requirements, schedules, and points to confirm with the language institute.
+      ko: 공개된 입학 요건과 일정, 어학당에 직접 확인할 내용을 정리합니다.
+      my: အများပြည်သူရရှိနိုင်သော ဝင်ခွင့်လိုအပ်ချက်များ၊ အချိန်ဇယားနှင့် ဘာသာစကားကျောင်းတွင် ကိုယ်တိုင်အတည်ပြုရန်အချက်များကို စုစည်းပါသည်။
   - title:
       en: D-2 University Preparation
       ko: D-2 대학 준비
       my: D-2 University Preparation
     body:
-      en: We help check school application points, timelines, and what to confirm with the university.
-      ko: 학교 지원 포인트, 일정과 대학에 확인할 내용을 정리합니다.
-      my: University application points၊ timeline နှင့် university တွင် အတည်ပြုရန်အချက်များကို စုစည်းပါသည်။
+      en: We organize public admission requirements, schedules, and questions you should confirm directly with the university.
+      ko: 공개된 입학 요건과 일정, 대학에 직접 확인할 질문을 정리합니다.
+      my: အများပြည်သူရရှိနိုင်သော တက္ကသိုလ်ဝင်ခွင့်လိုအပ်ချက်များ၊ အချိန်ဇယားနှင့် တက္ကသိုလ်တွင် ကိုယ်တိုင်အတည်ပြုရန် မေးခွန်းများကို စုစည်းပါသည်။
   - title:
-      en: Study Plan Writing & Editing
-      ko: 학업계획서 작성 및 수정
-      my: Study Plan Writing & Editing
+      en: Self-Written Study Plan Review
+      ko: 학업계획서 자기작성 검토
+      my: ကိုယ်တိုင်ရေးသားထားသော Study Plan စစ်ဆေးခြင်း
     body:
-      en: We help plan, write, review, and improve your study plan in a clear structure.
-      ko: 학업계획서의 구성, 작성, 검토와 개선을 돕습니다.
-      my: Study plan ကို structure ရှင်းရှင်းဖြင့် စီစဉ်၊ ရေးသား၊ စစ်ဆေး၊ ပြင်ဆင်ကူညီပါသည်။
+      en: Using only the draft you wrote, we review its structure, clarity, and expression. You confirm all facts and final wording yourself.
+      ko: 지원자가 직접 작성한 초안을 기준으로 구성, 명확성과 표현을 함께 점검합니다. 사실관계와 최종 내용은 지원자가 직접 확인합니다.
+      my: လျှောက်ထားသူ ကိုယ်တိုင်ရေးသားထားသော မူကြမ်းကိုသာ အခြေခံ၍ ဖွဲ့စည်းပုံ၊ ရှင်းလင်းမှုနှင့် အသုံးအနှုန်းကို စစ်ဆေးပါသည်။ အချက်အလက်မှန်ကန်မှုနှင့် နောက်ဆုံးအကြောင်းအရာကို လျှောက်ထားသူက ကိုယ်တိုင်အတည်ပြုရပါသည်။
   - title:
       en: Admission Interview Preparation
       ko: 입학 면접 준비
       my: Admission Interview Preparation
     body:
-      en: We practice common school interview questions and simple answer direction.
-      ko: 학교 면접에서 자주 나오는 질문과 쉬운 답변 방향을 연습합니다.
-      my: School interview တွင် မေးလေ့ရှိသော မေးခွန်းများနှင့် ရိုးရှင်းသောဖြေဆိုနည်းကို လေ့ကျင့်ပါသည်။
+      en: We use common and publicly available school interview questions to practice clear, truthful answers in your own words.
+      ko: 공개적으로 확인할 수 있는 학교 면접 질문을 바탕으로 본인의 경험을 사실대로 설명하는 연습을 합니다.
+      my: အများပြည်သူရရှိနိုင်သော ကျောင်း interview မေးခွန်းများကို အသုံးပြုပြီး မိမိအတွေ့အကြုံကို မိမိစကားဖြင့် မှန်ကန်ရှင်းလင်းစွာ ဖြေဆိုရန် လေ့ကျင့်ပါသည်။
   - title:
-      en: Complete Study Application Preparation
-      ko: 유학 지원 통합 준비
-      my: Complete Study Application Preparation
+      en: Official-Source Preparation Guidance
+      ko: 공식 정보 확인 안내
+      my: တရားဝင်အချက်အလက် အတည်ပြုရေး လမ်းညွှန်
     body:
-      en: If you need several items together, we can discuss a combined preparation package by DM.
-      ko: 여러 항목이 함께 필요하면 DM으로 통합 준비 패키지를 상담할 수 있습니다.
-      my: အကြောင်းအရာများစွာကို တစ်ခါတည်းလိုအပ်ပါက DM မှ combined package ဆွေးနွေးနိုင်ပါသည်။
+      en: We organize the official sources and questions you should check yourself. You contact schools and prepare and submit all school and visa documents yourself.
+      ko: 본인이 직접 확인할 공식 출처와 질문을 정리합니다. 학교 연락과 지원서·비자 서류 작성·제출은 이용자가 직접 진행합니다.
+      my: ကိုယ်တိုင်အတည်ပြုရန် တရားဝင်ရင်းမြစ်များနှင့် မေးခွန်းများကို စုစည်းပါသည်။ ကျောင်းနှင့်ဆက်သွယ်ခြင်း၊ လျှောက်လွှာနှင့် visa စာရွက်စာတမ်းများ ရေးသားခြင်းနှင့် တင်သွင်းခြင်းကို လျှောက်ထားသူက ကိုယ်တိုင်ဆောင်ရွက်ရပါသည်။
 deliverables:
-  - en: A clear preparation checklist for your selected study path
-    ko: 선택한 유학 경로에 맞춘 준비 체크리스트
-    my: ရွေးချယ်ထားသော study path အတွက် ပြင်ဆင်စစ်ဆေးစာရင်း
-  - en: Study-plan draft, edit notes, or interview practice notes based on scope
-    ko: 범위에 따른 학업계획서 초안, 수정 메모 또는 면접 연습 메모
-    my: Scope အလိုက် study-plan draft၊ edit notes သို့မဟုတ် interview practice notes
+  - en: Organized public information and points to confirm for your selected study path
+    ko: 선택한 유학 경로에 맞춘 공개 정보와 확인 항목
+    my: ရွေးချယ်ထားသော ပညာသင်လမ်းကြောင်းအတွက် စုစည်းထားသော အများပြည်သူရရှိနိုင်သည့် အချက်အလက်များနှင့် အတည်ပြုရန်အချက်များ
+  - en: Self-writing questions, structure notes, expression feedback, or interview practice notes
+    ko: 자기작성용 질문, 구성 메모, 표현 검토 의견 또는 면접 연습 메모
+    my: ကိုယ်တိုင်ရေးသားရန် မေးခွန်းများ၊ ဖွဲ့စည်းပုံမှတ်စု၊ အသုံးအနှုန်းအကြံပြုချက် သို့မဟုတ် interview လေ့ကျင့်မှုမှတ်စု
   - en: Questions to confirm with the school or official source
     ko: 학교 또는 공식 확인처에 물어볼 질문
     my: School သို့မဟုတ် official source တွင် မေးရန်မေးခွန်းများ
@@ -79,13 +79,13 @@ preparation:
     my: Sensitive numbers ဖုံးထားသော school notice သို့မဟုတ် document list
 process:
   - title:
-      en: Choose your study path
-      ko: 유학 경로 선택
-      my: Study path ရွေးချယ်ခြင်း
+      en: Choose the information you need
+      ko: 필요한 정보 선택
+      my: လိုအပ်သော အချက်အလက်ကို ရွေးချယ်ခြင်း
     body:
-      en: Tell us whether you need D-4-1, D-2, study plan, interview, or a complete package.
-      ko: D-4-1, D-2, 학업계획서, 면접 또는 통합 패키지가 필요한지 알려주세요.
-      my: D-4-1၊ D-2၊ study plan၊ interview သို့မဟုတ် complete package လိုသလား ပြောပါ။
+      en: Tell us whether you are checking D-4-1, D-2, a self-written study plan, or interview preparation.
+      ko: D-4-1, D-2, 직접 작성한 학업계획서 검토 또는 면접 연습 중 필요한 내용을 알려주세요.
+      my: D-4-1၊ D-2၊ ကိုယ်တိုင်ရေးသားထားသော study plan စစ်ဆေးမှု သို့မဟုတ် interview လေ့ကျင့်မှုထဲမှ လိုအပ်သည့်အရာကို ပြောပြပါ။
   - title:
       en: Confirm scope and timeline
       ko: 범위와 일정 확인
@@ -95,13 +95,13 @@ process:
       ko: 마감일 전에 준비 가능한 범위를 확인합니다.
       my: Deadline မတိုင်မီ ပြင်ဆင်နိုင်မည့်အတိုင်းအတာကို အတည်ပြုပါသည်။
   - title:
-      en: Prepare the agreed items
-      ko: 합의한 항목 준비
-      my: သဘောတူထားသောအရာများ ပြင်ဆင်ခြင်း
+      en: Organize information and feedback
+      ko: 정보와 검토 의견 정리
+      my: အချက်အလက်နှင့် အကြံပြုချက်များ စုစည်းခြင်း
     body:
-      en: We organize the checklist, plan, edits, or interview practice agreed by DM.
-      ko: DM에서 합의한 체크리스트, 계획서, 수정 또는 면접 연습을 진행합니다.
-      my: DM တွင်သဘောတူထားသော checklist၊ plan၊ edit သို့မဟုတ် interview practice ကို ပြင်ဆင်ပါသည်။
+      en: We organize public information, self-writing prompts, expression feedback, or interview practice agreed by DM.
+      ko: DM에서 확인한 범위에 따라 공개 정보, 자기작성 질문, 표현 검토 의견 또는 면접 연습을 정리합니다.
+      my: DM တွင် အတည်ပြုထားသောအတိုင်းအတာအရ အများပြည်သူရရှိနိုင်သော အချက်အလက်များ၊ ကိုယ်တိုင်ရေးသားရန် မေးခွန်းများ၊ အသုံးအနှုန်းအကြံပြုချက် သို့မဟုတ် interview လေ့ကျင့်မှုကို စုစည်းပါသည်။
   - title:
       en: You confirm and apply
       ko: 직접 확인하고 지원
