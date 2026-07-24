@@ -38,6 +38,21 @@ const ICON_OPTIONS = [
   { label: 'Korean language', value: 'korean' },
 ] as const;
 
+const safeAssetFilename = (originalFilename: string) => {
+  const extensionIndex = originalFilename.lastIndexOf('.');
+  const stem = (extensionIndex > 0 ? originalFilename.slice(0, extensionIndex) : originalFilename)
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, '-')
+    .replace(/^-+|-+$/g, '');
+  const extension =
+    extensionIndex > 0
+      ? originalFilename.slice(extensionIndex).toLowerCase().replace(/[^.a-z0-9]/g, '')
+      : '';
+
+  return `${stem || 'image'}${extension}`;
+};
+
 const localizedText = (label: string, multiline = false) =>
   fields.object(
     {
@@ -260,6 +275,7 @@ export default config({
           description: 'Stored privately with the post. Draft images are not copied to the public site.',
           directory: 'src/content/blog-media',
           publicPath: '/images/blog/',
+          transformFilename: safeAssetFilename,
         }),
         coverAlt: fields.text({
           label: 'Cover image alt text',
@@ -278,6 +294,7 @@ export default config({
             image: {
               directory: 'src/content/blog-media',
               publicPath: '/images/blog/',
+              transformFilename: safeAssetFilename,
               schema: {
                 alt: fields.text({
                   label: 'Alt text',
