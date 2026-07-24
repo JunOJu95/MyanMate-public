@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import T from '../components/T.astro';
 import SocialDmPanel from '../components/SocialDmPanel.astro';
-import { t } from '../i18n/ui';
+import { defaultLang, t } from '../i18n/ui';
 
 const trustItems = [
   { icon: 'check', title: 'request.trust.noSensitive.title', body: 'request.trust.noSensitive.body' },
@@ -11,7 +11,7 @@ const trustItems = [
   { icon: 'chat', title: 'request.trust.dm.title', body: 'request.trust.dm.body' },
 ];
 ---
-<Base title={t('request.title', 'en')} description={t('request.lead', 'en')}>
+<Base title={t('request.title', defaultLang)} description={t('request.lead', defaultLang)}>
   <div class="wrap contact-page dm-contact-page">
     <div class="contact-intro" data-reveal="page-hero">
       <section class="sec page-hero">
@@ -19,13 +19,13 @@ const trustItems = [
         <T k="request.lead" tag="p" class="t-body mt-8" />
       </section>
 
-      <section class="contact-assurance" aria-label={t('request.title', 'en')} data-i18n-aria="request.title" data-stagger>
+      <section class="contact-assurance" aria-label={t('request.title', defaultLang)} data-i18n-aria="request.title" data-stagger>
         {trustItems.map((item) => (
           <div class="assurance-item">
             <span class="assurance-ico"><Icon name={item.icon} size={18} /></span>
             <span>
-              <b data-i18n={item.title}>{t(item.title, 'en')}</b>
-              <span data-i18n={item.body}>{t(item.body, 'en')}</span>
+              <b data-i18n={item.title}>{t(item.title, defaultLang)}</b>
+              <span data-i18n={item.body}>{t(item.body, defaultLang)}</span>
             </span>
           </div>
         ))}

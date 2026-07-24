@@ -39,7 +39,7 @@ const year = new Date().getFullYear();
     <div class="foot-layout">
       <div class="foot-copy">
         <p class="foot-tag" data-i18n="footer.tagline">{t('footer.tagline', defaultLang)}</p>
-        <nav class="foot-nav" aria-label="Footer">
+        <nav class="foot-nav" aria-label={t('ui.nav.footer', defaultLang)} data-i18n-aria="ui.nav.footer">
           {links.map((l) => (
             <a href={l.href} data-i18n={l.key}>{t(l.key, defaultLang)}</a>
           ))}
@@ -47,7 +47,7 @@ const year = new Date().getFullYear();
         <p class="disclaimer" data-i18n="footer.disclaimer">{t('footer.disclaimer', defaultLang)}</p>
         <p class="foot-copyline">&copy; {year} MyanMate. All rights reserved.</p>
       </div>
-      <nav class="foot-social" aria-label="Social links">
+      <nav class="foot-social" aria-label={t('ui.nav.social', defaultLang)} data-i18n-aria="ui.nav.social">
         {socialLinks.map((link) => (
           <a
             href={link.href}

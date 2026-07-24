@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import T from '../components/T.astro';
-import { t } from '../i18n/ui';
+import { defaultLang, t } from '../i18n/ui';
 
 // NOTE: general-information privacy policy. Have a professional review before launch (기획서 §7-1 #5).
 const UPDATED = '2026-07-01';
@@ -14,7 +14,7 @@ const sections: Array<[string, string]> = [
   ['privacy.contact.title', 'privacy.contact.body'],
 ];
 ---
-<Base title={t('privacy.title', 'en')} description={t('privacy.lead', 'en')}>
+<Base title={t('privacy.title', defaultLang)} description={t('privacy.lead', defaultLang)}>
   <div class="wrap narrow">
     <section class="sec page-hero">
       <h1 class="lead-title"><T k="privacy.title" /></h1>

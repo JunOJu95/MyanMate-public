@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import InformationCategoryCard from '../../components/InformationCategoryCard.astro';
 import T from '../../components/T.astro';
 import { getServiceContents, type LocalizedText as LocalizedTextValue } from '../../lib/content';
-import { t } from '../../i18n/ui';
+import { defaultLang, t } from '../../i18n/ui';
 
 const serviceContent = await getServiceContents();
 const fromKey = (key: string): LocalizedTextValue => ({
@@ -36,7 +36,7 @@ const categories = [
 ];
 ---
 
-<Base title={t('infoHub.title', 'en')} active="guides" description={t('infoHub.intro', 'en')}>
+<Base title={t('infoHub.title', defaultLang)} active="guides" description={t('infoHub.intro', defaultLang)}>
   <div class="wrap information-hub-page">
     <section class="sec page-hero information-hub-hero" data-reveal="page-hero">
       <T k="infoHub.eyebrow" tag="p" class="visa-hub-eyebrow" />

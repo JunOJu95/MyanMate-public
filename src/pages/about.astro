@@ -1,9 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import T from '../components/T.astro';
-import { t } from '../i18n/ui';
+import { defaultLang, t } from '../i18n/ui';
 ---
-<Base title={t('about.title', 'en')} active="about" description={t('about.lead', 'en')}>
+<Base title={t('about.title', defaultLang)} active="about" description={t('about.lead', defaultLang)}>
   <div class="wrap">
     <section class="sec hero page-hero about-hero" data-reveal="page-hero">
       <T k="about.title" tag="h1" class="lead-title" />
@@ -23,7 +23,7 @@ import { t } from '../i18n/ui';
       </div>
     </section>
 
-    <section class="about-proof-strip" aria-label={t('about.proof.label', 'en')} data-reveal="section">
+    <section class="about-proof-strip" aria-label={t('about.proof.label', defaultLang)} data-reveal="section">
       <T k="about.proof.item1" tag="p" />
       <T k="about.proof.item2" tag="p" />
       <T k="about.proof.item3" tag="p" />
@@ -32,8 +32,8 @@ import { t } from '../i18n/ui';
     <section class="sec about-story-cta" data-reveal="cta">
       <div class="cta-band">
         <T k="about.cta.note" tag="p" class="t-body" />
-        <a class="btn pri full" href="/guides" data-i18n="btn.browseGuides" data-event="about:guides">{t('btn.browseGuides', 'en')}</a>
-        <a class="btn ghost full" href="/contact" data-i18n="btn.getHelp" data-event="about:contact">{t('btn.getHelp', 'en')}</a>
+        <a class="btn pri full" href="/guides" data-i18n="btn.browseGuides" data-event="about:guides">{t('btn.browseGuides', defaultLang)}</a>
+        <a class="btn ghost full" href="/contact" data-i18n="btn.getHelp" data-event="about:contact">{t('btn.getHelp', defaultLang)}</a>
       </div>
     </section>
   </div>
