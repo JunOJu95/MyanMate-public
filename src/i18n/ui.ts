@@ -3,7 +3,8 @@
    -------------------------------------------------------------------------
    - Ported from the delivered design `app.js` (window.I18N). Keys are STABLE
      (e.g. "home.hero.headline") — do not rename; the design markup depends on them.
-   - EN is the default/base language. KO is human-written.
+   - MY is the default display language. EN remains the source/fallback language.
+     KO is human-written.
    - ⚠️ MY is a MACHINE DRAFT — replace the values only (keys stay), after a
      native speaker reviews. Legal/disclaimer strings (footer.disclaimer,
      svcDetail.dont.body, content.disclaimer, privacy.*) must be reviewed first.
@@ -15,7 +16,7 @@
 
 export const languages = ['en', 'ko', 'my'] as const;
 export type Lang = (typeof languages)[number];
-export const defaultLang: Lang = 'en';
+export const defaultLang: Lang = 'my';
 
 /** Language switch order + labels shown in the toggle (matches the delivered design). */
 export const langSwitch: ReadonlyArray<{ code: Lang; label: string }> = [
@@ -303,6 +304,9 @@ export const ui = {
   'ui.menu':             { en: 'Menu', ko: '메뉴', my: 'မီနူး' },
   'ui.nav.primary':      { en: 'Primary navigation', ko: '주요 메뉴', my: 'အဓိက မီနူး' },
   'ui.nav.mobile':       { en: 'Mobile navigation', ko: '모바일 메뉴', my: 'မိုဘိုင်း မီနူး' },
+  'ui.nav.footer':       { en: 'Footer navigation', ko: '푸터 메뉴', my: 'အောက်ခြေ မီနူး' },
+  'ui.nav.social':       { en: 'Social links', ko: '소셜 링크', my: 'လူမှုကွန်ရက် လင့်ခ်များ' },
+  'ui.skipToContent':    { en: 'Skip to content', ko: '본문으로 건너뛰기', my: 'အဓိကအကြောင်းအရာသို့ ကျော်သွားရန်' },
   'ui.status.available': { en: 'Available now', ko: '현재 가능', my: 'ယခု ရနိုင်သည်' },
 } satisfies Record<string, Entry>;
 
@@ -317,7 +321,7 @@ export function t(key: string, lang: Lang = defaultLang): string {
     if (import.meta.env?.DEV) console.warn(`[i18n] missing key: ${key}`);
     return '';
   }
-  return entry[lang] ?? entry[defaultLang] ?? '';
+  return entry[lang] ?? entry.en ?? '';
 }
 
 export function isLang(value: unknown): value is Lang {

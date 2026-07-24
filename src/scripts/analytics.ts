@@ -1,4 +1,5 @@
 import { track as trackVercel } from '@vercel/analytics';
+import { defaultLang } from '../i18n/ui';
 
 /* =========================================================================
    MyanMate · lightweight funnel tracking
@@ -34,7 +35,7 @@ document.addEventListener('click', (e) => {
   const source = el.getAttribute('data-source') || undefined;
 
   track(event, {
-    lang: (window as any).__lang || 'en',
+    lang: (window as any).__lang || defaultLang,
     path: location.pathname,
     service,
     visa: el.getAttribute('data-visa') || undefined,

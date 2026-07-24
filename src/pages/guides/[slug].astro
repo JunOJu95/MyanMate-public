@@ -8,7 +8,7 @@ import Disclaimer from '../../components/Disclaimer.astro';
 import SocialDmPanel from '../../components/SocialDmPanel.astro';
 import MobileSocialDm from '../../components/MobileSocialDm.astro';
 import { getGuides, visaCode, type Guide, type GuideText } from '../../lib/content';
-import { t, languages } from '../../i18n/ui';
+import { defaultLang, t, languages } from '../../i18n/ui';
 
 export async function getStaticPaths() {
   const guides = await getGuides();
@@ -49,12 +49,16 @@ const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul'
   { field: 'notes',       labelKey: 'content.section.notes',       mode: 'ul' },
 ].filter((s) => languages.some((l) => (guide[l][s.field] || '').trim()));
 ---
-<Base title={guide.en.title} active="guides" description={guide.en.summary}>
+<Base
+  title={guide[defaultLang].title || guide.en.title}
+  active="guides"
+  description={guide[defaultLang].summary || guide.en.summary}
+>
   <div class="wrap">
     <div class:list={['detail-2col detail-page', { single: !isVisa }]}>
       <article>
         <header class="detail-hero">
-        <span class="pill-tag" data-i18n={catKey}>{t(catKey, 'en')}</span>
+        <span class="pill-tag" data-i18n={catKey}>{t(catKey, defaultLang)}</span>
         <h1 class="lead-title">
           {languages.map((l) => <span data-lang={l}>{guide[l].title || guide.en.title}</span>)}
         </h1>

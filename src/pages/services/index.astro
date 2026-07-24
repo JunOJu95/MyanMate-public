@@ -5,12 +5,12 @@ import ServiceCard from '../../components/ServiceCard.astro';
 import SocialDmPanel from '../../components/SocialDmPanel.astro';
 import { services } from '../../data/services';
 import { getServiceOffers } from '../../lib/content';
-import { t } from '../../i18n/ui';
+import { defaultLang, t } from '../../i18n/ui';
 
 const serviceOffers = await getServiceOffers();
 ---
 <Base
-  title={t('home.services.title', 'en')}
+  title={t('home.services.title', defaultLang)}
   active="services"
 >
   <div class="wrap">

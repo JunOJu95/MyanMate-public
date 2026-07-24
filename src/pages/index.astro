@@ -8,7 +8,7 @@ import SocialDmPanel from '../components/SocialDmPanel.astro';
 import T from '../components/T.astro';
 import TikTokTrust from '../components/TikTokTrust.astro';
 import { services } from '../data/services';
-import { t } from '../i18n/ui';
+import { defaultLang, t } from '../i18n/ui';
 import {
   getLatestPosts,
   getServiceContents,
@@ -73,7 +73,7 @@ const processSteps = [
 <Base
   title=""
   active="home"
-  description={t('home.hero.sub', 'en')}
+  description={t('home.hero.sub', defaultLang)}
 >
   <div class="wrap home-wrap">
     <!-- hero -->
@@ -86,18 +86,18 @@ const processSteps = [
       </div>
       <div class="scene-panel" aria-hidden="true">
         <span class="desk-label">MYANMATE / SEOUL</span>
-        <span data-i18n="home.hero.visual.title">{t('home.hero.visual.title', 'en')}</span>
+        <span data-i18n="home.hero.visual.title">{t('home.hero.visual.title', defaultLang)}</span>
       </div>
     </section>
 
-    <section class="trust-strip" aria-label={t('home.trust.slogan', 'en')} data-i18n-aria="home.trust.slogan" data-reveal="section">
+    <section class="trust-strip" aria-label={t('home.trust.slogan', defaultLang)} data-i18n-aria="home.trust.slogan" data-reveal="section">
       <T k="home.trust.slogan" tag="p" class="trust-slogan" />
     </section>
 
     <!-- newest long-form information -->
     <section
       class="sec home-section home-latest-band"
-      aria-label={t('home.latest.title', 'en')}
+      aria-label={t('home.latest.title', defaultLang)}
       data-i18n-aria="home.latest.title"
       data-reveal="section"
     >
@@ -131,7 +131,7 @@ const processSteps = [
     <!-- structured information index -->
     <section
       class="sec home-section home-information-band"
-      aria-label={t('home.information.title', 'en')}
+      aria-label={t('home.information.title', defaultLang)}
       data-i18n-aria="home.information.title"
       data-reveal="section"
     >
@@ -170,7 +170,7 @@ const processSteps = [
     <!-- active guidance services -->
     <section
       class="sec home-section home-services-band"
-      aria-label={t('home.services.preview.title', 'en')}
+      aria-label={t('home.services.preview.title', defaultLang)}
       data-i18n-aria="home.services.preview.title"
       data-reveal="section"
     >
@@ -204,8 +204,8 @@ const processSteps = [
               <div class="home-process-step">
                 <span class="home-process-number" aria-hidden="true">{index + 1}</span>
                 <div>
-                  <p class="card-title" data-i18n={step.title}>{t(step.title, 'en')}</p>
-                  <p class="t-body" data-i18n={step.body}>{t(step.body, 'en')}</p>
+                  <p class="card-title" data-i18n={step.title}>{t(step.title, defaultLang)}</p>
+                  <p class="t-body" data-i18n={step.body}>{t(step.body, defaultLang)}</p>
                 </div>
               </div>
             ))}

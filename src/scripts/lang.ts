@@ -6,7 +6,7 @@
      (the original only handled textContent — forms need the rest).
    - Multilingual long-form CONTENT (guides) is shown/hidden via CSS on
      body.lang-* (see global.css [data-lang]); this file only drives UI strings.
-   - Works without JS too: server renders EN (the default), JS just switches.
+   - Works without JS too: server renders MY (the default), JS just switches.
    ========================================================================= */
 import { ui, defaultLang, isLang, htmlLang, type Lang } from '../i18n/ui';
 

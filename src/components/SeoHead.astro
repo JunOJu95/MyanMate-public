@@ -4,6 +4,8 @@
  * self-canonical. When per-language URLs (/ko, /my) are added later, emit
  * <link rel="alternate" hreflang="..."> for each locale here (structure ready).
  */
+import { defaultLang, t } from '../i18n/ui';
+
 interface Props {
   title: string;
   description?: string;
@@ -11,8 +13,7 @@ interface Props {
   image?: string;
 }
 
-const DEFAULT_DESC =
-  'MyanMate helps Myanmar people settle in Korea — clear guides on visas, housing, jobs and daily life, plus honest, in-person help. Information and guidance only.';
+const DEFAULT_DESC = t('home.hero.sub', defaultLang);
 
 const { title, description = DEFAULT_DESC, canonicalPath, image = '/og-default.jpg' } = Astro.props;
 
@@ -20,7 +21,7 @@ const site = Astro.site;
 const path = canonicalPath ?? Astro.url.pathname;
 const canonical = site ? new URL(path, site).href : path;
 const ogImage = site ? new URL(image, site).href : image;
-const fullTitle = title ? `${title} · MyanMate` : 'MyanMate · Your mate for settling in Korea';
+const fullTitle = title ? `${title} · MyanMate` : `MyanMate · ${t('footer.tagline', defaultLang)}`;
 ---
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
