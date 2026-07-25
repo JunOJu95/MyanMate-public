@@ -44,8 +44,8 @@ const categories = ['all', ...POST_CATEGORIES] as const;
       ) : (
         <>
           <div class="blog-feed-list">
-            {posts.map((post, index) => (
-              <PostCard post={post} variant={index === 0 ? 'featured' : 'row'} />
+            {posts.map((post) => (
+              <PostCard post={post} variant="row" showDetails={false} showMeta={true} />
             ))}
           </div>
           <p class="blog-empty" data-blog-empty-category hidden aria-live="polite" data-i18n="blog.emptyCategory">

@@ -7,9 +7,11 @@ interface Props {
   post: Post;
   variant?: 'featured' | 'row' | 'home';
   headingLevel?: 2 | 3;
+  showDetails?: boolean;
+  showMeta?: boolean;
 }
 
-const { post, variant = 'row', headingLevel = 2 } = Astro.props;
+const { post, variant = 'row', headingLevel = 2, showDetails = true, showMeta = showDetails } = Astro.props;
 const HeadingTag = `h${headingLevel}`;
 const href = '/blog/' + post.slug;
 const categoryKey = 'guides.filter.' + post.category;
@@ -46,22 +48,24 @@ const isFeedCard = variant !== 'home';
       )}
     </span>
     <HeadingTag class="blog-card-headline blog-authored" lang={post.lang}>{post.headline}</HeadingTag>
-    {post.excerpt && (
+    {showDetails && post.excerpt && (
       <span class="blog-card-excerpt blog-authored" lang={post.lang}>{post.excerpt}</span>
     )}
-    <span class="blog-card-meta">
-      {date && <time datetime={date}>{date}</time>}
-      {date && post.author && <span aria-hidden="true">·</span>}
-      {post.author && <span lang={post.lang}>{post.author}</span>}
-      {reviewed && (
-        <span class="blog-card-reviewed">
-          <span aria-hidden="true">·</span>
-          <span data-i18n="content.lastReviewed">{t('content.lastReviewed', defaultLang)}</span>
-          <span aria-hidden="true">:</span>
-          <time datetime={reviewed}>{reviewed}</time>
-        </span>
-      )}
-    </span>
+    {showMeta && (
+      <span class="blog-card-meta">
+        {date && <time datetime={date}>{date}</time>}
+        {date && post.author && <span aria-hidden="true">·</span>}
+        {post.author && <span lang={post.lang}>{post.author}</span>}
+        {reviewed && (
+          <span class="blog-card-reviewed">
+            <span aria-hidden="true">·</span>
+            <span data-i18n="content.lastReviewed">{t('content.lastReviewed', defaultLang)}</span>
+            <span aria-hidden="true">:</span>
+            <time datetime={reviewed}>{reviewed}</time>
+          </span>
+        )}
+      </span>
+    )}
     <span class="visually-hidden" data-i18n="blog.readMore">{t('blog.readMore', defaultLang)}</span>
   </div>
 </a>

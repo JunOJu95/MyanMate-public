@@ -358,6 +358,88 @@ function unwrapMarkdocArticle(html: string): string {
   return match ? match[1].trim() : html.trim();
 }
 
+function htmlText(html: string): string {
+  return html
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function isFaqHeading(headingHtml: string): boolean {
+  return htmlText(headingHtml).replace(/[.:：]+$/g, '').toLowerCase() === 'faq';
+}
+
+function unwrapQuestionHtml(token: string): string {
+  const heading = token.match(/^<h[34]\b[^>]*>([\s\S]*?)<\/h[34]>$/i);
+  if (heading) return heading[1].trim();
+
+  const strongParagraph = token.match(/^<p>\s*<(?:strong|b)>([\s\S]*?)<\/(?:strong|b)>\s*<\/p>$/i);
+  return (strongParagraph ? strongParagraph[1] : token).trim();
+}
+
+function faqDetails(questionHtml: string, answerHtml: string): string {
+  return [
+    '<details class="blog-faq-item">',
+    '<summary>',
+    `<span class="blog-faq-question">${questionHtml}</span>`,
+    '<span class="blog-faq-toggle" aria-hidden="true"></span>',
+    '</summary>',
+    `<div class="blog-faq-answer">${answerHtml.trim()}</div>`,
+    '</details>',
+  ].join('');
+}
+
+function transformFaqSection(sectionHtml: string): string {
+  const questionRe = /<h[34]\b[^>]*>[\s\S]*?<\/h[34]>|<p>\s*<(?:strong|b)>[\s\S]*?<\/(?:strong|b)>\s*<\/p>/gi;
+  const items: string[] = [];
+  let intro = '';
+  let questionHtml = '';
+  let answerStart = 0;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = questionRe.exec(sectionHtml)) !== null) {
+    if (!questionHtml) {
+      intro = sectionHtml.slice(0, match.index);
+    } else {
+      items.push(faqDetails(questionHtml, sectionHtml.slice(answerStart, match.index)));
+    }
+
+    questionHtml = unwrapQuestionHtml(match[0]);
+    answerStart = match.index + match[0].length;
+    lastIndex = answerStart;
+  }
+
+  if (!questionHtml) return sectionHtml;
+
+  items.push(faqDetails(questionHtml, sectionHtml.slice(lastIndex)));
+  return `${intro}<div class="blog-faq-list">${items.join('')}</div>`;
+}
+
+function enhanceFaqAccordions(html: string): string {
+  const faqHeadingRe = /<h2\b[^>]*>[\s\S]*?<\/h2>/gi;
+  let output = '';
+  let cursor = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = faqHeadingRe.exec(html)) !== null) {
+    if (!isFaqHeading(match[0])) continue;
+
+    const headingStart = match.index;
+    const headingEnd = headingStart + match[0].length;
+    const nextHeading = html.slice(headingEnd).search(/<h2\b[^>]*>/i);
+    const sectionEnd = nextHeading === -1 ? html.length : headingEnd + nextHeading;
+
+    output += html.slice(cursor, headingEnd);
+    output += transformFaqSection(html.slice(headingEnd, sectionEnd));
+    cursor = sectionEnd;
+    faqHeadingRe.lastIndex = sectionEnd;
+  }
+
+  return output + html.slice(cursor);
+}
+
 export async function getPost(slug: string): Promise<{ meta: Post; bodyHtml: string } | null> {
   const entry = await reader.collections.posts.read(slug);
   if (!entry) return null;
@@ -376,7 +458,7 @@ export async function getPost(slug: string): Promise<{ meta: Post; bodyHtml: str
         .join('; ');
       throw new Error(details);
     }
-    bodyHtml = unwrapMarkdocArticle(Markdoc.renderers.html(Markdoc.transform(node)));
+    bodyHtml = enhanceFaqAccordions(unwrapMarkdocArticle(Markdoc.renderers.html(Markdoc.transform(node))));
   } catch (err) {
     if (!meta.draft) {
       throw new Error(`Published blog post "${slug}" could not be rendered.`, { cause: err });

@@ -17,7 +17,6 @@ if (root) {
     for (const card of cards) {
       const visible = category === 'all' || card.dataset.category === category;
       card.hidden = !visible;
-      card.classList.toggle('is-featured', visible && visibleIndex === 0);
       if (visible) visibleIndex += 1;
     }
 
