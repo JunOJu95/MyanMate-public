@@ -21,6 +21,10 @@ const CATEGORY_OPTIONS = [
   { label: 'Daily life', value: 'daily' },
 ];
 
+const POST_CATEGORY_OPTIONS = CATEGORY_OPTIONS.map((option) =>
+  option.value === 'housing' ? { ...option, label: 'Study' } : option,
+);
+
 const ICON_OPTIONS = [
   { label: 'Document', value: 'doc' },
   { label: 'Home', value: 'housing' },
@@ -245,7 +249,7 @@ export default config({
         category: fields.select({
           label: 'Category',
           description: 'Readers can filter the blog by this category.',
-          options: CATEGORY_OPTIONS,
+          options: POST_CATEGORY_OPTIONS,
           defaultValue: 'daily',
         }),
         headline: fields.text({

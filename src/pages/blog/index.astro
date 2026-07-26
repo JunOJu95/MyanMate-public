@@ -22,7 +22,7 @@ const categories = ['all', ...POST_CATEGORIES] as const;
         data-i18n-aria="blog.filterLabel"
       >
         {categories.map((category, index) => {
-          const key = 'guides.filter.' + category;
+          const key = 'blog.filter.' + category;
           return (
             <button
               class:list={['blog-filter-button', { on: index === 0 }]}

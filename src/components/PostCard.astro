@@ -14,7 +14,7 @@ interface Props {
 const { post, variant = 'row', headingLevel = 2, showDetails = true, showMeta = showDetails } = Astro.props;
 const HeadingTag = `h${headingLevel}`;
 const href = '/blog/' + post.slug;
-const categoryKey = 'guides.filter.' + post.category;
+const categoryKey = 'blog.filter.' + post.category;
 const date = post.publishedDate ?? '';
 const reviewed = post.lastReviewed ?? '';
 const isFeedCard = variant !== 'home';
