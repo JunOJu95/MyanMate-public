@@ -1,0 +1,112 @@
+title:
+  en: 1:1 Interview Coaching
+  ko: 1:1 면접 코칭
+  my: 1:1 အလုပ်အင်တာဗျူး Coaching
+summary:
+  en: Practice a real job interview one-to-one using one job post you found and your own experience, then receive feedback on answer structure, delivery, and Korean phrasing.
+  ko: 고객이 직접 찾은 채용공고 1개와 본인의 실제 경험을 바탕으로 실전처럼 면접을 연습하고, 답변 구성·전달 방식·한국어 표현을 피드백받는 서비스입니다.
+  my: သင်ကိုယ်တိုင်ရှာထားသော job post တစ်ခုနှင့် မိမိ၏အမှန်တကယ် experience ကို အခြေခံ၍ 1:1 interview လေ့ကျင့်ပြီး အဖြေဖွဲ့စည်းပုံ၊ ပြောဆိုပုံနှင့် ကိုရီးယားအသုံးအနှုန်းအပေါ် feedback ရယူနိုင်သော service ဖြစ်ပါသည်။
+recommendedFor:
+  - en: You have a part-time, office, skilled, or professional job interview coming up in Korea.
+    ko: 한국에서 알바, 사무직, 기술직 또는 전문직 면접을 앞둔 분
+    my: ကိုရီးယားတွင် part-time၊ office၊ skilled သို့မဟုတ် professional job interview ဖြေရမည့်သူ
+  - en: You know what you want to say but find it difficult to answer clearly in Korean.
+    ko: 하고 싶은 말은 있지만 한국어로 명확하게 답하기 어려운 분
+    my: ပြောချင်သောအကြောင်းအရာရှိသော်လည်း ကိုရီးယားလို ရှင်းလင်းစွာဖြေရန် ခက်ခဲသူ
+  - en: You want to experience a mock interview, receive direct feedback, and try the answers again.
+    ko: 모의면접을 경험하고 바로 피드백받은 뒤 답변을 다시 연습하고 싶은 분
+    my: Mock interview လုပ်ပြီး တိုက်ရိုက် feedback ရယူကာ အဖြေကို ထပ်မံလေ့ကျင့်လိုသူ
+included:
+  - title:
+      en: Interview scope and question planning
+      ko: 면접 범위와 질문 설계
+      my: Interview scope နှင့် မေးခွန်းစီစဉ်ခြင်း
+    body:
+      en: We review one job post you found, your current resume, and the interview format to prepare 8 to 12 relevant questions.
+      ko: 고객이 직접 찾은 채용공고 1개, 현재 이력서와 면접 방식을 확인해 관련 질문 8~12개를 준비합니다.
+      my: သင်ကိုယ်တိုင်ရှာထားသော job post တစ်ခု၊ လက်ရှိ resume နှင့် interview ပုံစံကို စစ်ဆေးပြီး သက်ဆိုင်သောမေးခွန်း 8 ခုမှ 12 ခုအထိ ပြင်ဆင်ပါသည်။
+  - title:
+      en: One-to-one mock interview
+      ko: 1:1 실전 모의면접
+      my: 1:1 လက်တွေ့ Mock Interview
+    body:
+      en: We run a realistic practice round based on common questions and the requirements shown in the job post.
+      ko: 공통 질문과 채용공고에 공개된 요구사항을 바탕으로 실제 면접처럼 한 차례 연습합니다.
+      my: Common questions နှင့် job post တွင် ဖော်ပြထားသော requirements ကို အခြေခံ၍ တကယ့် interview ကဲ့သို့ တစ်ကြိမ်လေ့ကျင့်ပါသည်။
+  - title:
+      en: Answer-structure feedback
+      ko: 답변 구성 피드백
+      my: အဖြေဖွဲ့စည်းပုံ Feedback
+    body:
+      en: We check whether each answer is truthful, relevant, easy to follow, and supported by a clear example from your own experience.
+      ko: 답변이 사실에 맞고 질문과 관련 있으며 이해하기 쉬운지, 본인 경험의 구체적인 예시가 담겼는지 함께 점검합니다.
+      my: အဖြေသည် အမှန်တကယ်ဖြစ်မှု၊ မေးခွန်းနှင့်သက်ဆိုင်မှု၊ နားလည်ရလွယ်ကူမှုနှင့် မိမိ experience မှ တိကျသောဥပမာ ပါဝင်မှုကို စစ်ဆေးပါသည်။
+  - title:
+      en: Delivery and Korean-phrasing feedback
+      ko: 전달 방식과 한국어 표현 피드백
+      my: ပြောဆိုပုံနှင့် ကိုရီးယားအသုံးအနှုန်း Feedback
+    body:
+      en: We give practical feedback on pace, clarity, confidence, and Korean wording without replacing your answer with a script.
+      ko: 외운 답변으로 바꾸지 않고 말하는 속도, 명확성, 자신감과 한국어 표현을 실용적으로 피드백합니다.
+      my: အလွတ်ကျက် script ဖြင့် အစားမထိုးဘဲ စကားပြောနှုန်း၊ ရှင်းလင်းမှု၊ ယုံကြည်မှုနှင့် ကိုရီးယားအသုံးအနှုန်းကို လက်တွေ့ကျကျ feedback ပေးပါသည်။
+  - title:
+      en: Answer retry
+      ko: 피드백 반영 후 재답변
+      my: Feedback ပြီးနောက် ပြန်လည်ဖြေဆိုခြင်း
+    body:
+      en: You answer the key questions again in your own words and confirm what has improved before the session ends.
+      ko: 핵심 질문에 본인의 말로 다시 답하고, 세션을 마치기 전에 달라진 점을 확인합니다.
+      my: အဓိကမေးခွန်းများကို မိမိစကားဖြင့် ပြန်လည်ဖြေဆိုပြီး session မပြီးမီ တိုးတက်လာသောအချက်များကို စစ်ဆေးပါသည်။
+deliverables:
+  - en: A customized list of 8 to 12 interview practice questions
+    ko: 맞춤 면접 연습 질문 8~12개
+    my: ကိုယ်ပိုင်အခြေအနေနှင့်ကိုက်ညီသော interview လေ့ကျင့်မေးခွန်း 8 ခုမှ 12 ခု
+  - en: Notes on answer structure, examples, delivery, and Korean phrasing
+    ko: 답변 구성, 경험 예시, 전달 방식과 한국어 표현 피드백 메모
+    my: အဖြေဖွဲ့စည်းပုံ၊ experience ဥပမာ၊ ပြောဆိုပုံနှင့် ကိုရီးယားအသုံးအနှုန်း feedback မှတ်စု
+  - en: A final checklist to review before the interview
+    ko: 실제 면접 전 확인할 최종 체크리스트
+    my: တကယ့် interview မတိုင်မီ စစ်ဆေးရန် final checklist
+preparation:
+  - en: One job post you found and want to interview for
+    ko: 고객이 직접 찾은 면접 대상 채용공고 1개
+    my: သင်ကိုယ်တိုင်ရှာထားပြီး interview ဖြေလိုသော job post တစ်ခု
+  - en: Your current resume with sensitive numbers and unnecessary personal details hidden
+    ko: 민감번호와 불필요한 개인정보를 가린 현재 이력서
+    my: Sensitive numbers နှင့် မလိုအပ်သောကိုယ်ရေးအချက်အလက်များကို ဖုံးထားသော လက်ရှိ resume
+  - en: Your expected interview date, interview language, and the questions that worry you most
+    ko: 예상 면접일, 면접 언어와 가장 걱정되는 질문
+    my: ခန့်မှန်း interview date၊ interview language နှင့် အစိုးရိမ်ဆုံးမေးခွန်းများ
+process:
+  - title:
+      en: Send the interview goal by DM
+      ko: 면접 목표를 DM으로 보내기
+      my: Interview goal ကို DM ပို့ခြင်း
+    body:
+      en: Tell us the role, expected interview date, preferred language, and whether you need the part-time or career track.
+      ko: 지원 직무, 예상 면접일, 희망 언어와 알바·초보 또는 사무직·전문직 트랙 중 필요한 범위를 알려주세요.
+      my: လျှောက်မည့် role၊ ခန့်မှန်း interview date၊ အသုံးပြုလိုသောဘာသာစကားနှင့် part-time/beginner သို့မဟုတ် office/professional track ကို ပြောပြပါ။
+  - title:
+      en: Confirm the material, schedule, and cost
+      ko: 자료·일정·비용 확인
+      my: Material၊ အချိန်နှင့် ကုန်ကျစရိတ် အတည်ပြုခြင်း
+    body:
+      en: We confirm the job post, available coaching scope, 60-minute session schedule, and cost before starting.
+      ko: 시작 전에 채용공고, 가능한 코칭 범위, 60분 세션 일정과 비용을 확인합니다.
+      my: မစတင်မီ job post၊ လုပ်ဆောင်နိုင်သော coaching scope၊ 60-minute session အချိန်နှင့် ကုန်ကျစရိတ်ကို အတည်ပြုပါသည်။
+  - title:
+      en: Practice, receive feedback, and retry
+      ko: 연습하고 피드백받은 뒤 다시 답하기
+      my: လေ့ကျင့်ခြင်း၊ Feedback ရယူခြင်းနှင့် ပြန်လည်ဖြေဆိုခြင်း
+    body:
+      en: In one session, we confirm the goal, run a mock interview, give feedback, and practice the key answers again.
+      ko: 한 세션에서 목표 확인, 모의면접, 피드백과 핵심 답변 재연습을 진행합니다.
+      my: Session တစ်ခုအတွင်း goal အတည်ပြုခြင်း၊ mock interview၊ feedback နှင့် အဓိကအဖြေများကို ပြန်လည်လေ့ကျင့်ခြင်းကို ပြုလုပ်ပါသည်။
+  - title:
+      en: Attend the interview yourself
+      ko: 실제 면접은 본인이 직접 참여
+      my: တကယ့် Interview ကို ကိုယ်တိုင်တက်ရောက်ခြင်း
+    body:
+      en: You review the notes, decide your final answers, and attend the interview yourself.
+      ko: 피드백 메모를 확인하고 최종 답변을 스스로 정한 뒤 실제 면접에는 본인이 직접 참여합니다.
+      my: Feedback မှတ်စုကို စစ်ဆေးပြီး နောက်ဆုံးအဖြေကို ကိုယ်တိုင်ဆုံးဖြတ်ကာ တကယ့် interview ကို ကိုယ်တိုင်တက်ရောက်ပါသည်။
