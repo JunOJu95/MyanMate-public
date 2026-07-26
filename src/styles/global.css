@@ -1813,6 +1813,12 @@ body.lang-my .blog-filter-button{font-family:'Noto Sans Myanmar','Padauk',sans-s
 .home-services-layout{display:grid;grid-template-columns:1fr;gap:38px;}
 .home-services-intro .home-section-lead{margin-top:14px;}
 .home-service-list{border-top:2px solid var(--ink);}
+.home-services-all-link{
+  width:100%;
+  justify-content:flex-end;
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+}
 .home-service-preview{
   position:relative;
   display:grid;
