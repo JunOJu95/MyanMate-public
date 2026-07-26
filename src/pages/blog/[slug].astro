@@ -74,4 +74,65 @@ const categoryKey = 'guides.filter.' + meta.category;
       </div>
     </article>
   </div>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    document.querySelectorAll('details.blog-faq-item').forEach((item) => {
+      if (!(item instanceof HTMLDetailsElement) || item.dataset.faqAnimated) return;
+
+      const summary = item.querySelector('summary');
+      const answer = item.querySelector('.blog-faq-answer');
+      if (!summary || !(answer instanceof HTMLElement)) return;
+
+      item.dataset.faqAnimated = 'true';
+
+      summary.addEventListener('click', (event) => {
+        if (reducedMotion.matches) return;
+
+        event.preventDefault();
+
+        const startHeight = item.offsetHeight;
+        item.style.overflow = 'hidden';
+        item.style.height = `${startHeight}px`;
+
+        if (item.open) {
+          const endHeight = summary.offsetHeight;
+          item.classList.add('is-closing');
+          item.classList.remove('is-opening');
+
+          requestAnimationFrame(() => {
+            item.style.height = `${endHeight}px`;
+          });
+
+          item.addEventListener('transitionend', function finish(event) {
+            if (event.propertyName !== 'height') return;
+            item.removeEventListener('transitionend', finish);
+            item.open = false;
+            item.classList.remove('is-closing');
+            item.style.height = '';
+            item.style.overflow = '';
+          });
+        } else {
+          item.open = true;
+          item.classList.add('is-opening');
+          item.classList.remove('is-closing');
+
+          const endHeight = summary.offsetHeight + answer.offsetHeight;
+
+          requestAnimationFrame(() => {
+            item.style.height = `${endHeight}px`;
+          });
+
+          item.addEventListener('transitionend', function finish(event) {
+            if (event.propertyName !== 'height') return;
+            item.removeEventListener('transitionend', finish);
+            item.classList.remove('is-opening');
+            item.style.height = '';
+            item.style.overflow = '';
+          });
+        }
+      });
+    });
+  </script>
 </Base>
