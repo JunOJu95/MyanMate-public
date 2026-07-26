@@ -214,11 +214,11 @@ export async function getServiceOffer(id: ServiceId): Promise<ServiceOffer | nul
     case 'career':
       entry = await reader.singletons.careerServiceOffer.read();
       break;
+    case 'interview':
+      entry = await reader.singletons.interviewServiceOffer.read();
+      break;
     case 'portfolio':
       entry = await reader.singletons.portfolioServiceOffer.read();
-      break;
-    case 'study':
-      entry = await reader.singletons.studyServiceOffer.read();
       break;
     case 'housing':
       entry = await reader.singletons.housingServiceOffer.read();
@@ -230,21 +230,21 @@ export async function getServiceOffer(id: ServiceId): Promise<ServiceOffer | nul
 }
 
 export async function getServiceOffers(): Promise<Record<ServiceId, ServiceOffer>> {
-  const [partTimeJob, career, portfolio, study, housing] = await Promise.all([
+  const [partTimeJob, career, interview, portfolio, housing] = await Promise.all([
     getServiceOffer('part-time-job'),
     getServiceOffer('career'),
+    getServiceOffer('interview'),
     getServiceOffer('portfolio'),
-    getServiceOffer('study'),
     getServiceOffer('housing'),
   ]);
-  if (!partTimeJob || !career || !portfolio || !study || !housing) {
+  if (!partTimeJob || !career || !interview || !portfolio || !housing) {
     throw new Error('Service offer content is missing from src/content/service-offers.');
   }
   return {
     'part-time-job': partTimeJob,
     career,
+    interview,
     portfolio,
-    study,
     housing,
   };
 }

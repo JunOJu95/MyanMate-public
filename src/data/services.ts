@@ -4,7 +4,7 @@
    offers live under src/content/service-offers.
    ========================================================================= */
 
-export const serviceIds = ['part-time-job', 'career', 'portfolio', 'study', 'housing'] as const;
+export const serviceIds = ['part-time-job', 'career', 'interview', 'portfolio', 'housing'] as const;
 export type ServiceId = (typeof serviceIds)[number];
 
 /** Only resume and housing have standalone long-form information singletons. */
@@ -29,14 +29,14 @@ export const services: Service[] = [
     reviewTagKey: 'ui.tag.careerSupport',
   },
   {
+    id: 'interview',
+    iconKey: 'users',
+    reviewTagKey: 'ui.tag.interviewCoaching',
+  },
+  {
     id: 'portfolio',
     iconKey: 'doc',
     reviewTagKey: 'ui.tag.portfolioSupport',
-  },
-  {
-    id: 'study',
-    iconKey: 'korean',
-    reviewTagKey: 'ui.tag.studySupport',
   },
   {
     id: 'housing',
@@ -59,7 +59,6 @@ export const serviceById = (id: string): Service | undefined => (
 
 /** Which service a guide category should suggest after the free information. */
 export const categoryToService: Partial<Record<string, ServiceId>> = {
-  visa: 'study',
   jobs: 'part-time-job',
   housing: 'housing',
 };

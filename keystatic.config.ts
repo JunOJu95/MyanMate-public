@@ -341,18 +341,18 @@ export default config({
       previewUrl: '/services/career',
       schema: serviceOfferSchema(),
     }),
+    interviewServiceOffer: singleton({
+      label: 'Service · 1:1 interview coaching',
+      path: 'src/content/service-offers/interview',
+      format: { data: 'yaml' },
+      previewUrl: '/services/interview',
+      schema: serviceOfferSchema(),
+    }),
     portfolioServiceOffer: singleton({
       label: 'Service · Portfolio support',
       path: 'src/content/service-offers/portfolio',
       format: { data: 'yaml' },
       previewUrl: '/services/portfolio',
-      schema: serviceOfferSchema(),
-    }),
-    studyServiceOffer: singleton({
-      label: 'Service · Study in Korea support',
-      path: 'src/content/service-offers/study',
-      format: { data: 'yaml' },
-      previewUrl: '/services/study',
       schema: serviceOfferSchema(),
     }),
     housingServiceOffer: singleton({
