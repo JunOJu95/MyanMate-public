@@ -18,7 +18,7 @@ if (!data) return Astro.redirect('/blog');
 const { meta, bodyHtml } = data;
 const date = meta.publishedDate ?? '';
 const reviewed = meta.lastReviewed ?? '';
-const categoryKey = 'guides.filter.' + meta.category;
+const categoryKey = 'blog.filter.' + meta.category;
 ---
 <Base
   title={meta.headline}
