@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import HomeServicePreview from '../components/HomeServicePreview.astro';
 import Icon from '../components/Icon.astro';
-import LocalizedText from '../components/LocalizedText.astro';
 import PostCard from '../components/PostCard.astro';
 import SocialDmPanel from '../components/SocialDmPanel.astro';
 import T from '../components/T.astro';
@@ -11,22 +10,17 @@ import { services } from '../data/services';
 import { defaultLang, t } from '../i18n/ui';
 import {
   getLatestPosts,
-  getServiceContents,
   getServiceOffers,
-  type LocalizedText as LocalizedTextValue,
 } from '../lib/content';
 
-const [serviceContent, serviceOffers, latestPosts] = await Promise.all([
-  getServiceContents(),
+const [serviceOffers, latestPosts] = await Promise.all([
   getServiceOffers(),
   getLatestPosts(4),
 ]);
 const informationLinks: Array<{
   id: string;
-  titleKey?: string;
-  title?: LocalizedTextValue;
-  summaryKey?: string;
-  summary?: LocalizedTextValue;
+  titleKey: string;
+  summaryKey: string;
   href: string;
   icon: string;
   event: string;
@@ -41,27 +35,19 @@ const informationLinks: Array<{
   },
   {
     id: 'resume',
-    title: serviceContent.resume.title,
-    summary: serviceContent.resume.description,
+    titleKey: 'home.information.resume.title',
+    summaryKey: 'home.information.resume.summary',
     href: '/guides/resume',
     icon: 'resumeSvc',
     event: 'home_information_resume',
   },
   {
     id: 'housing',
-    title: serviceContent.housing.title,
-    summary: serviceContent.housing.description,
+    titleKey: 'home.information.housing.title',
+    summaryKey: 'home.information.housing.summary',
     href: '/guides/housing',
     icon: 'housing',
     event: 'home_information_housing',
-  },
-  {
-    id: 'all',
-    titleKey: 'home.information.all.title',
-    summaryKey: 'home.information.all.summary',
-    href: '/blog',
-    icon: 'topics',
-    event: 'home_information_all',
   },
 ];
 const processSteps = [
@@ -154,12 +140,8 @@ const processSteps = [
             <span class="home-information-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
             <span class="home-information-icon" aria-hidden="true"><Icon name={entry.icon} size={21} /></span>
             <span class="home-information-copy">
-              {entry.title
-                ? <LocalizedText value={entry.title} tag="h3" class="home-information-title" />
-                : <T k={entry.titleKey!} tag="h3" class="home-information-title" />}
-              {entry.summary
-                ? <LocalizedText value={entry.summary} tag="span" class="home-information-summary" />
-                : <T k={entry.summaryKey!} tag="span" class="home-information-summary" />}
+              <T k={entry.titleKey} tag="h3" class="home-information-title" />
+              <T k={entry.summaryKey} tag="span" class="home-information-summary" />
             </span>
             <span class="home-information-arrow" aria-hidden="true">→</span>
           </a>
