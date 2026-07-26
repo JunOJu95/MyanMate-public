@@ -17,6 +17,9 @@ const [serviceOffers, latestPosts] = await Promise.all([
   getServiceOffers(),
   getLatestPosts(4),
 ]);
+const homeServices = services.filter(({ id }) => (
+  id === 'part-time-job' || id === 'career' || id === 'portfolio'
+));
 const informationLinks: Array<{
   id: string;
   titleKey: string;
@@ -161,15 +164,15 @@ const processSteps = [
           <T k="home.services.preview.eyebrow" tag="p" class="home-section-eyebrow" />
           <T k="home.services.preview.title" tag="h2" class="home-display-title" />
           <T k="home.services.preview.lead" tag="p" class="home-section-lead" />
-          <a class="home-text-link" href="/services" data-event="home_services_all">
+        </div>
+        <div class="home-service-list" data-stagger>
+          {homeServices.map((service, index) => (
+            <HomeServicePreview service={service} offer={serviceOffers[service.id]} index={index} />
+          ))}
+          <a class="home-text-link home-services-all-link" href="/services" data-event="home_services_all">
             <T k="home.services.preview.viewAll" />
             <span aria-hidden="true">→</span>
           </a>
-        </div>
-        <div class="home-service-list" data-stagger>
-          {services.map((service, index) => (
-            <HomeServicePreview service={service} offer={serviceOffers[service.id]} index={index} />
-          ))}
         </div>
       </div>
     </section>
