@@ -8,6 +8,7 @@ export const icons: Record<string, string> = {
   visa: '<path d="M5 3.5h14a1.5 1.5 0 0 1 1.5 1.5v14a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 19V5A1.5 1.5 0 0 1 5 3.5Z"/><circle cx="9.5" cy="10" r="2.2"/><path d="M6.4 15.4c.5-1.4 1.7-2.1 3.1-2.1s2.6.7 3.1 2.1"/><path d="M14.5 8.5h3M14.5 11.5h3M7 18h10"/>',
   jobs: '<rect x="3" y="7.5" width="18" height="12" rx="2.2"/><path d="M8.5 7.5V6a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v1.5"/><path d="M3 12.5h7M14 12.5h7M11.5 12v1.4M12.5 12v1.4"/>',
   housing: '<path d="M4 11.2 12 4.2l8 7"/><path d="M5.8 10v9.3h12.4V10"/><path d="M9.8 19.3v-4.6h4.4v4.6"/>',
+  study: '<path d="M4 6.5 12 3l8 3.5-8 3.5Z"/><path d="M6.8 8.2v5.1c0 1.4 2.3 2.7 5.2 2.7s5.2-1.3 5.2-2.7V8.2"/><path d="M20 6.7v6.1"/>',
   korean: '<path d="M20.5 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.8A8 8 0 1 1 20.5 12Z"/><path d="M9 11.5h6M12 9v5"/>',
   daily: '<circle cx="12" cy="12" r="3.6"/><path d="M12 3.2v2.1M12 18.7v2.1M4.8 4.8l1.5 1.5M17.7 17.7l1.5 1.5M3.2 12h2.1M18.7 12h2.1M4.8 19.2l1.5-1.5M17.7 6.3l1.5-1.5"/>',
   visaSvc: '<path d="M7 3.5h6.2L18 8.3V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7.5 3.5Z"/><path d="M13 3.6V8h4.4"/><path d="m9.2 13.7 1.9 1.9 3.4-3.6"/>',
@@ -40,6 +41,7 @@ export const categoryIcon: Record<string, string> = {
   visa: 'visa',
   jobs: 'jobs',
   housing: 'housing',
+  study: 'study',
   korean: 'korean',
   daily: 'daily',
 };

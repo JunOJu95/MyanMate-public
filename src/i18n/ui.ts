@@ -202,7 +202,7 @@ export const ui = {
   'blog.filter.all':     { en: 'All', ko: '전체', my: 'အားလုံး' },
   'blog.filter.visa':    { en: 'Visa', ko: '비자', my: 'ဗီဇာ' },
   'blog.filter.jobs':    { en: 'Jobs', ko: '알바·취업', my: 'အလုပ်' },
-  'blog.filter.housing': { en: 'Study', ko: '학업', my: 'ကျောင်း' },
+  'blog.filter.study':    { en: 'Study', ko: '학업', my: 'ကျောင်း' },
   'blog.filter.korean':  { en: 'Korean', ko: '한국어', my: 'ကိုရီးယားဘာသာ' },
   'blog.filter.daily':   { en: 'Daily life', ko: '생활 일반', my: 'နေ့စဉ်ဘဝ' },
   'blog.empty':         { en: 'No posts yet — check back soon.', ko: '아직 글이 없어요. 곧 새 글이 올라옵니다.', my: 'ပို့စ် မရှိသေးပါ — မကြာမီ ပြန်လာကြည့်ပါ။' },

@@ -293,7 +293,7 @@ export const reviewTagKey: Record<string, string> = {
 };
 
 /* ---------------- blog posts ---------------- */
-export const POST_CATEGORIES = ['visa', 'jobs', 'housing', 'korean', 'daily'] as const;
+export const POST_CATEGORIES = ['visa', 'jobs', 'study', 'korean', 'daily'] as const;
 export type PostCategory = (typeof POST_CATEGORIES)[number];
 
 export interface Post {
