@@ -43,7 +43,7 @@ const categories = ['all', ...POST_CATEGORIES] as const;
         <p class="blog-empty" data-i18n="blog.empty">{t('blog.empty', defaultLang)}</p>
       ) : (
         <>
-          <div class="blog-feed-list">
+          <div class="blog-feed-list" id="blog-feed-list">
             {posts.map((post) => (
               <PostCard post={post} variant="row" showDetails={false} showMeta={true} />
             ))}
@@ -51,6 +51,17 @@ const categories = ['all', ...POST_CATEGORIES] as const;
           <p class="blog-empty" data-blog-empty-category hidden aria-live="polite" data-i18n="blog.emptyCategory">
             {t('blog.emptyCategory', defaultLang)}
           </p>
+          <div class="blog-see-more-wrap" data-blog-see-more-wrap hidden>
+            <button
+              class="blog-see-more"
+              type="button"
+              aria-controls="blog-feed-list"
+              data-blog-see-more
+            >
+              <span data-i18n="btn.more">{t('btn.more', defaultLang)}</span>
+              <span class="blog-see-more-plus" aria-hidden="true">+</span>
+            </button>
+          </div>
         </>
       )}
     </section>
