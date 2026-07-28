@@ -92,7 +92,7 @@ export const ui = {
   'home.topics.korean':  { en: 'Korean',     ko: '한국어',    my: 'ကိုရီးယားဘာသာ' },
   'home.topics.daily':   { en: 'Daily life', ko: '생활 일반', my: 'နေ့စဉ်ဘဝ' },
   'home.topics.all':     { en: 'See all',    ko: '전체 보기',  my: 'အားလုံး ကြည့်ရန်' },
-  'home.services.title': { en: 'Support for your next step in Korea', ko: '한국에서 다음 단계를 준비하는 서비스', my: 'ကိုရီးယားတွင် နောက်တစ်ဆင့်အတွက် အကူအညီ' },
+  'home.services.title': { en: 'Support Services for Life in Korea', ko: '한국 생활 지원 서비스', my: 'ကိုရီးယားနေထိုင်မှု အကူအညီ ဝန်ဆောင်မှုများ' },
   'home.services.lead': { en: 'Short, practical support for job applications, one-to-one interview practice, portfolios, and home viewing.', ko: '지원서, 1:1 면접 연습, 포트폴리오와 집 보기를 위한 짧고 실용적인 지원입니다.', my: 'အလုပ်လျှောက်ရန်၊ 1:1 interview လေ့ကျင့်ရန်၊ portfolio ပြင်ရန်နှင့် အိမ်ကြည့်ရန် လက်တွေ့ကျသော အကူအညီများ။' },
   'home.services.preview.eyebrow': { en: 'When you need a closer look', ko: '조금 더 구체적인 도움이 필요할 때', my: 'ပိုမိုအသေးစိတ် အကူအညီလိုသည့်အခါ' },
   'home.services.preview.title': { en: 'Explore our current services', ko: '현재 제공하는 서비스를 살펴보세요', my: 'လက်ရှိပေးနေသော service များကို ကြည့်ရှုပါ' },
