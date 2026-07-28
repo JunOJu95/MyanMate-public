@@ -200,6 +200,8 @@ export const ui = {
 
   /* 3b. Blog */
   'blog.title':         { en: 'Blog', ko: '블로그', my: 'ဘလော့ဂ်' },
+  'blog.seo.title':     { en: 'Korea Guides for Myanmar People', ko: '미얀마인을 위한 한국 생활 가이드', my: 'မြန်မာများအတွက် ကိုရီးယား လမ်းညွှန်များ' },
+  'blog.seo.description': { en: 'Myanmar-language guides for Korea visas, study, part-time jobs, housing, Korean exams, and everyday life for Myanmar people in Korea or preparing to come to Korea.', ko: '한국에 거주 중이거나 한국을 준비하는 미얀마인을 위한 비자, 유학, 아르바이트, 주거, 한국어 시험과 생활 정보입니다.', my: 'ကိုရီးယားတွင်နေထိုင်နေသော မြန်မာများနှင့် ကိုရီးယားလာရန်ပြင်ဆင်နေသူများအတွက် ဗီဇာ၊ ကျောင်း၊ အချိန်ပိုင်းအလုပ်၊ နေအိမ်၊ ကိုရီးယားစာမေးပွဲနှင့် နေ့စဉ်ဘဝ လမ်းညွှန်များ။' },
   'blog.latest':        { en: 'Latest from the blog', ko: '블로그 최신 글', my: 'ဘလော့ဂ်မှ နောက်ဆုံးစာများ' },
   'blog.viewAll':       { en: 'View all posts', ko: '전체 글 보기', my: 'စာအားလုံး ကြည့်ရန်' },
   'blog.back':          { en: 'Back to Blog', ko: '블로그로 돌아가기', my: 'ဘလော့ဂ်သို့ ပြန်သွားရန်' },

@@ -1,0 +1,14 @@
+---
+import BlogIndexPage from '../../../components/BlogIndexPage.astro';
+import { getPosts } from '../../../lib/content';
+
+const category = 'study';
+const posts = (await getPosts()).filter((post) => post.category === category);
+---
+<BlogIndexPage
+  posts={posts}
+  activeCategory={category}
+  title="Study in Korea Guides for Myanmar Students"
+  description="Myanmar-language study in Korea guides for Myanmar students: TOPIK, university choice, scholarships, study plans, documents, and admission preparation."
+  canonicalPath="/blog/study"
+/>

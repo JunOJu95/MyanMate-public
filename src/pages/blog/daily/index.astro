@@ -1,0 +1,14 @@
+---
+import BlogIndexPage from '../../../components/BlogIndexPage.astro';
+import { getPosts } from '../../../lib/content';
+
+const category = 'daily';
+const posts = (await getPosts()).filter((post) => post.category === category);
+---
+<BlogIndexPage
+  posts={posts}
+  activeCategory={category}
+  title="Korea Daily Life Guides for Myanmar People"
+  description="Myanmar-language Korea daily life guides for Myanmar people in Korea or preparing to come to Korea: housing, address change, health insurance, weather, apps, and everyday setup."
+  canonicalPath="/blog/daily"
+/>

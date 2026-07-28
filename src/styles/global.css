@@ -1314,6 +1314,9 @@ body.lang-my .about-proof-strip p{font-family:'Noto Sans Myanmar','Padauk',sans-
 }
 .blog-filter::-webkit-scrollbar{display:none;}
 .blog-filter-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   flex:0 0 auto;
   min-width:72px;
   min-height:40px;
@@ -1325,13 +1328,15 @@ body.lang-my .about-proof-strip p{font-family:'Noto Sans Myanmar','Padauk',sans-
   font:inherit;
   font-size:13px;
   font-weight:800;
+  text-decoration:none;
   white-space:nowrap;
   cursor:pointer;
   transition:color 160ms ease,background 160ms ease,border-color 160ms ease;
 }
 .blog-filter-button:hover{color:var(--brand-strong);border-color:var(--line);}
 .blog-filter-button.on,
-.blog-filter-button[aria-pressed="true"]{color:#fff;background:var(--brand-strong);border-color:var(--brand-strong);}
+.blog-filter-button[aria-pressed="true"],
+.blog-filter-button[aria-current="page"]{color:#fff;background:var(--brand-strong);border-color:var(--brand-strong);}
 body.lang-my .blog-filter-button{font-family:'Noto Sans Myanmar','Padauk',sans-serif;line-height:1.55;}
 
 .blog-feed{padding:30px 0 0;}

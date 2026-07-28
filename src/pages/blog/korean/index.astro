@@ -1,0 +1,14 @@
+---
+import BlogIndexPage from '../../../components/BlogIndexPage.astro';
+import { getPosts } from '../../../lib/content';
+
+const category = 'korean';
+const posts = (await getPosts()).filter((post) => post.category === category);
+---
+<BlogIndexPage
+  posts={posts}
+  activeCategory={category}
+  title="Korean Exam and Language Guides for Myanmar People"
+  description="Myanmar-language Korean exam and language guides for Myanmar people in Korea: TOPIK, KIIP, EPS-TOPIK, Korean study choices, and exam preparation."
+  canonicalPath="/blog/korean"
+/>
