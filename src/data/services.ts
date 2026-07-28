@@ -7,8 +7,14 @@
 export const serviceIds = ['part-time-job', 'career', 'interview', 'portfolio', 'housing'] as const;
 export type ServiceId = (typeof serviceIds)[number];
 
-/** Only resume and housing have standalone long-form information singletons. */
-export const serviceInfoIds = ['resume', 'housing'] as const;
+/** Standalone long-form information pages managed through Keystatic. */
+export const serviceInfoIds = [
+  'resume',
+  'housing',
+  'work-pay',
+  'healthcare',
+  'life-admin',
+] as const;
 export type ServiceInfoId = (typeof serviceInfoIds)[number];
 
 export interface Service {

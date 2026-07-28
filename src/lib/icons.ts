@@ -11,6 +11,8 @@ export const icons: Record<string, string> = {
   study: '<path d="M4 6.5 12 3l8 3.5-8 3.5Z"/><path d="M6.8 8.2v5.1c0 1.4 2.3 2.7 5.2 2.7s5.2-1.3 5.2-2.7V8.2"/><path d="M20 6.7v6.1"/>',
   korean: '<path d="M20.5 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.8A8 8 0 1 1 20.5 12Z"/><path d="M9 11.5h6M12 9v5"/>',
   daily: '<circle cx="12" cy="12" r="3.6"/><path d="M12 3.2v2.1M12 18.7v2.1M4.8 4.8l1.5 1.5M17.7 17.7l1.5 1.5M3.2 12h2.1M18.7 12h2.1M4.8 19.2l1.5-1.5M17.7 6.3l1.5-1.5"/>',
+  health: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.7A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/><path d="M12 9v6M9 12h6"/>',
+  admin: '<rect x="3.5" y="4.5" width="17" height="15" rx="2.2"/><path d="M8 4.5v-2M16 4.5v-2M3.5 9h17"/><path d="M8 13h3M8 16h6"/>',
   visaSvc: '<path d="M7 3.5h6.2L18 8.3V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7.5 3.5Z"/><path d="M13 3.6V8h4.4"/><path d="m9.2 13.7 1.9 1.9 3.4-3.6"/>',
   resumeSvc: '<path d="M7 3.5h6.2L18 8.3V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5A1.5 1.5 0 0 1 7.5 3.5Z"/><path d="M13 3.6V8h4.4"/><circle cx="11.6" cy="12.4" r="1.7"/><path d="M8.8 17.3c.4-1.3 1.4-2 2.8-2s2.4.7 2.8 2"/>',
   topics: '<rect x="3.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.8"/>',

@@ -1,0 +1,130 @@
+lastReviewed: 2026-07-28
+title:
+  en: Health insurance & medical visits
+  ko: 건강보험·병원 이용 정보
+  my: ကျန်းမာရေးအာမခံနှင့် ဆေးရုံအသုံးပြုမှု အချက်အလက်
+description:
+  en: Practical steps for checking your insurance status, preparing for a medical visit, and reviewing costs, prescriptions, and documents afterward.
+  ko: 건강보험 가입 상태를 확인하는 방법부터 병원 방문 준비, 진료 후 비용·처방·서류 확인까지 실용적인 순서로 정리했습니다.
+  my: ကျန်းမာရေးအာမခံအခြေအနေ စစ်ဆေးခြင်းမှ ဆေးရုံသွားရန်ပြင်ဆင်ခြင်း၊ ကုသပြီးနောက် ကုန်ကျစရိတ်၊ ဆေးညွှန်းနှင့် စာရွက်စာတမ်းများ စစ်ဆေးခြင်းအထိ လက်တွေ့အသုံးဝင်သောအစဉ်ဖြင့် စုစည်းထားပါသည်။
+sections:
+  - icon: health
+    title:
+      en: Check your health-insurance status
+      ko: 건강보험 상태 확인하기
+      my: ကျန်းမာရေးအာမခံအခြေအနေကို စစ်ဆေးရန်
+    intro:
+      en: Eligibility and contributions can change with employment, residence, and family circumstances. Confirm your current official record instead of guessing from your visa or pay slip alone.
+      ko: 취업·퇴사, 거주와 가족 상황에 따라 가입 유형과 고지 방식이 달라질 수 있습니다. 체류자격이나 급여 공제만 보고 추측하지 말고 현재 공식 기록을 확인하세요.
+      my: အလုပ်ဝင်ခြင်း၊ အလုပ်ထွက်ခြင်း၊ နေထိုင်မှုနှင့် မိသားစုအခြေအနေကြောင့် အာမခံအမျိုးအစားနှင့် ပေးဆောင်ပုံ ပြောင်းနိုင်ပါသည်။ ဗီဇာ သို့မဟုတ် လစာဖြတ်တောက်မှုတစ်ခုတည်းဖြင့် မခန့်မှန်းဘဲ လက်ရှိတရားဝင်မှတ်တမ်းကို စစ်ဆေးပါ။
+    items:
+      - icon: check
+        title:
+          en: Confirm the registered category
+          ko: 현재 가입 유형 확인
+          my: လက်ရှိမှတ်ပုံတင်အမျိုးအစားကို စစ်ဆေးပါ
+        body:
+          en: Check whether you are currently recorded as an employee insured, self-employed insured, or dependent in the NHIS system. Do not assume that employment, a family relationship, or a particular stay status automatically means one category.
+          ko: 국민건강보험공단 기록에서 직장가입자·지역가입자·피부양자 중 현재 어떤 상태인지 확인합니다. 취업, 가족관계나 특정 체류자격만으로 가입 유형을 단정하지 마세요.
+          my: NHIS မှတ်တမ်းတွင် အလုပ်ရှင်အာမခံ၊ ဒေသခံအာမခံ သို့မဟုတ် မှီခိုသူအဖြစ် မည်သို့မှတ်ပုံတင်ထားသည်ကို စစ်ဆေးပါ။ အလုပ်ရှိခြင်း၊ မိသားစုဆက်နွယ်မှု သို့မဟုတ် နေထိုင်ခွင့်တစ်မျိုးကြောင့် အလိုအလျောက် အမျိုးအစားတစ်ခုဖြစ်သည်ဟု မယူဆပါနှင့်။
+        href: ""
+      - icon: list
+        title:
+          en: Compare notices and salary deductions
+          ko: 고지서와 급여 공제 비교
+          my: အကြောင်းကြားစာနှင့် လစာဖြတ်တောက်မှုကို နှိုင်းယှဉ်ပါ
+        body:
+          en: Check the applicable period and amount on an insurance notice or the health-insurance line of your pay statement. If something looks duplicated, missing, or unfamiliar, ask NHIS rather than deciding the reason yourself.
+          ko: 보험 고지서나 급여명세서의 건강보험 항목에서 적용기간과 금액을 확인합니다. 중복·누락처럼 보이거나 익숙하지 않은 내역은 이유를 추측하지 말고 공단에 문의하세요.
+          my: အာမခံအကြောင်းကြားစာ သို့မဟုတ် လစာရှင်းတမ်းရှိ ကျန်းမာရေးအာမခံအချက်တွင် သက်ရောက်ကာလနှင့် ပမာဏကို စစ်ဆေးပါ။ ထပ်နေခြင်း၊ ပျောက်နေခြင်း သို့မဟုတ် မရင်းနှီးသောအချက်ရှိပါက ကိုယ်တိုင်မဆုံးဖြတ်ဘဲ NHIS ကို မေးပါ။
+        href: ""
+      - icon: external
+        title:
+          en: NHIS guidance for foreign residents
+          ko: 국민건강보험공단 외국인 안내
+          my: နိုင်ငံခြားသားများအတွက် NHIS လမ်းညွှန်
+        body:
+          en: Check current eligibility, contributions, benefits, and contact information directly with NHIS, especially after employment, address, stay-status, or family changes. The page also provides selected health-checkup forms in Myanmar language.
+          ko: 취업·퇴사, 주소, 체류 상태나 가족관계가 바뀌면 가입자격·보험료·급여와 문의처를 공단에서 다시 확인하세요. 공식 페이지에는 일부 건강검진 문진표의 미얀마어 자료도 있습니다.
+          my: အလုပ်ဝင်ထွက်ခြင်း၊ လိပ်စာ၊ နေထိုင်ခွင့် သို့မဟုတ် မိသားစုအခြေအနေပြောင်းပါက အရည်အချင်း၊ အာမခံကြေး၊ အကျိုးခံစားခွင့်နှင့် ဆက်သွယ်ရန်ကို NHIS တွင် ပြန်လည်စစ်ဆေးပါ။ တရားဝင်စာမျက်နှာတွင် ကျန်းမာရေးစစ်ဆေးမေးခွန်းလွှာအချို့ကို မြန်မာဘာသာဖြင့်လည်း ပေးထားပါသည်။
+        href: https://www.nhis.or.kr/english/wbheaa02900m01.do
+  - icon: search
+    title:
+      en: Prepare before a medical visit
+      ko: 병원 방문 전에 준비하기
+      my: ဆေးရုံမသွားမီ ပြင်ဆင်ရန်
+    intro:
+      en: Confirm the institution’s current hours, department, appointment method, and identity-check requirements before you travel.
+      ko: 이동하기 전에 의료기관의 최신 운영시간, 진료과, 예약 방법과 본인 확인 수단을 직접 확인하세요.
+      my: မသွားမီ ဆေးရုံ၏ လက်ရှိဖွင့်ချိန်၊ ဌာန၊ ရက်ချိန်းနည်းနှင့် ကိုယ်ပိုင်အတည်ပြုရန်လိုအပ်ချက်များကို ကိုယ်တိုင်စစ်ဆေးပါ။
+    items:
+      - icon: health
+        title:
+          en: Confirm the institution and department
+          ko: 의료기관·진료과 확인
+          my: ဆေးရုံနှင့် ဆေးကုသဌာနကို စစ်ဆေးပါ
+        body:
+          en: Use an official search to check the institution type, department, and location, then confirm opening hours and appointment availability with the institution. For a serious or urgent emergency, call 119 instead of relying on ordinary online information.
+          ko: 공식 검색에서 의료기관 종류, 진료과와 위치를 찾은 뒤 운영시간과 예약 가능 여부는 해당 기관에 다시 확인합니다. 중대한 응급상황에서는 일반 검색에 의존하지 말고 119에 연락하세요.
+          my: တရားဝင်ရှာဖွေမှုဖြင့် ဆေးရုံအမျိုးအစား၊ ဌာနနှင့် နေရာကို ကြည့်ပြီး ဖွင့်ချိန်နှင့် ရက်ချိန်းရနိုင်မှုကို ဆေးရုံထံ ပြန်လည်အတည်ပြုပါ။ ပြင်းထန်သည့် အရေးပေါ်အခြေအနေတွင် ပုံမှန်အွန်လိုင်းအချက်အလက်ကို မမှီခိုဘဲ 119 ကို ဆက်သွယ်ပါ။
+        href: ""
+      - icon: doc
+        title:
+          en: Prepare identification and health information
+          ko: 본인 확인·건강 정보 준비
+          my: ကိုယ်ပိုင်အတည်ပြုမှုနှင့် ကျန်းမာရေးအချက်အလက် ပြင်ဆင်ပါ
+        body:
+          en: Bring an identity-verification method accepted by the institution and ask whether prior test results or prescriptions are useful for this visit. Write down when the concern began, how it changed, current medicines, and allergies.
+          ko: 의료기관이 인정하는 본인 확인 수단을 준비하고 이전 검사 결과나 처방전이 필요한지 문의합니다. 증상이 시작된 시점과 변화, 현재 복용약과 알레르기를 짧게 정리하세요.
+          my: ဆေးရုံက လက်ခံသော ကိုယ်ပိုင်အတည်ပြုနည်းကို ယူသွားပြီး ယခင်စစ်ဆေးချက် သို့မဟုတ် ဆေးညွှန်း လိုအပ်မလို မေးပါ။ အခြေအနေစတင်ချိန်၊ ပြောင်းလဲပုံ၊ လက်ရှိဆေးများနှင့် ဓာတ်မတည့်မှုကို တိုတိုရေးထားပါ။
+        href: ""
+      - icon: korean
+        title:
+          en: Arrange communication support
+          ko: 의사소통 방법 준비
+          my: ဆက်သွယ်ပြောဆိုမှုအကူအညီ ပြင်ဆင်ပါ
+        body:
+          en: If you need interpretation or another language, ask in advance whether the institution provides it and how to request it. Prepare the main question in simple words, but ask medical staff or a pharmacist—not MyanMate—to explain medical decisions.
+          ko: 통역이나 다른 언어가 필요하면 의료기관에 제공 여부와 이용 방법을 미리 문의합니다. 핵심 질문을 짧게 준비하되 의학적 판단은 MyanMate가 아닌 의료진이나 약사에게 설명을 요청하세요.
+          my: ဘာသာပြန် သို့မဟုတ် အခြားဘာသာစကားလိုပါက ဆေးရုံတွင် ရှိမရှိနှင့် မည်သို့တောင်းရမည်ကို ကြိုတင်မေးပါ။ အဓိကမေးခွန်းကို ရိုးရှင်းစွာ ပြင်ဆင်ပြီး ဆေးဘက်ဆိုင်ရာဆုံးဖြတ်ချက်ကို MyanMate မဟုတ်ဘဲ ဆရာဝန် သို့မဟုတ် ဆေးဝါးကျွမ်းကျင်သူထံ ရှင်းပြခိုင်းပါ။
+        href: ""
+  - icon: doc
+    title:
+      en: Check before you leave
+      ko: 진료 후 확인하기
+      my: ကုသပြီးနောက် စစ်ဆေးရန်
+    intro:
+      en: Before leaving, make sure you understand the instructions and know which receipts, statements, and prescriptions to keep.
+      ko: 의료기관을 나오기 전에 안내 내용을 이해했는지 확인하고 영수증, 세부내역서와 처방전 중 보관할 서류를 챙기세요.
+      my: ဆေးရုံမှမထွက်မီ လမ်းညွှန်ချက်ကို နားလည်မှုရှိမရှိ စစ်ဆေးပြီး ပြေစာ၊ အသေးစိတ်စာရင်းနှင့် ဆေးညွှန်းတို့ကို ယူထားပါ။
+    items:
+      - icon: check
+        title:
+          en: Confirm instructions and the next step
+          ko: 설명과 다음 단계 확인
+          my: လမ်းညွှန်ချက်နှင့် နောက်တစ်ဆင့်ကို အတည်ပြုပါ
+        body:
+          en: Confirm why a test or prescription was given, how to take medicine, warning points explained by the professional, and whether another visit is needed. Ask the medical professional or pharmacist again if any part is unclear.
+          ko: 검사·처방의 목적, 약 복용 방법, 전문가가 설명한 주의점과 다음 방문 필요 여부를 확인합니다. 이해되지 않는 내용은 의료진이나 약사에게 다시 질문하세요.
+          my: စစ်ဆေးမှု သို့မဟုတ် ဆေးညွှန်းရည်ရွယ်ချက်၊ ဆေးသောက်ပုံ၊ ကျွမ်းကျင်သူရှင်းပြသော သတိချက်များနှင့် နောက်တစ်ကြိမ်လာရန်လိုမလို အတည်ပြုပါ။ မရှင်းလင်းပါက ဆရာဝန် သို့မဟုတ် ဆေးဝါးကျွမ်းကျင်သူကို ပြန်မေးပါ။
+        href: ""
+      - icon: list
+        title:
+          en: Review costs and received documents
+          ko: 비용과 받은 서류 확인
+          my: ကုန်ကျစရိတ်နှင့် ရရှိသောစာရွက်များကို စစ်ဆေးပါ
+        body:
+          en: Review the bill, receipt, itemized statement, and prescription, separating covered, fully patient-paid, and non-covered items as displayed. Before a non-emergency test or treatment with extra cost, ask the institution directly about coverage and the expected range.
+          ko: 진료비 계산서·영수증, 세부산정내역과 처방전에서 표시된 보험 적용, 전액본인부담과 비급여 항목을 구분해 봅니다. 비응급 검사나 치료에 추가 비용이 있다면 시행 전에 의료기관에 적용 여부와 예상 범위를 확인하세요.
+          my: ကုန်ကျစရိတ်စာရင်း၊ ပြေစာ၊ အသေးစိတ်စာရင်းနှင့် ဆေးညွှန်းတွင် အာမခံအကျုံးဝင်မှု၊ လူနာအပြည့်ပေးချေမှုနှင့် အာမခံမဝင်မှုကို ခွဲကြည့်ပါ။ အရေးပေါ်မဟုတ်သော စစ်ဆေးမှု သို့မဟုတ် ကုသမှုတွင် အပိုကုန်ကျစရိတ်ရှိပါက မလုပ်မီ ဆေးရုံထံ အကျုံးဝင်မှုနှင့် ခန့်မှန်းပမာဏကို မေးပါ။
+        href: ""
+      - icon: external
+        title:
+          en: Check hospitals, pharmacies, and public fee information
+          ko: 병원·약국·비급여 정보 확인
+          my: ဆေးရုံ၊ ဆေးဆိုင်နှင့် အာမခံမဝင်ကုန်ကျစရိတ် အချက်အလက်
+        body:
+          en: Use HIRA to search for hospitals, pharmacies, departments, and publicly available non-covered fee information. Listings are reference information, so confirm current hours, actual cost, and insurance treatment with the institution or responsible agency.
+          ko: 건강보험심사평가원에서 병원·약국·진료과와 공개된 비급여 정보를 찾을 수 있습니다. 검색 결과는 참고 정보이므로 최신 운영시간, 실제 비용과 보험 적용은 의료기관이나 담당 기관에 확인하세요.
+          my: HIRA တွင် ဆေးရုံ၊ ဆေးဆိုင်၊ ဌာနနှင့် အများပြည်သူသိနိုင်သော အာမခံမဝင်ကုန်ကျစရိတ်အချက်အလက်ကို ရှာနိုင်ပါသည်။ ရှာဖွေရလဒ်သည် ကိုးကားရန်သာဖြစ်၍ လက်ရှိဖွင့်ချိန်၊ အမှန်တကယ်ကုန်ကျစရိတ်နှင့် အာမခံသက်ရောက်မှုကို ဆေးရုံ သို့မဟုတ် တာဝန်ရှိဌာနထံ အတည်ပြုပါ။
+        href: https://www.hira.or.kr/

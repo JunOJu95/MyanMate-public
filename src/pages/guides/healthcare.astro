@@ -1,0 +1,12 @@
+---
+import ServiceInformationPage from '../../components/ServiceInformationPage.astro';
+import { getServiceContent } from '../../lib/content';
+
+const content = await getServiceContent('healthcare');
+
+if (!content) {
+  throw new Error('Health insurance and hospital information content is missing.');
+}
+---
+
+<ServiceInformationPage topicId="healthcare" icon="health" content={content} />

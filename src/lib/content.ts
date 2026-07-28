@@ -109,6 +109,7 @@ export interface ServiceContentSection {
 }
 
 export interface ServiceContent {
+  lastReviewed: string | null;
   title: LocalizedText;
   description: LocalizedText;
   sections: ServiceContentSection[];
@@ -125,6 +126,7 @@ function localizedText(value: any): LocalizedText {
 function toServiceContent(entry: any): ServiceContent {
   const sections = Array.isArray(entry?.sections) ? entry.sections : [];
   return {
+    lastReviewed: entry?.lastReviewed ?? null,
     title: localizedText(entry?.title),
     description: localizedText(entry?.description),
     sections: sections.map((section: any) => ({
@@ -150,6 +152,15 @@ export async function getServiceContent(id: ServiceInfoId): Promise<ServiceConte
     case 'housing':
       entry = await reader.singletons.housingService.read();
       break;
+    case 'work-pay':
+      entry = await reader.singletons.workPayInformation.read();
+      break;
+    case 'healthcare':
+      entry = await reader.singletons.healthcareInformation.read();
+      break;
+    case 'life-admin':
+      entry = await reader.singletons.lifeAdminInformation.read();
+      break;
     default:
       return assertNever(id);
   }
@@ -157,12 +168,17 @@ export async function getServiceContent(id: ServiceInfoId): Promise<ServiceConte
 }
 
 export async function getServiceContents(): Promise<Record<ServiceInfoId, ServiceContent>> {
-  const [resume, housing] = await Promise.all([
+  const [resume, housing, workPay, healthcare, lifeAdmin] = await Promise.all([
     getServiceContent('resume'),
     getServiceContent('housing'),
+    getServiceContent('work-pay'),
+    getServiceContent('healthcare'),
+    getServiceContent('life-admin'),
   ]);
-  if (!resume || !housing) throw new Error('Service content is missing from src/content/services.');
-  return { resume, housing };
+  if (!resume || !housing || !workPay || !healthcare || !lifeAdmin) {
+    throw new Error('Information content is missing from src/content/services.');
+  }
+  return { resume, housing, 'work-pay': workPay, healthcare, 'life-admin': lifeAdmin };
 }
 
 /* ---------------- 1:1 service offers ---------------- */

@@ -1,0 +1,12 @@
+---
+import ServiceInformationPage from '../../components/ServiceInformationPage.astro';
+import { getServiceContent } from '../../lib/content';
+
+const content = await getServiceContent('work-pay');
+
+if (!content) {
+  throw new Error('Employment contract and pay information content is missing.');
+}
+---
+
+<ServiceInformationPage topicId="work-pay" icon="jobs" content={content} />
