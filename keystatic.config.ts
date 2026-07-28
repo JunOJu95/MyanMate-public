@@ -40,6 +40,9 @@ const ICON_OPTIONS = [
   { label: 'External link', value: 'external' },
   { label: 'Visa', value: 'visa' },
   { label: 'Korean language', value: 'korean' },
+  { label: 'Safety', value: 'shield' },
+  { label: 'Healthcare', value: 'health' },
+  { label: 'Administration', value: 'admin' },
 ] as const;
 
 const safeAssetFilename = (originalFilename: string) => {
@@ -67,7 +70,12 @@ const localizedText = (label: string, multiline = false) =>
     { label }
   );
 
-const serviceSchema = () => ({
+const informationSchema = () => ({
+  lastReviewed: fields.date({
+    label: 'Last reviewed (최종 검토일)',
+    description: 'Update this after checking the information against current official sources.',
+    validation: { isRequired: true },
+  }),
   title: localizedText('Page title / 페이지 제목'),
   description: localizedText('Page introduction / 페이지 소개', true),
   sections: fields.array(
@@ -318,14 +326,35 @@ export default config({
       path: 'src/content/services/resume',
       format: { data: 'yaml' },
       previewUrl: '/guides/resume',
-      schema: serviceSchema(),
+      schema: informationSchema(),
     }),
     housingService: singleton({
-      label: 'Information · 집 보기·생활환경 정보',
+      label: 'Information · 집·주거환경 정보',
       path: 'src/content/services/housing',
       format: { data: 'yaml' },
       previewUrl: '/guides/housing',
-      schema: serviceSchema(),
+      schema: informationSchema(),
+    }),
+    workPayInformation: singleton({
+      label: 'Information · 근로계약·급여',
+      path: 'src/content/services/work-pay',
+      format: { data: 'yaml' },
+      previewUrl: '/guides/work-pay',
+      schema: informationSchema(),
+    }),
+    healthcareInformation: singleton({
+      label: 'Information · 건강보험·병원',
+      path: 'src/content/services/healthcare',
+      format: { data: 'yaml' },
+      previewUrl: '/guides/healthcare',
+      schema: informationSchema(),
+    }),
+    lifeAdminInformation: singleton({
+      label: 'Information · 외국인 생활 행정',
+      path: 'src/content/services/life-admin',
+      format: { data: 'yaml' },
+      previewUrl: '/guides/life-admin',
+      schema: informationSchema(),
     }),
     partTimeJobServiceOffer: singleton({
       label: 'Service · Part-time job support',

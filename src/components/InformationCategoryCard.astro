@@ -3,9 +3,10 @@ import Icon from './Icon.astro';
 import LocalizedText from './LocalizedText.astro';
 import { defaultLang, t } from '../i18n/ui';
 import type { LocalizedText as LocalizedTextValue } from '../lib/content';
+import type { ServiceInfoId } from '../data/services';
 
 interface Props {
-  id: 'visa' | 'resume' | 'housing';
+  id: 'visa' | ServiceInfoId;
   title: LocalizedTextValue;
   summary: LocalizedTextValue;
   href: string;

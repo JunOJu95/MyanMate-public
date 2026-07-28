@@ -1,0 +1,12 @@
+---
+import ServiceInformationPage from '../../components/ServiceInformationPage.astro';
+import { getServiceContent } from '../../lib/content';
+
+const content = await getServiceContent('life-admin');
+
+if (!content) {
+  throw new Error('Everyday administration information content is missing.');
+}
+---
+
+<ServiceInformationPage topicId="life-admin" icon="admin" content={content} />

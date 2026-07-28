@@ -2,28 +2,43 @@
 import Base from '../layouts/Base.astro';
 import Icon from './Icon.astro';
 import LocalizedText from './LocalizedText.astro';
+import T from './T.astro';
 import MobileSocialDm from './MobileSocialDm.astro';
 import SocialDmPanel from './SocialDmPanel.astro';
 import type { Service } from '../data/services';
+import type { ServiceInfoId } from '../data/services';
 import type { ServiceContent } from '../lib/content';
 
 interface Props {
-  service: Service;
+  service?: Service;
+  topicId?: ServiceInfoId;
+  icon?: string;
   content: ServiceContent;
 }
 
-const { service, content } = Astro.props;
-const source = `${service.id}-information`;
+const { service, topicId, icon, content } = Astro.props;
+const informationId = service?.id ?? topicId ?? 'general';
+const iconKey = service?.iconKey ?? icon ?? 'topics';
+const source = `${informationId}-information`;
 ---
 
 <Base title={content.title.en} active="guides" description={content.description.en}>
   <div class="wrap">
-    <div class="detail-2col detail-page service-info-page">
+    <div class:list={['detail-2col', 'detail-page', 'service-info-page', { single: !service }]}>
       <article>
         <header class="detail-hero service-detail-hero" data-reveal="page-hero">
-          <span class="svc-ico"><Icon name={service.iconKey} /></span>
+          <span class="svc-ico"><Icon name={iconKey} /></span>
           <LocalizedText value={content.title} tag="h1" class="lead-title" />
           <LocalizedText value={content.description} tag="p" class="t-sub" />
+          <div class="information-meta-row">
+            <T k="infoTopic.publicBadge" tag="span" class="pill-tag" />
+            {content.lastReviewed && (
+              <span class="information-reviewed">
+                <T k="content.lastReviewed" />
+                <time datetime={content.lastReviewed}>{content.lastReviewed}</time>
+              </span>
+            )}
+          </div>
         </header>
 
         {content.sections.map((section) => (
@@ -42,8 +57,8 @@ const source = `${service.id}-information`;
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-event={`official-source:${service.id}`}
-                  data-service={service.id}
+                  data-event={`official-source:${informationId}`}
+                  data-service={informationId}
                   data-source={item.href}
                 >
                   <span class="service-point-icon" aria-hidden="true"><Icon name={item.icon} size={18} /></span>
@@ -65,19 +80,33 @@ const source = `${service.id}-information`;
             </div>
           </section>
         ))}
+
+        <section class="information-editorial-note" data-reveal="section">
+          <span class="information-editorial-icon" aria-hidden="true"><Icon name="shield" size={20} /></span>
+          <div>
+            <T k="infoTopic.disclaimer.title" tag="h2" class="card-title" />
+            <T k="infoTopic.disclaimer.body" tag="p" class="t-body" />
+            <T k="infoTopic.disclaimer.boundary" tag="p" class="t-cap" />
+          </div>
+          <a class="btn ghost" href="/guides" data-event="information-back">
+            <T k="infoTopic.back" />
+          </a>
+        </section>
       </article>
 
-      <aside class="guide-dm-aside">
-        <div class="sticky-card">
-          <SocialDmPanel
-            service={service.id}
-            context="service"
-            source={`${source}-sidebar`}
-            id="dm"
-          />
-        </div>
-      </aside>
+      {service && (
+        <aside class="guide-dm-aside">
+          <div class="sticky-card">
+            <SocialDmPanel
+              service={service.id}
+              context="service"
+              source={`${source}-sidebar`}
+              id="dm"
+            />
+          </div>
+        </aside>
+      )}
     </div>
   </div>
-  <MobileSocialDm service={service.id} context="service" />
+  {service && <MobileSocialDm service={service.id} context="service" />}
 </Base>

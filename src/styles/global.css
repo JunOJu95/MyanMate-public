@@ -713,6 +713,10 @@ body{
 .service-detail-hero{display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center;}
 .service-detail-hero .svc-ico{grid-row:1 / span 2;width:54px;height:54px;border-radius:6px;padding:12px;}
 .service-detail-hero .t-sub{grid-column:2;margin:8px 0 0;max-width:720px;}
+.information-meta-row{grid-column:2;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px;}
+.information-meta-row .pill-tag{margin:0;}
+.information-reviewed{display:inline-flex;gap:6px;align-items:center;font-family:var(--mono);font-size:10px;line-height:1.5;color:var(--ink-faint);}
+.information-reviewed time{font-weight:700;color:var(--ink-soft);}
 .service-scope-cta{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin-top:12px;}
 .service-hero-cta{grid-column:1 / -1;margin-top:24px;}
 .service-scope-cta .btn{width:100%;}
@@ -742,6 +746,13 @@ body.lang-my .service-detail-hero .lead-title{font-size:29px;line-height:1.48;}
 .service-point-link:focus-visible{outline:3px solid color-mix(in srgb,var(--brand) 35%,transparent);outline-offset:2px;}
 .service-point-external{align-self:start;margin-top:4px;color:var(--brand-strong);}
 .service-source-section .service-point-link{background:var(--paper);}
+.service-info-page.single{max-width:900px;margin-inline:auto;}
+.information-editorial-note{display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;margin-top:34px;padding:22px;border:1px solid var(--line-strong);border-top:3px solid var(--brand);border-radius:7px;background:var(--surface-muted);}
+.information-editorial-icon{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;border-radius:6px;background:var(--brand-soft);color:var(--brand-strong);}
+.information-editorial-note .card-title{margin:0;font-size:17px;}
+.information-editorial-note .t-body{margin:8px 0 0;max-width:720px;}
+.information-editorial-note .t-cap{margin:10px 0 0;color:var(--ink-faint);}
+.information-editorial-note .btn{grid-column:2;justify-self:start;margin-top:4px;}
 .service-boundary-note{display:grid;gap:7px;margin-top:20px;padding:17px 18px;border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:0 6px 6px 0;background:color-mix(in srgb,var(--paper) 92%,var(--brand-tint));}
 .service-boundary-title{margin:0;font-family:var(--mono);font-size:10.5px;font-weight:700;line-height:1.5;text-transform:uppercase;color:var(--brand-strong);}
 .service-boundary-copy{margin:0;font-size:12px;line-height:1.72;color:var(--ink-soft);}
@@ -879,6 +890,7 @@ body.lang-my .about-proof-strip p{font-family:'Noto Sans Myanmar','Padauk',sans-
   .service-detail-hero{grid-template-columns:1fr;}
   .service-detail-hero .svc-ico{grid-row:auto;margin-bottom:18px;}
   .service-detail-hero .t-sub{grid-column:auto;}
+  .service-detail-hero .information-meta-row{grid-column:auto;}
 }
 
 @media(prefers-reduced-motion:reduce){
