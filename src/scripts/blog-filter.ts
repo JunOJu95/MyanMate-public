@@ -1,23 +1,31 @@
 const root = document.querySelector<HTMLElement>('[data-blog-index]');
+const PAGE_SIZE = 9;
 
 if (root) {
   const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-blog-filter]'));
   const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-blog-item]'));
   const empty = root.querySelector<HTMLElement>('[data-blog-empty-category]');
+  const seeMoreWrap = root.querySelector<HTMLElement>('[data-blog-see-more-wrap]');
+  const seeMoreButton = root.querySelector<HTMLButtonElement>('[data-blog-see-more]');
   const validCategories = new Set(buttons.map((button) => button.dataset.blogFilter ?? 'all'));
+  let activeCategory = 'all';
+  let visibleLimit = PAGE_SIZE;
 
   function categoryFromUrl(): string {
     const value = new URL(window.location.href).searchParams.get('category') ?? 'all';
     return validCategories.has(value) ? value : 'all';
   }
 
-  function applyFilter(category: string): void {
-    let visibleIndex = 0;
+  function applyFilter(category: string, resetLimit = true): void {
+    if (resetLimit || category !== activeCategory) visibleLimit = PAGE_SIZE;
+    activeCategory = category;
+    let matchedCount = 0;
 
     for (const card of cards) {
-      const visible = category === 'all' || card.dataset.category === category;
+      const matchesCategory = category === 'all' || card.dataset.category === category;
+      if (matchesCategory) matchedCount += 1;
+      const visible = matchesCategory && matchedCount <= visibleLimit;
       card.hidden = !visible;
-      if (visible) visibleIndex += 1;
     }
 
     for (const button of buttons) {
@@ -26,7 +34,8 @@ if (root) {
       button.setAttribute('aria-pressed', String(selected));
     }
 
-    if (empty) empty.hidden = visibleIndex !== 0;
+    if (empty) empty.hidden = matchedCount !== 0;
+    if (seeMoreWrap) seeMoreWrap.hidden = matchedCount <= visibleLimit;
   }
 
   function updateUrl(category: string): void {
@@ -43,6 +52,11 @@ if (root) {
       updateUrl(category);
     });
   }
+
+  seeMoreButton?.addEventListener('click', () => {
+    visibleLimit += PAGE_SIZE;
+    applyFilter(activeCategory, false);
+  });
 
   window.addEventListener('popstate', () => applyFilter(categoryFromUrl()));
   applyFilter(categoryFromUrl());
