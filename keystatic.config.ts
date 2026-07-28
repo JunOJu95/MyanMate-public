@@ -21,9 +21,13 @@ const CATEGORY_OPTIONS = [
   { label: 'Daily life', value: 'daily' },
 ];
 
-const POST_CATEGORY_OPTIONS = CATEGORY_OPTIONS.map((option) =>
-  option.value === 'housing' ? { ...option, label: 'Study' } : option,
-);
+const POST_CATEGORY_OPTIONS = [
+  { label: 'Visa', value: 'visa' },
+  { label: 'Jobs', value: 'jobs' },
+  { label: 'Study', value: 'study' },
+  { label: 'Korean', value: 'korean' },
+  { label: 'Daily life', value: 'daily' },
+];
 
 const ICON_OPTIONS = [
   { label: 'Document', value: 'doc' },
