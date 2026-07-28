@@ -4,6 +4,7 @@
  * self-canonical. When per-language URLs (/ko, /my) are added later, emit
  * <link rel="alternate" hreflang="..."> for each locale here (structure ready).
  */
+import JsonLd from './JsonLd.astro';
 import { defaultLang, t } from '../i18n/ui';
 
 interface Props {
@@ -11,23 +12,71 @@ interface Props {
   description?: string;
   canonicalPath?: string;
   image?: string;
+  ogType?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  articleSection?: string;
+  articleAuthor?: string;
 }
 
 const DEFAULT_DESC = t('home.hero.sub', defaultLang);
 
-const { title, description = DEFAULT_DESC, canonicalPath, image = '/og-default.jpg' } = Astro.props;
+const {
+  title,
+  description = DEFAULT_DESC,
+  canonicalPath,
+  image = '/og-default.jpg',
+  ogType = 'website',
+  publishedTime,
+  modifiedTime,
+  articleSection,
+  articleAuthor,
+} = Astro.props;
 
 const site = Astro.site;
 const path = canonicalPath ?? Astro.url.pathname;
 const canonical = site ? new URL(path, site).href : path;
 const ogImage = site ? new URL(image, site).href : image;
 const fullTitle = title ? `${title} · MyanMate` : `MyanMate · ${t('footer.tagline', defaultLang)}`;
+const siteRoot = site ? new URL('/', site).href : 'https://www.myanmate.com/';
+const organizationId = site ? new URL('/#organization', site).href : 'https://www.myanmate.com/#organization';
+const websiteId = site ? new URL('/#website', site).href : 'https://www.myanmate.com/#website';
+const siteStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': organizationId,
+      name: 'MyanMate',
+      url: siteRoot,
+      logo: site ? new URL('/og-default.jpg', site).href : '/og-default.jpg',
+      image: site ? new URL('/og-default.jpg', site).href : '/og-default.jpg',
+      description: DEFAULT_DESC,
+      sameAs: [
+        'https://www.facebook.com/share/1DRs9wTKtT/?mibextid=wwXIfr',
+        'https://www.instagram.com/roadieai',
+        'https://www.youtube.com/@roadiekorea',
+        'https://www.tiktok.com/@roadieai',
+        'https://t.me/myanmate',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': websiteId,
+      name: 'MyanMate',
+      url: siteRoot,
+      inLanguage: defaultLang,
+      publisher: { '@id': organizationId },
+      description: DEFAULT_DESC,
+    },
+  ],
+};
 ---
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
 <meta property="og:site_name" content="MyanMate" />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
@@ -35,7 +84,12 @@ const fullTitle = title ? `${title} · MyanMate` : `MyanMate · ${t('footer.tagl
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+{ogType === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+{ogType === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+{ogType === 'article' && articleSection && <meta property="article:section" content={articleSection} />}
+{ogType === 'article' && articleAuthor && <meta property="article:author" content={articleAuthor} />}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
+<JsonLd data={siteStructuredData} />

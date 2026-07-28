@@ -1,73 +1,14 @@
 ---
-import Base from '../../layouts/Base.astro';
-import T from '../../components/T.astro';
-import PostCard from '../../components/PostCard.astro';
-import { getPosts, POST_CATEGORIES } from '../../lib/content';
-import { defaultLang, t } from '../../i18n/ui';
+import BlogIndexPage from '../../components/BlogIndexPage.astro';
+import { getPosts } from '../../lib/content';
+import { t } from '../../i18n/ui';
 
 const posts = await getPosts();
-const categories = ['all', ...POST_CATEGORIES] as const;
 ---
-<Base title={t('blog.title', defaultLang)} active="blog" canonicalPath="/blog">
-  <div class="wrap blog-page" data-blog-index>
-    <header class="blog-index-head">
-      <T k="blog.title" tag="h1" class="lead-title" />
-    </header>
-
-    <div class="blog-filter-shell">
-      <div
-        class="blog-filter"
-        role="group"
-        aria-label={t('blog.filterLabel', defaultLang)}
-        data-i18n-aria="blog.filterLabel"
-      >
-        {categories.map((category, index) => {
-          const key = 'blog.filter.' + category;
-          return (
-            <button
-              class:list={['blog-filter-button', { on: index === 0 }]}
-              type="button"
-              data-blog-filter={category}
-              aria-pressed={index === 0 ? 'true' : 'false'}
-              data-i18n={key}
-            >
-              {t(key, defaultLang)}
-            </button>
-          );
-        })}
-      </div>
-    </div>
-
-    <section class="blog-feed" aria-label={t('blog.title', defaultLang)} data-i18n-aria="blog.title">
-      {posts.length === 0 ? (
-        <p class="blog-empty" data-i18n="blog.empty">{t('blog.empty', defaultLang)}</p>
-      ) : (
-        <>
-          <div class="blog-feed-list" id="blog-feed-list">
-            {posts.map((post) => (
-              <PostCard post={post} variant="row" showDetails={false} showMeta={true} />
-            ))}
-          </div>
-          <p class="blog-empty" data-blog-empty-category hidden aria-live="polite" data-i18n="blog.emptyCategory">
-            {t('blog.emptyCategory', defaultLang)}
-          </p>
-          <div class="blog-see-more-wrap" data-blog-see-more-wrap hidden>
-            <button
-              class="blog-see-more"
-              type="button"
-              aria-controls="blog-feed-list"
-              data-blog-see-more
-            >
-              <span data-i18n="btn.more">{t('btn.more', defaultLang)}</span>
-              <span class="blog-see-more-plus" aria-hidden="true">+</span>
-            </button>
-          </div>
-        </>
-      )}
-    </section>
-  </div>
-
-  <script>
-    import '../../scripts/blog-filter.ts';
-  </script>
-</Base>
+<BlogIndexPage
+  posts={posts}
+  activeCategory="all"
+  title={t('blog.seo.title', 'en')}
+  description={t('blog.seo.description', 'en')}
+  canonicalPath="/blog"
+/>
