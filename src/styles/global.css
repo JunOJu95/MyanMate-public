@@ -268,16 +268,16 @@ img{max-width:100%;display:block;}
   transform-origin:left;
   transition:transform 360ms var(--motion-ease);
 }
-.svc-card-top{display:flex;align-items:center;justify-content:space-between;gap:18px;}
-.svc-card-title-wrap{display:flex;align-items:center;gap:12px;min-width:0;}
+.svc-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;}
+.svc-card-title-wrap{display:flex;align-items:flex-start;gap:12px;min-width:0;}
 .svc-card-link .svc-ico{width:40px;height:40px;padding:8px;border-radius:8px;}
-.svc-card-arrow{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;flex:none;border:1px solid var(--line);border-radius:50%;font-size:20px;color:var(--brand-strong);transition:transform 320ms var(--motion-ease),background 240ms ease,border-color 240ms ease;}
+.svc-card-arrow{display:block;width:28px;height:18px;flex:none;color:var(--brand-strong);opacity:.72;fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;transition:transform 320ms var(--motion-ease),color 240ms ease,opacity 240ms ease;}
 .svc-card-link .svc-meta{margin:20px 0 0;}
 .svc-card-summary{display:block;margin-top:10px;line-height:1.75;}
 .svc-card-link:is(:hover,:focus-visible){transform:translateY(-6px);border-color:var(--brand);background:color-mix(in srgb,var(--paper) 92%,var(--brand-tint));box-shadow:0 22px 42px rgba(76,60,49,.17);}
 .svc-card-link:is(:hover,:focus-visible)::before{transform:translate3d(-10px,-8px,0) scale(1.12);border-color:color-mix(in srgb,var(--brand) 40%,transparent);background:color-mix(in srgb,var(--brand-soft) 72%,transparent);}
 .svc-card-link:is(:hover,:focus-visible)::after{transform:scaleX(1);}
-.svc-card-link:is(:hover,:focus-visible) .svc-card-arrow{transform:translateX(4px);border-color:var(--brand);background:var(--brand-soft);}
+.svc-card-link:is(:hover,:focus-visible) .svc-card-arrow{opacity:.86;transform:translateX(4px);}
 .svc-card-link:focus-visible{outline:3px solid color-mix(in srgb,var(--brand) 35%,transparent);outline-offset:4px;}
 .svc-card-link:active{transform:translateY(-2px);}
 

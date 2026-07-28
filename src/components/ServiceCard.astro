@@ -24,7 +24,9 @@ const href = `/services/${service.id}`;
       <span class="svc-ico"><Icon name={service.iconKey} /></span>
       <LocalizedText value={offer.title} tag="span" class="card-title" />
     </span>
-    <span class="svc-card-arrow" aria-hidden="true">→</span>
+    <svg class="svc-card-arrow" viewBox="0 0 36 24" aria-hidden="true" focusable="false">
+      <path d="M3 12h28m-10-8 10 8-10 8" />
+    </svg>
   </span>
   <span class="svc-meta">
     <span class="pill-tag" data-i18n="ui.status.available">{t('ui.status.available', defaultLang)}</span>
