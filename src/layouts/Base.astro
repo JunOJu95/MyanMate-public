@@ -12,6 +12,11 @@ interface Props {
   active?: string;
   canonicalPath?: string;
   image?: string;
+  ogType?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  articleSection?: string;
+  articleAuthor?: string;
 }
 const {
   title,
@@ -19,6 +24,11 @@ const {
   active,
   canonicalPath,
   image,
+  ogType,
+  publishedTime,
+  modifiedTime,
+  articleSection,
+  articleAuthor,
 } = Astro.props;
 ---
 <!doctype html>
@@ -34,7 +44,17 @@ const {
       href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&family=Noto+Sans+Myanmar:wght@400;500;600;700&family=Padauk:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <SeoHead title={title} description={description} canonicalPath={canonicalPath} image={image} />
+    <SeoHead
+      title={title}
+      description={description}
+      canonicalPath={canonicalPath}
+      image={image}
+      ogType={ogType}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      articleSection={articleSection}
+      articleAuthor={articleAuthor}
+    />
     <Analytics />
     <slot name="head" />
   </head>

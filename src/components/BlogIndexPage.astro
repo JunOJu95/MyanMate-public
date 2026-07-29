@@ -1,0 +1,94 @@
+---
+import Base from '../layouts/Base.astro';
+import T from './T.astro';
+import PostCard from './PostCard.astro';
+import { POST_CATEGORIES, type Post, type PostCategory } from '../lib/content';
+import { defaultLang, t } from '../i18n/ui';
+
+interface Props {
+  posts: Post[];
+  activeCategory?: PostCategory | 'all';
+  title: string;
+  description: string;
+  canonicalPath: string;
+}
+
+const {
+  posts,
+  activeCategory = 'all',
+  title,
+  description,
+  canonicalPath,
+} = Astro.props;
+const categories = ['all', ...POST_CATEGORIES] as const;
+
+function categoryHref(category: PostCategory | 'all'): string {
+  return category === 'all' ? '/blog' : `/blog/${category}`;
+}
+---
+<Base
+  title={title}
+  active="blog"
+  description={description}
+  canonicalPath={canonicalPath}
+>
+  <div class="wrap blog-page" data-blog-index data-blog-category={activeCategory}>
+    <header class="blog-index-head">
+      <T k="blog.title" tag="h1" class="lead-title" />
+    </header>
+
+    <div class="blog-filter-shell">
+      <div
+        class="blog-filter"
+        role="group"
+        aria-label={t('blog.filterLabel', defaultLang)}
+        data-i18n-aria="blog.filterLabel"
+      >
+        {categories.map((category) => {
+          const key = 'blog.filter.' + category;
+          const selected = category === activeCategory;
+          return (
+            <a
+              class:list={['blog-filter-button', { on: selected }]}
+              href={categoryHref(category)}
+              data-blog-filter={category}
+              aria-current={selected ? 'page' : undefined}
+              data-i18n={key}
+            >
+              {t(key, defaultLang)}
+            </a>
+          );
+        })}
+      </div>
+    </div>
+
+    <section class="blog-feed" aria-label={t('blog.title', defaultLang)} data-i18n-aria="blog.title">
+      {posts.length === 0 ? (
+        <p class="blog-empty" data-i18n="blog.emptyCategory">{t('blog.emptyCategory', defaultLang)}</p>
+      ) : (
+        <>
+          <div class="blog-feed-list" id="blog-feed-list">
+            {posts.map((post) => (
+              <PostCard post={post} variant="row" showDetails={false} showMeta={true} />
+            ))}
+          </div>
+          <div class="blog-see-more-wrap" data-blog-see-more-wrap hidden>
+            <button
+              class="blog-see-more"
+              type="button"
+              aria-controls="blog-feed-list"
+              data-blog-see-more
+            >
+              <span data-i18n="btn.more">{t('btn.more', defaultLang)}</span>
+              <span class="blog-see-more-plus" aria-hidden="true">+</span>
+            </button>
+          </div>
+        </>
+      )}
+    </section>
+  </div>
+
+  <script>
+    import '../scripts/blog-filter.ts';
+  </script>
+</Base>

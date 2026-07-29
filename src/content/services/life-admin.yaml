@@ -1,17 +1,109 @@
-lastReviewed: 2026-07-28
+lastReviewed: 2026-07-29
 title:
-  en: What to do after renewing your passport
-  ko: 여권 갱신 후 해야 할 일
-  my: နိုင်ငံကူးလက်မှတ် သက်တမ်းတိုးပြီးနောက် လုပ်ရမည့်အရာများ
+  en: Everyday administration for foreign residents
+  ko: 외국인 생활 행정 정보
+  my: နိုင်ငံခြားသားများအတွက် နေ့စဉ်အုပ်ချုပ်ရေး အချက်အလက်
 description:
   en: >-
-    A practical guide for registered foreign residents: check the time-sensitive Immigration report first, then update only the school, workplace, and everyday records that apply to you. Each part shows what to prepare, what you do yourself, how to confirm completion, and where to check the official basis.
+    Manage your residence card, passport, and stay period separately, then check your own duties when your address, passport, school, or workplace changes. The detailed passport-renewal guide includes preparation, steps you complete yourself, completion checks, exceptions, and official places to confirm.
   ko: >-
-    외국인등록을 한 체류자를 위한 실행 가이드입니다. 기한이 있는 출입국 여권정보 변경 신고를 먼저 확인하고, 학교·직장·생활 서비스는 나에게 해당하는 곳만 점검하세요. 준비할 것, 직접 진행할 순서, 완료 확인 기준과 공식 근거를 함께 정리했습니다.
+    외국인등록증·여권·체류기간을 따로 관리하고, 이사나 새 여권 발급, 학교·직장 변경 때 본인에게 적용되는 절차를 확인하는 방법을 정리했습니다. 여권 갱신 상세 가이드에서는 준비할 것, 직접 진행할 순서, 완료 기준, 예외와 공식 확인처까지 제공합니다.
   my: >-
-    နိုင်ငံခြားသားမှတ်ပုံတင်ထားသူများအတွက် လက်တွေ့လမ်းညွှန်ဖြစ်ပါသည်။ အချိန်ကန့်သတ်ချက်ရှိသော လူဝင်မှုကြီးကြပ်ရေး နိုင်ငံကူးလက်မှတ်အချက်အလက် ပြောင်းလဲမှုတင်ပြခြင်းကို ဦးစွာစစ်ဆေးပြီး မိမိနှင့်သက်ဆိုင်သော ကျောင်း၊ အလုပ်ခွင်နှင့် နေ့စဉ်ဝန်ဆောင်မှုမှတ်တမ်းများကိုသာ စစ်ဆေးပါ။ ပြင်ဆင်ရန်၊ ကိုယ်တိုင်လုပ်ဆောင်ရန်၊ ပြီးစီးကြောင်းစစ်ဆေးရန်နှင့် တရားဝင်ရင်းမြစ်များကို အတူတကွ စုစည်းထားပါသည်။
+    နိုင်ငံခြားသားမှတ်ပုံတင်ကတ်၊ နိုင်ငံကူးလက်မှတ်နှင့် နေထိုင်ခွင့်ကာလကို သီးခြားစီစီမံပြီး လိပ်စာ၊ နိုင်ငံကူးလက်မှတ်၊ ကျောင်း သို့မဟုတ် အလုပ်ခွင်ပြောင်းချိန်တွင် မိမိလုပ်ရမည့်အဆင့်များကို စစ်ဆေးနည်းအား စုစည်းထားပါသည်။ နိုင်ငံကူးလက်မှတ်အသစ်အတွက် အသေးစိတ်လမ်းညွှန်တွင် ပြင်ဆင်ရန်၊ ကိုယ်တိုင်လုပ်ဆောင်ရန်၊ ပြီးစီးမှုစစ်ဆေးရန်၊ ခြွင်းချက်နှင့် တရားဝင်စစ်ဆေးရန်နေရာများ ပါဝင်ပါသည်။
 
 sections:
+  - id: document-dates
+    variant: standard
+    icon: admin
+    title:
+      en: Manage important documents and dates
+      ko: 중요한 서류와 날짜 관리하기
+      my: အရေးကြီးစာရွက်စာတမ်းနှင့် ရက်စွဲများကို စီမံပါ
+    intro:
+      en: A passport expiry date, authorized stay period, and residence-card information are different records. Check each one regularly and keep sensitive details private.
+      ko: 여권 만료일, 허가된 체류기간과 외국인등록증 정보는 서로 다른 기록입니다. 각각 정기적으로 확인하고 민감한 정보는 안전하게 보관하세요.
+      my: နိုင်ငံကူးလက်မှတ်သက်တမ်းကုန်ရက်၊ ခွင့်ပြုထားသော နေထိုင်ခွင့်ကာလနှင့် မှတ်ပုံတင်ကတ်အချက်အလက်တို့သည် မတူသောမှတ်တမ်းများဖြစ်သည်။ တစ်ခုစီကို ပုံမှန်စစ်ဆေးပြီး အရေးကြီးအချက်အလက်ကို လုံခြုံစွာထားပါ။
+    items:
+      - icon: visa
+        audience: none
+        evidenceLevel: general
+        title:
+          en: Residence-card details
+          ko: 외국인등록증 정보
+          my: နိုင်ငံခြားသားမှတ်ပုံတင်ကတ် အချက်အလက်
+        body:
+          en: Compare the name, nationality, status of stay, stay period, and other displayed details with your passport and official records. For loss, damage, or incorrect information, do not alter the card yourself; check the official replacement or correction process.
+          ko: 외국인등록증의 이름, 국적, 체류자격, 체류기간과 표시된 정보를 여권·공식 기록과 비교합니다. 분실·훼손이나 잘못된 정보가 있으면 임의로 고치지 말고 공식 재발급·정정 절차를 확인하세요.
+          my: ကတ်ပေါ်ရှိ အမည်၊ နိုင်ငံသား၊ နေထိုင်ခွင့်အမျိုးအစား၊ ကာလနှင့် အခြားအချက်အလက်များကို နိုင်ငံကူးလက်မှတ်နှင့် တရားဝင်မှတ်တမ်းတို့နှင့် နှိုင်းယှဉ်ပါ။ ပျောက်ဆုံးခြင်း၊ ပျက်စီးခြင်း သို့မဟုတ် မှားယွင်းမှုရှိပါက ကိုယ်တိုင်မပြင်ဘဲ တရားဝင်ပြန်လည်ထုတ်ပေးခြင်း သို့မဟုတ် ပြင်ဆင်ခြင်းကို စစ်ဆေးပါ။
+      - icon: doc
+        audience: none
+        evidenceLevel: general
+        title:
+          en: Passport expiry and registered details
+          ko: 여권 만료일과 등록정보
+          my: နိုင်ငံကူးလက်မှတ်သက်တမ်းနှင့် မှတ်ပုံတင်အချက်အလက်
+        body:
+          en: Manage the passport expiry date separately from the authorized stay period. After receiving a new passport, use the detailed guide below to check the number, issue date, expiry date, and any other changed details.
+          ko: 여권 만료일은 체류기간 만료일과 별개로 관리합니다. 새 여권을 받으면 아래 상세 가이드에서 여권번호·발급일·유효기간과 그 밖에 달라진 정보를 확인하세요.
+          my: နိုင်ငံကူးလက်မှတ်သက်တမ်းကုန်ရက်ကို နေထိုင်ခွင့်ကာလကုန်ရက်နှင့် သီးခြားစီစီမံပါ။ အသစ်ရပြီးနောက် အောက်ပါအသေးစိတ်လမ်းညွှန်တွင် နံပါတ်၊ ထုတ်ပေးရက်၊ သက်တမ်းကုန်ရက်နှင့် အခြားပြောင်းလဲသောအချက်များကို စစ်ဆေးပါ။
+      - icon: list
+        audience: none
+        evidenceLevel: general
+        title:
+          en: Separate reminders for each date
+          ko: 날짜별 알림 만들기
+          my: ရက်စွဲတစ်ခုစီအတွက် သတိပေးချက်ထားပါ
+        body:
+          en: Set early, separate reminders for your stay period, passport, school enrollment, and employment contract when relevant. When a reminder arrives, recheck the current timing and documents for your own status through an official source.
+          ko: 체류기간, 여권, 재학기간과 근로계약 등 본인에게 중요한 날짜마다 여유 있게 별도 알림을 설정합니다. 알림 시점에 본인의 체류자격에 맞는 시기와 준비서류를 공식 확인처에서 다시 확인하세요.
+          my: နေထိုင်ခွင့်ကာလ၊ နိုင်ငံကူးလက်မှတ်၊ ကျောင်းတက်ကာလနှင့် အလုပ်စာချုပ်ကဲ့သို့ မိမိအတွက်အရေးကြီးသော ရက်စွဲတစ်ခုစီကို ကြိုတင်သတိပေးချက်ထားပါ။ သတိပေးချိန်တွင် မိမိနေထိုင်ခွင့်အတွက် လက်ရှိအချိန်နှင့် လိုအပ်စာရွက်များကို တရားဝင်နေရာတွင် ပြန်စစ်ပါ။
+
+  - id: change-events
+    variant: standard
+    icon: housing
+    title:
+      en: Check your duties when circumstances change
+      ko: 변경사항이 생겼을 때 확인하기
+      my: အပြောင်းအလဲရှိချိန်တွင် မိမိတာဝန်ကို စစ်ဆေးပါ
+    intro:
+      en: Address, passport, personal, school, or workplace changes can involve a different task depending on your status. Do not assume that updating one record updates every other record.
+      ko: 주소, 여권, 인적사항, 학교나 직장 변경은 체류자격에 따라 서로 다른 절차가 관련될 수 있습니다. 한 곳의 기록을 바꿨다고 다른 기록까지 모두 바뀐다고 생각하지 마세요.
+      my: လိပ်စာ၊ နိုင်ငံကူးလက်မှတ်၊ ကိုယ်ရေးအချက်အလက်၊ ကျောင်း သို့မဟုတ် အလုပ်ခွင်ပြောင်းခြင်းတွင် နေထိုင်ခွင့်အလိုက် မတူသောလုပ်ငန်းစဉ်များ ပါဝင်နိုင်ပါသည်။ မှတ်တမ်းတစ်ခုကို ပြင်လိုက်ခြင်းဖြင့် အခြားမှတ်တမ်းအားလုံး ပြောင်းသည်ဟု မယူဆပါနှင့်။
+    items:
+      - icon: housing
+        audience: none
+        evidenceLevel: general
+        title:
+          en: Moving and place-of-stay records
+          ko: 이사와 체류지 변경
+          my: အိမ်ပြောင်းခြင်းနှင့် နေထိုင်ရာမှတ်တမ်း
+        body:
+          en: Moving does not necessarily update Immigration records automatically. Check whether a change-of-place-of-stay task applies to you, its current timing and accepted locations, and which proof of residence is required.
+          ko: 이사했다고 출입국의 주소 기록이 자동으로 바뀌는 것은 아닙니다. 체류지 변경 업무가 본인에게 적용되는지, 현재 기한·접수처와 필요한 주소 증빙을 공식 안내에서 확인하세요.
+          my: အိမ်ပြောင်းလိုက်သည်နှင့် လူဝင်မှုကြီးကြပ်ရေးလိပ်စာမှတ်တမ်း အလိုအလျောက်ပြောင်းမည်မဟုတ်ပါ။ နေထိုင်ရာပြောင်းလဲမှုလုပ်ငန်း မိမိနှင့်သက်ဆိုင်မသက်ဆိုင်၊ လက်ရှိအချိန်၊ လက်ခံရာနေရာနှင့် လိုအပ်သောလိပ်စာအထောက်အထားကို တရားဝင်လမ်းညွှန်တွင် စစ်ဆေးပါ။
+      - icon: doc
+        audience: none
+        evidenceLevel: general
+        title:
+          en: New passport or personal-detail changes
+          ko: 새 여권·인적사항 변경
+          my: နိုင်ငံကူးလက်မှတ်အသစ် သို့မဟုတ် ကိုယ်ရေးအချက်အလက်ပြောင်းခြင်း
+        body:
+          en: A passport-number update and a change to name, nationality, date of birth, or sex are not the same task. Use the situation map and exception section below before proceeding.
+          ko: 여권번호 갱신과 성명·국적·생년월일·성별 변경은 같은 업무가 아닙니다. 진행 전에 아래 상황 지도와 예외 구간을 확인하세요.
+          my: နိုင်ငံကူးလက်မှတ်နံပါတ်ပြင်ခြင်းနှင့် အမည်၊ နိုင်ငံသား၊ မွေးသက္ကရာဇ် သို့မဟုတ် လိင်ပြောင်းခြင်းသည် တူညီသောလုပ်ငန်းမဟုတ်ပါ။ မလုပ်မီ အောက်ပါအခြေအနေမြေပုံနှင့် ခြွင်းချက်အပိုင်းကို စစ်ဆေးပါ။
+      - icon: jobs
+        audience: none
+        evidenceLevel: general
+        title:
+          en: School or workplace changes
+          ko: 학교·직장 정보 변경
+          my: ကျောင်း သို့မဟုတ် အလုပ်ခွင်ပြောင်းခြင်း
+        body:
+          en: Updating a record at the same school or employer differs from changing the institution, enrollment status, employer, workplace, job, or duties. Use the separate routes below and confirm your exact case through HiKorea or 1345.
+          ko: 같은 학교·회사의 내부정보 갱신과 소속기관·재학 상태·회사·근무처·직업·업무 자체 변경은 다릅니다. 아래의 구분된 경로를 이용하고 정확한 사례는 하이코리아 또는 1345에서 확인하세요.
+          my: ယခင်ကျောင်း သို့မဟုတ် အလုပ်ရှင်၏ အတွင်းမှတ်တမ်းပြင်ခြင်းနှင့် အဖွဲ့အစည်း၊ ကျောင်းတက်အခြေအနေ၊ အလုပ်ရှင်၊ အလုပ်ခွင်၊ အလုပ် သို့မဟုတ် တာဝန်ကိုယ်တိုင် ပြောင်းခြင်းသည် မတူပါ။ အောက်ပါသီးခြားလမ်းကြောင်းကို အသုံးပြုပြီး တိကျသောကိစ္စကို HiKorea သို့မဟုတ် 1345 တွင် စစ်ဆေးပါ။
+
   - id: situation-map
     variant: overview
     icon: search
@@ -972,6 +1064,64 @@ sections:
               ko: 외국인종합안내센터 1345
               my: လူဝင်မှုကြီးကြပ်ရေး အချက်အလက်စင်တာ 1345
             href: https://www.immigration.go.kr/immigration/1530/subview.do
+
+  - id: official-safety
+    variant: standard
+    icon: external
+    title:
+      en: Use official services safely
+      ko: 공식 서비스를 안전하게 이용하기
+      my: တရားဝင်ဝန်ဆောင်မှုကို လုံခြုံစွာအသုံးပြုပါ
+    intro:
+      en: Start with the exact name of the task you need, read its latest detail page, and keep your own application or visit record.
+      ko: 필요한 업무의 정확한 명칭부터 찾고 최신 상세 화면을 읽으세요. 신청이나 방문 기록은 본인이 보관합니다.
+      my: လိုအပ်သောလုပ်ငန်း၏ အတိအကျအမည်ကို အရင်ရှာပြီး နောက်ဆုံးဝန်ဆောင်မှုအသေးစိတ်ကို ဖတ်ပါ။ လျှောက်ထားမှု သို့မဟုတ် သွားရောက်မှုမှတ်တမ်းကို မိမိသိမ်းထားပါ။
+    items:
+      - icon: external
+        audience: none
+        evidenceLevel: general
+        title:
+          en: Find the exact task on HiKorea
+          ko: 하이코리아에서 업무명 확인
+          my: HiKorea တွင် လုပ်ငန်းအမည်ကို စစ်ဆေးပါ
+        body:
+          en: Check the exact e-application name, whether it is available online, the responsible office, visit reservation, documents, and current notices. Prefer the task's official detail page over a general summary.
+          ko: 필요한 전자민원의 정확한 이름, 온라인 가능 여부, 관할 기관, 방문예약, 준비서류와 최신 공지를 확인합니다. 일반 요약보다 해당 민원의 공식 상세 화면을 우선하세요.
+          my: လိုအပ်သော အွန်လိုင်းဝန်ဆောင်မှုအမည်၊ အွန်လိုင်းလုပ်နိုင်မှု၊ တာဝန်ရှိရုံး၊ သွားရောက်ရက်ချိန်း၊ စာရွက်များနှင့် နောက်ဆုံးကြေညာချက်ကို စစ်ဆေးပါ။ အထွေထွေအကျဉ်းထက် သက်ဆိုင်ရာတရားဝင်အသေးစိတ်စာမျက်နှာကို ဦးစားပေးပါ။
+        sources:
+          - label:
+              en: HiKorea
+              ko: 하이코리아
+              my: HiKorea
+            href: https://www.hikorea.go.kr/Main.pt
+      - icon: help
+        audience: none
+        evidenceLevel: general
+        title:
+          en: Ask 1345 in Myanmar language
+          ko: 1345 미얀마어 상담
+          my: 1345 မြန်မာဘာသာ အကြံပေးဝန်ဆောင်မှု
+        body:
+          en: The Immigration Contact Center supports Myanmar among its languages. Check the current multilingual hours, then ask using your exact status of stay and specific change.
+          ko: 외국인종합안내센터 1345는 지원 언어 중 미얀마어 상담도 제공합니다. 최신 다국어 상담시간을 확인한 뒤 본인의 체류자격과 구체적인 변경 상황을 기준으로 문의하세요.
+          my: နိုင်ငံခြားသားအထွေထွေလမ်းညွှန်စင်တာ 1345 သည် မြန်မာဘာသာကိုလည်း ထောက်ပံ့ပါသည်။ လက်ရှိဘာသာစုံဝန်ဆောင်မှုအချိန်ကို စစ်ဆေးပြီး မိမိနေထိုင်ခွင့်နှင့် တိကျသောပြောင်းလဲမှုအကြောင်း မေးပါ။
+        sources:
+          - label:
+              en: Immigration Contact Center 1345
+              ko: 외국인종합안내센터 1345
+              my: လူဝင်မှုကြီးကြပ်ရေး အချက်အလက်စင်တာ 1345
+            href: https://www.immigration.go.kr/immigration/1530/subview.do
+      - icon: shield
+        audience: none
+        evidenceLevel: general
+        title:
+          en: Keep records and protect sensitive documents
+          ko: 접수 기록·민감정보 보호
+          my: လက်ခံမှတ်တမ်းနှင့် အရေးကြီးအချက်အလက်ကို ကာကွယ်ပါ
+        body:
+          en: Keep the receipt number, application date, visit reservation, and submitted-material list in your own secure file. Do not send full card or passport images, passwords, or financial details through an unofficial message.
+          ko: 접수번호, 신청일, 방문예약과 제출자료 목록은 본인의 안전한 파일에 보관합니다. 외국인등록증·여권 전체 사진, 비밀번호나 금융정보를 출처가 불분명한 메시지로 보내지 마세요.
+          my: လက်ခံနံပါတ်၊ လျှောက်ရက်၊ သွားရောက်ရက်ချိန်းနှင့် တင်ပြစာရွက်စာရင်းကို မိမိ၏လုံခြုံသောဖိုင်တွင် သိမ်းပါ။ မှတ်ပုံတင်ကတ် သို့မဟုတ် နိုင်ငံကူးလက်မှတ်ပုံအပြည့်၊ စကားဝှက် သို့မဟုတ် ငွေကြေးအချက်အလက်ကို မသေချာသောမက်ဆေ့ချ်ဖြင့် မပို့ပါနှင့်။
 
   - id: official-sources
     variant: sources

@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
 import Icon from '../../components/Icon.astro';
+import JsonLd from '../../components/JsonLd.astro';
 import T from '../../components/T.astro';
 import { getPosts, getPost } from '../../lib/content';
 import { defaultLang, t } from '../../i18n/ui';
@@ -19,6 +20,101 @@ const { meta, bodyHtml } = data;
 const date = meta.publishedDate ?? '';
 const reviewed = meta.lastReviewed ?? '';
 const categoryKey = 'blog.filter.' + meta.category;
+const site = Astro.site;
+const canonicalUrl = site ? new URL(`/blog/${meta.slug}`, site).href : `/blog/${meta.slug}`;
+const blogUrl = site ? new URL('/blog', site).href : '/blog';
+const imageUrl = meta.cover && site ? new URL(meta.cover, site).href : meta.cover;
+const organizationId = site ? new URL('/#organization', site).href : 'https://www.myanmate.com/#organization';
+const websiteId = site ? new URL('/#website', site).href : 'https://www.myanmate.com/#website';
+
+function plainText(html: string): string {
+  return html
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function extractFaqItems(html: string): Array<{ question: string; answer: string }> {
+  const faqRe = /<details class="blog-faq-item">[\s\S]*?<span class="blog-faq-question">([\s\S]*?)<\/span>[\s\S]*?<div class="blog-faq-answer">([\s\S]*?)<\/div>\s*<\/details>/g;
+  return Array.from(html.matchAll(faqRe))
+    .map((match) => ({
+      question: plainText(match[1]),
+      answer: plainText(match[2]),
+    }))
+    .filter((item) => item.question && item.answer);
+}
+
+const articleStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalUrl,
+  },
+  headline: meta.headline,
+  name: meta.headline,
+  url: canonicalUrl,
+  description: meta.excerpt,
+  image: imageUrl ? [imageUrl] : undefined,
+  thumbnailUrl: imageUrl || undefined,
+  inLanguage: meta.lang,
+  articleSection: t(categoryKey, defaultLang),
+  datePublished: date || undefined,
+  dateModified: reviewed || date || undefined,
+  author: {
+    '@type': 'Organization',
+    name: meta.author || 'MyanMate',
+    '@id': organizationId,
+  },
+  publisher: { '@id': organizationId },
+  isPartOf: { '@id': websiteId },
+  isAccessibleForFree: true,
+};
+const breadcrumbStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: site ? new URL('/', site).href : '/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: t('blog.title', defaultLang),
+      item: blogUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: meta.headline,
+      item: canonicalUrl,
+    },
+  ],
+};
+const faqItems = extractFaqItems(bodyHtml);
+const faqStructuredData = faqItems.length > 0
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    }
+  : null;
 ---
 <Base
   title={meta.headline}
@@ -26,7 +122,16 @@ const categoryKey = 'blog.filter.' + meta.category;
   description={meta.excerpt}
   canonicalPath={'/blog/' + meta.slug}
   image={meta.cover ?? undefined}
+  ogType="article"
+  publishedTime={date || undefined}
+  modifiedTime={reviewed || date || undefined}
+  articleSection={t(categoryKey, 'en')}
+  articleAuthor={meta.author || 'MyanMate'}
 >
+  <JsonLd slot="head" data={articleStructuredData} />
+  <JsonLd slot="head" data={breadcrumbStructuredData} />
+  {faqStructuredData && <JsonLd slot="head" data={faqStructuredData} />}
+
   <div class="wrap blog-detail-wrap">
     <article class="blog-article">
       <a class="blog-back" href="/blog">

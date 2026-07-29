@@ -1,49 +1,48 @@
 const root = document.querySelector<HTMLElement>('[data-blog-index]');
+const PAGE_SIZE = 9;
 
 if (root) {
-  const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-blog-filter]'));
+  const filters = Array.from(root.querySelectorAll<HTMLElement>('[data-blog-filter]'));
   const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-blog-item]'));
-  const empty = root.querySelector<HTMLElement>('[data-blog-empty-category]');
-  const validCategories = new Set(buttons.map((button) => button.dataset.blogFilter ?? 'all'));
+  const seeMoreWrap = root.querySelector<HTMLElement>('[data-blog-see-more-wrap]');
+  const seeMoreButton = root.querySelector<HTMLButtonElement>('[data-blog-see-more]');
+  const validCategories = new Set(filters.map((filter) => filter.dataset.blogFilter ?? 'all'));
+  const pageCategory = root.dataset.blogCategory ?? 'all';
+  let activeCategory = pageCategory;
+  let visibleLimit = PAGE_SIZE;
 
   function categoryFromUrl(): string {
     const value = new URL(window.location.href).searchParams.get('category') ?? 'all';
     return validCategories.has(value) ? value : 'all';
   }
 
-  function applyFilter(category: string): void {
-    let visibleIndex = 0;
+  function applyFilter(category: string, resetLimit = true): void {
+    if (resetLimit || category !== activeCategory) visibleLimit = PAGE_SIZE;
+    activeCategory = category;
+    let matchedCount = 0;
 
     for (const card of cards) {
-      const visible = category === 'all' || card.dataset.category === category;
+      const matchesCategory = pageCategory !== 'all' || category === 'all' || card.dataset.category === category;
+      if (matchesCategory) matchedCount += 1;
+      const visible = matchesCategory && matchedCount <= visibleLimit;
       card.hidden = !visible;
-      if (visible) visibleIndex += 1;
     }
 
-    for (const button of buttons) {
-      const selected = button.dataset.blogFilter === category;
-      button.classList.toggle('on', selected);
-      button.setAttribute('aria-pressed', String(selected));
+    for (const filter of filters) {
+      const selected = filter.dataset.blogFilter === category;
+      filter.classList.toggle('on', selected);
+      if (selected) filter.setAttribute('aria-current', 'page');
+      else filter.removeAttribute('aria-current');
     }
 
-    if (empty) empty.hidden = visibleIndex !== 0;
+    if (seeMoreWrap) seeMoreWrap.hidden = matchedCount <= visibleLimit;
   }
 
-  function updateUrl(category: string): void {
-    const url = new URL(window.location.href);
-    if (category === 'all') url.searchParams.delete('category');
-    else url.searchParams.set('category', category);
-    window.history.pushState({ category }, '', url);
-  }
+  seeMoreButton?.addEventListener('click', () => {
+    visibleLimit += PAGE_SIZE;
+    applyFilter(activeCategory, false);
+  });
 
-  for (const button of buttons) {
-    button.addEventListener('click', () => {
-      const category = button.dataset.blogFilter ?? 'all';
-      applyFilter(category);
-      updateUrl(category);
-    });
-  }
-
-  window.addEventListener('popstate', () => applyFilter(categoryFromUrl()));
-  applyFilter(categoryFromUrl());
+  const urlCategory = categoryFromUrl();
+  applyFilter(pageCategory === 'all' ? urlCategory : pageCategory);
 }

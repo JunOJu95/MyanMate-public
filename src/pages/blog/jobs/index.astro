@@ -1,0 +1,14 @@
+---
+import BlogIndexPage from '../../../components/BlogIndexPage.astro';
+import { getPosts } from '../../../lib/content';
+
+const category = 'jobs';
+const posts = (await getPosts()).filter((post) => post.category === category);
+---
+<BlogIndexPage
+  posts={posts}
+  activeCategory={category}
+  title="Korea Jobs and Part-Time Work Guides for Myanmar People"
+  description="Myanmar-language Korea job and part-time work guides for Myanmar students and foreigners: job apps, interviews, contracts, wages, shifts, and work cautions."
+  canonicalPath="/blog/jobs"
+/>

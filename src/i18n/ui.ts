@@ -92,7 +92,7 @@ export const ui = {
   'home.topics.korean':  { en: 'Korean',     ko: '한국어',    my: 'ကိုရီးယားဘာသာ' },
   'home.topics.daily':   { en: 'Daily life', ko: '생활 일반', my: 'နေ့စဉ်ဘဝ' },
   'home.topics.all':     { en: 'See all',    ko: '전체 보기',  my: 'အားလုံး ကြည့်ရန်' },
-  'home.services.title': { en: 'Support for your next step in Korea', ko: '한국에서 다음 단계를 준비하는 서비스', my: 'ကိုရီးယားတွင် နောက်တစ်ဆင့်အတွက် အကူအညီ' },
+  'home.services.title': { en: 'Support Services for Life in Korea', ko: '한국 생활 지원 서비스', my: 'ကိုရီးယားနေထိုင်မှု အကူအညီ ဝန်ဆောင်မှုများ' },
   'home.services.lead': { en: 'Short, practical support for job applications, one-to-one interview practice, portfolios, and home viewing.', ko: '지원서, 1:1 면접 연습, 포트폴리오와 집 보기를 위한 짧고 실용적인 지원입니다.', my: 'အလုပ်လျှောက်ရန်၊ 1:1 interview လေ့ကျင့်ရန်၊ portfolio ပြင်ရန်နှင့် အိမ်ကြည့်ရန် လက်တွေ့ကျသော အကူအညီများ။' },
   'home.services.preview.eyebrow': { en: 'When you need a closer look', ko: '조금 더 구체적인 도움이 필요할 때', my: 'ပိုမိုအသေးစိတ် အကူအညီလိုသည့်အခါ' },
   'home.services.preview.title': { en: 'Explore our current services', ko: '현재 제공하는 서비스를 살펴보세요', my: 'လက်ရှိပေးနေသော service များကို ကြည့်ရှုပါ' },
@@ -220,6 +220,8 @@ export const ui = {
 
   /* 3b. Blog */
   'blog.title':         { en: 'Blog', ko: '블로그', my: 'ဘလော့ဂ်' },
+  'blog.seo.title':     { en: 'Korea Guides for Myanmar People', ko: '미얀마인을 위한 한국 생활 가이드', my: 'မြန်မာများအတွက် ကိုရီးယား လမ်းညွှန်များ' },
+  'blog.seo.description': { en: 'Myanmar-language guides for Korea visas, study, part-time jobs, housing, Korean exams, and everyday life for Myanmar people in Korea or preparing to come to Korea.', ko: '한국에 거주 중이거나 한국을 준비하는 미얀마인을 위한 비자, 유학, 아르바이트, 주거, 한국어 시험과 생활 정보입니다.', my: 'ကိုရီးယားတွင်နေထိုင်နေသော မြန်မာများနှင့် ကိုရီးယားလာရန်ပြင်ဆင်နေသူများအတွက် ဗီဇာ၊ ကျောင်း၊ အချိန်ပိုင်းအလုပ်၊ နေအိမ်၊ ကိုရီးယားစာမေးပွဲနှင့် နေ့စဉ်ဘဝ လမ်းညွှန်များ။' },
   'blog.latest':        { en: 'Latest from the blog', ko: '블로그 최신 글', my: 'ဘလော့ဂ်မှ နောက်ဆုံးစာများ' },
   'blog.viewAll':       { en: 'View all posts', ko: '전체 글 보기', my: 'စာအားလုံး ကြည့်ရန်' },
   'blog.back':          { en: 'Back to Blog', ko: '블로그로 돌아가기', my: 'ဘလော့ဂ်သို့ ပြန်သွားရန်' },
@@ -227,7 +229,7 @@ export const ui = {
   'blog.filter.all':     { en: 'All', ko: '전체', my: 'အားလုံး' },
   'blog.filter.visa':    { en: 'Visa', ko: '비자', my: 'ဗီဇာ' },
   'blog.filter.jobs':    { en: 'Jobs', ko: '알바·취업', my: 'အလုပ်' },
-  'blog.filter.housing': { en: 'Study', ko: '학업', my: 'ကျောင်း' },
+  'blog.filter.study':    { en: 'Study', ko: '학업', my: 'ကျောင်း' },
   'blog.filter.korean':  { en: 'Korean', ko: '한국어', my: 'ကိုရီးယားဘာသာ' },
   'blog.filter.daily':   { en: 'Daily life', ko: '생활 일반', my: 'နေ့စဉ်ဘဝ' },
   'blog.empty':         { en: 'No posts yet — check back soon.', ko: '아직 글이 없어요. 곧 새 글이 올라옵니다.', my: 'ပို့စ် မရှိသေးပါ — မကြာမီ ပြန်လာကြည့်ပါ။' },

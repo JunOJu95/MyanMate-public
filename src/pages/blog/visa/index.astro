@@ -1,0 +1,14 @@
+---
+import BlogIndexPage from '../../../components/BlogIndexPage.astro';
+import { getPosts } from '../../../lib/content';
+
+const category = 'visa';
+const posts = (await getPosts()).filter((post) => post.category === category);
+---
+<BlogIndexPage
+  posts={posts}
+  activeCategory={category}
+  title="Korea Visa Guides for Myanmar People"
+  description="Myanmar-language Korea visa guides for Myanmar people and students: ARC, D-2, D-4, work permission, immigration steps, documents, and official checks."
+  canonicalPath="/blog/visa"
+/>
