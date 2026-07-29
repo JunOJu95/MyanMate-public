@@ -1,0 +1,46 @@
+---
+import Icon from './Icon.astro';
+import InformationActionCard from './InformationActionCard.astro';
+import LocalizedText from './LocalizedText.astro';
+import type { ServiceContentSection } from '../lib/content';
+
+interface Props {
+  informationId: string;
+  section: ServiceContentSection;
+  anchor: string;
+}
+
+const { informationId, section, anchor } = Astro.props;
+---
+
+<section
+  id={anchor}
+  class:list={[
+    'sec',
+    'service-info-section',
+    `information-section-${section.variant}`,
+  ]}
+  data-reveal="section"
+>
+  <div class="service-info-heading">
+    <span class="sec-ico"><Icon name={section.icon} /></span>
+    <div>
+      <LocalizedText value={section.title} tag="h2" class="sec-title" />
+      {Object.values(section.intro).some(Boolean) && (
+        <LocalizedText value={section.intro} tag="p" class="t-body" />
+      )}
+    </div>
+  </div>
+
+  <div class:list={['information-section-content', `information-layout-${section.variant}`]} data-stagger>
+    {section.items.map((item, itemIndex) => (
+      <InformationActionCard
+        informationId={informationId}
+        sectionId={anchor}
+        sectionVariant={section.variant}
+        item={item}
+        itemIndex={itemIndex}
+      />
+    ))}
+  </div>
+</section>
