@@ -1,6 +1,5 @@
 ---
 import Base from '../../layouts/Base.astro';
-import BackArrow from '../../components/BackArrow.astro';
 import T from '../../components/T.astro';
 import GuideCard from '../../components/GuideCard.astro';
 import SocialDmPanel from '../../components/SocialDmPanel.astro';
@@ -33,7 +32,6 @@ const visaPurpose = (slug: string): Exclude<VisaPurpose, 'all'> => visaPurposeBy
   <div class="wrap visa-hub-page">
     <section class="sec page-hero visa-hub-hero" data-reveal="page-hero">
       <div class="guide-detail-hero-head visa-hub-hero-head">
-        <BackArrow href="/guides" class="visa-hub-back" />
         <div class="guide-detail-hero-copy">
           <T k="guides.eyebrow" tag="p" class="visa-hub-eyebrow" />
           <h1 class="lead-title"><T k="guides.title" /></h1>

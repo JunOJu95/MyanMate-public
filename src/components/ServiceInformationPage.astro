@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import BackArrow from './BackArrow.astro';
 import Icon from './Icon.astro';
 import InformationSection from './InformationSection.astro';
 import LocalizedText from './LocalizedText.astro';
@@ -42,7 +41,6 @@ const detailSections = sections.filter(({ section }) => section.variant !== 'ove
     <div class:list={['detail-2col', 'detail-page', 'service-info-page', { single: !service }]}>
       <article>
         <header class="detail-hero service-detail-hero" data-reveal="page-hero">
-          <BackArrow href={backHref} class="service-detail-back" />
           <LocalizedText value={content.title} tag="h1" class="lead-title" />
           <LocalizedText value={content.description} tag="p" class="t-sub" />
           <div class="information-meta-row">
