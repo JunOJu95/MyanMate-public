@@ -1,6 +1,5 @@
 ---
 import Base from '../../layouts/Base.astro';
-import BackArrow from '../../components/BackArrow.astro';
 import Icon from '../../components/Icon.astro';
 import T from '../../components/T.astro';
 import GuideSection from '../../components/GuideSection.astro';
@@ -43,15 +42,6 @@ const related = [...relatedPool]
 const catKey = `guides.filter.${guide.category}`;
 const code = visaCode(guide.slug);
 const visaId = code?.toLowerCase().replace('-', '') ?? '';
-const guideBackHrefByCategory: Record<string, string> = {
-  visa: '/guides/visa',
-  study: '/guides/study',
-  work: '/guides/work',
-  jobs: '/guides/work',
-  daily: '/guides/daily-life',
-  'daily-life': '/guides/daily-life',
-};
-const guideBackHref = guideBackHrefByCategory[guide.category] ?? '/guides';
 // Sections are rendered in this order; empty fields (e.g. E-9 has no subtypes/notes
 // imported) are filtered out so the number badges stay gapless per guide.
 const sectionLabels: Partial<Record<string, Partial<Record<keyof GuideText, string>>>> = {
@@ -112,7 +102,6 @@ const topikChoiceIntro = {
       <article>
         <header class="detail-hero">
           <div class="guide-detail-hero-head">
-            <BackArrow href={guideBackHref} class="guide-detail-back" />
             <div class="guide-detail-hero-copy">
               <span class="pill-tag" data-i18n={catKey}>{t(catKey, defaultLang)}</span>
               <h1 class="lead-title">

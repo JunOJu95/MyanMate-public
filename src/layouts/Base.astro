@@ -43,8 +43,16 @@ const {
       body.lang-ko [data-lang='ko'],
       body.lang-my [data-lang='my'] { display: revert; }
 
-      .mobile-nav { display: none; }
-      .mobile-nav.open { display: block; }
+      .mobile-nav {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .mobile-nav.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
 
       :where(svg:not([width]):not([height])) {
         width: 28px;

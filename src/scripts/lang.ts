@@ -52,30 +52,12 @@ export function applyLang(input: string): void {
 
 document.addEventListener('click', (e) => {
   const target = e.target as HTMLElement;
-
-  const historyBack = target.closest<HTMLAnchorElement>('[data-history-back]');
-  if (historyBack) {
-    const fallback = historyBack.getAttribute('href') || '/';
-    let shouldUseHistory = false;
-
-    try {
-      if (document.referrer && window.history.length > 1) {
-        const previousUrl = new URL(document.referrer);
-        shouldUseHistory = previousUrl.origin === window.location.origin && previousUrl.href !== window.location.href;
-      }
-    } catch {
-      shouldUseHistory = false;
-    }
-
-    if (shouldUseHistory) {
-      e.preventDefault();
-      window.history.back();
-    } else if (!fallback) {
-      e.preventDefault();
-      window.location.href = '/';
-    }
-    return;
-  }
+  const closeMobileNav = () => {
+    document.getElementById('mobile-nav')?.classList.remove('open');
+    document.querySelector('[data-nav-toggle]')?.setAttribute('aria-expanded', 'false');
+    document.querySelector('.bar')?.classList.remove('nav-open');
+    document.body.classList.remove('mobile-nav-open');
+  };
 
   const span = target.closest('.lang span');
   if (span) {
@@ -87,15 +69,27 @@ document.addEventListener('click', (e) => {
   const toggle = target.closest('[data-nav-toggle]');
   if (toggle) {
     const nav = document.getElementById('mobile-nav');
+    const bar = toggle.closest('.bar');
     if (nav) {
       const open = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', String(open));
+      bar?.classList.toggle('nav-open', open);
+      document.body.classList.toggle('mobile-nav-open', open);
     }
     return;
   }
 
   if (target.closest('#mobile-nav a')) {
-    document.getElementById('mobile-nav')?.classList.remove('open');
+    closeMobileNav();
+    return;
+  }
+
+  if (
+    document.body.classList.contains('mobile-nav-open') &&
+    target.closest('.bar') &&
+    !target.closest('.bar-inner, #mobile-nav')
+  ) {
+    closeMobileNav();
   }
 });
 
