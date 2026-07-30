@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import BackArrow from './BackArrow.astro';
 import Icon from './Icon.astro';
 import LocalizedText from './LocalizedText.astro';
 import T from './T.astro';
@@ -14,11 +15,16 @@ interface Props {
   topicId?: ServiceInfoId;
   icon?: string;
   content: ServiceContent;
+  backHref?: string;
+  backLabel?: {
+    en: string;
+    ko: string;
+    my: string;
+  };
 }
 
-const { service, topicId, icon, content } = Astro.props;
+const { service, topicId, content, backHref = '/guides', backLabel } = Astro.props;
 const informationId = service?.id ?? topicId ?? 'general';
-const iconKey = service?.iconKey ?? icon ?? 'topics';
 const source = `${informationId}-information`;
 ---
 
@@ -27,7 +33,7 @@ const source = `${informationId}-information`;
     <div class:list={['detail-2col', 'detail-page', 'service-info-page', { single: !service }]}>
       <article>
         <header class="detail-hero service-detail-hero" data-reveal="page-hero">
-          <span class="svc-ico"><Icon name={iconKey} /></span>
+          <BackArrow href={backHref} class="service-detail-back" />
           <LocalizedText value={content.title} tag="h1" class="lead-title" />
           <LocalizedText value={content.description} tag="p" class="t-sub" />
           <div class="information-meta-row">
@@ -88,8 +94,8 @@ const source = `${informationId}-information`;
             <T k="infoTopic.disclaimer.body" tag="p" class="t-body" />
             <T k="infoTopic.disclaimer.boundary" tag="p" class="t-cap" />
           </div>
-          <a class="btn ghost" href="/guides" data-event="information-back">
-            <T k="infoTopic.back" />
+          <a class="btn ghost" href={backHref} data-event="information-back">
+            {backLabel ? <LocalizedText value={backLabel} /> : <T k="infoTopic.back" />}
           </a>
         </section>
       </article>

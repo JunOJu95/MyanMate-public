@@ -1,0 +1,173 @@
+entryTitle: Phone number and SIM card
+category: daily
+order: 30
+lastReviewed: 2026-07-30
+title:
+  en: Phone number and SIM card in Korea
+  ko: 한국 휴대폰 번호와 SIM 카드
+  my: ကိုရီးယားဖုန်းနံပါတ်နှင့် SIM ကတ်
+description:
+  en: A Korean phone number is needed for many daily tasks in Korea. Check the difference between prepaid and postpaid plans, what documents may be needed, and why a number under your own name matters.
+  ko: 한국 휴대폰 번호는 일상생활의 여러 절차에서 필요합니다. 선불·후불 요금제 차이, 필요할 수 있는 서류, 본인 명의 번호가 왜 중요한지 확인하세요.
+  my: ကိုရီးယားမှာ နေ့စဉ်ဘဝအတွက် ကိုရီးယားဖုန်းနံပါတ်လိုအပ်သောနေရာများ များပါသည်။ ကြိုတင်ငွေဖြည့် SIM နှင့် လစဉ်ပေးချေသော ဖုန်းလိုင်းကွာခြားချက်၊ လိုအပ်နိုင်သောစာရွက်များနှင့် ကိုယ့်နာမည်ဖြင့် ဖွင့်ထားသောနံပါတ်က ဘာကြောင့်အရေးကြီးလဲကို အရင်စစ်ပါ။
+sections:
+  - icon: phone
+    title:
+      en: What to know first
+      ko: 먼저 알아둘 내용
+      my: အရင်သိထားရမည့်အချက်များ
+    intro:
+      en: A phone number is not only for calls. In Korea, it is often connected to identity checks, banking, delivery apps, school messages, and hospital reservations.
+      ko: 휴대폰 번호는 전화만을 위한 것이 아닙니다. 한국에서는 본인확인, 은행, 배달 앱, 학교 연락, 병원 예약과 연결되는 경우가 많습니다.
+      my: ဖုန်းနံပါတ်သည် ဖုန်းခေါ်ရန်အတွက်သာ မဟုတ်ပါ။ ကိုရီးယားတွင် ကိုယ်တိုင်အတည်ပြုခြင်း၊ ဘဏ်၊ Delivery app၊ ကျောင်းမှအကြောင်းကြားစာနှင့် ဆေးရုံရက်ချိန်းများတွင်ပါ အသုံးများပါသည်။
+    items:
+      - icon: check
+        title:
+          en: Why a Korean number matters
+          ko: 한국 번호가 필요한 이유
+          my: ကိုရီးယားနံပါတ် ဘာကြောင့်လိုလဲ
+        body:
+          en: Many services send verification texts to a Korean mobile number. Without one, delivery, banking, school, job, and hospital tasks can become harder.
+          ko: 많은 서비스가 한국 휴대폰 번호로 인증문자를 보냅니다. 번호가 없으면 배달, 은행, 학교, 구직, 병원 이용이 불편할 수 있습니다.
+          my: ဝန်ဆောင်မှုများစွာသည် ကိုရီးယားဖုန်းနံပါတ်သို့ အတည်ပြုကုဒ် ပို့တတ်ပါသည်။ ဖုန်းနံပါတ်မရှိပါက အစားအသောက်မှာခြင်း၊ ဘဏ်သုံးခြင်း၊ ကျောင်းကိစ္စ၊ အလုပ်ရှာခြင်းနှင့် ဆေးရုံအသုံးပြုခြင်းများ အခက်အခဲရှိနိုင်ပါသည်။
+        href: ""
+      - icon: list
+        title:
+          en: Prepaid and postpaid are different
+          ko: 선불과 후불은 다릅니다
+          my: ကြိုတင်ငွေဖြည့်နှင့် လစဉ်ပေးချေမှု မတူပါ
+        body:
+          en: Prepaid plans can be easier for short stays. Postpaid plans may be better for longer stays, but the shop may check your ARC, stay period, payment method, and contract conditions.
+          ko: 선불은 단기 체류자에게 더 쉬울 수 있습니다. 후불은 장기 체류에 편할 수 있지만 외국인등록증, 체류기간, 납부수단과 약정조건을 확인할 수 있습니다.
+          my: ကြိုတင်ငွေဖြည့် SIM သည် ခဏနေမည့်သူများအတွက် ပိုလွယ်နိုင်ပါသည်။ လစဉ်ပေးချေသော ဖုန်းလိုင်းသည် ကြာကြာနေမည့်သူများအတွက် အဆင်ပြေနိုင်သော်လည်း ဆိုင်ဘက်မှ ARC၊ နေထိုင်ခွင့်သက်တမ်း၊ ငွေပေးချေမည့်နည်းလမ်းနှင့် စာချုပ်အချက်အလက်များကို စစ်နိုင်ပါသည်။
+        href: ""
+      - icon: shield
+        title:
+          en: Own-name number matters
+          ko: 본인 명의 번호가 중요합니다
+          my: ကိုယ့်နာမည်ဖြင့် ဖွင့်ထားသောနံပါတ်က အရေးကြီးပါသည်
+        body:
+          en: For some apps and identity checks, the phone number may need to match your own name and foreigner registration information. A temporary number opened only with a passport may not work everywhere.
+          ko: 일부 앱과 본인확인에서는 휴대폰 번호 명의와 외국인등록 정보가 맞아야 할 수 있습니다. 여권만으로 개통한 임시 번호는 모든 곳에서 작동하지 않을 수 있습니다.
+          my: App အချို့နှင့် ကိုယ်တိုင်အတည်ပြုခြင်းများတွင် ဖုန်းနံပါတ်ပိုင်ရှင်နာမည်နှင့် ARC အချက်အလက် ကိုက်ညီရန်လိုနိုင်ပါသည်။ ပတ်စပို့ဖြင့်သာ ဖွင့်ထားသော ယာယီနံပါတ်သည် နေရာတိုင်းတွင် မသုံးနိုင်ပါ။
+        href: ""
+  - icon: doc
+    title:
+      en: What you may need
+      ko: 필요할 수 있는 것
+      my: လိုအပ်နိုင်သောအရာများ
+    intro:
+      en: Requirements vary by telecom company, shop, plan, and your stay status. Prepare your basic documents before visiting a store.
+      ko: 통신사, 매장, 요금제와 체류자격에 따라 조건이 달라질 수 있습니다. 매장 방문 전 기본 서류를 준비하세요.
+      my: ဖုန်းကုမ္ပဏီ၊ ဆိုင်၊ ယူမည့်ဖုန်းလိုင်းအမျိုးအစားနှင့် နေထိုင်ခွင့်အခြေအနေအလိုက် လိုအပ်ချက်ကွာနိုင်ပါသည်။ ဆိုင်သွားမီ အခြေခံစာရွက်များကို ပြင်ထားပါ။
+    items:
+      - icon: visa
+        title:
+          en: Passport and ARC
+          ko: 여권과 외국인등록증
+          my: ပတ်စပို့နှင့် ARC
+        body:
+          en: A passport may be enough for some prepaid options. For many normal subscriptions, foreigners are usually asked for an ARC or domestic residence card.
+          ko: 일부 선불 상품은 여권만으로 가능할 수 있습니다. 일반적인 휴대폰 개통에서는 외국인등록증 또는 국내거소신고증을 요구하는 경우가 많습니다.
+          my: ကြိုတင်ငွေဖြည့် SIM အချို့တွင် ပတ်စပို့ဖြင့်သာ ဖွင့်နိုင်သောနေရာရှိနိုင်ပါသည်။ ပုံမှန်ဖုန်းလိုင်းဖွင့်ရာတွင်တော့ နိုင်ငံခြားသားများကို ARC သို့မဟုတ် ပြည်တွင်းနေထိုင်ရာကတ် ပြသရန် တောင်းတတ်ပါသည်။
+        href: ""
+      - icon: admin
+        title:
+          en: Payment and address
+          ko: 납부수단과 주소
+          my: ငွေပေးချေမည့်နည်းလမ်းနှင့် လိပ်စာ
+        body:
+          en: For postpaid plans, the shop may ask for a bank account or card under your own name. They may also ask for a Korean address and another contact number.
+          ko: 후불 요금제는 본인 명의 계좌나 카드가 필요할 수 있습니다. 한국 주소와 추가 연락처를 확인할 수도 있습니다.
+          my: လစဉ်ပေးချေသော ဖုန်းလိုင်းတွင် ကိုယ့်နာမည်ဖြင့် ဖွင့်ထားသော ဘဏ်အကောင့် သို့မဟုတ် ကတ် လိုနိုင်ပါသည်။ ကိုရီးယားလိပ်စာနှင့် ဆက်သွယ်ရန်နံပါတ်တစ်ခုကိုလည်း မေးနိုင်ပါသည်။
+        href: ""
+      - icon: search
+        title:
+          en: Name spelling
+          ko: 이름 표기 확인
+          my: နာမည်ရေးသားပုံ စစ်ပါ
+        body:
+          en: Your name may need to match the spelling and order shown on your ARC. A small mismatch can cause trouble with mobile verification later.
+          ko: 이름은 외국인등록증에 적힌 철자와 순서가 맞아야 할 수 있습니다. 작은 차이도 나중에 휴대폰 본인확인 문제로 이어질 수 있습니다.
+          my: နာမည်သည် ARC ပေါ်တွင်ရေးထားသည့် စာလုံးပေါင်းနှင့် အစီအစဉ်အတိုင်း ကိုက်ညီရန်လိုနိုင်ပါသည်။ နာမည်အနည်းငယ်လွဲနေပါက နောက်ပိုင်း ဖုန်းဖြင့် ကိုယ်တိုင်အတည်ပြုရာတွင် ပြဿနာဖြစ်နိုင်ပါသည်။
+        href: ""
+  - icon: list
+    title:
+      en: What to check before signing
+      ko: 가입 전 확인할 내용
+      my: ဖွင့်မယူမီ စစ်ရမည့်အချက်များ
+    intro:
+      en: Do not choose only by the monthly price. Check the contract period, cancellation rules, data amount, and whether the plan supports the services you need.
+      ko: 월 요금만 보고 선택하지 마세요. 약정기간, 해지 조건, 데이터 용량과 필요한 서비스 사용 가능 여부를 확인하세요.
+      my: လစဉ်ကြေးတစ်ခုတည်းကိုကြည့်ပြီး မရွေးပါနှင့်။ စာချုပ်သက်တမ်း၊ ဖျက်သိမ်းပါကစည်းကမ်း၊ အင်တာနက်ဒေတာပမာဏနှင့် ကိုယ်လိုအပ်သောဝန်ဆောင်မှုများ သုံးနိုင်မနိုင်ကို စစ်ပါ။
+    items:
+      - icon: doc
+        title:
+          en: Contract period and cancellation
+          ko: 약정기간과 해지 조건
+          my: စာချုပ်သက်တမ်းနှင့် ဖျက်သိမ်းစည်းကမ်း
+        body:
+          en: Some plans can have a contract period, device installment, deposit, or cancellation fee. Ask the shop to show these clearly before signing.
+          ko: 일부 요금제에는 약정기간, 단말기 할부, 보증금 또는 해지 위약금이 있을 수 있습니다. 가입 전 매장에 명확히 확인하세요.
+          my: ဖုန်းလိုင်းအချို့တွင် စာချုပ်သက်တမ်း၊ ဖုန်းစက်အရစ်ကျ၊ အာမခံငွေ သို့မဟုတ် ဖျက်သိမ်းဒဏ်ကြေး ရှိနိုင်ပါသည်။ လက်မှတ်မထိုးမီ ဆိုင်တွင် ရှင်းရှင်းလင်းလင်းပြခိုင်းပါ။
+        href: ""
+      - icon: check
+        title:
+          en: Data, calls, and messages
+          ko: 데이터·통화·문자
+          my: ဒေတာ၊ ဖုန်းခေါ်ဆိုမှုနှင့် စာတို
+        body:
+          en: Check monthly data amount, speed after data is used, call minutes, text messages, and whether international calls are included or charged separately.
+          ko: 월 데이터 용량, 데이터 소진 후 속도, 통화량, 문자와 국제전화 요금 포함 여부를 확인하세요.
+          my: တစ်လသုံးနိုင်သော ဒေတာပမာဏ၊ ဒေတာကုန်ပြီးနောက် အမြန်နှုန်း၊ ဖုန်းခေါ်နိုင်သည့်မိနစ်၊ စာတိုနှင့် နိုင်ငံတကာဖုန်းခေါ်ဆိုမှုကြေး ပါမပါ စစ်ပါ။
+        href: ""
+      - icon: help
+        title:
+          en: App verification
+          ko: 앱 본인확인
+          my: App များတွင် ကိုယ်တိုင်အတည်ပြုခြင်း
+        body:
+          en: If you need banking, delivery, shopping, or school apps, ask whether the number can be used for mobile identity verification under your own name.
+          ko: 은행, 배달, 쇼핑, 학교 앱을 써야 한다면 그 번호로 본인 명의 휴대폰 인증이 가능한지 확인하세요.
+          my: ဘဏ်၊ Delivery၊ Shopping သို့မဟုတ် ကျောင်း App များ သုံးရန်လိုပါက ထိုဖုန်းနံပါတ်သည် ကိုယ့်နာမည်ဖြင့် ဖုန်းအတည်ပြုခြင်း သုံးနိုင်မနိုင်ကို မေးပါ။
+        href: ""
+  - icon: shield
+    title:
+      en: Where to confirm
+      ko: 확인할 곳
+      my: ဘယ်မှာပြန်စစ်မလဲ
+    intro:
+      en: Telecom products change often. Use this guide as a checklist, then confirm the exact plan and documents with the telecom company or store before paying.
+      ko: 통신 상품은 자주 바뀝니다. 이 안내는 체크리스트로 활용하고 결제 전 통신사 또는 매장에서 정확한 요금제와 서류를 확인하세요.
+      my: ဖုန်းလိုင်းအမျိုးအစားများသည် မကြာခဏပြောင်းနိုင်ပါသည်။ ဤစာမျက်နှာကို စစ်ဆေးရန်စာရင်းအဖြစ်သုံးပြီး ငွေပေးမယူမီ ဖုန်းကုမ္ပဏီ သို့မဟုတ် ဆိုင်တွင် တိကျသောလိုင်းအမျိုးအစားနှင့် လိုအပ်စာရွက်များကို ပြန်စစ်ပါ။
+    items:
+      - icon: external
+        title:
+          en: InvestKOREA telecom guide
+          ko: InvestKOREA 통신 안내
+          my: InvestKOREA ဖုန်းဆက်သွယ်ရေးအချက်အလက်
+        body:
+          en: InvestKOREA explains prepaid and postpaid mobile plans for foreigners, required ID documents, payment methods, and why contract details should be checked carefully.
+          ko: InvestKOREA에서 외국인의 선불·후불 휴대폰, 필요한 신분증, 납부수단과 약정 확인 필요성을 안내합니다.
+          my: InvestKOREA တွင် နိုင်ငံခြားသားများအတွက် ကြိုတင်ငွေဖြည့်/လစဉ်ပေးချေသော ဖုန်းလိုင်း၊ လိုအပ်နိုင်သောကိုယ်ရေးအချက်အလက်စာရွက်၊ ငွေပေးချေမည့်နည်းလမ်းနှင့် စာချုပ်အချက်များကို စစ်ရန်လိုကြောင်း ဖော်ပြထားပါသည်။
+        href: https://www.investkorea.org/ik-en/cntnts/i-431/web.do
+      - icon: external
+        title:
+          en: Mobile foreigner ID
+          ko: 모바일 외국인등록증
+          my: မိုဘိုင်းနိုင်ငံခြားသားမှတ်ပုံတင်
+        body:
+          en: The official Mobile ID page explains mobile foreigner registration card issuance and own-name phone requirements. This matters when your phone number is used for identity checks.
+          ko: 공식 모바일 신분증 페이지에서 모바일 외국인등록증 발급과 본인 명의 휴대폰 관련 내용을 확인할 수 있습니다.
+          my: တရားဝင် Mobile ID စာမျက်နှာတွင် မိုဘိုင်းနိုင်ငံခြားသားမှတ်ပုံတင် ထုတ်ပေးခြင်းနှင့် ကိုယ့်နာမည်ဖြင့်ဖွင့်ထားသော ဖုန်းလိုအပ်ချက်များကို စစ်နိုင်ပါသည်။ ဖုန်းနံပါတ်ကို ကိုယ်တိုင်အတည်ပြုရာတွင် သုံးမည်ဆိုပါက အရေးကြီးပါသည်။
+        href: https://www.mobileid.go.kr/mip/hps/issuReqstGuidance/issuReqstGuidanceMfc.do
+      - icon: help
+        title:
+          en: Telecom company or store
+          ko: 통신사 또는 매장
+          my: ဖုန်းကုမ္ပဏီ သို့မဟုတ် ဖုန်းဆိုင်
+        body:
+          en: Before paying, confirm the final monthly fee, contract period, cancellation fee, documents, and whether the number supports the identity checks you need.
+          ko: 결제 전 최종 월 요금, 약정기간, 해지 위약금, 필요서류와 본인확인 가능 여부를 통신사 또는 매장에서 확인하세요.
+          my: ငွေပေးမယူမီ နောက်ဆုံးလစဉ်ကြေး၊ စာချုပ်သက်တမ်း၊ ဖျက်သိမ်းဒဏ်ကြေး၊ လိုအပ်စာရွက်များနှင့် ကိုယ်လိုအပ်သော ဖုန်းအတည်ပြုခြင်း သုံးနိုင်မနိုင်ကို ဖုန်းကုမ္ပဏီ သို့မဟုတ် ဖုန်းဆိုင်တွင် ပြန်စစ်ပါ။
+        href: ""

@@ -14,10 +14,6 @@ function str(v: unknown, fb = ''): string {
   return typeof v === 'string' ? v : fb;
 }
 
-function assertNever(value: never): never {
-  throw new Error(`Unhandled service id: ${String(value)}`);
-}
-
 /* ---------------- guides ---------------- */
 export interface GuideText {
   title: string;
@@ -144,41 +140,72 @@ function toServiceContent(entry: any): ServiceContent {
 }
 
 export async function getServiceContent(id: ServiceInfoId): Promise<ServiceContent | null> {
-  let entry;
-  switch (id) {
-    case 'resume':
-      entry = await reader.singletons.resumeService.read();
-      break;
-    case 'housing':
-      entry = await reader.singletons.housingService.read();
-      break;
-    case 'work-pay':
-      entry = await reader.singletons.workPayInformation.read();
-      break;
-    case 'healthcare':
-      entry = await reader.singletons.healthcareInformation.read();
-      break;
-    case 'life-admin':
-      entry = await reader.singletons.lifeAdminInformation.read();
-      break;
-    default:
-      return assertNever(id);
-  }
+  const entry = await reader.collections.guideInformation.read(id);
   return entry ? toServiceContent(entry) : null;
 }
 
 export async function getServiceContents(): Promise<Record<ServiceInfoId, ServiceContent>> {
-  const [resume, housing, workPay, healthcare, lifeAdmin] = await Promise.all([
+  const [
+    resume,
+    housing,
+    workPay,
+    healthcare,
+    lifeAdmin,
+    addressChangeAfterMoving,
+    phoneSim,
+    publicTransportation,
+    emergencyNumbers,
+    studentPartTimeWorkPermit,
+    findPartTimeJobsSafely,
+    minimumWageSalaryCheck,
+    employmentContractBasics,
+  ] = await Promise.all([
     getServiceContent('resume'),
     getServiceContent('housing'),
     getServiceContent('work-pay'),
     getServiceContent('healthcare'),
     getServiceContent('life-admin'),
+    getServiceContent('address-change-after-moving'),
+    getServiceContent('phone-sim'),
+    getServiceContent('public-transportation'),
+    getServiceContent('emergency-numbers'),
+    getServiceContent('student-part-time-work-permit'),
+    getServiceContent('find-part-time-jobs-safely'),
+    getServiceContent('minimum-wage-salary-check'),
+    getServiceContent('employment-contract-basics'),
   ]);
-  if (!resume || !housing || !workPay || !healthcare || !lifeAdmin) {
+  if (
+    !resume ||
+    !housing ||
+    !workPay ||
+    !healthcare ||
+    !lifeAdmin ||
+    !addressChangeAfterMoving ||
+    !phoneSim ||
+    !publicTransportation ||
+    !emergencyNumbers ||
+    !studentPartTimeWorkPermit ||
+    !findPartTimeJobsSafely ||
+    !minimumWageSalaryCheck ||
+    !employmentContractBasics
+  ) {
     throw new Error('Information content is missing from src/content/services.');
   }
-  return { resume, housing, 'work-pay': workPay, healthcare, 'life-admin': lifeAdmin };
+  return {
+    resume,
+    housing,
+    'work-pay': workPay,
+    healthcare,
+    'life-admin': lifeAdmin,
+    'address-change-after-moving': addressChangeAfterMoving,
+    'phone-sim': phoneSim,
+    'public-transportation': publicTransportation,
+    'emergency-numbers': emergencyNumbers,
+    'student-part-time-work-permit': studentPartTimeWorkPermit,
+    'find-part-time-jobs-safely': findPartTimeJobsSafely,
+    'minimum-wage-salary-check': minimumWageSalaryCheck,
+    'employment-contract-basics': employmentContractBasics,
+  };
 }
 
 /* ---------------- 1:1 service offers ---------------- */

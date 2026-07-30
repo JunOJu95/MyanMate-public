@@ -1,0 +1,20 @@
+---
+import { defaultLang, t } from '../i18n/ui';
+
+interface Props {
+  href?: string;
+  class?: string;
+}
+
+const { href = '/', class: className = '' } = Astro.props;
+---
+
+<a
+  class:list={['back-arrow-control', className]}
+  href={href}
+  data-history-back
+  aria-label={t('ui.back', defaultLang)}
+  data-i18n-aria="ui.back"
+>
+  <span aria-hidden="true"></span>
+</a>

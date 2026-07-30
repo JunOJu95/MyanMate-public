@@ -1,0 +1,323 @@
+entryTitle: Minimum wage and salary check
+category: jobs
+order: 50
+lastReviewed: 2026-07-30
+title:
+  en: Minimum wage and salary check in Korea
+  ko: 최저임금과 급여 확인하기
+  my: ကိုရီးယား အနည်းဆုံးလစာနှင့် လစာစစ်နည်း
+description:
+  en: Check Korea's 2026 minimum wage, payday, pay statement, deductions, weekly holiday allowance basics, and what records to keep if your pay looks wrong.
+  ko: 2026년 한국 최저임금, 급여일, 급여명세서, 공제, 주휴수당 기본 기준과 임금이 이상할 때 보관할 기록을 확인하세요.
+  my: 2026 ခုနှစ် ကိုရီးယားအနည်းဆုံးလစာ၊ လစာပေးရက်၊ လစာရှင်းတမ်း၊ ဖြတ်တောက်မှု၊ 주휴수당 အခြေခံနှင့် လစာမမှန်သလိုထင်ပါက သိမ်းထားရမည့်မှတ်တမ်းများကို စစ်ပါ။
+sections:
+  - icon: check
+    title:
+      en: 2026 minimum wage
+      ko: 2026년 최저임금
+      my: 2026 ခုနှစ် အနည်းဆုံးလစာ
+    intro:
+      en: Minimum wage changes by year. Always check the year that applies to the period you worked.
+      ko: 최저임금은 매년 바뀝니다. 본인이 일한 기간에 적용되는 연도를 반드시 확인하세요.
+      my: အနည်းဆုံးလစာသည် နှစ်စဉ်ပြောင်းပါသည်။ ကိုယ်အလုပ်လုပ်ခဲ့သည့်ကာလအတွက် သက်ရောက်သည့်နှစ်ကို မဖြစ်မနေစစ်ပါ။
+    items:
+      - icon: jobs
+        title:
+          en: Hourly minimum wage
+          ko: 시간급 최저임금
+          my: တစ်နာရီ အနည်းဆုံးလစာ
+        body:
+          en: For work from 2026-01-01 to 2026-12-31, the official hourly minimum wage is 10,320 won. This is the baseline before checking allowances, deductions, and actual working time.
+          ko: 2026-01-01부터 2026-12-31까지 적용되는 공식 시간급 최저임금은 10,320원입니다. 수당, 공제와 실제 근무시간을 확인하기 전의 기본 기준입니다.
+          my: 2026-01-01 မှ 2026-12-31 အထိ သက်ရောက်သော တရားဝင်တစ်နာရီအနည်းဆုံးလစာမှာ 10,320 won ဖြစ်ပါသည်။ ထောက်ပံ့ကြေး၊ ဖြတ်တောက်မှုနှင့် အမှန်တကယ်အလုပ်ချိန်ကို မစစ်မီ အခြေခံစံနှုန်းဖြစ်ပါသည်။
+        href: ""
+      - icon: daily
+        title:
+          en: Daily and monthly reference amounts
+          ko: 일급과 월급 환산액
+          my: တစ်ရက်နှင့် တစ်လ အ参考ပမာဏ
+        body:
+          en: The official 2026 reference amount is 82,560 won for 8 hours and 2,156,880 won per month based on 209 hours. Monthly pay can differ depending on your contract, hours, unpaid leave, and deductions.
+          ko: 2026년 공식 환산액은 8시간 기준 일급 82,560원, 209시간 기준 월급 2,156,880원입니다. 실제 월급은 계약, 근무시간, 무급휴가와 공제에 따라 달라질 수 있습니다.
+          my: 2026 ခုနှစ် တရားဝင်အ参考ပမာဏမှာ 8 နာရီအခြေခံ တစ်ရက် 82,560 won နှင့် 209 နာရီအခြေခံ တစ်လ 2,156,880 won ဖြစ်ပါသည်။ တကယ့်လစာသည် စာချုပ်၊ အလုပ်ချိန်၊ လစာမရသောခွင့်နှင့် ဖြတ်တောက်မှုအလိုက် ကွာနိုင်ပါသည်။
+        href: ""
+      - icon: shield
+        title:
+          en: Applies broadly, but check the calculation
+          ko: 넓게 적용되지만 계산은 확인 필요
+          my: အများစုတွင် သက်ရောက်သော်လည်း တွက်ချက်မှုကို စစ်ရန်လိုပါသည်
+        body:
+          en: Minimum wage applies to workplaces with one or more workers regardless of business type, but whether your actual pay meets the rule depends on what counts as wage and how your hours are calculated.
+          ko: 최저임금은 사업 종류와 관계없이 근로자 1명 이상을 사용하는 사업장에 적용됩니다. 다만 실제 임금이 기준에 맞는지는 임금 산입범위와 근로시간 계산을 함께 봐야 합니다.
+          my: အလုပ်သမား 1 ဦးအထက်ရှိသော အလုပ်နေရာအများစုတွင် လုပ်ငန်းအမျိုးအစားမခွဲဘဲ အနည်းဆုံးလစာစည်းမျဉ်း သက်ရောက်ပါသည်။ သို့သော် ကိုယ့်လစာက စည်းမျဉ်းနှင့်ကိုက်မကိုက်သည် လစာထဲသို့ ဘာတွေထည့်တွက်သလဲနှင့် အလုပ်ချိန်တွက်ပုံပေါ်မူတည်ပါသည်။
+        href: ""
+  - icon: search
+    title:
+      en: What to check before payday
+      ko: 급여일 전 확인할 것
+      my: လစာရက်မတိုင်မီ စစ်ရန်
+    intro:
+      en: Salary problems are easier to solve when your contract, schedule, and work-time records are clear from the beginning.
+      ko: 계약, 일정과 근무시간 기록이 처음부터 분명하면 임금 문제를 확인하기가 훨씬 쉽습니다.
+      my: စာချုပ်၊ အချိန်ဇယားနှင့် အလုပ်ချိန်မှတ်တမ်းများကို အစကတည်းကရှင်းထားပါက လစာပြဿနာကို စစ်ရန် ပိုလွယ်ပါသည်။
+    items:
+      - icon: doc
+        title:
+          en: Written contract
+          ko: 서면 근로계약서
+          my: စာဖြင့်ရေးထားသော အလုပ်စာချုပ်
+        body:
+          en: Check hourly wage or monthly wage, payday, payment method, work days, start and finish time, break time, workplace, duties, and contract period.
+          ko: 시급 또는 월급, 지급일, 지급 방법, 근무 요일, 시작·종료 시간, 휴게시간, 근무지, 업무와 계약기간을 확인하세요.
+          my: နာရီလစာ သို့မဟုတ် လစဉ်လစာ၊ လစာပေးရက်၊ ပေးချေနည်း၊ အလုပ်ရက်၊ စတင်/ပြီးဆုံးချိန်၊ နားချိန်၊ အလုပ်နေရာ၊ တာဝန်နှင့် စာချုပ်ကာလကို စစ်ပါ။
+        href: ""
+      - icon: list
+        title:
+          en: Your own work-time record
+          ko: 본인 근무시간 기록
+          my: ကိုယ်တိုင်ထားသော အလုပ်ချိန်မှတ်တမ်း
+        body:
+          en: Record each work date, start and finish time, break time, extra shift, late-night work, and schedule changes. Do not rely only on memory.
+          ko: 근무일, 시작·종료 시간, 휴게시간, 추가근무, 야간근무와 일정 변경을 직접 기록하세요. 기억에만 의존하지 마세요.
+          my: အလုပ်ရက်၊ စတင်/ပြီးဆုံးချိန်၊ နားချိန်၊ အပိုအလုပ်၊ ညအလုပ်နှင့် အချိန်ဇယားပြောင်းလဲမှုကို ကိုယ်တိုင်မှတ်ထားပါ။ မှတ်မိတာတစ်ခုတည်းကို မမှီခိုပါနှင့်။
+        href: ""
+      - icon: jobs
+        title:
+          en: Training or trial work
+          ko: 교육·시험근무
+          my: Training သို့မဟုတ် Trial work
+        body:
+          en: If you are asked to train or do trial work, ask whether it is paid, how much, and how it will be recorded. For students, also check permission before starting.
+          ko: 교육이나 시험근무를 하라고 하면 유급인지, 얼마인지, 어떻게 기록되는지 물어보세요. 유학생은 시작 전에 허가도 확인해야 합니다.
+          my: Training သို့မဟုတ် Trial work လုပ်ခိုင်းပါက လစာပေးမပေး၊ ဘယ်လောက်ပေးမလဲ၊ ဘယ်လိုမှတ်တမ်းတင်မလဲ မေးပါ။ ကျောင်းသားဖြစ်ပါက မစမီ ခွင့်ပြုချက်ကိုလည်း စစ်ရပါမည်။
+        href: ""
+  - icon: doc
+    title:
+      en: How to read your pay statement
+      ko: 급여명세서 읽는 법
+      my: လစာရှင်းတမ်း ဖတ်နည်း
+    intro:
+      en: Compare the pay statement with your own records and the bank deposit for the same pay period.
+      ko: 같은 급여 산정기간의 급여명세서, 본인 기록과 실제 입금액을 비교하세요.
+      my: တူညီသောလစာတွက်ကာလအတွက် လစာရှင်းတမ်း၊ ကိုယ့်မှတ်တမ်းနှင့် ဘဏ်ငွေဝင်ပမာဏကို နှိုင်းယှဉ်ပါ။
+    items:
+      - icon: search
+        title:
+          en: Pay period and paid date
+          ko: 산정기간과 지급일
+          my: လစာတွက်ကာလနှင့် ပေးချေရက်
+        body:
+          en: Check which dates the pay covers and when it was paid. A common mistake is comparing this month's bank deposit with the wrong work period.
+          ko: 급여가 어느 기간의 근무를 기준으로 하는지, 언제 지급되었는지 확인하세요. 이번 달 입금액을 잘못된 근무기간과 비교하는 실수가 자주 생깁니다.
+          my: လစာသည် ဘယ်နေ့မှဘယ်နေ့အထိအလုပ်အတွက်ဖြစ်လဲနှင့် ဘယ်နေ့ပေးထားလဲ စစ်ပါ။ ဒီလဘဏ်ငွေဝင်ပမာဏကို မှားသောအလုပ်ကာလနှင့် နှိုင်းယှဉ်မိခြင်းက မကြာခဏဖြစ်တတ်ပါသည်။
+        href: ""
+      - icon: jobs
+        title:
+          en: Basic pay and allowances
+          ko: 기본급과 수당
+          my: အခြေခံလစာနှင့် ထောက်ပံ့ကြေး
+        body:
+          en: Look for basic pay, weekly holiday allowance if applicable, overtime, night work, holiday work, meal or transportation support, and other allowances.
+          ko: 기본급, 해당되는 경우 주휴수당, 연장근로, 야간근로, 휴일근로, 식대나 교통비 지원과 기타 수당을 확인하세요.
+          my: အခြေခံလစာ၊ သက်ဆိုင်ပါက 주휴수당၊ အချိန်ပို၊ ညအလုပ်၊ ပိတ်ရက်အလုပ်၊ အစားအသောက် သို့မဟုတ် ယာဉ်စရိတ်ထောက်ပံ့မှုနှင့် အခြားထောက်ပံ့ကြေးများကို ကြည့်ပါ။
+        href: ""
+      - icon: shield
+        title:
+          en: Deductions
+          ko: 공제
+          my: ဖြတ်တောက်မှုများ
+        body:
+          en: Check tax, insurance, and other deductions. If something is deducted but you do not understand why, ask for the calculation basis in writing.
+          ko: 세금, 보험과 기타 공제를 확인하세요. 이유를 모르는 공제가 있으면 계산 근거를 서면으로 요청하세요.
+          my: အခွန်၊ အာမခံနှင့် အခြားဖြတ်တောက်မှုများကို စစ်ပါ။ ဘာကြောင့်ဖြတ်ထားလဲ မနားလည်ပါက တွက်ချက်မှုအခြေခံကို စာဖြင့်တောင်းပါ။
+        href: ""
+      - icon: check
+        title:
+          en: Final deposit amount
+          ko: 실제 입금액
+          my: တကယ်ဝင်လာသော ပမာဏ
+        body:
+          en: The final amount on the pay statement should match the bank deposit. If it does not match, ask which item changed and keep the answer.
+          ko: 급여명세서의 최종 지급액과 실제 입금액이 맞는지 확인하세요. 다르면 어떤 항목이 달라졌는지 묻고 답변을 보관하세요.
+          my: လစာရှင်းတမ်းရှိ နောက်ဆုံးပေးချေပမာဏနှင့် ဘဏ်ထဲဝင်လာသော ပမာဏ ကိုက်ညီမညီ စစ်ပါ။ မကိုက်ပါက ဘယ်အချက်ကပြောင်းသွားလဲ မေးပြီး အဖြေကို သိမ်းထားပါ။
+        href: ""
+  - icon: daily
+    title:
+      en: Weekly holiday allowance basics
+      ko: 주휴수당 기본
+      my: 주휴수당 အခြေခံ
+    intro:
+      en: Weekly holiday allowance can matter for part-time workers, but it depends on work-hour and attendance conditions. Check your case before assuming.
+      ko: 주휴수당은 아르바이트생에게 중요할 수 있지만 근로시간과 출근 조건에 따라 달라집니다. 본인 사례를 확인하세요.
+      my: 주휴수당 သည် Part-time အလုပ်သမားများအတွက် အရေးကြီးနိုင်သော်လည်း အလုပ်ချိန်နှင့် တက်ရောက်မှုအခြေအနေပေါ်မူတည်ပါသည်။ ကိုယ့်အခြေအနေကို စစ်ပါ။
+    items:
+      - icon: check
+        title:
+          en: Basic condition to check
+          ko: 먼저 확인할 기준
+          my: အရင်စစ်ရမည့် အခြေခံအချက်
+        body:
+          en: The official MOEL guide explains weekly holiday allowance for workers who work at least 15 prescribed hours in a week and meet attendance conditions. Exact application can differ by schedule and contract.
+          ko: 고용노동부 안내는 1주 소정근로시간이 15시간 이상이고 출근 조건을 충족한 근로자의 주휴수당을 설명합니다. 실제 적용은 일정과 계약에 따라 달라질 수 있습니다.
+          my: အလုပ်သမားဝန်ကြီးဌာနလမ်းညွှန်တွင် တစ်ပတ်သတ်မှတ်အလုပ်ချိန် 15 နာရီနှင့်အထက်ရှိပြီး တက်ရောက်မှုအခြေအနေပြည့်မီသော အလုပ်သမားအတွက် 주휴수당 ကို ရှင်းပြထားပါသည်။ တကယ်သက်ရောက်မှုသည် အချိန်ဇယားနှင့် စာချုပ်အလိုက် ကွာနိုင်ပါသည်။
+        href: ""
+      - icon: search
+        title:
+          en: Check whether it is included already
+          ko: 이미 포함되어 있는지 확인
+          my: လစာထဲတွင် ပါပြီးသားလား စစ်ပါ
+        body:
+          en: Monthly salary may already include weekly holiday allowance. Hourly or daily pay may show it separately. Read the contract and pay statement together.
+          ko: 월급제는 주휴수당이 이미 월급에 포함되어 있을 수 있습니다. 시급제나 일급제는 별도로 표시될 수 있으므로 계약서와 급여명세서를 함께 확인하세요.
+          my: လစဉ်လစာယူသူများတွင် 주휴수당 သည် လစာထဲတွင် ပါပြီးသားဖြစ်နိုင်ပါသည်။ နာရီလစာ သို့မဟုတ် နေ့လစာယူသူများတွင် သီးခြားဖော်ပြထားနိုင်သောကြောင့် စာချုပ်နှင့် လစာရှင်းတမ်းကို အတူစစ်ပါ။
+        href: ""
+      - icon: help
+        title:
+          en: Do not calculate from screenshots only
+          ko: 캡처만 보고 단정하지 않기
+          my: Screenshot တစ်ခုတည်းဖြင့် မဆုံးဖြတ်ပါနှင့်
+        body:
+          en: Online examples can help you understand the idea, but your actual amount depends on your agreed hours, attendance, pay type, and pay period.
+          ko: 온라인 예시는 개념을 이해하는 데 도움이 되지만 실제 금액은 약정시간, 출근, 급여 형태와 산정기간에 따라 달라집니다.
+          my: Online ဥပမာများသည် နားလည်ရန်အတွက် အထောက်အကူဖြစ်သော်လည်း တကယ့်ပမာဏသည် သတ်မှတ်အလုပ်ချိန်၊ တက်ရောက်မှု၊ လစာပုံစံနှင့် လစာတွက်ကာလအပေါ် မူတည်ပါသည်။
+        href: ""
+  - icon: shield
+    title:
+      en: Common warning signs
+      ko: 조심해야 할 신호
+      my: သတိထားရမည့် အချက်များ
+    intro:
+      en: When pay is unclear, slow down and keep written records before the problem grows.
+      ko: 임금이 불분명하면 문제가 커지기 전에 멈추고 서면 기록을 남기세요.
+      my: လစာမရှင်းလင်းပါက ပြဿနာကြီးမလာမီ ခဏရပ်ပြီး စာဖြင့်မှတ်တမ်းထားပါ။
+    items:
+      - icon: shield
+        title:
+          en: “Training is unpaid”
+          ko: “교육은 무급”이라고 말함
+          my: “Training က လစာမပေးဘူး” ဟုပြောခြင်း
+        body:
+          en: If training or trial work is required, ask whether it is work time, whether it is paid, and how it will be recorded. For students, also confirm visa permission before starting.
+          ko: 교육이나 시험근무가 필요하다고 하면 근로시간인지, 유급인지, 어떻게 기록되는지 물어보세요. 유학생은 시작 전 비자 허가도 확인하세요.
+          my: Training သို့မဟုတ် Trial work လိုသည်ဟုပြောပါက အလုပ်ချိန်အဖြစ်တွက်မတွက်၊ လစာပေးမပေး၊ ဘယ်လိုမှတ်တမ်းတင်မလဲ မေးပါ။ ကျောင်းသားဖြစ်ပါက မစမီ ဗီဇာခွင့်ပြုချက်ကိုလည်း စစ်ပါ။
+        href: ""
+      - icon: doc
+        title:
+          en: No pay statement
+          ko: 급여명세서가 없음
+          my: လစာရှင်းတမ်း မပေးခြင်း
+        body:
+          en: If you receive money without a pay statement, it becomes harder to check wage, deductions, and missing hours. Ask for the pay details in writing.
+          ko: 급여명세서 없이 돈만 받으면 임금, 공제와 빠진 근무시간을 확인하기 어렵습니다. 급여 내역을 서면으로 요청하세요.
+          my: လစာရှင်းတမ်းမရှိဘဲ ငွေတစ်ခုပဲရပါက လစာ၊ ဖြတ်တောက်မှုနှင့် လွတ်သွားသောအလုပ်ချိန်ကို စစ်ရန်ခက်ပါသည်။ လစာအသေးစိတ်ကို စာဖြင့်တောင်းပါ။
+        href: ""
+      - icon: jobs
+        title:
+          en: Cash-only or unclear transfer
+          ko: 현금 지급만 하거나 입금 내역이 불분명
+          my: Cash-only သို့မဟုတ် ငွေလွှဲမှတ်တမ်းမရှင်းခြင်း
+        body:
+          en: Cash payment is harder to prove later. If possible, keep a bank record, written receipt, message, or pay statement that shows the amount and pay period.
+          ko: 현금 지급은 나중에 증명하기 어렵습니다. 가능하면 금액과 산정기간이 보이는 계좌기록, 영수증, 메시지 또는 급여명세서를 보관하세요.
+          my: ငွေသားဖြင့်ပေးချေခြင်းသည် နောက်ပိုင်းသက်သေပြရန် ခက်ပါသည်။ ဖြစ်နိုင်ပါက ပမာဏနှင့် လစာတွက်ကာလပါသော ဘဏ်မှတ်တမ်း၊ Receipt၊ Message သို့မဟုတ် လစာရှင်းတမ်းကို သိမ်းထားပါ။
+        href: ""
+      - icon: help
+        title:
+          en: Pay changes without explanation
+          ko: 설명 없이 급여가 달라짐
+          my: ရှင်းပြချက်မရှိဘဲ လစာပြောင်းခြင်း
+        body:
+          en: If the amount changes, ask which item changed and why. Keep the answer, date, and related messages before deciding what to do next.
+          ko: 금액이 달라졌다면 어떤 항목이 왜 바뀌었는지 물어보세요. 다음 행동을 결정하기 전에 답변, 날짜와 관련 메시지를 보관하세요.
+          my: ပမာဏပြောင်းသွားပါက ဘယ်အချက်က ဘာကြောင့်ပြောင်းလဲသွားလဲ မေးပါ။ နောက်တစ်ဆင့်မဆုံးဖြတ်မီ အဖြေ၊ ရက်စွဲနှင့် သက်ဆိုင်သောမက်ဆေ့ချ်များကို သိမ်းထားပါ။
+        href: ""
+  - icon: list
+    title:
+      en: If your pay looks wrong
+      ko: 급여가 이상해 보일 때
+      my: လစာမမှန်သလို ထင်ပါက
+    intro:
+      en: Do not argue only by feeling. Organize dates, hours, pay records, and messages first.
+      ko: 느낌만으로 다투지 말고 날짜, 시간, 급여기록과 메시지를 먼저 정리하세요.
+      my: ခံစားချက်တစ်ခုတည်းဖြင့် မဆွေးနွေးပါနှင့်။ ရက်စွဲ၊ အလုပ်ချိန်၊ လစာမှတ်တမ်းနှင့် မက်ဆေ့ချ်များကို အရင်စုစည်းပါ။
+    items:
+      - icon: list
+        title:
+          en: Organize one pay period
+          ko: 한 급여기간 정리
+          my: လစာတွက်ကာလတစ်ခုကို စုစည်းပါ
+        body:
+          en: Write down the pay period, total work days, total hours, break time, promised wage, actual deposit, and missing or unclear items.
+          ko: 산정기간, 총 근무일, 총 근무시간, 휴게시간, 약속된 임금, 실제 입금액과 빠지거나 불분명한 항목을 적어보세요.
+          my: လစာတွက်ကာလ၊ စုစုပေါင်းအလုပ်ရက်၊ စုစုပေါင်းအလုပ်ချိန်၊ နားချိန်၊ ကတိပေးထားသောလစာ၊ တကယ်ဝင်လာသောငွေနှင့် လွတ်သွား/မရှင်းသောအချက်များကို ရေးပါ။
+        href: ""
+      - icon: doc
+        title:
+          en: Ask for calculation basis
+          ko: 계산 근거 요청
+          my: တွက်ချက်မှုအခြေခံကို တောင်းပါ
+        body:
+          en: Ask the employer or manager to explain the calculation in writing. Keep the reply even if the issue is solved.
+          ko: 고용주나 담당자에게 계산 내역을 서면으로 설명해 달라고 요청하세요. 문제가 해결되더라도 답변은 보관하세요.
+          my: အလုပ်ရှင် သို့မဟုတ် တာဝန်ခံထံ တွက်ချက်မှုအသေးစိတ်ကို စာဖြင့်ရှင်းပြပေးရန် တောင်းပါ။ ပြဿနာဖြေရှင်းပြီးသော်လည်း အဖြေကို သိမ်းထားပါ။
+        href: ""
+      - icon: external
+        title:
+          en: Ask official labor support
+          ko: 공식 노동 상담 이용
+          my: တရားဝင်အလုပ်သမားအကူအညီကို မေးပါ
+        body:
+          en: If the explanation is missing or unpaid wages are suspected, contact MOEL 1350 or the Labor Portal with your organized records. MyanMate does not decide whether a violation occurred.
+          ko: 설명을 받지 못했거나 임금체불이 의심되면 정리한 기록을 가지고 고용노동부 1350 또는 노동포털에 문의하세요. MyanMate는 위법 여부를 판단하지 않습니다.
+          my: ရှင်းပြချက်မရခြင်း သို့မဟုတ် လစာမပေးမှုသံသယရှိပါက စုစည်းထားသောမှတ်တမ်းများဖြင့် အလုပ်သမားဝန်ကြီးဌာန 1350 သို့မဟုတ် Labor Portal ကို ဆက်သွယ်ပါ။ MyanMate သည် ဥပဒေချိုးဖောက်မှုရှိမရှိကို ဆုံးဖြတ်မပေးပါ။
+        href: ""
+  - icon: external
+    title:
+      en: Where to confirm officially
+      ko: 공식적으로 확인할 곳
+      my: တရားဝင်စစ်ဆေးနိုင်သောနေရာ
+    intro:
+      en: Minimum wage and labor rules can change. Use official pages when you check pay or update this guide.
+      ko: 최저임금과 노동 기준은 바뀔 수 있습니다. 급여를 확인하거나 이 안내를 업데이트할 때 공식 페이지를 이용하세요.
+      my: အနည်းဆုံးလစာနှင့် အလုပ်သမားစည်းမျဉ်းများ ပြောင်းနိုင်ပါသည်။ လစာစစ်ချိန် သို့မဟုတ် ဤလမ်းညွှန်ချက်ကို Update လုပ်ချိန်တွင် တရားဝင်စာမျက်နှာများကို သုံးပါ။
+    items:
+      - icon: external
+        title:
+          en: Minimum Wage Commission
+          ko: 최저임금위원회
+          my: အနည်းဆုံးလစာကော်မရှင်
+        body:
+          en: Official annual minimum wage table. Use it to confirm the hourly, daily, and monthly reference wage for the correct year.
+          ko: 연도별 최저임금 공식 표입니다. 적용 연도의 시간급, 일급과 월 환산액을 확인하세요.
+          my: နှစ်အလိုက် အနည်းဆုံးလစာ တရားဝင်ဇယားဖြစ်ပါသည်။ သက်ရောက်သည့်နှစ်၏ တစ်နာရီ၊ တစ်ရက်နှင့် တစ်လအ参考ပမာဏကို စစ်ပါ။
+        href: https://minimumwage.go.kr/english/introduce/minWage.do
+      - icon: external
+        title:
+          en: MOEL minimum wage system
+          ko: 고용노동부 최저임금제도
+          my: အလုပ်သမားဝန်ကြီးဌာန အနည်းဆုံးလစာစနစ်
+        body:
+          en: Official labor portal page explaining who minimum wage applies to and what can be included in the minimum-wage calculation.
+          ko: 최저임금 적용 대상과 산입범위를 설명하는 공식 노동포털 페이지입니다.
+          my: အနည်းဆုံးလစာသည် ဘယ်သူများအပေါ်သက်ရောက်သလဲနှင့် ဘာတွေကို အနည်းဆုံးလစာတွက်ချက်မှုထဲ ထည့်နိုင်သလဲ ရှင်းပြထားသော တရားဝင် Labor Portal စာမျက်နှာဖြစ်ပါသည်။
+        href: https://labor.moel.go.kr/minwonSysInfo/minwagesys.do
+      - icon: external
+        title:
+          en: MOEL minimum wage and weekly holiday allowance guide
+          ko: 고용노동부 최저임금·주휴수당 안내
+          my: အနည်းဆုံးလစာနှင့် 주휴수당 လမ်းညွှန်
+        body:
+          en: Official MOEL guide with 2026 minimum wage, weekly holiday allowance examples, and what to do if minimum wage is not paid.
+          ko: 2026년 최저임금, 주휴수당 예시와 최저임금을 받지 못했을 때의 안내가 포함된 고용노동부 공식 자료입니다.
+          my: 2026 အနည်းဆုံးလစာ၊ 주휴수당 ဥပမာများနှင့် အနည်းဆုံးလစာမရပါက ဘာလုပ်ရမလဲ ပါဝင်သော အလုပ်သမားဝန်ကြီးဌာန တရားဝင်လမ်းညွှန်ဖြစ်ပါသည်။
+        href: https://moel.go.kr/mainpop2.do
+      - icon: external
+        title:
+          en: Labor Portal wage issue guide
+          ko: 노동포털 임금체불 안내
+          my: Labor Portal လစာမရခြင်း လမ်းညွှန်
+        body:
+          en: Use the official Labor Portal when you need to understand unpaid wage procedures or prepare a wage-related inquiry.
+          ko: 임금체불 절차를 확인하거나 임금 관련 문의를 준비할 때 공식 노동포털을 이용하세요.
+          my: လစာမရခြင်းဆိုင်ရာလုပ်ထုံးလုပ်နည်းကို နားလည်ရန် သို့မဟုတ် လစာဆိုင်ရာမေးမြန်းမှု ပြင်ရန် တရားဝင် Labor Portal ကို သုံးပါ။
+        href: https://labor.moel.go.kr/minwonSysInfo/wagesolway.do

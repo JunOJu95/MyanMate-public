@@ -1,0 +1,104 @@
+---
+import GuideCategoryLanding from '../../components/GuideCategoryLanding.astro';
+import { guideCategoryById } from '../../data/guide-categories';
+
+const category = guideCategoryById('daily-life');
+const title = {
+  en: 'Daily Life Guides for Myanmar People',
+  ko: '미얀마 사람을 위한 한국 생활 가이드',
+  my: 'ကိုရီးယားနေ့စဉ်ဘဝ လမ်းညွှန်များ',
+};
+const description = {
+  en: 'Start here for housing, healthcare, foreigner registration, address changes, delivery apps, weather, and everyday Korea-life checks.',
+  ko: '주거, 건강보험·병원, 외국인등록, 주소 변경, 배달 앱, 날씨와 한국 생활에서 자주 확인해야 할 내용을 살펴보세요.',
+  my: 'ကိုရီးယားမှာ နေထိုင်ရင်း မကြာခဏစစ်ရတဲ့ နေ့စဉ်ဘဝအချက်အလက်တွေကို ဒီနေရာမှာ စုထားပါမယ်။ လက်ရှိတင်ထားတဲ့ ခေါင်းစဉ်တွေကနေ ကိုယ့်အခြေအနေနဲ့ဆိုင်တာကို အရင်ဖတ်ကြည့်နိုင်ပါတယ်။',
+};
+const links = [
+  {
+    href: '/guides/housing',
+    icon: 'housing',
+    title: {
+      en: 'Home & neighborhood information',
+      ko: '집·주거환경 정보',
+      my: 'အိမ်နှင့် နေထိုင်ရာပတ်ဝန်းကျင် အချက်အလက်',
+    },
+    summary: {
+      en: 'Check the home, building, neighborhood route, housing cost, and records before or after a rental contract.',
+      ko: '임대차계약 전후에 집, 건물, 동선, 주거비와 확인해야 할 기록을 살펴보세요.',
+      my: 'အိမ်ငှားစာချုပ်မတိုင်မီ/ပြီးနောက် အိမ်၊ အဆောက်အအုံ၊ သွားလာလမ်း၊ နေထိုင်စရိတ်နှင့် စစ်ဆေးရန်မှတ်တမ်းများကို ကြည့်ပါ။',
+    },
+  },
+  {
+    href: '/guides/address-change-after-moving',
+    icon: 'housing',
+    title: {
+      en: 'Address change after moving',
+      ko: '이사 후 주소 변경 신고',
+      my: 'အိမ်ပြောင်းပြီးနောက် လိပ်စာပြောင်း တင်ပြရန်',
+    },
+    summary: {
+      en: 'Check the reporting deadline, where to report, and what residence proof may be needed after moving.',
+      ko: '이사 후 신고기한, 신고 장소와 체류지 입증서류를 확인하세요.',
+      my: 'အိမ်ပြောင်းပြီးနောက် သတ်မှတ်ရက်၊ ဘယ်မှာတင်ရမလဲနှင့် နေထိုင်ရာအထောက်အထား ဘာလိုနိုင်လဲ စစ်ပါ။',
+    },
+  },
+  {
+    href: '/guides/phone-sim',
+    icon: 'phone',
+    title: {
+      en: 'Phone number and SIM card',
+      ko: '휴대폰 번호와 SIM 카드',
+      my: 'ဖုန်းနံပါတ်နှင့် SIM ကတ်',
+    },
+    summary: {
+      en: 'Check prepaid and postpaid SIM choices, what documents may be needed, and why an own-name number matters.',
+      ko: '선불·후불 SIM 선택, 필요할 수 있는 서류와 본인 명의 번호가 왜 중요한지 확인하세요.',
+      my: 'ကြိုတင်ငွေဖြည့် SIM၊ လစဉ်ပေးချေသော ဖုန်းလိုင်း၊ လိုအပ်နိုင်သောစာရွက်များနှင့် ကိုယ့်နာမည်ဖြင့်ဖွင့်ထားသောနံပါတ်က ဘာကြောင့်အရေးကြီးလဲ စစ်ပါ။',
+    },
+  },
+  {
+    href: '/guides/public-transportation',
+    icon: 'transit',
+    title: {
+      en: 'Public transportation',
+      ko: '대중교통 이용하기',
+      my: 'အများသုံးယာဉ်စီးနည်း',
+    },
+    summary: {
+      en: 'Check transportation cards, bus and subway transfers, route apps, last train times, and taxi basics.',
+      ko: '교통카드, 버스·지하철 환승, 길찾기 앱, 막차 시간과 택시 기본 이용법을 확인하세요.',
+      my: 'ယာဉ်စီးကတ်၊ ဘတ်စ်ကား/မြေအောက်ရထား ပြောင်းစီးခြင်း၊ လမ်းကြောင်းရှာ App၊ နောက်ဆုံးရထားအချိန်နှင့် တက္ကစီအခြေခံအသုံးပြုနည်းကို စစ်ပါ။',
+    },
+  },
+  {
+    href: '/guides/emergency-numbers',
+    icon: 'shield',
+    title: {
+      en: 'Emergency numbers',
+      ko: '긴급 연락처',
+      my: 'အရေးပေါ်နံပါတ်များ',
+    },
+    summary: {
+      en: 'Save the numbers for police, ambulance, fire, travel interpretation, immigration help, health questions, and lost items.',
+      ko: '경찰, 구급차, 화재, 여행 통역, 출입국 상담, 보건 문의와 분실물 번호를 확인하세요.',
+      my: 'ရဲ၊ လူနာတင်ကား၊ မီးသတ်၊ ခရီးသွားဘာသာပြန်၊ လူဝင်မှုကြီးကြပ်ရေးအကူအညီ၊ ကျန်းမာရေးမေးမြန်းမှုနှင့် ပစ္စည်းပျောက်နံပါတ်များကို စစ်ပါ။',
+    },
+  },
+  {
+    href: '/guides/healthcare',
+    icon: 'health',
+    title: {
+      en: 'Health insurance & medical visits',
+      ko: '건강보험·병원 이용 정보',
+      my: 'ကျန်းမာရေးအာမခံနှင့် ဆေးရုံအသုံးပြုမှု အချက်အလက်',
+    },
+    summary: {
+      en: 'Review health-insurance status, medical visit preparation, costs, prescriptions, and official NHIS reminders.',
+      ko: '건강보험 상태, 병원 방문 준비, 비용, 처방과 국민건강보험공단 확인 사항을 정리했습니다.',
+      my: 'ကျန်းမာရေးအာမခံအခြေအနေ၊ ဆေးရုံသွားရန်ပြင်ဆင်မှု၊ ကုန်ကျစရိတ်၊ ဆေးညွှန်းနှင့် NHIS စစ်ဆေးရန်အချက်များကို စုစည်းထားပါသည်။',
+    },
+  },
+];
+---
+
+<GuideCategoryLanding category={category} title={title} description={description} links={links} showCategoryNav={false} showLawNote={false} />

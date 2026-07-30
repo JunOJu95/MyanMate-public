@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+import BackArrow from './BackArrow.astro';
+import Icon from './Icon.astro';
+import LocalizedText from './LocalizedText.astro';
+import T from './T.astro';
+import { defaultLang } from '../i18n/ui';
+import { guideCategories, type GuideCategory } from '../data/guide-categories';
+import type { LocalizedText as LocalizedTextValue } from '../lib/content';
+
+interface GuideCategoryLink {
+  href: string;
+  icon: string;
+  title: LocalizedTextValue;
+  summary: LocalizedTextValue;
+  subLinks?: {
+    href: string;
+    title: LocalizedTextValue;
+    summary?: LocalizedTextValue;
+  }[];
+}
+
+interface Props {
+  category: GuideCategory;
+  title: LocalizedTextValue;
+  description: LocalizedTextValue;
+  links: GuideCategoryLink[];
+  showCategoryNav?: boolean;
+  showLawNote?: boolean;
+}
+
+const { category, title, description, links, showCategoryNav = true, showLawNote = true } = Astro.props;
+---
+
+<Base title={title[defaultLang] || title.en} active="guides" description={description[defaultLang] || description.en}>
+  <div class="wrap guide-category-page">
+    <section class="sec guide-topic-detail-hero" data-reveal="page-hero">
+      <div class="guide-topic-detail-head">
+        <BackArrow href="/guides" class="guide-topic-detail-back" />
+        <div>
+          <LocalizedText value={title} tag="h1" class="guide-topic-detail-title" />
+          <LocalizedText value={description} tag="p" class="guide-topic-detail-intro" />
+        </div>
+      </div>
+      {showLawNote && (
+        <div class="guide-law-note">
+          <Icon name="shield" size={18} />
+          <p><T k="infoHub.promise.note" /></p>
+        </div>
+      )}
+    </section>
+
+    {showCategoryNav && (
+      <section class="guide-category-nav-section">
+        <div class="guide-category-tabs" role="group">
+          {guideCategories.map((item) => {
+            const selected = item.id === category.id;
+            return (
+              <a class:list={['guide-category-tab', { on: selected }]} href={item.href} aria-current={selected ? 'page' : undefined}>
+                <Icon name={item.icon} size={15} />
+                <LocalizedText value={item.title} tag="span" />
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    <section class="sec guide-topic-links-section" data-reveal="section">
+      <div class="guide-topic-links">
+        {links.map((link) => link.subLinks?.length ? (
+          <div class="guide-topic-link guide-topic-link-group">
+            <a class="guide-topic-link-main" href={link.href}>
+              <span class="guide-topic-link-icon"><Icon name={link.icon} /></span>
+              <span>
+                <LocalizedText value={link.title} tag="span" class="guide-topic-link-title" />
+                <LocalizedText value={link.summary} tag="span" class="guide-topic-link-summary" />
+              </span>
+              <Icon name="external" size={15} class="guide-topic-link-arrow" />
+            </a>
+            <div class="guide-topic-sublinks">
+              {link.subLinks.map((subLink) => (
+                <a class="guide-topic-sublink" href={subLink.href}>
+                  <span>
+                    <LocalizedText value={subLink.title} tag="strong" />
+                    {subLink.summary && <LocalizedText value={subLink.summary} tag="small" />}
+                  </span>
+                  <Icon name="external" size={13} />
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a class="guide-topic-link" href={link.href}>
+            <span class="guide-topic-link-icon"><Icon name={link.icon} /></span>
+            <span>
+              <LocalizedText value={link.title} tag="span" class="guide-topic-link-title" />
+              <LocalizedText value={link.summary} tag="span" class="guide-topic-link-summary" />
+            </span>
+            <Icon name="external" size={15} class="guide-topic-link-arrow" />
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>

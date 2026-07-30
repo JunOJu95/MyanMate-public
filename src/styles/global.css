@@ -37,6 +37,7 @@
 *{box-sizing:border-box;}
 html,body{margin:0;}
 html{scroll-behavior:smooth;}
+[hidden]{display:none !important;}
 body{
   background:
     linear-gradient(180deg,rgba(255,255,255,.48),rgba(255,255,255,0) 260px),
@@ -140,7 +141,6 @@ img{max-width:100%;display:block;}
   .ham{display:none;}
   .mobile-nav{display:none !important;}
 }
-
 /* ---------------- typography ---------------- */
 .h-hero{font-size:28px;line-height:1.14;font-weight:800;letter-spacing:-.02em;margin:0;color:var(--ink);text-wrap:balance;}
 .t-sub{font-size:14px;line-height:1.55;color:var(--ink-soft);margin:8px 0 0;text-wrap:pretty;}
@@ -710,8 +710,33 @@ body{
 .detail-hero .pill-tag{margin-bottom:14px;}
 .detail-hero .lead-title{max-width:760px;}
 .detail-hero .t-sub{max-width:700px;}
+body.lang-my .detail-hero .lead-title{line-height:1.42;}
+.guide-detail-hero-head{display:grid;grid-template-columns:54px minmax(0,1fr);gap:16px;align-items:start;}
+.guide-detail-hero-copy{min-width:0;}
+.back-arrow-control{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:none;
+  width:48px;
+  height:48px;
+  color:var(--brand-strong);
+  opacity:.88;
+  transition:opacity .16s ease,transform .16s ease;
+}
+.back-arrow-control span{
+  display:block;
+  width:20px;
+  height:20px;
+  border-left:4px solid currentColor;
+  border-bottom:4px solid currentColor;
+  border-radius:2px;
+  transform:translateX(4px) rotate(45deg);
+}
+.back-arrow-control:hover{opacity:1;transform:translateX(-2px);}
+.back-arrow-control:focus-visible{outline:2px solid var(--brand-strong);outline-offset:5px;border-radius:8px;}
 .service-detail-hero{display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center;}
-.service-detail-hero .svc-ico{grid-row:1 / span 2;width:54px;height:54px;border-radius:6px;padding:12px;}
+.service-detail-hero .service-detail-back{grid-row:1 / span 2;width:54px;height:54px;}
 .service-detail-hero .t-sub{grid-column:2;margin:8px 0 0;max-width:720px;}
 .information-meta-row{grid-column:2;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px;}
 .information-meta-row .pill-tag{margin:0;}
@@ -887,10 +912,22 @@ body.lang-my .about-proof-strip p{font-family:'Noto Sans Myanmar','Padauk',sans-
   .home-hero .t-sub{font-size:13px;line-height:1.65;}
   .home-section{padding-block:58px;}
   .page-hero{padding-top:46px;}
-  .service-detail-hero{grid-template-columns:1fr;}
-  .service-detail-hero .svc-ico{grid-row:auto;margin-bottom:18px;}
-  .service-detail-hero .t-sub{grid-column:auto;}
-  .service-detail-hero .information-meta-row{grid-column:auto;}
+  .service-detail-hero{grid-template-columns:42px minmax(0,1fr);column-gap:10px;align-items:start;}
+  .service-detail-hero .service-detail-back{grid-row:1 / span 2;width:42px;height:42px;margin-bottom:0;}
+  .service-detail-back span{width:18px;height:18px;border-width:3.5px;}
+  .service-detail-hero .t-sub{grid-column:2;}
+  .service-detail-hero .information-meta-row{grid-column:2;}
+  .guide-detail-hero-head{grid-template-columns:42px minmax(0,1fr);gap:10px;}
+  .guide-detail-back{width:42px;height:42px;}
+  .guide-detail-back span{width:18px;height:18px;border-width:3.5px;}
+}
+
+@media(max-width:640px){
+  .detail-page{padding-top:22px;}
+  .detail-hero{padding-top:8px;padding-bottom:28px;}
+  .guide-topic-detail-hero{padding-top:30px;}
+  .guide-topic-detail-title{font-size:clamp(25px,8vw,34px);}
+  .visa-hub-hero{padding-top:32px;}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -1133,7 +1170,7 @@ body.lang-my .about-proof-strip p{font-family:'Noto Sans Myanmar','Padauk',sans-
   display:flex;
   height:100%;
   min-width:0;
-  min-height:318px;
+  min-height:196px;
   flex-direction:column;
   padding:22px;
   overflow:hidden;
@@ -1159,17 +1196,17 @@ body.lang-my .about-proof-strip p{font-family:'Noto Sans Myanmar','Padauk',sans-
 }
 .visa-guide-card:hover{transform:translateY(-5px);border-color:var(--line-strong);box-shadow:var(--shadow-md);}
 .visa-guide-card:hover::after{transform:translate3d(-7px,7px,0) scale(1.05);}
-.visa-card-head{position:relative;z-index:1;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:28px;}
-.visa-card-head .reviewed-mini{max-width:72%;justify-content:flex-end;text-align:right;}
-.visa-code{flex:none;white-space:nowrap;font-family:var(--mono);font-size:24px;font-weight:600;line-height:1;color:var(--brand-strong);}
-.visa-card-title{display:block;max-width:90%;font-size:17px;font-weight:800;line-height:1.42;color:var(--ink);}
-.visa-card-summary{display:block;margin-top:10px;font-size:12.5px;line-height:1.68;color:var(--ink-soft);}
+.visa-card-head{position:relative;z-index:1;display:grid;gap:8px;margin-bottom:18px;}
+.visa-code{display:block;white-space:nowrap;font-family:var(--mono);font-size:34px;font-weight:700;line-height:1;color:var(--ink);}
+.visa-card-title{display:block;max-width:90%;font-size:14px;font-weight:750;line-height:1.45;color:var(--ink-soft);}
 .visa-card-topics{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px;}
 .visa-card-topics > span{display:inline-flex;align-items:center;gap:5px;padding:6px 8px;border:1px solid var(--line);border-radius:5px;background:var(--surface);font-size:10.5px;font-weight:700;color:var(--ink-soft);}
 .visa-card-topics svg{flex:none;color:var(--brand-strong);}
-.visa-card-action{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-size:12px;font-weight:800;color:var(--brand-strong);}
+.visa-card-footer{display:grid;gap:7px;margin-top:auto;padding-top:18px;border-top:1px solid var(--line);}
+.visa-card-action{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:800;color:var(--brand-strong);}
 .visa-card-action::after{content:"\2192";font-family:var(--mono);font-size:17px;transition:transform 220ms ease;}
 .visa-guide-card:hover .visa-card-action::after{transform:translateX(4px);}
+.visa-card-reviewed{justify-content:flex-start;color:var(--ink-faint);}
 .section-action{margin-top:22px;}
 
 .prepare-band{background:var(--surface);}
@@ -1200,12 +1237,45 @@ body.lang-my .about-proof-strip p{font-family:'Noto Sans Myanmar','Padauk',sans-
 
 .visa-hub-page{padding-bottom:72px;}
 .visa-hub-hero{max-width:820px;padding-bottom:42px;}
+.visa-hub-hero::before{display:none;}
 .visa-hub-eyebrow{margin:0 0 16px;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--brand-strong);}
 .visa-hub-hero .t-sub{max-width:720px;margin-top:16px;font-size:15px;}
 .visa-hub-content{padding-top:36px;border-top:2px solid var(--ink)!important;}
 .visa-hub-heading{display:grid;gap:5px;margin-bottom:24px;}
 .visa-hub-heading .sec-title{margin:0;}
 .visa-hub-grid{margin-top:4px;}
+.visa-purpose-filter-shell{display:grid;gap:12px;margin-bottom:24px;}
+.visa-purpose-filter{
+  display:flex;
+  gap:9px;
+  overflow-x:auto;
+  padding-bottom:4px;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.visa-purpose-filter::-webkit-scrollbar{display:none;}
+.visa-purpose-button{
+  min-width:max-content;
+  padding:10px 18px;
+  border:1px solid transparent;
+  border-radius:999px;
+  background:rgba(255,255,255,.56);
+  color:var(--ink-soft);
+  font-family:inherit;
+  font-size:12.5px;
+  font-weight:850;
+  line-height:1.3;
+  cursor:pointer;
+  transition:background 160ms ease,color 160ms ease,border-color 160ms ease,transform 160ms ease;
+}
+.visa-purpose-button:hover{transform:translateY(-1px);border-color:var(--line-strong);color:var(--brand-strong);background:var(--brand-tint);}
+.visa-purpose-button.on,
+.visa-purpose-button[aria-pressed="true"]{background:var(--brand-strong);border-color:var(--brand-strong);color:#fff;}
+body.lang-my .visa-purpose-button{font-family:'Noto Sans Myanmar','Padauk',sans-serif;line-height:1.55;}
+.visa-purpose-note{max-width:760px;margin:0;color:var(--ink-faint);font-size:12px;font-weight:700;line-height:1.65;}
+.visa-guide-item{height:100%;}
+.visa-guide-item[hidden]{display:none;}
+.visa-purpose-empty{margin-top:18px;}
 
 .information-hub-page{padding-bottom:84px;}
 .information-hub-hero{max-width:840px;padding-bottom:46px;}
@@ -1214,6 +1284,359 @@ body.lang-my .about-proof-strip p{font-family:'Noto Sans Myanmar','Padauk',sans-
 .information-category-grid{margin-top:4px;}
 .info-category-card{min-height:250px;}
 .info-category-card .card-title{font-size:17px;line-height:1.5;}
+
+.guide-library-page{padding-bottom:72px;}
+.guide-library-hero{padding:58px 0 26px;border-top:0!important;}
+.guide-library-eyebrow{
+  width:max-content;
+  max-width:100%;
+  margin:0 0 14px;
+  color:var(--brand-strong);
+  font-family:var(--mono);
+  font-size:10.5px;
+  font-weight:700;
+  text-transform:uppercase;
+}
+.guide-library-title{
+  max-width:760px;
+  margin:0;
+  font-size:clamp(30px,5.2vw,48px);
+  line-height:1.12;
+  font-weight:800;
+  letter-spacing:0;
+  color:var(--ink);
+  text-wrap:balance;
+}
+body.lang-my .guide-library-title{
+  line-height:1.48;
+  font-weight:750;
+}
+.guide-library-intro{
+  max-width:720px;
+  margin:14px 0 0;
+  font-size:15px;
+  line-height:1.75;
+  color:var(--ink-soft);
+  text-wrap:pretty;
+}
+.guide-category-nav-section{overflow:hidden;padding:0 0 22px;border-bottom:1px solid var(--line-strong);}
+.guide-category-nav-head{display:grid;gap:6px;margin-bottom:16px;}
+.guide-category-nav-head .sec-title{margin:0;}
+.guide-category-nav-head .t-body{max-width:760px;}
+.guide-category-tabs{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding:2px 0 6px;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.guide-category-tabs::-webkit-scrollbar{display:none;}
+.guide-category-tab{
+  display:inline-flex;
+  min-width:174px;
+  min-height:64px;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 13px;
+  border:1px solid rgba(205,191,168,.9);
+  border-radius:8px;
+  background:rgba(255,255,255,.7);
+  color:var(--ink);
+  font-size:12.5px;
+  font-weight:800;
+  line-height:1.3;
+  box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+  transition:background 160ms ease,border-color 160ms ease,color 160ms ease,transform 160ms ease,box-shadow 160ms ease;
+}
+.guide-category-tab svg{
+  flex:none;
+  width:32px;
+  height:32px;
+  padding:8px;
+  border-radius:7px;
+  background:var(--brand-soft);
+  color:var(--brand-strong);
+}
+.guide-category-tab [data-lang]{flex:1;min-width:0;}
+.guide-category-tab::after{
+  content:"\2192";
+  display:inline-grid;
+  width:24px;
+  height:24px;
+  place-items:center;
+  flex:none;
+  color:var(--brand-strong);
+  font-family:var(--mono);
+  font-size:14px;
+  opacity:.62;
+  transition:transform 160ms ease,opacity 160ms ease;
+}
+.guide-category-tab:hover{transform:translateY(-1px);border-color:rgba(192,97,58,.62);color:var(--brand-strong);background:rgba(255,255,255,.92);box-shadow:0 10px 26px rgba(50,40,22,.08);}
+.guide-category-tab:hover::after{transform:translateX(3px);opacity:1;}
+.guide-category-tab.on,
+.guide-category-tab[aria-current="page"]{
+  border-color:rgba(192,97,58,.72);
+  background:linear-gradient(180deg,rgba(255,255,255,.96),var(--brand-tint));
+  color:var(--ink);
+  box-shadow:inset 0 3px 0 var(--brand),0 10px 26px rgba(50,40,22,.08);
+}
+.guide-category-tab.on svg,
+.guide-category-tab[aria-current="page"] svg{
+  background:var(--brand-strong);
+  color:#fff;
+}
+.guide-category-tab.on::after,
+.guide-category-tab[aria-current="page"]::after{color:var(--brand-strong);opacity:1;}
+body.lang-my .guide-category-tab{font-family:'Noto Sans Myanmar','Padauk',sans-serif;line-height:1.55;}
+.guide-category-card-grid{display:grid;grid-template-columns:1fr;gap:12px;}
+.guide-category-card{
+  position:relative;
+  display:grid;
+  min-height:236px;
+  align-content:space-between;
+  gap:18px;
+  padding:18px;
+  overflow:hidden;
+  border:1px solid rgba(205,191,168,.9);
+  border-radius:8px;
+  background:var(--ink);
+  color:#fff;
+  box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 10px 26px rgba(50,40,22,.08);
+  transition:transform 180ms ease,border-color 180ms ease,background 180ms ease,box-shadow 180ms ease;
+}
+.guide-category-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:var(--guide-card-image);
+  background-position:center;
+  background-size:cover;
+  transform:scale(1.01);
+  transition:transform 260ms ease,filter 260ms ease;
+}
+.guide-category-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(32,28,24,.08) 0%,rgba(32,28,24,.22) 42%,rgba(32,28,24,.78) 100%),
+    linear-gradient(90deg,rgba(169,76,40,.22),rgba(32,28,24,.04) 55%,rgba(32,28,24,.28));
+}
+.guide-category-card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(192,97,58,.64);
+  box-shadow:0 16px 34px rgba(50,40,22,.16);
+}
+.guide-category-card:hover::before{transform:scale(1.055);filter:saturate(1.04);}
+.guide-category-card-top{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.guide-category-card-icon{
+  display:inline-flex;
+  width:42px;
+  height:42px;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  background:rgba(255,246,240,.86);
+  color:var(--brand-strong);
+  backdrop-filter:blur(8px);
+}
+.guide-category-card-arrow{
+  display:inline-flex;
+  width:42px;
+  height:42px;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(169,76,40,.34);
+  border-radius:50%;
+  background:rgba(255,246,240,.86);
+  color:var(--brand-strong);
+  font-family:var(--mono);
+  font-size:24px;
+  font-weight:700;
+  line-height:0;
+  opacity:.9;
+  backdrop-filter:blur(8px);
+  transition:transform 180ms ease,opacity 180ms ease,background 180ms ease,border-color 180ms ease;
+}
+.guide-category-card-arrow::before{
+  content:"\2192";
+  display:block;
+  transform:translateY(-1px);
+}
+.guide-category-card:hover .guide-category-card-arrow{
+  transform:translateX(4px);
+  border-color:rgba(169,76,40,.58);
+  background:rgba(255,246,240,.96);
+  opacity:1;
+}
+.guide-category-card-copy{
+  position:relative;
+  z-index:1;
+  display:grid;
+  gap:7px;
+  max-width:78%;
+}
+.guide-category-card-title{display:block;min-width:0;font-size:25px;font-weight:850;line-height:1.22;color:#fff;text-shadow:0 1px 18px rgba(0,0,0,.28);}
+.guide-category-card-summary{
+  display:-webkit-box;
+  overflow:hidden;
+  color:rgba(255,255,255,.82);
+  font-size:12.5px;
+  font-weight:700;
+  line-height:1.62;
+  text-shadow:0 1px 14px rgba(0,0,0,.2);
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  line-clamp:2;
+}
+body.lang-my .guide-category-card-title{line-height:1.55;}
+body.lang-my .guide-category-card-summary{line-height:1.68;}
+.guide-category-page{padding-bottom:80px;}
+.guide-topic-detail-hero{padding:52px 0 28px;border-top:0!important;}
+.guide-back-link{display:inline-flex;margin-bottom:22px;color:var(--brand-strong);font-size:12px;font-weight:800;text-decoration:underline;text-underline-offset:4px;}
+.guide-topic-detail-head{display:grid;grid-template-columns:48px minmax(0,1fr);gap:15px;align-items:start;}
+.guide-topic-detail-back{width:48px;height:48px;}
+.guide-topic-detail-title{margin:0;font-size:clamp(27px,4.8vw,44px);line-height:1.12;font-weight:850;letter-spacing:0;text-wrap:balance;}
+body.lang-my .guide-topic-detail-title{line-height:1.42;}
+.guide-topic-detail-intro{max-width:760px;margin:14px 0 0;color:var(--ink-soft);font-size:14.5px;line-height:1.8;}
+.guide-law-note{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  max-width:760px;
+  margin-top:24px;
+  padding:14px 0 0;
+  border-top:1px solid var(--line-strong);
+  color:var(--ink-soft);
+}
+.guide-law-note svg{flex:none;margin-top:2px;color:var(--brand-strong);}
+.guide-law-note p{margin:0;font-size:12.5px;font-weight:700;line-height:1.65;}
+.study-guide-list-section{padding-top:22px;border-top:2px solid var(--ink)!important;}
+.study-guide-empty{max-width:760px;}
+.guide-topic-links-section{padding-top:30px;border-top:2px solid var(--ink)!important;}
+.guide-topic-links{display:grid;grid-template-columns:1fr;gap:10px;}
+.guide-topic-link{
+  display:grid;
+  grid-template-columns:40px minmax(0,1fr) auto;
+  gap:14px;
+  align-items:start;
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+  color:var(--ink);
+}
+.guide-topic-link:hover .guide-topic-link-title{color:var(--brand-strong);}
+.guide-topic-link-group{
+  display:block;
+  padding:0;
+}
+.guide-topic-link-main{
+  display:grid;
+  grid-template-columns:40px minmax(0,1fr) auto;
+  gap:14px;
+  align-items:start;
+  padding:16px 0 12px;
+  color:var(--ink);
+}
+.guide-topic-link-main:hover .guide-topic-link-title{color:var(--brand-strong);}
+.guide-topic-link-icon{
+  display:inline-flex;
+  width:40px;
+  height:40px;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  background:rgba(255,255,255,.52);
+  color:var(--brand-strong);
+}
+.guide-topic-link-title{display:block;margin-bottom:5px;font-size:15px;font-weight:850;line-height:1.35;}
+.guide-topic-link-summary{display:block;color:var(--ink-soft);font-size:13px;line-height:1.65;}
+.guide-topic-link-arrow{margin-top:12px;color:var(--brand-strong);opacity:.68;}
+.guide-topic-sublinks{
+  display:grid;
+  gap:8px;
+  margin:0 0 14px 54px;
+}
+.guide-topic-sublink{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  min-height:54px;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:rgba(255,255,255,.56);
+  color:var(--ink);
+  transition:background 160ms ease,border-color 160ms ease,transform 160ms ease;
+}
+.guide-topic-sublink:hover{
+  transform:translateY(-1px);
+  border-color:rgba(192,97,58,.46);
+  background:rgba(255,255,255,.86);
+}
+.guide-topic-sublink strong{
+  display:block;
+  font-size:13px;
+  line-height:1.45;
+  color:var(--ink);
+}
+.guide-topic-sublink small{
+  display:block;
+  margin-top:3px;
+  color:var(--ink-soft);
+  font-size:11.5px;
+  line-height:1.55;
+}
+.guide-topic-sublink svg{
+  flex:none;
+  color:var(--brand-strong);
+  opacity:.72;
+}
+.guide-topik-choice-panel{
+  display:grid;
+  gap:16px;
+  margin:0 0 28px;
+  padding:18px;
+  border:1px solid var(--line-strong);
+  border-radius:8px;
+  background:rgba(255,255,255,.56);
+}
+.guide-topik-choice-head{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:12px;
+  align-items:start;
+}
+.guide-topik-choice-head .sec-title{margin:0 0 4px;}
+.guide-topik-choice-head .t-body{margin:0;color:var(--ink-soft);}
+.guide-topik-choice-actions{
+  display:grid;
+  gap:8px;
+}
+.guide-topik-choice-link{
+  margin:0;
+  background:rgba(255,250,246,.76);
+}
+
+@media(min-width:760px){
+  .guide-library-hero{padding-top:72px;}
+  .guide-category-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding-bottom:2px;overflow:visible;}
+  .guide-category-tab{min-width:0;padding:13px 14px;}
+  .guide-category-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+  .guide-category-card{min-height:304px;padding:22px;}
+  .guide-category-card-copy{max-width:72%;}
+  .guide-topic-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px;}
+  .guide-topik-choice-actions{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
 
 .guide-inline-cta{display:grid;gap:18px;margin:12px 0 28px;padding:22px;border:1px solid var(--line-strong);border-left:3px solid var(--brand);background:var(--brand-tint);}
 .guide-inline-cta .card-title{margin-bottom:8px;font-size:18px;}
@@ -1242,8 +1665,9 @@ body.lang-my .about-proof-strip p{font-family:'Noto Sans Myanmar','Padauk',sans-
   .service-point-grid > :last-child:nth-child(odd){grid-column:1 / -1;}
   .guide-dm-aside{display:block;}
   .detail-2col:not(.service-info-page) > .guide-dm-aside{position:sticky;top:88px;}
-  .visa-guide-card{min-height:350px;padding:26px;}
-  .visa-card-title{font-size:19px;}
+  .visa-guide-card{min-height:206px;padding:22px;}
+  .visa-code{font-size:38px;}
+  .visa-card-title{font-size:14.5px;}
   .prepare-grid{grid-template-columns:repeat(5,minmax(0,1fr));}
   .prepare-item{display:flex;min-height:190px;flex-direction:column;align-items:flex-start;padding:20px 16px;border-right:1px solid var(--line);}
   .prepare-item:last-child{border-right:0;}
@@ -1273,14 +1697,17 @@ body.lang-my .about-proof-strip p{font-family:'Noto Sans Myanmar','Padauk',sans-
 @media(min-width:760px){.dm-dialog{display:none;}}
 
 @media(min-width:960px){
+  .guide-category-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .visa-guide-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
   .grid-services.secondary-services{grid-template-columns:repeat(2,minmax(0,1fr));}
   .guide-dm-aside{position:sticky;top:88px;}
 }
 
 @media(max-width:390px){
-  .visa-guide-card{min-height:334px;padding:19px;}
-  .visa-card-head{margin-bottom:22px;}
-  .visa-card-title{font-size:16px;}
+  .visa-guide-card{min-height:196px;padding:18px;}
+  .visa-card-head{margin-bottom:16px;}
+  .visa-code{font-size:32px;}
+  .visa-card-title{font-size:14px;}
   .visa-service-title{font-size:24px;}
   .mobile-conversion-copy strong{max-width:92px;white-space:normal;}
   .mobile-conversion-cta .btn{max-width:178px;white-space:normal;line-height:1.3;}
