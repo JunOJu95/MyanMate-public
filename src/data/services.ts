@@ -14,6 +14,14 @@ export const serviceInfoIds = [
   'work-pay',
   'healthcare',
   'life-admin',
+  'address-change-after-moving',
+  'phone-sim',
+  'public-transportation',
+  'emergency-numbers',
+  'student-part-time-work-permit',
+  'find-part-time-jobs-safely',
+  'minimum-wage-salary-check',
+  'employment-contract-basics',
 ] as const;
 export type ServiceInfoId = (typeof serviceInfoIds)[number];
 

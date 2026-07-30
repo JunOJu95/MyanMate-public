@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import BackArrow from '../../components/BackArrow.astro';
 import Icon from '../../components/Icon.astro';
 import T from '../../components/T.astro';
 import GuideSection from '../../components/GuideSection.astro';
@@ -23,7 +24,11 @@ const relatedPriority: Record<string, string[]> = {
   'e7-employment': ['d10-jobseeking', 'e9-employment'],
 };
 const priority = relatedPriority[guide.slug] ?? [];
-const related = [...all.filter((g) => g.slug !== guide.slug)]
+const groupedStudySlugs = new Set(['topik-i', 'topik-ii']);
+const relatedPool = all.filter(
+  (g) => g.slug !== guide.slug && (isVisa || g.category === guide.category) && !groupedStudySlugs.has(g.slug),
+);
+const related = [...relatedPool]
   .sort((a, b) => {
     const aPriority = priority.indexOf(a.slug);
     const bPriority = priority.indexOf(b.slug);
@@ -38,16 +43,64 @@ const related = [...all.filter((g) => g.slug !== guide.slug)]
 const catKey = `guides.filter.${guide.category}`;
 const code = visaCode(guide.slug);
 const visaId = code?.toLowerCase().replace('-', '') ?? '';
+const guideBackHrefByCategory: Record<string, string> = {
+  visa: '/guides/visa',
+  study: '/guides/study',
+  work: '/guides/work',
+  jobs: '/guides/work',
+  daily: '/guides/daily-life',
+  'daily-life': '/guides/daily-life',
+};
+const guideBackHref = guideBackHrefByCategory[guide.category] ?? '/guides';
 // Sections are rendered in this order; empty fields (e.g. E-9 has no subtypes/notes
 // imported) are filtered out so the number badges stay gapless per guide.
-const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul' | 'ol' }[] = [
-  { field: 'eligibility', labelKey: 'content.section.eligibility', mode: 'ul' },
-  { field: 'subtypes',    labelKey: 'content.section.subtypes',    mode: 'ul' },
-  { field: 'documents',   labelKey: 'content.section.documents',   mode: 'ul' },
-  { field: 'steps',       labelKey: 'content.section.steps',       mode: 'ol' },
-  { field: 'watchout',    labelKey: 'content.section.watchout',    mode: 'ul' },
-  { field: 'notes',       labelKey: 'content.section.notes',       mode: 'ul' },
-].filter((s) => languages.some((l) => (guide[l][s.field] || '').trim()));
+const sectionLabels: Partial<Record<string, Partial<Record<keyof GuideText, string>>>> = {
+  study: {
+    subtypes: 'content.section.study.what',
+    eligibility: 'content.section.study.who',
+    documents: 'content.section.study.documents',
+    steps: 'content.section.study.steps',
+    watchout: 'content.section.study.mistakes',
+    notes: 'content.section.study.confirm',
+  },
+};
+const labels = sectionLabels[guide.category] ?? {};
+const labelFor = (field: keyof GuideText, fallback: string) => labels[field] ?? fallback;
+const subtypesLabelKey = isVisa ? 'content.section.subtypes' : labelFor('subtypes', 'content.section.types');
+const defaultSections: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul' | 'ol' }[] = [
+  { field: 'eligibility', labelKey: labelFor('eligibility', 'content.section.eligibility'), mode: 'ul' },
+  { field: 'subtypes',    labelKey: subtypesLabelKey,              mode: 'ul' },
+  { field: 'documents',   labelKey: labelFor('documents', 'content.section.documents'),   mode: 'ul' },
+  { field: 'steps',       labelKey: labelFor('steps', 'content.section.steps'),       mode: 'ol' },
+  { field: 'watchout',    labelKey: labelFor('watchout', 'content.section.watchout'),    mode: 'ul' },
+  { field: 'notes',       labelKey: labelFor('notes', 'content.section.notes'),       mode: 'ul' },
+];
+const studySections: typeof defaultSections = [
+  { field: 'subtypes',    labelKey: subtypesLabelKey,              mode: 'ul' },
+  { field: 'eligibility', labelKey: labelFor('eligibility', 'content.section.eligibility'), mode: 'ul' },
+  { field: 'documents',   labelKey: labelFor('documents', 'content.section.documents'),   mode: 'ul' },
+  { field: 'steps',       labelKey: labelFor('steps', 'content.section.steps'),       mode: 'ol' },
+  { field: 'watchout',    labelKey: labelFor('watchout', 'content.section.watchout'),    mode: 'ul' },
+  { field: 'notes',       labelKey: labelFor('notes', 'content.section.notes'),       mode: 'ul' },
+];
+const SECTIONS = (guide.category === 'study' ? studySections : defaultSections)
+  .filter((s) => languages.some((l) => (guide[l][s.field] || '').trim()));
+const disclaimerKey = isVisa ? 'content.disclaimer' : 'content.disclaimer.study';
+const topikChoiceGuides = guide.slug === 'topik-exam'
+  ? ['topik-i', 'topik-ii']
+      .map((slug) => all.find((item) => item.slug === slug))
+      .filter((item): item is Guide => Boolean(item))
+  : [];
+const topikChoiceTitle = {
+  en: 'Choose the TOPIK path you need',
+  ko: '필요한 TOPIK 유형 선택하기',
+  my: 'ကိုယ်လိုအပ်သော TOPIK အမျိုးအစားကို ရွေးဖတ်ပါ',
+};
+const topikChoiceIntro = {
+  en: 'After reading the TOPIK overview, open TOPIK I or TOPIK II based on the level your school, scholarship, or goal requires.',
+  ko: 'TOPIK 전체 내용을 확인한 뒤 학교, 장학금 또는 목표에서 요구하는 급수에 맞춰 TOPIK I 또는 TOPIK II를 읽어보세요.',
+  my: 'TOPIK အကြောင်းအကျဉ်းကို ဖတ်ပြီးနောက် ကျောင်း၊ Scholarship သို့မဟုတ် ကိုယ့်ရည်မှန်းချက်က တောင်းသောအဆင့်အလိုက် TOPIK I သို့မဟုတ် TOPIK II ကို ရွေးဖတ်ပါ။',
+};
 ---
 <Base
   title={guide[defaultLang].title || guide.en.title}
@@ -58,26 +111,59 @@ const SECTIONS: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul'
     <div class:list={['detail-2col detail-page', { single: !isVisa }]}>
       <article>
         <header class="detail-hero">
-        <span class="pill-tag" data-i18n={catKey}>{t(catKey, defaultLang)}</span>
-        <h1 class="lead-title">
-          {languages.map((l) => <span data-lang={l}>{guide[l].title || guide.en.title}</span>)}
-        </h1>
-        {guide.lastReviewed && (
-          <p class="meta-line">
-            <span class="meta-chip">
-              <Icon name="check" size={14} /> <T k="content.lastReviewed" /> · <time datetime={guide.lastReviewed}>{guide.lastReviewed}</time>
-            </span>
-          </p>
-        )}
-        <div style="margin-top:10px;">
-          {languages.map((l) => <p data-lang={l} class="t-sub">{guide[l].summary || guide.en.summary}</p>)}
-        </div>
+          <div class="guide-detail-hero-head">
+            <BackArrow href={guideBackHref} class="guide-detail-back" />
+            <div class="guide-detail-hero-copy">
+              <span class="pill-tag" data-i18n={catKey}>{t(catKey, defaultLang)}</span>
+              <h1 class="lead-title">
+                {languages.map((l) => <span data-lang={l}>{guide[l].title || guide.en.title}</span>)}
+              </h1>
+              {guide.lastReviewed && (
+                <p class="meta-line">
+                  <span class="meta-chip">
+                    <Icon name="check" size={14} /> <T k="content.lastReviewed" /> · <time datetime={guide.lastReviewed}>{guide.lastReviewed}</time>
+                  </span>
+                </p>
+              )}
+              <div style="margin-top:10px;">
+                {languages.map((l) => <p data-lang={l} class="t-sub">{guide[l].summary || guide.en.summary}</p>)}
+              </div>
+            </div>
+          </div>
         </header>
+        {topikChoiceGuides.length > 0 && (
+          <section class="guide-topik-choice-panel" data-reveal="section">
+            <div class="guide-topik-choice-head">
+              <span class="sec-ico"><Icon name="korean" /></span>
+              <div>
+                <h2 class="sec-title">
+                  {languages.map((l) => <span data-lang={l}>{topikChoiceTitle[l]}</span>)}
+                </h2>
+                {languages.map((l) => <p data-lang={l} class="t-body">{topikChoiceIntro[l]}</p>)}
+              </div>
+            </div>
+            <div class="guide-topik-choice-actions">
+              {topikChoiceGuides.map((item) => (
+                <a class="guide-topic-sublink guide-topik-choice-link" href={`/guides/${item.slug}`}>
+                  <span>
+                    <strong>
+                      {languages.map((l) => <span data-lang={l}>{item[l].title || item.en.title}</span>)}
+                    </strong>
+                    <small>
+                      {languages.map((l) => <span data-lang={l}>{item[l].summary || item.en.summary}</span>)}
+                    </small>
+                  </span>
+                  <Icon name="external" size={13} />
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
         {SECTIONS.map((s, i) => (
           <GuideSection guide={guide} field={s.field} labelKey={s.labelKey} mode={s.mode} num={i + 1} />
         ))}
 
-        <Disclaimer k="content.disclaimer" class="mt-12" />
+        <Disclaimer k={disclaimerKey} class="mt-12" />
 
         {related.length > 0 && (
           <section class="sec">

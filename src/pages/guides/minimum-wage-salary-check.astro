@@ -1,23 +1,22 @@
 ---
 import ServiceInformationPage from '../../components/ServiceInformationPage.astro';
-import { serviceById } from '../../data/services';
 import { getServiceContent } from '../../lib/content';
 
-const service = serviceById('resume');
-const content = await getServiceContent('resume');
+const content = await getServiceContent('minimum-wage-salary-check');
 
-if (!service || !content) {
-  throw new Error('Resume information content is missing.');
+if (!content) {
+  throw new Error('Minimum wage and salary check information content is missing.');
 }
 ---
 
 <ServiceInformationPage
-  service={service}
+  topicId="minimum-wage-salary-check"
+  icon="jobs"
   content={content}
   backHref="/guides/work"
   backLabel={{
     en: 'Back to work guides',
-    ko: '일 관련 가이드로 돌아가기',
+    ko: '일·취업 가이드로 돌아가기',
     my: 'အလုပ် လမ်းညွှန်များသို့ ပြန်သွားရန်',
   }}
 />

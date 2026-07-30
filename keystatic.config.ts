@@ -15,7 +15,8 @@ import { config, fields, collection, singleton } from '@keystatic/core';
 
 const CATEGORY_OPTIONS = [
   { label: 'Visa', value: 'visa' },
-  { label: 'Jobs', value: 'jobs' },
+  { label: 'Study', value: 'study' },
+  { label: 'Work', value: 'jobs' },
   { label: 'Housing', value: 'housing' },
   { label: 'Korean', value: 'korean' },
   { label: 'Daily life', value: 'daily' },
@@ -47,6 +48,8 @@ const ICON_OPTIONS = [
   { label: 'Safety', value: 'shield' },
   { label: 'Healthcare', value: 'health' },
   { label: 'Administration', value: 'admin' },
+  { label: 'Phone', value: 'phone' },
+  { label: 'Transit', value: 'transit' },
 ] as const;
 
 const INFORMATION_SECTION_VARIANTS = [
@@ -278,12 +281,12 @@ const guideLang = (label: string) =>
     {
       title: fields.text({ label: 'Title' }),
       summary: fields.text({ label: 'Summary', multiline: true }),
-      eligibility: fields.text({ label: "Who it's for", multiline: true }),
-      subtypes: fields.text({ label: 'Visa categories / 비자 카테고리 (one per line)', multiline: true }),
-      documents: fields.text({ label: "Documents you'll need (one per line)", multiline: true }),
-      steps: fields.text({ label: 'How to apply (one step per line)', multiline: true }),
-      watchout: fields.text({ label: 'Watch out for (one per line)', multiline: true }),
-      notes: fields.text({ label: 'Important notes / 중요 사항 (one per line)', multiline: true }),
+      eligibility: fields.text({ label: "Who it's for / when this matters", multiline: true }),
+      subtypes: fields.text({ label: 'Types, levels, or categories (one per line)', multiline: true }),
+      documents: fields.text({ label: 'What to check or prepare (one per line)', multiline: true }),
+      steps: fields.text({ label: 'Checklist or process (one step per line)', multiline: true }),
+      watchout: fields.text({ label: 'Common mistakes / cautions (one per line)', multiline: true }),
+      notes: fields.text({ label: 'Official confirmation / important notes (one per line)', multiline: true }),
     },
     { label }
   );
@@ -315,7 +318,7 @@ export default config({
   },
   collections: {
     guides: collection({
-      label: 'Guides · 정보 콘텐츠',
+      label: 'Guide Articles · Visa / Study',
       slugField: 'title',
       path: 'src/content/guides/*',
       format: { data: 'yaml' },
@@ -447,43 +450,27 @@ export default config({
         }),
       },
     }),
+
+    guideInformation: collection({
+      label: 'Guide Information · Edit by category',
+      slugField: 'entryTitle',
+      path: 'src/content/services/*',
+      format: { data: 'yaml' },
+      columns: ['entryTitle', 'category', 'lastReviewed'],
+      schema: {
+        entryTitle: fields.slug({
+          name: {
+            label: 'Internal title (English)',
+            description: 'Used only for the admin list and file URL. Reader-facing titles are below.',
+          },
+        }),
+        category: fields.select({ label: 'Guide category', options: CATEGORY_OPTIONS, defaultValue: 'daily' }),
+        order: fields.integer({ label: 'Order inside category (lower shows first)', defaultValue: 10 }),
+        ...informationSchema(),
+      },
+    }),
   },
   singletons: {
-    resumeService: singleton({
-      label: 'Information · 이력서·구직 정보',
-      path: 'src/content/services/resume',
-      format: { data: 'yaml' },
-      previewUrl: '/guides/resume',
-      schema: informationSchema(),
-    }),
-    housingService: singleton({
-      label: 'Information · 집·주거환경 정보',
-      path: 'src/content/services/housing',
-      format: { data: 'yaml' },
-      previewUrl: '/guides/housing',
-      schema: informationSchema(),
-    }),
-    workPayInformation: singleton({
-      label: 'Information · 근로계약·급여',
-      path: 'src/content/services/work-pay',
-      format: { data: 'yaml' },
-      previewUrl: '/guides/work-pay',
-      schema: informationSchema(),
-    }),
-    healthcareInformation: singleton({
-      label: 'Information · 건강보험·병원',
-      path: 'src/content/services/healthcare',
-      format: { data: 'yaml' },
-      previewUrl: '/guides/healthcare',
-      schema: informationSchema(),
-    }),
-    lifeAdminInformation: singleton({
-      label: 'Information · 외국인 생활 행정',
-      path: 'src/content/services/life-admin',
-      format: { data: 'yaml' },
-      previewUrl: '/guides/life-admin',
-      schema: informationSchema(),
-    }),
     partTimeJobServiceOffer: singleton({
       label: 'Service · Part-time job support',
       path: 'src/content/service-offers/part-time-job',

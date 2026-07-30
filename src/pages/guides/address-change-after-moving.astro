@@ -2,16 +2,16 @@
 import ServiceInformationPage from '../../components/ServiceInformationPage.astro';
 import { getServiceContent } from '../../lib/content';
 
-const content = await getServiceContent('healthcare');
+const content = await getServiceContent('address-change-after-moving');
 
 if (!content) {
-  throw new Error('Health insurance and hospital information content is missing.');
+  throw new Error('Address change after moving information content is missing.');
 }
 ---
 
 <ServiceInformationPage
-  topicId="healthcare"
-  icon="health"
+  topicId="address-change-after-moving"
+  icon="housing"
   content={content}
   backHref="/guides/daily-life"
   backLabel={{

@@ -1,0 +1,104 @@
+---
+import GuideCategoryLanding from '../../components/GuideCategoryLanding.astro';
+import { guideCategoryById } from '../../data/guide-categories';
+
+const category = guideCategoryById('work');
+const title = {
+  en: 'Work Guides for Myanmar People',
+  ko: '미얀마 사람을 위한 일·취업 가이드',
+  my: 'ကိုရီးယားမှာ အလုပ်လုပ်ဖို့ သိထားရမည့်အချက်များ',
+};
+const description = {
+  en: 'Start here for part-time work, job search, employment contracts, pay checks, resumes, interviews, and safe work-related decisions in Korea.',
+  ko: '아르바이트, 구직, 근로계약, 급여 확인, 이력서, 면접과 한국에서 일할 때 필요한 안전한 판단 기준을 확인하세요.',
+  my: 'ကိုရီးယားတွင် Part-time အလုပ်၊ အလုပ်ရှာခြင်း၊ အလုပ်စာချုပ်၊ လစာစစ်ဆေးခြင်း၊ Resume၊ Interview နှင့် အလုပ်ဆိုင်ရာလုံခြုံသောဆုံးဖြတ်ချက်များကို ဤနေရာမှ စတင်စစ်ဆေးပါ။',
+};
+const links = [
+  {
+    href: '/guides/student-part-time-work-permit',
+    icon: 'study',
+    title: {
+      en: 'Student part-time work permit',
+      ko: '유학생 시간제취업 허가',
+      my: 'ကျောင်းသား Part-time အလုပ်ခွင့်ပြုချက်',
+    },
+    summary: {
+      en: 'Check whether you need permission before working, what your school may confirm, and what mistakes can create visa risk.',
+      ko: '일하기 전 허가가 필요한지, 학교 확인이 필요한 내용과 비자상 문제가 될 수 있는 실수를 확인하세요.',
+      my: 'အလုပ်မစမီ ခွင့်ပြုချက်လိုမလို၊ ကျောင်းဘက်က ဘာအတည်ပြုနိုင်လဲနှင့် ဗီဇာပြဿနာဖြစ်စေနိုင်သောအမှားများကို စစ်ပါ။',
+    },
+  },
+  {
+    href: '/guides/find-part-time-jobs-safely',
+    icon: 'search',
+    title: {
+      en: 'How to find part-time jobs safely',
+      ko: '아르바이트 안전하게 찾기',
+      my: 'Part-time အလုပ်ကို လုံခြုံစွာ ရှာနည်း',
+    },
+    summary: {
+      en: 'Learn where to search, how to read job posts, what questions to ask, and which warning signs to avoid before applying.',
+      ko: '어디에서 찾을지, 공고를 어떻게 읽을지, 무엇을 물어볼지, 지원 전 어떤 위험 신호를 피해야 하는지 확인하세요.',
+      my: 'အလုပ်ကို ဘယ်နေရာမှာရှာမလဲ၊ ကြော်ငြာကို ဘယ်လိုဖတ်မလဲ၊ ဘာတွေမေးရမလဲနှင့် မလျှောက်မီ ဘာကိုသတိထားရမလဲ စစ်ပါ။',
+    },
+  },
+  {
+    href: '/guides/employment-contract-basics',
+    icon: 'doc',
+    title: {
+      en: 'Employment contract basics',
+      ko: '근로계약서 기본 확인',
+      my: 'အလုပ်စာချုပ် လက်မှတ်မထိုးမီ စစ်ရန်',
+    },
+    summary: {
+      en: 'Check what should be written in a contract, what not to sign, and what records to keep before and after starting work.',
+      ko: '계약서에 적혀야 할 내용, 서명하지 말아야 할 상황과 일을 시작하기 전후 보관할 기록을 확인하세요.',
+      my: 'စာချုပ်ထဲတွင် ပါသင့်သောအချက်များ၊ မလက်မှတ်ထိုးသင့်သောအခြေအနေများနှင့် အလုပ်မစမီ/ပြီးနောက် သိမ်းထားရမည့်မှတ်တမ်းများကို စစ်ပါ။',
+    },
+  },
+  {
+    href: '/guides/work-pay',
+    icon: 'jobs',
+    title: {
+      en: 'Employment contract & pay information',
+      ko: '근로계약·급여 정보',
+      my: 'အလုပ်စာချုပ်နှင့် လစာ အချက်အလက်',
+    },
+    summary: {
+      en: 'Check job conditions, written contracts, pay records, and common points to confirm before and after work.',
+      ko: '근로조건, 서면 계약서, 급여 기록과 일을 시작하기 전후 확인할 내용을 정리했습니다.',
+      my: 'အလုပ်အခြေအနေ၊ စာဖြင့်ရေးထားသောစာချုပ်၊ လစာမှတ်တမ်းနှင့် အလုပ်မစမီ/ပြီးနောက် စစ်ဆေးရန်အချက်များကို စုစည်းထားပါသည်။',
+    },
+  },
+  {
+    href: '/guides/minimum-wage-salary-check',
+    icon: 'jobs',
+    title: {
+      en: 'Minimum wage and salary check',
+      ko: '최저임금과 급여 확인하기',
+      my: 'အနည်းဆုံးလစာနှင့် လစာစစ်နည်း',
+    },
+    summary: {
+      en: 'Check the 2026 minimum wage, payday, pay statement, deductions, weekly holiday allowance basics, and what records to keep.',
+      ko: '2026년 최저임금, 급여일, 급여명세서, 공제, 주휴수당 기본과 보관할 기록을 확인하세요.',
+      my: '2026 အနည်းဆုံးလစာ၊ လစာပေးရက်၊ လစာရှင်းတမ်း၊ ဖြတ်တောက်မှု၊ 주휴수당 အခြေခံနှင့် သိမ်းထားရမည့်မှတ်တမ်းများကို စစ်ပါ။',
+    },
+  },
+  {
+    href: '/guides/resume',
+    icon: 'resumeSvc',
+    title: {
+      en: 'Resume & job-search guidance',
+      ko: '이력서·구직 정보 안내',
+      my: 'Resume နှင့် အလုပ်ရှာဖွေရေး လမ်းညွှန်မှု',
+    },
+    summary: {
+      en: 'Learn how to read postings, present Myanmar education and work history, and apply more safely.',
+      ko: '채용공고를 읽고 미얀마 학력·경력을 표시하며 안전하게 지원하는 방법을 확인하세요.',
+      my: 'အလုပ်ခေါ်စာဖတ်နည်း၊ မြန်မာပညာရေးနှင့်အတွေ့အကြုံဖော်ပြနည်း၊ လုံခြုံစွာလျှောက်ထားနည်းကို ဖတ်ပါ။',
+    },
+  },
+];
+---
+
+<GuideCategoryLanding category={category} title={title} description={description} links={links} showCategoryNav={false} showLawNote={false} />

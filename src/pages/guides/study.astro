@@ -1,0 +1,45 @@
+---
+import GuideCategoryLanding from '../../components/GuideCategoryLanding.astro';
+import { guideCategoryById } from '../../data/guide-categories';
+import { getGuides } from '../../lib/content';
+
+const category = guideCategoryById('study');
+const title = {
+  en: 'Study Guides for Myanmar People',
+  ko: '미얀마 사람을 위한 유학 가이드',
+  my: 'ကိုရီးယားမှာ ပညာသင်ဖို့ သိထားရမည့်အချက်များ',
+};
+const description = {
+  en: 'Study information for TOPIK, KIIP, scholarships, school choice, applications, and preparation before coming to Korea.',
+  ko: 'TOPIK, KIIP, 장학금, 학교 선택, 지원 절차와 한국에 오기 전 준비할 내용을 정리합니다.',
+  my: 'TOPIK၊ KIIP၊ Scholarship၊ ကျောင်းရွေးချယ်မှု၊ လျှောက်ထားရန်ပြင်ဆင်မှုနှင့် ကိုရီးယားမလာခင် စစ်ထားသင့်သောအချက်များကို တစ်နေရာတည်းမှာ ဖတ်နိုင်အောင် စုထားပါသည်။',
+};
+
+const guides = (await getGuides()).filter((guide) => guide.category === 'study');
+const toGuideLink = (guide: (typeof guides)[number]) => ({
+  href: `/guides/${guide.slug}`,
+  icon: 'korean',
+  title: {
+    en: guide.en.title,
+    ko: guide.ko.title || guide.en.title,
+    my: guide.my.title || guide.en.title,
+  },
+  summary: {
+    en: guide.en.summary,
+    ko: guide.ko.summary || guide.en.summary,
+    my: guide.my.summary || guide.en.summary,
+  },
+});
+const links = guides
+  .filter((guide) => !['topik-i', 'topik-ii'].includes(guide.slug))
+  .map(toGuideLink);
+---
+
+<GuideCategoryLanding
+  category={category}
+  title={title}
+  description={description}
+  links={links}
+  showCategoryNav={false}
+  showLawNote={false}
+/>

@@ -53,6 +53,30 @@ export function applyLang(input: string): void {
 document.addEventListener('click', (e) => {
   const target = e.target as HTMLElement;
 
+  const historyBack = target.closest<HTMLAnchorElement>('[data-history-back]');
+  if (historyBack) {
+    const fallback = historyBack.getAttribute('href') || '/';
+    let shouldUseHistory = false;
+
+    try {
+      if (document.referrer && window.history.length > 1) {
+        const previousUrl = new URL(document.referrer);
+        shouldUseHistory = previousUrl.origin === window.location.origin && previousUrl.href !== window.location.href;
+      }
+    } catch {
+      shouldUseHistory = false;
+    }
+
+    if (shouldUseHistory) {
+      e.preventDefault();
+      window.history.back();
+    } else if (!fallback) {
+      e.preventDefault();
+      window.location.href = '/';
+    }
+    return;
+  }
+
   const span = target.closest('.lang span');
   if (span) {
     const l = span.getAttribute('data-l');

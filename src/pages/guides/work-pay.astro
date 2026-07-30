@@ -9,4 +9,14 @@ if (!content) {
 }
 ---
 
-<ServiceInformationPage topicId="work-pay" icon="jobs" content={content} />
+<ServiceInformationPage
+  topicId="work-pay"
+  icon="jobs"
+  content={content}
+  backHref="/guides/work"
+  backLabel={{
+    en: 'Back to work guides',
+    ko: '일 관련 가이드로 돌아가기',
+    my: 'အလုပ် လမ်းညွှန်များသို့ ပြန်သွားရန်',
+  }}
+/>

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import BackArrow from '../../components/BackArrow.astro';
 import T from '../../components/T.astro';
 import GuideCard from '../../components/GuideCard.astro';
 import SocialDmPanel from '../../components/SocialDmPanel.astro';
@@ -8,23 +9,75 @@ import { defaultLang, t } from '../../i18n/ui';
 
 const allGuides = await getGuides();
 const guides = allGuides.filter((guide) => guide.category === 'visa');
+const visaPurposes = [
+  { id: 'all', labelKey: 'visaPurpose.all' },
+  { id: 'study', labelKey: 'visaPurpose.study' },
+  { id: 'work', labelKey: 'visaPurpose.work' },
+  { id: 'residence', labelKey: 'visaPurpose.residence' },
+  { id: 'other', labelKey: 'visaPurpose.other' },
+] as const;
+type VisaPurpose = (typeof visaPurposes)[number]['id'];
+const visaPurposeBySlug: Record<string, Exclude<VisaPurpose, 'all'>> = {
+  'd2-student-visa': 'study',
+  'd4-language-visa': 'study',
+  'd10-jobseeking': 'work',
+  'e9-employment': 'work',
+  'e7-employment': 'work',
+  'f2-resident': 'residence',
+  'f6-marriage': 'residence',
+};
+const visaPurpose = (slug: string): Exclude<VisaPurpose, 'all'> => visaPurposeBySlug[slug] ?? 'other';
 ---
 
 <Base title={t('guides.title', defaultLang)} active="guides" description={t('guides.intro', defaultLang)}>
   <div class="wrap visa-hub-page">
     <section class="sec page-hero visa-hub-hero" data-reveal="page-hero">
-      <T k="guides.eyebrow" tag="p" class="visa-hub-eyebrow" />
-      <h1 class="lead-title"><T k="guides.title" /></h1>
-      <T k="guides.intro" tag="p" class="t-sub" />
+      <div class="guide-detail-hero-head visa-hub-hero-head">
+        <BackArrow href="/guides" class="visa-hub-back" />
+        <div class="guide-detail-hero-copy">
+          <T k="guides.eyebrow" tag="p" class="visa-hub-eyebrow" />
+          <h1 class="lead-title"><T k="guides.title" /></h1>
+          <T k="guides.intro" tag="p" class="t-sub" />
+        </div>
+      </div>
     </section>
 
     <section class="sec visa-hub-content" data-reveal="section">
-      <div class="visa-hub-heading">
-        <T k="guides.choose" tag="h2" class="sec-title" />
-        <T k="guides.chooseNote" tag="p" class="t-body" />
+      <div class="visa-purpose-filter-shell" data-visa-purpose-hub>
+        <div
+          class="visa-purpose-filter"
+          role="group"
+          aria-label={t('visaPurpose.label', defaultLang)}
+          data-i18n-aria="visaPurpose.label"
+        >
+          {visaPurposes.map((purpose) => (
+            <button
+              class:list={['visa-purpose-button', { on: purpose.id === 'all' }]}
+              type="button"
+              data-visa-purpose-filter={purpose.id}
+              aria-pressed={purpose.id === 'all' ? 'true' : 'false'}
+              data-i18n={purpose.labelKey}
+            >
+              {t(purpose.labelKey, defaultLang)}
+            </button>
+          ))}
+        </div>
+
+        <p class="visa-purpose-note">
+          <T k="visaPurpose.note" />
+        </p>
       </div>
+
       <div class="visa-guide-grid visa-hub-grid" data-reveal="stagger" data-stagger>
-        {guides.map((guide) => <GuideCard guide={guide} variant="featured" eventSource="guides" />)}
+        {guides.map((guide) => (
+          <div class="visa-guide-item" data-visa-purpose={visaPurpose(guide.slug)}>
+            <GuideCard guide={guide} variant="featured" eventSource="guides" />
+          </div>
+        ))}
+      </div>
+      <div class="empty-state visa-purpose-empty" data-visa-purpose-empty hidden>
+        <p class="card-title" data-i18n="visaPurpose.empty.title">{t('visaPurpose.empty.title', defaultLang)}</p>
+        <p class="t-body" data-i18n="visaPurpose.empty.body">{t('visaPurpose.empty.body', defaultLang)}</p>
       </div>
       {guides.length === 0 && (
         <div class="empty-state">
@@ -48,4 +101,8 @@ const guides = allGuides.filter((guide) => guide.category === 'visa');
       </section>
     )}
   </div>
+
+  <script>
+    import '../../scripts/visa-purpose-filter.ts';
+  </script>
 </Base>

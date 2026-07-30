@@ -11,4 +11,13 @@ if (!service || !content) {
 }
 ---
 
-<ServiceInformationPage service={service} content={content} />
+<ServiceInformationPage
+  service={service}
+  content={content}
+  backHref="/guides/daily-life"
+  backLabel={{
+    en: 'Back to daily-life guides',
+    ko: '생활 가이드로 돌아가기',
+    my: 'နေ့စဉ်ဘဝ လမ်းညွှန်များသို့ ပြန်သွားရန်',
+  }}
+/>

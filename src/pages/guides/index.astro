@@ -1,86 +1,44 @@
 ---
 import Base from '../../layouts/Base.astro';
-import InformationCategoryCard from '../../components/InformationCategoryCard.astro';
+import Icon from '../../components/Icon.astro';
+import LocalizedText from '../../components/LocalizedText.astro';
+import SocialDmPanel from '../../components/SocialDmPanel.astro';
 import T from '../../components/T.astro';
-import { getServiceContents, type LocalizedText as LocalizedTextValue } from '../../lib/content';
 import { defaultLang, t } from '../../i18n/ui';
-
-const serviceContent = await getServiceContents();
-const fromKey = (key: string): LocalizedTextValue => ({
-  en: t(key, 'en'),
-  ko: t(key, 'ko'),
-  my: t(key, 'my'),
-});
-const categories = [
-  {
-    id: 'visa',
-    icon: 'visa',
-    href: '/guides/visa',
-    title: fromKey('guides.title'),
-    summary: fromKey('infoHub.visa.summary'),
-  },
-  {
-    id: 'resume',
-    icon: 'resumeSvc',
-    href: '/guides/resume',
-    title: serviceContent.resume.title,
-    summary: serviceContent.resume.description,
-  },
-  {
-    id: 'housing',
-    icon: 'housing',
-    href: '/guides/housing',
-    title: serviceContent.housing.title,
-    summary: serviceContent.housing.description,
-  },
-  {
-    id: 'work-pay',
-    icon: 'jobs',
-    href: '/guides/work-pay',
-    title: serviceContent['work-pay'].title,
-    summary: serviceContent['work-pay'].description,
-  },
-  {
-    id: 'healthcare',
-    icon: 'health',
-    href: '/guides/healthcare',
-    title: serviceContent.healthcare.title,
-    summary: serviceContent.healthcare.description,
-  },
-  {
-    id: 'life-admin',
-    icon: 'admin',
-    href: '/guides/life-admin',
-    title: serviceContent['life-admin'].title,
-    summary: serviceContent['life-admin'].description,
-  },
-];
+import { guideCategories } from '../../data/guide-categories';
 ---
 
 <Base title={t('infoHub.title', defaultLang)} active="guides" description={t('infoHub.intro', defaultLang)}>
-  <div class="wrap information-hub-page">
-    <section class="sec page-hero information-hub-hero" data-reveal="page-hero">
-      <T k="infoHub.eyebrow" tag="p" class="visa-hub-eyebrow" />
-      <h1 class="lead-title"><T k="infoHub.title" /></h1>
-      <T k="infoHub.intro" tag="p" class="t-sub" />
+  <div class="wrap guide-library-page">
+    <section class="sec guide-library-hero" data-reveal="page-hero">
+      <T k="infoHub.eyebrow" tag="p" class="guide-library-eyebrow" />
+      <h1 class="guide-library-title"><T k="infoHub.title" /></h1>
+      <T k="infoHub.intro" tag="p" class="guide-library-intro" />
     </section>
 
-    <section class="sec page-content information-hub-content" data-reveal="section">
-      <div class="visa-hub-heading">
+    <section class="guide-category-nav-section" data-reveal="section">
+      <div class="guide-category-nav-head">
         <T k="infoHub.choose" tag="h2" class="sec-title" />
         <T k="infoHub.chooseNote" tag="p" class="t-body" />
       </div>
-      <div class="grid-services services-page-grid information-category-grid" data-reveal="stagger" data-stagger>
-        {categories.map((category) => (
-          <InformationCategoryCard
-            id={category.id}
-            title={category.title}
-            summary={category.summary}
-            href={category.href}
-            icon={category.icon}
-          />
+      <div class="guide-category-card-grid" role="group" aria-label={t('infoHub.choose', defaultLang)}>
+        {guideCategories.map((category) => (
+          <a class="guide-category-card" href={category.href} style={`--guide-card-image:url('${category.image}')`}>
+            <span class="guide-category-card-top">
+              <span class="guide-category-card-icon"><Icon name={category.icon} size={20} /></span>
+              <span class="guide-category-card-arrow" aria-hidden="true"></span>
+            </span>
+            <span class="guide-category-card-copy">
+              <LocalizedText value={category.title} tag="span" class="guide-category-card-title" />
+              <LocalizedText value={category.focus[0]} tag="span" class="guide-category-card-summary" />
+            </span>
+          </a>
         ))}
       </div>
+    </section>
+
+    <section class="sec visa-hub-dm" data-reveal="cta">
+      <SocialDmPanel context="general" source="guides-hub" id="dm" compact />
     </section>
   </div>
 </Base>
