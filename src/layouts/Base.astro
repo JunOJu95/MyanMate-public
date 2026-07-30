@@ -36,6 +36,26 @@ const {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Minimal fallback while a newly deployed external stylesheet reaches the edge. -->
+    <style is:inline>
+      [data-lang] { display: none; }
+      body.lang-en [data-lang='en'],
+      body.lang-ko [data-lang='ko'],
+      body.lang-my [data-lang='my'] { display: revert; }
+
+      .mobile-nav { display: none; }
+      .mobile-nav.open { display: block; }
+
+      :where(svg:not([width]):not([height])) {
+        width: 28px;
+        height: 18px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

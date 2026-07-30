@@ -90,14 +90,55 @@ export interface LocalizedText {
   my: string;
 }
 
-export interface ServiceContentItem {
-  icon: string;
+export type ServiceContentSectionVariant =
+  | 'standard'
+  | 'overview'
+  | 'timeline'
+  | 'optional'
+  | 'warning'
+  | 'sources';
+
+export type ServiceContentAudience =
+  | 'none'
+  | 'general'
+  | 'student'
+  | 'worker'
+  | 'ifApplicable'
+  | 'warning'
+  | 'official';
+
+export type ServiceContentEvidenceLevel = 'general' | 'official';
+
+export interface ServiceContentDetail {
   title: LocalizedText;
   body: LocalizedText;
+}
+
+export interface ServiceContentSource {
+  label: LocalizedText;
+  href: string;
+}
+
+export interface ServiceContentItem {
+  icon: string;
+  audience: ServiceContentAudience;
+  evidenceLevel: ServiceContentEvidenceLevel;
+  title: LocalizedText;
+  body: LocalizedText;
+  prepare: LocalizedText[];
+  steps: LocalizedText[];
+  checklist: LocalizedText[];
+  doneWhen: LocalizedText;
+  details: ServiceContentDetail;
+  messageTemplate: LocalizedText;
+  sources: ServiceContentSource[];
+  jumpTo: string;
   href: string;
 }
 
 export interface ServiceContentSection {
+  id: string;
+  variant: ServiceContentSectionVariant;
   icon: string;
   title: LocalizedText;
   intro: LocalizedText;
@@ -119,23 +160,103 @@ function localizedText(value: any): LocalizedText {
   };
 }
 
+function toServiceContentItem(
+  item: any,
+  sectionLabel: string,
+  itemIndex: number,
+  enforceEvidence: boolean
+): ServiceContentItem {
+  const messageTemplate = localizedText(item?.messageTemplate);
+  const sources = (Array.isArray(item?.sources) ? item.sources : [])
+    .map((source: any) => ({
+      label: localizedText(source?.label),
+      href: str(source?.href),
+    }))
+    .filter((source: ServiceContentSource) => source.href);
+  const href = str(item?.href);
+  // Older flat information pages predate evidence classification. Detailed
+  // sections opt into the stricter contract by providing a stable section ID.
+  const evidenceLevel = (
+    enforceEvidence ? str(item?.evidenceLevel, 'official') : 'general'
+  ) as ServiceContentEvidenceLevel;
+  const itemLabel = `${sectionLabel || 'unnamed section'} item ${itemIndex + 1}`;
+
+  if (Object.values(messageTemplate).some(Boolean) && !messageTemplate.ko) {
+    throw new Error(
+      `Service information ${itemLabel} has a copyable message but no Korean version. Add messageTemplate.ko.`
+    );
+  }
+  if (evidenceLevel === 'official' && sources.length === 0 && !href) {
+    throw new Error(
+      `Service information ${itemLabel} is marked as an official/legal claim but has no official source.`
+    );
+  }
+
+  return {
+    icon: str(item?.icon, 'check'),
+    audience: str(item?.audience, 'none') as ServiceContentAudience,
+    evidenceLevel,
+    title: localizedText(item?.title),
+    body: localizedText(item?.body),
+    prepare: localizedTextList(item?.prepare),
+    steps: localizedTextList(item?.steps),
+    checklist: localizedTextList(item?.checklist),
+    doneWhen: localizedText(item?.doneWhen),
+    details: {
+      title: localizedText(item?.details?.title),
+      body: localizedText(item?.details?.body),
+    },
+    messageTemplate,
+    sources,
+    jumpTo: str(item?.jumpTo),
+    href,
+  };
+}
+
 function toServiceContent(entry: any): ServiceContent {
   const sections = Array.isArray(entry?.sections) ? entry.sections : [];
+  const parsedSections = sections.map((section: any, sectionIndex: number) => {
+    const id = str(section?.id);
+    return {
+      id,
+      variant: str(section?.variant, 'standard') as ServiceContentSectionVariant,
+      icon: str(section?.icon, 'list'),
+      title: localizedText(section?.title),
+      intro: localizedText(section?.intro),
+      items: (Array.isArray(section?.items) ? section.items : []).map((item: any, itemIndex: number) =>
+        toServiceContentItem(item, id || `section ${sectionIndex + 1}`, itemIndex, Boolean(id))
+      ),
+    };
+  });
+
+  const stableIds = new Set<string>();
+  for (const section of parsedSections) {
+    if (!section.id) continue;
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(section.id)) {
+      throw new Error(
+        `Service information section id "${section.id}" must use lowercase letters, numbers, and single hyphens.`
+      );
+    }
+    if (stableIds.has(section.id)) {
+      throw new Error(`Service information section id "${section.id}" is duplicated.`);
+    }
+    stableIds.add(section.id);
+  }
+  for (const section of parsedSections) {
+    for (const item of section.items) {
+      if (item.jumpTo && !stableIds.has(item.jumpTo)) {
+        throw new Error(
+          `Service information jump target "${item.jumpTo}" does not match an existing stable section id.`
+        );
+      }
+    }
+  }
+
   return {
     lastReviewed: entry?.lastReviewed ?? null,
     title: localizedText(entry?.title),
     description: localizedText(entry?.description),
-    sections: sections.map((section: any) => ({
-      icon: str(section?.icon, 'list'),
-      title: localizedText(section?.title),
-      intro: localizedText(section?.intro),
-      items: (Array.isArray(section?.items) ? section.items : []).map((item: any) => ({
-        icon: str(item?.icon, 'check'),
-        title: localizedText(item?.title),
-        body: localizedText(item?.body),
-        href: str(item?.href),
-      })),
-    })),
+    sections: parsedSections,
   };
 }
 

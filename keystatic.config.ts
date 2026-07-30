@@ -52,6 +52,25 @@ const ICON_OPTIONS = [
   { label: 'Transit', value: 'transit' },
 ] as const;
 
+const INFORMATION_SECTION_VARIANTS = [
+  { label: 'Standard cards', value: 'standard' },
+  { label: 'Situation overview', value: 'overview' },
+  { label: 'Step-by-step timeline', value: 'timeline' },
+  { label: 'Optional checks', value: 'optional' },
+  { label: 'Exceptions and cautions', value: 'warning' },
+  { label: 'Official sources', value: 'sources' },
+] as const;
+
+const INFORMATION_AUDIENCES = [
+  { label: 'No audience label / 적용 대상 표시 없음', value: 'none' },
+  { label: 'Registered foreign residents / 외국인등록을 한 사람', value: 'general' },
+  { label: 'Students / 학생', value: 'student' },
+  { label: 'Workers / 근로자', value: 'worker' },
+  { label: 'If applicable / 해당 시', value: 'ifApplicable' },
+  { label: 'Stop and confirm / 먼저 확인', value: 'warning' },
+  { label: 'Official source / 공식 근거', value: 'official' },
+] as const;
+
 const safeAssetFilename = (originalFilename: string) => {
   const extensionIndex = originalFilename.lastIndexOf('.');
   const stem = (extensionIndex > 0 ? originalFilename.slice(0, extensionIndex) : originalFilename)
@@ -77,6 +96,16 @@ const localizedText = (label: string, multiline = false) =>
     { label }
   );
 
+const optionalLocalizedText = (label: string, multiline = false) =>
+  fields.object(
+    {
+      en: fields.text({ label: 'English', multiline }),
+      ko: fields.text({ label: '한국어', multiline }),
+      my: fields.text({ label: 'မြန်မာ — machine draft', multiline }),
+    },
+    { label }
+  );
+
 const informationSchema = () => ({
   lastReviewed: fields.date({
     label: 'Last reviewed (최종 검토일)',
@@ -87,28 +116,123 @@ const informationSchema = () => ({
   description: localizedText('Page introduction / 페이지 소개', true),
   sections: fields.array(
     fields.object({
+      id: fields.text({
+        label: 'Stable section ID / 고정 섹션 ID',
+        description:
+          'Use lowercase English letters, numbers, and hyphens. Keep this unchanged after publishing because overview links use it. Existing pages may leave it empty.',
+      }),
+      variant: fields.select({
+        label: 'Section layout / 섹션 형식',
+        options: INFORMATION_SECTION_VARIANTS,
+        defaultValue: 'standard',
+      }),
       icon: fields.select({ label: 'Section icon', options: ICON_OPTIONS, defaultValue: 'list' }),
       title: localizedText('Section title / 섹션 제목'),
       intro: localizedText('Section introduction / 섹션 소개', true),
       items: fields.array(
         fields.object({
           icon: fields.select({ label: 'Point icon', options: ICON_OPTIONS, defaultValue: 'check' }),
+          audience: fields.select({
+            label: 'Who this is for / 적용 대상',
+            description:
+              'This label separates legal duties from student, worker, optional, and caution items. Do not mark an item as a universal duty without an official source.',
+            options: INFORMATION_AUDIENCES,
+            defaultValue: 'none',
+          }),
           title: localizedText('Point title / 포인트 제목'),
           body: localizedText('Point description / 포인트 설명', true),
+          prepare: fields.array(
+            localizedText('Preparation item / 준비 항목', true),
+            {
+              label: 'What to prepare (optional) / 준비할 것 (선택)',
+              description:
+                'For changing procedures, say readers must recheck the current official requirements instead of presenting this list as final.',
+              validation: { length: { max: 10 } },
+            }
+          ),
+          steps: fields.array(
+            localizedText('Step / 진행 단계', true),
+            {
+              label: 'Step-by-step actions (optional) / 진행 순서 (선택)',
+              description:
+                'Describe actions readers complete themselves. Do not instruct MyanMate to write, submit, reserve, negotiate, or pay for them.',
+              validation: { length: { max: 10 } },
+            }
+          ),
+          checklist: fields.array(
+            localizedText('Checklist item / 체크 항목', true),
+            {
+              label: 'Action checklist (optional) / 실행 체크리스트 (선택)',
+              description:
+                'Add only concrete actions the reader can complete themselves. Leave empty for a normal information point.',
+              validation: { length: { max: 12 } },
+            }
+          ),
+          doneWhen: optionalLocalizedText('How to confirm completion (optional) / 완료 확인 기준 (선택)', true),
+          details: fields.object(
+            {
+              title: optionalLocalizedText('Details title / 상세 제목'),
+              body: optionalLocalizedText('Details body / 상세 내용', true),
+            },
+            {
+              label: 'Expandable details (optional) / 펼쳐보는 상세 설명 (선택)',
+              description:
+                'Use for legal nuance, exceptions, or troubleshooting. Cite the official basis in the sources field below.',
+            }
+          ),
+          messageTemplate: optionalLocalizedText(
+            'Message readers can copy (optional) / 직접 문의할 때 복사할 문장 (선택)',
+            true
+          ),
+          evidenceLevel: fields.select({
+            label: 'Evidence level / 근거 수준',
+            description:
+              'New items default to an official or legal claim. Keep that setting for duties, deadlines, penalties, eligibility, required documents, or filing channels, and attach at least one official source. Choose general guidance only for non-legal practical tips.',
+            options: [
+              { label: 'Official or legal claim — source required / 법·공식 기준 — 출처 필수', value: 'official' },
+              { label: 'General practical guidance / 일반 실용 안내', value: 'general' },
+            ],
+            defaultValue: 'official',
+          }),
+          sources: fields.array(
+            fields.object(
+              {
+                label: localizedText('Source label / 출처 이름'),
+                href: fields.url({
+                  label: 'Official source URL / 공식 출처 URL',
+                  description: 'Use a government or the institution’s own official page.',
+                  validation: { isRequired: true },
+                }),
+              },
+              { label: 'Related official source / 관련 공식 근거' }
+            ),
+            {
+              label: 'Inline official sources (optional) / 항목 바로 아래 공식 근거 (선택)',
+              description:
+                'Required when the item states a legal duty, deadline, penalty, eligibility rule, or filing channel.',
+              validation: { length: { max: 4 } },
+            }
+          ),
+          jumpTo: fields.text({
+            label: 'Jump to section ID (optional) / 이동할 섹션 ID (선택)',
+            description:
+              'For overview cards only. Enter another section’s stable ID without #, for example passport-report.',
+          }),
           href: fields.url({
             label: 'Official link (optional)',
-            description: 'Leave empty for a normal information point. Use only trusted official sources.',
+            description:
+              'Use for a standalone source card. For evidence attached to an action card, use Inline official sources.',
           }),
         }),
         {
           label: 'Information points / 정보 포인트',
-          validation: { length: { min: 1, max: 8 } },
+          validation: { length: { min: 1, max: 10 } },
         }
       ),
     }),
     {
       label: 'Information sections / 정보 섹션',
-      validation: { length: { min: 1, max: 8 } },
+      validation: { length: { min: 1, max: 10 } },
     }
   ),
 });

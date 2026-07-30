@@ -1,0 +1,280 @@
+---
+import Icon from './Icon.astro';
+import LocalizedText from './LocalizedText.astro';
+import T from './T.astro';
+import type {
+  ServiceContentAudience,
+  ServiceContentItem,
+  ServiceContentSectionVariant,
+} from '../lib/content';
+
+interface Props {
+  informationId: string;
+  sectionId: string;
+  sectionVariant: ServiceContentSectionVariant;
+  item: ServiceContentItem;
+  itemIndex: number;
+}
+
+const { informationId, sectionId, sectionVariant, item, itemIndex } = Astro.props;
+const itemId = `information-${informationId}-${sectionId}-${itemIndex + 1}`;
+const hasLocalized = (value: { en: string; ko: string; my: string }) =>
+  Object.values(value).some(Boolean);
+const hasDoneWhen = hasLocalized(item.doneWhen);
+const hasDetails = hasLocalized(item.details.title) || hasLocalized(item.details.body);
+const hasTemplate = Boolean(item.messageTemplate.ko);
+const hasActionContent =
+  item.prepare.length > 0 ||
+  item.steps.length > 0 ||
+  item.checklist.length > 0 ||
+  hasDoneWhen ||
+  hasDetails ||
+  hasTemplate ||
+  item.sources.length > 0;
+const hasRichContent = hasActionContent || Boolean(item.href);
+const isStandaloneSource = Boolean(item.href) && !hasActionContent;
+const isOverview = sectionVariant === 'overview';
+const audienceKey: Record<ServiceContentAudience, string> = {
+  none: '',
+  general: 'infoTopic.audience.general',
+  student: 'infoTopic.audience.student',
+  worker: 'infoTopic.audience.worker',
+  ifApplicable: 'infoTopic.audience.ifApplicable',
+  warning: 'infoTopic.audience.warning',
+  official: 'infoTopic.audience.official',
+};
+const audienceLabelKey = audienceKey[item.audience];
+const koreanMessageTemplate = item.messageTemplate.ko;
+const attachedSources = [
+  ...item.sources,
+  ...(item.href && !item.sources.some((source) => source.href === item.href)
+    ? [{ label: item.title, href: item.href }]
+    : []),
+];
+const OverviewElement = item.jumpTo ? 'a' : 'article';
+---
+
+{isStandaloneSource ? (
+  <a
+    id={itemId}
+    class="information-source-row"
+    href={item.href}
+    target="_blank"
+    rel="noopener noreferrer"
+    data-event={`official-source:${informationId}`}
+    data-service={informationId}
+    data-source={item.href}
+  >
+    <span class="information-source-icon" aria-hidden="true"><Icon name={item.icon} size={18} /></span>
+    <span class="information-source-copy">
+      <LocalizedText value={item.title} tag="strong" />
+      <LocalizedText value={item.body} />
+    </span>
+    <span class="information-source-action">
+      <T k="infoTopic.source.open" />
+      <Icon name="external" size={14} />
+    </span>
+  </a>
+) : isOverview ? (
+  <OverviewElement
+    id={itemId}
+    class:list={['information-overview-card', `audience-${item.audience}`]}
+    href={item.jumpTo ? `#${item.jumpTo}` : undefined}
+  >
+    {audienceLabelKey && (
+      <span class:list={['information-audience', `audience-${item.audience}`]}>
+        <T k={audienceLabelKey} />
+      </span>
+    )}
+    <span class="information-overview-icon" aria-hidden="true"><Icon name={item.icon} size={21} /></span>
+    <LocalizedText value={item.title} tag="strong" />
+    <LocalizedText value={item.body} tag="span" class="information-overview-body" />
+    {item.jumpTo && <T k="infoTopic.jump" tag="span" class="information-overview-link" />}
+  </OverviewElement>
+) : (
+  <article
+    id={itemId}
+    class:list={[
+      'information-action-card',
+      `audience-${item.audience}`,
+      { 'has-rich-content': hasRichContent, 'is-timeline-step': sectionVariant === 'timeline' },
+    ]}
+  >
+    <header class="information-action-head">
+      {sectionVariant === 'timeline' ? (
+        <span class="information-step-number" aria-hidden="true">
+          {String(itemIndex + 1).padStart(2, '0')}
+        </span>
+      ) : (
+        <span class="information-action-icon" aria-hidden="true"><Icon name={item.icon} size={19} /></span>
+      )}
+      <div class="information-action-heading">
+        {audienceLabelKey && (
+          <span class:list={['information-audience', `audience-${item.audience}`]}>
+            <T k={audienceLabelKey} />
+          </span>
+        )}
+        <LocalizedText value={item.title} tag="h3" />
+        <LocalizedText value={item.body} tag="p" />
+      </div>
+    </header>
+
+    {hasRichContent && (
+      <div class="information-action-content">
+        {item.prepare.length > 0 && (
+          <section class="information-action-block information-prepare">
+            <T k="infoTopic.prepare" tag="h4" />
+            <ul>
+              {item.prepare.map((entry) => (
+                <li><LocalizedText value={entry} /></li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {item.steps.length > 0 && (
+          <section class="information-action-block information-steps">
+            <T k="infoTopic.steps" tag="h4" />
+            <ol>
+              {item.steps.map((entry, stepIndex) => (
+                <li>
+                  <span aria-hidden="true">{stepIndex + 1}</span>
+                  <LocalizedText value={entry} />
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+        {item.checklist.length > 0 && (
+          <section class="information-action-block information-final-checks">
+            <T k="infoTopic.checklist" tag="h4" />
+            <p class="information-checklist-note"><T k="infoTopic.checklist.note" /></p>
+            <ul class="information-checklist">
+              {item.checklist.map((check, checkIndex) => {
+                const checkId = `check-${informationId}-${sectionId}-${itemIndex + 1}-${checkIndex + 1}`;
+                return (
+                  <li>
+                    <input id={checkId} type="checkbox" />
+                    <label for={checkId}>
+                      <LocalizedText value={check} />
+                    </label>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
+
+        {hasDoneWhen && (
+          <section class="information-done">
+            <span class="information-done-icon" aria-hidden="true"><Icon name="check" size={18} /></span>
+            <div>
+              <T k="infoTopic.doneWhen" tag="h4" />
+              <LocalizedText value={item.doneWhen} tag="p" />
+            </div>
+          </section>
+        )}
+
+        {hasDetails && (
+          <details class="information-details">
+            <summary>
+              <span aria-hidden="true"><Icon name="help" size={18} /></span>
+              <T k="infoTopic.details" />
+            </summary>
+            <div>
+              {hasLocalized(item.details.title) && <LocalizedText value={item.details.title} tag="h4" />}
+              {hasLocalized(item.details.body) && <LocalizedText value={item.details.body} tag="p" />}
+            </div>
+          </details>
+        )}
+
+        {hasTemplate && (
+          <section class="information-template">
+            <div class="information-template-head">
+              <T k="infoTopic.template" tag="h4" />
+              <button type="button" class="information-copy-button" data-copy-information-template hidden>
+                <span class="information-copy-ready"><T k="infoTopic.template.copy" /></span>
+                <span class="information-copy-done" aria-live="polite"><T k="infoTopic.template.copied" /></span>
+              </button>
+            </div>
+            <p class="information-template-text" lang="ko" data-template-copy-source>
+              {koreanMessageTemplate}
+            </p>
+            <details class="information-template-meaning">
+              <summary><T k="infoTopic.template.meaning" /></summary>
+              <LocalizedText value={item.messageTemplate} tag="p" />
+            </details>
+          </section>
+        )}
+
+        {attachedSources.length > 0 && (
+          <section class="information-inline-sources">
+            <T k="infoTopic.sources" tag="h4" />
+            <ul>
+              {attachedSources.map((source) => (
+                <li>
+                  <a
+                    href={source.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-event={`official-source:${informationId}`}
+                    data-service={informationId}
+                    data-source={source.href}
+                  >
+                    <LocalizedText value={source.label} />
+                    <Icon name="external" size={13} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </div>
+    )}
+  </article>
+)}
+
+<script>
+  const setupInformationTemplateCopy = () => {
+    document.querySelectorAll<HTMLButtonElement>('[data-copy-information-template]').forEach((button) => {
+      button.hidden = false;
+      if (button.dataset.copyReady === 'true') return;
+      button.dataset.copyReady = 'true';
+
+      button.addEventListener('click', async () => {
+        const template = button.closest('.information-template');
+        const copySource = template?.querySelector<HTMLElement>('[data-template-copy-source]');
+        const text = copySource?.textContent?.trim();
+        if (!text) return;
+
+        let copied = false;
+        try {
+          await navigator.clipboard.writeText(text);
+          copied = true;
+        } catch {
+          const temporary = document.createElement('textarea');
+          temporary.value = text;
+          temporary.setAttribute('readonly', '');
+          temporary.style.position = 'fixed';
+          temporary.style.opacity = '0';
+          document.body.append(temporary);
+          temporary.select();
+          copied = document.execCommand('copy');
+          temporary.remove();
+        }
+
+        if (!copied) {
+          button.classList.remove('is-copied');
+          return;
+        }
+
+        button.classList.add('is-copied');
+        window.setTimeout(() => button.classList.remove('is-copied'), 1800);
+      });
+    });
+  };
+
+  setupInformationTemplateCopy();
+  document.addEventListener('astro:page-load', setupInformationTemplateCopy);
+</script>
