@@ -59,6 +59,8 @@ export const services: Service[] = [
   },
 ];
 
+export const availableServices = services.filter((service) => service.id !== 'housing');
+
 const legacyServiceAliases: Record<string, Service> = {
   resume: {
     id: 'career',
@@ -74,5 +76,4 @@ export const serviceById = (id: string): Service | undefined => (
 /** Which service a guide category should suggest after the free information. */
 export const categoryToService: Partial<Record<string, ServiceId>> = {
   jobs: 'part-time-job',
-  housing: 'housing',
 };
