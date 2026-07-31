@@ -24,7 +24,18 @@ const relatedPriority: Record<string, string[]> = {
 };
 const priority = relatedPriority[guide.slug] ?? [];
 const groupedStudySlugs = new Set(['topik-i', 'topik-ii']);
-const nestedGuideSlugs = new Set(['f2-7-points-based-residence', 'f2-99-long-term-resident']);
+const nestedGuideSlugs = new Set([
+  'd2-1-associate-degree',
+  'd2-2-bachelor-degree',
+  'd2-3-master-degree',
+  'd2-4-doctoral-degree',
+  'd4-1-korean-language-training',
+  'e7-1-professional-worker',
+  'e7-4-skilled-worker',
+  'e7-m-manufacturing-skilled-worker',
+  'f2-7-points-based-residence',
+  'f2-99-long-term-resident',
+]);
 const relatedPool = all.filter(
   (g) => g.slug !== guide.slug
     && (isVisa || g.category === guide.category)
@@ -60,7 +71,23 @@ const sectionLabels: Partial<Record<string, Partial<Record<keyof GuideText, stri
 };
 const labels = sectionLabels[guide.category] ?? {};
 const labelFor = (field: keyof GuideText, fallback: string) => labels[field] ?? fallback;
-const subtypesLabelKey = isVisa ? 'content.section.subtypes' : labelFor('subtypes', 'content.section.types');
+const slugSectionLabels: Partial<Record<string, Partial<Record<keyof GuideText, string>>>> = {
+  'f2-7-points-based-residence': {
+    subtypes: 'content.section.applicantGroups',
+  },
+  'f2-99-long-term-resident': {
+    subtypes: 'content.section.applicantGroups',
+  },
+  'e7-m-school-major-planning': {
+    notes: 'content.section.e7mSchoolRequirements',
+  },
+};
+const slugLabels = slugSectionLabels[guide.slug] ?? {};
+const labelForGuide = (field: keyof GuideText, fallback: string) => slugLabels[field] ?? fallback;
+const subtypesLabelKey = labelForGuide(
+  'subtypes',
+  isVisa ? 'content.section.subtypes' : labelFor('subtypes', 'content.section.types'),
+);
 const defaultSections: { field: keyof GuideText; labelKey: string; mode: 'paras' | 'ul' | 'ol' }[] = [
   { field: 'eligibility', labelKey: labelFor('eligibility', 'content.section.eligibility'), mode: 'ul' },
   { field: 'subtypes',    labelKey: subtypesLabelKey,              mode: 'ul' },
@@ -95,22 +122,98 @@ const topikChoiceIntro = {
   ko: 'TOPIK 전체 내용을 확인한 뒤 학교, 장학금 또는 목표에서 요구하는 급수에 맞춰 TOPIK I 또는 TOPIK II를 읽어보세요.',
   my: 'TOPIK အကြောင်းအကျဉ်းကို ဖတ်ပြီးနောက် ကျောင်း၊ Scholarship သို့မဟုတ် ကိုယ့်ရည်မှန်းချက်က တောင်းသောအဆင့်အလိုက် TOPIK I သို့မဟုတ် TOPIK II ကို ရွေးဖတ်ပါ။',
 };
-const guideDetailLinks = guide.slug === 'f2-resident'
-  ? [
-      {
-        field: 'subtypes' as keyof GuideText,
-        href: '/guides/f2-7-points-based-residence',
-        lineStartsWith: { en: 'F-2-7 ', ko: 'F-2-7 ', my: 'F-2-7 ' },
-        label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
-      },
-      {
-        field: 'subtypes' as keyof GuideText,
-        href: '/guides/f2-99-long-term-resident',
-        lineStartsWith: { en: 'F-2-99 ', ko: 'F-2-99 ', my: 'F-2-99 ' },
-        label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
-      },
-    ]
-  : [];
+const guideDetailLinksBySlug: Record<string, {
+  field: keyof GuideText;
+  href: string;
+  lineStartsWith: Partial<Record<(typeof languages)[number], string>>;
+  label: Record<(typeof languages)[number], string>;
+}[]> = {
+  'd2-student-visa': [
+    {
+      field: 'subtypes',
+      href: '/guides/d2-1-associate-degree',
+      lineStartsWith: { en: 'D-2-1 ', ko: 'D-2-1 ', my: 'D-2-1 ' },
+      label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
+    },
+    {
+      field: 'subtypes',
+      href: '/guides/d2-2-bachelor-degree',
+      lineStartsWith: { en: 'D-2-2 ', ko: 'D-2-2 ', my: 'D-2-2 ' },
+      label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
+    },
+    {
+      field: 'subtypes',
+      href: '/guides/d2-3-master-degree',
+      lineStartsWith: { en: 'D-2-3 ', ko: 'D-2-3 ', my: 'D-2-3 ' },
+      label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
+    },
+    {
+      field: 'subtypes',
+      href: '/guides/d2-4-doctoral-degree',
+      lineStartsWith: { en: 'D-2-4 ', ko: 'D-2-4 ', my: 'D-2-4 ' },
+      label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
+    },
+  ],
+  'd4-language-visa': [
+    {
+      field: 'subtypes',
+      href: '/guides/d4-1-korean-language-training',
+      lineStartsWith: { en: 'D-4-1 ', ko: 'D-4-1 ', my: 'D-4-1 ' },
+      label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
+    },
+  ],
+  'e7-employment': [
+    {
+      field: 'subtypes',
+      href: '/guides/e7-1-professional-worker',
+      lineStartsWith: { en: 'E-7-1 ', ko: 'E-7-1 ', my: 'E-7-1 ' },
+      label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
+    },
+    {
+      field: 'subtypes',
+      href: '/guides/e7-4-skilled-worker',
+      lineStartsWith: { en: 'E-7-4 ', ko: 'E-7-4 ', my: 'E-7-4 ' },
+      label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
+    },
+    {
+      field: 'subtypes',
+      href: '/guides/e7-m-manufacturing-skilled-worker',
+      lineStartsWith: { en: 'E-7-M ', ko: 'E-7-M ', my: 'E-7-M ' },
+      label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
+    },
+  ],
+  'e7-m-school-major-planning': [
+    {
+      field: 'notes',
+      href: '/guides/e7-m-manufacturing-skilled-worker',
+      lineStartsWith: { en: 'E-7-M visa detail', ko: 'E-7-M visa detail', my: 'E-7-M visa detail' },
+      label: { en: 'Read visa guide', ko: '비자 가이드 보기', my: 'ဗီဇာလမ်းညွှန် ဖတ်ရန်' },
+    },
+  ],
+  'e7-m-manufacturing-skilled-worker': [
+    {
+      field: 'notes',
+      href: '/guides/e7-m-school-major-planning',
+      lineStartsWith: { en: 'School and major planning', ko: 'School and major planning', my: 'School and major planning' },
+      label: { en: 'Read study planning guide', ko: '유학 계획 가이드 보기', my: 'ပညာသင်အစီအစဉ် ဖတ်ရန်' },
+    },
+  ],
+  'f2-resident': [
+    {
+      field: 'subtypes',
+      href: '/guides/f2-7-points-based-residence',
+      lineStartsWith: { en: 'F-2-7 ', ko: 'F-2-7 ', my: 'F-2-7 ' },
+      label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
+    },
+    {
+      field: 'subtypes',
+      href: '/guides/f2-99-long-term-resident',
+      lineStartsWith: { en: 'F-2-99 ', ko: 'F-2-99 ', my: 'F-2-99 ' },
+      label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
+    },
+  ],
+};
+const guideDetailLinks = guideDetailLinksBySlug[guide.slug] ?? [];
 ---
 <Base
   title={guide[defaultLang].title || guide.en.title}

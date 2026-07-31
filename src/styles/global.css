@@ -751,6 +751,12 @@ body{
 
 /* detail pages */
 .detail-page{padding:48px 0 76px;align-items:start;}
+.detail-page article,
+.detail-page .sec,
+.detail-page .prose{
+  min-width:0;
+  max-width:100%;
+}
 .detail-hero{padding:22px 0 34px;border-bottom:2px solid var(--ink);}
 .detail-hero .pill-tag{margin-bottom:14px;}
 .detail-hero .lead-title{max-width:760px;}
@@ -1835,6 +1841,66 @@ body.lang-my .guide-topic-detail-title{line-height:1.42;}
   display:inline-flex;
   align-items:center;
   line-height:1;
+}
+.guide-school-list{
+  width:100%;
+  max-width:100%;
+  margin:18px 0 8px;
+  overflow:hidden;
+  border:1px solid rgba(192,97,58,.2);
+  border-radius:8px;
+  background:rgba(255,255,255,.58);
+}
+.guide-school-list-head,
+.guide-school-list-row{
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  gap:10px;
+}
+.guide-school-list-head{
+  padding:10px 14px;
+  background:rgba(255,246,239,.86);
+  color:var(--brand-strong);
+  font-size:11.5px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+.guide-school-list-row{
+  padding:13px 14px;
+  border-top:1px solid rgba(192,97,58,.13);
+}
+.guide-school-list-row span{
+  min-width:0;
+  color:var(--ink);
+  font-size:13.5px;
+  line-height:1.55;
+  overflow-wrap:anywhere;
+}
+.guide-school-list-row span:first-child{
+  font-weight:800;
+}
+.guide-school-list-row span:last-child{
+  color:var(--ink-soft);
+}
+
+@media(max-width:430px){
+  .guide-school-list-head,
+  .guide-school-list-row{
+    grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+    gap:8px;
+  }
+  .guide-school-list-head{
+    padding:9px 12px;
+    font-size:10px;
+    line-height:1.35;
+  }
+  .guide-school-list-row{
+    padding:12px;
+  }
+  .guide-school-list-row span{
+    font-size:12.5px;
+    line-height:1.55;
+  }
 }
 .guide-topik-choice-panel{
   display:grid;

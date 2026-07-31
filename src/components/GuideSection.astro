@@ -25,6 +25,19 @@ const { guide, field, labelKey, mode, num, detailLinks = [] } = Astro.props;
 
 const toLines = (s: string) => s.split('\n').map((x) => x.trim()).filter(Boolean);
 const toParas = (s: string) => s.split(/\n{2,}/).map((x) => x.trim()).filter(Boolean);
+const schoolListMarker = 'School list |';
+const schoolListLabels: Record<Lang, { school: string; major: string }> = {
+  en: { school: 'School', major: 'Program / major' },
+  ko: { school: '학교', major: '학과 / 전공' },
+  my: { school: 'ကျောင်း', major: 'Program / major' },
+};
+const parseSchoolRows = (lines: string[]) => lines
+  .filter((line) => line.startsWith(schoolListMarker))
+  .map((line) => {
+    const [, school = '', major = ''] = line.split('|').map((part) => part.trim());
+    return { school, major };
+  })
+  .filter((row) => row.school && row.major);
 const detailLinkFor = (lang: Lang, line: string) => detailLinks.find((link) => {
   const marker = link.lineStartsWith[lang] ?? link.lineStartsWith.en;
   return marker ? line.startsWith(marker) : false;
@@ -37,28 +50,53 @@ const detailLinkFor = (lang: Lang, line: string) => detailLinks.find((link) => {
   </h2>
   {languages.map((l) => {
     const val = guide[l][field] || guide.en[field];
+    const lines = toLines(val);
+    const schoolRows = field === 'notes' ? parseSchoolRows(lines) : [];
+    const contentLines = schoolRows.length > 0
+      ? lines.filter((line) => !line.startsWith(schoolListMarker))
+      : lines;
     return (
       <div data-lang={l} class="prose">
         {mode === 'paras' && toParas(val).map((p) => <p>{p}</p>)}
         {mode === 'ul' && (
-          <ul>
-            {toLines(val).map((li) => {
-              const detailLink = detailLinkFor(l, li);
-              return (
-                <li>
-                  {li}
-                  {detailLink && (
-                    <a class="guide-inline-detail-link" href={detailLink.href}>
-                      <span>{detailLink.label[l] ?? detailLink.label.en}</span>
-                      <Icon name="external" size={13} />
-                    </a>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
+          <>
+            {contentLines.length > 0 && (
+              <ul>
+                {contentLines.map((li) => {
+                  const detailLink = detailLinkFor(l, li);
+                  return (
+                    <li>
+                      {li}
+                      {detailLink && (
+                        <a class="guide-inline-detail-link" href={detailLink.href}>
+                          <span>{detailLink.label[l] ?? detailLink.label.en}</span>
+                          <Icon name="external" size={13} />
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+            {schoolRows.length > 0 && (
+              <div class="guide-school-list" role="table" aria-label={`${schoolListLabels[l].school} ${schoolListLabels[l].major}`}>
+                <div class="guide-school-list-head" role="row">
+                  <span role="columnheader">{schoolListLabels[l].school}</span>
+                  <span role="columnheader">{schoolListLabels[l].major}</span>
+                </div>
+                <div class="guide-school-list-body">
+                  {schoolRows.map((row) => (
+                    <div class="guide-school-list-row" role="row">
+                      <span role="cell">{row.school}</span>
+                      <span role="cell">{row.major}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
         )}
-        {mode === 'ol' && <ol>{toLines(val).map((li) => <li>{li}</li>)}</ol>}
+        {mode === 'ol' && <ol>{contentLines.map((li) => <li>{li}</li>)}</ol>}
       </div>
     );
   })}

@@ -7,7 +7,18 @@ import { getGuides } from '../../lib/content';
 import { defaultLang, t } from '../../i18n/ui';
 
 const allGuides = await getGuides();
-const visaSubtypeDetailSlugs = new Set(['f2-7-points-based-residence', 'f2-99-long-term-resident']);
+const visaSubtypeDetailSlugs = new Set([
+  'd2-1-associate-degree',
+  'd2-2-bachelor-degree',
+  'd2-3-master-degree',
+  'd2-4-doctoral-degree',
+  'd4-1-korean-language-training',
+  'e7-1-professional-worker',
+  'e7-4-skilled-worker',
+  'e7-m-manufacturing-skilled-worker',
+  'f2-7-points-based-residence',
+  'f2-99-long-term-resident',
+]);
 const guides = allGuides.filter((guide) => guide.category === 'visa' && !visaSubtypeDetailSlugs.has(guide.slug));
 const visaPurposes = [
   { id: 'all', labelKey: 'visaPurpose.all' },
