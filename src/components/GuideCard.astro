@@ -16,9 +16,16 @@ const code = visaCode(guide.slug);
 const visaId = code?.toLowerCase().replace('-', '') ?? '';
 const visaShortLabels: Record<string, Record<(typeof languages)[number], string>> = {
   'D-2': { en: 'Student visa', ko: '유학 비자', my: 'ကျောင်းသား ဗီဇာ' },
-  'D-4': { en: 'Language training visa', ko: '일반연수 비자', my: 'ဘာသာစကားသင်တန်း ဗီဇာ' },
+  'D-2-1': { en: 'Associate degree visa', ko: '전문학사 유학 비자', my: 'Associate Degree ဗီဇာ' },
+  'D-2-2': { en: "Bachelor's degree visa", ko: '학사 유학 비자', my: 'Bachelor Degree ဗီဇာ' },
+  'D-2-3': { en: "Master's degree visa", ko: '석사 유학 비자', my: 'Master Degree ဗီဇာ' },
+  'D-2-4': { en: 'Doctoral degree visa', ko: '박사 유학 비자', my: 'Doctoral Degree ဗီဇာ' },
+  'D-4': { en: 'General training visa', ko: '일반연수 비자', my: 'အထွေထွေသင်တန်း ဗီဇာ' },
+  'D-4-1': { en: 'Korean language training visa', ko: '한국어 연수 비자', my: 'ကိုရီးယားဘာသာ သင်တန်း ဗီဇာ' },
   'D-10': { en: 'Job seeking visa', ko: '구직 비자', my: 'အလုပ်ရှာဖွေ ဗီဇာ' },
-  'E-7': { en: 'Skilled work visa', ko: '전문취업 비자', my: 'ကျွမ်းကျင်အလုပ် ဗီဇာ' },
+  'E-7': { en: 'Specific activity visa', ko: '특정활동 비자', my: 'အထူးလုပ်ငန်း ဗီဇာ' },
+  'E-7-1': { en: 'Professional worker visa', ko: '전문인력 비자', my: 'ပညာရှင်လုပ်သား ဗီဇာ' },
+  'E-7-4': { en: 'Skilled worker visa', ko: '숙련기능인력 비자', my: 'ကျွမ်းကျင်လုပ်သား ဗီဇာ' },
   'E-9': { en: 'EPS work visa', ko: '비전문취업 비자', my: 'EPS အလုပ် ဗီဇာ' },
   'F-2': { en: 'Resident visa', ko: '거주 비자', my: 'နေထိုင်ခွင့် ဗီဇာ' },
   'F-2-7': { en: 'Points-based resident visa', ko: '점수제 거주 비자', my: 'အမှတ်စနစ် နေထိုင်ခွင့် ဗီဇာ' },

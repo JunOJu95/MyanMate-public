@@ -1,258 +1,133 @@
 title: D-2 Student Visa
 category: visa
 order: 1
-lastReviewed: 2026-07-13
+lastReviewed: 2026-07-31
 en:
-  title: D-2 Student Visa
-  summary: >-
-    D-2 is for full-time study in a degree program at an accredited Korean
-    university (associate, bachelor's, master's, doctoral, research, exchange).
-    Who qualifies, the documents you prepare, how to apply, and what trips
-    people up.
-  eligibility: >-
-    You're admitted to a regular degree program at a junior college or
-    university registered in Korea's foreign-student system (FIMS).
-
-    Sub-types by program: D-2-1 associate, D-2-2 bachelor's, D-2-3 master's,
-    D-2-4 doctoral, D-2-5 research, D-2-6 exchange, D-2-7 work-study, D-2-8
-    visiting.
-
-    Night, distance/cyber universities and Polytechnic vocational courses are
-    generally excluded. Some pre-reviewed night degree programs and degree-track
-    "multi-skilled technician" courses may be exceptions.
-  subtypes: >-
-    D-2-1 Associate Degree — Associate degree programs at junior colleges
-
-    D-2-2 Bachelor's Degree — Bachelor's degree programs at 4-year universities
-
-    D-2-3 Master's Degree — Graduate master's degree programs
-
-    D-2-4 Doctoral Degree — Doctoral / PhD programs
-
-    D-2-5 Research Program — Research program (requires a master's degree or
-    higher)
-
-    D-2-6 Exchange Student — Exchange program under an inter-university
-    agreement
-
-    D-2-7 Work-Study Program — Combined work-and-study study-abroad program
-
-    D-2-8 Visiting Student — Students enrolled at a home-country university
-    studying for at least one semester in Korea
-  documents: >-
-    Visa application form, passport copy, one photo taken within 6 months
-
-    Certificate of admission (표준입학허가서) issued by the university president
-
-    The school's business registration certificate (copy)
-
-    Proof of your final academic record — verified by Apostille or Korean
-    consular confirmation (extra checks apply for some countries)
-
-    Proof of financial ability such as a bank-balance certificate; if a parent's
-    balance is used, add family-relationship documents
-
-    TB test certificate (if applicable)
-  steps: >-
-    Get your certificate of admission from the university's international
-    office.
-
-    Have your academic and financial documents verified (Apostille or consular
-    confirmation).
-
-    Apply at the Korean embassy or consulate in your country — or your school
-    may handle the Certificate of Confirmation of Visa Issuance (사증발급인정서)
-    process.
-
-    After you receive the visa and enter Korea, complete foreign-resident
-    registration within 90 days.
-  watchout: >-
-    Use a school registered in FIMS — a non-eligible institution means no D-2.
-
-    A bank-balance certificate is usually valid only if issued within 30 days —
-    check the timing.
-
-    Document rules differ by country and change often — confirm the latest list
-    on HiKorea.
-  notes: >-
-    The general upper limit for one stay grant is 2 years. Visa-issuance limits
-    differ by sub-type: D-2-5, D-2-6, and D-2-8, for example, are normally
-    issued for up to 1 year. Confirm the limit for your route
-
-    Extensions are issued to match the academic schedule. At
-    visa-review-strengthened universities, a D grade (1.0) or below triggers a
-    one-time 6-month extension with a written explanation; further D-grade
-    semesters result in restricted extension
-
-    The general part-time-work route covers D-2-1 to D-2-4, D-2-6, and D-2-7.
-    D-2-8 holders may apply only after 6 months from the status-change date (or
-    entry date for visa holders). School confirmation and immigration permission
-    are required; hours vary by program, year, Korean ability, and school
-    accreditation
-
-    Re-entry within 1 year requires no permit; for 1–2 years you must obtain a
-    multiple re-entry permit before leaving
-
-    Changes to name, sex, date of birth, nationality, passport, or school must
-    be reported within 15 days
-
-    Total stay cap by program length: associate 3–4 yrs, bachelor's 6–7 yrs,
-    master's 5–6 yrs, doctoral 7–8 yrs (from enrollment)
-
-    This is a summary — verify current rules with the 1345 Immigration Contact
-    Center or your local Immigration Office before acting
-ko:
-  title: 'D-2 유학 비자 '
-  summary: >-
-    D-2는 인가된 한국 대학의 학위 과정(전문학사·학사·석사·박사·연구·교환)에서 정규로 공부하기 위한 비자입니다. 자격, 준비 서류,
-    신청 절차, 자주 하는 실수를 정리했어요.
-  eligibility: >-
-    유학생정보시스템(FIMS)에 등록된 전문대학 이상에서 정규 학위 과정에 입학 허가를 받은 분.
-
-    세부약호: D-2-1 전문학사, D-2-2 학사, D-2-3 석사, D-2-4 박사, D-2-5 연구, D-2-6 교환학생, D-2-7
-    일·학습연계, D-2-8 방문학생.
-
-    야간·원격·사이버대학, 폴리텍 직업훈련과정은 원칙적으로 제외됩니다. 다만 일부 사전심사된 야간 학위과정 등 예외가 있을 수 있습니다.
+  title: D-2 Student Visa — degree study in Korea
+  summary: |-
+    D-2 is the study visa for foreigners entering a regular degree program at a Korean college, university, graduate school, or approved academic institution. It is different from D-4, which is usually for non-degree training.
+  eligibility: |-
+    D-2 can be reviewed when the main purpose is regular degree study or an accepted academic/research route in Korea.
+    The school and program must be eligible for foreign-student visa review, and the admission document must match the D-2 route.
+    For associate, bachelor, master, and doctoral study, the student's education history must support the level they are entering.
+    Night, distance, cyber, vocational, exchange, visiting, research, or work-study cases may have different handling, so confirm the exact D-2 subtype before preparing documents.
   subtypes: |-
-    D-2-1 전문학사 — 전문대학 학위 과정
-    D-2-2 학사 — 4년제 대학 학사 학위 과정
-    D-2-3 석사 — 대학원 석사 학위 과정
-    D-2-4 박사 — 박사 학위 과정
-    D-2-5 연구과정 — 석사 학위 이상 소지자의 연구과정
-    D-2-6 교환학생 — 대학 간 협정에 따른 교환학생 프로그램
-    D-2-7 일·학습연계 유학 — 일-학습 연계 유학 과정
-    D-2-8 방문학생 — 본국 대학 재학 중 한국 대학에서 1학기 이상 수학
+    D-2-1 Associate degree — for associate degree programs at junior colleges or equivalent eligible institutions
+    D-2-2 Bachelor's degree — for bachelor's degree programs at eligible Korean universities
+    D-2-3 Master's degree — for graduate master's degree programs
+    D-2-4 Doctoral degree — for doctoral or PhD degree programs
+    D-2-5 Research program — for approved research activities, usually connected to graduate-level qualification
+    D-2-6 Exchange student — for exchange study under an agreement between universities
+    D-2-7 Work-learning linked study — for approved work-learning linked study-abroad programs
+    D-2-8 Visiting student — for students enrolled at a home university and studying in Korea for a set period
   documents: |-
-    사증발급(인정)신청서, 여권 사본, 사진 1매(6개월 이내 촬영)
-    표준입학허가서(대학 총·학장 발행)
-    교육기관 사업자등록증 사본
-    최종학력 입증서류 — 아포스티유 또는 영사확인(국가별 추가 확인이 있을 수 있음)
-    재정능력 입증서류(예: 잔고증명서); 부모 잔고를 제출하면 가족관계 입증서류 추가
-    결핵진단서(해당자)
+    Visa application form or visa issuance documents, passport, photo taken within the required period, and fee
+    Standard Admission Letter issued by the Korean university or institution
+    Copy of the educational institution's business registration certificate or registration-number certificate
+    Proof of final education, such as graduation certificate or transcript, with Apostille, consular confirmation, or other verification if required
+    Proof of financial ability, such as bank balance, scholarship certificate, sponsor documents, or other accepted evidence
+    Family relationship documents if a parent's or family member's financial document is used
+    TB test result, medical document, or additional embassy/school documents if applicable
   steps: |-
-    학교 국제처에서 표준입학허가서를 받습니다.
-    학력·재정 서류를 아포스티유 또는 영사확인 받습니다.
-    본국의 대한민국 대사관·영사관에서 신청하거나, 학교가 사증발급인정서 절차를 진행하는 경우가 있습니다.
-    비자를 받고 입국하면 90일 이내에 외국인등록을 합니다.
+    Confirm which D-2 subtype matches your program before collecting documents.
+    Receive the Standard Admission Letter and school documents from the university.
+    Prepare education, financial, passport, photo, and family documents according to the embassy or immigration checklist.
+    Apply through the Korean embassy/consulate or through the Certificate of Visa Issuance route if the school uses that process.
+    After entering Korea, complete foreigner registration within 90 days if staying more than 90 days.
+    Keep school, address, passport, enrollment, income, and part-time work permission information updated while staying in Korea.
   watchout: |-
-    FIMS에 등록된 학교인지 확인하세요 — 대상이 아니면 D-2가 발급되지 않습니다.
-    잔고증명서는 보통 30일 이내 발급분만 유효합니다 — 발급 시점을 확인하세요.
-    서류 요건은 국가별로 다르고 자주 바뀝니다 — 최신 목록은 하이코리아에서 확인하세요.
-  notes: >-
-    체류허가 1회 부여 상한은 일반적으로 2년입니다. 다만 해외 사증 발급 시 D-2-5·D-2-6·D-2-8 등은 통상 1년 이내로 세부
-    자격별 상한이 다르므로 본인 경로를 확인하세요.
-
-    연장은 학사일정에 맞춰 부여. 비자심사강화대학 재학 중 D학점(1.0) 이하 시 최초 1회 사유서 제출 후 6개월만 연장되며, 이후에도
-    D학점 이하면 연장 제한
-
-    일반적인 시간제 취업 허용 대상은 D-2-1~D-2-4·D-2-6·D-2-7입니다. D-2-8은 자격변경일(사증 소지자는 입국일)부터
-    6개월이 지난 후 신청할 수 있습니다. 학교 확인과 출입국 허가가 필요하며 허용 시간은 과정·학년·한국어 능력·학교 인증 여부에 따라
-    달라집니다.
-
-    1년 이내 재입국은 허가 면제, 1~2년은 복수재입국허가 필요
-
-    성명·성별·생년월일·국적·여권·학교 변경 시 15일 이내 신고
-
-    최장 체류 상한: 전문학사 3~4년, 학사 6~7년, 석사 5~6년, 박사 7~8년 (입학 후, 과정 연한에 따라)
-
-    본 정보는 요약이며, 실제 적용 시 1345 외국인종합안내센터 또는 관할 출입국·외국인관서에 확인하세요
+    Do not choose D-2 only because the program is at a university. The program must match a D-2 degree or accepted academic route.
+    The Standard Admission Letter and final-education proof are important. A simple admission email may not be enough.
+    Financial proof rules differ by embassy, school, nationality, scholarship, and sponsor situation.
+    Part-time work is not automatic. School confirmation and immigration permission are required, and hours depend on program level, Korean ability, school status, and current rules.
+    School change, address change, passport change, leave of absence, dropout, or graduation can create reporting or status-change duties.
+  notes: |-
+    D-2 and D-4 are often confused. D-2 is mainly for degree study; D-4 is generally for non-degree training such as language training.
+    Study in Korea, the Korean government study portal, lists D-2-1 to D-2-7 as study routes and explains D-2 required documents and stay-period limits by program level.
+    This page is an overview. Confirm the latest D-2 subtype, document list, and application route with the Korean embassy, HiKorea, 1345, your school, or the immigration office before applying.
+ko:
+  title: D-2 유학 비자 — 한국 학위과정
+  summary: |-
+    D-2는 한국의 전문대학, 대학교, 대학원 또는 인정되는 학술기관의 정규 학위과정에 들어오는 외국인을 위한 유학 비자입니다. 비학위 연수에 주로 쓰이는 D-4와 다릅니다.
+  eligibility: |-
+    D-2는 주된 목적이 한국의 정규 학위과정 또는 인정되는 학술·연구 경로일 때 검토될 수 있습니다.
+    학교와 과정은 외국인 유학생 비자 심사 대상이어야 하며, 입학 서류가 해당 D-2 경로와 맞아야 합니다.
+    전문학사, 학사, 석사, 박사 과정은 입학하려는 단계에 맞는 이전 학력 이력이 필요합니다.
+    야간, 원격, 사이버, 직업과정, 교환, 방문, 연구, 일·학습 연계 사례는 처리 방식이 다를 수 있으므로 서류 준비 전에 정확한 D-2 세부 유형을 확인하세요.
+  subtypes: |-
+    D-2-1 전문학사 — 전문대학 또는 이에 준하는 대상 기관의 전문학사 과정
+    D-2-2 학사 — 한국 대학의 학사 학위과정
+    D-2-3 석사 — 대학원 석사 학위과정
+    D-2-4 박사 — 박사 또는 PhD 학위과정
+    D-2-5 연구과정 — 보통 대학원 수준 자격과 연결되는 인정 연구활동
+    D-2-6 교환학생 — 대학 간 협정에 따른 교환 수학
+    D-2-7 일·학습연계 유학 — 인정되는 일·학습 연계 유학 과정
+    D-2-8 방문학생 — 본국 대학 재학생이 일정 기간 한국에서 수학하는 경우
+  documents: |-
+    사증발급신청서 또는 사증발급인정 관련 서류, 여권, 정해진 기간 내 촬영한 사진, 수수료
+    한국 대학 또는 기관에서 발급한 표준입학허가서
+    교육기관 사업자등록증 또는 고유번호증 사본
+    졸업증명서나 성적증명서 등 최종학력 입증서류. 필요한 경우 아포스티유, 영사확인 또는 기타 확인
+    잔고증명서, 장학금 증명서, 보증인 서류 등 인정되는 재정능력 입증서류
+    부모 또는 가족의 재정서류를 쓰는 경우 가족관계 입증서류
+    해당되는 경우 결핵진단서, 건강 관련 서류 또는 공관·학교 추가서류
+  steps: |-
+    서류를 모으기 전에 본인 과정에 맞는 D-2 세부 유형을 확인합니다.
+    학교에서 표준입학허가서와 학교 관련 서류를 받습니다.
+    공관 또는 출입국 체크리스트에 따라 학력, 재정, 여권, 사진, 가족관계 서류를 준비합니다.
+    대한민국 대사관·영사관 또는 학교가 진행하는 사증발급인정서 경로로 신청합니다.
+    90일을 초과해 체류한다면 입국 후 90일 이내에 외국인등록을 합니다.
+    체류 중 학교, 주소, 여권, 재학상태, 소득, 시간제 취업허가 정보를 최신 상태로 유지합니다.
+  watchout: |-
+    대학에서 하는 과정이라고 해서 모두 D-2가 아닙니다. 과정이 D-2 학위 또는 인정 학술 경로와 맞아야 합니다.
+    표준입학허가서와 최종학력 입증이 중요합니다. 단순 입학 이메일만으로는 부족할 수 있습니다.
+    재정 입증 기준은 공관, 학교, 국적, 장학금, 보증인 상황에 따라 달라질 수 있습니다.
+    시간제 취업은 자동 허용이 아닙니다. 학교 확인과 출입국 허가가 필요하며 허용 시간은 과정, 한국어 능력, 학교 상태, 최신 규정에 따라 달라집니다.
+    학교 변경, 주소 변경, 여권 변경, 휴학, 자퇴, 졸업은 신고 또는 자격변경 의무와 연결될 수 있습니다.
+  notes: |-
+    D-2와 D-4는 자주 혼동됩니다. D-2는 주로 학위과정이고 D-4는 보통 어학연수 같은 비학위 연수입니다.
+    한국 정부 유학 포털 Study in Korea는 D-2-1부터 D-2-7까지의 유학 경로와 D-2 필요서류, 과정별 체류기간 상한을 안내합니다.
+    이 페이지는 개요입니다. 신청 전 대한민국 대사관·영사관, 하이코리아, 1345, 학교 또는 출입국에서 최신 세부 유형, 서류 목록과 신청 경로를 확인하세요.
 my:
-  title: D-2 ကျောင်းသားဗီဇာ
-  summary: >-
-    D-2 သည် အသိအမှတ်ပြု ကိုရီးယားတက္ကသိုလ်၏ ဘွဲ့သင်တန်း (Associate၊ Bachelor
-    ဘွဲ့၊ မဟာဘွဲ့၊ ပါရဂူ၊ သုတေသန၊ exchange) တွင် အချိန်ပြည့် ပညာသင်ရန်ဖြစ်သည်။
-    လိုအပ်သည့် အရည်အချင်း၊ပြင်ဆင်ရမည့် စာရွက်စာတမ်း၊ လျှောက်ထားရမည့်
-    နည်းလမ်းနှင့် မှားတတ်သည့်အရာများကို စုစည်းပေးထားပါတယ်
-  eligibility: >-
-    ကိုရီးယား၏ နိုင်ငံခြားကျောင်းသားစနစ် (FIMS) တွင် မှတ်ပုံတင်ထားသော
-    ဒီပလိုမာတက္ကသိုလ်/တက္ကသိုလ်၏ တရားဝင်ဘွဲ့သင်တန်းသို့ ဝင်ခွင့်ရသူ။
-
-    အမျိုးအစား — D-2-1 Associate၊ D-2-2 ဘွဲ့၊ D-2-3 မဟာဘွဲ့၊ D-2-4 ပါရဂူ၊ D-2-5
-    သုတေသန၊ D-2-6 Exchange Student၊ D-2-7 အလုပ်-သင်ယူ၊ D-2-8 လည်ပတ်ကျောင်းသား။
-
-    ညပိုင်း၊ အဝေးသင်/cyber တက္ကသိုလ်များနှင့် Polytechnic အသက်မွေးသင်တန်းများကို
-    အများအားဖြင့် မပါဝင်ပါ။ သို့သော် ကြိုတင်စစ်ဆေးထားသော
-    ညပိုင်းဘွဲ့သင်တန်းအချို့ကဲ့သို့ ခြွင်းချက်များ ရှိနိုင်သည်။
-  subtypes: >-
-    D-2-1 ဘွဲ့ကြို (Associate Degree) — အသက်မွေးဝမ်းကျောင်း တက္ကသိုလ် ဘွဲ့ကြို
-    သင်တန်း
-
-    D-2-2 ဘွဲ့ (Bachelor's) — ၄ နှစ်တက္ကသိုလ် ဘွဲ့ သင်တန်း
-
-    D-2-3 ဘွဲ့လွန် (Master's) — မဟာဘွဲ့ သင်တန်း
-
-    D-2-4 ပါရဂူ (Doctoral) — ပါရဂူဘွဲ့ သင်တန်း
-
-    D-2-5 သုတေသန (Research) — မဟာဘွဲ့ အထက် ရရှိပြီးသူများ၏ သုတေသန သင်တန်း
-
-    D-2-6 လဲလှယ်ကျောင်းသား (Exchange) — တက္ကသိုလ်များအကြား သဘောတူညီချက်ဖြင့်
-    လဲလှယ် ကျောင်းသား
-
-    D-2-7 အလုပ်-ပညာ ပေါင်းစပ် (Work-Study) — အလုပ်နှင့် ပညာရေး ပေါင်းစပ်
-    ကျောင်းသား အစီအစဉ်
-
-    D-2-8 ဧည့်သည် ကျောင်းသား (Visiting) — မိခင်နိုင်ငံ တက္ကသိုလ်၌ ပညာသင်ကြားစဉ်
-    ကိုရီးယား၌ အနည်းဆုံး ၁ စာသင်နှစ် ပညာသင်ကြားသူ
-  documents: >-
-    ဗီဇာလျှောက်လွှာ၊ နိုင်ငံကူးလက်မှတ် မိတ္တူ၊ ၆ လအတွင်း ရိုက်ထားသော ဓာတ်ပုံ ၁
-    ပုံ
-
-    ဝင်ခွင့်လက်မှတ် (표준입학허가서၊ တက္ကသိုလ်ပါမောက္ခချုပ် ထုတ်ပေးသော)
-
-    ကျောင်း၏ စီးပွားရေးမှတ်ပုံတင်လက်မှတ် မိတ္တူ
-
-    နောက်ဆုံးပညာအရည်အချင်း အထောက်အထား — Apostille သို့မဟုတ် ကိုရီးယားသံရုံး
-    အတည်ပြုချက်
-
-    ငွေကြေးတတ်နိုင်မှု အထောက်အထား (ဥပမာ ဘဏ်လက်ကျန် ထောက်ခံစာ)၊
-    မိဘထောက်ပံံ့မှုဖြင့် တင်ပါက မိသားစုဆက်နွယ်မှု စာရွက်
-
-    တီဘီ ရောဂါစစ်ဆေးချက် (သက်ဆိုင်ပါက)
-  steps: >-
-    ကျောင်း၏ နိုင်ငံတကာဌာနမှ ဝင်ခွင့်လက်မှတ် ရယူပါ။
-
-    ပညာနှင့် ငွေကြေး စာရွက်များကို Apostille သို့မဟုတ် သံရုံး အတည်ပြုချက် ရယူပါ။
-
-    နိုင်ငံရှိ ကိုရီးယားသံရုံး/ကောင်စစ်ဝန်ရုံးတွင် လျှောက်ပါ — သို့မဟုတ်
-    ကျောင်းက ဗီဇာထုတ်ပေးမှု အတည်ပြုလက်မှတ် (사증발급인정서) လုပ်ငန်းစဉ်ကို
-    ဆောင်ရွက်နိုင်ပါသည်။
-
-    ဗီဇာရ၍ ဝင်ရောက်ပြီးနောက် ၉၀ ရက်အတွင်း နိုင်ငံခြားသား မှတ်ပုံတင်ပါ။
-  watchout: >-
-    FIMS မှတ်ပုံတင်ထားသော ကျောင်းဖြစ်ကြောင်း စစ်ပါ — မဟုတ်ပါက D-2 မရပါ။
-
-    ဘဏ်လက်ကျန် ထောက်ခံစာသည် ၃၀ ရက်အတွင်း ထုတ်ထားမှသာ အများအားဖြင့် တရားဝင်သည် —
-    အချိန်ကို စစ်ပါ။
-
-    စာရွက်လိုအပ်ချက်များ နိုင်ငံအလိုက် ကွဲပြားပြီး ပြောင်းတတ်သည် —
-    နောက်ဆုံးစာရင်းကို HiKorea တွင် အတည်ပြုပါ။
-  notes: >-
-    နေထိုင်ခွင့်ကို တစ်ကြိမ်ပေးသည့် ယေဘုယျအများဆုံးကာလမှာ ၂ နှစ်ဖြစ်သည်။
-    သို့သော် ပြည်ပမှ ဗီဇာထုတ်ပေးရာတွင် D-2-5၊ D-2-6 နှင့် D-2-8 တို့ကို
-    ပုံမှန်အားဖြင့် ၁ နှစ်အထိသာ ပေးပြီး၊ အမျိုးအစားအလိုက် ကာလကွာခြားသဖြင့်
-    မိမိလမ်းကြောင်းကို အတည်ပြုပါ
-
-    သက်တမ်းတိုးခြင်းကို ကျောင်းအချိန်ဇယားနှင့် ကိုက်ညီစွာ ပေးသည်။ ဗီဇာ စစ်ဆေးမှု
-    တင်းကြပ်သော တက္ကသိုလ်တွင် D (1.0) အောက် ရရှိပါက ပထမဆုံးအကြိမ်
-    ရှင်းလင်းချက်ဖြင့် ၆ လသာ တိုးမြှင့်ခွင့်ရ, နောက်ထပ် D အောက်ဆက်ရပါက
-    တိုးမြှင့်မှု ကန့်သတ်သည်
-
-    ယေဘုယျ အချိန်ပိုင်းအလုပ် လျှောက်နိုင်သူများမှာ D-2-1 မှ D-2-4၊ D-2-6 နှင့်
-    D-2-7 ဖြစ်သည်။ D-2-8 ကိုင်ဆောင်သူများသည် နေထိုင်ခွင့်အမျိုးအစား
-    ပြောင်းသည့်နေ့မှ (ဗီဇာကိုင်ဆောင်သူမှာ ဝင်ရောက်သည့်နေ့မှ) ၆ လကျော်ပြီးမှ
-    လျှောက်နိုင်သည်။ ကျောင်းအတည်ပြုချက်နှင့် လူဝင်မှုကြီးကြပ်ရေးခွင့်ပြုချက်
-    လိုအပ်ပြီး ခွင့်ပြုနာရီသည် သင်တန်း၊ အတန်းနှစ်၊ ကိုရီးယားဘာသာစွမ်းရည်နှင့်
-    ကျောင်းအသိအမှတ်ပြုမှုအပေါ် မူတည်သည်
-
-    ၁ နှစ်အတွင်း ပြန်ဝင်ခွင့် - ခွင့်ပြုချက် မလိုအပ်။ ၁-၂ နှစ်အတွက်မူ multiple
-    re-entry permit လိုအပ်သည်
-
-    အမည်၊ လိင်၊ မွေးသက္ကရာဇ်၊ နိုင်ငံသား၊ ပတ်စပို့ သို့မဟုတ် ကျောင်း
-    ပြောင်းလဲပါက ၁၅ ရက်အတွင်း အကြောင်းကြားရန်
-
-    နေထိုင်ခွင့် စုစုပေါင်း အများဆုံး: ဘွဲ့ကြို ၃-၄ နှစ်၊ ဘွဲ့ ၆-၇ နှစ်၊ မဟာဘွဲ့
-    ၅-၆ နှစ်၊ ပါရဂူ ၇-၈ နှစ် (တက္ကသိုလ် စတင်တက်ရောက်သည့်အချိန်မှ၊
-    သင်တန်းကြာချိန်ပေါ်မူတည်)
-
-    အဆိုပါ အချက်အလက်များသည် အကျဉ်းချုပ်သာဖြစ်သည်။ အသုံးပြုရန် 1345 Immigration
-    Contact Center သို့မဟုတ် ပတ်ဝန်းကျင် Immigration Office တွင် အတည်ပြုပါ
+  title: D-2 ကျောင်းသား ဗီဇာ
+  summary: |-
+    D-2 သည် ကိုရီးယားရှိ ကောလိပ်၊ တက္ကသိုလ်၊ ဘွဲ့လွန်ကျောင်း သို့မဟုတ် အသိအမှတ်ပြုထားသော ပညာရေးအဖွဲ့အစည်းတွင် တရားဝင်ဘွဲ့သင်တန်းတက်ရန်အတွက် အသုံးပြုသော ကျောင်းသားဗီဇာဖြစ်သည်။ ဘွဲ့မဟုတ်သော သင်တန်းများအတွက် အသုံးများသော D-4 နှင့် မတူပါ။
+  eligibility: |-
+    D-2 ကို ကိုရီးယားတွင် တရားဝင်ဘွဲ့သင်တန်း သို့မဟုတ် အသိအမှတ်ပြုထားသော ပညာရေး/သုတေသနလမ်းကြောင်းတက်ရန်ဖြစ်သောအခါ စစ်ဆေးနိုင်သည်။
+    ကျောင်းနှင့် Program သည် နိုင်ငံခြားကျောင်းသားဗီဇာစစ်ဆေးမှုအတွက် ကိုက်ညီရမည်။ ဝင်ခွင့်စာရွက်သည် D-2 လမ်းကြောင်းနှင့်လည်း ကိုက်ရမည်။
+    Associate၊ Bachelor၊ Master၊ Doctoral တို့အတွက် ကိုယ်တက်မည့်အဆင့်နှင့် ကိုက်ညီသော ယခင်ပညာရေးအထောက်အထား လိုအပ်သည်။
+    ညပိုင်း၊ အဝေးသင်၊ cyber၊ အသက်မွေးသင်တန်း၊ exchange၊ visiting၊ research၊ work-study ကိစ္စများသည် လုပ်ဆောင်ပုံကွာနိုင်သောကြောင့် စာရွက်မပြင်မီ D-2 အမျိုးအစားခွဲကို အတည်ပြုပါ။
+  subtypes: |-
+    D-2-1 Associate degree — junior college သို့မဟုတ် ကိုက်ညီသောကျောင်း၏ associate degree သင်တန်း
+    D-2-2 Bachelor's degree — ကိုရီးယားတက္ကသိုလ်၏ bachelor degree သင်တန်း
+    D-2-3 Master's degree — ဘွဲ့လွန်ကျောင်း၏ master degree သင်တန်း
+    D-2-4 Doctoral degree — doctoral သို့မဟုတ် PhD degree သင်တန်း
+    D-2-5 Research program — အများအားဖြင့် ဘွဲ့လွန်အဆင့်အရည်အချင်းနှင့် ဆက်စပ်သော သုတေသနလမ်းကြောင်း
+    D-2-6 Exchange student — တက္ကသိုလ်အချင်းချင်းသဘောတူညီချက်အရ exchange သင်တန်း
+    D-2-7 Work-learning linked study — ခွင့်ပြုထားသော အလုပ်-ပညာပေါင်းစပ် သင်တန်း
+    D-2-8 Visiting student — မိခင်နိုင်ငံတက္ကသိုလ်တွင် တက်နေသူက ကိုရီးယားတွင် သတ်မှတ်ကာလတက်ခြင်း
+  documents: |-
+    ဗီဇာလျှောက်လွှာ သို့မဟုတ် ဗီဇာထုတ်ပေးမှုအတည်ပြုစာဆိုင်ရာစာရွက်၊ နိုင်ငံကူးလက်မှတ်၊ သတ်မှတ်ကာလအတွင်းရိုက်ထားသောဓာတ်ပုံ၊ ဗီဇာကြေး
+    ကိုရီးယားတက္ကသိုလ် သို့မဟုတ် အဖွဲ့အစည်းမှ ထုတ်ပေးသော Standard Admission Letter
+    ကျောင်း၏ Business Registration Certificate သို့မဟုတ် Registration Number Certificate မိတ္တူ
+    နောက်ဆုံးပညာအရည်အချင်းအထောက်အထား၊ ဥပမာ ဘွဲ့လက်မှတ် သို့မဟုတ် အမှတ်စာရင်း။ လိုအပ်ပါက Apostille၊ သံရုံးအတည်ပြုချက် သို့မဟုတ် အခြားစစ်ဆေးချက်
+    ဘဏ်လက်ကျန်၊ Scholarship စာ၊ Sponsor စာ သို့မဟုတ် လက်ခံသော ငွေကြေးအထောက်အထား
+    မိဘ သို့မဟုတ် မိသားစုဝင်၏ ငွေကြေးစာရွက်ကို သုံးပါက မိသားစုဆက်နွယ်မှုအထောက်အထား
+    သက်ဆိုင်ပါက TB test၊ ဆေးစစ်စာရွက် သို့မဟုတ် သံရုံး/ကျောင်းက တောင်းသော အပိုစာရွက်များ
+  steps: |-
+    စာရွက်မစုမီ ကိုယ့် Program နှင့် ကိုက်သော D-2 အမျိုးအစားခွဲကို အရင်အတည်ပြုပါ။
+    ကျောင်းမှ Standard Admission Letter နှင့် ကျောင်းဆိုင်ရာစာရွက်များကို ရယူပါ။
+    သံရုံး သို့မဟုတ် လူဝင်မှုရုံး checklist အလိုက် ပညာရေး၊ ငွေကြေး၊ နိုင်ငံကူးလက်မှတ်၊ ဓာတ်ပုံ၊ မိသားစုဆက်နွယ်မှုစာရွက်များ ပြင်ပါ။
+    ကိုရီးယားသံရုံး/ကောင်စစ်ဝန်ရုံးတွင် လျှောက်ပါ သို့မဟုတ် ကျောင်းက အသုံးပြုသော Certificate of Visa Issuance လမ်းကြောင်းဖြင့် လျှောက်ပါ။
+    ကိုရီးယားတွင် ၉၀ ရက်ထက်ပိုနေမည်ဆိုပါက ရောက်ပြီး ၉၀ ရက်အတွင်း နိုင်ငံခြားသားမှတ်ပုံတင်ပါ။
+    နေထိုင်နေစဉ် ကျောင်း၊ နေရပ်၊ နိုင်ငံကူးလက်မှတ်၊ ကျောင်းတက်နေမှု၊ ဝင်ငွေ၊ အချိန်ပိုင်းအလုပ်ခွင့်ပြုချက်အချက်အလက်များကို နောက်ဆုံးအခြေအနေအတိုင်း ထိန်းသိမ်းပါ။
+  watchout: |-
+    Program က တက္ကသိုလ်မှာရှိတယ်ဆိုရုံဖြင့် D-2 ဖြစ်မည်ဟု မယူဆပါနှင့်။ Program သည် D-2 ဘွဲ့သင်တန်း သို့မဟုတ် အသိအမှတ်ပြုထားသော ပညာရေးလမ်းကြောင်းနှင့် ကိုက်ရမည်။
+    Standard Admission Letter နှင့် နောက်ဆုံးပညာအရည်အချင်းအထောက်အထားသည် အရေးကြီးသည်။ Admission email တစ်စောင်တည်း မလုံလောက်နိုင်ပါ။
+    ငွေကြေးအထောက်အထားစံနှုန်းသည် သံရုံး၊ ကျောင်း၊ နိုင်ငံသား၊ Scholarship နှင့် Sponsor အခြေအနေအလိုက် ကွာနိုင်သည်။
+    အချိန်ပိုင်းအလုပ်သည် အလိုအလျောက်လုပ်ခွင့်မဟုတ်ပါ။ ကျောင်းအတည်ပြုချက်နှင့် လူဝင်မှုရုံးခွင့်ပြုချက် လိုအပ်ပြီး ခွင့်ပြုနာရီသည် Program အဆင့်၊ ကိုရီးယားဘာသာအရည်အချင်း၊ ကျောင်းအခြေအနေ၊ လတ်တလောစည်းမျဉ်းအလိုက် ကွာနိုင်သည်။
+    ကျောင်းပြောင်းခြင်း၊ နေရပ်ပြောင်းခြင်း၊ နိုင်ငံကူးလက်မှတ်ပြောင်းခြင်း၊ ကျောင်းနားခြင်း၊ ကျောင်းထွက်ခြင်း၊ ဘွဲ့ရခြင်းတို့သည် တင်ပြခြင်း သို့မဟုတ် ဗီဇာပြောင်းခြင်းတာဝန်နှင့် ဆက်နိုင်သည်။
+  notes: |-
+    D-2 နှင့် D-4 ကို မကြာခဏ ရောထွေးတတ်သည်။ D-2 သည် အဓိကအားဖြင့် ဘွဲ့သင်တန်းအတွက်ဖြစ်ပြီး D-4 သည် အများအားဖြင့် ကိုရီးယားဘာသာသင်တန်းကဲ့သို့ ဘွဲ့မဟုတ်သောသင်တန်းအတွက်ဖြစ်သည်။
+    ကိုရီးယားအစိုးရ Study in Korea portal တွင် D-2-1 မှ D-2-7 အထိ study routes များ၊ D-2 လိုအပ်စာရွက်များနှင့် Program အဆင့်အလိုက် နေထိုင်ကာလအကန့်အသတ်များကို ဖော်ပြထားသည်။
+    ဤစာမျက်နှာသည် အကျဉ်းချုပ်ဖြစ်သည်။ မလျှောက်မီ ကိုရီးယားသံရုံး/ကောင်စစ်ဝန်ရုံး၊ HiKorea၊ 1345၊ ကျောင်း သို့မဟုတ် လူဝင်မှုရုံးတွင် လတ်တလော D-2 အမျိုးအစားခွဲ၊ စာရွက်စာတမ်းစာရင်းနှင့် လျှောက်လမ်းကို အတည်ပြုပါ။

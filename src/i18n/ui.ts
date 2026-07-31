@@ -33,7 +33,7 @@ type Entry = Record<Lang, string>;
 export const ui = {
   /* 0. Common */
   'nav.home':      { en: 'Home',     ko: '홈',    my: 'ပင်မ' },
-  'nav.guides':    { en: 'Guides',   ko: '정보',   my: 'လမ်းညွှန်များ' },
+  'nav.guides':    { en: 'Info',     ko: '정보',   my: 'အချက်အလက်' },
   'nav.blog':      { en: 'Blog',     ko: '블로그',  my: 'ဘလော့ဂ်' },
   'nav.services':  { en: 'Services', ko: '서비스',  my: 'ဝန်ဆောင်မှုများ' },
   'nav.reviews':   { en: 'Reviews',  ko: '후기',   my: 'သုံးသပ်ချက်များ' },
@@ -254,7 +254,8 @@ export const ui = {
   'content.section.documents':   { en: "Documents you'll need", ko: '필요한 서류', my: 'လိုအပ်မည့် စာရွက်စာတမ်းများ' },
   'content.section.steps':       { en: 'How to apply', ko: '신청 절차', my: 'လျှောက်ထားနည်း' },
   'content.section.watchout':    { en: 'Watch out for (common mistakes)', ko: '주의사항 · 자주 하는 실수', my: 'သတိထားရန် (မကြာခဏ မှားတတ်သည့်အရာများ)' },
-  'content.section.subtypes':    { en: 'Visa categories', ko: '비자 카테고리', my: 'ဗီဇာ အမျိုးအစားများ' },
+  'content.section.subtypes':    { en: 'Visa subtypes', ko: '세부 비자 유형', my: 'ဗီဇာ အမျိုးအစားခွဲများ' },
+  'content.section.applicantGroups': { en: 'Applicant groups', ko: '신청 대상 유형', my: 'လျှောက်ထားနိုင်သော အုပ်စုများ' },
   'content.section.types':       { en: 'Types and levels', ko: '종류와 단계', my: 'အမျိုးအစားနှင့် အဆင့်များ' },
   'content.section.study.what': { en: 'Basic Overview', ko: '기본 개요', my: 'အရင်သိထားရမည့်အချက်များ' },
   'content.section.study.who': { en: 'Who Should Check This', ko: '확인하면 좋은 사람', my: 'ဒီအချက်အလက်က ဘယ်သူတွေအတွက်လဲ' },
@@ -262,6 +263,7 @@ export const ui = {
   'content.section.study.steps': { en: 'How to Prepare', ko: '준비 순서', my: 'ပြင်ဆင်ပုံ အဆင့်များ' },
   'content.section.study.mistakes': { en: 'Points to Be Careful About', ko: '주의할 점', my: 'သတိထားရမည့်အချက်များ' },
   'content.section.study.confirm': { en: 'Official Places to Check', ko: '공식 확인처', my: 'တရားဝင် ပြန်စစ်ရန်နေရာများ' },
+  'content.section.e7mSchoolRequirements': { en: 'School Requirements and List', ko: '학교 지원 요건과 목록', my: 'ကျောင်းလျှောက်ခွင့် လိုအပ်ချက်နှင့် စာရင်း' },
   'content.section.notes':       { en: 'Important notes', ko: '중요 사항', my: 'အရေးကြီး မှတ်ချက်များ' },
   'content.cta.title':  { en: 'Need more visa information?', ko: '비자 정보가 더 궁금하신가요?', my: 'ဗီဇာအချက်အလက် ပိုမိုသိလိုပါသလား?' },
   'content.cta.button': { en: 'Ask by 1:1 DM →', ko: '1:1 DM으로 문의하기 →', my: '1:1 DM ဖြင့် မေးမြန်းရန် →' },
