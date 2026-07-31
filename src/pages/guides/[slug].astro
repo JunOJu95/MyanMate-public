@@ -24,8 +24,12 @@ const relatedPriority: Record<string, string[]> = {
 };
 const priority = relatedPriority[guide.slug] ?? [];
 const groupedStudySlugs = new Set(['topik-i', 'topik-ii']);
+const nestedGuideSlugs = new Set(['f2-7-points-based-residence', 'f2-99-long-term-resident']);
 const relatedPool = all.filter(
-  (g) => g.slug !== guide.slug && (isVisa || g.category === guide.category) && !groupedStudySlugs.has(g.slug),
+  (g) => g.slug !== guide.slug
+    && (isVisa || g.category === guide.category)
+    && !groupedStudySlugs.has(g.slug)
+    && !nestedGuideSlugs.has(g.slug),
 );
 const related = [...relatedPool]
   .sort((a, b) => {
@@ -91,6 +95,22 @@ const topikChoiceIntro = {
   ko: 'TOPIK 전체 내용을 확인한 뒤 학교, 장학금 또는 목표에서 요구하는 급수에 맞춰 TOPIK I 또는 TOPIK II를 읽어보세요.',
   my: 'TOPIK အကြောင်းအကျဉ်းကို ဖတ်ပြီးနောက် ကျောင်း၊ Scholarship သို့မဟုတ် ကိုယ့်ရည်မှန်းချက်က တောင်းသောအဆင့်အလိုက် TOPIK I သို့မဟုတ် TOPIK II ကို ရွေးဖတ်ပါ။',
 };
+const guideDetailLinks = guide.slug === 'f2-resident'
+  ? [
+      {
+        field: 'subtypes' as keyof GuideText,
+        href: '/guides/f2-7-points-based-residence',
+        lineStartsWith: { en: 'F-2-7 ', ko: 'F-2-7 ', my: 'F-2-7 ' },
+        label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
+      },
+      {
+        field: 'subtypes' as keyof GuideText,
+        href: '/guides/f2-99-long-term-resident',
+        lineStartsWith: { en: 'F-2-99 ', ko: 'F-2-99 ', my: 'F-2-99 ' },
+        label: { en: 'Read details', ko: '자세히 보기', my: 'အသေးစိတ် ဖတ်ရန်' },
+      },
+    ]
+  : [];
 ---
 <Base
   title={guide[defaultLang].title || guide.en.title}
@@ -149,7 +169,14 @@ const topikChoiceIntro = {
           </section>
         )}
         {SECTIONS.map((s, i) => (
-          <GuideSection guide={guide} field={s.field} labelKey={s.labelKey} mode={s.mode} num={i + 1} />
+          <GuideSection
+            guide={guide}
+            field={s.field}
+            labelKey={s.labelKey}
+            mode={s.mode}
+            num={i + 1}
+            detailLinks={guideDetailLinks.filter((link) => link.field === s.field)}
+          />
         ))}
 
         <Disclaimer k={disclaimerKey} class="mt-12" />

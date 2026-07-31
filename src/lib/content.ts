@@ -79,8 +79,8 @@ export function pickGuide(g: Guide, lang: Lang): GuideText {
 
 /** Visa code from a guide slug: "d2-student-visa" -> "D-2", "e9-employment" -> "E-9". null if not visa-style. */
 export function visaCode(slug: string): string | null {
-  const m = slug.match(/^([a-z])(\d+)/i);
-  return m ? `${m[1].toUpperCase()}-${m[2]}` : null;
+  const m = slug.match(/^([a-z])(\d+)(?:-(\d+))?/i);
+  return m ? [m[1].toUpperCase(), m[2], m[3]].filter(Boolean).join('-') : null;
 }
 
 /* ---------------- service information ---------------- */

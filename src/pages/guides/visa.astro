@@ -7,7 +7,8 @@ import { getGuides } from '../../lib/content';
 import { defaultLang, t } from '../../i18n/ui';
 
 const allGuides = await getGuides();
-const guides = allGuides.filter((guide) => guide.category === 'visa');
+const visaSubtypeDetailSlugs = new Set(['f2-7-points-based-residence', 'f2-99-long-term-resident']);
+const guides = allGuides.filter((guide) => guide.category === 'visa' && !visaSubtypeDetailSlugs.has(guide.slug));
 const visaPurposes = [
   { id: 'all', labelKey: 'visaPurpose.all' },
   { id: 'study', labelKey: 'visaPurpose.study' },
@@ -24,6 +25,7 @@ const visaPurposeBySlug: Record<string, Exclude<VisaPurpose, 'all'>> = {
   'e7-employment': 'work',
   'f2-resident': 'residence',
   'f6-marriage': 'residence',
+  'g1-miscellaneous': 'other',
 };
 const visaPurpose = (slug: string): Exclude<VisaPurpose, 'all'> => visaPurposeBySlug[slug] ?? 'other';
 ---

@@ -3,20 +3,32 @@
  * language bodies (data-lang, switches via CSS). Multiline fields render as
  * paragraphs / bullet list / numbered list. */
 import T from './T.astro';
+import Icon from './Icon.astro';
 import { languages } from '../i18n/ui';
 import type { Guide, GuideText } from '../lib/content';
 
+type Lang = (typeof languages)[number];
+interface DetailLink {
+  href: string;
+  label: Record<Lang, string>;
+  lineStartsWith: Partial<Record<Lang, string>>;
+}
 interface Props {
   guide: Guide;
   field: keyof GuideText;
   labelKey: string;
   mode: 'paras' | 'ul' | 'ol';
   num?: number;
+  detailLinks?: DetailLink[];
 }
-const { guide, field, labelKey, mode, num } = Astro.props;
+const { guide, field, labelKey, mode, num, detailLinks = [] } = Astro.props;
 
 const toLines = (s: string) => s.split('\n').map((x) => x.trim()).filter(Boolean);
 const toParas = (s: string) => s.split(/\n{2,}/).map((x) => x.trim()).filter(Boolean);
+const detailLinkFor = (lang: Lang, line: string) => detailLinks.find((link) => {
+  const marker = link.lineStartsWith[lang] ?? link.lineStartsWith.en;
+  return marker ? line.startsWith(marker) : false;
+});
 ---
 <section class="sec">
   <h2 class="sec-title">
@@ -28,7 +40,24 @@ const toParas = (s: string) => s.split(/\n{2,}/).map((x) => x.trim()).filter(Boo
     return (
       <div data-lang={l} class="prose">
         {mode === 'paras' && toParas(val).map((p) => <p>{p}</p>)}
-        {mode === 'ul' && <ul>{toLines(val).map((li) => <li>{li}</li>)}</ul>}
+        {mode === 'ul' && (
+          <ul>
+            {toLines(val).map((li) => {
+              const detailLink = detailLinkFor(l, li);
+              return (
+                <li>
+                  {li}
+                  {detailLink && (
+                    <a class="guide-inline-detail-link" href={detailLink.href}>
+                      <span>{detailLink.label[l] ?? detailLink.label.en}</span>
+                      <Icon name="external" size={13} />
+                    </a>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        )}
         {mode === 'ol' && <ol>{toLines(val).map((li) => <li>{li}</li>)}</ol>}
       </div>
     );

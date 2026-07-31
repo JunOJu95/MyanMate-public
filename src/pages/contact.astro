@@ -41,7 +41,7 @@ const trustItems = [
     const params = new URLSearchParams(location.search);
     const service = params.get('service');
     const visa = params.get('visa');
-    const allowedServices = new Set(['visa', 'resume', 'housing']);
+    const allowedServices = new Set(['visa', 'resume']);
     const allowedVisas = new Set(['d2', 'd4', 'd10', 'e9']);
 
     document.querySelectorAll<HTMLElement>('.contact-dm-panel [data-channel]').forEach((link) => {

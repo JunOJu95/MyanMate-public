@@ -5,13 +5,13 @@ import T from '../../components/T.astro';
 import LocalizedText from '../../components/LocalizedText.astro';
 import MobileSocialDm from '../../components/MobileSocialDm.astro';
 import SocialDmPanel from '../../components/SocialDmPanel.astro';
-import { services, type Service } from '../../data/services';
+import { availableServices, type Service } from '../../data/services';
 import { getServiceOffers, type ServiceOffer } from '../../lib/content';
 import { defaultLang } from '../../i18n/ui';
 
 export async function getStaticPaths() {
   const offers = await getServiceOffers();
-  return services.map((service) => ({
+  return availableServices.map((service) => ({
     params: { id: service.id },
     props: { service, offer: offers[service.id] },
   }));
