@@ -850,12 +850,12 @@ body{
   font-weight:800;
   line-height:1.7;
 }
-.services-coming-soon-contact > span{
+.services-coming-soon-contact > span[aria-hidden="true"]{
   font-family:var(--mono);
   transition:transform 180ms ease;
 }
 .services-coming-soon-contact:is(:hover,:focus-visible){text-decoration:underline;text-underline-offset:4px;}
-.services-coming-soon-contact:is(:hover,:focus-visible) > span{transform:translateX(4px);}
+.services-coming-soon-contact:is(:hover,:focus-visible) > span[aria-hidden="true"]{transform:translateX(4px);}
 body.lang-my .services-coming-soon-copy,
 body.lang-my .services-coming-soon-contact{line-height:1.95;}
 @media(max-width:520px){
