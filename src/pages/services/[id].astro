@@ -9,6 +9,10 @@ import { availableServices, type Service } from '../../data/services';
 import { getServiceOffers, type ServiceOffer } from '../../lib/content';
 import { defaultLang } from '../../i18n/ui';
 
+const showServices = false;
+const comingSoonTitle = 'Our services are coming soon.....';
+const comingSoonDescription = 'လက်ရှိတွင် MyanMate သည် အချက်အလက်များကို ဦးစားပေးတင်ဆက်နေပါသည်။ ဝန်ဆောင်မှုများကို အသေးစိတ်ပြင်ဆင်ပြီး မကြာမီ ဖွင့်လှစ်ပါမည်။';
+
 export async function getStaticPaths() {
   const offers = await getServiceOffers();
   return availableServices.map((service) => ({
@@ -21,148 +25,169 @@ const { service, offer } = Astro.props as { service: Service; offer: ServiceOffe
 ---
 
 <Base
-  title={offer.title[defaultLang] || offer.title.en}
+  title={showServices ? (offer.title[defaultLang] || offer.title.en) : comingSoonTitle}
   active="services"
-  description={offer.summary[defaultLang] || offer.summary.en}
+  description={showServices ? (offer.summary[defaultLang] || offer.summary.en) : comingSoonDescription}
+  canonicalPath={showServices ? undefined : '/services'}
 >
   <div class="wrap">
-    <div class="detail-2col detail-page service-info-page service-offer-page">
-      <article>
-        <header class="detail-hero service-detail-hero" data-reveal="page-hero">
-          <span class="svc-ico"><Icon name={service.iconKey} /></span>
-          <LocalizedText value={offer.title} tag="h1" class="lead-title" />
-          <LocalizedText value={offer.summary} tag="p" class="t-sub" />
-          <div class="service-scope-cta service-hero-cta">
-            <T k="svcDetail.scope.freeNote" tag="p" class="t-cap" />
+    {showServices ? (
+      <div class="detail-2col detail-page service-info-page service-offer-page">
+        <article>
+          <header class="detail-hero service-detail-hero" data-reveal="page-hero">
+            <span class="svc-ico"><Icon name={service.iconKey} /></span>
+            <LocalizedText value={offer.title} tag="h1" class="lead-title" />
+            <LocalizedText value={offer.summary} tag="p" class="t-sub" />
+            <div class="service-scope-cta service-hero-cta">
+              <T k="svcDetail.scope.freeNote" tag="p" class="t-cap" />
+              <a
+                class="btn pri"
+                href="#dm"
+                data-event={`service-scope:${service.id}`}
+                data-service={service.id}
+                data-source="service-hero"
+              >
+                <Icon name="chat" size={16} />
+                <T k="dm.scopeCta" />
+              </a>
+            </div>
+          </header>
+
+          <section class="sec service-info-section service-offer-section" data-reveal="section">
+            <div class="service-info-heading">
+              <span class="sec-ico"><Icon name="users" /></span>
+              <T k="svcDetail.section.recommendedFor" tag="h2" class="sec-title" />
+            </div>
+            <div class="service-point-grid" role="list" data-stagger>
+              {offer.recommendedFor.map((item) => (
+                <div class="service-point" role="listitem">
+                  <span class="service-point-icon" aria-hidden="true"><Icon name="check" size={18} /></span>
+                  <span class="service-point-copy"><LocalizedText value={item} /></span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section class="sec service-info-section service-offer-section" data-reveal="section">
+            <div class="service-info-heading">
+              <span class="sec-ico"><Icon name="check" /></span>
+              <T k="svcDetail.section.included" tag="h2" class="sec-title" />
+            </div>
+            <div class="service-point-grid" role="list" data-stagger>
+              {offer.included.map((item) => (
+                <div class="service-point" role="listitem">
+                  <span class="service-point-icon" aria-hidden="true"><Icon name="check" size={18} /></span>
+                  <span class="service-point-copy">
+                    <LocalizedText value={item.title} tag="strong" />
+                    <LocalizedText value={item.body} />
+                  </span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section class="sec service-info-section service-offer-section" data-reveal="section">
+            <div class="service-info-heading">
+              <span class="sec-ico"><Icon name="doc" /></span>
+              <T k="svcDetail.section.deliverables" tag="h2" class="sec-title" />
+            </div>
+            <div class="service-point-grid" role="list" data-stagger>
+              {offer.deliverables.map((item) => (
+                <div class="service-point" role="listitem">
+                  <span class="service-point-icon" aria-hidden="true"><Icon name="doc" size={18} /></span>
+                  <span class="service-point-copy"><LocalizedText value={item} /></span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section class="sec service-info-section service-offer-section" data-reveal="section">
+            <div class="service-info-heading">
+              <span class="sec-ico"><Icon name="list" /></span>
+              <T k="svcDetail.section.preparation" tag="h2" class="sec-title" />
+            </div>
+            <div class="service-point-grid" role="list" data-stagger>
+              {offer.preparation.map((item) => (
+                <div class="service-point" role="listitem">
+                  <span class="service-point-icon" aria-hidden="true"><Icon name="check" size={18} /></span>
+                  <span class="service-point-copy"><LocalizedText value={item} /></span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section class="sec service-info-section service-offer-section" data-reveal="section">
+            <div class="service-info-heading">
+              <span class="sec-ico"><Icon name="list" /></span>
+              <T k="svcDetail.section.process" tag="h2" class="sec-title" />
+            </div>
+            <div class="service-process-list" role="list" data-stagger>
+              {offer.process.map((item, index) => (
+                <div class="service-process-step" role="listitem">
+                  <span class="num-badge">{index + 1}</span>
+                  <span class="service-point-copy">
+                    <LocalizedText value={item.title} tag="strong" />
+                    <LocalizedText value={item.body} />
+                  </span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <!-- Compliance boundary (§7-1). Keep both fixed boundary messages visible. -->
+          <aside class="service-boundary-note" data-reveal="section" aria-labelledby="service-boundary-title">
+            <h2 id="service-boundary-title" class="service-boundary-title">
+              <T k="svcDetail.section.whatWeDont" />
+            </h2>
+            <p class="service-boundary-copy"><T k={`svcDetail.boundary.${service.id}`} /></p>
+            <p class="service-boundary-copy"><T k="svcDetail.dont.body" /></p>
+          </aside>
+
+          <div class="service-final-cta" data-reveal="cta">
             <a
               class="btn pri"
               href="#dm"
-              data-event={`service-scope:${service.id}`}
+              data-event={`service-final-inquiry:${service.id}`}
               data-service={service.id}
-              data-source="service-hero"
+              data-source="service-final"
             >
               <Icon name="chat" size={16} />
               <T k="dm.scopeCta" />
             </a>
           </div>
-        </header>
+        </article>
 
-        <section class="sec service-info-section service-offer-section" data-reveal="section">
-          <div class="service-info-heading">
-            <span class="sec-ico"><Icon name="users" /></span>
-            <T k="svcDetail.section.recommendedFor" tag="h2" class="sec-title" />
+        <aside class="guide-dm-aside">
+          <div class="sticky-card">
+            <SocialDmPanel
+              service={service.id}
+              context="service"
+              source="service-sidebar"
+              scope
+              id="dm"
+            />
           </div>
-          <div class="service-point-grid" role="list" data-stagger>
-            {offer.recommendedFor.map((item) => (
-              <div class="service-point" role="listitem">
-                <span class="service-point-icon" aria-hidden="true"><Icon name="check" size={18} /></span>
-                <span class="service-point-copy"><LocalizedText value={item} /></span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section class="sec service-info-section service-offer-section" data-reveal="section">
-          <div class="service-info-heading">
-            <span class="sec-ico"><Icon name="check" /></span>
-            <T k="svcDetail.section.included" tag="h2" class="sec-title" />
-          </div>
-          <div class="service-point-grid" role="list" data-stagger>
-            {offer.included.map((item) => (
-              <div class="service-point" role="listitem">
-                <span class="service-point-icon" aria-hidden="true"><Icon name="check" size={18} /></span>
-                <span class="service-point-copy">
-                  <LocalizedText value={item.title} tag="strong" />
-                  <LocalizedText value={item.body} />
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section class="sec service-info-section service-offer-section" data-reveal="section">
-          <div class="service-info-heading">
-            <span class="sec-ico"><Icon name="doc" /></span>
-            <T k="svcDetail.section.deliverables" tag="h2" class="sec-title" />
-          </div>
-          <div class="service-point-grid" role="list" data-stagger>
-            {offer.deliverables.map((item) => (
-              <div class="service-point" role="listitem">
-                <span class="service-point-icon" aria-hidden="true"><Icon name="doc" size={18} /></span>
-                <span class="service-point-copy"><LocalizedText value={item} /></span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section class="sec service-info-section service-offer-section" data-reveal="section">
-          <div class="service-info-heading">
-            <span class="sec-ico"><Icon name="list" /></span>
-            <T k="svcDetail.section.preparation" tag="h2" class="sec-title" />
-          </div>
-          <div class="service-point-grid" role="list" data-stagger>
-            {offer.preparation.map((item) => (
-              <div class="service-point" role="listitem">
-                <span class="service-point-icon" aria-hidden="true"><Icon name="check" size={18} /></span>
-                <span class="service-point-copy"><LocalizedText value={item} /></span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section class="sec service-info-section service-offer-section" data-reveal="section">
-          <div class="service-info-heading">
-            <span class="sec-ico"><Icon name="list" /></span>
-            <T k="svcDetail.section.process" tag="h2" class="sec-title" />
-          </div>
-          <div class="service-process-list" role="list" data-stagger>
-            {offer.process.map((item, index) => (
-              <div class="service-process-step" role="listitem">
-                <span class="num-badge">{index + 1}</span>
-                <span class="service-point-copy">
-                  <LocalizedText value={item.title} tag="strong" />
-                  <LocalizedText value={item.body} />
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <!-- Compliance boundary (§7-1). Keep both fixed boundary messages visible. -->
-        <aside class="service-boundary-note" data-reveal="section" aria-labelledby="service-boundary-title">
-          <h2 id="service-boundary-title" class="service-boundary-title">
-            <T k="svcDetail.section.whatWeDont" />
-          </h2>
-          <p class="service-boundary-copy"><T k={`svcDetail.boundary.${service.id}`} /></p>
-          <p class="service-boundary-copy"><T k="svcDetail.dont.body" /></p>
         </aside>
-
-        <div class="service-final-cta" data-reveal="cta">
-          <a
-            class="btn pri"
-            href="#dm"
-            data-event={`service-final-inquiry:${service.id}`}
-            data-service={service.id}
-            data-source="service-final"
-          >
-            <Icon name="chat" size={16} />
-            <T k="dm.scopeCta" />
-          </a>
+      </div>
+    ) : (
+      <section class="sec services-coming-soon" data-reveal="page-hero" aria-labelledby="services-coming-soon-title">
+        <div class="services-coming-soon-card">
+          <span class="services-coming-soon-kicker">MyanMate Services</span>
+          <h1 id="services-coming-soon-title" class="services-coming-soon-title">{comingSoonTitle}</h1>
+          <p class="services-coming-soon-copy">{comingSoonDescription}</p>
+          <div class="services-coming-soon-actions">
+            <a class="btn pri services-coming-soon-primary" href="/guides" data-event="services_coming_soon_guides">
+              <Icon name="list" size={17} />
+              <span>အချက်အလက်များ ဖတ်ရန်</span>
+            </a>
+            <a class="services-coming-soon-contact" href="/contact#dm" data-event="services_coming_soon_contact">
+              မေးလိုသည့်အချက်ရှိပါက Contact မှ မက်ဆေ့ပို့နိုင်ပါသည်။
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
-      </article>
-
-      <aside class="guide-dm-aside">
-        <div class="sticky-card">
-          <SocialDmPanel
-            service={service.id}
-            context="service"
-            source="service-sidebar"
-            scope
-            id="dm"
-          />
-        </div>
-      </aside>
-    </div>
+      </section>
+    )}
   </div>
-  <MobileSocialDm service={service.id} context="service" scope />
+  {showServices && <MobileSocialDm service={service.id} context="service" scope />}
 </Base>
