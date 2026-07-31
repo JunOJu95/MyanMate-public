@@ -30,6 +30,7 @@ const {
   articleSection,
   articleAuthor,
 } = Astro.props;
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ---
 <!doctype html>
 <html lang={defaultLang}>
@@ -83,6 +84,20 @@ const {
       articleSection={articleSection}
       articleAuthor={articleAuthor}
     />
+    {
+      gaMeasurementId && (
+        <>
+          <link rel="preconnect" href="https://www.googletagmanager.com" />
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`} />
+          <script is:inline define:vars={{ gaMeasurementId }}>
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+            window.gtag('js', new Date());
+            window.gtag('config', gaMeasurementId);
+          </script>
+        </>
+      )
+    }
     <Analytics />
     <slot name="head" />
   </head>

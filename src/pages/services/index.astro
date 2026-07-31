@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
 import T from '../../components/T.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import SocialDmPanel from '../../components/SocialDmPanel.astro';
@@ -7,25 +8,53 @@ import { availableServices } from '../../data/services';
 import { getServiceOffers } from '../../lib/content';
 import { defaultLang, t } from '../../i18n/ui';
 
-const serviceOffers = await getServiceOffers();
+const showServices = false;
+const comingSoonTitle = 'Our services are coming soon.....';
+const comingSoonDescription = 'လက်ရှိတွင် MyanMate သည် အချက်အလက်များကို ဦးစားပေးတင်ဆက်နေပါသည်။ ဝန်ဆောင်မှုများကို အသေးစိတ်ပြင်ဆင်ပြီး မကြာမီ ဖွင့်လှစ်ပါမည်။';
+const serviceOffers = showServices ? await getServiceOffers() : null;
 ---
+
 <Base
-  title={t('home.services.title', defaultLang)}
+  title={showServices ? t('home.services.title', defaultLang) : comingSoonTitle}
   active="services"
+  description={showServices ? undefined : comingSoonDescription}
+  canonicalPath="/services"
 >
   <div class="wrap">
-    <section class="sec page-hero services-hero" data-reveal="page-hero">
-      <h1 class="lead-title"><T k="home.services.title" /></h1>
-      <!-- compliance up front: what we do / don't -->
-      <T k="svcDetail.dont.body" tag="p" class="t-body" />
-    </section>
-    <section class="sec page-content" data-reveal="section">
-      <div class="grid-services services-page-grid" data-reveal="stagger" data-stagger>
-        {availableServices.map((service) => <ServiceCard service={service} offer={serviceOffers[service.id]} />)}
-      </div>
-    </section>
-    <section class="sec visa-hub-dm" data-reveal="cta">
-      <SocialDmPanel context="general" source="services-hub" id="dm" compact />
-    </section>
+    {showServices ? (
+      <>
+        <section class="sec page-hero services-hero" data-reveal="page-hero">
+          <h1 class="lead-title"><T k="home.services.title" /></h1>
+          <!-- compliance up front: what we do / don't -->
+          <T k="svcDetail.dont.body" tag="p" class="t-body" />
+        </section>
+        <section class="sec page-content" data-reveal="section">
+          <div class="grid-services services-page-grid" data-reveal="stagger" data-stagger>
+            {availableServices.map((service) => <ServiceCard service={service} offer={serviceOffers![service.id]} />)}
+          </div>
+        </section>
+        <section class="sec visa-hub-dm" data-reveal="cta">
+          <SocialDmPanel context="general" source="services-hub" id="dm" compact />
+        </section>
+      </>
+    ) : (
+      <section class="sec services-coming-soon" data-reveal="page-hero" aria-labelledby="services-coming-soon-title">
+        <div class="services-coming-soon-card">
+          <span class="services-coming-soon-kicker">MyanMate Services</span>
+          <h1 id="services-coming-soon-title" class="services-coming-soon-title">{comingSoonTitle}</h1>
+          <p class="services-coming-soon-copy">{comingSoonDescription}</p>
+          <div class="services-coming-soon-actions">
+            <a class="btn pri services-coming-soon-primary" href="/guides" data-event="services_coming_soon_guides">
+              <Icon name="list" size={17} />
+              <span>အချက်အလက်များ ဖတ်ရန်</span>
+            </a>
+            <a class="services-coming-soon-contact" href="/contact#dm" data-event="services_coming_soon_contact">
+              မေးလိုသည့်အချက်ရှိပါက Contact မှ မက်ဆေ့ပို့နိုင်ပါသည်။
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    )}
   </div>
 </Base>

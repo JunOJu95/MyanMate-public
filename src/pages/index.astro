@@ -13,6 +13,7 @@ import {
   getServiceOffers,
 } from '../lib/content';
 
+const showHomeServices = false;
 const [serviceOffers, latestPosts] = await Promise.all([
   getServiceOffers(),
   getLatestPosts(4),
@@ -37,20 +38,20 @@ const informationLinks: Array<{
     event: 'home_information_visa',
   },
   {
-    id: 'resume',
-    titleKey: 'home.information.resume.title',
-    summaryKey: 'home.information.resume.summary',
-    href: '/guides/resume',
-    icon: 'resumeSvc',
-    event: 'home_information_resume',
+    id: 'study',
+    titleKey: 'home.information.study.title',
+    summaryKey: 'home.information.study.summary',
+    href: '/guides/study',
+    icon: 'study',
+    event: 'home_information_study',
   },
   {
-    id: 'housing',
-    titleKey: 'home.information.housing.title',
-    summaryKey: 'home.information.housing.summary',
-    href: '/guides/housing',
-    icon: 'housing',
-    event: 'home_information_housing',
+    id: 'daily-life',
+    titleKey: 'home.information.dailyLife.title',
+    summaryKey: 'home.information.dailyLife.summary',
+    href: '/guides/daily-life',
+    icon: 'daily',
+    event: 'home_information_daily_life',
   },
 ];
 const processSteps = [
@@ -152,30 +153,31 @@ const processSteps = [
       </div>
     </section>
 
-    <!-- active guidance services -->
-    <section
-      class="sec home-section home-services-band"
-      aria-label={t('home.services.preview.title', defaultLang)}
-      data-i18n-aria="home.services.preview.title"
-      data-reveal="section"
-    >
-      <div class="home-services-layout">
-        <div class="home-services-intro">
-          <T k="home.services.preview.eyebrow" tag="p" class="home-section-eyebrow" />
-          <T k="home.services.preview.title" tag="h2" class="home-display-title" />
-          <T k="home.services.preview.lead" tag="p" class="home-section-lead" />
+    {showHomeServices && (
+      <section
+        class="sec home-section home-services-band"
+        aria-label={t('home.services.preview.title', defaultLang)}
+        data-i18n-aria="home.services.preview.title"
+        data-reveal="section"
+      >
+        <div class="home-services-layout">
+          <div class="home-services-intro">
+            <T k="home.services.preview.eyebrow" tag="p" class="home-section-eyebrow" />
+            <T k="home.services.preview.title" tag="h2" class="home-display-title" />
+            <T k="home.services.preview.lead" tag="p" class="home-section-lead" />
+          </div>
+          <div class="home-service-list" data-stagger>
+            {homeServices.map((service, index) => (
+              <HomeServicePreview service={service} offer={serviceOffers[service.id]} index={index} />
+            ))}
+            <a class="home-text-link home-services-all-link" href="/services" data-event="home_services_all">
+              <T k="home.services.preview.viewAll" />
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
-        <div class="home-service-list" data-stagger>
-          {homeServices.map((service, index) => (
-            <HomeServicePreview service={service} offer={serviceOffers[service.id]} index={index} />
-          ))}
-          <a class="home-text-link home-services-all-link" href="/services" data-event="home_services_all">
-            <T k="home.services.preview.viewAll" />
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
+      </section>
+    )}
 
     <!-- information-to-DM journey -->
     <section class="sec home-section home-journey-band" data-reveal="section">
