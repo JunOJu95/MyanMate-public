@@ -7,167 +7,404 @@ title:
   ko: 이사 후 주소 변경 신고
   my: အိမ်ပြောင်းပြီးနောက် လိပ်စာပြောင်း တင်ပြရန်
 description:
-  en: "After moving in Korea, registered foreigners may need to update their place-of-stay address. Check the deadline, where to report, and what residence proof may be needed before the deadline passes."
-  ko: 한국에서 이사한 뒤 등록외국인은 체류지 주소를 변경 신고해야 할 수 있습니다. 기한이 지나기 전에 신고기한, 신고 장소와 체류지 입증서류를 확인하세요.
-  my: ကိုရီးယားမှာ အိမ်၊ အဆောင် သို့မဟုတ် နေရာအသစ်ကို ပြောင်းပြီးနောက် လူဝင်မှုကြီးကြပ်ရေးမှတ်တမ်းထဲက လိပ်စာကို ပြောင်းတင်ပြရနိုင်ပါသည်။ သတ်မှတ်ရက် မကျော်မီ ဘယ်မှာတင်ရမလဲ၊ ဘာစာရွက်လိုနိုင်လဲကို အရင်စစ်ပါ။
+  en: >-
+    After moving in Korea, registered foreigners may need to update their
+    place-of-stay address. Check the deadline, where to report, and what
+    residence proof may be needed before the deadline passes.
+  ko: >-
+    한국에서 이사한 뒤 등록외국인은 체류지 주소를 변경 신고해야 할 수 있습니다. 기한이 지나기 전에 신고기한, 신고 장소와 체류지
+    입증서류를 확인하세요.
+  my: >-
+    ကိုရီးယားမှာ အိမ်၊ အဆောင် သို့မဟုတ် နေရာအသစ်ကို ပြောင်းပြီးနောက်
+    လူဝင်မှုကြီးကြပ်ရေးမှတ်တမ်းထဲက လိပ်စာကို ပြောင်းလဲတင်ပြရပါသည်။ သတ်မှတ်ရက်
+    မကျော်မီ ဘယ်မှာတင်ရမလဲ၊ ဘာစာရွက်လိုနိုင်လဲကို အရင်စစ်ပါ။
 sections:
-  - icon: housing
+  - variant: standard
+    icon: housing
     title:
       en: What to check first
       ko: 먼저 확인할 내용
       my: အရင်စစ်ရမည့်အချက်များ
     intro:
-      en: Address reporting is about your official immigration address, not only the address written on your rental contract.
+      en: >-
+        Address reporting is about your official immigration address, not only
+        the address written on your rental contract.
       ko: 주소 변경 신고는 임대차계약서 주소만의 문제가 아니라 출입국에 등록된 체류지 주소를 확인하는 일입니다.
-      my: လိပ်စာပြောင်းတင်ပြခြင်းသည် အိမ်ငှားစာချုပ်ထဲက လိပ်စာအတွက်သာ မဟုတ်ပါ။ လူဝင်မှုကြီးကြပ်ရေးမှတ်တမ်းထဲရှိ နေထိုင်ရာလိပ်စာကို ပြင်ရန်လည်း ဖြစ်ပါသည်။
+      my: >-
+        လိပ်စာပြောင်းတင်ပြခြင်းသည် အိမ်ငှားစာချုပ်ထဲက လိပ်စာအတွက်သာ မဟုတ်ပါ။
+        လူဝင်မှုကြီးကြပ်ရေးမှတ်တမ်းထဲရှိ နေထိုင်ရာလိပ်စာကို ပြင်ရန်လည်း
+        ဖြစ်ပါသည်။
     items:
       - icon: check
+        audience: none
         title:
           en: Who usually needs to check
           ko: 확인해야 하는 사람
           my: ဘယ်သူတွေ စစ်သင့်လဲ
         body:
-          en: If you are a registered foreigner and moved to a new home, dormitory, goshiwon, or other residence, check whether a change-of-place-of-stay report applies to you.
+          en: >-
+            If you are a registered foreigner and moved to a new home,
+            dormitory, goshiwon, or other residence, check whether a
+            change-of-place-of-stay report applies to you.
           ko: 등록외국인이 집, 기숙사, 고시원 등 새로운 체류지로 이사했다면 체류지 변경 신고 대상인지 확인하세요.
-          my: ARC ရှိသော နိုင်ငံခြားသားတစ်ယောက်အနေနဲ့ အိမ်အသစ်၊ အဆောင်၊ ဂိုရှီဝန် သို့မဟုတ် နေရာအသစ်သို့ ပြောင်းသွားပါက လိပ်စာပြောင်းတင်ပြရန် လိုမလို စစ်ပါ။
-        href: ""
+          my: >-
+            ARC ရှိသော နိုင်ငံခြားသားတစ်ယောက်အနေနဲ့ အိမ်အသစ်၊ အဆောင်၊ ဂိုရှီဝန်
+            သို့မဟုတ် နေရာအသစ်သို့ ပြောင်းသွားပါက လိပ်စာပြောင်းတင်ပြရန် လိုမလို
+            စစ်ပါ။
+        prepare: []
+        steps: []
+        checklist: []
+        doneWhen: {}
+        details:
+          title: {}
+          body: {}
+        messageTemplate: {}
+        evidenceLevel: official
+        sources: []
       - icon: list
+        audience: none
         title:
           en: Deadline can depend on status
           ko: 기한은 체류 유형에 따라 확인
           my: သတ်မှတ်ရက်ကို ကိုယ့်အခြေအနေအလိုက် စစ်ပါ
         body:
-          en: Government guidance for registered foreigners says to report within 15 days from moving in. Some F-4 or domestic-residence guidance uses 14 days, so confirm your own status through HiKorea, 1345, or the local office.
-          ko: 등록외국인은 새 체류지 전입일부터 15일 이내 신고로 안내됩니다. F-4 또는 국내거소 신고자는 14일 안내가 적용될 수 있으므로 하이코리아, 1345 또는 관할 기관에서 본인 기준을 확인하세요.
-          my: နိုင်ငံခြားသားမှတ်ပုံတင်ထားသူများအတွက် အများအားဖြင့် ပြောင်းဝင်သည့်နေ့မှ 15 ရက်အတွင်း တင်ပြရန် လိုအပ်ပါသည်။ F-4 သို့မဟုတ် ပြည်တွင်းနေထိုင်ရာမှတ်တမ်းရှိသူများတွင် 14 ရက်သတ်မှတ်ချက် ဖြစ်နိုင်သောကြောင့် HiKorea၊ 1345 သို့မဟုတ် သက်ဆိုင်ရာရုံးတွင် ကိုယ့်နေထိုင်ခွင့်အမျိုးအစားအလိုက် ပြန်စစ်ပါ။
-        href: ""
+          en: >-
+            Government guidance for registered foreigners says to report within
+            15 days from moving in. Some F-4 or domestic-residence guidance uses
+            14 days, so confirm your own status through HiKorea, 1345, or the
+            local office.
+          ko: >-
+            등록외국인은 새 체류지 전입일부터 15일 이내 신고로 안내됩니다. F-4 또는 국내거소 신고자는 14일 안내가 적용될 수
+            있으므로 하이코리아, 1345 또는 관할 기관에서 본인 기준을 확인하세요.
+          my: >-
+            နိုင်ငံခြားသားမှတ်ပုံတင်ထားသူများအတွက် အများအားဖြင့်
+            ပြောင်းဝင်သည့်နေ့မှ 15 ရက်အတွင်း တင်ပြရန် လိုအပ်ပါသည်။ F-4 သို့မဟုတ်
+            ပြည်တွင်းနေထိုင်ရာမှတ်တမ်းရှိသူများတွင် 14 ရက်သတ်မှတ်ချက်
+            ဖြစ်နိုင်သောကြောင့် HiKorea၊ 1345 သို့မဟုတ် သက်ဆိုင်ရာရုံးတွင်
+            ကိုယ့်နေထိုင်ခွင့်အမျိုးအစားအလိုက် ပြန်စစ်ပါ။
+        prepare: []
+        steps: []
+        checklist: []
+        doneWhen: {}
+        details:
+          title: {}
+          body: {}
+        messageTemplate: {}
+        evidenceLevel: official
+        sources: []
       - icon: help
+        audience: none
         title:
           en: Do not assume it updates automatically
           ko: 자동 변경으로 단정하지 않기
           my: အလိုအလျောက်ပြောင်းမယ်လို့ မယူဆပါနှင့်
         body:
-          en: Signing a lease, moving into a dormitory, or changing the address with a school or employer does not always update your immigration address automatically.
+          en: >-
+            Signing a lease, moving into a dormitory, or changing the address
+            with a school or employer does not always update your immigration
+            address automatically.
           ko: 임대차계약을 하거나 기숙사에 들어가거나 학교·회사에 주소를 알렸다고 해서 출입국 주소가 항상 자동 변경되는 것은 아닙니다.
-          my: အိမ်ငှားစာချုပ်ချုပ်ခြင်း၊ အဆောင်ဝင်ခြင်း၊ ကျောင်း သို့မဟုတ် ကုမ္ပဏီကို လိပ်စာပြောထားခြင်းကြောင့် လူဝင်မှုကြီးကြပ်ရေးမှတ်တမ်းထဲက လိပ်စာ အလိုအလျောက်ပြောင်းသွားမည်ဟု မယူဆပါနှင့်။
-        href: ""
-  - icon: doc
+          my: >-
+            အိမ်ငှားစာချုပ်ချုပ်ခြင်း၊ အဆောင်ဝင်ခြင်း၊ ကျောင်း သို့မဟုတ်
+            ကုမ္ပဏီကို လိပ်စာပြောထားခြင်းကြောင့် လူဝင်မှုကြီးကြပ်ရေးမှတ်တမ်းထဲက
+            လိပ်စာ အလိုအလျောက်ပြောင်းသွားမည်ဟု မယူဆပါနှင့်။
+        prepare: []
+        steps: []
+        checklist: []
+        doneWhen: {}
+        details:
+          title: {}
+          body: {}
+        messageTemplate: {}
+        evidenceLevel: official
+        sources: []
+  - variant: standard
+    icon: doc
     title:
       en: What you may need
       ko: 필요할 수 있는 서류
       my: လိုအပ်နိုင်သောစာရွက်များ
     intro:
-      en: Required documents can vary by application method and your living arrangement. Prepare proof that connects you to the new address.
+      en: >-
+        Required documents can vary by application method and your living
+        arrangement. Prepare proof that connects you to the new address.
       ko: 신청 방법과 거주 형태에 따라 서류가 달라질 수 있습니다. 새 주소에 실제 거주한다는 증빙을 준비하세요.
-      my: တင်ပြနည်းနှင့် နေထိုင်ပုံအလိုက် စာရွက်စာတမ်းကွာနိုင်ပါသည်။ လိပ်စာအသစ်မှာ တကယ်နေကြောင်းပြနိုင်သော အထောက်အထားကို ပြင်ပါ။
+      my: >-
+        တင်ပြနည်းနှင့် နေထိုင်ပုံအလိုက် စာရွက်စာတမ်းကွာနိုင်ပါသည်။ လိပ်စာအသစ်မှာ
+        တကယ်နေကြောင်းပြနိုင်သော အထောက်အထားကို ပြင်ပါ။
     items:
       - icon: visa
+        audience: none
         title:
           en: ID documents
           ko: 신분 확인 서류
           my: ကိုယ်ရေးအချက်အလက်စစ်ဆေးရန် စာရွက်များ
         body:
-          en: Passport and foreigner registration card are commonly checked. For online reporting, confirm whether your card back-side address update is handled differently.
-          ko: 여권과 외국인등록증을 확인하는 경우가 많습니다. 온라인 신고 시 외국인등록증 뒷면 주소 기재가 어떻게 처리되는지도 확인하세요.
-          my: ပတ်စပို့နှင့် ARC ကို စစ်ဆေးတတ်ပါသည်။ အွန်လိုင်းဖြင့် တင်ပြမည်ဆိုပါက ARC နောက်ဘက်ရှိ လိပ်စာရေးသည့်နေရာကို ဘယ်လိုပြင်မလဲပါ စစ်ပါ။
-        href: ""
+          en: >-
+            Passport and foreigner registration card are commonly checked. For
+            online reporting, confirm whether your card back-side address update
+            is handled differently.
+          ko: >-
+            여권과 외국인등록증을 확인하는 경우가 많습니다. 온라인 신고 시 외국인등록증 뒷면 주소 기재가 어떻게 처리되는지도
+            확인하세요.
+          my: >-
+            ပတ်စပို့နှင့် ARC ကို စစ်ဆေးတတ်ပါသည်။ အွန်လိုင်းဖြင့် တင်ပြမည်ဆိုပါက
+            ARC နောက်ဘက်ရှိ လိပ်စာရေးသည့်နေရာကို ဘယ်လိုပြင်မလဲပါ စစ်ပါ။
+        prepare: []
+        steps: []
+        checklist: []
+        doneWhen: {}
+        details:
+          title: {}
+          body: {}
+        messageTemplate: {}
+        evidenceLevel: official
+        sources: []
       - icon: housing
+        audience: none
         title:
           en: Proof of residence
           ko: 체류지 입증서류
           my: နေထိုင်ရာအထောက်အထား
         body:
-          en: Examples can include a lease contract, dormitory residence confirmation, accommodation confirmation, utility receipt, or another document accepted by the office.
-          ko: 임대차계약서, 기숙사 거주확인서, 숙소제공확인서, 공공요금 영수증 등 해당 기관이 인정하는 체류지 입증서류가 필요할 수 있습니다.
-          my: အိမ်ငှားစာချုပ်၊ အဆောင်နေထိုင်ကြောင်းအတည်ပြုစာ၊ နေရာပေးနေထိုင်ကြောင်းအတည်ပြုစာ၊ မီး/ရေ/ဂတ်စ် စသည့် ဘေလ် သို့မဟုတ် ရုံးက လက်ခံသော နေထိုင်ရာအထောက်အထား လိုနိုင်ပါသည်။
-        href: ""
+          en: >-
+            Examples can include a lease contract, dormitory residence
+            confirmation, accommodation confirmation, utility receipt, or
+            another document accepted by the office.
+          ko: >-
+            임대차계약서, 기숙사 거주확인서, 숙소제공확인서, 공공요금 영수증 등 해당 기관이 인정하는 체류지 입증서류가 필요할 수
+            있습니다.
+          my: >-
+            အိမ်ငှားစာချုပ်၊ အဆောင်နေထိုင်ကြောင်းအတည်ပြုစာ၊
+            နေရာပေးနေထိုင်ကြောင်းအတည်ပြုစာ၊ မီး/ရေ/ဂတ်စ် စသည့် ဘေလ် သို့မဟုတ်
+            ရုံးက လက်ခံသော နေထိုင်ရာအထောက်အထား လိုနိုင်ပါသည်။
+        prepare: []
+        steps: []
+        checklist: []
+        doneWhen: {}
+        details:
+          title: {}
+          body: {}
+        messageTemplate: {}
+        evidenceLevel: official
+        sources: []
       - icon: users
+        audience: none
         title:
           en: If the lease is not in your name
           ko: 계약자가 본인이 아닐 때
           my: စာချုပ်က ကိုယ့်နာမည်မဟုတ်ပါက
         body:
-          en: If the contract is under another person’s name, extra proof may be requested, such as the contract holder’s ID copy or accommodation confirmation. Check before visiting or applying online.
-          ko: 계약자가 본인이 아니면 계약자 신분증 사본이나 숙소제공확인서 등 추가 증빙을 요구할 수 있습니다. 방문 또는 온라인 신청 전에 확인하세요.
-          my: အိမ်စာချုပ်က ကိုယ့်နာမည်မဟုတ်ပါက စာချုပ်ပိုင်ရှင်၏ ကိုယ်ရေးအချက်အလက်ကတ်မိတ္တူ၊ နေရာပေးနေထိုင်ကြောင်းအတည်ပြုစာ စသော အထောက်အထားများ ထပ်လိုနိုင်ပါသည်။ ရုံးသွားမီ သို့မဟုတ် အွန်လိုင်းမတင်မီ စစ်ပါ။
-        href: ""
-  - icon: list
+          en: >-
+            If the contract is under another person’s name, extra proof may be
+            requested, such as the contract holder’s ID copy or accommodation
+            confirmation. Check before visiting or applying online.
+          ko: >-
+            계약자가 본인이 아니면 계약자 신분증 사본이나 숙소제공확인서 등 추가 증빙을 요구할 수 있습니다. 방문 또는 온라인 신청
+            전에 확인하세요.
+          my: >-
+            အိမ်စာချုပ်က ကိုယ့်နာမည်မဟုတ်ပါက စာချုပ်ပိုင်ရှင်၏
+            ကိုယ်ရေးအချက်အလက်ကတ်မိတ္တူ၊ နေရာပေးနေထိုင်ကြောင်းအတည်ပြုစာ စသော
+            အထောက်အထားများ ထပ်လိုနိုင်ပါသည်။ ရုံးသွားမီ သို့မဟုတ်
+            အွန်လိုင်းမတင်မီ စစ်ပါ။
+        prepare: []
+        steps: []
+        checklist: []
+        doneWhen: {}
+        details:
+          title: {}
+          body: {}
+        messageTemplate: {}
+        evidenceLevel: official
+        sources: []
+  - variant: standard
+    icon: list
     title:
       en: How to report
       ko: 신고 방법
       my: ဘယ်လိုတင်ပြနိုင်လဲ
     intro:
-      en: Choose the method that fits your deadline, documents, and location. If the deadline has passed, online reporting may not be available.
+      en: >-
+        Choose the method that fits your deadline, documents, and location. If
+        the deadline has passed, online reporting may not be available.
       ko: 기한, 서류와 위치에 맞는 방법을 선택하세요. 기한이 지난 경우 온라인 신고가 불가능할 수 있습니다.
-      my: သတ်မှတ်ရက်၊ စာရွက်စာတမ်းနှင့် နေရာအလိုက် ကိုက်ညီသောနည်းလမ်းကို ရွေးပါ။ သတ်မှတ်ရက်ကျော်သွားပါက အွန်လိုင်းဖြင့် တင်ပြမရနိုင်ပါ။
+      my: >-
+        သတ်မှတ်ရက်၊ စာရွက်စာတမ်းနှင့် နေရာအလိုက် ကိုက်ညီသောနည်းလမ်းကို ရွေးပါ။
+        သတ်မှတ်ရက်ကျော်သွားပါက အွန်လိုင်းဖြင့် တင်ပြမရနိုင်ပါ။
     items:
       - icon: external
+        audience: none
         title:
           en: HiKorea online application
           ko: 하이코리아 전자민원
           my: HiKorea မှ အွန်လိုင်းတင်ပြခြင်း
         body:
-          en: Check HiKorea e-Application for the current online option, eligibility, processing time, and required documents.
+          en: >-
+            Check HiKorea e-Application for the current online option,
+            eligibility, processing time, and required documents.
           ko: 하이코리아 전자민원에서 온라인 신청 가능 여부, 대상, 처리기간과 필요서류를 확인하세요.
-          my: HiKorea တွင် အွန်လိုင်းဖြင့် တင်ပြနိုင်မလား၊ မိမိအခြေအနေက တင်ပြခွင့်ရှိမရှိ၊ ဘယ်လောက်ကြာနိုင်လဲနှင့် လိုအပ်စာရွက်များကို စစ်ပါ။
+          my: >-
+            HiKorea တွင် အွန်လိုင်းဖြင့် တင်ပြနိုင်မလား၊ မိမိအခြေအနေက
+            တင်ပြခွင့်ရှိမရှိ၊ ဘယ်လောက်ကြာနိုင်လဲနှင့် လိုအပ်စာရွက်များကို
+            စစ်ပါ။
+        prepare: []
+        steps: []
+        checklist: []
+        doneWhen: {}
+        details:
+          title: {}
+          body: {}
+        messageTemplate: {}
+        evidenceLevel: official
+        sources: []
         href: https://www.hikorea.go.kr/Main.pt
       - icon: admin
+        audience: none
         title:
           en: Immigration office or local community center
           ko: 출입국관서 또는 주민센터 방문
           my: လူဝင်မှုကြီးကြပ်ရေးရုံး သို့မဟုတ် ဒေသခံရုံးသို့ သွားခြင်း
         body:
-          en: You may report at the immigration office with jurisdiction over the new address, or at the city, county, district, eup, myeon, or dong office for the new address.
+          en: >-
+            You may report at the immigration office with jurisdiction over the
+            new address, or at the city, county, district, eup, myeon, or dong
+            office for the new address.
           ko: 새 체류지 관할 출입국·외국인관서 또는 새 주소지의 시·군·구청, 읍·면·동 주민센터에서 신고할 수 있습니다.
-          my: လိပ်စာအသစ်ကို ကိုင်တွယ်သော လူဝင်မှုကြီးကြပ်ရေးရုံး သို့မဟုတ် မြို့/ခရိုင်/ရပ်ကွက် ဒေသခံရုံးတွင် တင်ပြနိုင်ပါသည်။
-        href: ""
+          my: >-
+            လိပ်စာအသစ်ကို ကိုင်တွယ်သော လူဝင်မှုကြီးကြပ်ရေးရုံး သို့မဟုတ်
+            မြို့/ခရိုင်/ရပ်ကွက် ဒေသခံရုံးတွင် တင်ပြနိုင်ပါသည်။
+        prepare: []
+        steps: []
+        checklist: []
+        doneWhen: {}
+        details:
+          title: {}
+          body: {}
+        messageTemplate: {}
+        evidenceLevel: official
+        sources: []
       - icon: shield
+        audience: none
         title:
           en: Keep the receipt or result
           ko: 접수·처리 기록 보관
           my: လက်ခံ/ပြီးစီးမှတ်တမ်း သိမ်းပါ
         body:
-          en: Keep your application number, visit reservation, receipt, and any confirmation that the address change was accepted.
+          en: >-
+            Keep your application number, visit reservation, receipt, and any
+            confirmation that the address change was accepted.
           ko: 신청번호, 방문예약, 접수증과 주소 변경이 처리되었다는 확인 기록을 보관하세요.
-          my: လျှောက်ထားမှုနံပါတ်၊ ရုံးသွားရက်ချိန်း၊ လက်ခံဖြတ်ပိုင်းနှင့် လိပ်စာပြောင်းပြီးကြောင်း အတည်ပြုမှတ်တမ်းများကို သိမ်းထားပါ။
-        href: ""
-  - icon: shield
+          my: >-
+            လျှောက်ထားမှုနံပါတ်၊ ရုံးသွားရက်ချိန်း၊ လက်ခံဖြတ်ပိုင်းနှင့်
+            လိပ်စာပြောင်းပြီးကြောင်း အတည်ပြုမှတ်တမ်းများကို သိမ်းထားပါ။
+        prepare: []
+        steps: []
+        checklist: []
+        doneWhen: {}
+        details:
+          title: {}
+          body: {}
+        messageTemplate: {}
+        evidenceLevel: official
+        sources: []
+  - variant: standard
+    icon: shield
     title:
       en: Official places to confirm
       ko: 공식 확인처
       my: တရားဝင် ပြန်စစ်ရန်နေရာများ
     intro:
-      en: Because address reporting affects immigration records and fines, check official sources before relying on old posts or other people’s experience.
+      en: >-
+        Because address reporting affects immigration records and fines, check
+        official sources before relying on old posts or other people’s
+        experience.
       ko: 주소 변경 신고는 출입국 기록과 과태료에 영향을 줄 수 있으므로 오래된 글이나 타인의 경험만 믿지 말고 공식 출처를 확인하세요.
-      my: လိပ်စာပြောင်းတင်ပြခြင်းသည် လူဝင်မှုကြီးကြပ်ရေးမှတ်တမ်းနှင့် ဒဏ်ကြေးကိစ္စကို ထိခိုက်နိုင်သောကြောင့် လူမှုကွန်ရက်ပေါ်က ပို့စ်အဟောင်းများ သို့မဟုတ် အခြားသူ၏အတွေ့အကြုံပေါ်တွင်သာ မမှီခိုဘဲ တရားဝင်ရင်းမြစ်ကို စစ်ပါ။
+      my: >-
+        လိပ်စာပြောင်းတင်ပြခြင်းသည် လူဝင်မှုကြီးကြပ်ရေးမှတ်တမ်းနှင့်
+        ဒဏ်ကြေးကိစ္စကို ထိခိုက်နိုင်သောကြောင့် လူမှုကွန်ရက်ပေါ်က
+        ပို့စ်အဟောင်းများ သို့မဟုတ် အခြားသူ၏အတွေ့အကြုံပေါ်တွင်သာ မမှီခိုဘဲ
+        တရားဝင်ရင်းမြစ်ကို စစ်ပါ။
     items:
       - icon: external
+        audience: none
         title:
           en: Government24 civil service page
           ko: 정부24 민원 안내
           my: Government24 တရားဝင်စာမျက်နှာ
         body:
-          en: Government24 explains the foreigner change-of-place-of-stay civil service, deadline, application methods, and examples of residence-proof documents.
+          en: >-
+            Government24 explains the foreigner change-of-place-of-stay civil
+            service, deadline, application methods, and examples of
+            residence-proof documents.
           ko: 정부24에서 외국인 체류지변경신고 민원의 신고시기, 신청방법과 체류지 입증서류 예시를 확인할 수 있습니다.
-          my: Government24 တွင် နိုင်ငံခြားသားနေထိုင်ရာလိပ်စာပြောင်းတင်ပြခြင်း၏ သတ်မှတ်ရက်၊ တင်ပြနည်းနှင့် နေထိုင်ရာအထောက်အထား ဥပမာများကို စစ်နိုင်ပါသည်။
-        href: https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12700000026&HighCtgCD=A01010
+          my: >-
+            Government24 တွင် နိုင်ငံခြားသားနေထိုင်ရာလိပ်စာပြောင်းတင်ပြခြင်း၏
+            သတ်မှတ်ရက်၊ တင်ပြနည်းနှင့် နေထိုင်ရာအထောက်အထား ဥပမာများကို
+            စစ်နိုင်ပါသည်။
+        prepare: []
+        steps: []
+        checklist: []
+        doneWhen: {}
+        details:
+          title: {}
+          body: {}
+        messageTemplate: {}
+        evidenceLevel: official
+        sources: []
+        href: >-
+          https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12700000026&HighCtgCD=A01010
       - icon: help
+        audience: none
         title:
           en: 1345 Immigration Contact Center
           ko: 1345 외국인종합안내센터
           my: 1345 လူဝင်မှုကြီးကြပ်ရေး အကြံပေးဌာန
         body:
-          en: Ask 1345 if you are unsure whether the 15-day or 14-day deadline applies to your own status, or if your lease is not in your name.
-          ko: 본인에게 15일 또는 14일 기준 중 무엇이 적용되는지, 계약자가 본인이 아닐 때 무엇이 필요한지 불확실하면 1345에 문의하세요.
-          my: မိမိအခြေအနေအတွက် 15 ရက်လား 14 ရက်လား မသေချာပါက၊ သို့မဟုတ် အိမ်ငှားစာချုပ်က ကိုယ့်နာမည်မဟုတ်ပါက 1345 တွင် မေးပါ။
+          en: >-
+            Ask 1345 if you are unsure whether the 15-day or 14-day deadline
+            applies to your own status, or if your lease is not in your name.
+          ko: >-
+            본인에게 15일 또는 14일 기준 중 무엇이 적용되는지, 계약자가 본인이 아닐 때 무엇이 필요한지 불확실하면 1345에
+            문의하세요.
+          my: >-
+            မိမိအခြေအနေအတွက် 15 ရက်လား 14 ရက်လား မသေချာပါက၊ သို့မဟုတ်
+            အိမ်ငှားစာချုပ်က ကိုယ့်နာမည်မဟုတ်ပါက 1345 တွင် မေးပါ။
+        prepare: []
+        steps: []
+        checklist: []
+        doneWhen: {}
+        details:
+          title: {}
+          body: {}
+        messageTemplate: {}
+        evidenceLevel: official
+        sources: []
         href: https://www.immigration.go.kr/immigration/1530/subview.do
       - icon: list
+        audience: none
         title:
           en: Immigration Act Article 36
           ko: 출입국관리법 제36조
           my: လူဝင်မှုကြီးကြပ်ရေးဥပဒေ ပုဒ်မ ၃၆
         body:
-          en: The legal basis for registered foreigners reporting a change of place of stay is Article 36 of the Immigration Act. Use official service pages for practical document and application details.
+          en: >-
+            The legal basis for registered foreigners reporting a change of
+            place of stay is Article 36 of the Immigration Act. Use official
+            service pages for practical document and application details.
           ko: 등록외국인의 체류지 변경 신고 근거는 출입국관리법 제36조입니다. 실제 서류와 신청 방법은 공식 민원 안내에서 확인하세요.
-          my: နိုင်ငံခြားသားမှတ်ပုံတင်ထားသူများ၏ နေထိုင်ရာလိပ်စာပြောင်းတင်ပြရန် ဥပဒေအခြေခံသည် လူဝင်မှုကြီးကြပ်ရေးဥပဒေ ပုဒ်မ ၃၆ ဖြစ်ပါသည်။ လက်တွေ့လိုအပ်သောစာရွက်နှင့် တင်ပြနည်းအသေးစိတ်ကို တရားဝင်စာမျက်နှာတွင် ပြန်စစ်ပါ။
+          my: >-
+            နိုင်ငံခြားသားမှတ်ပုံတင်ထားသူများ၏ နေထိုင်ရာလိပ်စာပြောင်းတင်ပြရန်
+            ဥပဒေအခြေခံသည် လူဝင်မှုကြီးကြပ်ရေးဥပဒေ ပုဒ်မ ၃၆ ဖြစ်ပါသည်။
+            လက်တွေ့လိုအပ်သောစာရွက်နှင့် တင်ပြနည်းအသေးစိတ်ကို
+            တရားဝင်စာမျက်နှာတွင် ပြန်စစ်ပါ။
+        prepare: []
+        steps: []
+        checklist: []
+        doneWhen: {}
+        details:
+          title: {}
+          body: {}
+        messageTemplate: {}
+        evidenceLevel: official
+        sources: []
         href: https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1031822293
