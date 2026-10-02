@@ -1,0 +1,72 @@
+---
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import { t } from '../../i18n/ui';
+import { courseIds, type CourseId } from '../../config/courses';
+import '../../styles/learning.css';
+import '../../styles/course-detail.css';
+
+export function getStaticPaths() {
+  return courseIds.map((course) => ({ params: { course }, props: { course } }));
+}
+
+const { course } = Astro.props as { course: CourseId };
+const number = String(courseIds.indexOf(course) + 1).padStart(2, '0');
+const otherCourses = courseIds.filter((item) => item !== course);
+const topics = [1, 2, 3];
+---
+<Base title={t(`learn.${course}`)} description={t(`course.${course}.intro`)} active="home" canonicalPath={`/courses/${course}`}>
+  <div class="wrap learning course-detail">
+    <nav class="course-breadcrumb" aria-label={t('course.breadcrumb')} data-i18n-aria="course.breadcrumb">
+      <a href="/#courses"><T k="course.allCourses" /></a>
+      <span aria-hidden="true">/</span>
+      <T k={`learn.${course}`} />
+    </nav>
+
+    <section class="course-detail-hero">
+      <div class="course-detail-heading">
+        <p class="learn-eyebrow"><T k="learn.kicker" /> <span aria-hidden="true">· {number}</span></p>
+        <T k={`learn.${course}`} tag="h1" />
+        <T k={`course.${course}.intro`} tag="p" class="course-detail-intro" />
+        <a class="btn pri" href={`/apply?course=${course}`} data-event={`class_apply_${course}`}><T k="learn.apply" /> <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="course-facts" aria-label={t('course.atGlance')} data-i18n-aria="course.atGlance">
+        <span class="course-facts-index" aria-hidden="true">{number} / {String(courseIds.length).padStart(2, '0')}</span>
+        <T k="course.atGlance" tag="h2" />
+        <dl>
+          <div><T k="course.duration" tag="dt" /><T k={`course.${course}.duration`} tag="dd" /></div>
+          <div><T k="course.format" tag="dt" /><T k="course.online" tag="dd" /></div>
+          <div><T k="course.schedule" tag="dt" /><T k="course.scheduleBody" tag="dd" /></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="course-content-section" aria-labelledby="course-content-heading">
+      <div class="course-section-heading"><span class="course-section-index" aria-hidden="true">01</span><h2 class="course-section-title" id="course-content-heading"><T k={course === 'speaking' ? 'course.speaking.sectionTitle' : 'course.whatYouLearn'} /></h2></div>
+      {course === 'speaking' ? <div class="speaking-tracks">
+        <div class="speaking-practice"><T k="course.speaking.topic1" tag="h3" /><T k="course.speaking.topic1Body" tag="p" /></div>
+        {[{topic:2,id:'moe'}, {topic:3,id:'jun-ho'}].map((track, i) => <article class="speaking-track"><span class="course-number" aria-hidden="true">0{i+1}</span><T k={`course.speaking.topic${track.topic}`} tag="h3" /><T k={`course.speaking.topic${track.topic}Body`} tag="p" /><a class="btn" href={`/apply?course=speaking&track=${track.id}`}><T k="course.trackApply" /><span aria-hidden="true">↗</span></a></article>)}
+      </div> : <div class="course-topic-list">
+        {topics.map((item) => <article class="course-topic"><span aria-hidden="true">0{item}</span><div><T k={`course.${course}.topic${item}`} tag="h3" /><T k={`course.${course}.topic${item}Body`} tag="p" /></div></article>)}
+      </div>}
+    </section>
+
+    <section class="course-content-section course-fit" aria-labelledby="course-fit-heading">
+      <div class="course-section-heading"><span class="course-section-index" aria-hidden="true">02</span><h2 class="course-section-title" id="course-fit-heading"><T k="course.whoFor" /></h2></div>
+      <div class="course-fit-content">
+        <T k={`course.${course}.whoFor`} tag="p" />
+        <div class="course-goal"><T k="course.goal" tag="span" /><T k={`course.${course}.goal`} tag="p" /></div>
+      </div>
+    </section>
+
+    <section class="course-detail-cta">
+      <div><T k="course.nextStep" tag="h2" /><T k="course.nextStepBody" tag="p" /></div>
+      <a class="btn pri" href={`/apply?course=${course}`} data-event={`class_apply_${course}_bottom`}><T k="learn.apply" /><span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="course-more" aria-labelledby="course-more-heading">
+      <h2 id="course-more-heading"><T k="course.otherCourses" /></h2>
+      <div>{otherCourses.map((item) => <a href={`/courses/${item}`}><T k={`learn.${item}`} /><span aria-hidden="true">↗</span></a>)}</div>
+    </section>
+  </div>
+</Base>

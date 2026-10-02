@@ -5,8 +5,8 @@
 
 ## 0. 프로젝트 한 줄
 
-**한국에 막 왔거나 거주 중인 미얀마인의 정착을 돕는 "정보 허브 + 서비스 안내" 모바일 우선 웹.**
-현재 **1단계 MVP**: 비자 정보 허브 + 서비스 소개 + 문의/상담 연결. (온라인 결제·구독·계정은 추후 단계)
+**미얀마인을 위한 온라인 한국어 수업 안내·신청 + 한국 생활 정보 블로그, 모바일 우선 웹.**
+현재 핵심 흐름은 **수업 선택 → 상세 확인 → 신청 → 개별 상담**이다. 수강생 로그인과 온라인 결제는 사용하지 않는다. 기존 정보·서비스 관련 규칙은 블로그와 기존 정보 콘텐츠에 적용한다.
 
 기준 문서:
 - 사업 방향·합법 경계: [docs/사업기획서.md](docs/사업기획서.md) — 특히 **§7-1 합법/위험 경계 가이드라인**.
@@ -53,8 +53,8 @@
 - `svcDetail.dont.body` + "What we don't do"(`svcDetail.section.whatWeDont`) → **서비스 상세** "무엇은 안 하나" 블록.
 
 원문(EN 기준 / KO):
-- **footer.disclaimer (EN)**: "MyanMate provides information and in-person guidance only. You complete and submit all documents and contracts yourself (or through a licensed professional). Please confirm final requirements with Immigration (HiKorea) and a licensed realtor."
-- **footer.disclaimer (KO)**: "MyanMate는 정보 제공과 동행 자문만 합니다. 모든 서류 작성·신청·제출과 임대차 계약은 본인이 직접(또는 자격 전문가를 통해) 진행합니다. 최종 요건은 출입국·하이코리아 및 공인중개사에게 확인하세요."
+- **footer.disclaimer (EN)**: "MyanMate offers online Korean classes. Blog content is general information, not advice for individual cases. Requirements may change; confirm the latest details with the relevant official institution."
+- **footer.disclaimer (KO)**: "MyanMate는 온라인 한국어 수업을 제공합니다. 블로그 내용은 일반적인 정보이며 개별 상황에 대한 자문이 아닙니다. 요건은 변경될 수 있으므로 최신 내용은 관련 공식 기관에서 확인해 주세요."
 - **content.disclaimer (EN)**: "This is general information, not legal advice. Always confirm with Immigration (HiKorea)."
 - **svcDetail.dont.body (EN)**: "We don't write, submit, or file documents for you, and we don't broker contracts. We research, guide, and come along — you stay in control."
 

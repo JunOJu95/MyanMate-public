@@ -10,9 +10,8 @@ const { active } = Astro.props;
 
 const links = [
   { key: 'nav.home', href: '/', id: 'home' },
-  { key: 'nav.guides', href: '/guides', id: 'guides' },
   ...(SHOW_BLOG_IN_NAV ? [{ key: 'nav.blog', href: '/blog', id: 'blog' }] : []),
-  { key: 'nav.services', href: '/services', id: 'services' },
+  { key: 'learn.apply', href: '/apply', id: 'apply' },
   ...(SHOW_REVIEWS ? [{ key: 'nav.reviews', href: '/reviews', id: 'reviews' }] : []),
   { key: 'nav.about', href: '/about', id: 'about' },
 ];

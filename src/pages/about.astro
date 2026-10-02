@@ -1,40 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
+import Teachers from '../components/Teachers.astro';
 import T from '../components/T.astro';
-import { defaultLang, t } from '../i18n/ui';
+import { t } from '../i18n/ui';
+import '../styles/learning.css';
 ---
-<Base title={t('about.title', defaultLang)} active="about" description={t('about.lead', defaultLang)}>
-  <div class="wrap">
-    <section class="sec hero page-hero about-hero" data-reveal="page-hero">
-      <T k="about.title" tag="h1" class="lead-title" />
-      <T k="about.lead" tag="p" class="t-sub" />
-    </section>
-
-    <section class="sec about-editorial">
-      <div class="about-editorial-copy" data-reveal="section">
-        <T k="about.story.intro" tag="p" class="about-editorial-lead" />
-        <T k="about.story.chapter1.body" tag="p" class="about-editorial-p" />
-        <T k="about.story.chapter2.body" tag="p" class="about-editorial-p" />
-        <T k="about.story.chapter3.body" tag="p" class="about-editorial-p" />
-
-        <blockquote class="about-editorial-quote" data-reveal="cta">
-          <T k="about.story.quote" tag="p" />
-        </blockquote>
-      </div>
-    </section>
-
-    <section class="about-proof-strip" aria-label={t('about.proof.label', defaultLang)} data-reveal="section">
-      <T k="about.proof.item1" tag="p" />
-      <T k="about.proof.item2" tag="p" />
-      <T k="about.proof.item3" tag="p" />
-    </section>
-
-    <section class="sec about-story-cta" data-reveal="cta">
-      <div class="cta-band">
-        <T k="about.cta.note" tag="p" class="t-body" />
-        <a class="btn pri full" href="/guides" data-i18n="btn.browseGuides" data-event="about:guides">{t('btn.browseGuides', defaultLang)}</a>
-        <a class="btn ghost full" href="/contact" data-i18n="btn.getHelp" data-event="about:contact">{t('btn.getHelp', defaultLang)}</a>
-      </div>
-    </section>
+<Base title={t('story.title')} description={t('story.lead')} active="about">
+  <div class="wrap learning">
+    <section class="about-learning-intro"><T k="learn.kicker" tag="p" class="learn-eyebrow" /><T k="story.title" tag="h1" /><T k="story.lead" tag="p" class="learn-lead" /></section>
+    <Teachers />
+    <section class="learn-section"><T k="story.approach" tag="h2" /><div class="learn-steps">{[1,2,3].map(n=><article><span class="course-number" aria-hidden="true">0{n}</span><T k={'story.point'+n} tag="h3" /><T k={'story.point'+n+'Body'} tag="p" /></article>)}</div></section>
+    <section class="learn-banner"><T k="learn.blogCta" tag="h2" /><a href="/apply" class="btn pri"><T k="learn.apply" /></a></section>
   </div>
 </Base>

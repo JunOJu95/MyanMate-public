@@ -5,6 +5,7 @@
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '../../keystatic.config';
 import type { Lang } from '../i18n/ui';
+import { isCourseId, type CourseId } from '../config/courses';
 import type { ServiceId, ServiceInfoId } from '../data/services';
 import Markdoc from '@markdoc/markdoc';
 
@@ -414,46 +415,41 @@ export async function getServiceOffers(): Promise<Record<ServiceId, ServiceOffer
 }
 
 /* ---------------- reviews ---------------- */
-export interface ReviewText {
-  before: string;
-  after: string;
-  quote: string;
-}
 export interface Review {
   slug: string;
-  service: string;
-  rating: number;
-  en: ReviewText;
-  ko: ReviewText;
-  my: ReviewText;
-}
-
-function reviewText(o: any): ReviewText {
-  o = o ?? {};
-  return { before: str(o.before), after: str(o.after), quote: str(o.quote) };
+  course: CourseId;
+  displayName: string;
+  order: number;
+  en: string;
+  ko: string;
+  my: string;
 }
 
 export async function getReviews(): Promise<Review[]> {
   const list = await reader.collections.reviews.all();
-  return list.map((e: any) => ({
-    slug: e.slug,
-    service: str(e.entry?.service, 'visa'),
-    rating: typeof e.entry?.rating === 'number' ? e.entry.rating : 5,
-    en: reviewText(e.entry?.en),
-    ko: reviewText(e.entry?.ko),
-    my: reviewText(e.entry?.my),
-  }));
+  return list
+    .filter((e: any) => !e.entry?.draft && e.entry?.consentConfirmed)
+    .map((e: any) => ({
+      slug: e.slug,
+      course: e.entry?.course,
+      displayName: str(e.entry?.displayName),
+      order: typeof e.entry?.order === 'number' ? e.entry.order : 10,
+      en: str(e.entry?.en?.quote).trim(),
+      ko: str(e.entry?.ko?.quote).trim(),
+      my: str(e.entry?.my?.quote).trim(),
+    }))
+    .filter((review: Review) =>
+      isCourseId(review.course) &&
+      Boolean(review.en || review.ko || review.my)
+    )
+    .sort((a: Review, b: Review) => a.order - b.order);
 }
 
-export function pickReview(r: Review, lang: Lang): ReviewText {
-  const text = r[lang];
-  return text && (text.before || text.after) ? text : r.en;
-}
-
-/** Maps a review's service to its i18n tag key (ui.tag.*). */
-export const reviewTagKey: Record<string, string> = {
-  visa: 'ui.tag.visaResearch',
-  resume: 'ui.tag.resumeJob',
+export const reviewCourseKey: Record<Review['course'], string> = {
+  hangul: 'learn.hangul',
+  topik: 'learn.topik',
+  topik2: 'learn.topik2',
+  speaking: 'learn.speaking',
 };
 
 /* ---------------- blog posts ---------------- */

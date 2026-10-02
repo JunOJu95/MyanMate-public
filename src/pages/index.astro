@@ -1,227 +1,57 @@
 ---
 import Base from '../layouts/Base.astro';
-import HomeServicePreview from '../components/HomeServicePreview.astro';
-import Icon from '../components/Icon.astro';
-import PostCard from '../components/PostCard.astro';
-import SocialDmPanel from '../components/SocialDmPanel.astro';
 import T from '../components/T.astro';
-import TikTokTrust from '../components/TikTokTrust.astro';
-import { services } from '../data/services';
-import { defaultLang, t } from '../i18n/ui';
-import {
-  getLatestPosts,
-  getServiceOffers,
-} from '../lib/content';
-
-const showHomeServices = false;
-const [serviceOffers, latestPosts] = await Promise.all([
-  getServiceOffers(),
-  getLatestPosts(4),
-]);
-const homeServices = services.filter(({ id }) => (
-  id === 'part-time-job' || id === 'career' || id === 'portfolio'
-));
-const informationLinks: Array<{
-  id: string;
-  titleKey: string;
-  summaryKey: string;
-  href: string;
-  icon: string;
-  event: string;
-}> = [
-  {
-    id: 'visa',
-    titleKey: 'home.entry.visa',
-    summaryKey: 'infoHub.visa.summary',
-    href: '/guides/visa',
-    icon: 'visa',
-    event: 'home_information_visa',
-  },
-  {
-    id: 'study',
-    titleKey: 'home.information.study.title',
-    summaryKey: 'home.information.study.summary',
-    href: '/guides/study',
-    icon: 'study',
-    event: 'home_information_study',
-  },
-  {
-    id: 'daily-life',
-    titleKey: 'home.information.dailyLife.title',
-    summaryKey: 'home.information.dailyLife.summary',
-    href: '/guides/daily-life',
-    icon: 'daily',
-    event: 'home_information_daily_life',
-  },
-];
-const processSteps = [
-  { title: 'home.process.step1.title', body: 'home.process.step1.body' },
-  { title: 'home.process.step2.title', body: 'home.process.step2.body' },
-  { title: 'home.process.step3.title', body: 'home.process.step3.body' },
-];
+import Teachers from '../components/Teachers.astro';
+import PostCard from '../components/PostCard.astro';
+import { getLatestPosts } from '../lib/content';
+import { t } from '../i18n/ui';
+import { courseIds } from '../config/courses';
+import '../styles/learning.css';
+const posts = await getLatestPosts(3);
 ---
-<Base
-  title="Korea Visa, Study, Jobs & Life Guide for Myanmar People"
-  active="home"
-  description={t('home.hero.sub', defaultLang)}
->
-  <div class="wrap home-wrap">
-    <!-- hero -->
-    <section class="sec home-hero" data-reveal="hero">
-      <img class="hero-media" src="/images/brand/guidance-desk.jpg" alt="" loading="eager" decoding="async" aria-hidden="true" />
-      <div class="hero-copy" data-hero-sequence>
-        <T k="home.hero.kicker" tag="p" class="eyebrow" />
-        <T k="home.hero.headline" tag="h1" class="h-hero" />
-        <T k="home.hero.sub" tag="p" class="t-sub" />
-      </div>
-      <div class="scene-panel" aria-hidden="true">
-        <span class="desk-label">MYANMATE / SEOUL</span>
-        <span data-i18n="home.hero.visual.title">{t('home.hero.visual.title', defaultLang)}</span>
-      </div>
-    </section>
-
-    <section class="trust-strip" aria-label={t('home.trust.slogan', defaultLang)} data-i18n-aria="home.trust.slogan" data-reveal="section">
-      <T k="home.trust.slogan" tag="p" class="trust-slogan" />
-    </section>
-
-    <!-- newest long-form information -->
-    <section
-      class="sec home-section home-latest-band"
-      aria-label={t('home.latest.title', defaultLang)}
-      data-i18n-aria="home.latest.title"
-      data-reveal="section"
-    >
-      <div class="home-editorial-head">
-        <div>
-          <T k="home.latest.eyebrow" tag="p" class="home-section-eyebrow" />
-          <T k="home.latest.title" tag="h2" class="home-display-title" />
-        </div>
-        <T k="home.latest.lead" tag="p" class="home-section-lead" />
-      </div>
-      {latestPosts.length > 0 ? (
-        <div class:list={['home-latest-layout', { 'is-single': latestPosts.length === 1 }]}>
-          <div class="home-latest-feature">
-            <PostCard post={latestPosts[0]} variant="featured" headingLevel={3} />
-          </div>
-          {latestPosts.length > 1 && (
-            <div class="home-latest-list" data-stagger>
-              {latestPosts.slice(1).map((post) => <PostCard post={post} variant="row" headingLevel={3} />)}
-            </div>
-          )}
-        </div>
-      ) : (
-        <p class="home-latest-empty"><T k="blog.empty" /></p>
-      )}
-      <a class="home-text-link" href="/blog" data-event="home_blog_all">
-        <T k="blog.viewAll" />
-        <span aria-hidden="true">→</span>
-      </a>
-    </section>
-
-    <!-- structured information index -->
-    <section
-      class="sec home-section home-information-band"
-      aria-label={t('home.information.title', defaultLang)}
-      data-i18n-aria="home.information.title"
-      data-reveal="section"
-    >
-      <div class="home-editorial-head">
-        <div>
-          <T k="home.information.eyebrow" tag="p" class="home-section-eyebrow" />
-          <T k="home.information.title" tag="h2" class="home-display-title" />
-        </div>
-        <T k="home.information.lead" tag="p" class="home-section-lead" />
-      </div>
-      <div class="home-information-index" data-stagger>
-        {informationLinks.map((entry, index) => (
-          <a
-            class="home-information-row"
-            href={entry.href}
-            data-event={entry.event}
-            data-information={entry.id}
-            data-source="home-information"
-          >
-            <span class="home-information-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-            <span class="home-information-icon" aria-hidden="true"><Icon name={entry.icon} size={21} /></span>
-            <span class="home-information-copy">
-              <T k={entry.titleKey} tag="h3" class="home-information-title" />
-              <T k={entry.summaryKey} tag="span" class="home-information-summary" />
-            </span>
-            <span class="home-information-arrow" aria-hidden="true">→</span>
-          </a>
-        ))}
-      </div>
-    </section>
-
-    {showHomeServices && (
-      <section
-        class="sec home-section home-services-band"
-        aria-label={t('home.services.preview.title', defaultLang)}
-        data-i18n-aria="home.services.preview.title"
-        data-reveal="section"
-      >
-        <div class="home-services-layout">
-          <div class="home-services-intro">
-            <T k="home.services.preview.eyebrow" tag="p" class="home-section-eyebrow" />
-            <T k="home.services.preview.title" tag="h2" class="home-display-title" />
-            <T k="home.services.preview.lead" tag="p" class="home-section-lead" />
-          </div>
-          <div class="home-service-list" data-stagger>
-            {homeServices.map((service, index) => (
-              <HomeServicePreview service={service} offer={serviceOffers[service.id]} index={index} />
-            ))}
-            <a class="home-text-link home-services-all-link" href="/services" data-event="home_services_all">
-              <T k="home.services.preview.viewAll" />
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </section>
-    )}
-
-    <!-- information-to-DM journey -->
-    <section class="sec home-section home-journey-band" data-reveal="section">
-      <div class="home-journey-layout">
-        <div class="home-journey-copy">
-          <T k="home.journey.eyebrow" tag="p" class="home-section-eyebrow" />
-          <T k="home.process.title" tag="h2" class="home-display-title" />
-          <T k="home.journey.lead" tag="p" class="home-section-lead" />
-          <div class="home-process-list" data-reveal="process" data-stagger>
-            {processSteps.map((step, index) => (
-              <div class="home-process-step">
-                <span class="home-process-number" aria-hidden="true">{index + 1}</span>
-                <div>
-                  <p class="card-title" data-i18n={step.title}>{t(step.title, defaultLang)}</p>
-                  <p class="t-body" data-i18n={step.body}>{t(step.body, defaultLang)}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div class="home-journey-dm" data-reveal="cta">
-          <SocialDmPanel context="general" service="general" source="home-journey" id="dm" />
-        </div>
-      </div>
-    </section>
-
-    <!-- short-form information -->
-    <section class="sec home-section community-band" data-reveal="section">
-      <TikTokTrust />
-    </section>
-
-    <!-- compact story teaser -->
-    <section class="sec home-section home-about-compact" data-reveal="section">
-      <div>
-        <T k="home.about.eyebrow" tag="p" class="home-section-eyebrow" />
-        <T k="home.about.title" tag="h2" class="home-display-title" />
-      </div>
-      <div class="home-about-copy">
-        <T k="home.about.blurb" tag="p" class="home-section-lead" />
-        <a class="home-text-link" href="/about" data-event="about:story">
-          <T k="home.about.cta" />
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
-    </section>
-  </div>
+<Base title={t('learn.nav')} description={t('learn.lead')} active="home">
+<div class="wrap learning">
+  <section class="learn-hero">
+    <div><T k="learn.kicker" tag="p" class="learn-eyebrow" /><T k="learn.title" tag="h1" /><T k="learn.lead" tag="p" class="learn-lead" />
+      <div class="learn-actions"><a href="/apply" class="btn pri" data-event="class_apply_home"><T k="learn.apply" /> <span aria-hidden="true">↗</span></a></div>
+      <T k="learn.now" tag="p" class="learn-status" />
+    </div>
+    <div class="learn-notebook"><T k="learn.hello" tag="p" class="learn-eyebrow" /><div class="notebook-greeting"><T k="learn.helloWord" tag="p" class="learn-word" /><svg class="notebook-underline" viewBox="0 0 280 18" fill="none" aria-hidden="true"><path d="M4 11C68 3 166 3 274 8M35 16C104 10 180 10 239 13" /></svg><svg class="notebook-spark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2v9m0 10v9M2 16h9m10 0h9M6 6l6 6m8 8 6 6" /></svg></div><T k="learn.helloMeaning" tag="p" class="notebook-meaning" /><div class="learn-notebook-bottom"><span aria-hidden="true">가 · 나 · 다</span><span aria-hidden="true">01 / MYANMATE</span></div></div>
+  </section>
+  <section class="learn-section" id="courses"><T k="learn.courses" tag="h2" /><T k="learn.courseLead" tag="p" class="learn-lead" />
+    <div class="course-list">{courseIds.map((course,i)=>(<a class="course-row" href={'/courses/'+course} data-event={'class_view_'+course}><span class="course-number" aria-hidden="true">0{i+1}</span><div><div class="course-row-meta"><T k={'course.'+course+'.audience'} /><span aria-hidden="true">·</span><T k={'course.'+course+'.duration'} /></div><T k={'learn.'+course} tag="h3" /><T k={'learn.'+course+'Body'} tag="p" /></div><span class="btn"><T k="course.viewDetails" /><span aria-hidden="true">↗</span></span></a>))}</div>
+  </section>
+  <Teachers />
+  <section class="learn-section"><T k="learn.steps" tag="h2" /><div class="learn-steps">{[1,2,3].map(n=>(<article><span class="course-number" aria-hidden="true">0{n}</span><T k={'learn.step'+n} tag="h3" /><T k={'learn.step'+n+'Body'} tag="p" /></article>))}</div></section>
+  <section class="learn-section"><T k="learn.faq" tag="h2" />{[1,2,3].map(n=>(<details class="learn-faq"><summary><T k={'learn.faq'+n} /></summary><T k={'learn.faq'+n+'Body'} tag="p" /></details>))}</section>
+  <section class="learn-banner"><T k="learn.blogCta" tag="h2" /><a class="btn pri" href="/apply" data-event="class_apply_bottom"><T k="learn.apply" /></a></section>
+  <section class="learn-section"><div class="learn-heading"><T k="learn.blog" tag="h2" /><a href="/blog" class="btn ghost"><T k="blog.viewAll" /></a></div><div class="learn-posts">{posts.map(post=><PostCard post={post} variant="home" headingLevel={3} />)}</div></section>
+</div>
 </Base>
+
+<script>
+  const notebook = document.querySelector('.learn-notebook');
+  if (notebook && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        notebook.classList.add('notebook-visible');
+        observer.disconnect();
+      }
+    }, { threshold: 0.35 });
+    observer.observe(notebook);
+  }
+
+  if ('IntersectionObserver' in window) {
+    const motionObserver = new IntersectionObserver((entries, observer) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('motion-visible');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+    document.querySelectorAll('.course-list, .learn-steps').forEach((section) => {
+      motionObserver.observe(section);
+    });
+  }
+</script>
