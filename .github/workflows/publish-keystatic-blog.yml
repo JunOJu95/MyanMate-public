@@ -1,4 +1,4 @@
-name: Publish Keystatic blog
+name: Publish Keystatic content
 
 on:
   push:
@@ -16,13 +16,16 @@ concurrency:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    outputs:
+      contains_reviews: ${{ steps.content.outputs.contains_reviews }}
     steps:
       - name: Check out the Keystatic branch
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Allow blog content files only
+      - name: Allow blog and review content files only
+        id: content
         shell: bash
         run: |
           git fetch origin main
@@ -34,15 +37,19 @@ jobs:
           fi
 
           invalid_files=()
+          contains_reviews=false
           for file in "${changed_files[@]}"; do
             case "$file" in
               src/content/posts/*|src/content/blog-media/*) ;;
+              src/content/reviews/*) contains_reviews=true ;;
               *) invalid_files+=("$file") ;;
             esac
           done
 
+          echo "contains_reviews=$contains_reviews" >> "$GITHUB_OUTPUT"
+
           if (( ${#invalid_files[@]} > 0 )); then
-            echo "Automatic publishing only accepts blog content files:"
+            echo "Keystatic publishing only accepts blog and review content files:"
             printf '  %s\n' "${invalid_files[@]}"
             exit 1
           fi
@@ -87,17 +94,25 @@ jobs:
 
           if [[ -z "$pr_url" ]]; then
             article_name="${GITHUB_REF_NAME#keystatic/}"
+            if [[ "${{ needs.validate.outputs.contains_reviews }}" == "true" ]]; then
+              pr_title="Review Korean class testimonials: $article_name"
+              pr_body="Korean class review changes need a manual check against the student's Google Form publication consent before merging. Private feedback and application names must stay out of public content."
+            else
+              pr_title="Publish Keystatic blog: $article_name"
+              pr_body="Created automatically after the Keystatic blog save passed the content-only, accessibility, and build checks."
+            fi
             pr_url="$(gh pr create \
               --repo "$GITHUB_REPOSITORY" \
               --base main \
               --head "$GITHUB_REF_NAME" \
-              --title "Publish Keystatic blog: $article_name" \
-              --body "Created automatically after the Keystatic blog save passed the content-only, accessibility, and build checks.")"
+              --title "$pr_title" \
+              --body "$pr_body")"
           fi
 
           echo "url=$pr_url" >> "$GITHUB_OUTPUT"
 
       - name: Squash merge and publish
+        if: needs.validate.outputs.contains_reviews == 'false'
         env:
           GH_TOKEN: ${{ github.token }}
           PR_URL: ${{ steps.pull-request.outputs.url }}

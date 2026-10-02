@@ -4,6 +4,7 @@ import Disclaimer from '../../components/Disclaimer.astro';
 import Icon from '../../components/Icon.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import T from '../../components/T.astro';
+import '../../styles/learning.css';
 import { getPosts, getPost } from '../../lib/content';
 import { defaultLang, t } from '../../i18n/ui';
 
@@ -177,6 +178,7 @@ const faqStructuredData = faqItems.length > 0
         <span class="blog-disclaimer-icon" aria-hidden="true"><Icon name="shield" size={30} /></span>
         <Disclaimer k="content.disclaimer" />
       </div>
+      <aside class="learn-banner"><T k="learn.blogCta" tag="h2" /><a href="/apply" class="btn pri" data-event="class_apply_blog"><T k="learn.apply" /></a></aside>
     </article>
   </div>
 

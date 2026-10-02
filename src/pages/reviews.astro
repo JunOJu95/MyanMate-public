@@ -3,35 +3,44 @@ import Base from '../layouts/Base.astro';
 import T from '../components/T.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import { getReviews } from '../lib/content';
-import { defaultLang, t } from '../i18n/ui';
-import { SHOW_REVIEWS } from '../config/launch';
+import { t } from '../i18n/ui';
+import '../styles/learning.css';
+import '../styles/reviews.css';
 
-const reviews = SHOW_REVIEWS ? await getReviews() : [];
+const reviews = await getReviews();
 ---
-<Base title={t('reviews.title', defaultLang)} active="reviews" description={t('reviews.subtitle', defaultLang)}>
-  <div class="wrap">
-    <section class="sec">
-      <h1 class="lead-title"><T k="reviews.title" /></h1>
-      <T k="reviews.subtitle" tag="p" class="t-body mt-8" />
+<Base title={t('reviews.title')} active="reviews" description={t('reviews.subtitle')}>
+  <div class="wrap learning reviews-page">
+    <section class="reviews-hero">
+      <T k="learn.kicker" tag="p" class="learn-eyebrow" />
+      <T k="reviews.title" tag="h1" />
+      <T k="reviews.subtitle" tag="p" class="learn-lead" />
+      <div class="reviews-principle"><span aria-hidden="true">✓</span><T k="reviews.principle" tag="p" /></div>
     </section>
 
-    <section class="sec" style="padding-top:6px;">
+    <section class="reviews-section" aria-label={t('reviews.title')} data-i18n-aria="reviews.title">
       {reviews.length > 0 ? (
-        <div class="grid-reviews">
-          {reviews.map((r) => <ReviewCard review={r} />)}
+        <div class="reviews-grid">
+          {reviews.map((review) => <ReviewCard review={review} />)}
         </div>
       ) : (
-        <div class="empty-state">
-          <p class="card-title" data-i18n="reviews.empty.title">{t('reviews.empty.title', defaultLang)}</p>
-          <p class="t-body" data-i18n="reviews.empty.body">{t('reviews.empty.body', defaultLang)}</p>
+        <div class="reviews-empty">
+          <span class="reviews-empty-mark" aria-hidden="true">“</span>
+          <div>
+            <T k="reviews.empty.kicker" tag="p" class="reviews-eyebrow" />
+            <T k="reviews.empty.title" tag="h2" />
+            <T k="reviews.empty.body" tag="p" />
+          </div>
         </div>
       )}
     </section>
 
-    <section class="sec">
-      <div class="cta-band">
-        <a class="btn pri full" href="/contact#dm" data-i18n="dm.cta" data-event="cta:reviews">{t('dm.cta', defaultLang)}</a>
+    <section class="reviews-next">
+      <div>
+        <T k="reviews.next.title" tag="h2" />
+        <T k="reviews.next.body" tag="p" />
       </div>
+      <a class="btn pri" href="/apply"><T k="learn.apply" /></a>
     </section>
   </div>
 </Base>

@@ -294,9 +294,7 @@ const guideLang = (label: string) =>
 const reviewLang = (label: string) =>
   fields.object(
     {
-      before: fields.text({ label: 'Before', multiline: true }),
-      after: fields.text({ label: 'After', multiline: true }),
-      quote: fields.text({ label: 'Quote (optional)', multiline: true }),
+      quote: fields.text({ label: 'Student review / 수강생 후기', multiline: true }),
     },
     { label }
   );
@@ -341,25 +339,41 @@ export default config({
     }),
 
     reviews: collection({
-      label: 'Reviews · 후기',
+      label: 'Korean class reviews · 수업 후기',
       slugField: 'name',
       path: 'src/content/reviews/*',
       format: { data: 'yaml' },
-      columns: ['name', 'service', 'rating'],
+      columns: ['name', 'course', 'draft', 'consentConfirmed'],
       schema: {
-        name: fields.slug({ name: { label: 'Internal name (English)' } }),
-        service: fields.select({
-          label: 'Service',
+        name: fields.slug({ name: { label: 'Internal ID (no private student information)' } }),
+        course: fields.select({
+          label: 'Korean class / 한국어 과정',
           options: [
-            { label: 'Visa research', value: 'visa' },
-            { label: 'Resume & jobs', value: 'resume' },
+            { label: 'Hangul and foundations / 한글 입문·기초', value: 'hangul' },
+            { label: 'TOPIK I / TOPIK 1~2급', value: 'topik' },
+            { label: 'TOPIK II / TOPIK 3~6급', value: 'topik2' },
+            { label: 'Korean speaking / 한국어 말하기', value: 'speaking' },
           ],
-          defaultValue: 'visa',
+          defaultValue: 'hangul',
         }),
-        rating: fields.integer({ label: 'Rating (1–5)', defaultValue: 5 }),
+        displayName: fields.text({
+          label: 'Public display name (blank = anonymous) / 공개 이름',
+          description: 'Use only the name or nickname approved by the student. Never enter the application name here unless approved.',
+        }),
+        order: fields.integer({ label: 'Display order (lower first)', defaultValue: 10 }),
+        draft: fields.checkbox({
+          label: 'Hide from website / 사이트에서 숨김',
+          description: 'The GitHub repository is public. Save only reviews already approved for publication; this hides the entry from the website, not from GitHub.',
+          defaultValue: true,
+        }),
+        consentConfirmed: fields.checkbox({
+          label: 'Publication consent checked / 사이트 공개 동의 확인',
+          description: 'Turn on only after checking the student’s Google Form response. Never paste private feedback here.',
+          defaultValue: false,
+        }),
         en: reviewLang('English'),
         ko: reviewLang('한국어'),
-        my: reviewLang('မြန်မာ (draft)'),
+        my: reviewLang('မြန်မာ'),
       },
     }),
 
