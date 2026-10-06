@@ -1,0 +1,14 @@
+---
+import T from './T.astro';
+import LearningIcon from './LearningIcon.astro';
+interface Props { speaking?: boolean }
+const { speaking = false } = Astro.props;
+const items = speaking ? [['redesign.trackFaq','redesign.trackAnswer'], ['learn.faq2','learn.faq2Body']] : [['redesign.beginnerFaq','redesign.beginnerAnswer'], ['learn.faq1','learn.faq1Body'], ['learn.faq2','learn.faq2Body'], ['learn.faq3','learn.faq3Body']];
+---
+<section class:list={['wrap mm-faq', { 'speaking-faq': speaking }]}>
+ <T k={speaking ? 'redesign.faqTitle' : 'learn.faq'} tag="h2" />
+ <div class="mm-faq-list" data-mm-reveal>{items.map(([question,answer]) => <details>
+  <summary><T k={question} /><span class="faq-toggle" aria-hidden="true"><LearningIcon name="chevron" size={20} /></span></summary>
+  <T k={answer} tag="p" />
+ </details>)}</div>
+</section>

@@ -1,7 +1,7 @@
 ---
 import LangToggle from './LangToggle.astro';
 import { t, defaultLang } from '../i18n/ui';
-import { SHOW_BLOG_IN_NAV, SHOW_REVIEWS } from '../config/launch';
+import { SHOW_BLOG_IN_NAV } from '../config/launch';
 
 interface Props {
   active?: string;
@@ -9,11 +9,10 @@ interface Props {
 const { active } = Astro.props;
 
 const links = [
-  { key: 'nav.home', href: '/', id: 'home' },
+  { key: 'redesign.navCourses', href: '/#courses', id: 'courses' },
+  { key: 'redesign.navTeachers', href: '/#teachers', id: 'teachers' },
+  { key: 'redesign.navEnrollment', href: '/#enrollment', id: 'enrollment' },
   ...(SHOW_BLOG_IN_NAV ? [{ key: 'nav.blog', href: '/blog', id: 'blog' }] : []),
-  { key: 'learn.apply', href: '/apply', id: 'apply' },
-  ...(SHOW_REVIEWS ? [{ key: 'nav.reviews', href: '/reviews', id: 'reviews' }] : []),
-  { key: 'nav.about', href: '/about', id: 'about' },
 ];
 ---
 <header class="bar">
@@ -22,7 +21,6 @@ const links = [
       <span class="logo-mark" aria-hidden="true">M</span>
       <span class="logo-type">
         MyanMate
-        <span class="tag" data-i18n="nav.logoTag">{t('nav.logoTag', defaultLang)}</span>
       </span>
     </a>
     <div class="grow"></div>
@@ -32,6 +30,7 @@ const links = [
       ))}
     </nav>
     <LangToggle />
+    <a class="btn pri header-apply" href="/apply"><span data-i18n="learn.apply">{t('learn.apply', defaultLang)}</span></a>
     <button
       class="ham"
       type="button"
@@ -48,5 +47,6 @@ const links = [
     {links.map((l) => (
       <a class:list={['nl', { active: active === l.id }]} href={l.href} data-i18n={l.key}>{t(l.key, defaultLang)}</a>
     ))}
+    <a class="btn pri" href="/apply"><span data-i18n="learn.apply">{t('learn.apply', defaultLang)}</span></a>
   </nav>
 </header>

@@ -1,0 +1,57 @@
+/* Movement follows a decision: arrive, compare, open, and continue. */
+:root {--mm-ease:cubic-bezier(.22,1,.36,1);}
+@view-transition {navigation:auto;}
+::view-transition-old(root) {animation:mm-page-out 160ms ease-out both;}
+::view-transition-new(root) {animation:mm-page-in 360ms var(--mm-ease) both;}
+.bar {view-transition-name:mm-navigation;}
+::view-transition-group(mm-navigation) {animation-duration:180ms;}
+::view-transition-old(mm-navigation),::view-transition-new(mm-navigation) {animation:none;mix-blend-mode:normal;}
+@keyframes mm-page-out {to{opacity:0;}}
+@keyframes mm-page-in {from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+
+.mm-study-scene {min-width:0;margin:0;}
+.mm-study-frame {aspect-ratio:3/2;overflow:hidden;border-radius:18px;background:var(--ph);}
+.mm-study-frame img {display:block;width:100%;height:100%;object-fit:cover;object-position:60% 50%;transform:translateY(var(--mm-image-y,0px)) scale(1.045);}
+.mm-study-scene figcaption {margin-top:10px;color:var(--ink-faint);font-size:11px;line-height:1.85;text-align:left;}
+.mm-practice-intro {display:flex;flex-direction:column;gap:22px;border-top:0!important;}
+.mm-practice-intro .mm-study-frame {border-radius:12px;}
+body.lang-my .mm-study-scene figcaption {font-size:11px;line-height:1.95;}
+
+body :is(.mm-home,.mm-speaking,.apply-page) .btn {
+ transition:transform 260ms var(--mm-ease),background 220ms ease,border-color 220ms ease;
+}
+:is(.mm-home,.mm-speaking,.apply-page) :is(.btn,.mm-text-link,.mm-card-link)>svg {
+ transition:transform 320ms var(--mm-ease);
+}
+:is(.mm-home,.mm-speaking,.apply-page) .btn:active {transform:scale(.98);}
+.mm-course-card {transition:transform 380ms var(--mm-ease),border-color 260ms ease,background 260ms ease;}
+.mm-faq .faq-toggle svg {transition:transform 320ms var(--mm-ease);}
+.mm-steps li {position:relative;}
+.mm-step-number {transition:color 240ms ease;}
+.mm-steps li::after {content:'';display:block;width:32px;height:2px;background:var(--brand);margin-top:18px;transform:scaleX(.2);transform-origin:left;transition:transform 650ms var(--mm-ease);opacity:.55;}
+.mm-steps li[data-mm-entered]::after {transform:scaleX(1);}
+.mm-speaking-learn article {transition:background 220ms ease;}
+@media(hover:hover) and (pointer:fine) {
+ :is(.mm-home,.mm-speaking,.apply-page) .btn:hover {transform:translateY(-2px);}
+ :is(.mm-home,.mm-speaking,.apply-page) :is(.btn,.mm-text-link):hover>svg,
+ .mm-course-card:hover .mm-card-link>svg {transform:translateX(5px);}
+ .mm-home .mm-browse:hover>svg {transform:translateY(4px);}
+ .mm-course-card:hover {transform:translateY(-5px);}
+ .mm-speaking-learn article:hover {background:var(--brand-tint);}
+}
+@media(max-width:760px) {
+ .mm-study-frame {border-radius:12px;}
+ .mm-study-hero .mm-study-frame {aspect-ratio:16/10;}
+ .mm-study-frame img {transform:scale(1.025);}
+ .mm-practice-intro {gap:18px;}
+ .mm-practice-intro .mm-study-frame {aspect-ratio:16/9;}
+ .mm-steps li::after {display:none;}
+}
+@media(prefers-reduced-motion:reduce) {
+ @view-transition {navigation:none;}
+ ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*) {animation:none!important;}
+ .mm-study-frame img {transform:none!important;}
+ :is(.mm-home,.mm-speaking,.apply-page) :is(.btn,.mm-text-link,.mm-card-link,.mm-course-card,.faq-toggle svg,.mm-speaking-learn article),
+ :is(.mm-home,.mm-speaking,.apply-page) :is(.btn,.mm-text-link,.mm-card-link)>svg {transition:none!important;transform:none!important;}
+ :is(.mm-home,.mm-speaking) .mm-steps li::after {transition:none!important;transform:none!important;}
+}

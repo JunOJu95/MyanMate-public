@@ -1,10 +1,16 @@
 ---
 import T from './T.astro';
+import LearningIcon from './LearningIcon.astro';
+import PhotoPlaceholder from './PhotoPlaceholder.astro';
 ---
-<section class="learn-section" id="teachers">
-  <T k="learn.teachers" tag="h2" />
-  <div class="teacher-grid">
-    <article class="teacher"><span class="teacher-monogram" aria-hidden="true">M</span><div><T k="learn.moeName" tag="h3" /><T k="learn.moeBio" tag="p" /></div></article>
-    <article class="teacher"><span class="teacher-monogram" aria-hidden="true">J</span><div><T k="learn.leeName" tag="h3" /><T k="learn.leeBio" tag="p" /></div></article>
+<section class="wrap mm-teachers" id="teachers">
+ <div class="mm-section-heading" data-mm-reveal><T k="learn.teachers" tag="h2" /><T k="redesign.teachersLead" tag="p" /></div>
+ <div class="mm-teacher-grid" data-mm-stagger>{['moe','jun'].map((teacher,i) => <article class="mm-teacher" data-mm-reveal>
+  <PhotoPlaceholder />
+  <div><T k={i===0 ? 'learn.moeName' : 'learn.leeName'} tag="h3" /><T k={`redesign.${teacher}Role`} tag="p" class="mm-teacher-role" />
+   <T k={`redesign.${teacher}Practice`} tag="p" class="mm-teacher-practice" />
+   <ul class="mm-teacher-facts">{i===0 && <li><T k="redesign.moeCredential" /></li>}<li><T k={`redesign.${teacher}Origin`} /></li>{i===1 && <li><T k="redesign.junCredential" /></li>}</ul>
   </div>
+ </article>)}</div>
+ <a class="mm-text-link mm-teacher-link" href="/courses/speaking#tracks"><T k="redesign.compareTracks" /><LearningIcon name="arrow" /></a>
 </section>

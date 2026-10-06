@@ -35,6 +35,7 @@ const blogAssets = {
 };
 
 export default defineConfig({
+  devToolbar: { enabled: false },
   // Real domain — used by sitemap + canonical URLs. www is the canonical host
   // (bare myanmate.com auto-redirects to www).
   site: 'https://www.myanmate.com',
