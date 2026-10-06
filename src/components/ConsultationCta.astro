@@ -1,0 +1,16 @@
+---
+import T from './T.astro';
+import LearningIcon from './LearningIcon.astro';
+interface Props { course?: string; variant?: 'lime' | 'violet' }
+const { course, variant = 'lime' } = Astro.props;
+---
+<section class:list={['mm-cta', variant]}>
+ <div class="wrap mm-cta-inner" data-mm-reveal>
+  <div><T k={variant === 'violet' ? 'redesign.speakingCta' : 'learn.blogCta'} tag="h2" />
+   <p><T k="redesign.reply" /> <span class="helper-divider" aria-hidden="true">·</span> <T k="redesign.private" /></p>
+  </div>
+  <div class="mm-cta-action"><a class="btn pri" href={course ? `/apply?course=${course}` : '/apply'}><T k="learn.apply" /><LearningIcon name="arrow" /></a>
+   {variant === 'violet' && <T k="redesign.noCommitment" tag="p" />}
+  </div>
+ </div>
+</section>

@@ -19,9 +19,7 @@ if (form) {
   function updateCourse() {
     const id = courseSelect.value;
     const known = isCourseId(id);
-    setText(selection.querySelector('h3')!, known ? `learn.${id}` : 'apply.unsure');
-    setText(selection.querySelector('.apply-selection-body')!, known ? `learn.${id}Body` : 'apply.unsureBody');
-    (selection.querySelector('.apply-selection-foot') as HTMLElement).hidden = !known;
+    selection.hidden = !known;
     if (known) {
       setText(selection.querySelector('[data-course-duration]')!, `course.${id}.duration`);
       (selection.querySelector('[data-course-link]') as HTMLAnchorElement).href = `/courses/${id}`;
@@ -85,6 +83,8 @@ if (form) {
     Object.assign(payload, {access_key:form.dataset.accessKey, subject:'MyanMate · Korean class application', from_name:'MyanMate', language:lang()});
     // Add readable course labels for the recipient while keeping stable field IDs.
     payload.course_title = t(isCourseId(courseSelect.value) ? `learn.${courseSelect.value}` : 'apply.unsure', 'ko');
+    const level = String(data.get('level'));
+    payload.level_title = t(level === 'unsure' ? 'apply.levelUnsure' : `apply.${level}`, 'ko');
     if (courseSelect.value === 'speaking') payload.track_title = t(trackSelect.value === 'moe' ? 'apply.trackMoe' : trackSelect.value === 'jun-ho' ? 'apply.trackJunHo' : 'apply.unsure', 'ko');
     try {
       const response = await fetch('https://api.web3forms.com/submit', {method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(20000)});

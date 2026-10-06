@@ -42,9 +42,16 @@ export function applyLang(input: string): void {
 
   document.querySelectorAll<HTMLElement>('.lang span').forEach((s) => {
     s.classList.toggle('on', s.getAttribute('data-l') === lang);
+    s.setAttribute('aria-pressed', String(s.getAttribute('data-l') === lang));
   });
 
   try { localStorage.setItem(STORAGE_KEY, lang); } catch { /* private mode */ }
+  // Only public UI copy is cached. The next full page can paint in the chosen
+  // language before its module loads and the browser takes a transition snapshot.
+  try {
+    const copy = Object.fromEntries(Object.entries(dict).map(([key,entry]) => [key,entry[lang] ?? entry.en]));
+    sessionStorage.setItem('mm-ui-copy-v1',JSON.stringify({lang,copy}));
+  } catch { /* storage restrictions leave the regular runtime in charge */ }
   document.dispatchEvent(new CustomEvent('mm:langchange', { detail: { lang } }));
 }
 
@@ -95,6 +102,17 @@ document.addEventListener('click', (e) => {
 
 // keyboard: Enter/Space on the language toggle spans
 document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const nav = document.getElementById('mobile-nav');
+    if (nav?.classList.contains('open')) {
+      nav.classList.remove('open');
+      document.querySelector('.bar')?.classList.remove('nav-open');
+      document.body.classList.remove('mobile-nav-open');
+      const toggle = document.querySelector<HTMLElement>('[data-nav-toggle]');
+      toggle?.setAttribute('aria-expanded', 'false');
+      toggle?.focus();
+    }
+  }
   if (e.key !== 'Enter' && e.key !== ' ') return;
   const span = (e.target as HTMLElement).closest('.lang span');
   if (span) {

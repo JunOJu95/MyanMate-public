@@ -1,0 +1,47 @@
+---
+import T from './T.astro';
+import LearningIcon from './LearningIcon.astro';
+import EnrollmentSteps from './EnrollmentSteps.astro';
+import LearningFaq from './LearningFaq.astro';
+import ConsultationCta from './ConsultationCta.astro';
+import PhotoPlaceholder from './PhotoPlaceholder.astro';
+import StudyScene from './StudyScene.astro';
+import { t } from '../i18n/ui';
+const tracks = [{id:'moe', name:'learn.moeName'}, {id:'jun-ho',name:'learn.leeName'}];
+---
+<div class="mm-speaking">
+ <div class="wrap">
+  <section class="mm-speaking-hero">
+   <div class="mm-speaking-copy" data-mm-reveal="intro">
+    <nav class="mm-breadcrumb" aria-label={t('course.breadcrumb')} data-i18n-aria="course.breadcrumb"><a href="/#courses"><T k="course.allCourses" /></a><span aria-hidden="true">/</span><T k="learn.speaking" /></nav>
+    <T k="learn.speaking" tag="h1" /><T k="redesign.speakingSubtitle" tag="p" class="mm-speaking-subtitle" />
+    <T k="course.speaking.intro" tag="p" class="mm-speaking-intro" />
+    <a class="btn pri mm-hero-button" href="/apply?course=speaking"><T k="learn.apply" /><LearningIcon name="arrow" /></a>
+    <p class="mm-hero-helper"><T k="redesign.reply" /><span class="helper-divider" aria-hidden="true">·</span><T k="redesign.private" /></p>
+   </div>
+   <aside class="mm-facts" data-mm-reveal data-mm-delay="100"><T k="apply.overview" tag="h2" /><dl>
+    {[['redesign.duration','course.speaking.duration'],['course.format','course.online'],['apply.fact3','apply.fact3Body']].map(([label,value]) => <div><T k={label} tag="dt" /><T k={value} tag="dd" /></div>)}
+   </dl></aside>
+  </section>
+ </div>
+ <section class="mm-tracks" id="tracks"><div class="wrap">
+  <div class="mm-section-heading" data-mm-reveal><T k="course.speaking.sectionTitle" tag="h2" /><T k="redesign.tracksLead" tag="p" /></div>
+  <div class="mm-track-grid" data-mm-stagger>{tracks.map((track,i) => <article class="mm-track-card" data-mm-reveal>
+   <div class="mm-track-heading"><PhotoPlaceholder /><div><T k={track.name} tag="h3" /><T k={i===0 ? 'redesign.moeTrackRole' : 'redesign.junRole'} tag="p" class="mm-track-role" />
+    <T k={i===0 ? 'redesign.moeCredential' : 'redesign.junOrigin'} tag="p" class="mm-track-credential" />
+   </div></div>
+   <dl><div><T k="course.whoFor" tag="dt" /><T k={i===0 ? 'redesign.moeFit' : 'redesign.junFit'} tag="dd" /></div>
+    <div><T k="redesign.trackLearn" tag="dt" /><T k={i===0 ? 'redesign.moeLearn' : 'redesign.junLearn'} tag="dd" /></div>
+   </dl>
+   {i===1 && <T k="redesign.junCredential" tag="p" class="mm-track-language" />}
+   <a class="btn" href={`/apply?course=speaking&track=${track.id}`}><T k={i===0 ? 'redesign.moeApply' : 'redesign.junApply'} /><LearningIcon name="arrow" /></a>
+  </article>)}</div>
+  <a class="mm-text-link mm-track-help" href="/apply?course=speaking"><T k="redesign.chooseLater" /><LearningIcon name="arrow" size={18} /></a>
+ </div></section>
+ <section class="wrap mm-speaking-learn"><div class="mm-practice-intro"><T k="redesign.whatLearn" tag="h2" /><StudyScene kind="practice" /></div><div data-mm-stagger>{[1,2,3].map(n => <article data-mm-reveal><span class="mm-practice-number" aria-hidden="true">0{n}</span><div><T k={`redesign.learn${n}`} tag="h3" /><T k={`redesign.learn${n}Body`} tag="p" /></div></article>)}</div></section>
+ <section class="wrap mm-ability" data-mm-reveal><T k="redesign.ability" tag="h2" /><T k="course.speaking.goal" tag="p" /></section>
+ <EnrollmentSteps compact course="speaking" />
+ <LearningFaq speaking />
+ <ConsultationCta variant="violet" course="speaking" />
+ <section class="wrap mm-more"><T k="course.otherCourses" tag="h2" /><div>{['hangul','topik','topik2'].map(course => <a class="mm-text-link" href={`/courses/${course}`}><T k={`learn.${course}`} /><LearningIcon name="arrow" size={20} /></a>)}</div></section>
+</div>

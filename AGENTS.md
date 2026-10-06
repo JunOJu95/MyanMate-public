@@ -9,9 +9,10 @@
 현재 핵심 흐름은 **수업 선택 → 상세 확인 → 신청 → 개별 상담**이다. 수강생 로그인과 온라인 결제는 사용하지 않는다. 기존 정보·서비스 관련 규칙은 블로그와 기존 정보 콘텐츠에 적용한다.
 
 기준 문서:
-- 사업 방향·합법 경계: [docs/사업기획서.md](docs/사업기획서.md) — 특히 **§7-1 합법/위험 경계 가이드라인**.
-- 화면별 카피(EN·KO·MY): [docs/MyanMate_카피시트_v1.md](docs/MyanMate_카피시트_v1.md) — **단, 앱 문구의 단일 소스는 `src/i18n/ui.ts`** (카피시트는 MY 감수 워크시트로만 참조).
-- 전달된 디자인 원본: [docs/design/](docs/design/) (`MyanMate-midfi.html`, `app.reference.js`).
+- 수업 운영 준비: [docs/한국어수업_오픈준비.md](docs/한국어수업_오픈준비.md).
+- 블로그 운영: [docs/블로그_운영가이드.md](docs/블로그_운영가이드.md).
+- 관리자 후기 관리: [docs/후기_운영가이드.md](docs/후기_운영가이드.md).
+- 앱 문구의 단일 소스는 `src/i18n/ui.ts`이며, 사업 경계는 아래 §1을 따른다.
 
 ---
 
@@ -38,7 +39,8 @@
 ## 2. 디자인·UX 원칙
 
 - **모바일 우선** 반응형. 타깃은 틱톡에서 링크 타고 폰으로 들어온다.
-- 디자인 시스템은 전달된 미드파이에서 추출한 **클레이 팔레트**(`--brand:#c0613a`) + 따뜻한 종이 배경(`#f1ece3`). 임의로 바꾸지 말 것.
+- 디자인 시스템은 **보라·라임 팔레트**(`--brand:#6a35e8`, 라임 `#ddfa71`) + 흰 배경(`#ffffff`). 2026-10-06 사용자가 승인한 수정 방향: 굵은 제목·반복 카드·장식 아이콘을 줄이고, 열린 강사 소개와 편안한 문구를 사용한다. 사진은 사용자가 제공할 때까지 빈 사진 영역으로 둔다. 신청서는 연락처 먼저, 수준은 '잘 모르겠어요'를 기본으로 둔다.
+- 2026-10-06 추가 승인: 생성한 학습 장면 이미지를 홈과 말하기 연습 소개에 사용할 수 있다. AI 이미지라는 설명을 표시하고 실제 강사·수강생·후기 사진으로 제시하지 않는다. Moe·Jun Ho의 프로필 영역은 실제 사진 제공 전까지 빈 영역을 유지한다. 화면 진입·선택·FAQ·페이지 이동에 부드러운 모션을 적용하되, reduced motion과 JS 없는 화면에서도 내용과 신청 기능을 사용할 수 있어야 한다.
 - 톤: **따뜻한 멘토** — "우리도 겪어봤고, 같이 걸어줄게."
 - 가볍게·빠르게. 거창하게 짓지 말 것 (웹 자체가 검증 도구).
 
@@ -67,7 +69,7 @@
 ### i18n (가장 중요)
 - **단일 소스 = `src/i18n/ui.ts`.** 사용자 노출 문자열을 컴포넌트/페이지에 **하드코딩 금지**. 항상 `t(key, lang)` 또는 `data-i18n="key"`.
 - **키 구조 보존**: `home.hero.headline`, `svc.visa.desc` 같은 `화면.요소` 평면 키 그대로. 전달된 app.js 키를 바꾸지 말 것.
-- **언어**: `en`(기본) · `ko` · `my`. **MY는 기계 초안** — 값만 나중에 교체, 키는 안정 유지.
+- **언어**: `my`(기본) · `ko` · `en`. **MY는 기계 초안** — 값만 나중에 교체, 키는 안정 유지.
 - 카피를 docs 카피시트와 **중복 저장하지 말 것** (단일 소스는 ui.ts).
 - 확장 대비: 지금은 즉시 토글(단일 URL)이지만, `t()`는 프레임워크 중립으로 두어 **나중에 언어별 URL(/ko, /my)·hreflang**로 확장이 국소적이게.
 
@@ -113,12 +115,14 @@ src/
   i18n/ui.ts          # ★ 단일 소스: dict{en,ko,my} + t() + languages/defaultLang
   lib/icons.ts        # SVG 아이콘 맵
   scripts/lang.ts     # 언어 토글 런타임(textContent + placeholder/aria)
-  styles/global.css   # 디자인 시스템(클레이 팔레트·폰트·컴포넌트)
-  content.config.ts   # content collections 스키마(guides/services/reviews)
-  components/          # Icon·LangToggle·TopBar·Footer(면책)·SeoHead·*Card·CtaBand·Disclaimer
+  styles/global.css   # 공통 화면·폰트·정보 콘텐츠 기본 스타일
+  styles/brand.css    # 흰 배경·보라색 브랜드와 공통 컴포넌트
+  styles/redesign.css # 수업 소개·상담 중심 화면
+  lib/content.ts      # Keystatic 콘텐츠 읽기와 정규화
+  content/            # 블로그·정보 콘텐츠·관리자 후기 원본
+  components/          # 수업·상담·정보 콘텐츠·관리자 후기 표시 컴포넌트
   layouts/Base.astro   # head(폰트·SEO)+TopBar+slot+Footer(면책)
   pages/               # 01 홈 ~ 08 소개 + privacy
-content/               # Keystatic 저장(guides/services/reviews)
 keystatic.config.ts    # CMS 스키마(언어별 필드, guides.lastReviewed)
-docs/design/           # 전달된 디자인 원본(추출 기준)
+docs/                  # 수업·블로그·후기 운영 안내
 ```

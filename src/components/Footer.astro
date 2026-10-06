@@ -38,7 +38,7 @@ const year = new Date().getFullYear();
   <div class="wrap">
     <div class="foot-layout">
       <div class="foot-copy">
-        <p class="foot-tag" data-i18n="footer.tagline">{t('footer.tagline', defaultLang)}</p>
+        <a class="logo foot-brand" href="/"><span class="logo-mark" aria-hidden="true">M</span><span>MyanMate</span></a>
         <nav class="foot-nav" aria-label={t('ui.nav.footer', defaultLang)} data-i18n-aria="ui.nav.footer">
           {links.map((l) => (
             <a href={l.href} data-i18n={l.key}>{t(l.key, defaultLang)}</a>

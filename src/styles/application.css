@@ -1,61 +1,71 @@
-.apply-page{padding-bottom:70px}
-.apply-intro{padding:52px 0 36px;border-bottom:1px solid var(--line-strong)}
-.apply-intro h1{margin:18px 0;font-size:clamp(34px,4.8vw,56px)}
-.apply-intro .learn-lead{max-width:720px;margin:0}
-.apply-reply{display:flex;align-items:center;gap:9px;margin:20px 0 0;color:var(--brand-strong);font-size:13px;font-weight:700}
-.apply-reply>span:first-child{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--brand-soft)}
-.apply-content{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,.8fr);gap:clamp(30px,5vw,66px);align-items:start;padding-top:36px}
-.apply-content .application-form{padding:32px;background:#faf7f0}
-.apply-content .apply-form-heading h2{font-size:24px;line-height:1.6}
-.apply-content .apply-form-heading p{margin-bottom:28px}
-.apply-group{margin:0 0 28px;padding:0;border:0;min-width:0}
-.apply-group legend{display:flex;align-items:center;gap:10px;width:100%;padding:0 0 16px;font-size:15px;font-weight:700}
-.apply-group legend>span:first-child{color:var(--brand-strong);font:11px var(--mono)}
-.apply-group+.apply-group{padding-top:24px;border-top:1px solid var(--line-strong)}
-.apply-content .apply-fields{gap:20px}
-.apply-content .apply-field input,.apply-content .apply-field select,.apply-content .apply-field textarea{font-size:16px;min-height:50px}
-.apply-selection{grid-column:1/-1;padding:18px 20px;border-left:2px solid var(--brand);background:var(--brand-tint)}
-.apply-selection-label{margin:0 0 6px;color:var(--brand-strong);font-size:11px;font-weight:700}
-.apply-selection h3{margin:0 0 6px;font-size:17px;line-height:1.6}
-.apply-selection-body{margin:0;color:var(--ink-soft);font-size:13px;line-height:1.85}
-.apply-selection-foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px;font-size:12px;color:var(--ink-soft)}
-.apply-selection-foot a{margin-left:auto;color:var(--brand-strong);font-weight:700;text-decoration:underline;text-underline-offset:4px}
-.apply-optional{padding:19px 0;border-block:1px solid var(--line-strong)}
-.apply-optional summary{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:14px;font-weight:700;cursor:pointer;list-style:none}
-.apply-optional summary::-webkit-details-marker{display:none}
-.apply-optional summary::after{content:'+';color:var(--brand-strong);font:22px var(--mono)}
-.apply-optional[open] summary::after{content:'−'}
-.apply-optional fieldset{border:0;padding:22px 0 0;margin:0;min-width:0}
-.apply-required{margin:20px 0 0;color:var(--ink-soft);font-size:11px}
-.apply-content .apply-consent{margin:14px 0 0;align-items:flex-start}
-.apply-consent input{width:17px;height:17px;accent-color:var(--brand-strong)}
-.apply-submit-note{font-size:12px;text-align:center;color:var(--ink-soft);margin:14px 0 0}
-.apply-content .apply-status{margin:20px 0 0;font-size:14px}
-.apply-status[data-state='success']{background:#edf3e9;border-left-color:#567448}
-.apply-status[data-state='error']{background:#fff0e9;border-left-color:var(--brand-strong)}
-.apply-support{padding:8px 0}
-.apply-support h2{font-size:20px;margin:0 0 22px;line-height:1.6}
-.apply-support ol{list-style:none;margin:0;padding:0}
-.apply-support li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:14px;padding:0 0 26px}
-.apply-support li>span{font:11px var(--mono);color:var(--brand-strong);padding-top:5px}
-.apply-support li p{font-size:14px;line-height:1.85;color:var(--ink-soft);margin:0}
-.apply-support-facts,.apply-support-contact{padding-top:26px;margin-top:8px;border-top:1px solid var(--line-strong)}
-.apply-support-facts h2,.apply-support-contact h2{font-size:16px;margin-bottom:14px}
-.apply-support-facts dl{margin:0}
-.apply-support-facts dl>div{display:flex;justify-content:space-between;gap:18px;font-size:13px;line-height:1.85;margin-top:12px}
-.apply-support-facts dt{color:var(--ink-soft)}
-.apply-support-facts dd{margin:0;text-align:right}
-.apply-email-link{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--brand-strong);font-size:14px;overflow-wrap:anywhere}
-.apply-messengers{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px;font-size:12px;color:var(--ink-soft)}
-.apply-messengers a{text-decoration:underline;text-underline-offset:4px}
-@media(max-width:760px){
-  .apply-page{padding-bottom:44px}
-  .apply-intro{padding:30px 0 25px}
-  .apply-intro .learn-lead{font-size:15px}
-  .apply-content{grid-template-columns:1fr;gap:34px;padding-top:24px}
-  .apply-content .application-form{padding:24px 18px}
-  .apply-content .apply-form-heading h2{font-size:21px}
-  .apply-selection{padding:16px}
-  .apply-support{padding:0 6px}
-  .apply-selection-foot a{margin-left:0;width:100%;margin-top:4px}
+/* Contact first: a short introduction, open form, and one-line course context. */
+.learning.apply-page {padding-bottom:56px;}
+.learning.apply-page .apply-intro {padding:42px 0 30px;border-bottom:1px solid var(--line);}
+.learning.apply-page .apply-intro h1 {margin:0;font-size:36px;font-weight:600;line-height:1.6;letter-spacing:-.8px;}
+.learning.apply-page .apply-intro .learn-lead {max-width:680px;margin:12px 0 0;font-size:16px;}
+.learning.apply-page .apply-reply {margin:12px 0 0;color:var(--brand);font-size:13px;font-weight:500;}
+.apply-content {display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,.8fr);gap:64px;align-items:start;padding-top:32px;}
+.learning.apply-page .apply-content #application-form {padding:0;border:0;background:#fff;border-radius:0;}
+.apply-group {margin:0 0 28px;padding:0;border:0;min-width:0;}
+.apply-group legend {width:100%;padding:0 0 20px;font-size:19px;font-weight:600;line-height:1.8;}
+.apply-group+.apply-group {padding-top:26px;border-top:1px solid var(--line);}
+.learning.apply-page .apply-fields {gap:18px 22px;}
+.learning.apply-page .apply-field {gap:7px;}
+.learning.apply-page .apply-field label {font-size:14px;font-weight:500;line-height:1.9;}
+.learning.apply-page .apply-field input,.learning.apply-page .apply-field select,.learning.apply-page .apply-field textarea {font-family:inherit;font-size:16px;line-height:1.8;min-height:52px;padding:10px 12px;border:1px solid var(--line-strong);background:#fff;border-radius:8px;}
+.learning.apply-page .apply-field textarea {min-height:110px;}
+.learning.apply-page .apply-field small {font-size:12px;line-height:1.9;}
+.learning.apply-page .apply-selection {padding:0;background:none;border:0;border-radius:0;margin-top:-8px;}
+.apply-selection-foot {display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--ink-soft);}
+.apply-selection-foot a {margin-left:auto;color:var(--brand);font-weight:500;text-decoration:underline;text-underline-offset:4px;}
+.apply-optional {padding:18px 0;border-block:1px solid var(--line);}
+.apply-optional summary {display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:14px;font-weight:500;line-height:1.9;cursor:pointer;list-style:none;}
+.apply-optional summary::-webkit-details-marker {display:none;}
+.apply-optional summary::after {content:'+';color:var(--brand);font:22px/1 system-ui,sans-serif;}
+.apply-optional[open] summary::after {content:'−';}
+.apply-optional fieldset {border:0;padding:20px 0 0;margin:0;min-width:0;}
+.apply-required {margin:18px 0 0;font-size:12px;color:var(--ink-soft);}
+.learning.apply-page .apply-consent {margin:14px 0 0;align-items:flex-start;font-size:13px;line-height:1.9;}
+.apply-consent input {width:18px;height:18px;accent-color:var(--brand);}
+.learning.apply-page .apply-privacy {font-size:12px;margin-top:10px;}
+.apply-submit-note {margin:14px 0 0;color:var(--ink-soft);font-size:12px;}
+.learning.apply-page .apply-status {margin:20px 0 0;font-size:14px;}
+.apply-status[data-state='success'] {background:#edf3e9;border-left-color:#567448;}
+.apply-status[data-state='error'] {background:#fff0e9;border-left-color:var(--brand);}
+.apply-support {padding:0 0 0 28px;border-left:1px solid var(--line);}
+.apply-support h2 {font-size:19px;font-weight:600;margin:0 0 20px;line-height:1.8;letter-spacing:0;}
+.apply-support ol {list-style:none;padding:0;margin:0;}
+.apply-support li {display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;padding-bottom:24px;}
+.apply-support li>span {font:500 13px/1.8 system-ui,sans-serif;color:var(--brand);padding-top:3px;}
+.learning.apply-page .apply-support li strong {font-size:14px;font-weight:500;line-height:1.85;}
+.learning.apply-page .apply-support li p {font-size:13px;line-height:1.95;color:var(--ink-soft);margin:6px 0 0;}
+.apply-support-facts,.apply-support-contact {padding-top:22px;margin-top:0;border-top:1px solid var(--line);}
+.apply-support-contact {margin-top:24px;}
+.apply-support-facts h2,.apply-support-contact h2 {font-size:15px;margin-bottom:12px;}
+.apply-support-facts dl {margin:0;}
+.apply-support-facts dl>div {display:flex;justify-content:space-between;gap:16px;font-size:12px;line-height:1.95;margin-top:12px;}
+.apply-support-facts dt {color:var(--ink-soft);}
+.apply-support-facts dd {margin:0;text-align:right;}
+.apply-email-link {display:flex;justify-content:space-between;gap:12px;color:var(--brand);font-size:14px;overflow-wrap:anywhere;}
+.apply-messengers {display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:var(--ink-soft);}
+.apply-messengers a {text-decoration:underline;text-underline-offset:4px;}
+body.lang-my .learning.apply-page .apply-intro h1 {font-size:28px;letter-spacing:0;line-height:1.8;}
+body.lang-my .apply-group legend {font-size:18px;}
+@media(max-width:760px) {
+ .learning.apply-page {padding-bottom:36px;}
+ .learning.apply-page .apply-intro {padding:28px 0 24px;}
+ .learning.apply-page .apply-intro h1 {font-size:28px;}
+ .learning.apply-page .apply-intro .learn-lead {font-size:15px;margin-top:12px;}
+ .learning.apply-page .apply-reply {font-size:12px;}
+ .apply-content {grid-template-columns:1fr;gap:36px;padding-top:24px;}
+ .apply-group legend {font-size:18px;padding-bottom:18px;}
+ .learning.apply-page .apply-fields {grid-template-columns:1fr;gap:16px;}
+ .apply-group+.apply-group {padding-top:24px;}
+ .apply-support {padding:26px 0 0;border-left:0;border-top:1px solid var(--line);}
+ .apply-selection-foot {font-size:12px;gap:6px;}
+ .apply-selection-foot a {font-size:12px;}
+ body.lang-my .learning.apply-page .apply-intro h1 {font-size:24px;}
+ body.lang-my .learning.apply-page .apply-field label {font-size:14px;}
+ body.lang-my .learning.apply-page .apply-field select {font-size:15px;}
+ body.lang-my .apply-selection-foot a {margin-left:0;}
 }

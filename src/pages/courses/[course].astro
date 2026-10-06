@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import T from '../../components/T.astro';
+import SpeakingDetail from '../../components/SpeakingDetail.astro';
+import '../../styles/redesign.css';
 import { t } from '../../i18n/ui';
 import { courseIds, type CourseId } from '../../config/courses';
 import '../../styles/learning.css';
@@ -16,7 +18,7 @@ const otherCourses = courseIds.filter((item) => item !== course);
 const topics = [1, 2, 3];
 ---
 <Base title={t(`learn.${course}`)} description={t(`course.${course}.intro`)} active="home" canonicalPath={`/courses/${course}`}>
-  <div class="wrap learning course-detail">
+  {course === 'speaking' ? <SpeakingDetail /> : <div class="wrap learning course-detail">
     <nav class="course-breadcrumb" aria-label={t('course.breadcrumb')} data-i18n-aria="course.breadcrumb">
       <a href="/#courses"><T k="course.allCourses" /></a>
       <span aria-hidden="true">/</span>
@@ -68,5 +70,5 @@ const topics = [1, 2, 3];
       <h2 id="course-more-heading"><T k="course.otherCourses" /></h2>
       <div>{otherCourses.map((item) => <a href={`/courses/${item}`}><T k={`learn.${item}`} /><span aria-hidden="true">↗</span></a>)}</div>
     </section>
-  </div>
+  </div>}
 </Base>

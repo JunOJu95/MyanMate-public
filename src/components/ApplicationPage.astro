@@ -7,42 +7,37 @@ import { courseIds } from '../config/courses';
 import { MESSENGER_URL, TELEGRAM_DM_URL } from '../config/launch';
 import '../styles/learning.css';
 import '../styles/application.css';
-const levels = ['beginner', 'reader', 'basic', 'conversation', 'independent'];
+const levels = ['unsure', 'beginner', 'reader', 'basic', 'conversation', 'independent'];
 ---
 <Base title={t('apply.title')} description={t('apply.lead')} active="apply">
   <div class="wrap learning apply-page">
-    <header class="apply-intro">
-      <T k="learn.kicker" tag="p" class="learn-eyebrow" />
+    <header class="apply-intro" data-mm-reveal="intro">
       <T k="apply.title" tag="h1" />
       <T k="apply.lead" tag="p" class="learn-lead" />
-      <p class="apply-reply"><span aria-hidden="true">↗</span><T k="apply.reply" /></p>
+      <T k="apply.reply" tag="p" class="apply-reply" />
     </header>
 
     <div class="apply-content">
-      <form id="application-form" class="application-form" data-access-key={applicationAccessKey}>
-        <div class="apply-form-heading"><T k="apply.formTitle" tag="h2" /><T k="apply.formLead" tag="p" /></div>
+      <form id="application-form" class="application-form" data-access-key={applicationAccessKey} aria-label={t('apply.title')} data-i18n-aria="apply.title">
         {!applicationAccessKey && <aside class="apply-preview-note"><T k="apply.preview" tag="p" /></aside>}
         <fieldset class="apply-group">
-          <legend><span aria-hidden="true">01</span><T k="apply.learningSection" /></legend>
+          <legend><T k="apply.contactSection" /></legend>
           <div class="apply-fields">
-            <div class="apply-field wide"><label for="course"><T k="apply.course" /></label><select id="course" name="course" required><option value="unsure" data-i18n="apply.unsure">{t('apply.unsure')}</option>{courseIds.map(id => <option value={id} data-i18n={`learn.${id}`}>{t(`learn.${id}`)}</option>)}</select></div>
-            <div id="selected-course" class="apply-selection wide">
-              <T k="apply.summary" tag="p" class="apply-selection-label" />
-              <T k="apply.unsure" tag="h3" />
-              <T k="apply.unsureBody" tag="p" class="apply-selection-body" />
-              <div class="apply-selection-foot" hidden><T k="course.online" /><span aria-hidden="true">·</span><span data-course-duration></span><a data-course-link href="/#courses"><T k="course.viewDetails" /><span aria-hidden="true"> ↗</span></a></div>
-            </div>
-            <div id="speaking-track-field" class="apply-field wide" hidden><label for="speaking-track"><T k="apply.track" /></label><select id="speaking-track" name="speaking_track" disabled><option value="unsure" data-i18n="apply.unsure">{t('apply.unsure')}</option><option value="moe" data-i18n="apply.trackMoe">{t('apply.trackMoe')}</option><option value="jun-ho" data-i18n="apply.trackJunHo">{t('apply.trackJunHo')}</option></select></div>
-            <div class="apply-field wide"><label for="level"><T k="apply.level" /></label><select id="level" name="level" required>{levels.map(id => <option value={id} data-i18n={`apply.${id}`}>{t(`apply.${id}`)}</option>)}</select></div>
+            <div class="apply-field"><label for="name"><T k="apply.name" /></label><input id="name" name="name" autocomplete="name" required maxlength="100" /></div>
+            <div class="apply-field"><label for="channel"><T k="apply.channel" /></label><select id="channel" name="channel" required>{['phone','email'].map(id => <option value={id} data-i18n={`apply.${id}`}>{t(`apply.${id}`)}</option>)}</select></div>
+            <div class="apply-field"><label for="contact"><T k="apply.contact" /></label><input id="contact" name="contact" type="tel" inputmode="tel" autocomplete="tel" required maxlength="250" aria-describedby="contact-help" /><small id="contact-help"><T k="apply.phoneHelp" /></small></div>
+            <div class="apply-field"><label for="country"><T k="apply.country" /></label><select id="country" name="country" required>{['myanmar','korea','other'].map(id => <option value={id} data-i18n={`apply.${id}`}>{t(`apply.${id}`)}</option>)}</select></div>
           </div>
         </fieldset>
         <fieldset class="apply-group">
-          <legend><span aria-hidden="true">02</span><T k="apply.contactSection" /></legend>
+          <legend><T k="apply.learningSection" /></legend>
           <div class="apply-fields">
-            <div class="apply-field"><label for="name"><T k="apply.name" /></label><input id="name" name="name" autocomplete="name" required maxlength="100" /></div>
-            <div class="apply-field"><label for="country"><T k="apply.country" /></label><select id="country" name="country" required>{['myanmar','korea','other'].map(id => <option value={id} data-i18n={`apply.${id}`}>{t(`apply.${id}`)}</option>)}</select></div>
-            <div class="apply-field wide"><label for="channel"><T k="apply.channel" /></label><select id="channel" name="channel" required>{['phone','email'].map(id => <option value={id} data-i18n={`apply.${id}`}>{t(`apply.${id}`)}</option>)}</select></div>
-            <div class="apply-field wide"><label for="contact"><T k="apply.contact" /></label><input id="contact" name="contact" type="tel" inputmode="tel" autocomplete="tel" required maxlength="250" aria-describedby="contact-help" /><small id="contact-help"><T k="apply.phoneHelp" /></small></div>
+            <div class="apply-field wide"><label for="course"><T k="apply.course" /></label><select id="course" name="course" required><option value="unsure" data-i18n="apply.unsure">{t('apply.unsure')}</option>{courseIds.map(id => <option value={id} data-i18n={`learn.${id}`}>{t(`learn.${id}`)}</option>)}</select></div>
+            <div id="selected-course" class="apply-selection wide">
+              <div class="apply-selection-foot"><T k="course.online" /><span aria-hidden="true">·</span><span data-course-duration></span><a data-course-link href="/#courses"><T k="course.viewDetails" /></a></div>
+            </div>
+            <div id="speaking-track-field" class="apply-field wide" hidden><label for="speaking-track"><T k="apply.track" /></label><select id="speaking-track" name="speaking_track" disabled><option value="unsure" data-i18n="apply.unsure">{t('apply.unsure')}</option><option value="moe" data-i18n="apply.trackMoe">{t('apply.trackMoe')}</option><option value="jun-ho" data-i18n="apply.trackJunHo">{t('apply.trackJunHo')}</option></select></div>
+            <div class="apply-field wide"><label for="level"><T k="apply.level" /></label><select id="level" name="level" required>{levels.map(id => <option value={id} data-i18n={id === 'unsure' ? 'apply.levelUnsure' : `apply.${id}`}>{t(id === 'unsure' ? 'apply.levelUnsure' : `apply.${id}`)}</option>)}</select></div>
           </div>
         </fieldset>
         <details class="apply-optional">
@@ -55,6 +50,7 @@ const levels = ['beginner', 'reader', 'basic', 'conversation', 'independent'];
         <input type="checkbox" name="botcheck" tabindex="-1" hidden />
         <p class="apply-required"><T k="apply.requiredNote" /></p>
         <label class="apply-consent"><input type="checkbox" name="consent" required /><T k="apply.consent" /></label>
+        <a class="apply-privacy" href="/privacy"><T k="nav.privacy" /></a>
         <button type="submit" class="btn pri full" disabled><T k={applicationAccessKey ? 'apply.submit' : 'apply.paused'} /></button>
         <T k="learn.faq3Body" tag="p" class="apply-submit-note" />
         <p id="apply-status" class="apply-status" role="status" aria-live="polite" tabindex="-1" hidden></p>
@@ -62,7 +58,7 @@ const levels = ['beginner', 'reader', 'basic', 'conversation', 'independent'];
       </form>
       <aside class="apply-support">
         <T k="apply.afterTitle" tag="h2" />
-        <ol>{[1,2,3].map(n => <li><span aria-hidden="true">0{n}</span><T k={`apply.after${n}`} tag="p" /></li>)}</ol>
+        <ol>{[2,3,4].map(n => <li><span aria-hidden="true">0{n-1}</span><div><T k={`learn.step${n}`} tag="strong" /><T k={`learn.step${n}Body`} tag="p" /></div></li>)}</ol>
         <div class="apply-support-facts"><T k="apply.overview" tag="h2" /><dl>{[1,3].map(n => <div><T k={`apply.fact${n}`} tag="dt" /><T k={`apply.fact${n}Body`} tag="dd" /></div>)}</dl></div>
         <div class="apply-support-contact"><T k="apply.direct" tag="h2" /><a class="apply-email-link" href={`mailto:${applicationEmail}`}>{applicationEmail}<span aria-hidden="true">↗</span></a><div class="apply-messengers"><a href={TELEGRAM_DM_URL} target="_blank" rel="noopener noreferrer"><T k="apply.telegram" /></a><a href={MESSENGER_URL} target="_blank" rel="noopener noreferrer"><T k="apply.facebook" /></a></div></div>
       </aside>
