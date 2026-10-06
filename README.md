@@ -1,10 +1,11 @@
 # MyanMate
 
-한국에 정착하는 미얀마인을 돕는 **정보 허브 + 서비스 안내** 모바일 우선 웹 (1단계 MVP).
-Mobile-first info hub + service guide for Myanmar people settling in Korea.
+미얀마인을 위한 **온라인 한국어 수업 안내·상담 신청** 모바일 우선 웹. 블로그는 한국어 공부와 한국 생활 정보를 제공합니다.
+Mobile-first online Korean course discovery and consultation for Myanmar learners, with a supporting learning and life-in-Korea blog.
 
 - **Stack**: Astro 6 (SSG) · Keystatic (Git 기반 CMS) · 평면 i18n 사전(EN·KO·MY) · 무JS 위주
-- 사업 원칙: 정보 제공·동행 자문만 제공하며, 대행·대리·중개·알선은 하지 않습니다.
+- 수강 흐름: 수업 선택 → 상세 확인 → 상담 신청 → 수준·일정·수강료 조율 → 결제 → 수강 확정. 학생 로그인과 공개 결제 화면은 사용하지 않습니다.
+- 블로그·정보 콘텐츠 운영 원칙: 정보 제공·동행 자문만 제공하며, 대행·대리·중개·알선은 하지 않습니다.
 
 ## 실행 (Commands)
 
@@ -34,7 +35,7 @@ npm run preview  # 빌드 미리보기
 
 - **단일 소스 = [`src/i18n/ui.ts`](src/i18n/ui.ts)**. 여기 값만 고치면 전체 화면에 반영됩니다.
 - **미얀마어(MY)는 기계 초안** → 네이티브 감수 후 값만 교체(키는 고정). 면책·법적 문구 우선 검수.
-- 3개 언어는 우측 상단 토글(EN·MM·KO)로 즉시 전환(새로고침 없음, 기본 EN).
+- 3개 언어는 우측 상단 토글(MM·KO·EN)로 즉시 전환(새로고침 없음, 기본 MY).
 
 ## 꼭 지킬 것 (사업 원칙)
 

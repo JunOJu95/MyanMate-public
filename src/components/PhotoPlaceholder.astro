@@ -1,9 +1,7 @@
 ---
 import T from './T.astro';
-interface Props { kind?: 'class' | 'portrait'; class?: string }
-const { kind = 'portrait', class: className } = Astro.props;
 // A deliberately empty frame. Replace with supplied media, never invented people.
 ---
-<div class:list={['mm-photo', `mm-photo-${kind}`, className]}>
-  <T k={kind === 'class' ? 'redesign.classPhotoPending' : 'redesign.photoPending'} />
+<div class="mm-photo mm-photo-portrait">
+  <T k="redesign.photoPending" />
 </div>

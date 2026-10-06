@@ -9,9 +9,10 @@
 현재 핵심 흐름은 **수업 선택 → 상세 확인 → 신청 → 개별 상담**이다. 수강생 로그인과 온라인 결제는 사용하지 않는다. 기존 정보·서비스 관련 규칙은 블로그와 기존 정보 콘텐츠에 적용한다.
 
 기준 문서:
-- 사업 방향·합법 경계: [docs/사업기획서.md](docs/사업기획서.md) — 특히 **§7-1 합법/위험 경계 가이드라인**.
-- 화면별 카피(EN·KO·MY): [docs/MyanMate_카피시트_v1.md](docs/MyanMate_카피시트_v1.md) — **단, 앱 문구의 단일 소스는 `src/i18n/ui.ts`** (카피시트는 MY 감수 워크시트로만 참조).
-- 전달된 디자인 원본: [docs/design/](docs/design/) (`MyanMate-midfi.html`, `app.reference.js`).
+- 수업 운영 준비: [docs/한국어수업_오픈준비.md](docs/한국어수업_오픈준비.md).
+- 블로그 운영: [docs/블로그_운영가이드.md](docs/블로그_운영가이드.md).
+- 관리자 후기 관리: [docs/후기_운영가이드.md](docs/후기_운영가이드.md).
+- 앱 문구의 단일 소스는 `src/i18n/ui.ts`이며, 사업 경계는 아래 §1을 따른다.
 
 ---
 
@@ -114,12 +115,14 @@ src/
   i18n/ui.ts          # ★ 단일 소스: dict{en,ko,my} + t() + languages/defaultLang
   lib/icons.ts        # SVG 아이콘 맵
   scripts/lang.ts     # 언어 토글 런타임(textContent + placeholder/aria)
-  styles/global.css   # 디자인 시스템(클레이 팔레트·폰트·컴포넌트)
-  content.config.ts   # content collections 스키마(guides/services/reviews)
-  components/          # Icon·LangToggle·TopBar·Footer(면책)·SeoHead·*Card·CtaBand·Disclaimer
+  styles/global.css   # 공통 화면·폰트·정보 콘텐츠 기본 스타일
+  styles/brand.css    # 흰 배경·보라색 브랜드와 공통 컴포넌트
+  styles/redesign.css # 수업 소개·상담 중심 화면
+  lib/content.ts      # Keystatic 콘텐츠 읽기와 정규화
+  content/            # 블로그·정보 콘텐츠·관리자 후기 원본
+  components/          # 수업·상담·정보 콘텐츠·관리자 후기 표시 컴포넌트
   layouts/Base.astro   # head(폰트·SEO)+TopBar+slot+Footer(면책)
   pages/               # 01 홈 ~ 08 소개 + privacy
-content/               # Keystatic 저장(guides/services/reviews)
 keystatic.config.ts    # CMS 스키마(언어별 필드, guides.lastReviewed)
-docs/design/           # 전달된 디자인 원본(추출 기준)
+docs/                  # 수업·블로그·후기 운영 안내
 ```
