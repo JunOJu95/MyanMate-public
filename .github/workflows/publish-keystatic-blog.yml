@@ -18,13 +18,14 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       contains_reviews: ${{ steps.content.outputs.contains_reviews }}
+      contains_ui_copy: ${{ steps.content.outputs.contains_ui_copy }}
     steps:
       - name: Check out the Keystatic branch
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Allow blog and review content files only
+      - name: Allow blog, review and Myanmar copy content files only
         id: content
         shell: bash
         run: |
@@ -38,18 +39,21 @@ jobs:
 
           invalid_files=()
           contains_reviews=false
+          contains_ui_copy=false
           for file in "${changed_files[@]}"; do
             case "$file" in
               src/content/posts/*|src/content/blog-media/*) ;;
               src/content/reviews/*) contains_reviews=true ;;
+              src/content/ui-copy/*.json) contains_ui_copy=true ;;
               *) invalid_files+=("$file") ;;
             esac
           done
 
           echo "contains_reviews=$contains_reviews" >> "$GITHUB_OUTPUT"
+          echo "contains_ui_copy=$contains_ui_copy" >> "$GITHUB_OUTPUT"
 
           if (( ${#invalid_files[@]} > 0 )); then
-            echo "Keystatic publishing only accepts blog and review content files:"
+            echo "Keystatic publishing only accepts blog, review and Myanmar copy content files:"
             printf '  %s\n' "${invalid_files[@]}"
             exit 1
           fi
@@ -72,7 +76,9 @@ jobs:
         run: npm ci
 
       - name: Build the site
-        run: npm run build
+        run: |
+          npm run i18n:check
+          npm run build
 
   publish:
     needs: validate
@@ -94,7 +100,10 @@ jobs:
 
           if [[ -z "$pr_url" ]]; then
             article_name="${GITHUB_REF_NAME#keystatic/}"
-            if [[ "${{ needs.validate.outputs.contains_reviews }}" == "true" ]]; then
+            if [[ "${{ needs.validate.outputs.contains_ui_copy }}" == "true" ]]; then
+              pr_title="Review Myanmar website wording: $article_name"
+              pr_body="Myanmar website wording changes require a manual review before publishing. Check course conditions, privacy/consent/disclaimer meaning, and mobile wrapping. If student reviews are also changed, verify their publication consent before merging."
+            elif [[ "${{ needs.validate.outputs.contains_reviews }}" == "true" ]]; then
               pr_title="Review Korean class testimonials: $article_name"
               pr_body="Korean class review changes need a manual check against the student's Google Form publication consent before merging. Private feedback and application names must stay out of public content."
             else
@@ -112,7 +121,7 @@ jobs:
           echo "url=$pr_url" >> "$GITHUB_OUTPUT"
 
       - name: Squash merge and publish
-        if: needs.validate.outputs.contains_reviews == 'false'
+        if: needs.validate.outputs.contains_reviews == 'false' && needs.validate.outputs.contains_ui_copy == 'false'
         env:
           GH_TOKEN: ${{ github.token }}
           PR_URL: ${{ steps.pull-request.outputs.url }}

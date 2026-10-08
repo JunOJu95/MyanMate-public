@@ -1,0 +1,264 @@
+{
+  "translations": {
+    "learn.courses": {
+      "value": "ဘယ်ကနေ စသင်ချင်ပါသလဲ။",
+      "reviewed": false
+    },
+    "learn.courseLead": {
+      "value": "ဟန်ဂုလ်မှ စာမေးပွဲပြင်ဆင်မှု၊ စကားပြောအထိ။ သင်တန်းတစ်ခုချင်းစီကို အသေးစိတ်ကြည့်ပါ။",
+      "reviewed": false
+    },
+    "learn.hangul": {
+      "value": "ဟန်ဂုလ်နှင့် ကိုရီးယားစာအခြေခံ",
+      "reviewed": false
+    },
+    "learn.hangulBody": {
+      "value": "အစမှ တစ်ဆင့်ချင်းသင်ပြီး စကားလုံးများကို ပေါင်းစပ်၍ ရိုးရှင်းသောဝါကျများ ဖွဲ့ပြီး ပြောပါ။",
+      "reviewed": false
+    },
+    "learn.topik": {
+      "value": "TOPIK I",
+      "reviewed": false
+    },
+    "learn.topikBody": {
+      "value": "ကိုရီးယားစာအခြေခံကို လေ့လာပြီး မေးခွန်းဟောင်းများနှင့် စမ်းသပ်စာမေးပွဲများဖြင့် ဖြေဆိုလေ့ကျင့်ပါ။",
+      "reviewed": false
+    },
+    "learn.topik2": {
+      "value": "TOPIK II",
+      "reviewed": false
+    },
+    "learn.topik2Body": {
+      "value": "ဖတ်ခြင်းနှင့် ရေးခြင်းကို လေ့လာပြီး ရည်မှန်းထားသောအဆင့်အလိုက် မေးခွန်းဟောင်းများနှင့် စမ်းသပ်စာမေးပွဲများကို လေ့ကျင့်ပါ။",
+      "reviewed": false
+    },
+    "course.viewDetails": {
+      "value": "သင်တန်းအသေးစိတ်ကြည့်ရန်",
+      "reviewed": false
+    },
+    "course.breadcrumb": {
+      "value": "လက်ရှိတည်နေရာ",
+      "reviewed": false
+    },
+    "course.allCourses": {
+      "value": "သင်တန်းများ",
+      "reviewed": false
+    },
+    "course.atGlance": {
+      "value": "သင်တန်းအကျဉ်းချုပ်",
+      "reviewed": false
+    },
+    "course.duration": {
+      "value": "သင်တန်းကာလ",
+      "reviewed": false
+    },
+    "course.format": {
+      "value": "သင်ကြားမှုပုံစံ",
+      "reviewed": false
+    },
+    "course.online": {
+      "value": "အွန်လိုင်း",
+      "reviewed": false
+    },
+    "course.schedule": {
+      "value": "အချိန်နှင့် သင်တန်းကြေး",
+      "reviewed": false
+    },
+    "course.scheduleBody": {
+      "value": "လျှောက်ထားပြီးနောက် တစ်ဦးချင်း ဆွေးနွေးပါမယ်",
+      "reviewed": false
+    },
+    "course.whatYouLearn": {
+      "value": "သင်ယူမည့်အကြောင်းအရာ",
+      "reviewed": false
+    },
+    "course.whoFor": {
+      "value": "ဒီလိုလူများအတွက် သင့်တော်ပါတယ်",
+      "reviewed": false
+    },
+    "course.goal": {
+      "value": "သင်ယူမှုရည်မှန်းချက်",
+      "reviewed": false
+    },
+    "course.nextStep": {
+      "value": "ဤသင်တန်းကို စိတ်ဝင်စားပါသလား။",
+      "reviewed": false
+    },
+    "course.nextStepBody": {
+      "value": "လက်ရှိအဆင့်ကို ဖော်ပြပြီး လျှောက်ထားပါ။ သင်တန်း၊ အချိန်နှင့် သင်တန်းကြေးကို တစ်ဦးချင်း ဆက်သွယ်ဆွေးနွေးပါမယ်။",
+      "reviewed": false
+    },
+    "course.otherCourses": {
+      "value": "အခြားသင်တန်းများကြည့်ရန်",
+      "reviewed": false
+    },
+    "course.hangul.intro": {
+      "value": "ကိုရီးယားစာကို ပထမဆုံး သင်ယူသူများအတွက် ၈ ပတ်ခန့် သင်တန်းဖြစ်ပါတယ်။ ဟန်ဂုလ်ဖတ်ခြင်းမှ စကားလုံးများ ပေါင်းစပ်၍ ရိုးရှင်းသောဝါကျများ ဖွဲ့ကာ ပြောခြင်းအထိ တစ်ဆင့်ချင်း သင်ယူပါ။",
+      "reviewed": false
+    },
+    "course.hangul.duration": {
+      "value": "၈ ပတ်ခန့်",
+      "reviewed": false
+    },
+    "course.hangul.topic1": {
+      "value": "ဟန်ဂုလ်မှ စတင်ပါ",
+      "reviewed": false
+    },
+    "course.hangul.topic1Body": {
+      "value": "ကိုရီးယားစာ မသင်ဖူးသေးလည်း ဟန်ဂုလ်ဖတ်ခြင်းမှ စတင်ပါတယ်။",
+      "reviewed": false
+    },
+    "course.hangul.topic2": {
+      "value": "စကားလုံးများ ပေါင်းစပ်ပါ",
+      "reviewed": false
+    },
+    "course.hangul.topic2Body": {
+      "value": "စကားလုံးများကို ပေါင်းစပ်၍ ရိုးရှင်းသော ကိုရီးယားဝါကျများ ဖွဲ့ရန် အခြေခံကို လေ့လာပါ။",
+      "reviewed": false
+    },
+    "course.hangul.topic3": {
+      "value": "ကိုယ်ဖွဲ့ထားသော ဝါကျများကို ပြောပါ",
+      "reviewed": false
+    },
+    "course.hangul.topic3Body": {
+      "value": "ဖတ်ရုံသာမက သင်ယူထားသော စကားလုံးများဖြင့် ဝါကျဖွဲ့ကာ ကိုယ်တိုင် ပြောရန် လေ့ကျင့်ပါ။",
+      "reviewed": false
+    },
+    "course.hangul.whoFor": {
+      "value": "ကိုရီးယားစာကို ပထမဆုံး သင်ယူသူများနှင့် ဟန်ဂုလ်မှ အခြေခံကို ပြန်လည်လေ့လာလိုသူများအတွက် သင့်တော်ပါတယ်။",
+      "reviewed": false
+    },
+    "course.hangul.goal": {
+      "value": "စကားလုံးများ ပေါင်းစပ်ပြီး ကိုရီးယားဝါကျများ ဖွဲ့၍ ပြောနိုင်မည့် အခြေခံကို တည်ဆောက်ပါ။",
+      "reviewed": false
+    },
+    "course.topik.intro": {
+      "value": "ကိုရီးယားစာ အခြေခံကို သင်ယူပြီး TOPIK I အဆင့် ၁–၂ ကို ပြင်ဆင်သူများအတွက် သင်တန်းဖြစ်ပါတယ်။ အခြေခံကို ပြန်လည်လေ့လာကာ မေးခွန်းဟောင်းနှင့် စမ်းသပ်စာမေးပွဲများ ဖြေဆို၍ မေးခွန်းဖြေရှင်းနိုင်စွမ်းကို မြှင့်တင်ပါ။",
+      "reviewed": false
+    },
+    "course.topik.duration": {
+      "value": "၈ ပတ်အထိ",
+      "reviewed": false
+    },
+    "course.topik.topic1": {
+      "value": "ဖတ်ခြင်းနှင့် အခြေခံရေးခြင်းကို လေ့လာပါ",
+      "reviewed": false
+    },
+    "course.topik.topic1Body": {
+      "value": "စာမေးပွဲမေးခွန်း လေ့ကျင့်မှုမတိုင်မီ ဖတ်ခြင်းနှင့် အခြေခံရေးခြင်းကို လေ့လာပါ။",
+      "reviewed": false
+    },
+    "course.topik.topic2": {
+      "value": "မေးခွန်းဟောင်းနှင့် စမ်းသပ်စာမေးပွဲများ လေ့ကျင့်ပါ",
+      "reviewed": false
+    },
+    "course.topik.topic2Body": {
+      "value": "မေးခွန်းဟောင်းများနှင့် စမ်းသပ်စာမေးပွဲများဖြင့် TOPIK I မေးခွန်းများကို လေ့ကျင့်ပါ။",
+      "reviewed": false
+    },
+    "course.topik.topic3": {
+      "value": "မေးခွန်းဖြေရှင်းနည်းကို လေ့လာပါ",
+      "reviewed": false
+    },
+    "course.topik.topic3Body": {
+      "value": "မေးခွန်းများကို ဘယ်လိုဖြေရှင်းရမည်ကို လေ့လာပြီး ကိုယ်တိုင်ဖြေဆိုနိုင်စွမ်းကို တိုးတက်စေပါ။",
+      "reviewed": false
+    },
+    "course.topik.whoFor": {
+      "value": "ကိုရီးယားစာ အခြေခံကို သင်ယူပြီး ယခု TOPIK I အဆင့် ၁–၂ စာမေးပွဲကို ပြင်ဆင်လိုသူများအတွက် သင့်တော်ပါတယ်။",
+      "reviewed": false
+    },
+    "course.topik.goal": {
+      "value": "TOPIK I မေးခွန်းများကို နားလည်ပြီး ဖြေရှင်းနိုင်စွမ်း တိုးတက်စေပါ။",
+      "reviewed": false
+    },
+    "course.topik2.intro": {
+      "value": "TOPIK II အဆင့် ၃–၆ ကို ရည်မှန်းသူများအတွက် အွန်လိုင်းသင်တန်းဖြစ်ပါတယ်။ ဖတ်ခြင်းနှင့် အခြေခံရေးခြင်းကို လေ့လာပြီး မေးခွန်းဟောင်းများ၊ စမ်းသပ်စာမေးပွဲများဖြင့် မေးခွန်းဖြေရှင်းနည်းကို လေ့ကျင့်ပါ။",
+      "reviewed": false
+    },
+    "course.topik2.duration": {
+      "value": "၈ ပတ်အထိ",
+      "reviewed": false
+    },
+    "course.topik2.topic1": {
+      "value": "ဖတ်ခြင်းနှင့် အခြေခံရေးခြင်းကို လေ့လာပါ",
+      "reviewed": false
+    },
+    "course.topik2.topic1Body": {
+      "value": "လက်ရှိအဆင့်နှင့် ရည်မှန်းထားသော TOPIK II အဆင့်အလိုက် ဖတ်ခြင်း၊ ရေးခြင်း အခြေခံကို လေ့လာပါ။",
+      "reviewed": false
+    },
+    "course.topik2.topic2": {
+      "value": "မေးခွန်းဟောင်းနှင့် စမ်းသပ်စာမေးပွဲများ လေ့ကျင့်ပါ",
+      "reviewed": false
+    },
+    "course.topik2.topic2Body": {
+      "value": "TOPIK II မေးခွန်းဟောင်းများနှင့် စမ်းသပ်စာမေးပွဲများကို ဖြေဆို၍ စာမေးပွဲမေးခွန်းများနှင့် ရင်းနှီးလာပါ။",
+      "reviewed": false
+    },
+    "course.topik2.topic3": {
+      "value": "မေးခွန်းဖြေရှင်းနည်းကို လေ့လာပါ",
+      "reviewed": false
+    },
+    "course.topik2.topic3Body": {
+      "value": "မေးခွန်းဖြေရှင်းနည်းကို လေ့လာပြီး ရည်မှန်းထားသောအဆင့်အလိုက် ကိုယ်တိုင်ဖြေဆိုနိုင်စွမ်းကို တိုးတက်စေပါ။",
+      "reviewed": false
+    },
+    "course.topik2.whoFor": {
+      "value": "ကိုရီးယားစာ အခြေခံကို သင်ယူပြီး TOPIK II အဆင့် ၃–၆ ကို ပြင်ဆင်လိုသူများအတွက် သင့်တော်ပါတယ်။ ရည်မှန်းချက်နှင့် သင်ယူမှုအစီအစဉ်ကို တစ်ဦးချင်း ဆွေးနွေးပါမယ်။",
+      "reviewed": false
+    },
+    "course.topik2.goal": {
+      "value": "ရည်မှန်းထားသောအဆင့်အလိုက် TOPIK II မေးခွန်းများကို နားလည်ပြီး ဖြေရှင်းနိုင်စွမ်း တိုးတက်စေပါ။",
+      "reviewed": false
+    },
+    "course.hangul.audience": {
+      "value": "အစမှသင်ယူသူ",
+      "reviewed": false
+    },
+    "course.topik.audience": {
+      "value": "အဆင့် ၁–၂ ပြင်ဆင်သူ",
+      "reviewed": false
+    },
+    "course.topik2.audience": {
+      "value": "အဆင့် ၃–၆ ပြင်ဆင်သူ",
+      "reviewed": false
+    },
+    "course.trackApply": {
+      "value": "ဤသင်တန်းမျိုး လျှောက်ရန်",
+      "reviewed": false
+    },
+    "redesign.level": {
+      "value": "အဆင့်",
+      "reviewed": false
+    },
+    "redesign.duration": {
+      "value": "ကာလ",
+      "reviewed": false
+    },
+    "redesign.goal": {
+      "value": "ရည်မှန်းချက်",
+      "reviewed": false
+    },
+    "redesign.hangulGoal": {
+      "value": "ဟန်ဂုလ်ဖတ်ပြီး ရိုးရှင်းသောဝါကျများ ဖွဲ့ရန်",
+      "reviewed": false
+    },
+    "redesign.topikGoal": {
+      "value": "အခြေခံနှင့် မေးခွန်းဖြေဆို လေ့ကျင့်ရန်",
+      "reviewed": false
+    },
+    "redesign.topik2Goal": {
+      "value": "ဖတ်ခြင်း၊ ရေးခြင်းနှင့် ရည်မှန်းထားသောအဆင့် ပြင်ဆင်ရန်",
+      "reviewed": false
+    },
+    "redesign.shortHangul": {
+      "value": "ဟန်ဂုလ်",
+      "reviewed": false
+    },
+    "redesign.shortSpeaking": {
+      "value": "စကားပြော",
+      "reviewed": false
+    }
+  }
+}

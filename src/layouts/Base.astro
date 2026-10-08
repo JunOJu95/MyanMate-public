@@ -7,7 +7,7 @@ import Analytics from '@vercel/analytics/astro';
 import SeoHead from '../components/SeoHead.astro';
 import TopBar from '../components/TopBar.astro';
 import Footer from '../components/Footer.astro';
-import { defaultLang, t } from '../i18n/ui';
+import { defaultLang, t, uiRevision } from '../i18n/ui';
 
 interface Props {
   title: string;
@@ -117,12 +117,12 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
       <slot />
     </main>
     <Footer />
-    <script is:inline>
+    <script is:inline define:vars={{ uiRevision }}>
       // Reuse public copy from the preceding page; never cache form values.
       try {
         const lang = localStorage.getItem('mm-lang-v2');
         const cached = JSON.parse(sessionStorage.getItem('mm-ui-copy-v1') || 'null');
-        if (cached && cached.lang === lang && ['my','ko','en'].includes(lang)) {
+        if (cached && cached.revision === uiRevision && cached.lang === lang && ['my','ko','en'].includes(lang)) {
           document.documentElement.lang = lang;
           document.body.classList.remove('lang-my','lang-ko','lang-en');
           document.body.classList.add('lang-' + lang);

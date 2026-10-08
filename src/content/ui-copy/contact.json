@@ -1,0 +1,68 @@
+{
+  "translations": {
+    "dm.eyebrow": {
+      "value": "1:1 မက်ဆေ့",
+      "reviewed": false
+    },
+    "dm.title": {
+      "value": "မေးလိုသည့်အချက် ရှိပါသလား?",
+      "reviewed": false
+    },
+    "dm.body.visa": {
+      "value": "ဗီဇာအမျိုးအစားနှင့် မေးလိုသည့်အချက်ကို အဆင်ပြေသော channel မှ ပို့ပါ။",
+      "reviewed": false
+    },
+    "dm.body.service": {
+      "value": "စစ်ဆေးနေသော ဝန်ဆောင်မှုနှင့် လက်ရှိအခြေအနေကို အဆင်ပြေသော channel မှ အကျဉ်းချုပ် ပို့ပါ။",
+      "reviewed": false
+    },
+    "dm.body.general": {
+      "value": "အဆင်ပြေသော channel ကို ရွေးပြီး မေးလိုသည့်အကြောင်းကို အကျဉ်းချုပ် မက်ဆေ့ပို့ပါ။",
+      "reviewed": false
+    },
+    "dm.body.scope": {
+      "value": "အဆင်ပြေသော channel ကို ရွေးပြီး မက်ဆေ့ပို့ပါ။ ပထမဆုံး DM တွင် ဆောင်ရွက်နိုင်သည့်အတိုင်းအတာ၊ အချိန်နှင့် ကုန်ကျစရိတ်ကိုသာ အတည်ပြုပါသည်။",
+      "reviewed": false
+    },
+    "dm.cta": {
+      "value": "1:1 DM မေးမြန်းရန်",
+      "reviewed": false
+    },
+    "dm.scopeCta": {
+      "value": "DM မှတစ်ဆင့် အတိုင်းအတာနှင့် ကုန်ကျစရိတ် စစ်ဆေးရန်",
+      "reviewed": false
+    },
+    "dm.telegram": {
+      "value": "Telegram မှ မေးမြန်းရန်",
+      "reviewed": false
+    },
+    "dm.tiktok": {
+      "value": "TikTok မှ မက်ဆေ့ပို့ရန်",
+      "reviewed": false
+    },
+    "dm.messenger": {
+      "value": "Facebook Messenger မှ မေးမြန်းရန်",
+      "reviewed": false
+    },
+    "dm.note": {
+      "value": "မေးမြန်းသည့် မည်သည့်မက်ဆေ့တွင်မဆို Passport နံပါတ်၊ ID နံပါတ်၊ ငွေကြေးအချက်အလက် သို့မဟုတ် စာရွက်စာတမ်းဓာတ်ပုံများကို မပို့ပါနှင့်။",
+      "reviewed": false
+    },
+    "dm.mobile.title": {
+      "value": "1:1 မက်ဆေ့ဖြင့် မေးရန်",
+      "reviewed": false
+    },
+    "dm.mobile.note": {
+      "value": "အဆင်ပြေသော channel ကို ရွေးပါ",
+      "reviewed": false
+    },
+    "dm.mobile.open": {
+      "value": "DM ရွေးရန်",
+      "reviewed": false
+    },
+    "dm.mobile.close": {
+      "value": "ပိတ်ရန်",
+      "reviewed": false
+    }
+  }
+}

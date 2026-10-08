@@ -1,0 +1,72 @@
+{
+  "translations": {
+    "learn.teachers": {
+      "value": "စကားပြောလေ့ကျင့်ရာမှာ ကူညီပေးမယ့် ဆရာများ",
+      "reviewed": false
+    },
+    "learn.moeName": {
+      "value": "ဆရာမ Moe",
+      "reviewed": false
+    },
+    "learn.moeBio": {
+      "value": "မြန်မာနိုင်ငံ ရန်ကုန်ဇာတိဖြစ်ပြီး ၂၀၂၂ ခုနှစ်မှစ၍ ကိုရီးယားတွင် နေထိုင်နေပါတယ်။ TOPIK အဆင့် ၆ ရရှိပြီး KIIP အဆင့် ၅ အောင်မြင်ထားပါတယ်။",
+      "reviewed": false
+    },
+    "learn.leeName": {
+      "value": "ဆရာ Jun Ho",
+      "reviewed": false
+    },
+    "learn.leeBio": {
+      "value": "ကိုရီးယားနိုင်ငံ ဆိုးလ်ဇာတိ ကိုရီးယားလူမျိုးဆရာဖြစ်ပါတယ်။",
+      "reviewed": false
+    },
+    "redesign.teachersLead": {
+      "value": "မြန်မာလို ရှင်းပြမှုလိုလား၊ ကိုရီးယားလို ပိုပြောချင်သလား။ ဆရာနှစ်ဦးရဲ့ သင်တန်းကို ကြည့်ပါ။",
+      "reviewed": false
+    },
+    "redesign.moeRole": {
+      "value": "မြန်မာလို ရှင်းပြပြီး စကားပြောလေ့ကျင့်ခြင်း",
+      "reviewed": false
+    },
+    "redesign.junRole": {
+      "value": "အဆင့်မြင့် ကိုရီးယားစကားပြော",
+      "reviewed": false
+    },
+    "redesign.moeOrigin": {
+      "value": "ရန်ကုန်ဇာတိ · ၂၀၂၂ မှစ၍ ကိုရီးယားတွင် နေထိုင်",
+      "reviewed": false
+    },
+    "redesign.moeCredential": {
+      "value": "TOPIK အဆင့် ၆ · KIIP အဆင့် ၅ အောင်မြင်",
+      "reviewed": false
+    },
+    "redesign.junOrigin": {
+      "value": "ဆိုးလ်ဇာတိ ကိုရီးယားလူမျိုးဆရာ",
+      "reviewed": false
+    },
+    "redesign.moePractice": {
+      "value": "ခက်တဲ့နေရာတွေကို မြန်မာလို နားလည်အောင်ရှင်းပြပြီး ကိုရီးယားလို ပြန်ပြောကြည့်ပါ။",
+      "reviewed": false
+    },
+    "redesign.junPractice": {
+      "value": "ကိုရီးယားလို စကားဆက်ပြောရင်း လက်တွေ့သုံးတဲ့ အသုံးအနှုန်းတွေကို လေ့ကျင့်ပါ။",
+      "reviewed": false
+    },
+    "redesign.compareTracks": {
+      "value": "ဆရာနှစ်ဦးရဲ့ စကားပြောသင်တန်းကို ကြည့်ရန်",
+      "reviewed": false
+    },
+    "redesign.teacherIntro": {
+      "value": "ဆရာအကြောင်း",
+      "reviewed": false
+    },
+    "redesign.junCredential": {
+      "value": "ကိုရီးယားဘာသာဖြင့် သင်ကြားမည်။ မြန်မာဘာသာရှင်းပြမှု မပါဝင်ပါ။",
+      "reviewed": false
+    },
+    "redesign.photoPending": {
+      "value": "ဓာတ်ပုံ ပြင်ဆင်နေဆဲ",
+      "reviewed": false
+    }
+  }
+}

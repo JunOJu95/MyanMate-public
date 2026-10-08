@@ -1,0 +1,60 @@
+{
+  "translations": {
+    "reviews.title": {
+      "value": "ကိုရီးယားစာသင်တန်း သုံးသပ်ချက်များ",
+      "reviewed": false
+    },
+    "reviews.subtitle": {
+      "value": "MyanMate ကိုရီးယားစာသင်တန်း တက်ရောက်သူများ၏ အတွေ့အကြုံများကို ဤနေရာတွင် ဖတ်ရှုနိုင်ပါသည်။",
+      "reviewed": false
+    },
+    "reviews.principle": {
+      "value": "အမှန်တကယ် သင်တန်းတက်ရောက်ပြီး ဝဘ်ဆိုက်တွင် ဖော်ပြရန် သဘောတူထားသော သုံးသပ်ချက်များကိုသာ တင်ပါသည်။",
+      "reviewed": false
+    },
+    "reviews.empty.kicker": {
+      "value": "သင်တန်းသားများ၏ အတွေ့အကြုံ",
+      "reviewed": false
+    },
+    "reviews.empty.title": {
+      "value": "ဖော်ပြထားသော သင်တန်းသုံးသပ်ချက် မရှိသေးပါ။",
+      "reviewed": false
+    },
+    "reviews.empty.body": {
+      "value": "သင်တန်းသားတစ်ဦးက သုံးသပ်ချက်ပေးပြီး ဖော်ပြရန် သဘောတူပါက စစ်ဆေးပြီး ဤနေရာတွင် တင်ပါမည်။",
+      "reviewed": false
+    },
+    "reviews.next.title": {
+      "value": "MyanMate နှင့် ကိုရီးယားစာ စတင်သင်ယူပါ",
+      "reviewed": false
+    },
+    "reviews.next.body": {
+      "value": "သင်တန်းလျှောက်ထားပါက သင့်အတွက် သင့်လျော်သောသင်တန်းကို တစ်ဦးချင်း ဆွေးနွေးပေးပါမည်။",
+      "reviewed": false
+    },
+    "reviews.anonymous": {
+      "value": "အမည်မဖော်ပြသော သင်တန်းသား",
+      "reviewed": false
+    },
+    "reviews.student": {
+      "value": "MyanMate သင်တန်းသား",
+      "reviewed": false
+    },
+    "reviews.before": {
+      "value": "အရင်က",
+      "reviewed": false
+    },
+    "reviews.after": {
+      "value": "အခု",
+      "reviewed": false
+    },
+    "reviews.cta": {
+      "value": "1:1 DM ဖြင့် မေးမြန်းရန် →",
+      "reviewed": false
+    },
+    "reviews.empty": {
+      "value": "သုံးသပ်ချက်များ မကြာမီ ရောက်လာပါမည်။",
+      "reviewed": false
+    }
+  }
+}

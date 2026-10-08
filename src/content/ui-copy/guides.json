@@ -1,0 +1,344 @@
+{
+  "translations": {
+    "infoHub.eyebrow": {
+      "value": "ကိုရီးယား Guide Library",
+      "reviewed": false
+    },
+    "infoHub.title": {
+      "value": "မြန်မာလူမျိုးများအတွက် လမ်းညွှန်များ",
+      "reviewed": false
+    },
+    "infoHub.intro": {
+      "value": "ကိုရီးယားမှာ နေနေသူ၊ လာဖို့ပြင်နေသူ၊ ဒါမှမဟုတ် မဆုံးဖြတ်ခင် အရင်သိချင်သူတွေအတွက် လိုအပ်နိုင်တဲ့အချက်အလက်တွေကို ခေါင်းစဉ်အလိုက် စုထားပါတယ်။",
+      "reviewed": false
+    },
+    "infoHub.choose": {
+      "value": "လိုအပ်တဲ့ ခေါင်းစဉ်ကို ရွေးပါ",
+      "reviewed": false
+    },
+    "infoHub.chooseNote": {
+      "value": "လိုတဲ့အကြောင်းအရာကို ရွေးပါ။ Guide ထဲမှာ သက်ဆိုင်တဲ့ blog post တွေ၊ အကူအညီလိုရင် service လမ်းကြောင်းတွေကို ဆက်ဖတ်နိုင်ပါတယ်။",
+      "reviewed": false
+    },
+    "infoHub.card.badge": {
+      "value": "Guide ဖွင့်ရန်",
+      "reviewed": false
+    },
+    "infoHub.promise.note": {
+      "value": "ပြောင်းနိုင်တဲ့အချက်တွေမှာ တရားဝင်ရင်းမြစ်ကို ပြန်စစ်ဖို့ သတိပေးထားပြီး၊ ဥပဒေမညီတဲ့ shortcut များကို မထည့်ပါဘူး။",
+      "reviewed": false
+    },
+    "infoHub.visa.summary": {
+      "value": "လက်ရှိပေးထားသော ဗီဇာတစ်မျိုးစီအတွက် အရည်အချင်း၊ လိုအပ်သောစာရွက်စာတမ်း၊ လျှောက်ထားမှုအဆင့်များနှင့် သတိပြုရန်အချက်များကို စစ်ဆေးပါ။",
+      "reviewed": false
+    },
+    "infoTopic.publicBadge": {
+      "value": "အများပြည်သူသုံး အချက်အလက်",
+      "reviewed": false
+    },
+    "infoTopic.contents": {
+      "value": "လိုအပ်သောအပိုင်းသို့ တိုက်ရိုက်သွားရန်",
+      "reviewed": false
+    },
+    "infoTopic.audience.general": {
+      "value": "နိုင်ငံခြားသားမှတ်ပုံတင်ထားပါက",
+      "reviewed": false
+    },
+    "infoTopic.audience.student": {
+      "value": "ကျောင်းသားဆိုလျှင်",
+      "reviewed": false
+    },
+    "infoTopic.audience.worker": {
+      "value": "အလုပ်လုပ်နေပါက",
+      "reviewed": false
+    },
+    "infoTopic.audience.ifApplicable": {
+      "value": "သက်ဆိုင်မှသာ",
+      "reviewed": false
+    },
+    "infoTopic.audience.warning": {
+      "value": "မလုပ်မီ အတည်ပြုပါ",
+      "reviewed": false
+    },
+    "infoTopic.audience.official": {
+      "value": "တရားဝင်အတည်ပြုရာ",
+      "reviewed": false
+    },
+    "infoTopic.prepare": {
+      "value": "ပြင်ဆင်ရန်",
+      "reviewed": false
+    },
+    "infoTopic.steps": {
+      "value": "ကိုယ်တိုင်လုပ်ဆောင်ရန် အဆင့်များ",
+      "reviewed": false
+    },
+    "infoTopic.checklist": {
+      "value": "နောက်ဆုံး စစ်ဆေးရန်",
+      "reviewed": false
+    },
+    "infoTopic.checklist.note": {
+      "value": "ဤစာမျက်နှာဖွင့်ထားချိန်တွင်သာ အမှန်ခြစ်များ ကျန်ရှိပါမည်။ ကိုယ်ပိုင်မှတ်သားရန်သာဖြစ်ပြီး တရားဝင်လုပ်ငန်းပြီးစီးကြောင်း သက်သေမဟုတ်ပါ။",
+      "reviewed": false
+    },
+    "infoTopic.doneWhen": {
+      "value": "ပြီးစီးကြောင်း စစ်ဆေးရန်",
+      "reviewed": false
+    },
+    "infoTopic.details": {
+      "value": "အသေးစိတ်စံနှင့် ခြွင်းချက်များ ကြည့်ရန်",
+      "reviewed": false
+    },
+    "infoTopic.template": {
+      "value": "ကိုယ်တိုင်မေးမြန်းရန် ကိုရီးယားစာသား",
+      "reviewed": false
+    },
+    "infoTopic.template.copy": {
+      "value": "ကိုရီးယားစာသားကို ကူးယူရန်",
+      "reviewed": false
+    },
+    "infoTopic.template.copied": {
+      "value": "ကူးယူပြီးပါပြီ",
+      "reviewed": false
+    },
+    "infoTopic.template.meaning": {
+      "value": "မိမိဘာသာစကားဖြင့် အဓိပ္ပါယ်ကြည့်ရန်",
+      "reviewed": false
+    },
+    "infoTopic.sources": {
+      "value": "သက်ဆိုင်ရာ တရားဝင်စစ်ဆေးရန်နေရာများ",
+      "reviewed": false
+    },
+    "infoTopic.source.open": {
+      "value": "တရားဝင်စာမျက်နှာ ဖွင့်ရန်",
+      "reviewed": false
+    },
+    "infoTopic.jump": {
+      "value": "သက်ဆိုင်ရာအပိုင်းသို့ သွားရန်",
+      "reviewed": false
+    },
+    "infoTopic.disclaimer.title": {
+      "value": "နောက်ဆုံး တရားဝင်အချက်အလက်ကို စစ်ဆေးပါ",
+      "reviewed": false
+    },
+    "infoTopic.disclaimer.body": {
+      "value": "ဤစာမျက်နှာသည် လူတိုင်းကြည့်ရှုနိုင်သော ယေဘုယျအများပြည်သူသုံး အချက်အလက်များကို အလွယ်တကူ ကိုးကားနိုင်ရန် စုစည်းထားခြင်းဖြစ်ပါသည်။ သတ်မှတ်ရက်၊ လိုအပ်ချက်၊ လုပ်ငန်းစဉ်နှင့် အဖွဲ့အစည်းစည်းမျဉ်းများ ပြောင်းလဲနိုင်သောကြောင့် အသုံးမပြုမီ ချိတ်ဆက်ထားသော တရားဝင်ရင်းမြစ်တွင် နောက်ဆုံးအချက်အလက်ကို ပြန်လည်စစ်ဆေးပါ။",
+      "reviewed": false
+    },
+    "infoTopic.disclaimer.boundary": {
+      "value": "MyanMate သည် ဖတ်ရှုသူများ၏ မှတ်ပုံတင်ခြင်း၊ ကြိုတင်စာရင်းသွင်းခြင်း၊ လျှောက်ထားခြင်း သို့မဟုတ် ငွေပေးချေခြင်းကို ဆောင်ရွက်ပေးခြင်း မရှိပါ။",
+      "reviewed": false
+    },
+    "infoTopic.back": {
+      "value": "အချက်အလက်အားလုံးသို့ ပြန်သွားရန်",
+      "reviewed": false
+    },
+    "guides.title": {
+      "value": "ဗီဇာနှင့် ပတ်သက်သည့် အချက်အလက်များ",
+      "reviewed": false
+    },
+    "guides.eyebrow": {
+      "value": "ကိုရီးယား ဗီဇာအချက်အလက်",
+      "reviewed": false
+    },
+    "guides.intro": {
+      "value": "ဗီဇာအမျိုးအစားအလိုက် လိုအပ်ချက်များ၊ စာရွက်စာတမ်းများနှင့် လျှောက်ထားပုံ အဆင့်ဆင့်ကို သီးခြားလမ်းညွှန်ချက်များဖြင့် ဖော်ပြထားပါသည်။ အကြောင်းအရာအသစ်များကိုလည်း ဆက်လက်ဖြည့်စွက်ပေးသွားပါမည်။",
+      "reviewed": false
+    },
+    "guides.choose": {
+      "value": "ဗီဇာ ရွေးချယ်ရန်",
+      "reviewed": false
+    },
+    "guides.chooseNote": {
+      "value": "မိမိသိလိုသည့် ဗီဇာအချက်အလက်ကို နှိပ်၍ ဖတ်ရှုနိုင်ပါသည်။ လမ်းညွှန်ချက်အသစ်များကို ဤနေရာတွင် ဆက်လက်ဖြည့်စွက်ပေးသွားပါမည်။",
+      "reviewed": false
+    },
+    "guides.search.placeholder": {
+      "value": "ခေါင်းစဉ် သို့မဟုတ် သော့ချက်စကားလုံး ရှာရန်",
+      "reviewed": false
+    },
+    "guides.filter.all": {
+      "value": "အားလုံး",
+      "reviewed": false
+    },
+    "guides.filter.visa": {
+      "value": "ဗီဇာ",
+      "reviewed": false
+    },
+    "guides.filter.study": {
+      "value": "ပညာသင်",
+      "reviewed": false
+    },
+    "guides.filter.jobs": {
+      "value": "အလုပ်",
+      "reviewed": false
+    },
+    "guides.filter.housing": {
+      "value": "နေအိမ်",
+      "reviewed": false
+    },
+    "guides.filter.korean": {
+      "value": "ကိုရီးယားဘာသာ",
+      "reviewed": false
+    },
+    "guides.filter.daily": {
+      "value": "နေ့စဉ်ဘဝ",
+      "reviewed": false
+    },
+    "visaPurpose.label": {
+      "value": "ဗီဇာရည်ရွယ်ချက် ရွေးချယ်ရန်",
+      "reviewed": false
+    },
+    "visaPurpose.all": {
+      "value": "အားလုံး",
+      "reviewed": false
+    },
+    "visaPurpose.study": {
+      "value": "ပညာသင်",
+      "reviewed": false
+    },
+    "visaPurpose.work": {
+      "value": "အလုပ်",
+      "reviewed": false
+    },
+    "visaPurpose.residence": {
+      "value": "နေထိုင်",
+      "reviewed": false
+    },
+    "visaPurpose.other": {
+      "value": "အခြား",
+      "reviewed": false
+    },
+    "visaPurpose.note": {
+      "value": "အဓိကနေထိုင်ရည်ရွယ်ချက်အလိုက် စုစည်းထားပါသည်။ ဗီဇာအမည်နှင့် လိုအပ်ချက်များ ပြောင်းလဲနိုင်သောကြောင့် မလျှောက်မီ တရားဝင်ရင်းမြစ်တွင် နောက်ဆုံးအချက်အလက်ကို စစ်ဆေးပါ။",
+      "reviewed": false
+    },
+    "visaPurpose.empty.title": {
+      "value": "ဤရည်ရွယ်ချက်အတွက် Guide မရှိသေးပါ။",
+      "reviewed": false
+    },
+    "visaPurpose.empty.body": {
+      "value": "ပြင်ဆင်ပြီးသည့်အခါ ဗီဇာ Guide များကို ထပ်မံထည့်သွင်းပါမည်။ ယခုအချိန်တွင် အခြားရည်ရွယ်ချက်ကို ကြည့်ပါ၊ သို့မဟုတ် လမ်းကြောင်းရွေးချယ်ရန် အကူအညီလိုပါက မေးမြန်းပါ။",
+      "reviewed": false
+    },
+    "guides.empty": {
+      "value": "ဒီမှာ ဘာမှ မရှိသေးပါ — လမ်းညွှန်အသစ်များ မကြာမီ ရောက်လာပါမည်။",
+      "reviewed": false
+    },
+    "guides.empty.title": {
+      "value": "ဤခေါင်းစဉ်ကို ပြင်ဆင်နေဆဲ ဖြစ်ပါသည်။",
+      "reviewed": false
+    },
+    "guides.empty.body": {
+      "value": "သင်လိုအပ်သောအရာကို ပြောပြပါ။ လမ်းညွှန်များ ထပ်ထည့်နေစဉ် TikTok တွင် ကိုရီးယားနေ့စဉ်ဘဝအကြံပြုချက်များကို ကြည့်နိုင်ပါသည်။",
+      "reviewed": false
+    },
+    "content.section.eligibility": {
+      "value": "ဘယ်သူနှင့် သက်ဆိုင်သလဲ",
+      "reviewed": false
+    },
+    "content.section.documents": {
+      "value": "လိုအပ်မည့် စာရွက်စာတမ်းများ",
+      "reviewed": false
+    },
+    "content.section.steps": {
+      "value": "လျှောက်ထားနည်း",
+      "reviewed": false
+    },
+    "content.section.watchout": {
+      "value": "သတိထားရန် (မကြာခဏ မှားတတ်သည့်အရာများ)",
+      "reviewed": false
+    },
+    "content.section.subtypes": {
+      "value": "ဗီဇာ အမျိုးအစားခွဲများ",
+      "reviewed": false
+    },
+    "content.section.applicantGroups": {
+      "value": "လျှောက်ထားနိုင်သော အုပ်စုများ",
+      "reviewed": false
+    },
+    "content.section.types": {
+      "value": "အမျိုးအစားနှင့် အဆင့်များ",
+      "reviewed": false
+    },
+    "content.section.study.what": {
+      "value": "အရင်သိထားရမည့်အချက်များ",
+      "reviewed": false
+    },
+    "content.section.study.who": {
+      "value": "ဒီအချက်အလက်က ဘယ်သူတွေအတွက်လဲ",
+      "reviewed": false
+    },
+    "content.section.study.documents": {
+      "value": "လိုအပ်နိုင်သောအရာများ",
+      "reviewed": false
+    },
+    "content.section.study.steps": {
+      "value": "ပြင်ဆင်ပုံ အဆင့်များ",
+      "reviewed": false
+    },
+    "content.section.study.mistakes": {
+      "value": "သတိထားရမည့်အချက်များ",
+      "reviewed": false
+    },
+    "content.section.study.confirm": {
+      "value": "တရားဝင် ပြန်စစ်ရန်နေရာများ",
+      "reviewed": false
+    },
+    "content.section.e7mSchoolRequirements": {
+      "value": "ကျောင်းလျှောက်ခွင့် လိုအပ်ချက်နှင့် စာရင်း",
+      "reviewed": false
+    },
+    "content.section.notes": {
+      "value": "အရေးကြီး မှတ်ချက်များ",
+      "reviewed": false
+    },
+    "content.cta.title": {
+      "value": "ဗီဇာအချက်အလက် ပိုမိုသိလိုပါသလား?",
+      "reviewed": false
+    },
+    "content.cta.button": {
+      "value": "1:1 DM ဖြင့် မေးမြန်းရန် →",
+      "reviewed": false
+    },
+    "content.cta.note": {
+      "value": "ကျွန်ုပ်တို့ ရှာဖွေ၍ လမ်းညွှန်ပေးသည်။ လျှောက်ထားခြင်းကို သင်ကိုယ်တိုင် လုပ်ပါ။",
+      "reviewed": false
+    },
+    "content.cta.visa.eyebrow": {
+      "value": "ဗီဇာအချက်အလက်",
+      "reviewed": false
+    },
+    "content.cta.visa.title": {
+      "value": "ဗီဇာအချက်အလက် မေးမြန်းရန်",
+      "reviewed": false
+    },
+    "content.cta.visa.inlineTitle": {
+      "value": "သင့်အခြေအနေအလိုက် လိုအပ်သောစာရွက်စာတမ်းများ ပြောင်းလဲနိုင်ပါသည်",
+      "reviewed": false
+    },
+    "content.cta.visa.body": {
+      "value": "စစ်ဆေးနေသော ဗီဇာအမျိုးအစားနှင့် မရှင်းလင်းသည့်အချက်ကို ပြောပြပါ။ လျှောက်ထားခြင်းနှင့် တင်သွင်းခြင်းကို သင်ကိုယ်တိုင် ဆောင်ရွက်ပါသည်။",
+      "reviewed": false
+    },
+    "content.cta.visa.button": {
+      "value": "ဗီဇာအချက်အလက် မေးမြန်းရန်",
+      "reviewed": false
+    },
+    "content.related.title": {
+      "value": "ဆက်စပ် လမ်းညွှန်များ",
+      "reviewed": false
+    },
+    "content.toc": {
+      "value": "ဤစာမျက်နှာတွင်",
+      "reviewed": false
+    },
+    "content.lastReviewed": {
+      "value": "နောက်ဆုံး ပြန်လည်စစ်ဆေးသည့် ရက်",
+      "reviewed": false
+    },
+    "content.disclaimer.study": {
+      "value": "ဤအချက်အလက်သည် ယေဘုယျ ပညာသင်အချက်အလက်ဖြစ်ပါသည်။ စာမေးပွဲနေ့၊ Fee၊ Score rule နှင့် ကျောင်းလိုအပ်ချက်များ ပြောင်းနိုင်သောကြောင့် လုပ်ဆောင်မီ တရားဝင် TOPIK site၊ စာမေးပွဲစင်တာ၊ ကျောင်း သို့မဟုတ် Scholarship notice တွင် ပြန်စစ်ပါ။",
+      "reviewed": false
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { config, fields, collection, singleton } from '@keystatic/core';
+import { myanmarCopyNavigation, myanmarCopySingletons } from './src/i18n/keystatic-copy';
 
 /* =========================================================================
    MyanMate · Keystatic CMS (Git-based, no DB)
@@ -10,7 +11,8 @@ import { config, fields, collection, singleton } from '@keystatic/core';
    - Deploy: { kind: 'github' } — editors sign in with GitHub and save commits.
 
    Long-form guide and service content lives here so a non-developer can edit it.
-   Shared UI labels and fixed legal disclaimers remain in src/i18n/ui.ts.
+   Myanmar UI wording is edited under the review menu. EN/KO references stay
+   read-only in src/i18n/reference.json; src/i18n/ui.ts assembles all languages.
    ========================================================================= */
 
 const CATEGORY_OPTIONS = [
@@ -313,6 +315,11 @@ export default config({
       },
   ui: {
     brand: { name: 'MyanMate' },
+    navigation: {
+      '미얀마어 문구 검수': myanmarCopyNavigation,
+      '블로그 · 후기 · 정보 콘텐츠': ['posts', 'reviews', 'guides', 'guideInformation'],
+      '기존 서비스 콘텐츠': ['partTimeJobServiceOffer', 'careerServiceOffer', 'interviewServiceOffer', 'portfolioServiceOffer', 'housingServiceOffer'],
+    },
   },
   collections: {
     guides: collection({
@@ -485,6 +492,7 @@ export default config({
     }),
   },
   singletons: {
+    ...myanmarCopySingletons,
     partTimeJobServiceOffer: singleton({
       label: 'Service · Part-time job support',
       path: 'src/content/service-offers/part-time-job',

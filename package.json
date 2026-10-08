@@ -8,6 +8,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "i18n:check": "node scripts/validate-ui-copy.mjs",
     "blog:assets:all": "node scripts/materialize-blog-assets.mjs --all",
     "blog:assets:published": "node scripts/materialize-blog-assets.mjs --published",
     "astro": "astro"
