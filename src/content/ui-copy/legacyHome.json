@@ -1,0 +1,428 @@
+{
+  "translations": {
+    "home.hero.kicker": {
+      "value": "ကိုရီးယားရှိ မြန်မာ community အတွက် လမ်းညွှန်မှု",
+      "reviewed": false
+    },
+    "home.hero.headline": {
+      "value": "ကိုရီးယားကို ရောက်ခါစလား? တစ်ယောက်တည်း အခက်အခဲတွေနဲ့ ရုန်းကန်နေစရာ မလိုပါဘူး။",
+      "reviewed": false
+    },
+    "home.hero.sub": {
+      "value": "ဟန်ဂုလ်နှင့် အခြေခံကိုရီးယားစာ၊ TOPIK I နှင့် II ပြင်ဆင်ခြင်း၊ ကိုရီးယားစကားပြောကို အွန်လိုင်းမှ သင်ယူနိုင်ပါတယ်။ သင်တန်းလေးခုလုံး လျှောက်ထားနိုင်ပါတယ်။",
+      "reviewed": false
+    },
+    "home.hero.visual.title": {
+      "value": "သင်၏ နောက်တစ်ဆင့်အတွက် ရှင်းလင်းပြတ်သားတဲ့ အချက်အလက်များ",
+      "reviewed": false
+    },
+    "home.hero.visual.item1": {
+      "value": "သင့်အခြေအနေ",
+      "reviewed": false
+    },
+    "home.hero.visual.item2": {
+      "value": "အများပြည်သူသိနိုင်သော လိုအပ်ချက်များ",
+      "reviewed": false
+    },
+    "home.hero.visual.item3": {
+      "value": "ကိုယ်တိုင် အတည်ပြုရမည့် ပြင်ဆင်ချက်များ",
+      "reviewed": false
+    },
+    "home.quick.title": {
+      "value": "မည်သည့်ဗီဇာအချက်အလက်ကို စစ်ဆေးလိုပါသလဲ?",
+      "reviewed": false
+    },
+    "home.quick.visa": {
+      "value": "ဗီဇာအချက်အလက်",
+      "reviewed": false
+    },
+    "home.quick.resume": {
+      "value": "ကိုယ်ရေးရာဇဝင်နှင့် အလုပ်မှတ်စု",
+      "reviewed": false
+    },
+    "home.trust.info": {
+      "value": "အချက်အလက်ရှာဖွေမှုနှင့် လမ်းညွှန်မှုသာ",
+      "reviewed": false
+    },
+    "home.trust.self": {
+      "value": "လျှောက်ထားခြင်းနှင့် ဆုံးဖြတ်ခြင်းကို ကိုယ်တိုင်",
+      "reviewed": false
+    },
+    "home.trust.private": {
+      "value": "မေးမြန်းရန် ပတ်စပို့/ID နံပါတ် မလိုပါ",
+      "reviewed": false
+    },
+    "home.trust.label": {
+      "value": "MyanMate လမ်းညွှန်မှု စည်းမျဉ်းများ",
+      "reviewed": false
+    },
+    "home.trust.slogan": {
+      "value": "We guide, You decide",
+      "reviewed": false
+    },
+    "home.entry.label": {
+      "value": "အချက်အလက်နှင့် လမ်းညွှန်မှု အမျိုးအစားများ",
+      "reviewed": false
+    },
+    "home.entry.visa": {
+      "value": "ဗီဇာအချက်အလက်",
+      "reviewed": false
+    },
+    "home.latest.eyebrow": {
+      "value": "အရင်ဆုံး ဖတ်ကြည့်ပါ",
+      "reviewed": false
+    },
+    "home.latest.title": {
+      "value": "MyanMate မှ အသစ်တင်ထားသော အချက်အလက်များ",
+      "reviewed": false
+    },
+    "home.latest.lead": {
+      "value": "နောက်ဆုံး စုစည်းထားသော လက်တွေ့အချက်အလက်များကို အရင်ဖတ်ပြီး ကိုယ့်အခြေအနေနှင့် သက်ဆိုင်သောအကြောင်းအရာကို ရှာကြည့်ပါ။",
+      "reviewed": false
+    },
+    "home.information.eyebrow": {
+      "value": "လိုအပ်သော ခေါင်းစဉ်မှ စတင်ပါ",
+      "reviewed": false
+    },
+    "home.information.title": {
+      "value": "အချက်အလက်များကို ရှာဖွေကြည့်ပါ",
+      "reviewed": false
+    },
+    "home.information.lead": {
+      "value": "လက်ရှိသိလိုသည့်အကြောင်းအရာနှင့် အနီးစပ်ဆုံး category ကို အရင်ဖွင့်ကြည့်ပါ။ ကိုရီးယားဘဝအတွက် လိုအပ်သောအချက်အလက်များကို ဆက်လက်ထည့်သွင်းသွားပါမည်။",
+      "reviewed": false
+    },
+    "home.information.resume.title": {
+      "value": "ကိုယ်ရေးရာဇဝင်နှင့် အလုပ်အကိုင်အချက်အလက်",
+      "reviewed": false
+    },
+    "home.information.resume.summary": {
+      "value": "ကိုရီးယားပုံစံ ကိုယ်ရေးရာဇဝင်ဖွဲ့စည်းပုံ၊ အတွေ့အကြုံရေးသားပုံနှင့် အများပြည်သူသိနိုင်သော အလုပ်အကိုင်အချက်အလက်များကို ကိုယ်တိုင်ရှာဖွေနည်းကို စုစည်းထားပါသည်။",
+      "reviewed": false
+    },
+    "home.information.housing.title": {
+      "value": "အိမ်နှင့် နေထိုင်ရာပတ်ဝန်းကျင် အချက်အလက်",
+      "reviewed": false
+    },
+    "home.information.housing.summary": {
+      "value": "အိမ်အတွင်းပိုင်း၊ အများသုံးနေရာများနှင့် ပတ်ဝန်းကျင်နေထိုင်မှုအခြေအနေကို ကြည့်ရှုရာတွင် ကိုးကားနိုင်သော အချက်အလက်များကို စုစည်းထားပါသည်။",
+      "reviewed": false
+    },
+    "home.information.study.title": {
+      "value": "ပညာသင် အချက်အလက်",
+      "reviewed": false
+    },
+    "home.information.study.summary": {
+      "value": "TOPIK၊ KIIP၊ Scholarship၊ ကျောင်းရွေးချယ်မှု၊ လျှောက်ထားရန်ပြင်ဆင်မှုနှင့် ကျောင်းသားဘဝ စစ်ဆေးရန်အချက်များကို အရင်ကြည့်ပါ။",
+      "reviewed": false
+    },
+    "home.information.dailyLife.title": {
+      "value": "နေ့စဉ်ဘဝ အချက်အလက်",
+      "reviewed": false
+    },
+    "home.information.dailyLife.summary": {
+      "value": "လိပ်စာပြောင်းခြင်း၊ ဖုန်းနှင့် SIM ကတ်၊ သွားလာရေး၊ အရေးပေါ်နံပါတ်၊ ကျန်းမာရေးနှင့် ကိုရီးယားနေ့စဉ်ဘဝအချက်အလက်များကို စစ်ပါ။",
+      "reviewed": false
+    },
+    "home.topics.title": {
+      "value": "ခေါင်းစဉ်အလိုက် ကြည့်ရှုရန်",
+      "reviewed": false
+    },
+    "home.topics.visa": {
+      "value": "ဗီဇာ",
+      "reviewed": false
+    },
+    "home.topics.jobs": {
+      "value": "အလုပ်",
+      "reviewed": false
+    },
+    "home.topics.housing": {
+      "value": "နေအိမ်",
+      "reviewed": false
+    },
+    "home.topics.korean": {
+      "value": "ကိုရီးယားဘာသာ",
+      "reviewed": false
+    },
+    "home.topics.daily": {
+      "value": "နေ့စဉ်ဘဝ",
+      "reviewed": false
+    },
+    "home.topics.all": {
+      "value": "အားလုံး ကြည့်ရန်",
+      "reviewed": false
+    },
+    "home.services.title": {
+      "value": "ကိုရီးယားနေထိုင်မှု အကူအညီ ဝန်ဆောင်မှုများ",
+      "reviewed": false
+    },
+    "home.services.lead": {
+      "value": "အလုပ်လျှောက်ရန်၊ 1:1 interview လေ့ကျင့်ရန်၊ portfolio ပြင်ရန်နှင့် အိမ်ကြည့်ရန် လက်တွေ့ကျသော အကူအညီများ။",
+      "reviewed": false
+    },
+    "home.services.preview.eyebrow": {
+      "value": "ပိုမိုအသေးစိတ် အကူအညီလိုသည့်အခါ",
+      "reviewed": false
+    },
+    "home.services.preview.title": {
+      "value": "လက်ရှိပေးနေသော service များကို ကြည့်ရှုပါ",
+      "reviewed": false
+    },
+    "home.services.preview.lead": {
+      "value": "အချက်အလက်ကို ဖတ်ပြီးနောက် ကိုယ့်အခြေအနေအတွက် ပိုမိုတိကျသောပြင်ဆင်မှုလိုပါက service တစ်ခုစီတွင် ရနိုင်သော လမ်းညွှန်မှုကို အရင်ကြည့်ပါ။",
+      "reviewed": false
+    },
+    "home.services.preview.recommended": {
+      "value": "ဒီလိုသူများအတွက်",
+      "reviewed": false
+    },
+    "home.services.preview.detail": {
+      "value": "အသေးစိတ် ကြည့်ရန်",
+      "reviewed": false
+    },
+    "home.services.preview.viewAll": {
+      "value": "Service အားလုံး ကြည့်ရန်",
+      "reviewed": false
+    },
+    "home.journey.eyebrow": {
+      "value": "ဖတ်ပါ၊ နှိုင်းယှဉ်ပါ၊ ပြီးမှ မေးပါ",
+      "reviewed": false
+    },
+    "home.journey.lead": {
+      "value": "အများပြည်သူသိနိုင်သောအချက်အလက်ကို အစမှတ်အဖြစ်ယူပြီး ကိုယ့်အခြေအနေနှင့် နှိုင်းယှဉ်ပါ။ မရှင်းလင်းသေးသောမေးခွန်းများကိုသာ အဆင်ပြေသော channel မှ ပို့ပါ။",
+      "reviewed": false
+    },
+    "home.process.title": {
+      "value": "MyanMate အချက်အလက်ကို ဒီလိုအသုံးပြုပါ",
+      "reviewed": false
+    },
+    "home.process.step1.title": {
+      "value": "လိုအပ်သော အချက်အလက်ကို ဖတ်ပါ",
+      "reviewed": false
+    },
+    "home.process.step1.body": {
+      "value": "နောက်ဆုံးဆောင်းပါး သို့မဟုတ် သိလိုသည့်အကြောင်းအရာနှင့် အနီးစပ်ဆုံး category မှ စတင်ပါ။",
+      "reviewed": false
+    },
+    "home.process.step2.title": {
+      "value": "ကိုယ့်အခြေအနေနှင့် နှိုင်းယှဉ်ပါ",
+      "reviewed": false
+    },
+    "home.process.step2.body": {
+      "value": "လိုအပ်ချက်၊ အချိန်နှင့် ဦးစားပေးအချက်များက ကိုယ့်အခြေအနေနှင့် ကိုက်ညီမှုရှိမရှိ စစ်ဆေးပါ။",
+      "reviewed": false
+    },
+    "home.process.step3.title": {
+      "value": "မရှင်းလင်းသေးတာကိုသာ 1:1 DM ဖြင့် မေးပါ",
+      "reviewed": false
+    },
+    "home.process.step3.body": {
+      "value": "Telegram၊ TikTok သို့မဟုတ် Facebook Messenger မှ အဆင်ပြေသော channel ကိုရွေးပြီး အရေးကြီးကိုယ်ရေးအချက်အလက်များ မပို့ဘဲ မေးပါ။",
+      "reviewed": false
+    },
+    "home.guides.title": {
+      "value": "ဗီဇာအချက်အလက်ကို ဦးစွာ စစ်ဆေးပါ",
+      "reviewed": false
+    },
+    "home.guides.lead": {
+      "value": "လက်ရှိပေးထားသော ဗီဇာအချက်အလက်တစ်ခုစီကို သီးခြားလမ်းညွှန်အဖြစ် စီစဉ်ထားပြီး လိုအပ်သလို ထပ်မံထည့်သွင်းသွားပါမည်။ လိုအပ်သောအချက်အလက်ကို ဖွင့်၍ အရည်အချင်း၊ စာရွက်စာတမ်းနှင့် လျှောက်ထားမှုအဆင့်များကို ကိုယ်တိုင် စစ်ဆေးပါ။",
+      "reviewed": false
+    },
+    "home.guides.all": {
+      "value": "ဗီဇာအချက်အလက်အားလုံး ကြည့်ရန်",
+      "reviewed": false
+    },
+    "home.guideFeatures.label": {
+      "value": "ဗီဇာလမ်းညွှန်တစ်ခုစီတွင် ပါဝင်သောအချက်အလက်",
+      "reviewed": false
+    },
+    "home.guideFeatures.eligibility": {
+      "value": "အရည်အချင်း",
+      "reviewed": false
+    },
+    "home.guideFeatures.documents": {
+      "value": "စာရွက်စာတမ်း",
+      "reviewed": false
+    },
+    "home.guideFeatures.steps": {
+      "value": "လျှောက်ထားမှုအဆင့်",
+      "reviewed": false
+    },
+    "home.prepare.title": {
+      "value": "ကိုယ်တိုင်ပြင်ဆင်ရာတွင် စစ်ဆေးရမည့်အချက်များ",
+      "reviewed": false
+    },
+    "home.prepare.lead": {
+      "value": "အချက်အလက်များကို မည်သူမဆို ကိုယ်တိုင်ဖတ်နိုင်ပါသည်။ သို့သော် သင့်အခြေအနေတွင် အသုံးချရန် လိုအပ်ချက်၊ အချိန်နှင့် တရားဝင်အတည်ပြုရာနေရာတစ်ခုချင်းစီကို ပြန်လည်စစ်ဆေးရပါသည်။",
+      "reviewed": false
+    },
+    "home.prepare.eligibility": {
+      "value": "မိမိအခြေအနေနှင့် သက်ဆိုင်သော အရည်အချင်းလိုအပ်ချက် စစ်ဆေးခြင်း",
+      "reviewed": false
+    },
+    "home.prepare.documents": {
+      "value": "အခြေခံနှင့် အခြေအနေအလိုက် အပိုစာရွက်စာတမ်း ခွဲခြားခြင်း",
+      "reviewed": false
+    },
+    "home.prepare.validity": {
+      "value": "စာရွက်စာတမ်းထုတ်ရက်နှင့် သက်တမ်း စစ်ဆေးခြင်း",
+      "reviewed": false
+    },
+    "home.prepare.order": {
+      "value": "ပြင်ဆင်မှုနှင့် လျှောက်ထားမှုအစီအစဉ် စီစဉ်ခြင်း",
+      "reviewed": false
+    },
+    "home.prepare.official": {
+      "value": "နောက်ဆုံး တရားဝင်လိုအပ်ချက်များ ပြန်လည်စစ်ဆေးခြင်း",
+      "reviewed": false
+    },
+    "home.otherServices.title": {
+      "value": "အခြားနေ့စဉ်ဘဝ လမ်းညွှန်မှု",
+      "reviewed": false
+    },
+    "home.otherServices.lead": {
+      "value": "ကိုယ်ရေးရာဇဝင်၊ အလုပ်ရှာဖွေမှုနှင့် အိမ်ကြည့်အတူလိုက် လမ်းညွှန်မှုကို လိုအပ်သည့်အခါ သီးခြားစစ်ဆေးနိုင်ပါသည်။",
+      "reviewed": false
+    },
+    "home.reviews.title": {
+      "value": "လူများ ဘာပြောကြသလဲ",
+      "reviewed": false
+    },
+    "home.about.title": {
+      "value": "ကျွန်ုပ်တို့အကြောင်း",
+      "reviewed": false
+    },
+    "home.about.eyebrow": {
+      "value": "စတင်ဖြစ်ပေါ်လာပုံ",
+      "reviewed": false
+    },
+    "home.about.blurb": {
+      "value": "MyanMate ကို ကိုရီးယားစနစ်နှင့် ဒေသတွင်းအခြေအနေကို နားလည်သော ကိုရီးယား partner နှင့် ကိုရီးယားတွင် ၅ နှစ်ကြာ ကိုယ်တိုင်အခြေချနေထိုင်ခဲ့သော မြန်မာ partner တို့ အတူဖန်တီးခဲ့ပါသည်။",
+      "reviewed": false
+    },
+    "home.about.role.kr": {
+      "value": "ကိုရီးယားရဲ့ စနစ်နဲ့ ဒေသတွင်း အချက်အလက်များကို ကောင်းစွာ နားလည်ထားခြင်း",
+      "reviewed": false
+    },
+    "home.about.role.mm": {
+      "value": "ကိုရီးယားမှာ (၅) နှစ်ကြာ ကိုယ်တိုင်နေထိုင်ခဲ့တဲ့ အတွေ့အကြုံများဖြင့် ပံ့ပိုးပေးခြင်း",
+      "reviewed": false
+    },
+    "home.about.cta": {
+      "value": "ကျွန်ုပ်တို့၏ ဇာတ်လမ်းကို ဖတ်ရန်",
+      "reviewed": false
+    },
+    "home.tiktok.eyebrow": {
+      "value": "နေ့စဉ် ကိုရီးယားမှတ်စုများ",
+      "reviewed": false
+    },
+    "home.tiktok.title": {
+      "value": "မြန်မာ community နှင့် မျှဝေသော ကိုရီးယားနေ့စဉ်ဘဝ လမ်းညွှန်များကို ကြည့်ရှုပါ။",
+      "reviewed": false
+    },
+    "home.tiktok.body": {
+      "value": "MyanMate TikTok တွင် ဗီဇာအခြေခံအချက်အလက်၊ part-time အလုပ်မှတ်စု၊ နေအိမ်အကြံပြုချက်၊ ကိုရီးယားယဉ်ကျေးမှု၊ နေ့စဉ်ဘဝနှင့် လက်တွေ့အခြေအနေများအတွက် ရိုးရှင်းသော ကိုရီးယားစကားများကို မျှဝေပါသည်။",
+      "reviewed": false
+    },
+    "home.tiktok.topic.visa": {
+      "value": "ဗီဇာအချက်အလက်",
+      "reviewed": false
+    },
+    "home.tiktok.topic.jobs": {
+      "value": "Part-time အလုပ်",
+      "reviewed": false
+    },
+    "home.tiktok.topic.housing": {
+      "value": "နေအိမ် အကြံပြုချက်",
+      "reviewed": false
+    },
+    "home.tiktok.topic.korean": {
+      "value": "ကိုရီးယားစကား",
+      "reviewed": false
+    },
+    "home.tiktok.topicsLabel": {
+      "value": "TikTok content ခေါင်းစဉ်များ",
+      "reviewed": false
+    },
+    "home.tiktok.note": {
+      "value": "မှတ်ချက် - ဤအချက်အလက်များသည် ယေဘူယျသာဖြစ်သည်။ စည်းကမ်းချက်များ ပြောင်းလဲနိုင်သဖြင့် မလျှောက်ထားမီ အသေးစိတ်ကို ထပ်မံအတည်ပြုပါ။",
+      "reviewed": false
+    },
+    "home.tiktok.cta": {
+      "value": "TikTok ကြည့်ရန်",
+      "reviewed": false
+    },
+    "home.cta.band": {
+      "value": "ဘယ်ကစရမှန်း မသိဘူးလား? ကျွန်ုပ်တို့ကို လွတ်လပ်စွာ မက်ဆေ့ပို့လိုက်ပါ။",
+      "reviewed": false
+    },
+    "home.cta.flow.title": {
+      "value": "အရေးကြီးအချက်အလက် မပို့ဘဲ လွတ်လပ်စွာ မေးမြန်းပါ။",
+      "reviewed": false
+    },
+    "home.cta.flow.body": {
+      "value": "ပထမဆုံး လမ်းညွှန်မှုအတိုင်းအတာကို ရှင်းပြပြီး သင်ကိုယ်တိုင် ဆောင်ရွက်မည့် နောက်အဆင့်များကို စီစဉ်ပေးပါသည်။",
+      "reviewed": false
+    },
+    "home.cta.flow.step1": {
+      "value": "ပတ်စပို့/ID နံပါတ် မလိုပါ",
+      "reviewed": false
+    },
+    "home.cta.flow.step2": {
+      "value": "လမ်းညွှန်မှုအတိုင်းအတာကို ပထမဆုံး အတည်ပြု",
+      "reviewed": false
+    },
+    "home.cta.flow.step3": {
+      "value": "လိုအပ်သောအဆင့်များကို သင်ကိုယ်တိုင် ဆောင်ရွက်",
+      "reviewed": false
+    },
+    "home.community.title": {
+      "value": "TikTok မှာ ကိုရီးယားနေထိုင်မှု အကြောင်းအရာများ ကြည့်ရှုနိုင်ပါပြီ",
+      "reviewed": false
+    },
+    "home.community.body": {
+      "value": "ဗီဇာ၊ အလုပ်အကိုင်၊ နေအိမ်နဲ့ နေ့စဉ်သုံး ကိုရီးယားစကားလုံးများအတွက် အသုံးဝင်တဲ့ အချက်အလက်တိုလေးတွေကို TikTok မှာ မျှဝေပေးနေပါတယ်။ အသစ်တင်ထားတာတွေကို ကြည့်ဖို့ ကျွန်ုပ်တို့ TikTok ကို လာရောက်လည်ပတ်ပေးပါဦး။",
+      "reviewed": false
+    },
+    "learn.nav": {
+      "value": "ကိုရီးယားစာသင်တန်း",
+      "reviewed": false
+    },
+    "learn.kicker": {
+      "value": "MYANMATE · အွန်လိုင်းကိုရီးယားစာ",
+      "reviewed": false
+    },
+    "learn.now": {
+      "value": "ယခုလက်ခံနေပါပြီ · အွန်လိုင်းကိုရီးယားစာ",
+      "reviewed": false
+    },
+    "learn.hello": {
+      "value": "စကားတစ်ခွန်းနဲ့ အစပြုပါ",
+      "reviewed": false
+    },
+    "learn.helloWord": {
+      "value": "안녕하세요",
+      "reviewed": false
+    },
+    "learn.helloMeaning": {
+      "value": "မင်္ဂလာပါ။ တွေ့ရတာဝမ်းသာပါတယ်။",
+      "reviewed": false
+    },
+    "learn.soon": {
+      "value": "ဖွင့်လှစ်ရန်စီစဉ်နေဆဲ",
+      "reviewed": false
+    },
+    "learn.group": {
+      "value": "အုပ်စုငယ်သင်တန်းလည်း စီစဉ်နေပါတယ်",
+      "reviewed": false
+    },
+    "learn.groupBody": {
+      "value": "လက်ရှိ ၁:၁ သင်ကြားပေးနေပါတယ်။ နောင်တွင် ၆–၈ ယောက်အုပ်စုငယ်သင်တန်းများ စီစဉ်ထားပါတယ်။",
+      "reviewed": false
+    },
+    "redesign.classPhotoPending": {
+      "value": "သင်တန်းဓာတ်ပုံ ပြင်ဆင်နေဆဲ",
+      "reviewed": false
+    }
+  }
+}

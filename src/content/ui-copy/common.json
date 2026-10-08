@@ -1,0 +1,156 @@
+{
+  "translations": {
+    "nav.home": {
+      "value": "ပင်မ",
+      "reviewed": false
+    },
+    "nav.guides": {
+      "value": "အချက်အလက်",
+      "reviewed": false
+    },
+    "nav.blog": {
+      "value": "Blog",
+      "reviewed": false
+    },
+    "nav.services": {
+      "value": "ဝန်ဆောင်မှုများ",
+      "reviewed": false
+    },
+    "nav.reviews": {
+      "value": "သုံးသပ်ချက်များ",
+      "reviewed": false
+    },
+    "nav.about": {
+      "value": "ကျွန်ုပ်တို့အကြောင်း",
+      "reviewed": false
+    },
+    "nav.privacy": {
+      "value": "ကိုယ်ရေးအချက်အလက်မူဝါဒ",
+      "reviewed": false
+    },
+    "nav.logoTag": {
+      "value": "အတူသင်ယူမည့် ကိုရီးယားစာ",
+      "reviewed": false
+    },
+    "ui.back": {
+      "value": "ပြန်သွားရန်",
+      "reviewed": false
+    },
+    "btn.getHelp": {
+      "value": "1:1 DM မေးမြန်းရန်",
+      "reviewed": false
+    },
+    "btn.organizeVisa": {
+      "value": "ဗီဇာအချက်အလက် မေးမြန်းရန်",
+      "reviewed": false
+    },
+    "btn.readVisa": {
+      "value": "ဗီဇာအချက်အလက် ကြည့်ရန်",
+      "reviewed": false
+    },
+    "btn.serviceScope": {
+      "value": "ဝန်ဆောင်မှုအတိုင်းအတာ ကြည့်ရန်",
+      "reviewed": false
+    },
+    "mobileCta.note": {
+      "value": "အရေးကြီးအချက်အလက် မပို့ဘဲ channel ရွေးပါ",
+      "reviewed": false
+    },
+    "mobileCta.action": {
+      "value": "DM ရွေးရန်",
+      "reviewed": false
+    },
+    "btn.browseGuides": {
+      "value": "အချက်အလက်များ ကြည့်ရန်",
+      "reviewed": false
+    },
+    "btn.more": {
+      "value": "ပိုမိုကြည့်ရှုရန်",
+      "reviewed": false
+    },
+    "footer.tagline": {
+      "value": "မြန်မာလူမျိုးများအတွက် ကိုရီးယားစာသင်တန်းနှင့် အသုံးဝင်သောအချက်အလက်များ",
+      "reviewed": false
+    },
+    "ui.tag.visaResearch": {
+      "value": "ဗီဇာ ရှာဖွေ",
+      "reviewed": false
+    },
+    "ui.tag.resumeJob": {
+      "value": "ကိုယ်ရေး·အလုပ်",
+      "reviewed": false
+    },
+    "ui.tag.partTimeJob": {
+      "value": "Part-time အလုပ်",
+      "reviewed": false
+    },
+    "ui.tag.careerSupport": {
+      "value": "Career အကူအညီ",
+      "reviewed": false
+    },
+    "ui.tag.interviewCoaching": {
+      "value": "Interview coaching",
+      "reviewed": false
+    },
+    "ui.tag.portfolioSupport": {
+      "value": "Portfolio",
+      "reviewed": false
+    },
+    "ui.tag.housingCompanion": {
+      "value": "အိမ်ကြည့်အတူလိုက်",
+      "reviewed": false
+    },
+    "ui.step": {
+      "value": "အဆင့်",
+      "reviewed": false
+    },
+    "ui.readGuide": {
+      "value": "ဗီဇာ · နမူနာ",
+      "reviewed": false
+    },
+    "ui.menu": {
+      "value": "မီနူး",
+      "reviewed": false
+    },
+    "ui.nav.primary": {
+      "value": "အဓိက မီနူး",
+      "reviewed": false
+    },
+    "ui.nav.mobile": {
+      "value": "မိုဘိုင်း မီနူး",
+      "reviewed": false
+    },
+    "ui.nav.footer": {
+      "value": "အောက်ခြေ မီနူး",
+      "reviewed": false
+    },
+    "ui.nav.social": {
+      "value": "လူမှုကွန်ရက် လင့်ခ်များ",
+      "reviewed": false
+    },
+    "ui.skipToContent": {
+      "value": "အဓိကအကြောင်းအရာသို့ ကျော်သွားရန်",
+      "reviewed": false
+    },
+    "ui.status.available": {
+      "value": "ယခု ရနိုင်သည်",
+      "reviewed": false
+    },
+    "redesign.navCourses": {
+      "value": "သင်တန်းများ",
+      "reviewed": false
+    },
+    "redesign.navEnrollment": {
+      "value": "တက်ရောက်ရန်",
+      "reviewed": false
+    },
+    "redesign.navTeachers": {
+      "value": "ဆရာများ",
+      "reviewed": false
+    },
+    "motion.studyCaption": {
+      "value": "လေ့လာနေသည့် မြင်ကွင်းနမူနာ · AI ဖြင့် ဖန်တီးထားသောပုံ",
+      "reviewed": false
+    }
+  }
+}

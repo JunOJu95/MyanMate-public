@@ -12,7 +12,7 @@
 - 수업 운영 준비: [docs/한국어수업_오픈준비.md](docs/한국어수업_오픈준비.md).
 - 블로그 운영: [docs/블로그_운영가이드.md](docs/블로그_운영가이드.md).
 - 관리자 후기 관리: [docs/후기_운영가이드.md](docs/후기_운영가이드.md).
-- 앱 문구의 단일 소스는 `src/i18n/ui.ts`이며, 사업 경계는 아래 §1을 따른다.
+- 앱 문구의 공개 API는 `src/i18n/ui.ts`이다. 한국어·영어 원문은 `src/i18n/reference.json`, 미얀마어의 단일 소스는 Keystatic에서 편집하는 `src/content/ui-copy/*.json`이며, 사업 경계는 아래 §1을 따른다.
 
 ---
 
@@ -67,10 +67,11 @@
 ## 4. 코딩 규칙
 
 ### i18n (가장 중요)
-- **단일 소스 = `src/i18n/ui.ts`.** 사용자 노출 문자열을 컴포넌트/페이지에 **하드코딩 금지**. 항상 `t(key, lang)` 또는 `data-i18n="key"`.
+- **공개 API = `src/i18n/ui.ts`.** 사용자 노출 문자열을 컴포넌트/페이지에 **하드코딩 금지**. 항상 `t(key, lang)` 또는 `data-i18n="key"`. 한국어·영어는 `reference.json`, 미얀마어는 `src/content/ui-copy/*.json`에서 한 번만 저장한다.
 - **키 구조 보존**: `home.hero.headline`, `svc.visa.desc` 같은 `화면.요소` 평면 키 그대로. 전달된 app.js 키를 바꾸지 말 것.
 - **언어**: `my`(기본) · `ko` · `en`. **MY는 기계 초안** — 값만 나중에 교체, 키는 안정 유지.
-- 카피를 docs 카피시트와 **중복 저장하지 말 것** (단일 소스는 ui.ts).
+- 카피를 docs 카피시트나 컴포넌트와 **중복 저장하지 말 것**. 검수자는 `/keystatic`의 **미얀마어 문구 검수**에서 값과 검수 상태만 바꾼다. 그룹·문구 키는 고정하며, 누락·빈 문구·알 수 없는 키는 빌드에서 거부한다.
+- 운영 사이트의 미얀마어 문구 저장은 검토용 PR을 생성하며 자동 병합하지 않는다. 과정 조건·동의·면책의 의미와 모바일 표시를 확인한 뒤 게시한다. 절차는 `docs/미얀마어_문구_검수가이드.md`를 따른다.
 - 확장 대비: 지금은 즉시 토글(단일 URL)이지만, `t()`는 프레임워크 중립으로 두어 **나중에 언어별 URL(/ko, /my)·hreflang**로 확장이 국소적이게.
 
 ### 폰트 (깨짐 방지 — 절대 제거 금지)
@@ -112,7 +113,9 @@ npm run preview      # 빌드 결과 미리보기
 
 ```
 src/
-  i18n/ui.ts          # ★ 단일 소스: dict{en,ko,my} + t() + languages/defaultLang
+  i18n/ui.ts          # ★ 공개 API: dict{en,ko,my} + t() + languages/defaultLang
+  i18n/reference.json # 한국어·영어 원문 (관리자에서는 참고 전용)
+  content/ui-copy/    # Keystatic 미얀마어 문구와 검수 상태, JSON
   lib/icons.ts        # SVG 아이콘 맵
   scripts/lang.ts     # 언어 토글 런타임(textContent + placeholder/aria)
   styles/global.css   # 공통 화면·폰트·정보 콘텐츠 기본 스타일

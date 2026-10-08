@@ -1,0 +1,32 @@
+{
+  "translations": {
+    "learn.title": {
+      "value": "မြန်မာများအတွက်\nအွန်လိုင်း ကိုရီးယားစာသင်တန်း",
+      "reviewed": false
+    },
+    "learn.lead": {
+      "value": "ဟန်ဂုလ်၊ TOPIK၊ စကားပြော။ အခုသင်ယူချင်တဲ့အရာကနေ စတင်ပါ။ ဘယ်သင်တန်းရွေးရမလဲဆိုတာ ဆွေးနွေးနိုင်ပါတယ်။",
+      "reviewed": false
+    },
+    "learn.apply": {
+      "value": "သင်တန်းအကြောင်း ဆွေးနွေးရန်",
+      "reviewed": false
+    },
+    "learn.browse": {
+      "value": "သင်တန်းများကြည့်ရန်",
+      "reviewed": false
+    },
+    "redesign.reply": {
+      "value": "၂၄ နာရီအတွင်း ဆက်သွယ်ပါမယ်။",
+      "reviewed": false
+    },
+    "redesign.private": {
+      "value": "အချိန်နှင့် သင်တန်းကြေးကို တစ်ဦးချင်းညှိနှိုင်းပါမယ်။",
+      "reviewed": false
+    },
+    "redesign.unsure": {
+      "value": "ဘယ်သင်တန်းရွေးရမလဲ မသေချာသေးရင် ဆွေးနွေးပြီးမှ ရွေးနိုင်ပါတယ်။",
+      "reviewed": false
+    }
+  }
+}

@@ -8,7 +8,7 @@
      body.lang-* (see global.css [data-lang]); this file only drives UI strings.
    - Works without JS too: server renders MY (the default), JS just switches.
    ========================================================================= */
-import { ui, defaultLang, isLang, htmlLang, type Lang } from '../i18n/ui';
+import { ui, uiRevision, defaultLang, isLang, htmlLang, type Lang } from '../i18n/ui';
 
 const STORAGE_KEY = 'mm-lang-v2';
 const LEGACY_STORAGE_KEY = 'mm-lang';
@@ -50,7 +50,7 @@ export function applyLang(input: string): void {
   // language before its module loads and the browser takes a transition snapshot.
   try {
     const copy = Object.fromEntries(Object.entries(dict).map(([key,entry]) => [key,entry[lang] ?? entry.en]));
-    sessionStorage.setItem('mm-ui-copy-v1',JSON.stringify({lang,copy}));
+    sessionStorage.setItem('mm-ui-copy-v1',JSON.stringify({lang,copy,revision:uiRevision}));
   } catch { /* storage restrictions leave the regular runtime in charge */ }
   document.dispatchEvent(new CustomEvent('mm:langchange', { detail: { lang } }));
 }

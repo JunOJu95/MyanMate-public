@@ -1,0 +1,88 @@
+{
+  "translations": {
+    "blog.title": {
+      "value": "Blog",
+      "reviewed": false
+    },
+    "blog.intro": {
+      "value": "ကိုရီးယားလာမည့်သူများနှင့် နေထိုင်နေသူများအတွက် အသုံးဝင်သော ဆောင်းပါးများ။",
+      "reviewed": false
+    },
+    "blog.seo.title": {
+      "value": "မြန်မာများအတွက် ကိုရီးယား လမ်းညွှန်များ",
+      "reviewed": false
+    },
+    "blog.seo.description": {
+      "value": "ကိုရီးယားတွင်နေထိုင်နေသော မြန်မာများနှင့် ကိုရီးယားလာရန်ပြင်ဆင်နေသူများအတွက် ဗီဇာ၊ ကျောင်း၊ အချိန်ပိုင်းအလုပ်၊ နေအိမ်၊ ကိုရီးယားစာမေးပွဲနှင့် နေ့စဉ်ဘဝ လမ်းညွှန်များ။",
+      "reviewed": false
+    },
+    "blog.latest": {
+      "value": "Blog မှ နောက်ဆုံးစာများ",
+      "reviewed": false
+    },
+    "blog.viewAll": {
+      "value": "စာအားလုံး ကြည့်ရန်",
+      "reviewed": false
+    },
+    "blog.back": {
+      "value": "Blog သို့ ပြန်သွားရန်",
+      "reviewed": false
+    },
+    "blog.filterLabel": {
+      "value": "အမျိုးအစားအလိုက် စာများ စစ်ထုတ်ရန်",
+      "reviewed": false
+    },
+    "blog.filter.all": {
+      "value": "အားလုံး",
+      "reviewed": false
+    },
+    "blog.filter.visa": {
+      "value": "ဗီဇာ",
+      "reviewed": false
+    },
+    "blog.filter.jobs": {
+      "value": "အလုပ်",
+      "reviewed": false
+    },
+    "blog.filter.study": {
+      "value": "ကျောင်း",
+      "reviewed": false
+    },
+    "blog.filter.korean": {
+      "value": "ကိုရီးယားဘာသာ",
+      "reviewed": false
+    },
+    "blog.filter.daily": {
+      "value": "နေ့စဉ်ဘဝ",
+      "reviewed": false
+    },
+    "blog.empty": {
+      "value": "ပို့စ် မရှိသေးပါ — မကြာမီ ပြန်လာကြည့်ပါ။",
+      "reviewed": false
+    },
+    "blog.emptyCategory": {
+      "value": "ဤအမျိုးအစားတွင် စာမရှိသေးပါ။",
+      "reviewed": false
+    },
+    "blog.readMore": {
+      "value": "ဆက်ဖတ်ရန်",
+      "reviewed": false
+    },
+    "blog.draft": {
+      "value": "မူကြမ်း အစမ်းကြည့်ရှုမှု",
+      "reviewed": false
+    },
+    "learn.blog": {
+      "value": "ကိုရီးယားစာနှင့် ကိုရီးယားဘဝအတွက် အသုံးဝင်သောစာများ",
+      "reviewed": false
+    },
+    "learn.blogCta": {
+      "value": "ဘယ်ကနေစမလဲ။ အရင်ဆွေးနွေးကြည့်ပါ။",
+      "reviewed": false
+    },
+    "redesign.blogAll": {
+      "value": "စာများအားလုံးကြည့်ရန်",
+      "reviewed": false
+    }
+  }
+}

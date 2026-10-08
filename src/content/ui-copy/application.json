@@ -1,0 +1,296 @@
+{
+  "translations": {
+    "request.title": {
+      "value": "1:1 DM မေးမြန်းရန်",
+      "reviewed": false
+    },
+    "request.lead": {
+      "value": "Telegram၊ TikTok သို့မဟုတ် Facebook Messenger ထဲမှ အဆင်ပြေသော channel ကို ရွေးပါ။ ရွေးထားသော channel တွင် 1:1 စကားပြောပါမည်။",
+      "reviewed": false
+    },
+    "request.trust.noSensitive.title": {
+      "value": "အရေးကြီးကိုယ်ရေးအချက်အလက်များ မလိုပါ",
+      "reviewed": false
+    },
+    "request.trust.noSensitive.body": {
+      "value": "ပတ်စပို့၊ ID သို့မဟုတ် ငွေကြေးနံပါတ်များ မပို့ပါနှင့်။",
+      "reviewed": false
+    },
+    "request.trust.self.title": {
+      "value": "သင်ကိုယ်တိုင် ထိန်းချုပ်ပါသည်",
+      "reviewed": false
+    },
+    "request.trust.self.body": {
+      "value": "ကျွန်ုပ်တို့ ရှာဖွေ၍ လမ်းညွှန်ပေးပြီး လိုအပ်သောအဆင့်များကို သင်ကိုယ်တိုင် လုပ်ဆောင်ပါသည်။",
+      "reviewed": false
+    },
+    "request.trust.dm.title": {
+      "value": "Channel သုံးခုထဲမှ ရွေးပါ",
+      "reviewed": false
+    },
+    "request.trust.dm.body": {
+      "value": "Telegram၊ TikTok နှင့် Facebook Messenger ဖြင့် မေးမြန်းနိုင်ပါသည်။",
+      "reviewed": false
+    },
+    "apply.title": {
+      "value": "ကိုရီးယားစာသင်တန်းအကြောင်း ဆွေးနွေးရန်",
+      "reviewed": false
+    },
+    "apply.lead": {
+      "value": "ဆက်သွယ်ရန်အချက်အလက်ကို ပေးထားပါ။ မိမိအဆင့်၊ အဆင်ပြေတဲ့အချိန်နဲ့ သင်တန်းကြေးကို ဆွေးနွေးပါမယ်။",
+      "reviewed": false
+    },
+    "apply.name": {
+      "value": "အမည်",
+      "reviewed": false
+    },
+    "apply.country": {
+      "value": "နေထိုင်ရာနိုင်ငံ",
+      "reviewed": false
+    },
+    "apply.myanmar": {
+      "value": "မြန်မာ",
+      "reviewed": false
+    },
+    "apply.korea": {
+      "value": "ကိုရီးယား",
+      "reviewed": false
+    },
+    "apply.other": {
+      "value": "အခြား",
+      "reviewed": false
+    },
+    "apply.level": {
+      "value": "လက်ရှိကိုရီးယားစာအဆင့်",
+      "reviewed": false
+    },
+    "apply.beginner": {
+      "value": "အခြေခံမှ စတင်မည်",
+      "reviewed": false
+    },
+    "apply.reader": {
+      "value": "ဟန်ဂုလ်ဖတ်နိုင်ပါတယ်",
+      "reviewed": false
+    },
+    "apply.basic": {
+      "value": "ရိုးရှင်းသော ကိုရီးယားဝါကျများ ပြုလုပ်နိုင်ပါတယ်",
+      "reviewed": false
+    },
+    "apply.course": {
+      "value": "တက်လိုသည့်သင်တန်း",
+      "reviewed": false
+    },
+    "apply.unsure": {
+      "value": "ဆွေးနွေးပြီးမှ ရွေးချယ်လိုပါတယ်",
+      "reviewed": false
+    },
+    "apply.channel": {
+      "value": "ဆက်သွယ်ရန်နည်းလမ်း",
+      "reviewed": false
+    },
+    "apply.telegram": {
+      "value": "Telegram",
+      "reviewed": false
+    },
+    "apply.facebook": {
+      "value": "Facebook Messenger",
+      "reviewed": false
+    },
+    "apply.tiktok": {
+      "value": "TikTok",
+      "reviewed": false
+    },
+    "apply.phone": {
+      "value": "ဖုန်း",
+      "reviewed": false
+    },
+    "apply.email": {
+      "value": "အီးမေးလ်",
+      "reviewed": false
+    },
+    "apply.contact": {
+      "value": "ဖုန်းနံပါတ် သို့မဟုတ် အီးမေးလ်",
+      "reviewed": false
+    },
+    "apply.contactHelp": {
+      "value": "ရွေးထားသော ဆက်သွယ်နည်းအလိုက် နိုင်ငံကုဒ်ပါ ဖုန်းနံပါတ် သို့မဟုတ် အီးမေးလ်လိပ်စာကို ရေးပါ။",
+      "reviewed": false
+    },
+    "apply.time": {
+      "value": "အဆင်ပြေသည့်အချိန် (ဖြည့်လိုကဖြည့်ပါ)",
+      "reviewed": false
+    },
+    "apply.timeHelp": {
+      "value": "နေထိုင်ရာဒေသအချိန်ဖြင့် ရေးပါ။ အခြားနိုင်ငံဆိုပါက အချိန်ဇုန်ပါ ထည့်ပါ။",
+      "reviewed": false
+    },
+    "apply.memo": {
+      "value": "ထပ်မံမေးလိုသည်များ (ဖြည့်လိုကဖြည့်ပါ)",
+      "reviewed": false
+    },
+    "apply.submit": {
+      "value": "ဆွေးနွေးရန် လျှောက်လွှာပို့ပါ",
+      "reviewed": false
+    },
+    "apply.sending": {
+      "value": "ပို့နေဆဲ…",
+      "reviewed": false
+    },
+    "apply.success": {
+      "value": "လျှောက်လွှာလက်ခံရရှိပါပြီ။ ၂၄ နာရီအတွင်း ရွေးထားသော ဆက်သွယ်နည်းဖြင့် ဆက်သွယ်ပါမယ်။ သင်တန်းတက်ခြင်းကို မအတည်ပြုရသေးပါ။",
+      "reviewed": false
+    },
+    "apply.error": {
+      "value": "လက်ခံရရှိမှုကို အတည်မပြုနိုင်ပါ။ ဖြည့်ထားသည်များ မပျက်ပါ။ ပြန်ကြိုးစားပါ သို့မဟုတ် တိုက်ရိုက်ဆက်သွယ်ပါ။",
+      "reviewed": false
+    },
+    "apply.unavailable": {
+      "value": "အွန်လိုင်းလျှောက်လွှာကို ပြင်ဆင်နေပါတယ်။ လောလောဆယ် အီးမေးလ် သို့မဟုတ် Messenger ဖြင့် ဆက်သွယ်ပါ။",
+      "reviewed": false
+    },
+    "apply.direct": {
+      "value": "တိုက်ရိုက်ဆက်သွယ်ရန်",
+      "reviewed": false
+    },
+    "apply.nojs": {
+      "value": "လျှောက်လွှာပို့ရန် JavaScript ဖွင့်ပါ သို့မဟုတ် အီးမေးလ်ဖြင့် တိုက်ရိုက်ဆက်သွယ်ပါ။",
+      "reviewed": false
+    },
+    "request.field.memo.note": {
+      "value": "ပတ်စပို့နံပါတ်၊ မှတ်ပုံတင်နံပါတ်၊ ငွေကြေးအချက်အလက်များ မထည့်ပါနှင့်။",
+      "reviewed": false
+    },
+    "apply.formTitle": {
+      "value": "ဘယ်လိုကိုရီးယားစာ သင်ယူချင်ပါသလဲ။",
+      "reviewed": false
+    },
+    "apply.formLead": {
+      "value": "တက်လိုသည့်သင်တန်းကို ရွေးပါ။ မဆုံးဖြတ်ရသေးလျှင် ဆွေးနွေးပြီးမှ ရွေးချယ်နိုင်ပါတယ်။",
+      "reviewed": false
+    },
+    "apply.preview": {
+      "value": "လျှောက်လွှာနမူနာ · အီးမေးလ်ပို့ခြင်း မချိတ်ဆက်ရသေးပါ။ ဖြည့်ရန်အချက်များကို ကြည့်နိုင်ပြီး ရေးထားသည်များကို ပို့ခြင်း သို့မဟုတ် သိမ်းခြင်း မပြုပါ။",
+      "reviewed": false
+    },
+    "apply.paused": {
+      "value": "အီးမေးလ်ချိတ်ဆက်ပြီးမှ ပို့နိုင်မည်",
+      "reviewed": false
+    },
+    "apply.overview": {
+      "value": "သင်တန်းအကျဉ်းချုပ်",
+      "reviewed": false
+    },
+    "apply.fact1": {
+      "value": "သင်ကြားမှုပုံစံ",
+      "reviewed": false
+    },
+    "apply.fact1Body": {
+      "value": "အွန်လိုင်း",
+      "reviewed": false
+    },
+    "apply.fact2": {
+      "value": "သင်တန်းကာလ",
+      "reviewed": false
+    },
+    "apply.fact2Body": {
+      "value": "ဟန်ဂုလ်နှင့် အခြေခံ ၈ ပတ်ခန့် / စကားပြော ၄ ပတ်ခန့် / TOPIK I နှင့် II ၈ ပတ်အထိ",
+      "reviewed": false
+    },
+    "apply.fact3": {
+      "value": "အချိန်နှင့် သင်တန်းကြေး",
+      "reviewed": false
+    },
+    "apply.fact3Body": {
+      "value": "တစ်ဦးချင်းဆွေးနွေးမည်",
+      "reviewed": false
+    },
+    "apply.conversation": {
+      "value": "နေ့စဉ်စကားပြောနိုင်ပါတယ်",
+      "reviewed": false
+    },
+    "apply.independent": {
+      "value": "ကိုရီးယားလို မိမိအတွေးကို ရှင်းပြနိုင်ပါတယ်",
+      "reviewed": false
+    },
+    "apply.reply": {
+      "value": "လျှောက်ထားပြီး ၂၄ နာရီအတွင်း ဆက်သွယ်ပါမယ်",
+      "reviewed": false
+    },
+    "apply.learningSection": {
+      "value": "သင်ယူလိုသည့်သင်တန်း",
+      "reviewed": false
+    },
+    "apply.contactSection": {
+      "value": "ဆက်သွယ်ရန်အချက်အလက်",
+      "reviewed": false
+    },
+    "apply.optionalSection": {
+      "value": "အဆင်ပြေတဲ့အချိန်၊ မေးလိုတာ ဖြည့်ရန် (ဖြည့်လိုကဖြည့်ပါ)",
+      "reviewed": false
+    },
+    "apply.requiredNote": {
+      "value": "ဖြည့်လိုကဖြည့်ပါ ဆိုတဲ့နေရာတွေကို မဖြည့်လည်း ရပါတယ်။",
+      "reviewed": false
+    },
+    "apply.summary": {
+      "value": "ရွေးထားသောသင်တန်း",
+      "reviewed": false
+    },
+    "apply.unsureBody": {
+      "value": "လက်ရှိအဆင့်ကို ပြောပြပါ။ ဆွေးနွေးရာတွင် သင့်တော်သောသင်တန်းကို အတူရွေးပါမယ်။",
+      "reviewed": false
+    },
+    "apply.track": {
+      "value": "စကားပြောဆရာ ရွေးချယ်ရန်",
+      "reviewed": false
+    },
+    "apply.trackMoe": {
+      "value": "ဆရာမ Moe · မြန်မာဘာသာရှင်းပြမှု",
+      "reviewed": false
+    },
+    "apply.trackJunHo": {
+      "value": "ဆရာ Jun Ho · အဆင့်မြင့်ကိုရီးယားစကားပြော",
+      "reviewed": false
+    },
+    "apply.phoneHelp": {
+      "value": "+95၊ +82 စတဲ့ နိုင်ငံကုဒ်ပါ ထည့်ပါ။",
+      "reviewed": false
+    },
+    "apply.emailHelp": {
+      "value": "အကြောင်းပြန်စာကို ဖတ်နိုင်တဲ့ အီးမေးလ်လိပ်စာကို ထည့်ပါ။",
+      "reviewed": false
+    },
+    "apply.phoneInvalid": {
+      "value": "နိုင်ငံကုဒ်ပါ ဖုန်းနံပါတ်ကို စစ်ဆေးပါ။",
+      "reviewed": false
+    },
+    "apply.emailInvalid": {
+      "value": "မှန်ကန်သော အီးမေးလ်လိပ်စာကို ဖြည့်ပါ။",
+      "reviewed": false
+    },
+    "apply.afterTitle": {
+      "value": "လျှောက်ထားပြီးနောက် ဘာဆက်ဖြစ်မလဲ။",
+      "reviewed": false
+    },
+    "apply.after1": {
+      "value": "၂၄ နာရီအတွင်း ဖုန်း သို့မဟုတ် အီးမေးလ်ဖြင့် ဆက်သွယ်ပါမယ်။",
+      "reviewed": false
+    },
+    "apply.after2": {
+      "value": "သင်တန်း၊ သင်တန်းကြေးနှင့် အချိန်ကို တစ်ဦးချင်းဆွေးနွေးပါမယ်။",
+      "reviewed": false
+    },
+    "apply.after3": {
+      "value": "သင်တန်းတက်ခြင်းအတည်ပြုပြီးမှ အွန်လိုင်းတက်ပါ။",
+      "reviewed": false
+    },
+    "redesign.chooseLater": {
+      "value": "မရွေးရသေးပါ။ ဆွေးနွေးပြီးမှ ရွေးရန်",
+      "reviewed": false
+    },
+    "apply.levelUnsure": {
+      "value": "မိမိအဆင့်ကို မသေချာသေးပါ",
+      "reviewed": false
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "translations": {
+    "learn.speaking": {
+      "value": "ကိုရီးယားစကားပြော",
+      "reviewed": false
+    },
+    "learn.speakingBody": {
+      "value": "မြန်မာဘာသာရှင်းပြမှုဖြင့် စကားပြောလေ့ကျင့်ခြင်း သို့မဟုတ် ကိုရီးယားလူမျိုးဆရာနှင့် အဆင့်မြင့်စကားပြောကို ရွေးပါ။",
+      "reviewed": false
+    },
+    "course.speaking.intro": {
+      "value": "သင်ထားတဲ့ စကားလုံးတွေကို စကားပြောချိန်မှာ မေ့နေသလား။ ကိုယ်တိုင်ပြောပြီး ပြန်လေ့ကျင့်တဲ့ ၄ ပတ်ခန့် အွန်လိုင်းသင်တန်းပါ။",
+      "reviewed": false
+    },
+    "course.speaking.duration": {
+      "value": "၄ ပတ်ခန့်",
+      "reviewed": false
+    },
+    "course.speaking.sectionTitle": {
+      "value": "ဘယ်လိုရှင်းပြမှုက အဆင်ပြေပါသလဲ။",
+      "reviewed": false
+    },
+    "course.speaking.topic1": {
+      "value": "ကိုယ်တိုင်ပြောပြီး ထပ်လေ့ကျင့်ပါ",
+      "reviewed": false
+    },
+    "course.speaking.topic1Body": {
+      "value": "ကိုရီးယားစကားလုံးများနှင့် ဝါကျများကို စကားပြောရာတွင် ကိုယ်တိုင် ထုတ်ပြောပါ။ ထပ်ခါတလဲလဲ လေ့ကျင့်ပြီး ပြောဆိုရာတွင် ပိုမိုရင်းနှီးလာပါ။",
+      "reviewed": false
+    },
+    "course.speaking.topic2": {
+      "value": "ဆရာမ Moe · မြန်မာဘာသာရှင်းပြမှုဖြင့် စကားပြောလေ့ကျင့်ခြင်း",
+      "reviewed": false
+    },
+    "course.speaking.topic2Body": {
+      "value": "TOPIK အဆင့် ၆ ရရှိပြီး KIIP အဆင့် ၅ အောင်မြင်ထားသော ဆရာမ Moe နှင့် ကိုရီးယားလို စကားပြောပါ။ ခက်ခဲသည့်နေရာကို မြန်မာလို ရှင်းပြပြီးနောက် ကိုရီးယားလို ပြန်ပြောလေ့ကျင့်ပါ။",
+      "reviewed": false
+    },
+    "course.speaking.topic3": {
+      "value": "ဆရာ Jun Ho · သဘာဝကျသော ကိုရီးယားအသုံးအနှုန်းများ",
+      "reviewed": false
+    },
+    "course.speaking.topic3Body": {
+      "value": "ကိုရီးယားလူမျိုးဆရာနှင့် ပိုမြန်ပြီး အဆင့်မြင့်သော စကားပြော၊ စာအုပ်ပြင်ပ လက်တွေ့အသုံးအနှုန်းများကို လေ့လာပါ။ ကိုရီးယားဘာသာဖြင့် သင်ကြားပြီး မြန်မာဘာသာရှင်းပြမှု မပါဝင်ပါ။",
+      "reviewed": false
+    },
+    "course.speaking.audience": {
+      "value": "စကားပြောလေ့ကျင့်လိုသူ",
+      "reviewed": false
+    },
+    "course.speaking.whoFor": {
+      "value": "မြန်မာလို ရှင်းပြမှုက အထောက်အကူဖြစ်သူ သို့မဟုတ် ကိုရီးယားလို မိမိအတွေးကို ပိုရှည်ရှည် ပြောချင်သူများအတွက်ပါ။",
+      "reviewed": false
+    },
+    "course.speaking.goal": {
+      "value": "မိမိအဆင့်နဲ့ သင့်တော်တဲ့ အသုံးအနှုန်းတွေကို ထပ်ပြောရင်း ကိုရီးယားလို စကားဆက်ပြောရာမှာ ပိုရင်းနှီးလာဖို့ ရည်ရွယ်ပါတယ်။",
+      "reviewed": false
+    },
+    "redesign.speakingGoal": {
+      "value": "သိထားတဲ့ အသုံးအနှုန်းတွေကို ပြောပြီး စကားဆက်ပြောဖို့ လေ့ကျင့်ရန်",
+      "reviewed": false
+    },
+    "redesign.speakingSubtitle": {
+      "value": "သိထားတဲ့ အသုံးအနှုန်းတွေကို ကိုယ်တိုင်ပြောကြည့်ပါ။",
+      "reviewed": false
+    },
+    "redesign.tracksLead": {
+      "value": "Moe ဆရာမနဲ့ မြန်မာလို ရှင်းပြမှုဖြင့် လေ့ကျင့်နိုင်သလို Jun Ho ဆရာနဲ့ ကိုရီးယားလို အဆင့်မြင့်စကားပြော လေ့ကျင့်နိုင်ပါတယ်။ နှစ်မျိုးလုံး လျှောက်ထားနိုင်ပါတယ်။",
+      "reviewed": false
+    },
+    "redesign.trackLearn": {
+      "value": "သင်တန်းမှာ",
+      "reviewed": false
+    },
+    "redesign.moeFit": {
+      "value": "ကိုရီးယားလို ပြောတဲ့အခါ မြန်မာလို ရှင်းပြမှုက အထောက်အကူဖြစ်သူ",
+      "reviewed": false
+    },
+    "redesign.junFit": {
+      "value": "ကိုရီးယားလို မိမိအတွေးကို ပိုရှည်ရှည် ပြောချင်သူ",
+      "reviewed": false
+    },
+    "redesign.moeLearn": {
+      "value": "ကိုရီးယားလို စကားပြောပြီး ခက်တဲ့နေရာကို မြန်မာလို နားလည်အောင်ရှင်းပြကာ ပြန်ပြောကြည့်ပါ။",
+      "reviewed": false
+    },
+    "redesign.junLearn": {
+      "value": "ကိုရီးယားလို စကားဆက်ပြောရင်း လက်တွေ့သုံးတဲ့ အသုံးအနှုန်းတွေကို လေ့ကျင့်ပါ။",
+      "reviewed": false
+    },
+    "redesign.moeApply": {
+      "value": "Moe ဆရာမသင်တန်း ဆွေးနွေးရန်",
+      "reviewed": false
+    },
+    "redesign.junApply": {
+      "value": "Jun Ho ဆရာသင်တန်း ဆွေးနွေးရန်",
+      "reviewed": false
+    },
+    "redesign.ability": {
+      "value": "လေ့ကျင့်မှုရည်မှန်းချက်",
+      "reviewed": false
+    },
+    "redesign.whatLearn": {
+      "value": "သင်တန်းမှာ ဒီလိုလေ့ကျင့်ပါမယ်",
+      "reviewed": false
+    },
+    "redesign.learn1": {
+      "value": "သိထားတဲ့ အသုံးအနှုန်းကနေ ပြောကြည့်ပါ",
+      "reviewed": false
+    },
+    "redesign.learn1Body": {
+      "value": "သင်ထားတဲ့ စကားလုံးနဲ့ ရိုးရှင်းတဲ့ဝါကျတွေကို စကားပြောချိန်မှာ သုံးကြည့်ပါ။",
+      "reviewed": false
+    },
+    "redesign.learn2": {
+      "value": "ခက်တဲ့နေရာကို Moe ဆရာမနဲ့ ပြန်လေ့ကျင့်ပါ",
+      "reviewed": false
+    },
+    "redesign.learn2Body": {
+      "value": "Moe ဆရာမသင်တန်းမှာ မြန်မာလို နားလည်အောင် ရှင်းပြပြီး ကိုရီးယားလို ပြန်ပြောကြည့်ပါ။",
+      "reviewed": false
+    },
+    "redesign.learn3": {
+      "value": "Jun Ho ဆရာနဲ့ ကိုရီးယားလို စကားဆက်ပြောပါ",
+      "reviewed": false
+    },
+    "redesign.learn3Body": {
+      "value": "Jun Ho ဆရာသင်တန်းမှာ ကိုရီးယားလို စကားပြောပြီး လက်တွေ့သုံးတဲ့ အသုံးအနှုန်းတွေကို လေ့ကျင့်ပါ။",
+      "reviewed": false
+    },
+    "redesign.speakingCta": {
+      "value": "မရွေးရသေးလည်း အဆင်ပြေပါတယ်။",
+      "reviewed": false
+    },
+    "redesign.moeTrackRole": {
+      "value": "မြန်မာလို ရှင်းပြပြီး စကားပြောလေ့ကျင့်ခြင်း",
+      "reviewed": false
+    }
+  }
+}
