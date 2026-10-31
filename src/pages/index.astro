@@ -6,10 +6,11 @@ import EnrollmentSteps from '../components/EnrollmentSteps.astro';
 import LearningFaq from '../components/LearningFaq.astro';
 import ConsultationCta from '../components/ConsultationCta.astro';
 import LearningIcon from '../components/LearningIcon.astro';
-import StudyScene from '../components/StudyScene.astro';
+import HeroGallery from '../components/HeroGallery.astro';
+import CourseCarousel from '../components/CourseCarousel.astro';
+import LearningPhoto from '../components/LearningPhoto.astro';
 import { getPosts } from '../lib/content';
 import { t } from '../i18n/ui';
-import { courseIds } from '../config/courses';
 import '../styles/learning.css';
 import '../styles/redesign.css';
 const published = (await getPosts()).filter(post => !post.draft);
@@ -20,29 +21,26 @@ const posts = [...published.filter(post => post.category === 'korean'),
 ---
 <Base title={t('learn.nav')} description={t('learn.lead')} active="home">
 <div class="mm-home">
- <section class="wrap mm-hero">
+ <section class="mm-hero-band"><div class="wrap mm-hero">
   <div class="mm-hero-copy" data-mm-reveal="intro"><T k="learn.title" tag="h1" /><T k="learn.lead" tag="p" class="mm-hero-lead" />
    <div class="mm-hero-actions"><a class="btn pri mm-hero-button" href="/apply" data-event="class_apply_home"><T k="learn.apply" /><LearningIcon name="arrow" size={20} /></a>
    <a class="mm-text-link mm-browse" href="#courses"><T k="learn.browse" /><LearningIcon name="down" size={18} /></a></div>
    <p class="mm-hero-helper"><T k="redesign.reply" /><span class="helper-divider" aria-hidden="true">·</span><T k="redesign.private" /></p>
   </div>
-  <StudyScene />
- </section>
- <section class="mm-courses" id="courses"><div class="wrap">
-  <div class="mm-section-heading" data-mm-reveal><T k="learn.courses" tag="h2" /><T k="learn.courseLead" tag="p" /></div>
-  <div class="mm-course-grid" data-mm-stagger>{courseIds.map(id => <a class="mm-course-card" href={`/courses/${id}`} data-mm-reveal>
-   <div class="mm-card-heading"><T k={`learn.${id}`} tag="h3" /></div>
-   <dl>{[['level',`course.${id}.audience`],['duration',`course.${id}.duration`],['goal',`redesign.${id}Goal`]].map(([label,key]) => <div><T k={`redesign.${label}`} tag="dt" /><T k={key} tag="dd" /></div>)}</dl>
-   <span class="mm-card-link"><T k="course.viewDetails" /><LearningIcon name="arrow" size={21} /></span>
-  </a>)}</div>
-  <a class="mm-course-help mm-text-link" href="/apply"><T k="redesign.unsure" /><LearningIcon name="arrow" size={18} /></a>
+  <HeroGallery />
  </div></section>
+ <div class="mm-home-surface">
+ <CourseCarousel />
  <Teachers />
  <EnrollmentSteps />
  <LearningFaq />
  <ConsultationCta />
  <section class="wrap mm-blog" data-mm-reveal><div class="mm-blog-heading"><T k="learn.blog" tag="h2" /><a class="mm-text-link" href="/blog"><T k="redesign.blogAll" /><LearningIcon name="arrow" size={20} /></a></div>
-  <div class="mm-blog-list">{posts.map(post => <a href={`/blog/${post.slug}`}><span lang={post.lang}>{post.headline}</span><LearningIcon name="arrow" /></a>)}</div>
+  <div class="mm-blog-list">{posts.map((post,i) => <a href={`/blog/${post.slug}`}>
+   {post.cover ? <div class="mm-blog-photo"><img src={post.cover} alt="" loading="lazy" decoding="async" width="1200" height="800" /></div> : <LearningPhoto scene={i === 0 ? 'conversation' : 'enrollment'} />}
+   <div class="mm-blog-caption"><span lang={post.lang}>{post.headline}</span><LearningIcon name="arrow" /></div>
+  </a>)}</div>
  </section>
+ </div>
 </div>
 </Base>

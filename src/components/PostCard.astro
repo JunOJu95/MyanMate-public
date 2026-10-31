@@ -1,7 +1,7 @@
 ---
-import Icon from './Icon.astro';
 import type { Post } from '../lib/content';
 import { defaultLang, t } from '../i18n/ui';
+import LearningPhoto from './LearningPhoto.astro';
 
 interface Props {
   post: Post;
@@ -30,15 +30,13 @@ const isFeedCard = variant !== 'home';
   data-category={post.category}
   data-event={'blog:' + post.slug}
 >
-  <span class="blog-card-media" aria-hidden="true">
+  <div class="blog-card-media" aria-hidden="true">
     {post.cover ? (
       <img src={post.cover} alt="" loading={variant === 'featured' ? 'eager' : 'lazy'} decoding="async" />
     ) : (
-      <span class="blog-card-placeholder">
-        <Icon name={post.category} size={38} />
-      </span>
+      <LearningPhoto scene={post.category === 'korean' ? 'enrollment' : post.category === 'study' ? 'topik' : 'conversation'} />
     )}
-  </span>
+  </div>
 
   <div class="blog-card-body">
     <span class="blog-card-labels">

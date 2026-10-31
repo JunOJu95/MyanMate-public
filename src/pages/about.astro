@@ -2,12 +2,13 @@
 import Base from '../layouts/Base.astro';
 import Teachers from '../components/Teachers.astro';
 import T from '../components/T.astro';
+import LearningPhoto from '../components/LearningPhoto.astro';
 import { t } from '../i18n/ui';
 import '../styles/learning.css';
 ---
 <Base title={t('story.title')} description={t('story.lead')} active="about">
-  <div class="wrap learning">
-    <section class="about-learning-intro"><T k="learn.kicker" tag="p" class="learn-eyebrow" /><T k="story.title" tag="h1" /><T k="story.lead" tag="p" class="learn-lead" /></section>
+  <div class="wrap learning about-page">
+    <section class="about-learning-intro"><div><T k="learn.kicker" tag="p" class="learn-eyebrow" /><T k="story.title" tag="h1" /><T k="story.lead" tag="p" class="learn-lead" /></div><LearningPhoto scene="conversation" eager /></section>
     <Teachers />
     <section class="learn-section"><T k="story.approach" tag="h2" /><div class="learn-steps">{[1,2,3].map(n=><article><span class="course-number" aria-hidden="true">0{n}</span><T k={'story.point'+n} tag="h3" /><T k={'story.point'+n+'Body'} tag="p" /></article>)}</div></section>
     <section class="learn-banner"><T k="learn.blogCta" tag="h2" /><a href="/apply" class="btn pri"><T k="learn.apply" /></a></section>

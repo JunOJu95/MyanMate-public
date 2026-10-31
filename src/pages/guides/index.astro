@@ -4,6 +4,7 @@ import Icon from '../../components/Icon.astro';
 import LocalizedText from '../../components/LocalizedText.astro';
 import SocialDmPanel from '../../components/SocialDmPanel.astro';
 import T from '../../components/T.astro';
+import LearningPhoto from '../../components/LearningPhoto.astro';
 import { defaultLang, t } from '../../i18n/ui';
 import { guideCategories } from '../../data/guide-categories';
 ---
@@ -23,7 +24,8 @@ import { guideCategories } from '../../data/guide-categories';
       </div>
       <div class="guide-category-card-grid" role="group" aria-label={t('infoHub.choose', defaultLang)}>
         {guideCategories.map((category) => (
-          <a class="guide-category-card" href={category.href} style={`--guide-card-image:url('${category.image}')`}>
+          <a class="guide-category-card" href={category.href}>
+            <LearningPhoto scene={category.id === 'visa' ? 'enrollment' : category.id === 'study' ? 'topik' : category.id === 'work' ? 'practice' : 'conversation'} class="guide-category-photo" />
             <span class="guide-category-card-top">
               <span class="guide-category-card-icon"><Icon name={category.icon} size={20} /></span>
               <span class="guide-category-card-arrow" aria-hidden="true"></span>

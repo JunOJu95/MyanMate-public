@@ -1,0 +1,12 @@
+---
+import { Image } from 'astro:assets';
+import { learningMedia, type LearningScene } from '../lib/learning-media';
+import type { CourseId } from '../config/courses';
+interface Props { scene: LearningScene; class?: string; eager?: boolean; sizes?: string; course?: CourseId }
+const { scene, class: className, eager = false, sizes = '(max-width: 760px) calc(100vw - 40px), 50vw', course } = Astro.props;
+---
+<div class:list={['learning-photo', `learning-photo--${scene}`, className]} data-course-photo={course}
+  style={course ? `view-transition-name:mm-course-${course}` : undefined}>
+  <Image src={learningMedia[scene]} alt="" width={1600} widths={[480,800,1200,1600]} sizes={sizes}
+    format="webp" quality={82} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" />
+</div>

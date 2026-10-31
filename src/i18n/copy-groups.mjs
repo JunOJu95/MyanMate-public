@@ -3,7 +3,7 @@ import references from './reference.json' with { type: 'json' };
 // Fixed groups keep translation IDs out of the editor's editable fields.
 const definitions = [
   ['home', '홈페이지', '/'],
-  ['courses', '과정 소개 · 한글 / TOPIK', '/courses/hangul'],
+  ['courses', '과정 소개 · 한글 / TOPIK / KIIP', '/courses/hangul'],
   ['speaking', '말하기 과정', '/courses/speaking'],
   ['teachers', '강사 소개', '/#teachers'],
   ['enrollment', '수강 안내', '/#enrollment'],
@@ -27,7 +27,7 @@ function groupFor(key) {
   if (/^learn\.(moe|lee|teachers)/.test(key)) return 'teachers';
   if (/^learn\.blog/.test(key) || key === 'redesign.blogAll') return 'blog';
   if (key.startsWith('course.speaking.') || key.startsWith('learn.speaking')) return 'speaking';
-  if (key.startsWith('course.') || /^learn\.(courses|courseLead|hangul|topik)/.test(key)) return 'courses';
+  if (key.startsWith('course.') || /^learn\.(courses|courseLead|hangul|topik|kiip)/.test(key)) return 'courses';
   if (key.startsWith('redesign.')) {
     const name = key.slice('redesign.'.length);
     if (/Faq$|Answer$|^faqTitle$/.test(name)) return 'faq';

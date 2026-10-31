@@ -1,71 +1,74 @@
-/* Contact first: a short introduction, open form, and one-line course context. */
-.learning.apply-page {padding-bottom:56px;}
-.learning.apply-page .apply-intro {padding:42px 0 30px;border-bottom:1px solid var(--line);}
-.learning.apply-page .apply-intro h1 {margin:0;font-size:36px;font-weight:600;line-height:1.6;letter-spacing:-.8px;}
-.learning.apply-page .apply-intro .learn-lead {max-width:680px;margin:12px 0 0;font-size:16px;}
-.learning.apply-page .apply-reply {margin:12px 0 0;color:var(--brand);font-size:13px;font-weight:500;}
-.apply-content {display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,.8fr);gap:64px;align-items:start;padding-top:32px;}
-.learning.apply-page .apply-content #application-form {padding:0;border:0;background:#fff;border-radius:0;}
-.apply-group {margin:0 0 28px;padding:0;border:0;min-width:0;}
-.apply-group legend {width:100%;padding:0 0 20px;font-size:19px;font-weight:600;line-height:1.8;}
-.apply-group+.apply-group {padding-top:26px;border-top:1px solid var(--line);}
-.learning.apply-page .apply-fields {gap:18px 22px;}
-.learning.apply-page .apply-field {gap:7px;}
-.learning.apply-page .apply-field label {font-size:14px;font-weight:500;line-height:1.9;}
-.learning.apply-page .apply-field input,.learning.apply-page .apply-field select,.learning.apply-page .apply-field textarea {font-family:inherit;font-size:16px;line-height:1.8;min-height:52px;padding:10px 12px;border:1px solid var(--line-strong);background:#fff;border-radius:8px;}
-.learning.apply-page .apply-field textarea {min-height:110px;}
-.learning.apply-page .apply-field small {font-size:12px;line-height:1.9;}
-.learning.apply-page .apply-selection {padding:0;background:none;border:0;border-radius:0;margin-top:-8px;}
-.apply-selection-foot {display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--ink-soft);}
-.apply-selection-foot a {margin-left:auto;color:var(--brand);font-weight:500;text-decoration:underline;text-underline-offset:4px;}
-.apply-optional {padding:18px 0;border-block:1px solid var(--line);}
-.apply-optional summary {display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:14px;font-weight:500;line-height:1.9;cursor:pointer;list-style:none;}
-.apply-optional summary::-webkit-details-marker {display:none;}
-.apply-optional summary::after {content:'+';color:var(--brand);font:22px/1 system-ui,sans-serif;}
-.apply-optional[open] summary::after {content:'−';}
-.apply-optional fieldset {border:0;padding:20px 0 0;margin:0;min-width:0;}
-.apply-required {margin:18px 0 0;font-size:12px;color:var(--ink-soft);}
-.learning.apply-page .apply-consent {margin:14px 0 0;align-items:flex-start;font-size:13px;line-height:1.9;}
-.apply-consent input {width:18px;height:18px;accent-color:var(--brand);}
-.learning.apply-page .apply-privacy {font-size:12px;margin-top:10px;}
-.apply-submit-note {margin:14px 0 0;color:var(--ink-soft);font-size:12px;}
-.learning.apply-page .apply-status {margin:20px 0 0;font-size:14px;}
-.apply-status[data-state='success'] {background:#edf3e9;border-left-color:#567448;}
-.apply-status[data-state='error'] {background:#fff0e9;border-left-color:var(--brand);}
-.apply-support {padding:0 0 0 28px;border-left:1px solid var(--line);}
-.apply-support h2 {font-size:19px;font-weight:600;margin:0 0 20px;line-height:1.8;letter-spacing:0;}
-.apply-support ol {list-style:none;padding:0;margin:0;}
-.apply-support li {display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;padding-bottom:24px;}
-.apply-support li>span {font:500 13px/1.8 system-ui,sans-serif;color:var(--brand);padding-top:3px;}
-.learning.apply-page .apply-support li strong {font-size:14px;font-weight:500;line-height:1.85;}
-.learning.apply-page .apply-support li p {font-size:13px;line-height:1.95;color:var(--ink-soft);margin:6px 0 0;}
-.apply-support-facts,.apply-support-contact {padding-top:22px;margin-top:0;border-top:1px solid var(--line);}
-.apply-support-contact {margin-top:24px;}
-.apply-support-facts h2,.apply-support-contact h2 {font-size:15px;margin-bottom:12px;}
-.apply-support-facts dl {margin:0;}
-.apply-support-facts dl>div {display:flex;justify-content:space-between;gap:16px;font-size:12px;line-height:1.95;margin-top:12px;}
-.apply-support-facts dt {color:var(--ink-soft);}
-.apply-support-facts dd {margin:0;text-align:right;}
-.apply-email-link {display:flex;justify-content:space-between;gap:12px;color:var(--brand);font-size:14px;overflow-wrap:anywhere;}
-.apply-messengers {display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:var(--ink-soft);}
-.apply-messengers a {text-decoration:underline;text-underline-offset:4px;}
-body.lang-my .learning.apply-page .apply-intro h1 {font-size:28px;letter-spacing:0;line-height:1.8;}
-body.lang-my .apply-group legend {font-size:18px;}
-@media(max-width:760px) {
- .learning.apply-page {padding-bottom:36px;}
- .learning.apply-page .apply-intro {padding:28px 0 24px;}
- .learning.apply-page .apply-intro h1 {font-size:28px;}
- .learning.apply-page .apply-intro .learn-lead {font-size:15px;margin-top:12px;}
- .learning.apply-page .apply-reply {font-size:12px;}
- .apply-content {grid-template-columns:1fr;gap:36px;padding-top:24px;}
- .apply-group legend {font-size:18px;padding-bottom:18px;}
- .learning.apply-page .apply-fields {grid-template-columns:1fr;gap:16px;}
- .apply-group+.apply-group {padding-top:24px;}
- .apply-support {padding:26px 0 0;border-left:0;border-top:1px solid var(--line);}
- .apply-selection-foot {font-size:12px;gap:6px;}
- .apply-selection-foot a {font-size:12px;}
- body.lang-my .learning.apply-page .apply-intro h1 {font-size:24px;}
- body.lang-my .learning.apply-page .apply-field label {font-size:14px;}
- body.lang-my .learning.apply-page .apply-field select {font-size:15px;}
- body.lang-my .apply-selection-foot a {margin-left:0;}
+/* The form subtree and handler are deliberately unchanged. */
+.learning.apply-page{padding-bottom:64px;}
+.learning.apply-page .apply-intro{padding:48px 0 34px;border:0;}
+.learning.apply-page .apply-intro h1{margin:0;color:var(--brand-deep);font-size:44px;font-weight:650;line-height:1.5;letter-spacing:-1px;}
+.learning.apply-page .apply-intro .learn-lead{max-width:800px;margin:15px 0 0;font-size:17px;line-height:1.95;}
+.learning.apply-page .apply-reply{margin:15px 0 0;color:var(--brand-strong);font-size:14px;font-weight:500;}
+.apply-content{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,.8fr);gap:32px;align-items:start;padding-top:0;}
+.learning.apply-page .apply-content #application-form{padding:34px;border:1px solid var(--line);background:#fff;border-radius:20px;box-shadow:none;}
+.apply-group{margin:0 0 30px;padding:0;border:0;min-width:0;}
+.apply-group legend{width:100%;padding:0 0 22px;color:var(--ink);font-size:21px;font-weight:600;line-height:1.8;}
+.apply-group+.apply-group{padding-top:28px;border-top:1px solid var(--line);}
+.learning.apply-page .apply-fields{gap:20px 22px;}
+.learning.apply-page .apply-field{gap:8px;min-width:0;}
+.learning.apply-page .apply-field label{font-size:14px;font-weight:500;line-height:1.9;}
+.learning.apply-page .apply-field input,.learning.apply-page .apply-field select,.learning.apply-page .apply-field textarea{width:100%;min-width:0;min-height:52px;padding:11px 13px;border:1px solid var(--line-strong);border-radius:10px;background:#fff;font-family:inherit;font-size:16px;line-height:1.8;color:var(--ink);}
+.learning.apply-page .apply-field textarea{min-height:115px;}
+.learning.apply-page .apply-field small{font-size:12px;line-height:1.9;}
+.learning.apply-page .apply-selection{padding:0;background:none;border:0;border-radius:0;margin-top:-8px;}
+.apply-selection-foot{display:flex;align-items:center;flex-wrap:wrap;gap:6px;color:var(--ink-soft);font-size:12px;line-height:1.9;}
+.apply-selection-foot a{margin-left:auto;color:var(--brand-strong);text-decoration:underline;text-underline-offset:4px;}
+.apply-optional{padding:18px 0;border-block:1px solid var(--line);}
+.apply-optional summary{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:14px;font-weight:500;line-height:1.9;cursor:pointer;list-style:none;}
+.apply-optional summary::-webkit-details-marker{display:none;}
+.apply-optional summary::after{content:'+';color:var(--brand-strong);font:22px/1 system-ui,sans-serif;}
+.apply-optional[open] summary::after{content:'−';}
+.apply-optional fieldset{border:0;padding:22px 0 0;margin:0;min-width:0;}
+.apply-required{margin:20px 0 0;color:var(--ink-soft);font-size:12px;}
+.learning.apply-page .apply-consent{margin:15px 0 0;align-items:flex-start;font-size:13px;line-height:1.95;}
+.apply-consent input{flex-shrink:0;width:18px;height:18px;accent-color:var(--brand-strong);}
+.learning.apply-page .apply-privacy{font-size:12px;margin-top:12px;color:var(--brand-strong);}
+.apply-submit-note{margin:16px 0 0;color:var(--ink-soft);font-size:12px;line-height:1.95;}
+.learning.apply-page .apply-status{margin:22px 0 0;font-size:14px;}
+.apply-status[data-state='success']{background:#edf3e9;border-left-color:#567448;}
+.apply-status[data-state='error']{background:#fff0e9;border-left-color:var(--brand-strong);}
+.apply-support{position:sticky;top:105px;padding:0;border:0;min-width:0;}
+.apply-support-photo{aspect-ratio:4/3;margin-bottom:26px;}
+.apply-support h2{margin:0 0 24px;font-size:20px;font-weight:600;line-height:1.8;letter-spacing:0;}
+.apply-support ol{list-style:none;margin:0;padding:0;}
+.apply-support li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:14px;padding-bottom:25px;}
+.apply-support li>span{display:grid;place-items:center;align-self:start;width:30px;height:30px;background:var(--surface-accent);border-radius:50%;font:600 12px/1 system-ui,sans-serif;color:var(--brand-strong);}
+.learning.apply-page .apply-support li strong{font-size:14px;font-weight:550;line-height:1.85;}
+.learning.apply-page .apply-support li p{margin:7px 0 0;color:var(--ink-soft);font-size:13px;line-height:1.95;}
+.apply-support-facts,.apply-support-contact{padding-top:24px;border-top:1px solid var(--line);}
+.apply-support-contact{margin-top:26px;}
+.apply-support-facts h2,.apply-support-contact h2{font-size:16px;margin-bottom:12px;}
+.apply-support-facts dl{margin:0;}
+.apply-support-facts dl>div{display:flex;justify-content:space-between;gap:16px;margin-top:13px;font-size:12px;line-height:1.95;}
+.apply-support-facts dt{color:var(--ink-soft);}
+.apply-support-facts dd{margin:0;text-align:right;}
+.apply-email-link{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--brand-strong);font-size:14px;overflow-wrap:anywhere;}
+.apply-messengers{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:13px;color:var(--ink-soft);}
+.apply-messengers a{text-decoration:underline;text-underline-offset:4px;}
+body.lang-my .learning.apply-page .apply-intro h1{font-size:34px;letter-spacing:0;line-height:1.8;}
+body.lang-my .apply-group legend{font-size:19px;}
+@media(max-width:1100px){.apply-content{grid-template-columns:minmax(0,1.5fr) minmax(250px,.8fr);gap:24px;}.learning.apply-page .apply-content #application-form{padding:26px;}}
+@media(max-width:760px){
+ .learning.apply-page{padding-bottom:38px;}
+ .learning.apply-page .apply-intro{padding:30px 0 26px;}
+ .learning.apply-page .apply-intro h1{font-size:30px;letter-spacing:-.6px;}
+ body.lang-my .learning.apply-page .apply-intro h1{font-size:26px;}
+ .learning.apply-page .apply-intro .learn-lead{font-size:15px;}
+ .learning.apply-page .apply-reply{font-size:12px;}
+ .apply-content{grid-template-columns:1fr;gap:34px;}
+ .learning.apply-page .apply-content #application-form{padding:24px 18px;border-radius:16px;}
+ .learning.apply-page .apply-fields{grid-template-columns:1fr;gap:18px;}
+ .apply-group legend,body.lang-my .apply-group legend{font-size:18px;padding-bottom:20px;}
+ .apply-group+.apply-group{padding-top:24px;}
+ .apply-support{position:static;top:auto;padding-top:0;}
+ .apply-support-photo{aspect-ratio:16/10;}
+ .apply-selection-foot a{margin-left:0;}
+ body.lang-my .learning.apply-page .apply-field select{font-size:15px;}
 }
+
+@media(max-width:980px){.learning.apply-page .apply-content{grid-template-columns:1fr;}.learning.apply-page .apply-support{position:static;max-width:620px;}.learning.apply-page .apply-support-photo{aspect-ratio:16/10;}}

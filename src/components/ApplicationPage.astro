@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import T from './T.astro';
+import LearningPhoto from './LearningPhoto.astro';
 import { t } from '../i18n/ui';
 import { applicationEmail, applicationAccessKey } from '../config/application';
 import { courseIds } from '../config/courses';
@@ -57,6 +58,7 @@ const levels = ['unsure', 'beginner', 'reader', 'basic', 'conversation', 'indepe
         <noscript><p><T k="apply.nojs" /></p></noscript>
       </form>
       <aside class="apply-support">
+        <LearningPhoto scene="enrollment" class="apply-support-photo" />
         <T k="apply.afterTitle" tag="h2" />
         <ol>{[2,3,4].map(n => <li><span aria-hidden="true">0{n-1}</span><div><T k={`learn.step${n}`} tag="strong" /><T k={`learn.step${n}Body`} tag="p" /></div></li>)}</ol>
         <div class="apply-support-facts"><T k="apply.overview" tag="h2" /><dl>{[1,3].map(n => <div><T k={`apply.fact${n}`} tag="dt" /><T k={`apply.fact${n}Body`} tag="dd" /></div>)}</dl></div>

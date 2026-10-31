@@ -1,0 +1,51 @@
+---
+import T from './T.astro';
+import LearningPhoto from './LearningPhoto.astro';
+import LearningIcon from './LearningIcon.astro';
+import { courseIds } from '../config/courses';
+import { t } from '../i18n/ui';
+const labels = { hangul:'redesign.shortHangul', topik:'learn.topik', topik2:'learn.topik2', speaking:'redesign.shortSpeaking', kiip:'course.shortKiip' };
+---
+<section class="mm-courses" id="courses" data-course-carousel>
+  <div class="wrap mm-section-heading" data-mm-reveal>
+    <T k="learn.courses" tag="h2" id="course-carousel-title" />
+    <T k="learn.courseLead" tag="p" />
+  </div>
+  <div class="wrap mm-course-picker-wrap">
+    <nav class="mm-course-picker" data-course-picker aria-labelledby="course-carousel-title">
+      {courseIds.map(id => <a href={`#course-card-${id}`} data-course-choice={id}
+        aria-label={t(`learn.${id}`)} data-i18n-aria={`learn.${id}`}><T k={labels[id]} /></a>)}
+      <span class="mm-course-picker-line" data-course-picker-line aria-hidden="true" hidden></span>
+    </nav>
+  </div>
+  <div class="mm-course-track" data-course-track tabindex="0" role="region" aria-labelledby="course-carousel-title">
+    {courseIds.map(id => <article class="mm-course-card" data-course-slide id={`course-card-${id}`} aria-labelledby={`course-label-${id}`}>
+      <LearningPhoto scene={id} class="mm-course-photo" course={id} sizes="(max-width:760px) calc(100vw - 40px), 560px" />
+      <div class="mm-course-copy">
+        <T k={`learn.${id}`} tag="h3" id={`course-label-${id}`} />
+        <dl>{[[ 'redesign.level',`course.${id}.audience`],['redesign.duration',`course.${id}.duration`],['redesign.goal',`redesign.${id}Goal`]].map(([label,key]) => <div><T k={label} tag="dt" /><T k={key} tag="dd" /></div>)}</dl>
+        <a class="btn pri" href={`/courses/${id}`}><T k="course.viewDetails" /><LearningIcon name="arrow" size={21} /></a>
+      </div>
+    </article>)}
+  </div>
+  <div class="wrap mm-carousel-bottom">
+    <div class="mm-carousel-controls" data-carousel-controls hidden>
+      <button type="button" data-carousel-prev class="mm-round-control" aria-label={t('ui.carousel.previous')} data-i18n-aria="ui.carousel.previous" disabled><LearningIcon name="left" /></button>
+      <span class="mm-carousel-count" aria-hidden="true"><span data-carousel-current>01</span><span> / {String(courseIds.length).padStart(2, '0')}</span></span>
+      <button type="button" data-carousel-next class="mm-round-control" aria-label={t('ui.carousel.next')} data-i18n-aria="ui.carousel.next"><LearningIcon name="right" /></button>
+    </div>
+    <a class="mm-course-help mm-text-link" href="/apply"><T k="redesign.unsure" /><LearningIcon name="arrow" size={18} /></a>
+  </div>
+</section>
+<script is:inline>
+  // Restore the rail before the browser captures the incoming photo transition.
+  (() => {
+    const saved = history.state?.mmCourse;
+    if (typeof saved !== 'string') return;
+    const card = document.getElementById(`course-card-${saved}`);
+    const track = card?.closest('[data-course-track]');
+    if (!card || !track) return;
+    const item = card.getBoundingClientRect(), rail = track.getBoundingClientRect();
+    track.scrollBy({ left:item.left + item.width / 2 - (rail.left + rail.width / 2), behavior:'instant' });
+  })();
+</script>

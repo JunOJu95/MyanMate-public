@@ -151,6 +151,22 @@
     "motion.studyCaption": {
       "value": "လေ့လာနေသည့် မြင်ကွင်းနမူနာ · AI ဖြင့် ဖန်တီးထားသောပုံ",
       "reviewed": false
+    },
+    "ui.carousel.previous": {
+      "value": "ယခင်သင်တန်းကို ကြည့်ရန်",
+      "reviewed": false
+    },
+    "ui.carousel.next": {
+      "value": "နောက်သင်တန်းကို ကြည့်ရန်",
+      "reviewed": false
+    },
+    "ui.motion.pause": {
+      "value": "ပုံများပြသမှုကို ခေတ္တရပ်ရန်",
+      "reviewed": false
+    },
+    "ui.motion.play": {
+      "value": "ပုံများပြသမှုကို ပြန်ဖွင့်ရန်",
+      "reviewed": false
     }
   }
 }

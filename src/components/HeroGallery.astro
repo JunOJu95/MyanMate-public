@@ -1,0 +1,16 @@
+---
+import LearningPhoto from './LearningPhoto.astro';
+import LearningIcon from './LearningIcon.astro';
+import { t } from '../i18n/ui';
+---
+<div class="mm-hero-gallery" data-hero-gallery data-mm-reveal="media">
+  <div class="mm-hero-gallery-frame">
+    <div class="mm-hero-photo is-active" data-hero-photo><LearningPhoto scene="heroCall" eager sizes="(max-width: 760px) calc(100vw - 40px), 44vw" /></div>
+    <div class="mm-hero-photo" data-hero-photo><LearningPhoto scene="heroStudy" sizes="(max-width: 760px) calc(100vw - 40px), 44vw" /></div>
+    <button class="mm-gallery-toggle" type="button" data-gallery-toggle hidden aria-pressed="false"
+      aria-label={t('ui.motion.pause')} data-i18n-aria="ui.motion.pause">
+      <span class="gallery-pause"><LearningIcon name="pause" size={19} /></span>
+      <span class="gallery-play"><LearningIcon name="play" size={19} /></span>
+    </button>
+  </div>
+</div>
