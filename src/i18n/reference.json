@@ -2262,5 +2262,73 @@
   "apply.levelUnsure": {
     "en": "I’m not sure of my level yet",
     "ko": "아직 수준을 잘 모르겠어요"
+  },
+  "ui.carousel.previous": {
+    "en": "Previous course",
+    "ko": "이전 수업 보기"
+  },
+  "ui.carousel.next": {
+    "en": "Next course",
+    "ko": "다음 수업 보기"
+  },
+  "ui.motion.pause": {
+    "en": "Pause photo slideshow",
+    "ko": "사진 전환 일시정지"
+  },
+  "ui.motion.play": {
+    "en": "Play photo slideshow",
+    "ko": "사진 전환 재생"
+  },
+  "learn.kiip": {
+    "en": "KIIP placement test preparation",
+    "ko": "KIIP 사전평가 준비"
+  },
+  "course.frequency": {
+    "en": "Class schedule",
+    "ko": "수업 일정"
+  },
+  "course.kiip.audience": {
+    "en": "Beginners are welcome",
+    "ko": "초보도 수강 가능"
+  },
+  "course.kiip.duration": {
+    "en": "About 4 weeks",
+    "ko": "약 4주"
+  },
+  "course.kiip.intro": {
+    "en": "Prepare online with teacher Moe, aiming for a high score on the KIIP placement test. Beginners are welcome.",
+    "ko": "KIIP 사전평가에서 높은 점수를 목표로 Moe 선생님과 온라인으로 준비해요. 초보도 수강할 수 있어요."
+  },
+  "course.kiip.teacher": {
+    "en": "Your teacher: Moe",
+    "ko": "담당: Moe 선생님"
+  },
+  "course.kiip.topic1": {
+    "en": "Find a schedule that works for you",
+    "ko": "일정을 맞춰 함께 진행해요"
+  },
+  "course.kiip.topic1Body": {
+    "en": "Classes meet 3–4 days a week, with room to adjust. Agree on class times during your individual consultation.",
+    "ko": "주 3–4일을 기준으로 가능한 일정을 조율하고, 수업 시간은 개별 상담에서 함께 정해요."
+  },
+  "course.kiip.whoFor": {
+    "en": "For learners preparing for the KIIP placement test, including those just starting Korean.",
+    "ko": "한국어를 처음 배우는 분을 포함해 KIIP 사전평가를 준비하려는 분께 맞아요."
+  },
+  "course.kiip.goal": {
+    "en": "Prepare with the goal of achieving a high score on the KIIP placement test.",
+    "ko": "KIIP 사전평가에서 높은 점수를 목표로 준비해요."
+  },
+  "redesign.kiipGoal": {
+    "en": "Prepare for a high KIIP placement test score",
+    "ko": "사전평가 고득점을 목표로 준비하기"
+  },
+  "course.kiip.howTitle": {
+    "en": "How the class works",
+    "ko": "수업은 이렇게 진행돼요"
+  },
+  "course.shortKiip": {
+    "en": "KIIP",
+    "ko": "KIIP"
   }
 }

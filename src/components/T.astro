@@ -10,9 +10,10 @@ interface Props {
   k: string;
   tag?: string;
   class?: string;
+  id?: string;
 }
 
-const { k, tag = 'span', class: className } = Astro.props;
+const { k, tag = 'span', class: className, id } = Astro.props;
 const Tag = tag as any;
 ---
-<Tag data-i18n={k} class={className}>{t(k, defaultLang)}</Tag>
+<Tag data-i18n={k} class={className} id={id}>{t(k, defaultLang)}</Tag>

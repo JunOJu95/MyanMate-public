@@ -69,8 +69,8 @@ function categoryHref(category: PostCategory | 'all'): string {
       ) : (
         <>
           <div class="blog-feed-list" id="blog-feed-list">
-            {posts.map((post) => (
-              <PostCard post={post} variant="row" showDetails={false} showMeta={true} />
+            {posts.map((post, index) => (
+              <PostCard post={post} variant={index === 0 ? 'featured' : 'row'} showDetails={index === 0} showMeta={true} />
             ))}
           </div>
           <div class="blog-see-more-wrap" data-blog-see-more-wrap hidden>

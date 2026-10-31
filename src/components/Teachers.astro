@@ -1,12 +1,10 @@
 ---
 import T from './T.astro';
 import LearningIcon from './LearningIcon.astro';
-import PhotoPlaceholder from './PhotoPlaceholder.astro';
 ---
 <section class="wrap mm-teachers" id="teachers">
  <div class="mm-section-heading" data-mm-reveal><T k="learn.teachers" tag="h2" /><T k="redesign.teachersLead" tag="p" /></div>
  <div class="mm-teacher-grid" data-mm-stagger>{['moe','jun'].map((teacher,i) => <article class="mm-teacher" data-mm-reveal>
-  <PhotoPlaceholder />
   <div><T k={i===0 ? 'learn.moeName' : 'learn.leeName'} tag="h3" /><T k={`redesign.${teacher}Role`} tag="p" class="mm-teacher-role" />
    <T k={`redesign.${teacher}Practice`} tag="p" class="mm-teacher-practice" />
    <ul class="mm-teacher-facts">{i===0 && <li><T k="redesign.moeCredential" /></li>}<li><T k={`redesign.${teacher}Origin`} /></li>{i===1 && <li><T k="redesign.junCredential" /></li>}</ul>

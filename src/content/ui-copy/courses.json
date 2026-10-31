@@ -259,6 +259,58 @@
     "redesign.shortSpeaking": {
       "value": "စကားပြော",
       "reviewed": false
+    },
+    "learn.kiip": {
+      "value": "KIIP အဆင့်သတ်မှတ်စာမေးပွဲ ပြင်ဆင်ခြင်း",
+      "reviewed": false
+    },
+    "course.frequency": {
+      "value": "သင်တန်းအချိန်ဇယား",
+      "reviewed": false
+    },
+    "course.kiip.audience": {
+      "value": "အခြေခံမှ စတင်သူများလည်း တက်နိုင်ပါတယ်",
+      "reviewed": false
+    },
+    "course.kiip.duration": {
+      "value": "၄ ပတ်ခန့်",
+      "reviewed": false
+    },
+    "course.kiip.intro": {
+      "value": "KIIP အဆင့်သတ်မှတ်စာမေးပွဲတွင် အမှတ်ကောင်းရရန် ရည်မှန်းပြီး ဆရာမ Moe နှင့် အွန်လိုင်းမှ ပြင်ဆင်ပါ။ အခြေခံမှ စတင်သူများလည်း တက်နိုင်ပါတယ်။",
+      "reviewed": false
+    },
+    "course.kiip.teacher": {
+      "value": "သင်ကြားမည့်ဆရာမ — Moe",
+      "reviewed": false
+    },
+    "course.kiip.topic1": {
+      "value": "မိမိအချိန်နှင့် ကိုက်ညီအောင် ညှိနှိုင်းပါ",
+      "reviewed": false
+    },
+    "course.kiip.topic1Body": {
+      "value": "တစ်ပတ်လျှင် ၃–၄ ရက်ကို အခြေခံပြီး မိမိနှင့် အဆင်ပြေမည့်ရက်များကို ညှိနှိုင်းနိုင်ပါတယ်။ သင်တန်းချိန်ကို တစ်ဦးချင်းဆွေးနွေးပြီး သတ်မှတ်ပါမယ်။",
+      "reviewed": false
+    },
+    "course.kiip.whoFor": {
+      "value": "ကိုရီးယားစာကို အခုမှစလေ့လာသူများအပါအဝင် KIIP အဆင့်သတ်မှတ်စာမေးပွဲကို ပြင်ဆင်လိုသူများအတွက် သင့်တော်ပါတယ်။",
+      "reviewed": false
+    },
+    "course.kiip.goal": {
+      "value": "KIIP အဆင့်သတ်မှတ်စာမေးပွဲတွင် အမှတ်ကောင်းရရန် ပြင်ဆင်ပါ။",
+      "reviewed": false
+    },
+    "redesign.kiipGoal": {
+      "value": "အဆင့်သတ်မှတ်စာမေးပွဲတွင် အမှတ်ကောင်းရရန် ပြင်ဆင်ခြင်း",
+      "reviewed": false
+    },
+    "course.kiip.howTitle": {
+      "value": "သင်တန်းတက်ရောက်ပုံ",
+      "reviewed": false
+    },
+    "course.shortKiip": {
+      "value": "KIIP",
+      "reviewed": false
     }
   }
 }

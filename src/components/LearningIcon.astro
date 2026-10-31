@@ -1,10 +1,14 @@
 ---
-interface Props { name: 'arrow' | 'down' | 'chevron'; size?: number }
+interface Props { name: 'arrow' | 'down' | 'chevron' | 'left' | 'right' | 'pause' | 'play'; size?: number }
 const { name, size = 24 } = Astro.props;
 const paths: Record<Props['name'], string> = {
  arrow: '<path d="M4 12h16m-6-6 6 6-6 6"/>',
  down: '<path d="M12 4v16m-6-6 6 6 6-6"/>',
  chevron: '<path d="m5 9 7 7 7-7"/>',
+ left: '<path d="m14 5-7 7 7 7"/>',
+ right: '<path d="m10 5 7 7-7 7"/>',
+ pause: '<path d="M8 5v14M16 5v14" stroke-width="3"/>',
+ play: '<path d="m8 5 11 7-11 7Z" fill="currentColor" stroke="none"/>',
 };
 ---
 <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={paths[name]} />
