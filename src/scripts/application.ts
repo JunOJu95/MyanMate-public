@@ -10,7 +10,6 @@ if (form) {
   button.disabled = !form.dataset.accessKey;
   const courseSelect = form.elements.namedItem('course') as HTMLSelectElement;
   const trackSelect = form.elements.namedItem('speaking_track') as HTMLSelectElement;
-  const channelSelect = form.elements.namedItem('channel') as HTMLSelectElement;
   const contact = form.elements.namedItem('contact') as HTMLInputElement;
   const selection = form.querySelector<HTMLElement>('#selected-course')!;
   const params = new URLSearchParams(location.search);
@@ -30,36 +29,17 @@ if (form) {
   function validateContact() {
     contact.setCustomValidity('');
     if (!contact.value.trim()) return;
-    if (channelSelect.value === 'email') {
-      if (contact.validity.typeMismatch) contact.setCustomValidity(t('apply.emailInvalid', lang()));
-    } else {
-      const phone = normalizePhone(contact.value);
-      const digits = phone.replace(/\D/g, '');
-      if (!/^[+\d() .-]+$/.test(phone.trim()) || digits.length < 6 || digits.length > 20) contact.setCustomValidity(t('apply.phoneInvalid', lang()));
-    }
-  }
-  function normalizePhone(value: string) {
-    return value.replace(/[၀-၉０-９]/g, digit => String(digit.charCodeAt(0) - (digit.charCodeAt(0) >= 0xff10 ? 0xff10 : 0x1040)));
-  }
-  function updateChannel() {
-    const email = channelSelect.value === 'email';
-    contact.type = email ? 'email' : 'tel';
-    contact.inputMode = email ? 'email' : 'tel';
-    contact.autocomplete = email ? 'email' : 'tel';
-    setText(form.querySelector('#contact-help [data-i18n]')!, email ? 'apply.emailHelp' : 'apply.phoneHelp');
-    validateContact();
+    if (contact.validity.typeMismatch) contact.setCustomValidity(t('apply.emailInvalid', lang()));
   }
   courseSelect.addEventListener('change', updateCourse);
-  channelSelect.addEventListener('change', updateChannel);
   contact.addEventListener('input', validateContact);
-  document.addEventListener('mm:langchange', () => { updateCourse(); updateChannel(); });
-  updateCourse(); updateChannel();
+  document.addEventListener('mm:langchange', () => { updateCourse(); validateContact(); });
+  updateCourse(); validateContact();
   let sending = false;
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (!form.dataset.accessKey || sending) return;
     contact.value = contact.value.trim();
-    if (channelSelect.value === 'phone') contact.value = normalizePhone(contact.value);
     validateContact();
     if (!form.reportValidity()) return;
     const data = new FormData(form);
@@ -99,7 +79,7 @@ if (form) {
     } catch { setText(status,'apply.error'); status.dataset.state = 'error'; }
     finally {
       fieldsets.forEach(fieldset => { fieldset.disabled = false; }); consent.disabled = false;
-      updateCourse(); updateChannel();
+      updateCourse(); validateContact();
       status.hidden = false; sending = false; button.disabled = false; form.removeAttribute('aria-busy'); setText(label,'apply.submit');
       status.focus({preventScroll:true});
       status.scrollIntoView({block:'nearest',behavior:'auto'});
